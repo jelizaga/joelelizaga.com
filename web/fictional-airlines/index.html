@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<!--
+
+	"Fictional Airlines" is just that; a fictional airline.
+	This site is the web equivalent of those Hollywood Western sets where none of the houses on
+	main street have interiors. I may experiment with Fictional Airlines in the future for 
+	practicing web programming, but for now it's just hollow eye-candy for making videos for
+	AnswerDash.
+
+-->
+
+<html>
+
+	<head>
+
+		<title>
+			Welcome to Fictional Airlines!
+		</title>
+
+		<link href="style.css" type="text/css" rel="stylesheet" />
+		<link href="favicon.png" type="image/png" rel="shortcut icon" />
+		<meta charset="UTF-8">
+
+	</head>
+
+	<body>
+		<nav>
+			<ul>
+				<li>
+					<a href="index.html">Home</a>
+				</li>
+				<li>
+					<a href="faq.html">FAQ</a>
+				</li>
+				<li>
+					Volunteering
+				</li>
+				<li>
+					About Us
+				</li>
+				<li>
+					Fiction
+				</li>
+				<li id="searchli">
+					<form id="searchbar">
+		                <input class="search" type="text" placeholder="Search..." required>
+		                <input class="button" type="button" value="Search">
+					</form>
+				</li>
+			</ul>
+		</nav>
+		<main>
+			<header>
+			</header>
+			<div id=content>
+				<h1>
+					Welcome!
+				</h1>
+
+				<form id="flight">
+					<h2>
+						Find a flight now:
+					</h2>
+					<input type="radio">Roundtrip
+					<input type="radio">One-way
+					<input type="radio">Multi-city
+					<br>
+					<input placeholder="From">
+					<input placeholder="To">
+					<br>
+					<input placeholder="Depart date">
+					<input placeholder="Return date">
+					<br>
+					<select>
+						<option value="1adult">1 adult</option>
+					</select>
+					<select>
+						<option value="eco">Economy</option>
+					</select>
+					<input type="submit" value="Search">
+				</form>
+			</div>
+		</main>
+	</body>
+
+</html>

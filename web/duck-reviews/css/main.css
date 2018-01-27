@@ -1,0 +1,100 @@
+/* Importing Google fonts. */
+@import url("https://fonts.googleapis.com/css?family=Ubuntu+Mono:700,400");
+
+/* Default body style. */
+body {
+	/* Source: Martuchox at http://subtlepatterns.com. */
+	background-color: #000000;
+	background-image: url("../pics/bgtile.png");
+	color: #C6774C;
+	font-family: sans-serif;
+}
+
+p {
+	text-indent: 2em;
+}
+
+p, text, #ratyReview, #reviewIntro {
+	color: #C6774C;
+}
+
+.islandDiv {
+	background-color: #111B24;
+	box-shadow: 1px 1px 5px #000000;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	overflow: hidden;
+	padding: 20px;
+	width: 400px;
+}
+
+.italic {
+	color: #C6774C;
+	font-style: italic;
+}
+
+.bold {
+	color: #A78B8A;
+	font-weight: bold;
+}
+
+#ratyDiv {
+	color: #C6774C;
+}
+
+/* Styling the title. */
+#title {
+	/* Source: Aaron Burden. https://unsplash.com/aaronburden. */
+	background-image: url("../pics/titlebgtiny.png");
+	margin-left: auto;
+	margin-right: auto;
+	height: 286px;
+	width: 400px;
+}
+
+#title h1 {
+	color: #CBA1A3;
+	font-family: "Ubuntu Mono";
+	font-size: 4em;
+	font-weight: 700;
+	padding: 4em;
+	text-align: center;
+	text-shadow: 1px 1px 5px #3A3A3A;
+}
+
+/* Location info. */
+#ratyAverage {
+	color: #A78B8A;
+	display: inline;
+}
+
+#unipic {
+	float: left;
+	margin: 1em;
+}
+
+/* Form. */
+form {
+	border-color: #C6774C;
+	border-style: solid;
+	border-width: 2px;
+	margin: 10px;
+	padding: 10px;
+}
+
+/* Larger screens. */
+@media screen and (min-width: 992px) {
+	
+	.islandDiv {
+		width: 900px;
+	}
+
+	#title {
+		background-image: url("../pics/titlebg.png");
+		height: 643px;
+		width: 900px;
+	}
+
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>
+			{{page.title}}
+		</title>
+		<link rel="stylesheet" type="text/css" href="{{site.baseurl}}/css/style.css">
+		<link rel="shortcut icon" type="image/png" href="{{site.baseurl}}/img/favicon/favicon.png">
+		<link rel="stylesheet" href="{{site.baseurl}}/js/video.js/video-js.css">
+		<link rel="stylesheet" href="{{site.baseurl}}/css/video.css">
+		<script src="{{site.baseurl}}/js/jquery.js"></script>
+		<script src="{{site.baseurl}}/js/video.js/video.min.js"></script>
+		<meta name="author" content="Joel Elizaga">
+		<meta name="description" content="{{page.description}}">
+		<meta name="keywords" content="{{page.keywords}}">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+
+	<body>
+
+		<div class="background-image"></div>
+
+		{% include nav.html %}
+
+		{{content}}
+
+		{% include footer.html %}
+
+		{% include mobile-menu.html %}
+
+	</body>
+
+</html>

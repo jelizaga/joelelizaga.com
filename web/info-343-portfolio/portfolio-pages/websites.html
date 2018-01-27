@@ -1,0 +1,55 @@
+<h2>
+	<i class="fa fa-firefox"></i>
+	{{headline}}
+</h2>
+
+<div ng-repeat="website in websites">
+	<h3>
+		<a href="{{website.url}}">
+			{{website.project}}
+		</a>
+	</h3>
+	<img src="{{website.img}}" class="{{website.imgtype}}" alt="{{website.project}}" />
+	<p>
+		{{website.desc}}
+	</p>
+</div>
+
+
+<!-- HTML ALTERNATIVE:
+<h3>
+	git-started
+</h3>
+
+<img src="website-pics/git-started.png" class="fullscreen-screenshot" alt="git-started" />
+
+<h3>
+	dawg-coffee
+</h3>
+
+<img src="website-pics/dawg-coffee.png" class="fullscreen-screenshot" alt="dawg-coffee" />
+
+<h3>
+	police-shootings
+</h3>
+
+<img src="website-pics/police-shootings.png" class="fullscreen-screenshot" alt="police-shootings" />
+
+<h3>
+	crud-reviews
+</h3>
+
+<img src="website-pics/crud-reviews.png" class="fullscreen-screenshot" alt="crud-reviews" />
+
+<h3>
+	spotify-app
+</h3>
+
+<img src="website-pics/spotify.png" class="fullscreen-screenshot" alt="spotify-app" />
+
+<h3>
+	iSchool Application Portfolio
+</h3>
+
+<img src="website-pics/ischool.png" class="fullscreen-screenshot" alt="iSchool Application Portfolio" />
+-->

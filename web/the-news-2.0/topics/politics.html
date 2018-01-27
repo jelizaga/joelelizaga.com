@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<!-- 
+
+	This is a semi-functioning prototype of a news website developed for INFO 360, a design class
+	in the Informatics major at the University of Washington.
+
+	The premise of this prototype is a news outlet with de-sensationalized and un-inflammatory
+	articles algorithmically written by a contingent of bots and web-crawlers. These bots and
+	crawlers aggregate content across the webs' numerous news sites and blogs, and use the 
+	collected data to compose short, simple news articles with indisputable facts and
+	uncontestible updates. These articles are free of adjectives and appeals to emotion,
+	allowing the audience to formulate their own reactions without the visceral, click-bait
+	headlines that seek to twist their perspective for them.
+
+	The goal of such a project is to develop an informed audience who won't have to stress
+	over over-blown epidemics, disposable pseudo-news and shocking celebrity scandals. Our
+	audience won't even have to worry about the validity of what they read, as sources will
+	always be cited at the bottom of each article.
+
+	Articles & Content: Tyler Bauer, Chris Maglio
+	UX: Joel Elizaga
+
+-->
+
+<html>
+
+	<head>
+
+		<!-- Placeholder title until a name is determined. -->
+		<title>
+			The News v2.0
+		</title>
+
+		<!-- Local CSS & JavaScript. -->
+		<link href="../main.css" type="text/css" rel="stylesheet" />
+		<script src="script.js"></script>
+
+		<!-- Font Awesome. -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+		<!-- jQuery. -->
+		<script src="https://code.jquery.com/jquery.min.js"></script>
+
+	</head>
+
+	<body>
+
+		<!-- Header: Contains title, etc. -->
+		<a href="../index.html">
+			<header>
+
+				<h1>
+					The News <text id="title-version">politics</text>
+				</h1>
+				<text id="sub-title">
+				</text>
+
+			</header>
+		</a>
+
+		<!-- Main: The list of articles will populate this main content div. -->
+		<main>
+
+			<div class="sort-by">
+				<text>
+					Region:
+				</text>
+			</div>
+
+			<!-- Buttons for region selection. -->
+			<div id="region-select-background">
+				<ul id="region-select">
+					<li>
+						<a href="menus/international.html">
+							<i class="fa fa-globe"></i>
+							International
+						</a>
+					</li>
+					<li>
+						<a href="menus/national.html">
+							<i class="fa fa-university"></i>
+							National
+						</a>
+					</li>
+					<li>
+						<a href="menus/local.html">
+							<i class="fa fa-home"></i>
+							Local
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="sort-by">
+				<text>
+					Topic:
+				</text>
+			</div>
+
+			<!-- Buttons for topic selection. -->
+			<ul class="topic-select">
+				<li>
+					<a href="politics.html">
+						<div id="politics">
+							Politics
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="business.html">
+						<div id="business">
+							Business
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="health.html">
+						<div id="health">
+							Health
+						</div>
+					</a>
+				</li>
+			</ul>
+
+			<ul class="topic-select">
+				<li>
+					<a href="science.html">
+						<div id="science">
+							Science
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="technology.html">
+						<div id="technology">
+							Technology
+						</div>
+					</a>
+				<li>
+					<a href="weather.html">
+						<div id="weather">
+							Weather
+						</div>
+					</a>
+				</li>
+			</ul>
+
+			<div class="sort-by">
+				<text>
+					Search:
+				</text>
+			</div>
+
+			<div id="search-div">
+				<form>
+					<input id="search-bar" type="text" placeholder="Search...">
+					<input type="button" value="Search">
+				</form>
+			</div>
+
+			<div class="sort-by">
+				<text>
+					Articles:
+				</text>
+			</div>
+
+			<!-- Articles are sorted below. -->
+			<div id="headlines">
+
+				<div class="headline">
+					<a href="../articles/politics/prep-school-suspension.html">
+						<h2>
+							San Francisco Prep School Suspends 14 Students For Attending Race-Themed
+								Party
+						</h2>
+					</a>
+					<a href="articles/politics/prep-school-suspension.html">
+						<img class="headline-img" 
+							src="../articles/politics/politics-img/prep-school-suspension.png" 
+							alt="St. Ignatius College Preparatory" />
+					</a>
+					<text class="sub-headline">
+						posted January 29, 2016 in 
+						<a href="politics.html">
+							Politics
+						</a>
+					</text>
+				</div>
+
+				<div class="headline">
+					<a href="../articles/politics/satanic-phoenix.html">
+						<h2>
+							Satanic Group To Lead Phoenix City Council In Prayer
+						</h2>
+					</a>
+					<a href="articles/politics/satanic-phoenix.html">
+						<img class="headline-img" 
+							src="../articles/politics/politics-img/satanic-phoenix.png" 
+							alt="Phoenix, AZ" />
+					</a>
+					<text class="sub-headline">
+						posted January 29, 2016 in 
+						<a href="politics.html">
+							Politics
+						</a>
+					</text>
+				</div>
+
+			</div>
+
+
+		</main>
+
+	</body>
+
+</html>

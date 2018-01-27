@@ -1,0 +1,166 @@
+html {
+	height: 100%;
+}
+
+body {
+	background-color: #69BBFF;
+	padding: 0px;
+	margin: 0px;
+	height: 100%;
+	font-family: "Myriad Pro", sans-serif;
+	font-size: 14pt;
+	color: #0D2A39;
+}
+
+h1 {
+	text-align: center;
+	font-size: 30pt;
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+
+h2 {
+	font-size: 16pt;
+	margin-bottom: 5px;
+}
+
+p {
+	margin: 0px;
+	text-indent: 20pt;
+}
+
+#results a {
+	color: #FFBC00;
+}
+
+#results {
+	list-style: none;
+}
+
+#results li {
+	margin-bottom: 15pt;
+}
+
+nav a {
+	color: #FFBC00;
+	transition: text-shadow 1s;
+	transition: color 1s;
+	text-decoration: none;
+}
+
+nav a:hover {
+	color: #FFE600;
+	text-shadow: none;
+}
+
+nav {
+	background-color: #FFFFFF;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	width: 100%;
+	padding: 15px;
+	border-bottom: 3px solid #cecece;
+}
+
+nav ul {
+	list-style: none;
+	font-size: 20pt;
+	font-weight: bold;
+	color: #FFBC00;
+	padding-left: 15px;
+	margin: 0px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+nav li {
+	display: inline;
+	padding-left: 16px;
+	transition: text-shadow 1s;
+	transition: color 1s
+}
+
+nav li:hover {
+	color: #FFE600;
+	text-shadow: none;
+}
+
+main {
+	background-color: #69BBFF;
+	margin: 0px;
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 100px;
+}
+
+header {
+	background-image: url("logo.png");
+	height: 600px;
+}
+
+#content {
+	padding: 30px;
+	background-color: #FFFFFF;
+	box-shadow: -3px 4px 0px #278ABE;
+}
+
+#searchbar {
+    width:500px;
+    display: inline;
+}
+
+#flight {
+	margin-left: auto;
+	margin-right: auto;
+	width: 70%;
+	font-size: 10pt;
+}
+
+#flight input {
+	margin-bottom: 15px;
+	margin-right: 10px;
+}
+
+#flight select {
+	margin-right: 15px;
+}
+
+.search {
+    padding: 6px 15px;
+    background:rgba(50, 50, 50, 0.1);
+    border:0px solid #dbdbdb;
+}
+
+.button {
+    position: relative;
+    padding: 5px 15px;
+    left: -8px;
+    background-color: #FFBC00;
+    color: #FFFFFF;
+    border: none;
+    font-family: "Myriad Pro", sans-serif;
+    font-weight: bold;
+}
+
+.button:hover  {
+    background-color: #FF9000;
+    color: #FFFFFF;
+}
+
+#searchli {
+	padding-left: 300px;
+}
+
+.mono {
+	font-family: 'Ubuntu Mono', monospace;
+	font-size: 13pt;
+}
+
+textarea {
+	margin-top: 15pt;
+	width: 650px;
+	height: 400px;
+} 

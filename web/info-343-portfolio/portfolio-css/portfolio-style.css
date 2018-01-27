@@ -1,0 +1,227 @@
+/* SMALLEST SCREENS: */	
+
+	/* FONT-AWESOME.CSS */
+
+		@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
+
+	/* FONTS: */
+
+		/* Fonts from Google's font API. */
+		@import url("https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic,700italic");
+
+
+	/* BODY: */
+
+		body {
+			background-color: #000000;
+			background-image: url("../pics/blue-bg.gif");
+			font-family: "Ubuntu Mono", monospace;
+			font-size: 2em;
+		}
+
+		h1, h2, h3 {
+			font-family: "Ubuntu Mono", monospace;
+			font-weight: 700;
+			text-align: center;
+		}
+
+		img {
+			display: inherit;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		#main {
+			background-color: #44A5FF;
+			box-shadow: 2px 2px 4px #000000;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 30px;
+			margin-bottom: 30px;
+			padding: 20px;
+			width: 80%;
+		}
+
+		#content {
+			background-color: #FFFFFF;
+			margin: 0px;
+			padding: 20px;
+		}
+
+	/* HEADER: */
+
+		header {
+			text-align: center;
+		}
+
+	/* NAVIGATION BAR: */
+
+		#navigation {
+			padding: 0px;
+		}
+
+		#navigation li {
+			list-style-type: none;
+			padding: 1em;
+		}
+
+	/* PORTFOLIO: */
+
+		#portfolio {
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+	/* IMAGES: */
+
+		.widescreen-screenshot {
+			display: none;
+		}
+
+		.fullscreen-screenshot {
+			display: none;
+		}
+
+		#portrait {
+			display: none;
+		}
+
+	/* FOOTER: */
+
+		footer {
+			font-size: 15px;
+			text-align: center;
+		}
+
+/* SMALL SCREENS: */
+
+	@media screen and (min-width: 500px) {
+
+		/* BODY: */
+
+			#main {
+				margin-top: 50px;
+			}
+
+		/* NAVIGATION BAR: */
+
+			#navigation li {
+				display: inline;
+				padding: 2em;
+			}
+
+		/* IMAGES: */
+
+			.widescreen-screenshot {
+				box-shadow: 0px 0px 4px #000000;
+				display: inherit;
+				height: 166px;
+				width: 300px;
+				margin-top: 10px;
+				margin-bottom: 10px;
+			}
+
+			.fullscreen-screenshot {
+				box-shadow: 0px 0px 4px #000000;
+				display: inherit;
+				height: 223px;
+				width: 300px;
+				margin-top: 10px;
+				margin-bottom: 10px;
+			}
+
+			#portrait {
+				box-shadow: 0px 0px 4px #000000;
+				display: inherit;
+				margin-top: 20px;
+				margin-bottom: 20px;
+			}
+
+	}
+
+/* KIND OF SMALL SCREENS: */
+
+	@media screen and (min-width: 600px) {
+
+		/* IMAGES: */
+
+			.widescreen-screenshot {
+				height: 221px;
+				width: 400px;
+				margin-top: 20px;
+				margin-bottom: 20px;
+			}
+
+			.fullscreen-screenshot {
+				height: 297px;
+				width: 400px;
+				margin-top: 20px;
+				margin-bottom: 20px;
+			}
+
+	}
+
+/* ALMOST MEDIUM SCREENS: */
+
+	@media screen and (min-width: 750px) {
+		
+		/* IMAGES: */
+
+			.widescreen-screenshot {
+				height: 287px;
+				width: 520px;
+			}
+
+			.fullscreen-screenshot {
+				height: 386px;
+				width: 520px;
+			}
+
+	}
+
+
+/* MEDIUM SCREENS: */
+	
+	@media screen and (min-width: 992px) {
+
+		/* BODY: */
+
+			#main {
+				padding: 30px;
+			}
+
+			#content {
+				padding: 30px;
+			}
+
+		/* IMAGES: */
+
+			.widescreen-screenshot {
+				height: 359px;
+				width: 650px;
+			}
+
+			.fullscreen-screenshot {
+				height: 483px;
+				width: 650px;
+			}
+
+	}
+
+/* LARGE SCREENS: */
+
+	@media screen and (min-width: 1200px) {
+
+		/* IMAGES: */
+
+			.widescreen-screenshot {
+				height: 398px;
+				width: 720px;
+			}
+
+			.fullscreen-screenshot {
+				height: 535px;
+				width: 720px;
+			}
+
+	}

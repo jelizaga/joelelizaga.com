@@ -1,0 +1,226 @@
+/* Importing bootstrap.css and awesome font from bootstrap. */
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css");
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
+/* Importing fonts from Google. */
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,300");
+@import url("https://fonts.googleapis.com/css?family=Lato:400,300,300italic");
+
+/* TINY DEVICES+. */
+/* Body defaults. */
+body {
+	background-color: #E9EAEE;
+	font-family: "Lato", "Helvetica-Neue", Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Raleway", "Helvetica-Neue", Helvetica, sans-serif;
+}
+
+h2 {
+	color: #BC6026;
+}
+
+#cafe, #story {
+	background-color: #DBDCE3;
+}
+
+svg {
+	height: 1.5em;
+}
+
+/* Navigation bar styling. */
+nav {
+	background-color: #181C22;
+	display: block;
+	font-size: 16px;
+	padding-top: 0.5em;
+	position: fixed;
+	width: 100%;
+	z-index: 5;
+}
+
+nav li {
+	display: inline;
+}
+
+nav ul {
+	margin-left: 15px;
+}
+
+nav a {
+	color: white;
+	fill: white;
+	font-variant: small-caps;
+	padding: 0.5em;
+	text-decoration: none;
+}
+
+nav a:hover {
+	color: #D87E28;
+	fill: #D87E28;
+	text-decoration: none;
+}
+
+nav svg {
+	height: 1em;
+}
+
+/* Header; "Dawg Coffee; Caffeinating Sleepy Huskies," etc. */
+#header {
+	padding-top: 3em;
+}
+
+#motto {
+	display: none;
+}
+
+/* Headline; "Exquisite drinks," etc. */
+#headline {
+	font-style: italic;
+}
+
+#headline svg {
+	display: none;
+}
+
+/* Cafe information section. */
+#cafe {
+	fill: #D87E28;
+	padding: 1em;
+	text-align: center;
+}
+
+#cafe img {
+	border-radius: 5px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#cafe li {
+	list-style-type: none;
+}
+
+/* Menu. */
+#menu dd {
+	font-style: italic;
+	margin-left: 1em;
+}
+
+#menu h1 {
+	text-align: center;
+}
+
+/* Story. */
+#story img {
+	border-radius: 5px;
+	float: right;
+	/* Added a bottom margin because it was slammed against the footer. I didn't have enough 
+	text. */
+	margin-bottom: 1em;
+	margin-left: 1em;
+	max-height: 300px;
+}
+
+/* Footer. */
+footer {
+	background-color: #AFB3C2;
+	border-top-color: #D87E28;
+	border-top-style: solid;
+	border-top-width: 3px;
+	clear: both;
+	font-size: 12px;
+	padding-top: 1em;
+}
+
+/* SMALL DEVICES+. */
+@media screen and (min-width: 768px) {
+
+	/* Body defaults. */
+	body {
+		font-size: 20px;
+	}
+
+	h2 {
+		margin-bottom: 1em;
+		text-align: center;
+	}
+
+	/* Navigation bar styling. */
+	nav {
+		background-color: rgba(24, 28, 34, 0.8);
+	}
+
+	nav a {
+		padding-bottom: 0.5em;
+		padding-top: 1em;
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+
+	/* Header; "Dawg Coffee; Caffeinating Sleepy Huskies," etc. */
+	#header {
+		background-image: url("../img/background-sm.jpg");
+		background-repeat: no-repeat;
+		color: white;
+		min-height: 550px;
+		text-align: right;
+	}
+
+	#motto {
+		display: block;
+	}
+
+	/* Headline; "Exquisite drinks," etc. */
+	#headline {
+		font-size: 1.25em;
+		margin-top: 3em;
+		margin-bottom: 3em;
+		text-align: center;
+	}
+
+	#headline svg {
+		display: block;
+		fill: #D87E28;
+		margin-bottom: 1em;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	/* Story. */
+	#story img {
+		max-height: 400px;
+	}
+
+	/* Footer. */
+	#icons {
+		text-align: right;
+	}
+
+}
+
+/* MEDIUM DEVICES+. */
+@media screen and (min-width: 992px) {
+	
+	/* Body defaults. */
+	h1 {
+		font-size: 4em;
+	}
+
+	/* Header; "Dawg Coffee; Caffeinating Sleepy Huskies," etc. */
+	#header {
+		background-image: url("../img/background-md.jpg");
+	}
+
+}
+
+/* LARGE DEVICES+. */
+@media screen and (min-width: 1200px) {
+
+	/* Header; "Dawg Coffee; Caffeinating Sleepy Huskies," etc. */
+	#header {
+		background-image: url("../img/background-lg.jpg");
+	}
+
+}
