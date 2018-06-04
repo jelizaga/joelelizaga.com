@@ -23,28 +23,28 @@ $(document).ready(function() {
 		cvmCarousel = setInterval(function() {
 			switch(cvmi) {
 				case 1:
-					document.getElementById("cvm-img").src = "../img/other/cvm/cvm-1.png";
-					$(".background-image").css("background-image", "url(../img/other/cvm/cvm-1.png")
+					document.getElementById("cvm-img").src = "../img/other/cvm/cvm-1.jpg";
+					$(".background-image").css("background-image", "url(../img/other/cvm/cvm-1.jpg")
 					cvmi++;
 					break;
 				case 2:
-					document.getElementById("cvm-img").src = "../img/other/cvm/cvm-2.png";
-					$(".background-image").css("background-image", "url(../img/other/cvm/cvm-2.png")
+					document.getElementById("cvm-img").src = "../img/other/cvm/cvm-2.jpg";
+					$(".background-image").css("background-image", "url(../img/other/cvm/cvm-2.jpg")
 					cvmi++;
 					break;
 				case 3:
-					document.getElementById("cvm-img").src = "../img/other/cvm/cvm-3.png";
-					$(".background-image").css("background-image", "url(../img/other/cvm/cvm-3.png")
+					document.getElementById("cvm-img").src = "../img/other/cvm/cvm-3.jpg";
+					$(".background-image").css("background-image", "url(../img/other/cvm/cvm-3.jpg")
 					cvmi++;
 					break;
 				case 4:
-					document.getElementById("cvm-img").src = "../img/other/cvm/cvm-4.png";
-					$(".background-image").css("background-image", "url(../img/other/cvm/cvm-4.png")
+					document.getElementById("cvm-img").src = "../img/other/cvm/cvm-4.jpg";
+					$(".background-image").css("background-image", "url(../img/other/cvm/cvm-4.jpg")
 					cvmi++;
 					break;
 				case 5:
-					document.getElementById("cvm-img").src = "../img/other/cvm/cvm-5.png";
-					$(".background-image").css("background-image", "url(../img/other/cvm/cvm-5.png")
+					document.getElementById("cvm-img").src = "../img/other/cvm/cvm-5.jpg";
+					$(".background-image").css("background-image", "url(../img/other/cvm/cvm-5.jpg")
 					cvmi = 1;
 					break;
 			}
@@ -67,23 +67,23 @@ $(document).ready(function() {
 		torvaldsCarousel = setInterval(function() {
 			switch(torvaldsi) {
 				case 1:
-					document.getElementById("torvalds-img").src = "../img/other/torvalds/torvalds-1.png";
+					document.getElementById("torvalds-img").src = "../img/other/torvalds/torvalds-1.jpg";
 					torvaldsi++;
 					break;
 				case 2:
-					document.getElementById("torvalds-img").src = "../img/other/torvalds/torvalds-2.png";
+					document.getElementById("torvalds-img").src = "../img/other/torvalds/torvalds-2.jpg";
 					torvaldsi++;
 					break;
 				case 3:
-					document.getElementById("torvalds-img").src = "../img/other/torvalds/torvalds-3.png";
+					document.getElementById("torvalds-img").src = "../img/other/torvalds/torvalds-3.jpg";
 					torvaldsi++;
 					break;
 				case 4:
-					document.getElementById("torvalds-img").src = "../img/other/torvalds/torvalds-4.png";
+					document.getElementById("torvalds-img").src = "../img/other/torvalds/torvalds-4.jpg";
 					torvaldsi++;
 					break;
 				case 5:
-					document.getElementById("torvalds-img").src = "../img/other/torvalds/torvalds-5.png";
+					document.getElementById("torvalds-img").src = "../img/other/torvalds/torvalds-5.jpg";
 					torvaldsi = 1;
 					break;
 			}
