@@ -1,6 +1,6 @@
 # joelelizaga.com
 
-The source of my personal web site, pre-jekyll compilation. Nothing too interesting.
+The source of my personal web site, pre-`jekyll` compilation. Nothing too interesting.
 
 ## Dependencies
 
@@ -16,7 +16,7 @@ echo 'export PATH=$HOME/gems/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc
 gem install jekyll bundler`
 
-
+I'm assuming you have `gcc` and `make`. ( ͡° ͜ʖ ͡°)
 
 ## Initialization
 
