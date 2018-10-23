@@ -19,7 +19,7 @@ url: "joelelizaga.com"
 
 # Build settings
 markdown: kramdown
-gems:
+plugins:
   - jekyll-feed
 exclude:
   - Gemfile
