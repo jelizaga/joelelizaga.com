@@ -24,3 +24,7 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
+# Collections of content.
+collections:
+  videography:
+    output: true
