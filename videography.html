@@ -1,0 +1,214 @@
+---
+layout: page
+title: Videography
+description: Joel Elizaga's videography.
+keywords: joel elizaga movies film cinema videos
+---
+
+<script src="{{site.baseurl}}/js/vid-carousels.js"></script>
+
+{% assign videos = site.videography | sort: 'order', 'first' %}
+{% for video in videos %}
+
+	<div class="tile">
+		<a class="tile-link" href="{{video.url}}">
+			<div class="tile-head">
+				<h2>
+					{{video.title}}
+				</h2>
+				<p>
+					{{video.published}}
+				</p>
+			</div>
+			<img id="{{video.mini}}-img" class="tile-img" 
+				src="{{site.baseurl}}/img/vid/{{video.mini}}/{{video.mini}}-1.jpg" 
+				alt="{{video.url}}">
+		</a>
+	</div>
+
+{% endfor %}
+
+<!--
+<div class="tile">
+	<a class="tile-link" href="{{site.baseurl}}/videos/informatics-capstone-pitch-2.html">
+		<div class="tile-head">
+			<h2>
+				Informatics Capstone Pitch #2
+			</h2>
+			<p>
+				Spring 2017
+			</p>
+		</div>
+		<img id="tt-img" class="tile-img" 
+			src="{{site.baseurl}}/img/vid/tt/tt-1.jpg" 
+			alt="Informatics Capstone Pitch #2">
+	</a>
+</div>
+
+<div class="tile">
+	<a class="tile-link" href="{{site.baseurl}}/vid/informatics-capstone-pitch-1.html">
+		<div class="tile-head">
+			<h2>
+				Informatics Capstone Pitch #1
+			</h2>
+			<p>
+				Winter 2017
+			</p>
+		</div>
+		<img id="momento-img" class="tile-img" 
+			src="{{site.baseurl}}/img/vid/momento/momento-1.jpg" 
+			alt="Informatics Capstone Pitch #1">
+	</a>
+</div>
+
+
+<div class="tile">
+	<a class="tile-link" href="{{site.baseurl}}/vid/answerdash-explainer.html">
+		<div class="tile-head">
+			<h2>
+				AnswerDash Explainer
+			</h2>
+			<p>
+				Winter 2017
+			</p>
+		</div>
+		<img id="ad-ad-img" class="tile-img" src="{{site.baseurl}}/img/vid/ad-ad/ad-ad-1.jpg"
+			alt="AnswerDash - AnswerDash Explainer">
+	</a>
+</div>
+
+<div class="tile">
+	<a class="tile-link" href="{{site.baseurl}}/vid/answerdash-answerbot-explainer.html">
+		<div class="tile-head">
+			<h2>
+				AnswerDash: AnswerBot Explainer
+			</h2>
+			<p>
+				Autumn 2016
+			</p>
+		</div>
+		<img id="ad-ab-img" class="tile-img" src="{{site.baseurl}}/img/vid/ad-ab/ad-ab-2.jpg" 
+			alt="AnswerDash - AnswerBot Explainer">
+	</a>
+</div>
+
+<div class="tile">
+	<a class="tile-link" href="{{site.baseurl}}/vid/answerdash-persona.html">
+		<div class="tile-head">
+			<h2>
+				AnswerDash - For the Users
+			</h2>
+			<p>
+				Summer 2016
+			</p>
+		</div>
+		<img id="ad-t-img" class="tile-img" src="{{site.baseurl}}/img/vid/ad-t/ad-t-1.jpg"
+			alt="AnswerDash - User Persona">
+	</a>
+</div>
+
+<div class="tile">
+	<a class="tile-link" href="{{site.baseurl}}/vid/meet-the-answerdash-team.html">
+		<div class="tile-head">
+			<h2>
+				Meet the AnswerDash Team
+			</h2>
+			<p>
+				Summer 2016
+			</p>
+		</div>
+		<img id="ad-c-img" class="tile-img" src="{{site.baseurl}}/img/vid/ad-c/ad-c-1.jpg"
+			alt="AnswerDash - Meet the AnswerDash Team">
+	</a>
+</div>
+
+<div class="tile">
+	<a class="tile-link" href="{{site.baseurl}}/vid/info-470-research-project.html">
+		<div class="tile-head">
+			<h2>
+				INFO 470 - The Research Project
+			</h2>
+			<p>
+				Autumn 2016
+			</p>
+		</div>
+		<img id="info-470-img" class="tile-img" src="{{site.baseurl}}/img/vid/info-470/info-470-1.jpg" 
+			alt="INFO 470 - The Research Project">
+	</a>
+</div>
+
+<div class="tile">
+	<a class="tile-link" href="{{site.baseurl}}/vid/theos-video-resume.html">
+		<div class="tile-head">
+			<h2>
+				Theo Punga's Video Resume
+			</h2>
+			<p>
+				Summer 2016
+			</p>
+		</div>
+		<img id="theo-img" class="tile-img" src="{{site.baseurl}}/img/vid/theo/theo-1.jpg"
+			alt="Theo's Video Resume">
+	</a>
+</div>
+
+<div class="tile">
+	<a class="tile-link" href="{{site.baseurl}}/vid/the-battle-of-marathon.html">
+		<div class="tile-head">
+			<h2>
+				The Battle of Marathon
+			</h2>
+			<p>
+				Winter 2015
+			</p>
+		</div>
+		<img id="tbm-img" class="tile-img" src="{{site.baseurl}}/img/vid/tbm/tbm-6.jpg"
+			alt="The Battle of Marathon">
+	</a>
+</div>
+
+<div class="tile">
+	<a href="{{site.baseurl}}/vid/third-parent.html">
+		<div class="tile-head">
+			<h2>
+				Third Parent
+			</h2>
+			<p>
+				Winter 2014
+			</p>
+		</div>
+		<img id="tp-img" class="tile-img" src="{{site.baseurl}}/img/vid/tp/tp-1.jpg"
+			alt="Third Parent">
+	</a>
+</div>
+
+<div class="tile">
+	<a href="{{site.baseurl}}/vid/chinese-new-year.html">
+		<div class="tile-head">
+			<h2>
+				Chinese New Year Animation
+			</h2>
+			<p>
+				Winter 2014
+			</p>
+		</div>
+		<img id="cny-img" class="tile-img" src="{{site.baseurl}}/img/vid/cny/cny-1.jpg"
+			alt="Chinese New Year">
+	</a>
+</div>
+
+<div class="tile">
+	<a href="{{site.baseurl}}/vid/hippo.html">
+		<div class="tile-head">
+			<h2>
+				Hippo
+			</h2>
+			<p>
+				Autumn 2014
+			</p>
+		</div>
+		<img id="hippo-img" class="tile-img" src="{{site.baseurl}}/img/vid/hippo/hippo-1.jpg"
+			alt="Hippo">
+	</a>
+</div>
+-->
