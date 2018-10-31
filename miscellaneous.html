@@ -1,0 +1,28 @@
+---
+layout: page
+title: Miscellaneous Projects
+description: Other various projects of Joel Elizaga.
+---
+
+<script src="{{site.baseurl}}/js/other-carousels.js"></script>
+{% assign others = site.miscellaneous | sort: 'order' | reverse %}
+
+{% for other in others %}
+
+	<div class="tile">
+		<a class="tile-link" href="{{other.url}}">
+			<div class="tile-head">
+				<h2>
+					{{other.title}}
+				</h2>
+				<p>
+					{{other.published}}
+				</p>
+			</div>
+			<img id="{{other.mini}}-img" class="tile-img" 
+				src="{{site.baseurl}}/img/other/{{other.mini}}/{{other.mini}}-1.jpg" 
+				alt="{{other.url}}">
+		</a>
+	</div>
+
+{% endfor %}
