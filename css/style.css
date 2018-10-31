@@ -238,16 +238,18 @@
 			left: 0;
 			bottom: -54px;
 			width: 100%;
+			opacity: 0;
 			padding: 0px;
-			transition: bottom 0.5s ease;
+			transition: bottom 0.5s ease, opacity 0.5s ease;
 		}
 
 		.tile:hover .tile-footer {
 			bottom: 0;
+			opacity: 1;
 		}
 
 		.tile-footer p {
-			padding: 20px;
+			padding: 10px;
 			margin: 0px;
 		}
 
@@ -730,16 +732,18 @@
 				position: absolute;
 				z-index: 1000;
 				left: 0;
-				bottom: -36px;
+				bottom: -52px;
 				width: 100%;
+				opacity: 0;
 				padding: 0px;
 				border-bottom-right-radius: 20px;
 				border-bottom-left-radius: 20px;
-				transition: bottom 0.5s ease;
+				transition: bottom 0.5s ease, opacity 0.5s ease;
 			}
 
 			.tile:hover .tile-footer {
 				bottom: 0;
+				opacity: 1;
 			}
 
 			.tile-footer p {
@@ -1161,13 +1165,15 @@
 				bottom: -59px;
 				width: 100%;
 				padding: 0px;
+				opacity: 0;
 				border-bottom-right-radius: 20px;
 				border-bottom-left-radius: 20px;
-				transition: bottom 0.5s ease;
+				transition: bottom 0.5s ease, opacity 0.5s ease;
 			}
 
 			.tile:hover .tile-footer {
 				bottom: 0;
+				opacity: 1;
 			}
 
 			.tile-footer p {
@@ -1569,14 +1575,16 @@
 				left: 0;
 				bottom: -61px;
 				width: 100%;
+				opacity: 0;
 				padding: 0px;
 				border-bottom-right-radius: 20px;
 				border-bottom-left-radius: 20px;
-				transition: bottom 0.5s ease;
+				transition: bottom 0.5s ease, opacity 0.5s ease;
 			}
 
 			.tile:hover .tile-footer {
 				bottom: 0;
+				opacity: 1;
 			}
 
 			.tile-footer p {
@@ -1982,14 +1990,16 @@
 				left: 0;
 				bottom: -61px;
 				width: 100%;
+				opacity: 0;
 				padding: 0px;
 				border-bottom-right-radius: 20px;
 				border-bottom-left-radius: 20px;
-				transition: bottom 0.5s ease;
+				transition: bottom 0.5s ease, opacity 0.5s ease;
 			}
 
 			.tile:hover .tile-footer {
 				bottom: 0;
+				opacity: 1;
 			}
 
 			.tile-footer p {
@@ -2347,6 +2357,7 @@
 
 			.tile:hover .tile-footer {
 				bottom: 0;
+				opacity: 1;
 			}
 
 			.tile-img {
@@ -2395,10 +2406,11 @@
 				left: 0;
 				bottom: -61px;
 				width: 100%;
+				opacity: 0;
 				padding: 0px;
 				border-bottom-right-radius: 20px;
 				border-bottom-left-radius: 20px;
-				transition: bottom 0.5s ease;
+				transition: bottom 0.5s ease, opacity 0.5s ease;
 			}
 
 			.tile-footer p {
@@ -2766,10 +2778,11 @@
 				left: 0;
 				bottom: -61px;
 				width: 100%;
+				opacity: 0;
 				padding: 0px;
 				border-bottom-right-radius: 20px;
 				border-bottom-left-radius: 20px;
-				transition: bottom 0.5s ease;
+				transition: bottom 0.5s ease, opacity 0.5s ease;
 			}
 
 			.tile-footer p {
@@ -2793,6 +2806,7 @@
 
 			.tile:hover .tile-footer {
 				bottom: 0;
+				opacity: 1;
 			}
 
 
