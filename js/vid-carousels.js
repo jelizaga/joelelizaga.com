@@ -12,6 +12,90 @@
 $(document).ready(function() {
 
 	///////////////////////////////////////////////////////////////////////////////////////////////
+	// GENONE CAROUSEL ////////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////////////////////////
+
+	var gen1Carousel;
+	var gen1i = 1;
+
+	$("#nccc-gen-one-img").mouseover(function() {
+		gen1Carousel = setInterval(function() {
+			switch(gen1i) {
+				case 1:
+					document.getElementById("nccc-gen-one-img").src = "../img/vid/nccc-gen-one/nccc-gen-one-1.jpg";
+					gen1i++;
+					break;
+				case 2:
+					document.getElementById("nccc-gen-one-img").src = "../img/vid/nccc-gen-one/nccc-gen-one-2.jpg";
+					gen1i++;
+					break;
+				case 3:
+					document.getElementById("nccc-gen-one-img").src = "../img/vid/nccc-gen-one/nccc-gen-one-3.jpg";
+					gen1i++;
+					break;
+				case 4:
+					document.getElementById("nccc-gen-one-img").src = "../img/vid/nccc-gen-one/nccc-gen-one-4.jpg";
+					gen1i++;
+					break;
+				case 5:
+					document.getElementById("nccc-gen-one-img").src = "../img/vid/nccc-gen-one/nccc-gen-one-5.jpg";
+					gen1i = 1;
+					break;
+			}
+		}, 1000);
+	});
+
+	$("#nccc-gen-one-img").mouseleave(function() {
+		clearInterval(gen1Carousel);
+	});
+
+	///////////////////////////////////////////////////////////////////////////////////////////////
+	// SDMB CAROUSEL //////////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////////////////////////
+
+	var sdmbCarousel;
+	var sdmbi = 1;
+
+	$("#nccc-sdmb-img").mouseover(function() {
+		sdmbCarousel = setInterval(function() {
+			switch(sdmbi) {
+				case 1:
+					document.getElementById("nccc-sdmb-img").src = "../img/vid/nccc-sdmb/nccc-sdmb-1.jpg";
+					sdmbi++;
+					break;
+				case 2:
+					document.getElementById("nccc-sdmb-img").src = "../img/vid/nccc-sdmb/nccc-sdmb-2.jpg";
+					sdmbi++;
+					break;
+				case 3:
+					document.getElementById("nccc-sdmb-img").src = "../img/vid/nccc-sdmb/nccc-sdmb-3.jpg";
+					sdmbi++;
+					break;
+				case 4:
+					document.getElementById("nccc-sdmb-img").src = "../img/vid/nccc-sdmb/nccc-sdmb-4.jpg";
+					sdmbi++;
+					break;
+				case 5:
+					document.getElementById("nccc-sdmb-img").src = "../img/vid/nccc-sdmb/nccc-sdmb-5.jpg";
+					sdmbi++;
+					break;
+				case 6:
+					document.getElementById("nccc-sdmb-img").src = "../img/vid/nccc-sdmb/nccc-sdmb-6.jpg";
+					sdmbi++;
+					break;
+				case 7:
+					document.getElementById("nccc-sdmb-img").src = "../img/vid/nccc-sdmb/nccc-sdmb-7.jpg";
+					sdmbi = 1;
+					break;
+			}
+		}, 1000);
+	});
+
+	$("#nccc-sdmb-img").mouseleave(function() {
+		clearInterval(sdmbCarousel);
+	});
+
+	///////////////////////////////////////////////////////////////////////////////////////////////
 	// TELLTOO CAROUSEL ///////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////////////////////////
 
