@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 -146 1008 1008">
+  <g transform="matrix(1 0 0 -1 0 864)">
+   <path fill="currentColor" d="M250 309h504v403h-504v-403zM502 108h202v50h-202v-50zM201 864h605h-1c28 0 52 -10 72 -30s30 -44 30 -72v-756c0 -14 -5 -26 -15 -36s-22 -15 -36 -15v-101h-706v101c-14 0 -26 5 -36 15s-15 22 -15 36v756c0 28 10 52 30 72s44 30 72 30z"/>
+  </g>
+</svg>

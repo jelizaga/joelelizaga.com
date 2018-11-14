@@ -74,32 +74,6 @@ $(document).ready(function() {
 	var fadeinOther;
 	var fadeoutOther;
 
-/*
-	var educationc = document.getElementById("educationc");
-	var educationctx = educationc.getContext("2d");
-	var educationimg = document.createElement("img");
-	educationimg.src = "../img/nav/education-inactive.png";
-	var educationimga = document.createElement("img");
-	educationimga.src = "../img/nav/education-active.png";
-	var educationframe = 1;
-	var fadeinEducation;
-	var fadeoutEducation;
-	console.log("   Education button complete.");
-*/
-
-/*
-	var aboutc = document.getElementById("aboutc");
-	var aboutctx = aboutc.getContext("2d");
-	var aboutimg = document.createElement("img");
-	aboutimg.src = "../img/nav/about-inactive.png";
-	var aboutimga = document.createElement("img");
-	aboutimga.src = "../img/nav/about-active.png";
-	var aboutframe = 1;
-	var fadeinAbout;
-	var fadeoutAbout;
-	console.log("   About button complete.");
-*/
-
 	///////////////////////////////////////////////////////////////////////////////////////////////
 	// DRAWING NAV ////////////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////////////////////////
@@ -187,42 +161,6 @@ $(document).ready(function() {
 		otherctx.closePath();
 		otherctx.restore();
 	}
-
-/*
-	educationimg.onload = function() {
-		console.log("Drawing education button.");
-		educationctx.save();
-		educationctx.shadowColor = "#444"
-		educationctx.shadowBlur = 3;
-		educationctx.shadowOffsetX = 2;
-		educationctx.shadowOffsetY = 3;
-		educationctx.drawImage(educationimg, 0, 0);
-		educationctx.beginPath();
-		educationctx.arc(0, 0, 40, 0, Math.PI * 2, true);
-		educationctx.clip();
-		educationctx.closePath();
-		educationctx.restore();
-		console.log("   Done.");
-	}
-*/
-
-/*
-	aboutimg.onload = function() {
-		console.log("Drawing about button.");
-		aboutctx.save();
-		aboutctx.shadowColor = "#444"
-		aboutctx.shadowBlur = 3;
-		aboutctx.shadowOffsetX = 2;
-		aboutctx.shadowOffsetY = 3;
-		aboutctx.drawImage(aboutimg, 0, 0);
-		aboutctx.beginPath();
-		aboutctx.arc(0, 0, 40, 0, Math.PI * 2, true);
-		aboutctx.clip();
-		aboutctx.closePath();
-		aboutctx.restore();
-		console.log("   Done.");
-	}
-*/
 
 	///////////////////////////////////////////////////////////////////////////////////////////////
 	// MOUSEOVER ANIMATIONS ///////////////////////////////////////////////////////////////////////
@@ -504,60 +442,6 @@ $(document).ready(function() {
 		}, 30);
 	});
 
-/*
-	$("#educationc").mouseover(function() {
-		clearInterval(fadeoutEducation);
-		fadeinEducation = setInterval(function() {
-			if (educationframe == 20) {
-				educationctx.clearRect(0, 0, educationc.width, educationc.height);
-				educationctx.save();
-				educationctx.shadowColor = "#444"
-				educationctx.shadowBlur = 3;
-				educationctx.shadowOffsetX = 2;
-				educationctx.shadowOffsetY = 3;
-				educationctx.drawImage(educationimga, 0, 0);
-				educationctx.beginPath();
-				educationctx.arc(0, 0, 40, 0, Math.PI * 2, true);
-				educationctx.clip();
-				educationctx.closePath();
-				educationctx.restore();
-				clearInterval(fadeinEducation);
-			} else {
-				educationctx.clearRect(0, 0, educationc.width, educationc.height);
-				educationctx.save();
-				educationctx.shadowColor = "#444"
-				educationctx.shadowBlur = 3;
-				educationctx.shadowOffsetX = 2;
-				educationctx.shadowOffsetY = 3;
-				educationctx.drawImage(educationimg, 0, 0);
-				educationctx.beginPath();
-				educationctx.arc(0, 0, 40, 0, Math.PI * 2, true);
-				educationctx.clip();
-				educationctx.closePath();
-				educationctx.restore();
-				educationctx.save();
-				educationctx.globalAlpha = (1/ 20) * educationframe;
-				educationctx.shadowBlur = 3;
-				educationctx.shadowOffsetX = 2;
-				educationctx.shadowOffsetY = 3;
-				educationctx.drawImage(educationimga, 0, 0);
-				educationctx.beginPath();
-				educationctx.arc(0, 0, 40, 0, Math.PI * 2, true);
-				educationctx.clip();
-				educationctx.closePath();
-				educationctx.restore();
-				educationframe++;
-			}
-		}, 30);
-	});
-*/
-
-/*
-	$("#aboutc").mouseover(function() {
-		console.log("Mouseover: About.");
-		aboutctx.clearRect(0, 0, aboutc.width, aboutc.height);
-	});
-*/
 	///////////////////////////////////////////////////////////////////////////////////////////////
 	// MOUSELEAVE ANIMATIONS //////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////////////////////////
@@ -835,57 +719,5 @@ $(document).ready(function() {
 			}
 		}, 30);
 	});
-
-/*
-	$("#educationc").mouseleave(function() {
-		clearInterval(fadeinEducation);
-		fadeoutEducation = setInterval(function() {
-			if (educationframe == 1) {
-				educationctx.clearRect(0, 0, educationc.width, educationc.height);
-				educationctx.save();
-				educationctx.shadowColor = "#444"
-				educationctx.shadowBlur = 3;
-				educationctx.shadowOffsetX = 2;
-				educationctx.shadowOffsetY = 3;
-				educationctx.drawImage(educationimg, 0, 0);
-				educationctx.beginPath();
-				educationctx.arc(0, 0, 40, 0, Math.PI * 2, true);
-				educationctx.clip();
-				educationctx.closePath();
-				educationctx.restore();
-				clearInterval(fadeoutEducation);
-			} else {
-				educationctx.clearRect(0, 0, educationc.width, educationc.height);
-				educationctx.save();
-				educationctx.shadowColor = "#444"
-				educationctx.shadowBlur = 3;
-				educationctx.shadowOffsetX = 2;
-				educationctx.shadowOffsetY = 3;
-				educationctx.drawImage(educationimg, 0, 0);
-				educationctx.beginPath();
-				educationctx.arc(0, 0, 40, 0, Math.PI * 2, true);
-				educationctx.clip();
-				educationctx.closePath();
-				educationctx.restore();
-				educationctx.save();
-				educationctx.globalAlpha = (1 / 20) * educationframe;
-				educationctx.shadowBlur = 3;
-				educationctx.shadowOffsetX = 2;
-				educationctx.shadowOffsetY = 3;
-				educationctx.drawImage(educationimga, 0, 0);
-				educationctx.beginPath();
-				educationctx.arc(0, 0, 40, 0, Math.PI * 2, true);
-				educationctx.clip();
-				educationctx.closePath();
-				educationctx.restore();
-				educationframe--;
-			}
-		}, 30);
-	});
-*/
-
-	///////////////////////////////////////////////////////////////////////////////////////////////
-	// HYPERLINK DELAYER //////////////////////////////////////////////////////////////////////////
-	///////////////////////////////////////////////////////////////////////////////////////////////
 
 });
