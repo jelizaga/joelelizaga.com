@@ -209,7 +209,7 @@ $(document).ready(function() {
 				homectx.restore();
 				homeframe++;
 			}
-		}, 30);
+		}, 20);
 	});
 
 	$("#resumec").mouseover(function() {
@@ -255,7 +255,7 @@ $(document).ready(function() {
 				resumectx.restore();
 				resumeframe++;
 			}
-		}, 30);
+		}, 20);
 	});
 
 	$("#webc").mouseover(function() {
@@ -301,7 +301,7 @@ $(document).ready(function() {
 				webctx.restore();
 				webframe++;
 			}
-		}, 30);
+		}, 20);
 	});
 
 	$("#mobilec").mouseover(function() {
@@ -347,7 +347,7 @@ $(document).ready(function() {
 				mobilectx.restore();
 				mobileframe++;
 			}
-		}, 30);
+		}, 20);
 	});
 
 	$("#moviesc").mouseover(function() {
@@ -393,7 +393,7 @@ $(document).ready(function() {
 				moviesctx.restore();
 				moviesframe++;
 			}
-		}, 30);
+		}, 20);
 	});
 
 	$("#otherc").mouseover(function() {
@@ -439,7 +439,7 @@ $(document).ready(function() {
 				otherctx.restore();
 				otherframe++;
 			}
-		}, 30);
+		}, 20);
 	});
 
 	///////////////////////////////////////////////////////////////////////////////////////////////
