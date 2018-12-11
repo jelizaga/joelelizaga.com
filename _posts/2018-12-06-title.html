@@ -1,0 +1,133 @@
+---
+layout: post
+title: "The Site's Design Decisions"
+description: "What made this place like it is?"
+published: December 7, 2018
+---
+
+
+<div class="content">
+
+	<h2>
+		Movement
+	</h2>
+
+	<h2>
+		Entry Buttons
+	</h2>
+	<video src="{{site.baseurl}}/img/posts/12-11-18/entry-buttons.mp4" autoplay loop></video>
+	<p>
+		This is something that I'd been waiting to resolve for what felt like forever: On iOS
+		devices, you can't scroll embedded .pdfs. You just can't do it. I'd pull up my site
+		on my phone, and my .pdfs would be plastered there; you'd swipe, and they'd remain
+		static. I can understand why: If a scrollable .pdf obstructs the user from scrolling 
+		elsewhere on a page, the user is stuck.
+	</p>
+	<p>
+		I had another problem: How can visitors intuit that they can enter the sites under the
+		'Websites' section by clicking on the header images at the top of the respective
+		articles?
+	</p>
+	<p>
+		Bam. Make clearly labeled, clickable buttons directly linked to the .pdfs and websites.
+		Two birds, one stone!
+	</p>
+
+	<h2>
+		The Tiles
+	</h2>
+	<video src="{{site.baseurl}}/img/posts/12-11-18/tiled-menu.mp4" autoplay loop></video>
+	<p>
+		This could be an unchecked sunk-cost affinity, but I'm proud of the tiles. I don't like it
+		when color of an image is entirely obstructed by a semi-transluscent pop-up descriptive 
+		text. It'd make no sense to run a carousel of screenshots if they're 50% darker by way of 
+		"Here's what I did in this project, yatta yatta," so I lure users into scrolling over tiles 
+		to read only semi-obstructive descriptions... and then I run the image carousels.
+	</p>
+	<p>
+		Prior to the descriptions, it used to be that the user would have to unknowingly wait for 
+		the carousel to run on mouseover. A visitor could feasibly browse the site and have no idea
+		that the tiles had image carousels in the first place. By including pop-up descriptions, I
+		incentivize users to experience the carousels by way of having them stop to read the
+		descriptions in the first place, giving the image carousels enough time to be executed by
+		their browsers.
+	</p>
+
+	<h2>
+		Pseudo-Responsive Design
+	</h2>
+	<video src="{{site.baseurl}}/img/posts/12-11-18/resizing.mp4" autoplay loop></video>
+	<p>
+		I decided to avoid a multi-columned, oft-gridded design, with the theory that there'll be
+		this continuing trend of cramming higher pixel density into increasingly tinier devices.
+		If people end up using touch to navigate the web, I figured that it'd be easier to always
+		have big, selectable elements more conducive to their fingers than text hyperlinks or
+		gridded tiles representing my projects.
+	</p>
+	<p>
+		On a commercial site with a larger selection and variety of content, it'd make sense to
+		bolt together a sophisticated bootstrap.css multi-column approach, but in this case, I've
+		stuck everything into a single waterfall of content with the assumption that it'll
+		minimize distraction by side elements and complexity.
+	</p>
+	<p>
+		I'll also have less work in the future fussing with the media query break points.
+	</p>
+	<p>
+		I've yet to test the site on a 4K+ screen, and I'm a little anxious as to how the site
+		would scale on higher resolution screens. Would it be legible at all? I don't have a 4K
+		monitor on hand, so this isn't something I can resolve without flying blind at the moment.
+	</p>
+
+	<p>
+		In the future I may experiment with breaking the larger resolutions into grids, but it's 
+		not a feature with any urgency.
+	</p>
+
+	<h2>
+		Fonts
+	</h2>
+
+	<p>
+		I'm trying to communicate a kind of 'intersection of technology and design' narrative with
+		the monospace. I think there's a lot of great monospace fonts that we don't get to see too 
+		often on the web outside of 
+	</p>
+
+	<p>
+
+	</p>
+
+	<h2>
+		Jekyll
+	</h2>
+
+	<p>
+		I don't plan to do anything sophisticated enough
+		to require an interesting back-end, user interaction, or monetization.
+	</p>
+	<p>
+		I think it keeps me in 'shape,' too: If I want a certain aesthetic, I'll punch it into the 
+		style sheet, and if I want the equivalent of a plug-in, I'll write it up myself, though,
+		again, I can't imagine wanting anything complex. Most of the unique features of the site
+		that require JavaScript are entirely aesthetic. That's another design decision that I think
+		is kind of fun; if a user visits this site while running NoScript, it'll be entirely
+		navigable and functional! Admittedly, that's a stretch-case, and if I'm really so concerned
+		with accessibility, it'd probably be better to make this a more pleasant experience for the
+		color blind or the deaf.
+	</p>
+	<p>
+		In retrospect, it would've been great to get some practice with WordPress, Squarespace,
+		Drupal and the like.
+	</p>
+	<p>
+		<i>"Hey, I've got your three years of Wordpress experience!"</i>
+	</p>
+	<p>
+		There's also the tangential benefit that visitors can't inadvertently or deliberately 
+		access any login to an administrative CMS interface when there isn't one. No PHP or Java
+		vulnerabilities, no forms, no nothing. If anything were to happen to the site, git's got
+		it across a couple computers.
+	</p>
+
+</div>

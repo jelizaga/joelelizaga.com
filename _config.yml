@@ -15,6 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 
 baseurl: ""
+newbaseurl: 
 url: "joelelizaga.com"
 
 # Build settings
@@ -33,4 +34,6 @@ collections:
   websites:
     output: true
   miscellaneous:
+    output: true
+  posts:
     output: true

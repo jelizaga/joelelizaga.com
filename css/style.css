@@ -2894,6 +2894,118 @@
 				color: #000000;
 			}
 
+		/* POST-TILE ////////////////////////////////////////////////////////////////////////////*/
+
+			.post-tile, .post-tile-img {
+				border-bottom-right-radius: 20px;
+				border-bottom-left-radius: 20px;
+			}
+
+			.post-tile, .post-tile-head {
+				border-top-left-radius: 20px;
+				border-top-right-radius: 20px;
+			}
+
+			.post-tile {
+				background-color: #FFFFFF;
+				padding: 0px;
+				box-shadow: 2px 2px 5px 0px;
+				margin-left: auto;
+				margin-right: auto;
+				max-width: 1080px;
+				margin-top: 20px;
+				margin-bottom: 40px;
+				transition: max-width 0.5s ease;
+				position: relative;
+				overflow: hidden;
+			}
+
+			.post-tile-footer {
+				font-family: "Anonymous Pro", monospace;
+				margin-left: auto;
+				margin-right: auto;
+				overflow: hidden;
+				background-color: rgba(34, 34, 34, 0.8);
+				color: #FFFFFF;
+				position: absolute;
+				z-index: 1000;
+				left: 0;
+				bottom: -61px;
+				width: 100%;
+				opacity: 0;
+				padding: 0px;
+				border-bottom-right-radius: 20px;
+				border-bottom-left-radius: 20px;
+				transition: bottom 0.5s ease, opacity 0.5s ease;
+			}
+
+			.post-tile-footer p {
+				padding: 20px;
+				margin: 0px;
+			}
+
+			.post-tile h2 {
+				transition: color 0.5s;
+			}
+
+			.post-tile:hover {
+				max-width: 1140px;
+				color: #000000;
+			}
+
+			.post-tile:hover h2 {
+				color: #4EFF1F;
+			}
+
+			.post-tile:hover .post-tile-footer {
+				bottom: 0;
+				opacity: 1;
+			}
+
+
+			.post-tile-img {
+				color: #000;
+				margin-left: auto;
+				margin-right: auto;
+				width: 100%;
+				display: block;
+				background-color: #000;
+			}
+
+			.post-tile-head {
+				color: #FFFFFF;
+				background-color: #222;
+				padding: 20px;
+			}
+
+			.post-tile-head h2 {
+				font-family: "Fjallaone", sans-serif;
+				margin: 0;
+				font-weight: bold;
+				font-size: 20pt;
+				padding-top: 0;
+				padding-left: 0px;
+			}
+
+			.post-tile-head p {
+				font-family: "Anonymous Pro", monospace;
+				font-size: 12pt;
+				padding-top: 0;
+				padding-bottom: 0px;
+				padding-left: 25px;
+				margin-top: 5px;
+				margin-bottom: 0;
+			}
+
+			.post-tile-link {
+				color: #000000;
+				transition: none;
+			}
+
+			.post-tile-link:hover {
+				color: #000000;
+			}
+
 		/* HEADER ///////////////////////////////////////////////////////////////////////////////*/
 
 			header {

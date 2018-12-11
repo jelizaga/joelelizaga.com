@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>
+			{{page.title}}
+		</title>
+		<script src="https://use.fortawesome.com/e67a79b9.js"></script>
+		<link rel="stylesheet" type="text/css" href="{{site.baseurl}}/css/style.css">
+		<link rel="shortcut icon" type="image/png" href="{{site.baseurl}}/img/favicon/favicon.png">
+		<script src="{{site.baseurl}}/js/jquery.js"></script>
+		<meta name="author" content="Joel Elizaga">
+		<meta name="description" content="{{page.description}}">
+		<meta name="keywords" content="{{page.keywords}}">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+
+	<body>
+
+		<div class="background-image"></div>
+
+		{% include post-nav.html %}
+
+		{% include mobile-menu.html %}
+
+		<main>
+
+			<div class="title">
+				<h1>
+					{{page.title}}
+				</h1>
+			</div>
+
+			{{content}}
+
+		</main>
+
+		{% include footer.html %}
+
+	</body>
+
+</html>
