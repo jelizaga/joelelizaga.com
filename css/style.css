@@ -55,6 +55,7 @@
 			margin-right: auto;
 			width: 100%;
 			height: auto;
+			outline: none;
 		}
 
 		.prototype {
@@ -119,6 +120,10 @@
 
 		a:hover {
 			color: #4EFF1F;
+		}
+
+		button {
+			outline: none;
 		}
 
 		h1 {
@@ -520,6 +525,7 @@
 			font-weight: bold;
 			display: block;
 			position: absolute;
+			outline: none;
 			bottom: 0px;
 			left: 50%;
 			transform: translate(-50%, 0);
@@ -2665,6 +2671,7 @@
 
 			h2 {
 				margin: 0px;
+				margin-bottom: 12px;
 				font-size: 24pt;
 			}
 
