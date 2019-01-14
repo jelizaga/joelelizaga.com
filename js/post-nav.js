@@ -74,6 +74,16 @@ $(document).ready(function() {
 	var fadeinOther;
 	var fadeoutOther;
 
+	var blogc = document.getElementById("blogc");
+	var blogctx = blogc.getContext("2d");
+	var blogimg = document.createElement("img");
+	blogimg.src = "../../../img/nav/blog-inactive.png";
+	var blogimga = document.createElement("img");
+	blogimga.src = "../../../img/nav/blog-active.png";
+	var blogframe = 1;
+	var fadeinBlog;
+	var fadeoutBlog;
+
 	///////////////////////////////////////////////////////////////////////////////////////////////
 	// DRAWING NAV ////////////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////////////////////////
@@ -160,6 +170,20 @@ $(document).ready(function() {
 		otherctx.clip();
 		otherctx.closePath();
 		otherctx.restore();
+	}
+
+	blogimg.onload = function() {
+		blogctx.save();
+		blogctx.shadowColor = "#444"
+		blogctx.shadowBlur = 3;
+		blogctx.shadowOffsetX = 2;
+		blogctx.shadowOffsetY = 3;
+		blogctx.drawImage(blogimg, 0, 0);
+		blogctx.beginPath();
+		blogctx.arc(0, 0, 40, 0, Math.PI * 2, true);
+		blogctx.clip();
+		blogctx.closePath();
+		blogctx.restore();
 	}
 
 	///////////////////////////////////////////////////////////////////////////////////////////////
@@ -442,6 +466,52 @@ $(document).ready(function() {
 		}, 20);
 	});
 
+	$("#blogc").mouseover(function() {
+		clearInterval(fadeoutBlog);
+		fadeinBlog = setInterval(function() {
+			if (blogframe == 20) {
+				blogctx.clearRect(0, 0, blogc.width, blogc.height);
+				blogctx.save();
+				blogctx.shadowColor = "#444"
+				blogctx.shadowBlur = 3;
+				blogctx.shadowOffsetX = 2;
+				blogctx.shadowOffsetY = 3;
+				blogctx.drawImage(blogimga, 0, 0);
+				blogctx.beginPath();
+				blogctx.arc(0, 0, 40, 0, Math.PI * 2, true);
+				blogctx.clip();
+				blogctx.closePath();
+				blogctx.restore();
+				clearInterval(fadeinBlog);
+			} else {
+				blogctx.clearRect(0, 0, blogc.width, blogc.height);
+				blogctx.save();
+				blogctx.shadowColor = "#444"
+				blogctx.shadowBlur = 3;
+				blogctx.shadowOffsetX = 2;
+				blogctx.shadowOffsetY = 3;
+				blogctx.drawImage(blogimg, 0, 0);
+				blogctx.beginPath();
+				blogctx.arc(0, 0, 40, 0, Math.PI * 2, true);
+				blogctx.clip();
+				blogctx.closePath();
+				blogctx.restore();
+				blogctx.save();
+				blogctx.globalAlpha = (1 / 20) * blogframe;
+				blogctx.shadowBlur = 3;
+				blogctx.shadowOffsetX = 2;
+				blogctx.shadowOffsetY = 3;
+				blogctx.drawImage(blogimga, 0, 0);
+				blogctx.beginPath();
+				blogctx.arc(0, 0, 40, 0, Math.PI * 2, true);
+				blogctx.clip();
+				blogctx.closePath();
+				blogctx.restore();
+				blogframe++;
+			}
+		}, 20);
+	});
+
 	///////////////////////////////////////////////////////////////////////////////////////////////
 	// MOUSELEAVE ANIMATIONS //////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////////////////////////
@@ -716,6 +786,52 @@ $(document).ready(function() {
 				otherctx.closePath();
 				otherctx.restore();
 				otherframe--;
+			}
+		}, 30);
+	});
+
+	$("#blogc").mouseleave(function() {
+		clearInterval(fadeinBlog);
+		fadeoutBlog = setInterval(function() {
+			if (blogframe == 1) {
+				blogctx.clearRect(0, 0, blogc.width, blogc.height);
+				blogctx.save();
+				blogctx.shadowColor = "#444"
+				blogctx.shadowBlur = 3;
+				blogctx.shadowOffsetX = 2;
+				blogctx.shadowOffsetY = 3;
+				blogctx.drawImage(blogimg, 0, 0);
+				blogctx.beginPath();
+				blogctx.arc(0, 0, 40, 0, Math.PI * 2, true);
+				blogctx.clip();
+				blogctx.closePath();
+				blogctx.restore();
+				clearInterval(fadeoutBlog);
+			} else {
+				blogctx.clearRect(0, 0, blogc.width, blogc.height);
+				blogctx.save();
+				blogctx.shadowColor = "#444"
+				blogctx.shadowBlur = 3;
+				blogctx.shadowOffsetX = 2;
+				blogctx.shadowOffsetY = 3;
+				blogctx.drawImage(blogimg, 0, 0);
+				blogctx.beginPath();
+				blogctx.arc(0, 0, 40, 0, Math.PI * 2, true);
+				blogctx.clip();
+				blogctx.closePath();
+				blogctx.restore();
+				blogctx.save();
+				blogctx.globalAlpha = (1 / 20) * blogframe;
+				blogctx.shadowBlur = 3;
+				blogctx.shadowOffsetX = 2;
+				blogctx.shadowOffsetY = 3;
+				blogctx.drawImage(blogimga, 0, 0);
+				blogctx.beginPath();
+				blogctx.arc(0, 0, 40, 0, Math.PI * 2, true);
+				blogctx.clip();
+				blogctx.closePath();
+				blogctx.restore();
+				blogframe--;
 			}
 		}, 30);
 	});

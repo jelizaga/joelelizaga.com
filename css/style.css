@@ -30,6 +30,7 @@
 	/* GLOBAL */
 
 		body {
+			/* Background by Toptal Subtle Patterns. */
 			background-image: url("../img/bg/bg1.png");
 			font-family: "Nimbus Sans", sans-serif;
 			color: #333333;
@@ -43,6 +44,16 @@
 			margin-right: 0;
 			padding: 0;
 			margin-top: 20px;
+		}
+
+		.first-letter {
+			float: left;
+			font-family: "Nimbus Sans";
+			font-size: 40px;
+			padding-top: 14px;
+			padding-right: 6px;
+			padding-left: 3px;
+			padding-bottom: 4px;
 		}
 
 		button {
@@ -323,6 +334,14 @@
 			font-size: 10pt;
 		}
 
+		.index-intro .first-letter {
+			font-size: 30px;
+			padding-top: 10px;
+			padding-right: 3px;
+			padding-left: 0px;
+			padding-bottom: 4px;
+		}
+
 		.index-portrait {
 			display: none;
 		}
@@ -489,6 +508,11 @@
 			width: 100%;
 		}
 
+		.right-img {
+			float: right;
+			max-width: 15vw;
+		}
+
 		.caption {
 			width: 100%;
 			display: block;
@@ -608,7 +632,7 @@
 
 
 			body {
-				background-image: url("../img/bg/bg1.png");
+				background-image: url("../img/bg/bg2.png");
 				font-family: "Nimbus Sans", sans-serif;
 				color: #333333;
 				font-size: 10pt;
@@ -633,6 +657,16 @@
 				margin-right: 0;
 				margin-top: 20px;
 				padding: 0;
+			}
+
+			.first-letter {
+				float: left;
+				font-family: "Nimbus Sans";
+				font-size: 50px;
+				padding-top: 18px;
+				padding-right: 6px;
+				padding-left: 3px;
+				padding-bottom: 6px;
 			}
 
 			.mono {
@@ -1033,7 +1067,7 @@
 		/* GLOBAL ///////////////////////////////////////////////////////////////////////////////*/
 
 			body {
-				background-image: url("../img/bg/bg1.png");
+				background-image: url("../img/bg/bg2.png");
 				font-family: "Nimbus Sans", sans-serif;
 				color: #333333;
 				font-size: 12pt;
@@ -1045,6 +1079,15 @@
 				margin-right: 0;
 				padding: 0;
 				margin-top: 20px;
+			}
+
+			.first-letter {
+				float: left;
+				font-family: "Nimbus Sans";
+				font-size: 65px;
+				padding-top: 25px;
+				padding-right: 8px;
+				padding-left: 3px;
 			}
 
 			.content img {
@@ -1444,7 +1487,7 @@
 		/* GLOBAL ///////////////////////////////////////////////////////////////////////////////*/
 
 			body {
-				background-image: url("../img/bg/bg1.png");
+				background-image: url("../img/bg/bg2.png");
 				font-family: "Nimbus Sans", sans-serif;
 				color: #333333;
 				font-size: 13pt;
@@ -1456,6 +1499,15 @@
 				margin-right: 0;
 				padding: 0;
 				margin-top: 20px;
+			}
+
+			.first-letter {
+				float: left;
+				font-family: "Nimbus Sans";
+				font-size: 75px;
+				padding-top: 30px;
+				padding-right: 8px;
+				padding-left: 3px;
 			}
 
 			.content img {
@@ -1849,7 +1901,7 @@
 		/* GLOBAL ///////////////////////////////////////////////////////////////////////////////*/
 
 			body {
-				background-image: url("../img/bg/bg1.png");
+				background-image: url("../img/bg/bg2.png");
 				font-family: "Nimbus Sans", sans-serif;
 				color: #333333;
 				font-size: 13pt;
@@ -2232,7 +2284,7 @@
 		/* GLOBAL ///////////////////////////////////////////////////////////////////////////////*/
 
 			body {
-				background-image: url("../img/bg/bg1.png");
+				background-image: url("../img/bg/bg2.png");
 				font-family: "Nimbus Sans", sans-serif;
 				color: #333333;
 				font-size: 13pt;
@@ -2617,7 +2669,7 @@
 		/* GLOBAL ///////////////////////////////////////////////////////////////////////////////*/
 
 			body {
-				background-image: url("../img/bg/bg1.png");
+				background-image: url("../img/bg/bg2.png");
 				font-family: "Nimbus Sans", sans-serif;
 				color: #333333;
 				font-size: 13pt;
@@ -2644,15 +2696,6 @@
 				margin-right: 0;
 				padding: 0;
 				margin-top: 20px;
-			}
-
-			.first-letter {
-				float: left;
-				font-family: "Nimbus Sans";
-				font-size: 75px;
-				padding-top: 30px;
-				padding-right: 8px;
-				padding-left: 3px;
 			}
 
 			.mono {
