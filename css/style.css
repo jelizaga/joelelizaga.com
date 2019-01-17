@@ -2573,7 +2573,10 @@
 			}
 
 			.content {
-				padding: 50px;
+				padding-left: 50px;
+				padding-right: 50px
+				padding-top: 20px;
+				padding-bottom: 30px
 			}
 
 			.content p {
@@ -3098,7 +3101,10 @@
 			}
 
 			.content {
-				padding: 50px;
+				padding-left: 50px;
+				padding-right: 50px;
+				padding-top: 20px;
+				padding-bottom: 30px;
 			}
 
 			.content p {
