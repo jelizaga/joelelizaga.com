@@ -508,9 +508,15 @@
 			width: 100%;
 		}
 
-		.right-img {
+		.content .right-img {
 			float: right;
 			max-width: 15vw;
+			padding: 1em;
+		}
+
+		.right-img p {
+			font-size: 0.8em;
+			font-style: italic;
 		}
 
 		.caption {
@@ -1914,14 +1920,6 @@
 				margin-top: 20px;
 			}
 
-			.content img {
-				width: 100%;
-				margin-left: auto;
-				margin-right: auto;
-				display: block;
-				margin-top: 25px;
-			}
-
 			.mono {
 				font-family: "Anonymous Pro", monospace;
 				font-style: normal;
@@ -2185,7 +2183,10 @@
 			}
 
 			.content {
-				padding: 50px;
+				padding-left: 50px;
+				padding-right: 50px;
+				padding-top: 40px;
+				padding-bottom: 30px;
 			}
 
 			.content p {
@@ -2194,6 +2195,14 @@
 
 			.content ul {
 				line-height: 1.4em;
+			}
+
+			.content img {
+				width: 100%;
+				margin-left: auto;
+				margin-right: auto;
+				display: block;
+				margin-top: 25px;
 			}
 
 			.letter-pdf {
@@ -2574,9 +2583,9 @@
 
 			.content {
 				padding-left: 50px;
-				padding-right: 50px
+				padding-right: 50px;
 				padding-top: 20px;
-				padding-bottom: 30px
+				padding-bottom: 30px;
 			}
 
 			.content p {
