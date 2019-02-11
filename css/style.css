@@ -432,7 +432,7 @@
 
 		.tile:hover h2 {
 			color: #4EFF1F;
-		}
+		}s
 
 		.tile-head p {
 			font-family: "Anonymous Pro", monospace;
@@ -602,11 +602,22 @@
 
 		.content .right-img {
 			float: right;
-			max-width: 15vw;
+			max-width: 50%;
+			padding: 1em;
+		}
+
+		.content .left-img {
+			float: left;
+			max-width: 50%;
 			padding: 1em;
 		}
 
 		.right-img p {
+			font-size: 0.8em;
+			font-style: italic;
+		}
+
+		.left-img p {
 			font-size: 0.8em;
 			font-style: italic;
 		}
@@ -1042,6 +1053,19 @@
 				border-radius: 20px;
 			}
 
+			.cinemagram-2 {
+				width: 250px;
+				height: 250px;
+				border-radius: 50%;
+				background-color: #222222;
+				overflow: hidden;
+				box-shadow: 2px 2px 5px 0px;
+			}
+
+			.cinemagram-2 video {
+				width: 500px;
+			}
+
 			.column-splitter-intro {
 				margin-left: auto;
 				margin-right: auto;
@@ -1396,6 +1420,12 @@
 				border-radius: 20px
 				width: 680px;
 				height: 383px;
+			}
+
+			.cinemagram-2 {
+				width: 250px;
+				height: 250px;
+				border-radius: 50%;
 			}
 
 			.column-splitter-intro {
@@ -1888,6 +1918,12 @@
 				height: 439px;
 			}
 
+			.cinemagram-2 {
+				width: 250px;
+				height: 250px;
+				border-radius: 50%;
+			}
+
 			.column-splitter-intro {
 				margin-left: auto;
 				margin-right: auto;
@@ -2367,6 +2403,16 @@
 				width: 900px;
 			}
 
+			.cinemagram-2 {
+				width: 300px;
+				height: 300px;
+				border-radius: 50%;
+			}
+
+			.cinemagram-2 video {
+				width: 600px;
+			}
+
 			.column-splitter-intro {
 				margin-left: auto;
 				margin-right: auto;
@@ -2625,6 +2671,28 @@
 				margin-top: 25px;
 			}
 
+			.content .right-img {
+				float: right;
+				max-width: 30%;
+				padding: 1em;
+			}
+
+			.content .left-img {
+				float: left;
+				max-width: 50%;
+				padding: 1em;
+			}
+
+			.right-img p {
+				font-size: 0.8em;
+				font-style: italic;
+			}
+
+			.left-img p {
+				font-size: 0.8em;
+				font-style: italic;
+			}
+
 			.letter-pdf {
 				width: 900px;
 				height: 1082px;
@@ -2831,6 +2899,12 @@
 			#cinemagram {
 				width: 1000px;
 				height: 563px;
+			}
+
+			.cinemagram-2 {
+				width: 300px;
+				height: 300px;
+				border-radius: 50%;
 			}
 
 			.column-splitter-intro {
@@ -3311,6 +3385,11 @@
 			#cinemagram {
 				width: 1080px;
 				height: 608px;
+			}
+
+			.cinemagram-2 {
+				width: 300px;
+				height: 300px;
 			}
 
 			.column-splitter-intro {
