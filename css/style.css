@@ -358,6 +358,10 @@
 			display: none;
 		}
 
+		#index-photo {
+			display: none;
+		}
+
 	/* VIDEO SMALLEST+ //////////////////////////////////////////////////////////////////////////*/
 
 		#cinemagram, .landscape-pdf {
@@ -1054,12 +1058,7 @@
 			}
 
 			.cinemagram-2 {
-				width: 250px;
-				height: 250px;
-				border-radius: 50%;
-				background-color: #222222;
-				overflow: hidden;
-				box-shadow: 2px 2px 5px 0px;
+				display: none;
 			}
 
 			.cinemagram-2 video {
@@ -1106,6 +1105,10 @@
 				margin-top: 0;
 				margin-bottom: 0;
 				box-shadow: 2px 2px 5px 0px;
+				display: none;
+			}
+
+			#index-photo {
 				display: none;
 			}
 
@@ -1425,7 +1428,12 @@
 			.cinemagram-2 {
 				width: 250px;
 				height: 250px;
-				border-radius: 50%;
+				border-radius: 20px;
+				background-color: #000;
+				overflow: hidden;
+				margin-top: 15px;
+				box-shadow: 2px 2px 5px 0px;
+				display: inline-block;
 			}
 
 			.column-splitter-intro {
@@ -1469,6 +1477,17 @@
 				margin-bottom: 0;
 				box-shadow: 2px 2px 5px 0px;
 				display: none;
+			}
+
+			#index-photo {
+				border-radius: 20px;
+				overflow: hidden;
+				float: right;
+				height: 250px;
+				width: 415px;
+				box-shadow: 2px 2px 5px 0px;
+				margin-top: 15px;
+				display: inline-block;
 			}
 
 			.pdf-button {
@@ -1918,12 +1937,6 @@
 				height: 439px;
 			}
 
-			.cinemagram-2 {
-				width: 250px;
-				height: 250px;
-				border-radius: 50%;
-			}
-
 			.column-splitter-intro {
 				margin-left: auto;
 				margin-right: auto;
@@ -1934,7 +1947,7 @@
 				display: inline-block;
 				color: #FFFFFF;
 				height: 250px;
-				width: 510px;
+				width: 515px;
 				margin-top: 0;
 				margin-bottom: 0;
 				background-color: rgba(20, 20, 20, 0.9);
@@ -1972,6 +1985,16 @@
 
 			#index-portrait-i {
 				display: none;
+			}
+
+			#index-photo {
+				border-radius: 20px;
+				overflow: hidden;
+				float: right;
+				height: 250px;
+				width: 510px;
+				box-shadow: 2px 2px 5px 0px;
+				margin-top: 15px;
 			}
 
 		/* TILE 860+ ////////////////////////////////////////////////////////////////////////////*/
@@ -2406,7 +2429,6 @@
 			.cinemagram-2 {
 				width: 300px;
 				height: 300px;
-				border-radius: 50%;
 			}
 
 			.cinemagram-2 video {
@@ -2438,6 +2460,16 @@
 				float: right;
 				width: 300px;
 				height: 300px;
+			}
+
+			#index-photo {
+				border-radius: 20px;
+				overflow: hidden;
+				float: right;
+				height: 300px;
+				width: 580px;
+				box-shadow: 2px 2px 5px 0px;
+				margin-top: 15px;
 			}
 
 		/* TILE 970+ ////////////////////////////////////////////////////////////////////////////*/
@@ -2901,12 +2933,6 @@
 				height: 563px;
 			}
 
-			.cinemagram-2 {
-				width: 300px;
-				height: 300px;
-				border-radius: 50%;
-			}
-
 			.column-splitter-intro {
 				margin-left: auto;
 				margin-right: auto;
@@ -2947,6 +2973,16 @@
 				margin-top: 0;
 				margin-bottom: 0;
 				box-shadow: 2px 2px 5px 0px;
+			}
+
+			#index-photo {
+				border-radius: 20px;
+				overflow: hidden;
+				float: right;
+				height: 300px;
+				width: 680px;
+				box-shadow: 2px 2px 5px 0px;
+				margin-top: 15px;
 			}
 
 		/* TILE 1070+ ///////////////////////////////////////////////////////////////////////////*/
@@ -3388,8 +3424,21 @@
 			}
 
 			.cinemagram-2 {
-				width: 300px;
+				display: inline-block;
+			}
+
+			#index-photo {
+				border-radius: 20px;
+				overflow: hidden;
+				float: right;
 				height: 300px;
+				width: 760px;
+				box-shadow: 2px 2px 5px 0px;
+				margin-top: 15px;
+			}
+
+			#index-photo img {
+				width: 100%;
 			}
 
 			.column-splitter-intro {

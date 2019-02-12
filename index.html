@@ -34,25 +34,89 @@ keywords: joel elizaga index home
 
 	<img class="index-portrait" src="{{site.baseurl}}/img/portrait/index-portrait-2.jpg" width="300" height="300">
 
-	<div id="index-photo">
-
-	</div>
-
+<!--
 	<div class="cinemagram-2">
 		<video id="cinemagram-2" src="{{site.baseurl}}/img/cinemagram/uw-crow.mp4" width="1080" height="608" loop="true" autoplay="true" playsinline muted>
 	</div>
 
-	<div id="latest-project">
-		<h1>
-			Latest Projects
-		</h1>
+	<div id="index-photo">
+		<img src="{{site.baseurl}}/img/vid/cny/cny-1.jpg">
 	</div>
+-->
 
 
-	<div id="latest-post">
-		<h1>
-			Latest Posts
-		</h1>
+<!--
+	<div class="index-grid">
+
+		{% for post in site.posts %}
+		<div>
+			<div class="post-tile">
+				<a class="tile-link" href="{{post.url}}">
+					<div class="post-tile-head">
+						<h2>
+							{{post.title}}
+						</h2>
+						<p>
+							{{post.published}}
+						</p>
+						<p>
+							{{post.description}}
+						</p>
+					</div>
+					<img class="tile-img" src="{{site.baseurl}}/img/posts/{{post.published-hyp}}/head.jpg">
+				</a>
+			</div>
+		</div>
+
+		{% endfor %}
+
+	</div>
+-->
+
+<!--
+
+	<div class="index-grid">
+		{% assign videos = site.videography | sort: 'order' | reverse %}
+
+		{% for video in videos %}
+
+			<div>
+				<div class="tile">
+					<a class="tile-link" href="{{video.url}}">
+						<div class="tile-head">
+							<h2>
+								{{video.title}}
+							</h2>
+							<p>
+								{{video.published}}
+							</p>
+						</div>
+						<img id="{{video.mini}}-img" class="tile-img" 
+							src="{{site.baseurl}}/img/vid/{{video.mini}}/{{video.mini}}-1.jpg" 
+							alt="{{video.url}}">
+						<div class="tile-footer">
+							<p>
+								{{video.description}}
+							</p>
+						</div>
+					</a>
+				</div>
+			</div>
+
+		{% endfor %}
 	</div>
 
 </div>
+
+
+<style>
+
+	.index-grid {
+		display: grid;
+		grid-template-columns: auto auto;
+		grid-column-gap: 1em;
+	}
+
+</style>
+
+-->
