@@ -54,6 +54,45 @@ keywords: joel elizaga index home
 	</a>
 </main>
 
+<main id="blogs">
+
+	<h1>
+		Recent Blog Posts
+	</h1>
+
+	{% for post in site.posts limit: 5 %}
+
+	<div class="index-blog-item">
+		<a href="{{post.url}}">
+			<div class="blog-meta-bg">
+				<div class="blog-meta">
+					<h2>
+						{{post.title}}
+					</h2>
+					<p>
+						{{post.published}}
+					</p>
+					<p>
+						{{post.description}}
+					</p>
+				</div>
+			</div>
+			<img class="index-blog-item-img" src="{{site.baseurl}}/img/posts/{{post.published-hyp}}/head.jpg">
+		</a>
+	</div>
+
+	{% endfor %}
+
+	<a id="more-link" href="{{site.baseurl}}/blog.html">
+		<div id="see-more">
+			<p>
+				More Posts (<span id="post-count">2</span>)
+			</p>
+		</div>
+	</a>
+
+</main>
+
 
 
 <!-- For populating the carousel. -->
@@ -127,11 +166,52 @@ keywords: joel elizaga index home
 
 <style>
 
+	.blog-meta-bg {
+		background-color: rgba(34, 34, 34, 0.8);
+		transform: skew(-10deg);
+		position: absolute;
+		left: -60px;
+		width: 50%;
+		height: 100%;
+		padding: 2em;
+		padding-left: 4em;
+		transition: width 0.5s;
+	}
+
+	.blog-meta {
+		transform: skew(10deg);
+		color: white;
+		font-family: "Anonymous Pro";
+	}
+
+	.blog-meta p {
+		margin-top: 0.5em;
+	}
+
+	.blog-meta h2 {
+		font-family: "Fjallaone";
+		transition: color 0.5s;
+	}
+
+	.index-blog-item {
+		overflow: hidden;
+		position: relative;
+		height: 300px;
+	}
+
+	.index-blog-item:hover h2 {
+		color: #4EFF1F;
+	}
+
+	.index-blog-item:hover .blog-meta-bg {
+		width: 100%;
+	}
+
 	#hidden {
 		display: none;
 	}
 
-	#project-carousel h1 {
+	#project-carousel h1, #blogs h1 {
 		color: white;
 		background-color: #222222;
 		border-top-left-radius: 20px;
@@ -143,6 +223,7 @@ keywords: joel elizaga index home
 		height: 310px;
 		background-color: #000000;
 		display: grid;
+		overflow: hidden;
 		grid-template-columns: auto auto auto;
 	}
 
@@ -248,14 +329,21 @@ keywords: joel elizaga index home
 	for (i = 0; i < 3; i++) {
 		conveyer.insertAdjacentHTML("beforeend", currentCarousel.projects[i].innerHTML);
 	}
-
+	document.getElementById("project-count").innerHTML = currentCarousel.cnt;
+	document.getElementById("post-count").innerHTML = document.getElementsByClassName("index-blog-item").length;
 
 	function carouselLeft() {
 		currentCarousel = currentCarousel.previous;
 		updateCarousel();
 	}
 
+	function carouselRight() {
+		currentCarousel = currentCarousel.next;
+		updateCarousel();
+	}
+
 	function updateCarousel() {
+		// Updating project metadata.
 		var heading = document.getElementById("project-heading");
 		heading.innerHTML = currentCarousel.heading;
 		document.getElementById("more-link").href = currentCarousel.link;
@@ -269,11 +357,6 @@ keywords: joel elizaga index home
 		for (i = 0; i < 3; i++) {
 		conveyer.insertAdjacentHTML("beforeend", currentCarousel.projects[i].innerHTML);
 		}
-	}
-
-	function carouselRight() {
-		currentCarousel = currentCarousel.next;
-		updateCarousel();
 	}
 
 </script>
