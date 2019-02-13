@@ -20,7 +20,7 @@ keywords: joel elizaga index home
 				Welcome!
 			</h1>
 			<p>
-				Welcome! I'm a pixel-pusher from the Pacific Northwest.
+				<span class="first-letter">W</span>elcome! I'm a pixel-pusher from the Pacific Northwest.
 				I graduated from the University of Washington with a Bachelor of Science
 				in Informatics with a focus in Human-Computer Interaction (HCI). I study UI, UX, HCI, 
 				information architecture, web development, videography, design&mdash;essentially, I 
@@ -33,6 +33,253 @@ keywords: joel elizaga index home
 	</main>
 
 	<img class="index-portrait" src="{{site.baseurl}}/img/portrait/index-portrait-2.jpg" width="300" height="300">
+
+</div>
+
+<main id="project-carousel">
+	<h1>
+		<span class="arrow-left" onclick="carouselLeft()">&#9664;</span> Latest <span id="project-heading">Web Designs</span> <span class="arrow-right" onclick="carouselRight()">&#9654;</span>
+	</h1>
+
+	<div id="conveyer">
+	
+	</div>
+
+	<a id="more-link" href="{{site.baseurl}}/websites.html">
+		<div id="see-more">
+			<p>
+				More <span id="more-projects">Web Designs</span> (<soan id="project-count">9</soan>)
+			</p>
+		</div>
+	</a>
+</main>
+
+
+
+<!-- For populating the carousel. -->
+<div id="hidden">
+
+	{% assign websites = site.websites | sort: 'order' | reverse %}
+	{% for website in websites %}
+		<div class="web-projects">
+			<div class="project-carousel-item">
+				<a href="{{website.url}}">
+					<img src="{{site.baseurl}}/img/web/{{website.mini}}.jpg" alt="{{website.url}}">
+					<div class="project-carousel-item-footer">
+						<p>
+							{{website.title}}
+						</p>
+					</div>
+				</a>
+			</div>
+		</div>
+	{% endfor %}
+
+	{% assign apps = site.mobile | sort: 'order' | reverse %}
+	{% for app in apps %}
+		<div class="mobile-projects">
+			<div class="project-carousel-item">
+				<a href="{{app.url}}">
+					<img src="{{site.baseurl}}/img/mobile/{{app.mini}}/{{app.mini}}-1.jpg" alt="{{app.url}}">
+				</a>
+				<div class="project-carousel-item-footer">
+						<p>
+							{{app.title}}
+						</p>
+					</div>
+			</div>
+		</div>
+	{% endfor %}
+
+	{% assign videos = site.videography | sort: 'order' | reverse %}
+	{% for video in videos %}
+		<div class="video-projects">
+			<div class="project-carousel-item">
+				<a href="{{video.url}}">
+					<img src="{{site.baseurl}}/img/vid/{{video.mini}}/{{video.mini}}-1.jpg" alt="{{video.url}}">
+				</a>
+				<div class="project-carousel-item-footer">
+						<p>
+							{{video.title}}
+						</p>
+					</div>
+			</div>
+		</div>
+	{% endfor %}
+
+	{% assign others = site.miscellaneous | sort: 'order' | reverse %}
+	{% for other in others %}
+		<div class="design-projects">
+			<div class="project-carousel-item">
+				<a href="{{other.url}}">
+					<img src="{{site.baseurl}}/img/other/{{other.mini}}/{{other.mini}}-1.jpg" alt="{{video.url}}">
+				</a>
+				<div class="project-carousel-item-footer">
+						<p>
+							{{other.title}}
+						</p>
+					</div>
+			</div>
+		</div>
+	{% endfor %}
+
+</div>
+
+<style>
+
+	#hidden {
+		display: none;
+	}
+
+	#project-carousel h1 {
+		color: white;
+		background-color: #222222;
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+		padding: 20px;
+	}
+
+	#conveyer {
+		height: 310px;
+		background-color: #000000;
+		display: grid;
+		grid-template-columns: auto auto auto;
+	}
+
+	.project-carousel-item img {
+		position: absolute;
+		height: 310px;
+		max-width: none;
+	}
+
+	.project-carousel-item {
+		overflow: hidden;
+		height: 310px;
+		position: relative;
+	}
+
+	.project-carousel-item:hover .project-carousel-item-footer {
+		bottom: 0px;
+		opacity: 1;
+	}
+
+	.project-carousel-item-footer {
+		position: absolute;
+		background-color: rgba(34, 34, 34, 0.8);
+		color: white;
+		font-family: "Anonymous Pro";
+		bottom: -50px;
+		transition: bottom 0.5s ease, opacity 0.5s ease;
+		opacity: 0;
+		width: 100%;
+		text-align: center;
+	}
+
+	.project-carousel-item-footer p {
+		padding-left: 0.5em;
+		padding-right: 0.5em;
+		padding-top: 0.2em;
+		padding-bottom: 0.2em;
+	}
+
+	#see-more {
+		background-color: #222222;
+		color: white;
+		text-align: center;
+		font-family: "Anonymous Pro";
+		font-size: 3em;
+		padding: 0.2em;
+		border-bottom-left-radius: 20px;
+		border-bottom-right-radius: 20px;
+		cursor: pointer;
+		transition: color 0.5s;
+	}
+
+	#see-more:hover {
+		color: #4EFF1F;
+	}
+
+	.arrow-left, .arrow-right {
+		transition: color 0.5s;
+		cursor: pointer;
+	}
+
+	.arrow-left {
+		float: left;
+	}
+
+	.arrow-right {
+		float: right;
+	}
+
+	.arrow-left:hover, .arrow-right:hover {
+		color: #4EFF1F;
+	}
+
+</style>
+
+<script>
+
+	var webProjects = document.getElementsByClassName("web-projects");
+	var web = {heading: "Web Designs", link: "websites.html", projects: webProjects, cnt: webProjects.length};
+
+	var mobileProjects = document.getElementsByClassName("mobile-projects");
+	var mobile = {heading: "Mobile Designs", link: "mobile.html", projects: mobileProjects, cnt: mobileProjects.length};
+
+	var videoProjects = document.getElementsByClassName("video-projects");
+	var videos = {heading: "Videos", link: "videography.html", projects: videoProjects, cnt: videoProjects.length};
+	
+	var designProjects = document.getElementsByClassName("design-projects");
+	var designs = {heading: "Designs", link: "miscellaneous.html", projects: designProjects, cnt: designProjects.length};
+
+	web.next = mobile;
+	web.previous = designs;
+	mobile.next = videos;
+	mobile.previous = web;
+	videos.next = designs;
+	videos.previous = mobile;
+	designs.next = web;
+	designs.previous = videos;
+
+	var conveyer = document.getElementById("conveyer");
+
+	// Prepopulating conveyer with web projects.
+	var currentCarousel = web;
+	for (i = 0; i < 3; i++) {
+		conveyer.insertAdjacentHTML("beforeend", currentCarousel.projects[i].innerHTML);
+	}
+
+
+	function carouselLeft() {
+		currentCarousel = currentCarousel.previous;
+		updateCarousel();
+	}
+
+	function updateCarousel() {
+		var heading = document.getElementById("project-heading");
+		heading.innerHTML = currentCarousel.heading;
+		document.getElementById("more-link").href = currentCarousel.link;
+		document.getElementById("more-projects").innerHTML = currentCarousel.heading;
+		document.getElementById("project-count").innerHTML = currentCarousel.cnt;
+		//Empty carousel.
+		while (conveyer.firstChild) {
+			conveyer.removeChild(conveyer.firstChild);
+		}
+		// Repopulate.
+		for (i = 0; i < 3; i++) {
+		conveyer.insertAdjacentHTML("beforeend", currentCarousel.projects[i].innerHTML);
+		}
+	}
+
+	function carouselRight() {
+		currentCarousel = currentCarousel.next;
+		updateCarousel();
+	}
+
+</script>
+
+
+
 
 <!--
 	<div class="cinemagram-2">
@@ -73,50 +320,4 @@ keywords: joel elizaga index home
 	</div>
 -->
 
-<!--
-
-	<div class="index-grid">
-		{% assign videos = site.videography | sort: 'order' | reverse %}
-
-		{% for video in videos %}
-
-			<div>
-				<div class="tile">
-					<a class="tile-link" href="{{video.url}}">
-						<div class="tile-head">
-							<h2>
-								{{video.title}}
-							</h2>
-							<p>
-								{{video.published}}
-							</p>
-						</div>
-						<img id="{{video.mini}}-img" class="tile-img" 
-							src="{{site.baseurl}}/img/vid/{{video.mini}}/{{video.mini}}-1.jpg" 
-							alt="{{video.url}}">
-						<div class="tile-footer">
-							<p>
-								{{video.description}}
-							</p>
-						</div>
-					</a>
-				</div>
-			</div>
-
-		{% endfor %}
-	</div>
-
-</div>
-
-
-<style>
-
-	.index-grid {
-		display: grid;
-		grid-template-columns: auto auto;
-		grid-column-gap: 1em;
-	}
-
-</style>
-
--->
+	
