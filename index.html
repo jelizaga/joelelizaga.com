@@ -54,31 +54,39 @@ keywords: joel elizaga index home
 	</a>
 </main>
 
+<div class="column-splitter-intro">
+	<div class="cinemagram-2">
+		<video id="cinemagram-2" src="{{site.baseurl}}/img/cinemagram/uw-crow.mp4" width="1080" height="608" loop="true" autoplay="true" playsinline muted></video>
+	</div>
+
+	<div id="index-photo">
+		<img src="{{site.baseurl}}/img/vid/cny/cny-1.jpg">
+	</div>
+</div>
+
 <main id="blogs">
 
 	<h1>
-		Recent Blog Posts
+		Blog
 	</h1>
 
 	{% for post in site.posts limit: 5 %}
 
 	<div class="index-blog-item">
-		<a href="{{post.url}}">
-			<div class="blog-meta-bg">
-				<div class="blog-meta">
-					<h2>
-						{{post.title}}
-					</h2>
-					<p>
-						{{post.published}}
-					</p>
-					<p>
-						{{post.description}}
-					</p>
-				</div>
-			</div>
-			<img class="index-blog-item-img" src="{{site.baseurl}}/img/posts/{{post.published-hyp}}/head.jpg">
-		</a>
+		<div class="blog-meta">
+			<h2>
+				{{post.title}}
+			</h2>
+			<p class="post-published">
+				{{post.published}}
+			</p>
+			<p class="post-description">
+				{{post.description}}
+			</p>
+		</div>
+		<div class="blog-meta-bg">
+		</div>
+		<img class="index-blog-item-img" src="{{site.baseurl}}/img/posts/{{post.published-hyp}}/head.jpg">
 	</div>
 
 	{% endfor %}
@@ -92,8 +100,6 @@ keywords: joel elizaga index home
 	</a>
 
 </main>
-
-
 
 <!-- For populating the carousel. -->
 <div id="hidden">
@@ -179,16 +185,21 @@ keywords: joel elizaga index home
 	}
 
 	.blog-meta {
-		transform: skew(10deg);
 		color: white;
 		font-family: "Anonymous Pro";
+		position: absolute;
+		z-index: 1;
+		width: 50%;
+		left: 1.5em;
+		top: 1em;
 	}
 
 	.blog-meta p {
 		margin-top: 0.5em;
+		width: 100%
 	}
 
-	.blog-meta h2 {
+	.index-blog-item h2 {
 		font-family: "Fjallaone";
 		transition: color 0.5s;
 	}
@@ -197,6 +208,29 @@ keywords: joel elizaga index home
 		overflow: hidden;
 		position: relative;
 		height: 300px;
+	}
+
+	.post-description {
+		opacity: 0;
+	}
+
+	.index-blog-item:hover .post-description {
+		animation-name: descriptionOpacity;
+		animation-duration: 0.5s;
+		animation-delay: 0.5s;
+		animation-fill-mode: forwards;
+	}
+
+	@keyframes descriptionOpacity {
+		0% {opacity: 0;}
+		100% {opacity: 1;}
+	}
+
+	@keyframes headingWidth {
+		0% {width: 100%;}
+		25% {width: 80%;}
+		50% {width: 50%;}
+		100% {width: 50%;}
 	}
 
 	.index-blog-item:hover h2 {
@@ -360,47 +394,4 @@ keywords: joel elizaga index home
 	}
 
 </script>
-
-
-
-
-<!--
-	<div class="cinemagram-2">
-		<video id="cinemagram-2" src="{{site.baseurl}}/img/cinemagram/uw-crow.mp4" width="1080" height="608" loop="true" autoplay="true" playsinline muted>
-	</div>
-
-	<div id="index-photo">
-		<img src="{{site.baseurl}}/img/vid/cny/cny-1.jpg">
-	</div>
--->
-
-
-<!--
-	<div class="index-grid">
-
-		{% for post in site.posts %}
-		<div>
-			<div class="post-tile">
-				<a class="tile-link" href="{{post.url}}">
-					<div class="post-tile-head">
-						<h2>
-							{{post.title}}
-						</h2>
-						<p>
-							{{post.published}}
-						</p>
-						<p>
-							{{post.description}}
-						</p>
-					</div>
-					<img class="tile-img" src="{{site.baseurl}}/img/posts/{{post.published-hyp}}/head.jpg">
-				</a>
-			</div>
-		</div>
-
-		{% endfor %}
-
-	</div>
--->
-
 	
