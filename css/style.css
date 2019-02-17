@@ -81,6 +81,10 @@
 			outline: none;
 		}
 
+		.hidden {
+			display: none;
+		}
+
 		.prototype {
 			max-width: 100%;
 		}
@@ -360,6 +364,181 @@
 
 		#index-photo {
 			display: none;
+		}
+
+		#index-photo {
+			border-radius: 20px;
+			overflow: hidden;
+			float: right;
+			height: 300px;
+			width: 580px;
+			box-shadow: 2px 2px 5px 0px;
+			margin-top: 15px;
+		}
+
+	/* BLOG SMALLEST+ ///////////////////////////////////////////////////////////////////////////*/
+
+		#blogs {
+			margin-top: 0;
+		}
+
+		.index-blog-item {
+			overflow: hidden;
+			position: relative;
+			height: 200px;
+		}
+
+		.blog-meta {
+			color: white;
+			font-family: "Anonymous Pro";
+			position: absolute;
+			z-index: 1;
+			width: 100%;
+			left: 1.5em;
+			top: 1em;
+			text-shadow: 1px 2px #000;
+		}
+
+		.blog-meta p {
+			margin-top: 0.5em;
+			width: 100%
+		}
+
+		.blog-meta h2 {
+			font-family: "Fjallaone";
+			font-style: italic;
+			font-size: 1.5em;
+			transition: color 0.5s;
+			width: 50%;
+		}
+
+		.post-description {
+			opacity: 0;
+		}
+
+		.blog-meta-bg {
+			background-color: rgba(34, 34, 34, 0.8);
+			transform: skew(-10deg);
+			position: absolute;
+			left: -60px;
+			width: 50%;
+			height: 100%;
+			padding: 2em;
+			padding-left: 4em;
+			transition: width 0.5s;
+		}
+
+		.index-blog-item:hover .post-description {
+			animation-name: descriptionOpacity;
+			animation-duration: 0.5s;
+			animation-delay: 0.5s;
+			animation-fill-mode: forwards;
+		}
+
+		@keyframes descriptionOpacity {
+			0% {opacity: 0;}
+			100% {opacity: 1;}
+		}
+
+		.index-blog-item:hover h2 {
+			color: #4EFF1F;
+		}
+
+		.index-blog-item:hover .blog-meta-bg {
+			width: 100%;
+		}
+
+		#project-carousel {
+			display: none;
+		}
+
+		#project-carousel h1, #blogs h1 {
+			color: white;
+			background-color: #222222;
+			padding: 20px;
+			font-size: 1.5em;
+		}
+
+		#conveyer {
+			height: 166px;
+			background-color: #000000;
+			display: grid;
+			overflow: hidden;
+			grid-template-columns: auto auto auto;
+		}
+
+		.project-carousel-item img {
+			position: absolute;
+			height: 166px;
+			max-width: none;
+		}
+
+		.project-carousel-item {
+			overflow: hidden;
+			height: 166px;
+			position: relative;
+		}
+
+		.project-carousel-item:hover .project-carousel-item-footer {
+			bottom: 0px;
+			opacity: 1;
+		}
+
+		.project-carousel-item-footer {
+			position: absolute;
+			background-color: rgba(34, 34, 34, 0.8);
+			bottom: -50px;
+			transition: bottom 0.5s ease, opacity 0.5s ease;
+			opacity: 0;
+			width: 100%;
+			padding: 0px;
+		}
+
+		.project-carousel-item-footer p {
+			color: white;
+			font-family: "Anonymous Pro";
+			text-align: center;
+			padding-left: 0.5em;
+			padding-right: 0.5em;
+			padding-top: 0.2em;
+			padding-bottom: 0.2em;
+			text-shadow: 1px 2px #000;
+		}
+
+		.see-more {
+			background-color: #222222;
+			color: white;
+			text-align: center;
+			font-family: "Anonymous Pro";
+			font-size: 3em;
+			cursor: pointer;
+			transition: color 0.5s;
+			padding: 0.4em;
+		}
+
+		.see-more p {
+			margin: 0px;
+		}
+
+		.see-more:hover {
+			color: #4EFF1F;
+		}
+
+		.arrow-left, .arrow-right {
+			transition: color 0.5s;
+			cursor: pointer;
+		}
+
+		.arrow-left {
+			float: left;
+		}
+
+		.arrow-right {
+			float: right;
+		}
+
+		.arrow-left:hover, .arrow-right:hover {
+			color: #4EFF1F;
 		}
 
 	/* VIDEO SMALLEST+ //////////////////////////////////////////////////////////////////////////*/
@@ -894,6 +1073,7 @@
 				border-bottom-right-radius: 20px;
 				border-bottom-left-radius: 20px;
 				transition: bottom 0.5s ease, opacity 0.5s ease;
+				text-shadow: 1px 2px #000;
 			}
 
 			.tile:hover .tile-footer {
@@ -1131,6 +1311,186 @@
 				margin-bottom: 20px;
 				border-radius: 20px;
 				transition: background-color 0.5s;
+			}
+
+			#index-photo {
+				border-radius: 20px;
+				overflow: hidden;
+				float: right;
+				height: 300px;
+				width: 580px;
+				box-shadow: 2px 2px 5px 0px;
+				margin-top: 15px;
+			}
+
+		/* BLOG SMALLEST+ ///////////////////////////////////////////////////////////////////////////*/
+
+			#blogs {
+				margin-top: 15px;
+			}
+
+			.index-blog-item {
+				overflow: hidden;
+				position: relative;
+				height: 200px;
+			}
+
+			.blog-meta {
+				color: white;
+				font-family: "Anonymous Pro";
+				position: absolute;
+				z-index: 1;
+				width: 100%;
+				left: 1.5em;
+				top: 1em;
+				text-shadow: 1px 2px #000;
+			}
+
+			.blog-meta p {
+				margin-top: 0.5em;
+				width: 100%
+			}
+
+			.blog-meta h2 {
+				font-family: "Fjallaone";
+				font-style: italic;
+				font-size: 1.5em;
+				transition: color 0.5s;
+				width: 50%;
+			}
+
+			.post-description {
+				opacity: 0;
+			}
+
+			.blog-meta-bg {
+				background-color: rgba(34, 34, 34, 0.8);
+				transform: skew(-10deg);
+				position: absolute;
+				left: -60px;
+				width: 50%;
+				height: 100%;
+				padding: 2em;
+				padding-left: 4em;
+				transition: width 0.5s;
+			}
+
+			.index-blog-item:hover .post-description {
+				animation-name: descriptionOpacity;
+				animation-duration: 0.5s;
+				animation-delay: 0.5s;
+				animation-fill-mode: forwards;
+			}
+
+			@keyframes descriptionOpacity {
+				0% {opacity: 0;}
+				100% {opacity: 1;}
+			}
+
+			.index-blog-item:hover h2 {
+				color: #4EFF1F;
+			}
+
+			.index-blog-item:hover .blog-meta-bg {
+				width: 100%;
+			}
+
+			#project-carousel {
+				display: block;
+			}
+
+
+			#project-carousel h1, #blogs h1 {
+				color: white;
+				background-color: #222222;
+				border-top-left-radius: 20px;
+				border-top-right-radius: 20px;
+				padding: 20px;
+				font-size: 1.5em;
+			}
+
+			#conveyer {
+				height: 166px;
+				background-color: #000000;
+				display: grid;
+				overflow: hidden;
+				grid-template-columns: auto auto auto;
+			}
+
+			.project-carousel-item img {
+				position: absolute;
+				height: 166px;
+				max-width: none;
+			}
+
+			.project-carousel-item {
+				overflow: hidden;
+				height: 166px;
+				position: relative;
+			}
+
+			.project-carousel-item:hover .project-carousel-item-footer {
+				bottom: 0px;
+				opacity: 1;
+			}
+
+			.project-carousel-item-footer {
+				position: absolute;
+				background-color: rgba(34, 34, 34, 0.8);
+				bottom: -50px;
+				transition: bottom 0.5s ease, opacity 0.5s ease;
+				opacity: 0;
+				width: 100%;
+				padding: 0px;
+			}
+
+			.project-carousel-item-footer p {
+				color: white;
+				font-family: "Anonymous Pro";
+				text-align: center;
+				padding-left: 0.5em;
+				padding-right: 0.5em;
+				padding-top: 0.2em;
+				padding-bottom: 0.2em;
+				text-shadow: 1px 2px #000;
+			}
+
+			.see-more {
+				background-color: #222222;
+				color: white;
+				text-align: center;
+				font-family: "Anonymous Pro";
+				font-size: 3em;
+				border-bottom-left-radius: 20px;
+				border-bottom-right-radius: 20px;
+				cursor: pointer;
+				transition: color 0.5s;
+				padding: 0.4em;
+			}
+
+			.see-more p {
+				margin: 0px;
+			}
+
+			.see-more:hover {
+				color: #4EFF1F;
+			}
+
+			.arrow-left, .arrow-right {
+				transition: color 0.5s;
+				cursor: pointer;
+			}
+
+			.arrow-left {
+				float: left;
+			}
+
+			.arrow-right {
+				float: right;
+			}
+
+			.arrow-left:hover, .arrow-right:hover {
+				color: #4EFF1F;
 			}
 
 		/* HEADER 560+ //////////////////////////////////////////////////////////////////////////*/
@@ -1509,6 +1869,175 @@
 				margin-bottom: 20px;
 				border-radius: 20px;
 				transition: background-color 0.5s;
+			}
+
+			#index-photo {
+				border-radius: 20px;
+				overflow: hidden;
+				float: right;
+				height: 300px;
+				width: 580px;
+				box-shadow: 2px 2px 5px 0px;
+				margin-top: 15px;
+			}
+
+			.index-blog-item {
+				overflow: hidden;
+				position: relative;
+				height: 250px;
+			}
+
+			.blog-meta {
+				color: white;
+				font-family: "Anonymous Pro";
+				position: absolute;
+				z-index: 1;
+				width: 100%;
+				left: 1.5em;
+				top: 1em;
+				text-shadow: 1px 2px #000;
+			}
+
+			.blog-meta p {
+				margin-top: 0.5em;
+				width: 100%
+			}
+
+			.blog-meta h2 {
+				font-family: "Fjallaone";
+				font-style: italic;
+				font-size: 1.5em;
+				transition: color 0.5s;
+				width: 50%;
+			}
+
+			.post-description {
+				opacity: 0;
+			}
+
+			.blog-meta-bg {
+				background-color: rgba(34, 34, 34, 0.8);
+				transform: skew(-10deg);
+				position: absolute;
+				left: -60px;
+				width: 50%;
+				height: 100%;
+				padding: 2em;
+				padding-left: 4em;
+				transition: width 0.5s;
+			}
+
+			.index-blog-item:hover .post-description {
+				animation-name: descriptionOpacity;
+				animation-duration: 0.5s;
+				animation-delay: 0.5s;
+				animation-fill-mode: forwards;
+			}
+
+			@keyframes descriptionOpacity {
+				0% {opacity: 0;}
+				100% {opacity: 1;}
+			}
+
+			.index-blog-item:hover h2 {
+				color: #4EFF1F;
+			}
+
+			.index-blog-item:hover .blog-meta-bg {
+				width: 100%;
+			}
+
+			#project-carousel h1, #blogs h1 {
+				color: white;
+				background-color: #222222;
+				border-top-left-radius: 20px;
+				border-top-right-radius: 20px;
+				padding: 20px;
+				font-size: 1.5em;
+			}
+
+			#conveyer {
+				height: 226px;
+				background-color: #000000;
+				display: grid;
+				overflow: hidden;
+				grid-template-columns: auto auto auto;
+			}
+
+			.project-carousel-item img {
+				position: absolute;
+				height: 226px;
+				max-width: none;
+			}
+
+			.project-carousel-item {
+				overflow: hidden;
+				height: 226px;
+				position: relative;
+			}
+
+			.project-carousel-item:hover .project-carousel-item-footer {
+				bottom: 0px;
+				opacity: 1;
+			}
+
+			.project-carousel-item-footer {
+				position: absolute;
+				background-color: rgba(34, 34, 34, 0.8);
+				bottom: -50px;
+				transition: bottom 0.5s ease, opacity 0.5s ease;
+				opacity: 0;
+				width: 100%;
+				padding: 0px;
+			}
+
+			.project-carousel-item-footer p {
+				color: white;
+				font-family: "Anonymous Pro";
+				text-align: center;
+				padding-left: 0.5em;
+				padding-right: 0.5em;
+				padding-top: 0.2em;
+				padding-bottom: 0.2em;
+				text-shadow: 1px 2px #000;
+			}
+
+			.see-more {
+				background-color: #222222;
+				color: white;
+				text-align: center;
+				font-family: "Anonymous Pro";
+				font-size: 3em;
+				border-bottom-left-radius: 20px;
+				border-bottom-right-radius: 20px;
+				cursor: pointer;
+				transition: color 0.5s;
+				padding: 0.4em;
+			}
+
+			.see-more p {
+				margin: 0px;
+			}
+
+			.see-more:hover {
+				color: #4EFF1F;
+			}
+
+			.arrow-left, .arrow-right {
+				transition: color 0.5s;
+				cursor: pointer;
+			}
+
+			.arrow-left {
+				float: left;
+			}
+
+			.arrow-right {
+				float: right;
+			}
+
+			.arrow-left:hover, .arrow-right:hover {
+				color: #4EFF1F;
 			}
 
 		/* TILE 740+ ////////////////////////////////////////////////////////////////////////////*/
@@ -1997,6 +2526,175 @@
 				margin-top: 15px;
 			}
 
+			#index-photo {
+				border-radius: 20px;
+				overflow: hidden;
+				float: right;
+				height: 300px;
+				width: 580px;
+				box-shadow: 2px 2px 5px 0px;
+				margin-top: 15px;
+			}
+
+			.index-blog-item {
+				overflow: hidden;
+				position: relative;
+				height: 250px;
+			}
+
+			.blog-meta {
+				color: white;
+				font-family: "Anonymous Pro";
+				position: absolute;
+				z-index: 1;
+				width: 100%;
+				left: 1.5em;
+				top: 1em;
+				text-shadow: 1px 2px #000;
+			}
+
+			.blog-meta p {
+				margin-top: 0.5em;
+				width: 100%
+			}
+
+			.blog-meta h2 {
+				font-family: "Fjallaone";
+				font-style: italic;
+				transition: color 0.5s;
+				width: 50%;
+				font-size: 1.5em;
+			}
+
+			.post-description {
+				opacity: 0;
+			}
+
+			.blog-meta-bg {
+				background-color: rgba(34, 34, 34, 0.8);
+				transform: skew(-10deg);
+				position: absolute;
+				left: -60px;
+				width: 50%;
+				height: 100%;
+				padding: 2em;
+				padding-left: 4em;
+				transition: width 0.5s;
+			}
+
+			.index-blog-item:hover .post-description {
+				animation-name: descriptionOpacity;
+				animation-duration: 0.5s;
+				animation-delay: 0.5s;
+				animation-fill-mode: forwards;
+			}
+
+			@keyframes descriptionOpacity {
+				0% {opacity: 0;}
+				100% {opacity: 1;}
+			}
+
+			.index-blog-item:hover h2 {
+				color: #4EFF1F;
+			}
+
+			.index-blog-item:hover .blog-meta-bg {
+				width: 100%;
+			}
+
+			#project-carousel h1, #blogs h1 {
+				color: white;
+				background-color: #222222;
+				border-top-left-radius: 20px;
+				border-top-right-radius: 20px;
+				padding: 20px;
+				font-size: 1.5em;
+			}
+
+			#conveyer {
+				height: 260px;
+				background-color: #000000;
+				display: grid;
+				overflow: hidden;
+				grid-template-columns: auto auto auto;
+			}
+
+			.project-carousel-item img {
+				position: absolute;
+				height: 260px;
+				max-width: none;
+			}
+
+			.project-carousel-item {
+				overflow: hidden;
+				height: 310px;
+				position: relative;
+			}
+
+			.project-carousel-item:hover .project-carousel-item-footer {
+				bottom: 50px;
+				opacity: 1;
+			}
+
+			.project-carousel-item-footer {
+				position: absolute;
+				background-color: rgba(34, 34, 34, 0.8);
+				bottom: -10px;
+				transition: bottom 0.5s ease, opacity 0.5s ease;
+				opacity: 0;
+				width: 100%;
+				padding: 0px;
+			}
+
+			.project-carousel-item-footer p {
+				color: white;
+				font-family: "Anonymous Pro";
+				text-align: center;
+				padding-left: 0.5em;
+				padding-right: 0.5em;
+				padding-top: 0.2em;
+				padding-bottom: 0.2em;
+				text-shadow: 1px 2px #000;
+			}
+
+			.see-more {
+				background-color: #222222;
+				color: white;
+				text-align: center;
+				font-family: "Anonymous Pro";
+				font-size: 3em;
+				border-bottom-left-radius: 20px;
+				border-bottom-right-radius: 20px;
+				cursor: pointer;
+				transition: color 0.5s;
+				padding: 0.4em;
+			}
+
+			.see-more p {
+				margin: 0px;
+			}
+
+			.see-more:hover {
+				color: #4EFF1F;
+			}
+
+			.arrow-left, .arrow-right {
+				transition: color 0.5s;
+				cursor: pointer;
+			}
+
+			.arrow-left {
+				float: left;
+			}
+
+			.arrow-right {
+				float: right;
+			}
+
+			.arrow-left:hover, .arrow-right:hover {
+				color: #4EFF1F;
+			}
+
 		/* TILE 860+ ////////////////////////////////////////////////////////////////////////////*/
 
 			.tile, .tile-img {
@@ -2443,7 +3141,7 @@
 
 			.index-intro {
 				height: 300px;
-				width: 580px;
+				width: 585px;
 			}
 
 			.index-intro h1 {
@@ -2470,6 +3168,163 @@
 				width: 580px;
 				box-shadow: 2px 2px 5px 0px;
 				margin-top: 15px;
+			}
+
+			.index-blog-item {
+				overflow: hidden;
+				position: relative;
+				height: 250px;
+			}
+
+			.blog-meta {
+				color: white;
+				font-family: "Anonymous Pro";
+				position: absolute;
+				z-index: 1;
+				width: 100%;
+				left: 1.5em;
+				top: 1em;
+				text-shadow: 1px 2px #000;
+			}
+
+			.blog-meta p {
+				margin-top: 0.5em;
+				width: 100%
+			}
+
+			.blog-meta h2 {
+				font-family: "Fjallaone";
+				font-style: italic;
+				transition: color 0.5s;
+				width: 50%;
+			}
+
+			.post-description {
+				opacity: 0;
+			}
+
+			.blog-meta-bg {
+				background-color: rgba(34, 34, 34, 0.8);
+				transform: skew(-10deg);
+				position: absolute;
+				left: -60px;
+				width: 50%;
+				height: 100%;
+				padding: 2em;
+				padding-left: 4em;
+				transition: width 0.5s;
+			}
+
+			.index-blog-item:hover .post-description {
+				animation-name: descriptionOpacity;
+				animation-duration: 0.5s;
+				animation-delay: 0.5s;
+				animation-fill-mode: forwards;
+			}
+
+			@keyframes descriptionOpacity {
+				0% {opacity: 0;}
+				100% {opacity: 1;}
+			}
+
+			.index-blog-item:hover h2 {
+				color: #4EFF1F;
+			}
+
+			.index-blog-item:hover .blog-meta-bg {
+				width: 100%;
+			}
+
+			#project-carousel h1, #blogs h1 {
+				color: white;
+				background-color: #222222;
+				border-top-left-radius: 20px;
+				border-top-right-radius: 20px;
+				padding: 20px;
+			}
+
+			#conveyer {
+				height: 310px;
+				background-color: #000000;
+				display: grid;
+				overflow: hidden;
+				grid-template-columns: auto auto auto;
+			}
+
+			.project-carousel-item img {
+				position: absolute;
+				height: 310px;
+				max-width: none;
+			}
+
+			.project-carousel-item {
+				overflow: hidden;
+				height: 310px;
+				position: relative;
+			}
+
+			.project-carousel-item:hover .project-carousel-item-footer {
+				bottom: 0px;
+				opacity: 1;
+			}
+
+			.project-carousel-item-footer {
+				position: absolute;
+				background-color: rgba(34, 34, 34, 0.8);
+				bottom: -50px;
+				transition: bottom 0.5s ease, opacity 0.5s ease;
+				opacity: 0;
+				width: 100%;
+				padding: 0px;
+			}
+
+			.project-carousel-item-footer p {
+				color: white;
+				font-family: "Anonymous Pro";
+				text-align: center;
+				padding-left: 0.5em;
+				padding-right: 0.5em;
+				padding-top: 0.2em;
+				padding-bottom: 0.2em;
+				text-shadow: 1px 2px #000;
+			}
+
+			.see-more {
+				background-color: #222222;
+				color: white;
+				text-align: center;
+				font-family: "Anonymous Pro";
+				font-size: 3em;
+				border-bottom-left-radius: 20px;
+				border-bottom-right-radius: 20px;
+				cursor: pointer;
+				transition: color 0.5s;
+				padding: 0.4em;
+			}
+
+			.see-more p {
+				margin: 0px;
+			}
+
+			.see-more:hover {
+				color: #4EFF1F;
+			}
+
+			.arrow-left, .arrow-right {
+				transition: color 0.5s;
+				cursor: pointer;
+			}
+
+			.arrow-left {
+				float: left;
+			}
+
+			.arrow-right {
+				float: right;
+			}
+
+			.arrow-left:hover, .arrow-right:hover {
+				color: #4EFF1F;
 			}
 
 		/* TILE 970+ ////////////////////////////////////////////////////////////////////////////*/
@@ -2675,8 +3530,8 @@
 				margin-left: auto;
 				margin-right: auto;
 				max-width: 900px;
-				margin-top: 40px;
-				margin-bottom: 40px;
+				margin-top: 15px;
+				margin-bottom: 0px;
 				border-radius: 20px;
 			}
 
@@ -2943,7 +3798,7 @@
 				display: inline-block;
 				color: #FFFFFF;
 				height: 300px;
-				width: 670px;
+				width: 685px;
 				margin-top: 0;
 				margin-bottom: 0;
 				background-color: rgba(20, 20, 20, 0.9);
@@ -2983,6 +3838,163 @@
 				width: 680px;
 				box-shadow: 2px 2px 5px 0px;
 				margin-top: 15px;
+			}
+
+			.index-blog-item {
+				overflow: hidden;
+				position: relative;
+				height: 250px;
+			}
+
+			.blog-meta {
+				color: white;
+				font-family: "Anonymous Pro";
+				position: absolute;
+				z-index: 1;
+				width: 100%;
+				left: 1.5em;
+				top: 1em;
+				text-shadow: 1px 2px #000;
+			}
+
+			.blog-meta p {
+				margin-top: 0.5em;
+				width: 100%
+			}
+
+			.blog-meta h2 {
+				font-family: "Fjallaone";
+				font-style: italic;
+				transition: color 0.5s;
+				width: 50%;
+			}
+
+			.post-description {
+				opacity: 0;
+			}
+
+			.blog-meta-bg {
+				background-color: rgba(34, 34, 34, 0.8);
+				transform: skew(-10deg);
+				position: absolute;
+				left: -60px;
+				width: 50%;
+				height: 100%;
+				padding: 2em;
+				padding-left: 4em;
+				transition: width 0.5s;
+			}
+
+			.index-blog-item:hover .post-description {
+				animation-name: descriptionOpacity;
+				animation-duration: 0.5s;
+				animation-delay: 0.5s;
+				animation-fill-mode: forwards;
+			}
+
+			@keyframes descriptionOpacity {
+				0% {opacity: 0;}
+				100% {opacity: 1;}
+			}
+
+			.index-blog-item:hover h2 {
+				color: #4EFF1F;
+			}
+
+			.index-blog-item:hover .blog-meta-bg {
+				width: 100%;
+			}
+
+			#project-carousel h1, #blogs h1 {
+				color: white;
+				background-color: #222222;
+				border-top-left-radius: 20px;
+				border-top-right-radius: 20px;
+				padding: 20px;
+			}
+
+			#conveyer {
+				height: 310px;
+				background-color: #000000;
+				display: grid;
+				overflow: hidden;
+				grid-template-columns: auto auto auto;
+			}
+
+			.project-carousel-item img {
+				position: absolute;
+				height: 310px;
+				max-width: none;
+			}
+
+			.project-carousel-item {
+				overflow: hidden;
+				height: 310px;
+				position: relative;
+			}
+
+			.project-carousel-item:hover .project-carousel-item-footer {
+				bottom: 0px;
+				opacity: 1;
+			}
+
+			.project-carousel-item-footer {
+				position: absolute;
+				background-color: rgba(34, 34, 34, 0.8);
+				bottom: -50px;
+				transition: bottom 0.5s ease, opacity 0.5s ease;
+				opacity: 0;
+				width: 100%;
+				padding: 0px;
+			}
+
+			.project-carousel-item-footer p {
+				color: white;
+				font-family: "Anonymous Pro";
+				text-align: center;
+				padding-left: 0.5em;
+				padding-right: 0.5em;
+				padding-top: 0.2em;
+				padding-bottom: 0.2em;
+				text-shadow: 1px 2px #000;
+			}
+
+			.see-more {
+				background-color: #222222;
+				color: white;
+				text-align: center;
+				font-family: "Anonymous Pro";
+				font-size: 3em;
+				border-bottom-left-radius: 20px;
+				border-bottom-right-radius: 20px;
+				cursor: pointer;
+				transition: color 0.5s;
+				padding: 0.4em;
+			}
+
+			.see-more p {
+				margin: 0px;
+			}
+
+			.see-more:hover {
+				color: #4EFF1F;
+			}
+
+			.arrow-left, .arrow-right {
+				transition: color 0.5s;
+				cursor: pointer;
+			}
+
+			.arrow-left {
+				float: left;
+			}
+
+			.arrow-right {
+				float: right;
+			}
+
+			.arrow-left:hover, .arrow-right:hover {
+				color: #4EFF1F;
 			}
 
 		/* TILE 1070+ ///////////////////////////////////////////////////////////////////////////*/
@@ -3189,7 +4201,7 @@
 				margin-right: auto;
 				max-width: 1000px;
 				margin-top: 15px;
-				margin-bottom: 40px;
+				margin-bottom: 0px;
 				border-radius: 20px;
 			}
 
@@ -3427,6 +4439,12 @@
 				display: inline-block;
 			}
 
+			.column-splitter-intro {
+				margin-left: auto;
+				margin-right: auto;
+				max-width: 1080px;
+			}
+
 			#index-photo {
 				border-radius: 20px;
 				overflow: hidden;
@@ -3441,17 +4459,11 @@
 				width: 100%;
 			}
 
-			.column-splitter-intro {
-				margin-left: auto;
-				margin-right: auto;
-				max-width: 1080px;
-			}
-
 			.index-intro {
 				display: inline-block;
 				color: #FFFFFF;
 				height: 300px;
-				width: 760px;
+				width: 765px;
 				margin-top: 0;
 				margin-bottom: 0;
 				background-color: rgba(20, 20, 20, 0.9);
@@ -3464,12 +4476,17 @@
 
 			.index-intro h1 {
 				font-style: italic;
-				font-size: 28pt;
+				font-size: 2em;
 				letter-spacing: 1px;
 			}
 
 			.index-intro p {
 				font-size: 13pt;
+			}
+
+			.index-intro .first-letter {
+				font-size: 2.5em;
+				padding-top: 14px;
 			}
 
 			.index-portrait {
@@ -3481,6 +4498,164 @@
 				margin-top: 0;
 				margin-bottom: 0;
 				box-shadow: 2px 2px 5px 0px;
+			}
+
+			.index-blog-item {
+				overflow: hidden;
+				position: relative;
+				height: 250px;
+			}
+
+			.blog-meta {
+				color: white;
+				font-family: "Anonymous Pro";
+				position: absolute;
+				z-index: 1;
+				width: 100%;
+				left: 1.5em;
+				top: 1em;
+				text-shadow: 1px 2px #000;
+			}
+
+			.blog-meta p {
+				margin-top: 0.5em;
+				width: 100%
+			}
+
+			.blog-meta h2 {
+				font-family: "Fjallaone";
+				font-style: italic;
+				transition: color 0.5s;
+				width: 50%;
+			}
+
+			.post-description {
+				opacity: 0;
+			}
+
+			.blog-meta-bg {
+				background-color: rgba(34, 34, 34, 0.8);
+				transform: skew(-10deg);
+				position: absolute;
+				left: -60px;
+				width: 50%;
+				height: 100%;
+				padding: 2em;
+				padding-left: 4em;
+				transition: width 0.5s;
+			}
+
+			.index-blog-item:hover .post-description {
+				animation-name: descriptionOpacity;
+				animation-duration: 0.5s;
+				animation-delay: 0.5s;
+				animation-fill-mode: forwards;
+			}
+
+			@keyframes descriptionOpacity {
+				0% {opacity: 0;}
+				100% {opacity: 1;}
+			}
+
+			.index-blog-item:hover h2 {
+				color: #4EFF1F;
+			}
+
+			.index-blog-item:hover .blog-meta-bg {
+				width: 100%;
+			}
+
+			#project-carousel h1, #blogs h1 {
+				color: white;
+				background-color: #222222;
+				border-top-left-radius: 20px;
+				border-top-right-radius: 20px;
+				padding: 20px;
+				font-size: 2em;
+			}
+
+			#conveyer {
+				height: 310px;
+				background-color: #000000;
+				display: grid;
+				overflow: hidden;
+				grid-template-columns: auto auto auto;
+			}
+
+			.project-carousel-item img {
+				position: absolute;
+				height: 310px;
+				max-width: none;
+			}
+
+			.project-carousel-item {
+				overflow: hidden;
+				height: 310px;
+				position: relative;
+			}
+
+			.project-carousel-item:hover .project-carousel-item-footer {
+				bottom: 0px;
+				opacity: 1;
+			}
+
+			.project-carousel-item-footer {
+				position: absolute;
+				background-color: rgba(34, 34, 34, 0.8);
+				bottom: -50px;
+				transition: bottom 0.5s ease, opacity 0.5s ease;
+				opacity: 0;
+				width: 100%;
+				padding: 0px;
+			}
+
+			.project-carousel-item-footer p {
+				color: white;
+				font-family: "Anonymous Pro";
+				text-align: center;
+				padding-left: 0.5em;
+				padding-right: 0.5em;
+				padding-top: 0.2em;
+				padding-bottom: 0.2em;
+				text-shadow: 1px 2px #000;
+			}
+
+			.see-more {
+				background-color: #222222;
+				color: white;
+				text-align: center;
+				font-family: "Anonymous Pro";
+				font-size: 3em;
+				border-bottom-left-radius: 20px;
+				border-bottom-right-radius: 20px;
+				cursor: pointer;
+				transition: color 0.5s;
+				padding: 0.4em;
+			}
+
+			.see-more p {
+				margin: 0px;
+			}
+
+			.see-more:hover {
+				color: #4EFF1F;
+			}
+
+			.arrow-left, .arrow-right {
+				transition: color 0.5s;
+				cursor: pointer;
+			}
+
+			.arrow-left {
+				float: left;
+			}
+
+			.arrow-right {
+				float: right;
+			}
+
+			.arrow-left:hover, .arrow-right:hover {
+				color: #4EFF1F;
 			}
 
 		/* TILE 1150+ ///////////////////////////////////////////////////////////////////////////*/

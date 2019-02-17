@@ -36,9 +36,13 @@ keywords: joel elizaga index home
 
 </div>
 
+<!------------------------------------------------------------------------------------------------>
+<!-- PROJECT CAROUSEL ---------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------>
 <main id="project-carousel">
+
 	<h1>
-		<span class="arrow-left" onclick="carouselLeft()">&#9664;</span> Latest <span id="project-heading">Web Designs</span> <span class="arrow-right" onclick="carouselRight()">&#9654;</span>
+		<span class="arrow-left" onclick="carouselLeft()">&#9664;</span> Latest <span id="project-heading">Web Projects</span> <span class="arrow-right" onclick="carouselRight()">&#9654;</span>
 	</h1>
 
 	<div id="conveyer">
@@ -46,14 +50,15 @@ keywords: joel elizaga index home
 	</div>
 
 	<a id="more-link" href="{{site.baseurl}}/websites.html">
-		<div id="see-more">
+		<div class="see-more">
 			<p>
-				More <span id="more-projects">Web Designs</span> (<soan id="project-count">9</soan>)
+				More <span id="more-projects">Web Projects</span> (<soan id="project-count">9</soan>)
 			</p>
 		</div>
 	</a>
 </main>
 
+<!--
 <div class="column-splitter-intro">
 	<div class="cinemagram-2">
 		<video id="cinemagram-2" src="{{site.baseurl}}/img/cinemagram/uw-crow.mp4" width="1080" height="608" loop="true" autoplay="true" playsinline muted></video>
@@ -63,7 +68,11 @@ keywords: joel elizaga index home
 		<img src="{{site.baseurl}}/img/vid/cny/cny-1.jpg">
 	</div>
 </div>
+-->
 
+<!------------------------------------------------------------------------------------------------>
+<!-- BLOGS --------------------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------>
 <main id="blogs">
 
 	<h1>
@@ -73,26 +82,28 @@ keywords: joel elizaga index home
 	{% for post in site.posts limit: 5 %}
 
 	<div class="index-blog-item">
-		<div class="blog-meta">
-			<h2>
-				{{post.title}}
-			</h2>
-			<p class="post-published">
-				{{post.published}}
-			</p>
-			<p class="post-description">
-				{{post.description}}
-			</p>
-		</div>
-		<div class="blog-meta-bg">
-		</div>
-		<img class="index-blog-item-img" src="{{site.baseurl}}/img/posts/{{post.published-hyp}}/head.jpg">
+		<a href="{{post.url}}">
+			<div class="blog-meta">
+				<h2>
+					{{post.title}}
+				</h2>
+				<p class="post-published">
+					{{post.published}}
+				</p>
+				<p class="post-description">
+					{{post.description}}
+				</p>
+			</div>
+			<div class="blog-meta-bg">
+			</div>
+			<img class="index-blog-item-img" src="{{site.baseurl}}/img/posts/{{post.published-hyp}}/head.jpg">
+		</a>
 	</div>
 
 	{% endfor %}
 
 	<a id="more-link" href="{{site.baseurl}}/blog.html">
-		<div id="see-more">
+		<div class="see-more">
 			<p>
 				More Posts (<span id="post-count">2</span>)
 			</p>
@@ -102,7 +113,7 @@ keywords: joel elizaga index home
 </main>
 
 <!-- For populating the carousel. -->
-<div id="hidden">
+<div class="hidden">
 
 	{% assign websites = site.websites | sort: 'order' | reverse %}
 	{% for website in websites %}
@@ -170,176 +181,15 @@ keywords: joel elizaga index home
 
 </div>
 
-<style>
 
-	.blog-meta-bg {
-		background-color: rgba(34, 34, 34, 0.8);
-		transform: skew(-10deg);
-		position: absolute;
-		left: -60px;
-		width: 50%;
-		height: 100%;
-		padding: 2em;
-		padding-left: 4em;
-		transition: width 0.5s;
-	}
-
-	.blog-meta {
-		color: white;
-		font-family: "Anonymous Pro";
-		position: absolute;
-		z-index: 1;
-		width: 50%;
-		left: 1.5em;
-		top: 1em;
-	}
-
-	.blog-meta p {
-		margin-top: 0.5em;
-		width: 100%
-	}
-
-	.index-blog-item h2 {
-		font-family: "Fjallaone";
-		transition: color 0.5s;
-	}
-
-	.index-blog-item {
-		overflow: hidden;
-		position: relative;
-		height: 300px;
-	}
-
-	.post-description {
-		opacity: 0;
-	}
-
-	.index-blog-item:hover .post-description {
-		animation-name: descriptionOpacity;
-		animation-duration: 0.5s;
-		animation-delay: 0.5s;
-		animation-fill-mode: forwards;
-	}
-
-	@keyframes descriptionOpacity {
-		0% {opacity: 0;}
-		100% {opacity: 1;}
-	}
-
-	@keyframes headingWidth {
-		0% {width: 100%;}
-		25% {width: 80%;}
-		50% {width: 50%;}
-		100% {width: 50%;}
-	}
-
-	.index-blog-item:hover h2 {
-		color: #4EFF1F;
-	}
-
-	.index-blog-item:hover .blog-meta-bg {
-		width: 100%;
-	}
-
-	#hidden {
-		display: none;
-	}
-
-	#project-carousel h1, #blogs h1 {
-		color: white;
-		background-color: #222222;
-		border-top-left-radius: 20px;
-		border-top-right-radius: 20px;
-		padding: 20px;
-	}
-
-	#conveyer {
-		height: 310px;
-		background-color: #000000;
-		display: grid;
-		overflow: hidden;
-		grid-template-columns: auto auto auto;
-	}
-
-	.project-carousel-item img {
-		position: absolute;
-		height: 310px;
-		max-width: none;
-	}
-
-	.project-carousel-item {
-		overflow: hidden;
-		height: 310px;
-		position: relative;
-	}
-
-	.project-carousel-item:hover .project-carousel-item-footer {
-		bottom: 0px;
-		opacity: 1;
-	}
-
-	.project-carousel-item-footer {
-		position: absolute;
-		background-color: rgba(34, 34, 34, 0.8);
-		color: white;
-		font-family: "Anonymous Pro";
-		bottom: -50px;
-		transition: bottom 0.5s ease, opacity 0.5s ease;
-		opacity: 0;
-		width: 100%;
-		text-align: center;
-	}
-
-	.project-carousel-item-footer p {
-		padding-left: 0.5em;
-		padding-right: 0.5em;
-		padding-top: 0.2em;
-		padding-bottom: 0.2em;
-	}
-
-	#see-more {
-		background-color: #222222;
-		color: white;
-		text-align: center;
-		font-family: "Anonymous Pro";
-		font-size: 3em;
-		padding: 0.2em;
-		border-bottom-left-radius: 20px;
-		border-bottom-right-radius: 20px;
-		cursor: pointer;
-		transition: color 0.5s;
-	}
-
-	#see-more:hover {
-		color: #4EFF1F;
-	}
-
-	.arrow-left, .arrow-right {
-		transition: color 0.5s;
-		cursor: pointer;
-	}
-
-	.arrow-left {
-		float: left;
-	}
-
-	.arrow-right {
-		float: right;
-	}
-
-	.arrow-left:hover, .arrow-right:hover {
-		color: #4EFF1F;
-	}
-
-</style>
 
 <script>
 
 	var webProjects = document.getElementsByClassName("web-projects");
-	var web = {heading: "Web Designs", link: "websites.html", projects: webProjects, cnt: webProjects.length};
+	var web = {heading: "Web Projects", link: "websites.html", projects: webProjects, cnt: webProjects.length};
 
 	var mobileProjects = document.getElementsByClassName("mobile-projects");
-	var mobile = {heading: "Mobile Designs", link: "mobile.html", projects: mobileProjects, cnt: mobileProjects.length};
+	var mobile = {heading: "Mobile Projects", link: "mobile.html", projects: mobileProjects, cnt: mobileProjects.length};
 
 	var videoProjects = document.getElementsByClassName("video-projects");
 	var videos = {heading: "Videos", link: "videography.html", projects: videoProjects, cnt: videoProjects.length};
