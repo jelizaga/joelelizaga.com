@@ -3819,6 +3819,11 @@
 				font-size: 13pt;
 			}
 
+			.index-intro .first-letter {
+				font-size: 2.5em;
+				padding-top: 14px;
+			}
+
 			.index-portrait {
 				display: inline-block;
 				float: right;
@@ -3911,6 +3916,7 @@
 				border-top-left-radius: 20px;
 				border-top-right-radius: 20px;
 				padding: 20px;
+				font-size: 2em;
 			}
 
 			#conveyer {
