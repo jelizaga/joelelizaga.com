@@ -88,20 +88,10 @@ $(document).ready(function() {
 
 
 	// Initializing cinemagram.
-	var cinemagramSelection = ["../img/cinemagram/uw-statue.mp4", "../img/cinemagram/uw-crow.mp4", "../img/cinemagram/uw-west-campus-1.mp4"];
+	var cinemagramSelection = ["../img/cinemagram/uw-crow.mp4", "../img/cinemagram/uw-west-campus-1.mp4"];
 	var cinemagramCode = Math.floor((Math.random() * cinemagramSelection.length));
 	var cinemagram = cinemagramSelection[cinemagramCode];
 	$("#cinemagram").attr("src", cinemagram);
-
-	var cinemagram2Code = Math.floor((Math.random() * cinemagramSelection.length));
-
-	// Initializing second cinemagram.
-	while (cinemagram2Code === cinemagramCode) {
-		cinemagram2Code = Math.floor((Math.random() * cinemagramSelection.length));
-	}
-	var cinemagram2 = cinemagramSelection[cinemagram2Code];
-
-	$("#cinemagram-2").attr("src", cinemagram2);
 
 	// Changing cinemagram on click.
 	$("#cinemagram").click(function() {
