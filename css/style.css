@@ -59,6 +59,23 @@
 			margin-bottom: 1em;
 		}
 
+		h1 {
+			font-family: "Fjallaone", sans-serif;
+			text-align: center;
+			margin: 0px;
+			font-size: 13pt;
+		}
+
+		h2 {
+			margin-top: 1em;
+			margin-bottom: 1em;
+			font-size: 12pt;
+		}
+
+		h3 {
+			font-size: 11pt;
+		}
+
 		.first-letter {
 			float: left;
 			font-family: "Nimbus Sans";
@@ -152,23 +169,6 @@
 
 		button {
 			outline: none;
-		}
-
-		h1 {
-			font-family: "Fjallaone", sans-serif;
-			text-align: center;
-			margin: 0px;
-			font-size: 13pt;
-		}
-
-		h2 {
-			margin-top: 1em;
-			margin-bottom: 1em;
-			font-size: 12pt;
-		}
-
-		h3 {
-			font-size: 11pt;
 		}
 
 		.title {
@@ -944,15 +944,16 @@
 			}
 
 			h2 {
-				margin: 0px;
+				margin-top: 1em;
+				margin-bottom: 1em;
 				font-size: 14pt;
 			}
 
 			p {
 				font-size: 10pt;
+				line-height: 1.5em;
 				margin-left: 0;
 				margin-right: 0;
-				margin-top: 20px;
 				padding: 0;
 			}
 
@@ -1500,10 +1501,6 @@
 				max-width: 100%;
 			}
 
-			.content {
-				padding: 20px;
-			}
-
 			.content img {
 				width: 100%;
 				margin-left: auto;
@@ -1646,7 +1643,23 @@
 				margin-left: 0;
 				margin-right: 0;
 				padding: 0;
-				margin-top: 20px;
+			}
+
+			h1 {
+				font-family: "Fjallaone", sans-serif;
+				text-align: center;
+				margin: 0px;
+				font-size: 23pt;
+			}
+
+			h2 {
+				margin-top: 0.5em;
+				margin-bottom: 0.5em;
+				font-size: 21pt;
+			}
+
+			h3 {
+				font-size: 16pt;
 			}
 
 			.first-letter {
@@ -1692,22 +1705,6 @@
 				font-size: 12pt;
 				padding: 12px;
 				border-radius: 30px;
-			}
-
-			h1 {
-				font-family: "Fjallaone", sans-serif;
-				text-align: center;
-				margin: 0px;
-				font-size: 23pt;
-			}
-
-			h2 {
-				margin: 0px;
-				font-size: 21pt;
-			}
-
-			h3 {
-				font-size: 16pt;
 			}
 
 			.title {
@@ -1893,6 +1890,8 @@
 				height: 250px;
 			}
 
+			/* BLOG 740+ ////////////////////////////////////////////////*/
+
 			.blog-meta {
 				color: white;
 				font-family: "Anonymous Pro";
@@ -1906,7 +1905,7 @@
 
 			.blog-meta p {
 				margin-top: 0.5em;
-				width: 100%
+				width: 95%;
 			}
 
 			.blog-meta h2 {
@@ -2255,7 +2254,10 @@
 			}
 
 			.content {
-				padding: 40px;
+				padding-left: 40px;
+				padding-right: 40px;
+				padding-top: 15px;
+				padding-bottom: 15px;
 			}
 
 			.content p {
@@ -2388,7 +2390,6 @@
 			}
 
 			h2 {
-				margin: 0px;
 				font-size: 24pt;
 			}
 
@@ -2554,6 +2555,8 @@
 				height: 250px;
 			}
 
+			/* INDEX BLOG 860+ //////////////////////////////////////////////////////////////////*/
+
 			.blog-meta {
 				color: white;
 				font-family: "Anonymous Pro";
@@ -2567,7 +2570,7 @@
 
 			.blog-meta p {
 				margin-top: 0.5em;
-				width: 100%
+				width: 95%
 			}
 
 			.blog-meta h2 {
@@ -2639,19 +2642,19 @@
 
 			.project-carousel-item {
 				overflow: hidden;
-				height: 310px;
+				height: 260px;
 				position: relative;
 			}
 
 			.project-carousel-item:hover .project-carousel-item-footer {
-				bottom: 50px;
+				bottom: 0px;
 				opacity: 1;
 			}
 
 			.project-carousel-item-footer {
 				position: absolute;
 				background-color: rgba(34, 34, 34, 0.8);
-				bottom: -10px;
+				bottom: -60px;
 				transition: bottom 0.5s ease, opacity 0.5s ease;
 				opacity: 0;
 				width: 100%;
@@ -2915,7 +2918,10 @@
 			}
 
 			.content {
-				padding: 50px;
+				padding-left: 50px;
+				padding-right: 50px;
+				padding-top: 20px;
+				padding-right: 20px;
 			}
 
 			.content p {
@@ -3024,7 +3030,6 @@
 				margin-left: 0;
 				margin-right: 0;
 				padding: 0;
-				margin-top: 20px;
 			}
 
 			.mono {
@@ -3197,7 +3202,7 @@
 				font-family: "Anonymous Pro";
 				position: absolute;
 				z-index: 1;
-				width: 100%;
+				width: 95%;
 				left: 1.5em;
 				top: 1em;
 				text-shadow: 1px 2px #000;
@@ -3260,7 +3265,7 @@
 			}
 
 			#conveyer {
-				height: 310px;
+				height: 300px;
 				background-color: #000000;
 				display: grid;
 				overflow: hidden;
@@ -3269,13 +3274,13 @@
 
 			.project-carousel-item img {
 				position: absolute;
-				height: 310px;
+				height: 300px;
 				max-width: none;
 			}
 
 			.project-carousel-item {
 				overflow: hidden;
-				height: 310px;
+				height: 300px;
 				position: relative;
 			}
 
@@ -3554,7 +3559,7 @@
 			.content {
 				padding-left: 50px;
 				padding-right: 50px;
-				padding-top: 40px;
+				padding-top: 30px;
 				padding-bottom: 30px;
 			}
 
@@ -4230,7 +4235,7 @@
 			.content {
 				padding-left: 50px;
 				padding-right: 50px;
-				padding-top: 20px;
+				padding-top: 30px;
 				padding-bottom: 30px;
 			}
 
@@ -4353,7 +4358,6 @@
 				margin-left: 0;
 				margin-right: 0;
 				padding: 0;
-				margin-top: 20px;
 			}
 
 			.mono {
@@ -4381,7 +4385,8 @@
 
 			h2 {
 				margin: 0px;
-				margin-bottom: 12px;
+				margin-bottom: 0.5em;
+				margin-top: 0.5em;
 				font-size: 24pt;
 			}
 
@@ -4939,7 +4944,7 @@
 			.content {
 				padding-left: 50px;
 				padding-right: 50px;
-				padding-top: 20px;
+				padding-top: 30px;
 				padding-bottom: 30px;
 			}
 
