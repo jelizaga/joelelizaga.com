@@ -59,6 +59,17 @@
 			margin-bottom: 1em;
 		}
 
+		a {
+			color: #087600;
+			text-decoration: none;
+			transition: color 0.5s;
+			outline: none;
+		}
+
+		a:hover {
+			color: #4EFF1F;
+		}
+
 		h1 {
 			font-family: "Fjallaone", sans-serif;
 			text-align: center;
@@ -154,17 +165,6 @@
 
 		.enter {
 			text-align: center;
-		}
-
-		a {
-			color: #087600;
-			text-decoration: none;
-			transition: color 0.5s;
-			outline: none;
-		}
-
-		a:hover {
-			color: #4EFF1F;
 		}
 
 		button {
@@ -922,14 +922,9 @@
 				margin: 8px;
 			}
 
-			a {
-				color: #087600;
-				text-decoration: none;
-				transition: color 0.5s;
-			}
-
-			a:hover {
-				color: #4EFF1F;
+			p {
+				font-size: 10pt;
+				line-height: 1.5em;
 			}
 
 			h1 {
@@ -943,14 +938,6 @@
 				margin-top: 1em;
 				margin-bottom: 1em;
 				font-size: 14pt;
-			}
-
-			p {
-				font-size: 10pt;
-				line-height: 1.5em;
-				margin-left: 0;
-				margin-right: 0;
-				padding: 0;
 			}
 
 			.first-letter {
@@ -1633,9 +1620,6 @@
 
 			p {
 				font-size: 12pt;
-				margin-left: 0;
-				margin-right: 0;
-				padding: 0;
 			}
 
 			h1 {
@@ -1676,16 +1660,6 @@
 				font-family: "Anonymous Pro", monospace;
 				font-style: normal;
 				font-size: 11pt;
-			}
-
-			a {
-				color: #087600;
-				text-decoration: none;
-				transition: color 0.5s;
-			}
-
-			a:hover {
-				color: #4EFF1F;
 			}
 
 			button {
@@ -2333,10 +2307,6 @@
 
 			p {
 				font-size: 13pt;
-				margin-left: 0;
-				margin-right: 0;
-				padding: 0;
-				margin-top: 20px;
 			}
 
 			.first-letter {
@@ -2360,16 +2330,6 @@
 				font-family: "Anonymous Pro", monospace;
 				font-style: normal;
 				font-size: 11pt;
-			}
-
-			a {
-				color: #087600;
-				text-decoration: none;
-				transition: color 0.5s;
-			}
-
-			a:hover {
-				color: #4EFF1F;
 			}
 
 			h1 {
@@ -3009,26 +2969,10 @@
 
 		/* GLOBAL 970+ //////////////////////////////////////////////////////////////////////////*/
 
-			p {
-				margin-left: 0;
-				margin-right: 0;
-				padding: 0;
-			}
-
 			.mono {
 				font-family: "Anonymous Pro", monospace;
 				font-style: normal;
 				font-size: 11pt;
-			}
-
-			a {
-				color: #087600;
-				text-decoration: none;
-				transition: color 0.5s;
-			}
-
-			a:hover {
-				color: #4EFF1F;
 			}
 
 			h1 {
@@ -3671,13 +3615,6 @@
 
 		/* GLOBAL 1070+ /////////////////////////////////////////////////////////////////////////*/
 
-			p {
-				margin-left: 0;
-				margin-right: 0;
-				padding: 0;
-				margin-top: 20px;
-			}
-
 			.content img {
 				width: 100%;
 				margin-left: auto;
@@ -3690,16 +3627,6 @@
 				font-family: "Anonymous Pro", monospace;
 				font-style: normal;
 				font-size: 11pt;
-			}
-
-			a {
-				color: #087600;
-				text-decoration: none;
-				transition: color 0.5s;
-			}
-
-			a:hover {
-				color: #4EFF1F;
 			}
 
 			h1 {
@@ -4307,42 +4234,10 @@
 
 		/* GLOBAL 1150+ /////////////////////////////////////////////////////////////////////////*/
 
-			.background-image {
-				display: none;
-				position: fixed;
-				left: 0;
-				right: 0;
-				top: 0;
-				bottom: 0;
-				z-index: -1;
-				filter: opacity(10%);
-				background-size: cover;
-				width: 100%;
-				height: 100%;
-				opacity: 80%;
-				transition: 1s;
-			}
-
-			p {
-				margin-left: 0;
-				margin-right: 0;
-				padding: 0;
-			}
-
 			.mono {
 				font-family: "Anonymous Pro", monospace;
 				font-style: normal;
 				font-size: 11pt;
-			}
-
-			a {
-				color: #087600;
-				text-decoration: none;
-				transition: color 0.5s;
-			}
-
-			a:hover {
-				color: #4EFF1F;
 			}
 
 			h1 {
