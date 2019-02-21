@@ -403,7 +403,7 @@
 
 		.blog-meta p {
 			margin-top: 0.5em;
-			width: 100%
+			width: 95%
 		}
 
 		.blog-meta h2 {
@@ -917,6 +917,11 @@
 
 		/* GLOBAL 560+ //////////////////////////////////////////////////////////////////////////*/
 
+			body {
+				background-image: url("../img/bg/bg2.png");
+				margin: 8px;
+			}
+
 			a {
 				color: #087600;
 				text-decoration: none;
@@ -925,15 +930,6 @@
 
 			a:hover {
 				color: #4EFF1F;
-			}
-
-
-			body {
-				background-image: url("../img/bg/bg2.png");
-				font-family: "Nimbus Sans", sans-serif;
-				color: #333333;
-				font-size: 10pt;
-				margin: 8px;
 			}
 
 			h1 {
@@ -1329,7 +1325,7 @@
 
 			.blog-meta p {
 				margin-top: 0.5em;
-				width: 100%
+				width: 95%
 			}
 
 			.blog-meta h2 {
@@ -1632,9 +1628,6 @@
 		/* GLOBAL 740+ //////////////////////////////////////////////////////////////////////////*/
 
 			body {
-				background-image: url("../img/bg/bg2.png");
-				font-family: "Nimbus Sans", sans-serif;
-				color: #333333;
 				font-size: 12pt;
 			}
 
@@ -2335,9 +2328,6 @@
 		/* GLOBAL 860+ //////////////////////////////////////////////////////////////////////////*/
 
 			body {
-				background-image: url("../img/bg/bg2.png");
-				font-family: "Nimbus Sans", sans-serif;
-				color: #333333;
 				font-size: 13pt;
 			}
 
@@ -3019,13 +3009,6 @@
 
 		/* GLOBAL 970+ //////////////////////////////////////////////////////////////////////////*/
 
-			body {
-				background-image: url("../img/bg/bg2.png");
-				font-family: "Nimbus Sans", sans-serif;
-				color: #333333;
-				font-size: 13pt;
-			}
-
 			p {
 				margin-left: 0;
 				margin-right: 0;
@@ -3210,7 +3193,7 @@
 
 			.blog-meta p {
 				margin-top: 0.5em;
-				width: 100%
+				width: 95%
 			}
 
 			.blog-meta h2 {
@@ -3688,13 +3671,6 @@
 
 		/* GLOBAL 1070+ /////////////////////////////////////////////////////////////////////////*/
 
-			body {
-				background-image: url("../img/bg/bg2.png");
-				font-family: "Nimbus Sans", sans-serif;
-				color: #333333;
-				font-size: 13pt;
-			}
-
 			p {
 				margin-left: 0;
 				margin-right: 0;
@@ -3885,7 +3861,7 @@
 
 			.blog-meta p {
 				margin-top: 0.5em;
-				width: 100%
+				width: 95%
 			}
 
 			.blog-meta h2 {
@@ -4331,13 +4307,6 @@
 
 		/* GLOBAL 1150+ /////////////////////////////////////////////////////////////////////////*/
 
-			body {
-				background-image: url("../img/bg/bg2.png");
-				font-family: "Nimbus Sans", sans-serif;
-				color: #333333;
-				font-size: 13pt;
-			}
-
 			.background-image {
 				display: none;
 				position: fixed;
@@ -4546,7 +4515,7 @@
 
 			.blog-meta p {
 				margin-top: 0.5em;
-				width: 100%
+				width: 95%
 			}
 
 			.blog-meta h2 {
