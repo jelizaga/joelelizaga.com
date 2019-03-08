@@ -3844,7 +3844,7 @@
 			}
 
 			#conveyer {
-				height: 310px;
+				height: 334px;
 				background-color: #000000;
 				display: grid;
 				overflow: hidden;
@@ -3853,13 +3853,13 @@
 
 			.project-carousel-item img {
 				position: absolute;
-				height: 310px;
+				height: 334px;
 				max-width: none;
 			}
 
 			.project-carousel-item {
 				overflow: hidden;
-				height: 310px;
+				height: 334px;
 				position: relative;
 			}
 
@@ -4466,7 +4466,7 @@
 			}
 
 			#conveyer {
-				height: 310px;
+				height: 360px;
 				background-color: #000000;
 				display: grid;
 				overflow: hidden;
@@ -4475,13 +4475,13 @@
 
 			.project-carousel-item img {
 				position: absolute;
-				height: 310px;
+				height: 360px;
 				max-width: none;
 			}
 
 			.project-carousel-item {
 				overflow: hidden;
-				height: 310px;
+				height: 360px;
 				position: relative;
 			}
 
