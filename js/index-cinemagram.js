@@ -88,14 +88,14 @@ $(document).ready(function() {
 
 
 	// Initializing cinemagram.
-	var cinemagramSelection = ["../img/cinemagram/uw-crow.mp4", "../img/cinemagram/uw-west-campus-1.mp4"];
+	var cinemagramSelection = ["../img/cinemagram/uw-crow.mp4", "../img/cinemagram/uw-west-campus-1.mp4", "img/cinemagram/origami-1.mp4", "img/cinemagram/origami-2.mp4", "img/cinemagram/origami-3.mp4"];
 	var cinemagramCode = Math.floor((Math.random() * cinemagramSelection.length));
 	var cinemagram = cinemagramSelection[cinemagramCode];
 	$("#cinemagram").attr("src", cinemagram);
 
 	// Changing cinemagram on click.
 	$("#cinemagram").click(function() {
-		$("#cinemagram").addClass("bounceOutRight");
+		//$("#cinemagram").addClass("bounceOutRight");
 		if (cinemagramCode == cinemagramSelection.length - 1) {
 			cinemagramCode = 0;
 		} else {
