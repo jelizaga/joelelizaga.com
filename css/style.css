@@ -32,6 +32,11 @@
 		src: url("../font/fjallaone.otf");
 	}
 
+	@font-face {
+		font-family: "Gandhi";
+		src: url("../font/gandhi.otf");
+	}
+
 	html {
 		margin: 0;
 		padding: 0;
@@ -95,6 +100,12 @@
 			padding-right: 6px;
 			padding-left: 3px;
 			padding-bottom: 4px;
+		}
+
+		.block {
+			margin-left: 2em;
+			margin-right: 2em;
+			font-family: "Gandhi";
 		}
 
 		button {
@@ -1530,12 +1541,12 @@
 			}
 
 			.landscape-pdf {
-				width: 500px;
+				width: 100%;
 				height: 281px;
 			}
 
 			.letter-pdf {
-				width: 500px;
+				width: 100%;
 				height: 601px;
 			}
 
@@ -2247,12 +2258,12 @@
 			}
 
 			.letter-pdf {
-				width: 680px;
+				width: 100%;
 				height: 817px;
 			}
 
 			.landscape-pdf {
-				width: 680px;
+				width: 100%;
 				height: 383px;
 			}
 
@@ -2888,12 +2899,12 @@
 			}
 
 			.letter-pdf {
-				width: 780px;
+				width: 100%;
 				height: 937px;
 			}
 
 			.landscape-pdf {
-				width: 780px;
+				width: 100%;
 				height: 439px;
 			}
 
@@ -3530,12 +3541,12 @@
 			}
 
 			.letter-pdf {
-				width: 900px;
+				width: 100%;
 				height: 1082px;
 			}
 
 			.landscape-pdf {
-				width: 900px;
+				width: 100%;
 				height: 507px;
 			}
 
@@ -4144,12 +4155,12 @@
 			}
 
 			.letter-pdf {
-				width: 1000px;
+				width: 100%;
 				height: 1202px;
 			}
 
 			.landscape-pdf {
-				width: 1000px;
+				width: 100%;
 				height: 563px;
 			}
 
@@ -4821,12 +4832,12 @@
 			}
 
 			.letter-pdf {
-				width: 1080px;
+				width: 100%;
 				height: 1298px;
 			}
 
 			.landscape-pdf {
-				width: 1080px;
+				width: 100%;
 				height: 608px;
 			}
 
