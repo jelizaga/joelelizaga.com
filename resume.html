@@ -40,7 +40,7 @@ keywords: joel elizaga resume linkedin cv work experience
 		</button>
 	
 		<button id="plain-resume-button" onclick="present('plain-resume')" class="resume-button">
-			Plain
+			Basic
 		</button>
 
 		<noscript>
@@ -76,11 +76,16 @@ keywords: joel elizaga resume linkedin cv work experience
 	}
 
 	.resume-button {
+		border: none;
 		color: white;
 		font-weight: bold;
 		margin-left: 1em;
 		margin-right: 1em;
 		transition: background-color, 0.5s !important;
+		outline-style: none;
+		cursor: pointer;
+		padding: 8px;
+		border-radius: 20px;
 	}
 
 	.resume-button .resume-selected {
@@ -94,6 +99,14 @@ keywords: joel elizaga resume linkedin cv work experience
 
 	#resume-main {
 		background-color: #222;
+	}
+
+	@media screen and (min-width: 560px) {
+
+		.resume-button {
+			padding: 10px;
+		}
+
 	}
 
 </style>

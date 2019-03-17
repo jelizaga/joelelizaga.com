@@ -110,6 +110,7 @@
 
 		button {
 			outline: none;
+			border: none;
 		}
 
 		video {
@@ -127,25 +128,6 @@
 
 		.prototype {
 			max-width: 100%;
-		}
-
-		#resume-button {
-			background-color: #087600;
-			color: #FFF;
-			text-align: center;
-			padding: 10px;
-			border: none;
-			font-weight: bold;
-			display: inline-block;
-			cursor: pointer;
-			margin-left: auto;
-			margin-right: auto;
-			border-radius: 20px;
-			transition: background-color 0.5s;
-		}
-
-		#resume-button:hover {
-			background-color: #40c81b;
 		}
 
 		#resume-bottom {
@@ -1690,12 +1672,6 @@
 			}
 
 			button {
-				font-size: 12pt;
-				padding: 12px;
-				border-radius: 30px;
-			}
-
-			#resume-button {
 				font-size: 12pt;
 				padding: 12px;
 				border-radius: 30px;
