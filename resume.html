@@ -12,21 +12,105 @@ keywords: joel elizaga resume linkedin cv work experience
 			Resume
 		</h1>
 	</div>
-		<embed src="{{site.baseurl}}/file/resume/resume.pdf" width="1080" 
-			height="1298" type="application/pdf" class="letter-pdf"><div id="resume-bottom"
-		><a href="{{site.baseurl}}/file/resume/resume.pdf"
-			><button id="resume-button">
-				Expand PDF
-			</button>
-		</a>
+
+	<div id="ux-resume" class="pdf-container">
+		<embed src="{{site.baseurl}}/file/resume/ux-resume.pdf" width="1080" 
+			height="1298" type="application/pdf" class="letter-pdf">
+		<a href="{{site.baseurl}}/file/resume/ux-resume.pdf"><button class="pdf-button">Expand PDF</button></a>
+	</div>
+	<div id="multimedia-resume" class="pdf-container">
+		<embed src="{{site.baseurl}}/file/resume/multimedia-resume.pdf" width="1080" 
+			height="1298" type="application/pdf" class="letter-pdf">
+		<a href="{{site.baseurl}}/file/resume/multimedia-resume.pdf"><button class="pdf-button">Expand PDF</button></a>
+	</div>
+	<div id="plain-resume" class="pdf-container">
+		<embed src="{{site.baseurl}}/file/resume/plain-resume.pdf" width="1080" 
+			height="1298" type="application/pdf" class="letter-pdf">
+		<a href="{{site.baseurl}}/file/resume/plain-resume.pdf"><button class="pdf-button">Expand PDF</button></a>
+	</div>
+
+	<div id="resume-bottom">
+
+		<button id="ux-resume-button" onclick="present('ux-resume')" class="resume-button resume-selected">
+			UX | UI | HCI
+		</button>
+	
+		<button id="multimedia-resume-button" onclick="present('multimedia-resume')" class="resume-button">
+			Multimedia
+		</button>
+	
+		<button id="plain-resume-button" onclick="present('plain-resume')" class="resume-button">
+			Plain
+		</button>
+
+		<noscript>
+			<a href="{{site.baseurl}}/file/resume/ux-resume.pdf"
+				><button class="resume-button resume-selected">
+					UX | UI | HCI
+				</button>
+			</a>
+			<a href="{{site.baseurl}}/file/resume/ux-resume.pdf"
+				><button class="resume-button">
+					Multimedia
+				</button>
+			</a>
+			<a href="{{site.baseurl}}/file/resume/ux-resume.pdf"
+				><button class="resume-button">
+					Plain
+				</button>
+			</a>
+		</noscript>
+
 	</div>
 
 </main>
 
 <style>
 
+	#multimedia-resume {
+		display: none;
+	}
+
+	#plain-resume {
+		display: none;
+	}
+
+	.resume-button {
+		color: white;
+		font-weight: bold;
+		margin-left: 1em;
+		margin-right: 1em;
+		transition: background-color, 0.5s !important;
+	}
+
+	.resume-button .resume-selected {
+		background-color: #087600;
+	}
+
+	.resume-button:hover {
+		background-color: #40c81b !important;
+	}
+
+
 	#resume-main {
-		background-color: #333;
+		background-color: #222;
 	}
 
 </style>
+
+<script>
+
+	$(document).ready(function() {
+		$("#ux-resume-button").css("background-color", "#087600");
+	});
+
+	function present(resume) {
+		console.log("Switching resumes");
+		$(".pdf-container").hide();
+		$("#" + resume).show();
+		$(".resume-button").css("background-color", "#333");
+		$("#" + resume + "-button").css("background-color", "#087600");
+		window.scrollTo({ top: 0, behavior: "smooth" });
+	}
+
+</script>
