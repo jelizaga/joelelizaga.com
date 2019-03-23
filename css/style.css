@@ -159,10 +159,6 @@
 			text-align: center;
 		}
 
-		button {
-			outline: none;
-		}
-
 		.title {
 			color: #FFFFFF;
 			background-color: #222222;
@@ -343,6 +339,7 @@
 
 		.index-intro p {
 			font-size: 10pt;
+			hyphens: auto;
 		}
 
 		.index-intro .first-letter {
