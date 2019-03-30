@@ -12,6 +12,44 @@
 $(document).ready(function() {
 
 	///////////////////////////////////////////////////////////////////////////////////////////////
+	// AD-L CAROUSEL //////////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////////////////////////
+
+	var adLCarousel;
+	var adLi = 1;
+
+	$("#ad-l-img").mouseover(function() {
+		adLCarousel = setInterval(function() {
+			switch(adLi) {
+				case 1:
+					document.getElementById("ad-l-img").src = "../img/vid/ad-l/ad-l-1.jpg";
+					adLi++;
+					break;
+				case 2:
+					document.getElementById("ad-l-img").src = "../img/vid/ad-l/ad-l-2.jpg";
+					adLi++;
+					break;
+				case 3:
+					document.getElementById("ad-l-img").src = "../img/vid/ad-l/ad-l-3.jpg";
+					adLi++;
+					break;
+				case 4:
+					document.getElementById("ad-l-img").src = "../img/vid/ad-l/ad-l-4.jpg";
+					adLi++;
+					break;
+				case 5:
+					document.getElementById("ad-l-img").src = "../img/vid/ad-l/ad-l-5.jpg";
+					adLi = 1;
+					break;
+			}
+		}, 1000);
+	});
+
+	$("#ad-l-img").mouseleave(function() {
+		clearInterval(adLCarousel);
+	});
+
+	///////////////////////////////////////////////////////////////////////////////////////////////
 	// GENONE CAROUSEL ////////////////////////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////////////////////////
 
