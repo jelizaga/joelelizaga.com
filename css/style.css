@@ -75,6 +75,10 @@
 			color: #4EFF1F;
 		}
 
+		.credits a {
+			color: #4EFF1F;
+		}
+
 		h1 {
 			font-family: "Fjallaone", sans-serif;
 			text-align: center;
@@ -117,7 +121,7 @@
 			display: block;
 			margin-left: auto;
 			margin-right: auto;
-			width: 100%;
+			max-width: 100%;
 			height: auto;
 			outline: none;
 		}
