@@ -37,6 +37,11 @@
 		src: url("../font/gandhi.otf");
 	}
 
+	@font-face {
+		font-family: "Lato";
+		src: url("../font/lato-regular.ttf");
+	}
+
 	html {
 		margin: 0;
 		padding: 0;
