@@ -39,8 +39,13 @@ function playSong(songId) {
 	/* Determine song file location. */
 	songParsed = songId.split("-");
 	songName = songParsed[0];
+	alert(songParsed[songParsed.length - 1]);
+	if (songName == 'agua' && songParsed[songParsed.length]) {
+		songParsed = songParsed.pop();
+	}
 	var properTime = 0;
 	var songLocation = "../../../file/posts/2-1-19/";
+	alert(songParsed);
 	for (var i = 1; i < songParsed.length; i++) {
 		songLocation = songLocation + songParsed[i] + "-";
 	}
