@@ -4269,18 +4269,20 @@
 		/* NAV 1150+ ////////////////////////////////////////////////////////////////////////////*/
 
 			nav {
+				background-color: #333;
 				display: block;
 				width: 100%;
 				margin: 0;
 				font-family: "Anonymous Pro", monospace;
 				font-weight: normal;
+				box-shadow: 2px 2px 4px #777;
 			}
 
 			nav ul {
 				display: block;
 				list-style: none;
 				max-width: 1080px;
-				padding: 0px;
+				padding: 0.7em;
 				margin-top: 0px;
 				margin-bottom: 0px;
 				margin-left: auto;
