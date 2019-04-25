@@ -217,37 +217,7 @@
 	/* NAV SMALLEST+ ////////////////////////////////////////////////////////////////////////////*/
 
 		nav {
-			margin-left: auto;
-			margin-right: auto;
 			display: none;
-		}
-
-		nav ul {
-			list-style: none;
-			padding: 0;
-		}
-
-		nav ul li {
-			display: inline-block;
-			margin-right: 17px;
-		}
-
-		nav a {
-			text-decoration: none;
-			text-align: center;
-			color: #333;
-			font-size: 14pt;
-			font-family: "Anonymous Pro", sans-serif;
-		}
-
-		nav ul li img {
-			display: block;
-			margin-bottom: 10px;
-		}
-
-		nav ul li canvas {
-			display: block;
-			margin-bottom: 5px;
 		}
 
 	/* MOBILE MENU SMALLEST+  ////////////////////////////////////////////////////////////////////*/
@@ -940,6 +910,7 @@
 
 			body {
 				background-image: url("../img/bg/bg2.png");
+				font-size: 10pt;
 			}
 
 			p {
@@ -1184,54 +1155,6 @@
 
 			.post-tile-link:hover {
 				color: #000000;
-			}
-
-		/* NAV 560+ /////////////////////////////////////////////////////////////////////////////*/
-
-			nav {
-				margin-left: auto;
-				margin-right: auto;
-				display: block;
-			}
-
-			nav ul {
-				list-style: none;
-				padding: 0;
-			}
-
-			nav ul li {
-				display: inline-block;
-				margin-right: 0px;
-			}
-
-			nav a {
-				text-decoration: none;
-				text-align: center;
-				color: #333;
-				font-size: 14pt;
-				font-family: "Anonymous Pro", sans-serif;
-			}
-
-			nav ul li img {
-				display: block;
-				margin-bottom: 0px;
-			}
-
-			nav ul li canvas {
-				display: block;
-				margin-bottom: 0px;
-			}
-
-			.small-button {
-				width: 60px;
-			}
-
-			#homec {
-				width: 70px;
-			}
-
-			.mobile-menu {
-				display: none;
 			}
 
 		/* INDEX 560+ ///////////////////////////////////////////////////////////////////////////*/
@@ -1706,46 +1629,44 @@
 			}
 
 		/* NAV 740+ /////////////////////////////////////////////////////////////////////////////*/
+		/* Mobile menu is hidden; regular nav appears. */
 
 			nav {
+				background-color: #333333;
+				display: block;
+				width: 100%;
+				margin: 0;
+				font-family: "Anonymous Pro", monospace;
+				font-weight: normal;
+				box-shadow: 2px 2px 4px #777;
+			}
+
+			nav ul {
+				display: block;
+				list-style: none;
+				max-width: 680px;
+				padding: 0.7em;
+				margin-top: 0px;
+				margin-bottom: 0px;
 				margin-left: auto;
 				margin-right: auto;
 			}
 
-			nav ul {
-				list-style: none;
-				padding: 0;
-			}
-
 			nav ul li {
 				display: inline-block;
-				margin-right: 0px;
+				margin-left: 10px;
 			}
 
 			nav a {
 				text-decoration: none;
 				text-align: center;
-				color: #333;
+				color: #FFFFFF;
 				font-size: 14pt;
 				font-family: "Anonymous Pro", sans-serif;
 			}
 
-			nav ul li img {
-				display: block;
-				margin-bottom: 0px;
-			}
-
-			nav ul li canvas {
-				display: block;
-				margin-bottom: 0px;
-			}
-
-			.small-button {
-				width: 80px;
-			}
-
-			#homec {
-				width: 90px;
+			.mobile-menu {
+				display: none;
 			}
 
 		/* INDEX 740+ ///////////////////////////////////////////////////////////////////////////*/
@@ -2374,44 +2295,37 @@
 		/* NAV 860+ /////////////////////////////////////////////////////////////////////////////*/
 
 			nav {
+				background-color: #333333;
+				display: block;
+				width: 100%;
+				margin: 0;
+				font-family: "Anonymous Pro", monospace;
+				font-weight: normal;
+				box-shadow: 2px 2px 4px #777;
+			}
+
+			nav ul {
+				display: block;
+				list-style: none;
+				max-width: 780px;
+				padding: 0.7em;
+				margin-top: 0px;
+				margin-bottom: 0px;
 				margin-left: auto;
 				margin-right: auto;
 			}
 
-			nav ul {
-				list-style: none;
-				padding: 0;
-			}
-
 			nav ul li {
 				display: inline-block;
-				margin-right: 5px;
+				margin-left: 10px;
 			}
 
 			nav a {
 				text-decoration: none;
 				text-align: center;
-				color: #333;
+				color: #FFFFFF;
 				font-size: 14pt;
 				font-family: "Anonymous Pro", sans-serif;
-			}
-
-			nav ul li img {
-				display: block;
-				margin-bottom: 0px;
-			}
-
-			nav ul li canvas {
-				display: block;
-				margin-bottom: 0px;
-			}
-
-			.small-button {
-				width: 80px;
-			}
-
-			#homec {
-				width: 100px;
 			}
 
 		/* INDEX 860+ //////////////////////////////////////////////////////////////////////////*/
@@ -3012,46 +2926,38 @@
 		/* NAV 970+ /////////////////////////////////////////////////////////////////////////////*/
 
 			nav {
+				background-color: #333;
+				display: block;
+				width: 100%;
+				margin: 0;
+				font-family: "Anonymous Pro", monospace;
+				font-weight: normal;
+				box-shadow: 2px 2px 4px #777;
+			}
+
+			nav ul {
+				display: block;
+				list-style: none;
+				max-width: 900px;
+				padding: 0.7em;
+				margin-top: 0px;
+				margin-bottom: 0px;
 				margin-left: auto;
 				margin-right: auto;
 			}
 
-			nav ul {
-				list-style: none;
-				padding: 0;
-			}
-
 			nav ul li {
 				display: inline-block;
-				margin-right: 17px;
+				margin-left: 10px;
 			}
 
 			nav a {
 				text-decoration: none;
 				text-align: center;
-				color: #333;
+				color: #FFFFFF;
 				font-size: 14pt;
 				font-family: "Anonymous Pro", sans-serif;
 			}
-
-			nav ul li img {
-				display: block;
-				margin-bottom: 10px;
-			}
-
-			nav ul li canvas {
-				display: block;
-				margin-bottom: 5px;
-			}
-
-			.small-button {
-				width: 90px;
-			}
-
-			#homec {
-				width: 130px;
-			}
-
 
 		/* INDEX 970+ ///////////////////////////////////////////////////////////////////////////*/
 
@@ -3660,36 +3566,37 @@
 		/* NAV 1070+ ////////////////////////////////////////////////////////////////////////////*/
 
 			nav {
+				background-color: #333;
+				display: block;
+				width: 100%;
+				margin: 0;
+				font-family: "Anonymous Pro", monospace;
+				font-weight: normal;
+				box-shadow: 2px 2px 4px #777;
+			}
+
+			nav ul {
+				display: block;
+				list-style: none;
+				max-width: 1000px;
+				padding: 0.7em;
+				margin-top: 0px;
+				margin-bottom: 0px;
 				margin-left: auto;
 				margin-right: auto;
 			}
 
-			nav ul {
-				list-style: none;
-				padding: 0;
-			}
-
 			nav ul li {
 				display: inline-block;
-				margin-right: 17px;
+				margin-left: 10px;
 			}
 
 			nav a {
 				text-decoration: none;
 				text-align: center;
-				color: #333;
+				color: #FFFFFF;
 				font-size: 14pt;
 				font-family: "Anonymous Pro", sans-serif;
-			}
-
-			nav ul li img {
-				display: block;
-				margin-bottom: 10px;
-			}
-
-			nav ul li canvas {
-				display: block;
-				margin-bottom: 5px;
 			}
 
 		/* INDEX 1070+ //////////////////////////////////////////////////////////////////////////*/
