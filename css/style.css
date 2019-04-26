@@ -231,10 +231,6 @@
 			box-shadow: 2px 2px 5px 0px;
 		}
 
-		.mobile-menu-head {
-			cursor: pointer;
-		}
-
 		.mobile-menu a {
 			color: #222;
 		}
@@ -249,6 +245,7 @@
 		}
 
 		.mobile-menu-head {
+			cursor: pointer;
 			text-align: center;
 			background-color: #222;
 			color: #FFF;
@@ -1636,8 +1633,6 @@
 				display: block;
 				width: 100%;
 				margin: 0;
-				font-family: "Anonymous Pro", monospace;
-				font-weight: normal;
 				box-shadow: 2px 2px 4px #777;
 			}
 
@@ -1654,14 +1649,14 @@
 
 			nav ul li {
 				display: inline-block;
-				margin-left: 10px;
+				margin-left: 20px;
 			}
 
 			nav a {
 				text-decoration: none;
-				text-align: center;
 				color: #FFFFFF;
-				font-size: 14pt;
+				font-size: 12pt;
+				font-weight: normal;
 				font-family: "Anonymous Pro", sans-serif;
 			}
 
@@ -2294,38 +2289,19 @@
 
 		/* NAV 860+ /////////////////////////////////////////////////////////////////////////////*/
 
-			nav {
-				background-color: #333333;
-				display: block;
-				width: 100%;
-				margin: 0;
-				font-family: "Anonymous Pro", monospace;
-				font-weight: normal;
-				box-shadow: 2px 2px 4px #777;
-			}
-
 			nav ul {
-				display: block;
-				list-style: none;
 				max-width: 780px;
 				padding: 0.7em;
-				margin-top: 0px;
-				margin-bottom: 0px;
-				margin-left: auto;
-				margin-right: auto;
 			}
 
 			nav ul li {
 				display: inline-block;
-				margin-left: 10px;
+				margin-left: 0px;
+				margin-right: 25px;
 			}
 
 			nav a {
-				text-decoration: none;
-				text-align: center;
-				color: #FFFFFF;
-				font-size: 14pt;
-				font-family: "Anonymous Pro", sans-serif;
+				font-size: 13pt;
 			}
 
 		/* INDEX 860+ //////////////////////////////////////////////////////////////////////////*/
@@ -2925,38 +2901,17 @@
 
 		/* NAV 970+ /////////////////////////////////////////////////////////////////////////////*/
 
-			nav {
-				background-color: #333;
-				display: block;
-				width: 100%;
-				margin: 0;
-				font-family: "Anonymous Pro", monospace;
-				font-weight: normal;
-				box-shadow: 2px 2px 4px #777;
-			}
-
 			nav ul {
-				display: block;
-				list-style: none;
 				max-width: 900px;
 				padding: 0.7em;
-				margin-top: 0px;
-				margin-bottom: 0px;
-				margin-left: auto;
-				margin-right: auto;
 			}
 
 			nav ul li {
-				display: inline-block;
-				margin-left: 10px;
+				margin-right: 30px;
 			}
 
-			nav a {
-				text-decoration: none;
-				text-align: center;
-				color: #FFFFFF;
+			nav ul li a {
 				font-size: 14pt;
-				font-family: "Anonymous Pro", sans-serif;
 			}
 
 		/* INDEX 970+ ///////////////////////////////////////////////////////////////////////////*/
@@ -3565,19 +3520,7 @@
 
 		/* NAV 1070+ ////////////////////////////////////////////////////////////////////////////*/
 
-			nav {
-				background-color: #333;
-				display: block;
-				width: 100%;
-				margin: 0;
-				font-family: "Anonymous Pro", monospace;
-				font-weight: normal;
-				box-shadow: 2px 2px 4px #777;
-			}
-
 			nav ul {
-				display: block;
-				list-style: none;
 				max-width: 1000px;
 				padding: 0.7em;
 				margin-top: 0px;
@@ -3587,16 +3530,7 @@
 			}
 
 			nav ul li {
-				display: inline-block;
-				margin-left: 10px;
-			}
-
-			nav a {
-				text-decoration: none;
-				text-align: center;
-				color: #FFFFFF;
-				font-size: 14pt;
-				font-family: "Anonymous Pro", sans-serif;
+				margin-right: 35px;
 			}
 
 		/* INDEX 1070+ //////////////////////////////////////////////////////////////////////////*/
@@ -4186,8 +4120,6 @@
 			}
 
 			nav ul {
-				display: block;
-				list-style: none;
 				max-width: 1080px;
 				padding: 0.7em;
 				margin-top: 0px;
@@ -4197,16 +4129,7 @@
 			}
 
 			nav ul li {
-				display: inline-block;
-				margin-left: 10px;
-			}
-
-			nav a {
-				text-decoration: none;
-				text-align: center;
-				color: #FFFFFF;
-				font-size: 14pt;
-				font-family: "Anonymous Pro", sans-serif;
+				margin-right: 35px;
 			}
 
 
