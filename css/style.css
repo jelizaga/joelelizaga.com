@@ -228,7 +228,7 @@
 			letter-spacing: 2px;
 			display: block;
 			margin-bottom: 10px;
-			box-shadow: 2px 2px 5px 0px;
+			box-shadow: 0px 0px 4px 0px #777777;
 		}
 
 		.mobile-menu a {
@@ -981,9 +981,7 @@
 			}
 
 			.tile {
-				background-color: #FFFFFF;
-				padding: 0px;
-				box-shadow: 2px 2px 5px 0px;
+				box-shadow: 0px 0px 4px 0px #777777;
 				margin-left: auto;
 				margin-right: auto;
 				max-width: 500px;
@@ -1406,7 +1404,7 @@
 			main {
 				background-color: #FFFFFF;
 				padding: 0;
-				box-shadow: 2px 2px 5px 0px;
+				box-shadow: 0px 0px 4px 0px #777777;
 				margin-left: auto;
 				margin-right: auto;
 				max-width: 500px;
@@ -1944,7 +1942,7 @@
 			.tile {
 				background-color: #FFFFFF;
 				padding: 0px;
-				box-shadow: 2px 2px 5px 0px;
+				box-shadow: 0px 0px 4px 0px #777777;
 				margin-left: auto;
 				margin-right: auto;
 				position: relative;
@@ -2126,11 +2124,6 @@
 		/* MAIN 740+ ////////////////////////////////////////////////////////////////////////////*/
 
 			main {
-				background-color: #FFFFFF;
-				padding: 0;
-				box-shadow: 2px 2px 5px 0px;
-				margin-left: auto;
-				margin-right: auto;
 				max-width: 680px;
 				margin-top: 15px;
 				margin-bottom: 20px;
@@ -2557,9 +2550,6 @@
 			}
 
 			.tile {
-				background-color: #FFFFFF;
-				padding: 0px;
-				box-shadow: 2px 2px 5px 0px;
 				margin-left: auto;
 				margin-right: auto;
 				max-width: 780px;
@@ -2740,11 +2730,6 @@
 		/* MAIN 860+ ////////////////////////////////////////////////////////////////////////////*/
 
 			main {
-				background-color: #FFFFFF;
-				padding: 0;
-				box-shadow: 2px 2px 5px 0px;
-				margin-left: auto;
-				margin-right: auto;
 				max-width: 780px;
 				margin-top: 15px;
 				margin-bottom: 20px;
@@ -3139,9 +3124,6 @@
 			}
 
 			.tile {
-				background-color: #FFFFFF;
-				padding: 0px;
-				box-shadow: 2px 2px 5px 0px;
 				margin-left: auto;
 				margin-right: auto;
 				position: relative;
@@ -3323,11 +3305,6 @@
 		/* MAIN 970+ ////////////////////////////////////////////////////////////////////////////*/
 
 			main {
-				background-color: #FFFFFF;
-				padding: 0;
-				box-shadow: 2px 2px 5px 0px;
-				margin-left: auto;
-				margin-right: auto;
 				max-width: 900px;
 				margin-top: 15px;
 				margin-bottom: 0px;
@@ -3765,9 +3742,6 @@
 			}
 
 			.tile {
-				background-color: #FFFFFF;
-				padding: 0px;
-				box-shadow: 2px 2px 5px 0px;
 				margin-left: auto;
 				margin-right: auto;
 				max-width: 1000px;
@@ -3949,11 +3923,6 @@
 		/* MAIN 1070+ ///////////////////////////////////////////////////////////////////////////*/
 
 			main {
-				background-color: #FFFFFF;
-				padding: 0;
-				box-shadow: 2px 2px 5px 0px;
-				margin-left: auto;
-				margin-right: auto;
 				max-width: 1000px;
 				margin-top: 15px;
 				margin-bottom: 0px;
@@ -4372,9 +4341,6 @@
 			}
 
 			.tile {
-				background-color: #FFFFFF;
-				padding: 0px;
-				box-shadow: 2px 2px 5px 0px;
 				margin-left: auto;
 				margin-right: auto;
 				max-width: 1080px;
@@ -4604,11 +4570,6 @@
 		/* MAIN 1150+ ///////////////////////////////////////////////////////////////////////////*/
 
 			main {
-				background-color: #FFFFFF;
-				padding: 0;
-				box-shadow: 2px 2px 5px 0px;
-				margin-left: auto;
-				margin-right: auto;
 				max-width: 1080px;
 				margin-top: 15px;
 				margin-bottom: 0px;
