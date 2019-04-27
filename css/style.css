@@ -1157,24 +1157,14 @@
 			.cinemagram {
 				margin-top: 15px;
 				margin-bottom: 15px;
+				border-bottom-left-radius: 0px;
+				border-bottom-right-radius: 0px;
 			}
 
 			#cinemagram {
 				border-radius: 20px;
-			}
-
-			.cinemagram-2 {
-				display: none;
-			}
-
-			.cinemagram-2 video {
-				width: 500px;
-			}
-
-			.column-splitter-intro {
-				margin-left: auto;
-				margin-right: auto;
-				max-width: 500px;
+				border-bottom-left-radius: 0px;
+				border-bottom-right-radius: 0px;
 			}
 
 			/* INDEX INTRO 560+ /////////////////////////////////////////////////////////////////*/
@@ -1187,7 +1177,8 @@
 				margin-top: 0;
 				margin-bottom: 0;
 				background-color: rgba(20, 20, 20, 0.9);
-				box-shadow: rgb(51, 51, 51) 2px 2px 5px 0px;
+				border-bottom-left-radius: 20px;
+				border-bottom-right-radius: 20px;
 			}
 
 			.index-intro .content {
@@ -1213,10 +1204,8 @@
 				float: right;
 				width: 250px;
 				height: 250px;
-				border-radius: 20px;
 				margin-top: 0;
 				margin-bottom: 0;
-				box-shadow: 2px 2px 5px 0px;
 				display: none;
 			}
 
@@ -1665,20 +1654,8 @@
 		/* INDEX 740+ ///////////////////////////////////////////////////////////////////////////*/
 
 			#cinemagram {
-				border-radius: 20px
 				width: 680px;
 				height: 383px;
-			}
-
-			.cinemagram-2 {
-				width: 250px;
-				height: 250px;
-				border-radius: 20px;
-				background-color: #000;
-				overflow: hidden;
-				margin-top: 15px;
-				box-shadow: 2px 2px 5px 0px;
-				display: inline-block;
 			}
 
 			.column-splitter-intro {
@@ -1695,7 +1672,6 @@
 				margin-top: 0;
 				margin-bottom: 0;
 				background-color: rgba(20, 20, 20, 0.9);
-				box-shadow: 2px 2px 5px 0px;
 			}
 
 			.index-intro .content {
@@ -1717,29 +1693,6 @@
 				padding-top: 11px;
 			}
 
-			.index-portrait {
-				display: inline-block;
-				float: right;
-				width: 250px;
-				height: 250px;
-				border-radius: 20px;
-				margin-top: 0;
-				margin-bottom: 0;
-				box-shadow: 2px 2px 5px 0px;
-				display: none;
-			}
-
-			#index-photo {
-				border-radius: 20px;
-				overflow: hidden;
-				float: right;
-				height: 250px;
-				width: 415px;
-				box-shadow: 2px 2px 5px 0px;
-				margin-top: 15px;
-				display: inline-block;
-			}
-
 			.pdf-button {
 				background-color: #222;
 				box-shadow: 2px 2px 10px 0px #333;
@@ -1759,16 +1712,6 @@
 				margin-bottom: 20px;
 				border-radius: 20px;
 				transition: background-color 0.5s;
-			}
-
-			#index-photo {
-				border-radius: 20px;
-				overflow: hidden;
-				float: right;
-				height: 300px;
-				width: 580px;
-				box-shadow: 2px 2px 5px 0px;
-				margin-top: 15px;
 			}
 
 			.index-blog-item {
@@ -2155,6 +2098,27 @@
 				height: 383px;
 			}
 
+			.pdf-button {
+				background-color: #222;
+				box-shadow: 2px 2px 10px 0px #333;
+				color: #FFF;
+				text-align: center;
+				padding: 10px;
+				border: none;
+				font-weight: bold;
+				display: block;
+				position: absolute;
+				bottom: 5px;
+				left: 50%;
+				transform: translate(-50%, 0);
+				cursor: pointer;
+				margin-left: auto;
+				margin-right: auto;
+				margin-bottom: 20px;
+				border-radius: 20px;
+				transition: background-color 0.5s;
+			}
+
 		/* CREDITS 740+ /////////////////////////////////////////////////////////////////////////*/
 
 			.credits-head {
@@ -2300,7 +2264,6 @@
 		/* INDEX 860+ //////////////////////////////////////////////////////////////////////////*/
 
 			#cinemagram {
-				border-radius: 20px;
 				width: 780px;
 				height: 439px;
 			}
@@ -2314,14 +2277,11 @@
 			/* INDEX INTRO 860+ /////////////////////////////////////////////////////////////////*/
 
 			.index-intro {
-				display: inline-block;
 				color: #FFFFFF;
-				height: 250px;
-				width: 515px;
-				margin-top: 0;
-				margin-bottom: 0;
-				background-color: rgba(20, 20, 20, 0.9);
-				box-shadow: 2px 2px 5px 0px;
+				height: 270px;
+				width: 510px;
+				border-bottom-left-radius: 20px;
+				border-bottom-right-radius: 0px;
 			}
 
 			.index-intro .content {
@@ -2340,45 +2300,13 @@
 				margin-bottom: 11pt;
 			}
 
-			.index-intro .first-letter {
-				font-size: 2.5em;
-				padding-top: 10px;
-			}
-
 			.index-portrait {
 				display: inline-block;
 				float: right;
-				width: 250px;
-				height: 250px;
-				border-radius: 20px;
-				margin-top: 0;
-				margin-bottom: 0;
-				box-shadow: 2px 2px 5px 0px;
+				width: 270px;
+				height: 270px;
 				display: block;
-			}
-
-			#index-portrait-i {
-				display: none;
-			}
-
-			#index-photo {
-				border-radius: 20px;
-				overflow: hidden;
-				float: right;
-				height: 250px;
-				width: 510px;
-				box-shadow: 2px 2px 5px 0px;
-				margin-top: 15px;
-			}
-
-			#index-photo {
-				border-radius: 20px;
-				overflow: hidden;
-				float: right;
-				height: 300px;
-				width: 580px;
-				box-shadow: 2px 2px 5px 0px;
-				margin-top: 15px;
+				border-bottom-right-radius: 20px;
 			}
 
 			.index-blog-item {
@@ -2902,29 +2830,13 @@
 		/* INDEX 970+ ///////////////////////////////////////////////////////////////////////////*/
 
 			#cinemagram {
-				border-radius: 20px;
 				height: 507px;
 				width: 900px;
 			}
 
-			.cinemagram-2 {
-				width: 300px;
-				height: 300px;
-			}
-
-			.cinemagram-2 video {
-				width: 600px;
-			}
-
-			.column-splitter-intro {
-				margin-left: auto;
-				margin-right: auto;
-				max-width: 900px;
-			}
-
 			.index-intro {
 				height: 300px;
-				width: 585px;
+				width: 600px;
 			}
 
 			.index-intro h1 {
@@ -2941,20 +2853,8 @@
 			}
 
 			.index-portrait {
-				display: inline-block;
-				float: right;
 				width: 300px;
 				height: 300px;
-			}
-
-			#index-photo {
-				border-radius: 20px;
-				overflow: hidden;
-				float: right;
-				height: 300px;
-				width: 580px;
-				box-shadow: 2px 2px 5px 0px;
-				margin-top: 15px;
 			}
 
 			/* BLOG 960+ ////////////////////////////////////////////////////////////////////////*/
@@ -3517,21 +3417,14 @@
 				height: 563px;
 			}
 
-			.column-splitter-intro {
-				margin-left: auto;
-				margin-right: auto;
-				max-width: 1000px;
-			}
-
 			.index-intro {
 				display: inline-block;
 				color: #FFFFFF;
-				height: 300px;
-				width: 685px;
+				height: 310px;
+				width: 690px;
 				margin-top: 0;
 				margin-bottom: 0;
 				background-color: rgba(20, 20, 20, 0.9);
-				box-shadow: 2px 2px 5px 0px;
 			}
 
 			.index-intro .content {
@@ -3548,39 +3441,18 @@
 				font-size: 13pt;
 			}
 
-			.index-intro .first-letter {
-				font-size: 2.5em;
-				padding-top: 14px;
-			}
-
 			.index-portrait {
-				display: inline-block;
-				float: right;
-				width: 300px;
-				height: 300px;
-				border-radius: 20px;
-				margin-top: 0;
-				margin-bottom: 0;
-				box-shadow: 2px 2px 5px 0px;
+				width: 310px;
+				height: 310px;
 			}
 
-			#index-photo {
-				border-radius: 20px;
-				overflow: hidden;
-				float: right;
-				height: 300px;
-				width: 680px;
-				box-shadow: 2px 2px 5px 0px;
-				margin-top: 15px;
-			}
-
+			/* BLOG 1070+ ///////////////////////////////////////////////////////////////////////*/
+			
 			.index-blog-item {
 				overflow: hidden;
 				position: relative;
 				height: 250px;
 			}
-
-			/* BLOG 1070+ ///////////////////////////////////////////////////////////////////////*/
 
 			.blog-meta {
 				color: white;
@@ -4109,38 +3981,19 @@
 				height: 608px;
 			}
 
-			.cinemagram-2 {
-				display: inline-block;
-			}
-
 			.column-splitter-intro {
 				margin-left: auto;
 				margin-right: auto;
 				max-width: 1080px;
 			}
 
-			#index-photo {
-				border-radius: 20px;
-				overflow: hidden;
-				float: right;
-				height: 300px;
-				width: 760px;
-				box-shadow: 2px 2px 5px 0px;
-				margin-top: 15px;
-			}
-
-			#index-photo img {
-				width: 100%;
-			}
-
 			.index-intro {
 				display: inline-block;
 				color: #FFFFFF;
-				height: 300px;
-				width: 765px;
+				height: 320px;
+				width: 760px;
 				margin-top: 0;
 				margin-bottom: 0;
-				box-shadow: rgb(51, 51, 51) 2px 2px 5px 0px;
 			}
 
 			.index-intro .content {
@@ -4163,14 +4016,8 @@
 			}
 
 			.index-portrait {
-				display: inline-block;
-				float: right;
-				width: 300px;
-				height: 300px;
-				border-radius: 20px;
-				margin-top: 0;
-				margin-bottom: 0;
-				box-shadow: 2px 2px 5px 0px;
+				width: 320px;
+				height: 320px;
 			}
 
 			/* BLOG 1150+ ///////////////////////////////////////////////////////////////////////*/
