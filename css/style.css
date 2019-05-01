@@ -45,6 +45,7 @@
 	html {
 		margin: 0;
 		padding: 0;
+		height: 100%;
 	}
 
 /* SMALLEST SCREENS */
@@ -55,10 +56,11 @@
 			/* Background by Toptal Subtle Patterns. */
 			background-image: url("../img/bg/bg1.png");
 			font-family: "Nimbus Sans", sans-serif;
-			color: #333333;
+			color: #222222;
 			font-size: 10pt;
 			margin: 0px;
 			padding: 0px;
+			height: 100%;
 		}
 
 		p {
@@ -134,6 +136,10 @@
 
 		.hidden {
 			display: none;
+		}
+
+		.transparent {
+			background-color: rgba(34, 34, 34, 0.0);
 		}
 
 		.prototype {
@@ -296,7 +302,7 @@
 
 		.index-intro {
 			display: inline-block;
-			color: #333333;
+			color: #222222;
 			width: 100%;
 			margin-top: 0;
 			margin-bottom: 0;
@@ -618,7 +624,7 @@
 		}
 
 		.tile-footer {
-			font-family: "Anonymous Pro", monospace;
+			font-family: "Nimbus Sans", sans-serif;
 			margin-left: auto;
 			margin-right: auto;
 			overflow: hidden;
@@ -1032,7 +1038,6 @@
 			}
 
 			.tile-footer {
-				font-family: "Anonymous Pro", monospace;
 				margin-left: auto;
 				margin-right: auto;
 				overflow: hidden;
@@ -1154,17 +1159,9 @@
 
 		/* INDEX 560+ ///////////////////////////////////////////////////////////////////////////*/
 
-			.cinemagram {
-				margin-top: 15px;
-				margin-bottom: 15px;
-				border-bottom-left-radius: 0px;
-				border-bottom-right-radius: 0px;
-			}
-
 			#cinemagram {
-				border-radius: 20px;
-				border-bottom-left-radius: 0px;
-				border-bottom-right-radius: 0px;
+				z-index: -1;
+				position: absolute;
 			}
 
 			/* INDEX INTRO 560+ /////////////////////////////////////////////////////////////////*/
@@ -1176,9 +1173,9 @@
 				width: 500px;
 				margin-top: 0;
 				margin-bottom: 0;
-				background-color: rgba(20, 20, 20, 0.9);
+				background-color: rgba(34, 34, 34, 0.9);
 				border-bottom-left-radius: 20px;
-				border-bottom-right-radius: 20px;
+				border-top-left-radius: 20px;
 			}
 
 			.index-intro .content {
@@ -1393,7 +1390,7 @@
 			main {
 				background-color: #FFFFFF;
 				padding: 0;
-				box-shadow: 0px 0px 4px 0px #777777;
+				box-shadow: 0px 0px 4px 0px #111111;
 				margin-left: auto;
 				margin-right: auto;
 				max-width: 500px;
@@ -1616,11 +1613,11 @@
 		/* Mobile menu is hidden; regular nav appears. */
 
 			nav {
-				background-color: #333333;
+				background-color: #222222;
 				display: block;
 				width: 100%;
 				margin: 0;
-				box-shadow: 2px 2px 4px #777;
+				box-shadow: 2px 2px 4px #111111;
 			}
 
 			nav ul {
@@ -1644,7 +1641,8 @@
 				color: #FFFFFF;
 				font-size: 12pt;
 				font-weight: normal;
-				font-family: "Anonymous Pro", sans-serif;
+				font-family: "Nimbus Sans", sans-serif;
+				line-height: 0;
 			}
 
 			.mobile-menu {
@@ -1653,17 +1651,6 @@
 
 		/* INDEX 740+ ///////////////////////////////////////////////////////////////////////////*/
 
-			#cinemagram {
-				width: 680px;
-				height: 383px;
-			}
-
-			.column-splitter-intro {
-				margin-left: auto;
-				margin-right: auto;
-				max-width: 680px;
-			}
-
 			.index-intro {
 				display: inline-block;
 				color: #FFFFFF;
@@ -1671,7 +1658,6 @@
 				width: 680px;
 				margin-top: 0;
 				margin-bottom: 0;
-				background-color: rgba(20, 20, 20, 0.9);
 			}
 
 			.index-intro .content {
@@ -1936,7 +1922,6 @@
 			}
 
 			.tile-footer {
-				font-family: "Anonymous Pro", monospace;
 				margin-left: auto;
 				margin-right: auto;
 				overflow: hidden;
@@ -2263,11 +2248,6 @@
 
 		/* INDEX 860+ //////////////////////////////////////////////////////////////////////////*/
 
-			#cinemagram {
-				width: 780px;
-				height: 439px;
-			}
-
 			.column-splitter-intro {
 				margin-left: auto;
 				margin-right: auto;
@@ -2307,6 +2287,7 @@
 				height: 270px;
 				display: block;
 				border-bottom-right-radius: 20px;
+				border-top-right-radius: 20px;
 			}
 
 			.index-blog-item {
@@ -2527,7 +2508,6 @@
 			}
 
 			.tile-footer {
-				font-family: "Anonymous Pro", monospace;
 				margin-left: auto;
 				margin-right: auto;
 				overflow: hidden;
@@ -2829,11 +2809,6 @@
 
 		/* INDEX 970+ ///////////////////////////////////////////////////////////////////////////*/
 
-			#cinemagram {
-				height: 507px;
-				width: 900px;
-			}
-
 			.index-intro {
 				height: 300px;
 				width: 600px;
@@ -3074,7 +3049,6 @@
 			}
 
 			.tile-footer {
-				font-family: "Anonymous Pro", monospace;
 				margin-left: auto;
 				margin-right: auto;
 				overflow: hidden;
@@ -3412,11 +3386,6 @@
 
 		/* INDEX 1070+ //////////////////////////////////////////////////////////////////////////*/
 
-			#cinemagram {
-				width: 1000px;
-				height: 563px;
-			}
-
 			.index-intro {
 				display: inline-block;
 				color: #FFFFFF;
@@ -3424,7 +3393,6 @@
 				width: 690px;
 				margin-top: 0;
 				margin-bottom: 0;
-				background-color: rgba(20, 20, 20, 0.9);
 			}
 
 			.index-intro .content {
@@ -3669,7 +3637,6 @@
 			}
 
 			.tile-footer {
-				font-family: "Anonymous Pro", monospace;
 				margin-left: auto;
 				margin-right: auto;
 				overflow: hidden;
@@ -3951,13 +3918,10 @@
 		/* NAV 1150+ ////////////////////////////////////////////////////////////////////////////*/
 
 			nav {
-				background-color: #333;
 				display: block;
 				width: 100%;
 				margin: 0;
-				font-family: "Anonymous Pro", monospace;
 				font-weight: normal;
-				box-shadow: 2px 2px 4px #777;
 			}
 
 			nav ul {
@@ -3975,11 +3939,6 @@
 
 
 		/* INDEX 1150+ //////////////////////////////////////////////////////////////////////////*/
-
-			#cinemagram {
-				width: 1080px;
-				height: 608px;
-			}
 
 			.column-splitter-intro {
 				margin-left: auto;
@@ -4199,7 +4158,6 @@
 			}
 
 			.tile-footer {
-				font-family: "Anonymous Pro", monospace;
 				margin-left: auto;
 				margin-right: auto;
 				overflow: hidden;

@@ -4,9 +4,28 @@ title: Joel Elizaga
 keywords: joel elizaga index home
 ---
 
-<main>
-	<video id="cinemagram" src="{{site.baseurl}}/img/cinemagram/uw-crow.mp4" width="1080" height="608" loop="true" autoplay="true" playsinline muted></video>
-	<script src="{{site.baseurl}}/js/index-cinemagram.js"></script>
+<video id="cinemagram" src="{{site.baseurl}}/img/cinemagram/fuzz.mp4" width="1080" height="608" loop="true" autoplay="true" playsinline muted></video>
+<script src="{{site.baseurl}}/js/index-cinemagram.js"></script>
+
+<div id="terminal">
+	<p class="term-line" id="first-prompt">
+		<span class="prompt">jelizaga:~$ </span><span id="displayCmdTxt">&block;</span>
+	</p>
+	<p id="doneLine" class="term-line">
+		done
+	</p>
+	<p id="enjoyLine" class="term-line">
+		<span class="prompt">jelizaga:~$ </span><span id="enjoyTxt">&block;</span>
+	</p>
+	<p id="notFoundLine" class="term-line">
+		Enjoy: command not found
+	</p>
+	<p id="bizCardLine" class="term-line">
+		<span class="prompt">jelizaga:~$ </span><span id="bizCardTxt">&block;</span>
+	</p>
+</div>
+
+<main id="businessCard" class="transparent">
 
 		<div class="index-intro">
 			<div class="content">
@@ -33,6 +52,8 @@ keywords: joel elizaga index home
 <!------------------------------------------------------------------------------------------------>
 <!-- PROJECT CAROUSEL ---------------------------------------------------------------------------->
 <!------------------------------------------------------------------------------------------------>
+
+<!--
 <main id="project-carousel" onscroll="carouselAppears">
 
 	<h1>
@@ -51,49 +72,8 @@ keywords: joel elizaga index home
 		</div>
 	</a>
 </main>
+-->
 
-<!------------------------------------------------------------------------------------------------>
-<!-- BLOGS --------------------------------------------------------------------------------------->
-<!------------------------------------------------------------------------------------------------>
-<main id="blogs">
-
-	<h1>
-		Blog
-	</h1>
-
-	{% for post in site.posts limit: 5 %}
-
-	<div class="index-blog-item">
-		<a href="{{post.url}}">
-			<div class="blog-meta">
-				<h2>
-					{{post.title}}
-				</h2>
-				<p class="post-published">
-					{{post.published}}
-				</p>
-				<p class="post-description">
-					{{post.description}}
-				</p>
-			</div>
-			<div class="blog-meta-bg">
-			</div>
-			<img class="index-blog-item-img" src="{{site.baseurl}}/img/posts/{{post.published-hyp}}/head.jpg">
-			<img class="index-blog-item-sub-img" src="{{site.baseurl}}/img/posts/{{post.published-hyp}}/head.jpg">
-		</a>
-	</div>
-
-	{% endfor %}
-
-	<a id="more-link" href="{{site.baseurl}}/blog.html">
-		<div class="see-more">
-			<p>
-				More Posts (<span id="post-count">2</span>)
-			</p>
-		</div>
-	</a>
-
-</main>
 
 <!-- For populating the carousel. -->
 <div class="hidden">
@@ -164,67 +144,119 @@ keywords: joel elizaga index home
 
 </div>
 
+<style>
+	.term-line {
+		color: white;
+		text-shadow: 1px 1px #000;
+		font-family: "Anonymous Pro", monospace;
+		font-weight: normal;
+		font-size: 1.5em;
+		line-height: 0px;
+	}
+	.prompt {
+		color: green;
+	}
+	#terminal {
+		height: 80vh;
+		background-color: rgba(34, 34, 34, 0.9);
+		overflow: hidden;
+		width: 50%;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 10vh;
+		box-shadow: 0px 0px 4px 0px #111111;
+		padding-top: 0.2em;
+		padding-bottom: 0.2em;
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+
+	.term-line {
+	}
+
+	#first-prompt {
+		display: block;
+	}
+
+	#businessCard {
+		display: none;
+	}
+</style>
+
 
 
 <script>
 
-	var webProjects = document.getElementsByClassName("web-projects");
-	var web = {heading: "Web Projects", link: "websites.html", projects: webProjects, cnt: webProjects.length};
+	var speed = 30;
 
-	var mobileProjects = document.getElementsByClassName("mobile-projects");
-	var mobile = {heading: "Mobile Projects", link: "mobile.html", projects: mobileProjects, cnt: mobileProjects.length};
-
-	var videoProjects = document.getElementsByClassName("video-projects");
-	var videos = {heading: "Videos", link: "videography.html", projects: videoProjects, cnt: videoProjects.length};
-	
-	var designProjects = document.getElementsByClassName("design-projects");
-	var designs = {heading: "Designs", link: "miscellaneous.html", projects: designProjects, cnt: designProjects.length};
-
-	web.next = mobile;
-	web.previous = designs;
-	mobile.next = videos;
-	mobile.previous = web;
-	videos.next = designs;
-	videos.previous = mobile;
-	designs.next = web;
-	designs.previous = videos;
-
-	var conveyer = document.getElementById("conveyer");
-
-	// Prepopulating conveyer with web projects.
-	var currentCarousel = web;
-	for (i = 0; i < 3; i++) {
-		conveyer.insertAdjacentHTML("beforeend", currentCarousel.projects[i].innerHTML);
-	}
-	document.getElementById("project-count").innerHTML = currentCarousel.cnt;
-	document.getElementById("post-count").innerHTML = document.getElementsByClassName("index-blog-item").length;
-
-	function carouselLeft() {
-		currentCarousel = currentCarousel.previous;
-		updateCarousel();
+	function terminalType() {
+		// Type out the first line.
+		setTimeout(terminalTypeAnimation, 800, "#displayCmdTxt", "display --loop bg.mp4", "", 0);
+		// Print the output and next prompt.
+		setTimeout(printLine, 2000, "#doneLine");
+		setTimeout(removeCursor, 2000, "#displayCmdTxt");
+		setTimeout(displayCinemagraph, 2000);
+		setTimeout(printLine, 2000, "#enjoyLine");
+		// Type the "enjoy your day" line.
+		setTimeout(terminalTypeAnimation, 3000, "#enjoyTxt", "Enjoy your day.", "", 0);
+		setTimeout(printLine, 3500, "#notFoundLine");
+		setTimeout(removeCursor, 3500, "#enjoyTxt");
+		setTimeout(printLine, 3500, "#bizCardLine");
+		setTimeout(terminalTypeAnimation, 5000, "#bizCardTxt", "sh bizCard.sh", "", 0)
+		setTimeout(swapTerminalWithCard, 6000);
 	}
 
-	function carouselRight() {
-		currentCarousel = currentCarousel.next;
-		updateCarousel();
+	function printLine(revealID) {
+		$(revealID).css("display", "block");
 	}
 
-	function updateCarousel() {
-		// Updating project metadata.
-		var heading = document.getElementById("project-heading");
-		heading.innerHTML = currentCarousel.heading;
-		document.getElementById("more-link").href = currentCarousel.link;
-		document.getElementById("more-projects").innerHTML = currentCarousel.heading;
-		document.getElementById("project-count").innerHTML = currentCarousel.cnt;
-		//Empty carousel.
-		while (conveyer.firstChild) {
-			conveyer.removeChild(conveyer.firstChild);
-		}
-		// Repopulate.
-		for (i = 0; i < 3; i++) {
-		conveyer.insertAdjacentHTML("beforeend", currentCarousel.projects[i].innerHTML);
+	// Simulates the input into a terminal.
+	// id - String representing the id of the element to type into.
+	// txt - String representing the text to type out.
+	// str - The "beginning" of the input; typically an empty string, "".
+	// c - Index of the character from txt to begin typing from. Typically '0.'
+	function terminalTypeAnimation(id, txt, str, c) {
+		if (c < txt.length) {
+			str = str + txt.charAt(c);
+			$(id).html(str + "&block;");
+			c++;
+			setTimeout(terminalTypeAnimation, speed, id, txt, str, c);
 		}
 	}
+
+	// Receives the ID of a span element, chops off the last char in its string.
+	function removeCursor(id) {
+		var str = $(id).text();
+		str = str.slice(0, -1);
+		$(id).html(str);
+	}
+
+	function displayCinemagraph() {
+		var cinemagraphSelection = ["../img/cinemagram/uw-crow.mp4", "../img/cinemagram/uw-west-campus-1.mp4", "img/cinemagram/origami-1.mp4", "img/cinemagram/origami-2.mp4", "img/cinemagram/origami-3.mp4"];
+		var cinemagraphCode = Math.floor((Math.random() * cinemagraphSelection.length));
+		var cinemagraph = cinemagraphSelection[cinemagraphCode];
+		$("#cinemagram").attr("src", cinemagraph);
+	}
+
+	function swapTerminalWithCard() {
+		$("#terminal").css("display", "none");
+		$("#businessCard").css("display", "block");
+	}
+
+	$(document).ready(function() {
+		if (document.cookie.indexOf("visited") >= 0) {
+			console.log("Welcome back.");
+        	//$('.splash').remove(this);
+    	} else {
+        	console.log("This is your first time here, isn't it?");
+        	document.cookie = "visited";
+    	}
+		$("#doneLine").css("display", "none");
+		$("#enjoyLine").css("display", "none");
+		$("#notFoundLine").css("display", "none");
+		$("#bizCardLine").css("display", "none");
+		terminalType();
+	});
 
 </script>
 	

@@ -5,13 +5,6 @@ var firstSong = true;
 var currentAudioPlayer = document.getElementById("current-audio-player");
 var nextAudioPlayer = document.getElementById("next-audio-player");
 
-/*
-firstSongLists = document.getElementsByClassName('first-song-list');
-for (i = 0; i < firstSongLists; i++) {
-
-}
-*/
-
 /* Not terribly modular, so I'll just cram it into the post. Why do I do this to myself?*/
 
 function displaySongs(divName, songSelector) {
