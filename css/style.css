@@ -42,6 +42,12 @@
 		src: url("../font/lato-regular.ttf");
 	}
 
+	@font-face {
+		font-family: "Lato";
+		font-weight: lighter;
+		src: url("../font/lato-light.ttf");
+	}
+
 	html {
 		margin: 0;
 		padding: 0;
@@ -51,6 +57,10 @@
 /* SMALLEST SCREENS */
 
 	/* GLOBAL SMALLEST+ /////////////////////////////////////////////////////////////////////////*/
+
+		html {
+			height: 100%;
+		}
 
 		body {
 			/* Background by Toptal Subtle Patterns. */
@@ -273,15 +283,12 @@
 
 	/* INDEX SMALLEST+ //////////////////////////////////////////////////////////////////////////*/
 
-		.cinemagram {
-			background-color: black;
-			margin-top: 0px;
-		}
-
 		#cinemagram {
 			outline: none;
-			width: 100%;
-			height: auto;
+			max-width: none;
+			min-height: 100%;
+			position: fixed;
+			z-index: -1;
 		}
 
 		.greeting {
@@ -539,7 +546,7 @@
 
 	/* VIDEO SMALLEST+ //////////////////////////////////////////////////////////////////////////*/
 
-		#cinemagram, .landscape-pdf {
+		.landscape-pdf {
 			width: 100%;
 			height: auto;
 		}
@@ -757,6 +764,7 @@
 			margin-top: 10px;
 			margin-bottom: 0px;
 			border-radius: 0px;
+			transition: transform 1s;
 		}
 
 		main img {
@@ -1159,21 +1167,18 @@
 
 		/* INDEX 560+ ///////////////////////////////////////////////////////////////////////////*/
 
-			#cinemagram {
-				z-index: -1;
-				position: absolute;
-			}
 
 			/* INDEX INTRO 560+ /////////////////////////////////////////////////////////////////*/
 
 			.index-intro {
 				display: inline-block;
-				color: #FFFFFF;
+				color: #222;
 				height: 250px;
 				width: 500px;
 				margin-top: 0;
 				margin-bottom: 0;
-				background-color: rgba(34, 34, 34, 0.9);
+				background-image: url("../img/bg/bg1.png");
+				/*background-color: rgba(34, 34, 34, 0.9);*/
 				border-bottom-left-radius: 20px;
 				border-top-left-radius: 20px;
 			}
@@ -1653,7 +1658,6 @@
 
 			.index-intro {
 				display: inline-block;
-				color: #FFFFFF;
 				height: 250px;
 				width: 680px;
 				margin-top: 0;
@@ -2257,7 +2261,6 @@
 			/* INDEX INTRO 860+ /////////////////////////////////////////////////////////////////*/
 
 			.index-intro {
-				color: #FFFFFF;
 				height: 270px;
 				width: 510px;
 				border-bottom-left-radius: 20px;
@@ -3388,7 +3391,6 @@
 
 			.index-intro {
 				display: inline-block;
-				color: #FFFFFF;
 				height: 310px;
 				width: 690px;
 				margin-top: 0;
@@ -3948,7 +3950,6 @@
 
 			.index-intro {
 				display: inline-block;
-				color: #FFFFFF;
 				height: 320px;
 				width: 760px;
 				margin-top: 0;
@@ -4376,8 +4377,8 @@
 
 			main {
 				max-width: 1080px;
-				margin-top: 15px;
-				margin-bottom: 0px;
+				margin-top: 1em;
+				margin-bottom: 1em;
 				border-radius: 20px;
 			}
 

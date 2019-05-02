@@ -4,75 +4,59 @@ title: Joel Elizaga
 keywords: joel elizaga index home
 ---
 
-<video id="cinemagram" src="{{site.baseurl}}/img/cinemagram/fuzz.mp4" width="1080" height="608" loop="true" autoplay="true" playsinline muted></video>
-<script src="{{site.baseurl}}/js/index-cinemagram.js"></script>
+<main id="index">
+	<div class="title">
+		<h1>
+			Projects
+		</h1>
+	</div>
+	<div id="projects-grid">
 
-<div id="terminal">
-	<p class="term-line" id="first-prompt">
-		<span class="prompt">jelizaga:~$ </span><span id="displayCmdTxt">&block;</span>
+	</div>
+	<p>
+		Hi.
 	</p>
-	<p id="doneLine" class="term-line">
-		done
-	</p>
-	<p id="enjoyLine" class="term-line">
-		<span class="prompt">jelizaga:~$ </span><span id="enjoyTxt">&block;</span>
-	</p>
-	<p id="notFoundLine" class="term-line">
-		Enjoy: command not found
-	</p>
-	<p id="bizCardLine" class="term-line">
-		<span class="prompt">jelizaga:~$ </span><span id="bizCardTxt">&block;</span>
-	</p>
+</main>
+
+<!-- ANIMATION ----------------------------------------------------------------------------------->
+
+<div id="index-animation">
+
+	<div id="terminal">
+		<p class="term-line" id="first-prompt">
+			<span class="prompt">jelizaga:~$ </span><span id="displayCmdTxt">&block;</span>
+		</p>
+		<p id="doneLine" class="term-line">
+			done
+		</p>
+		<p id="enjoyLine" class="term-line">
+			<span class="prompt">jelizaga:~$ </span><span id="enjoyTxt">&block;</span>
+		</p>
+		<p id="notFoundLine" class="term-line">
+			Enjoy: command not found
+		</p>
+		<p id="bizCardLine" class="term-line">
+			<span class="prompt">jelizaga:~$ </span><span id="bizCardTxt">&block;</span>
+		</p>
+	</div>
+
+	<div id="hci-title" class="title-card">
+		<h1>
+			HCI<span class="star">&#8857;</span>UX<span class="star">&#8857;</span>UI
+		</h1>
+	</div>
+	<div id="multimedia-title" class="title-card">
+		<h1>
+			multimedia
+		</h1>
+	</div>
+
 </div>
 
-<main id="businessCard" class="transparent">
-
-		<div class="index-intro">
-			<div class="content">
-				<h1>
-					Welcome!
-				</h1>
-				<p>
-					Welcome! I'm a pixel-pusher from the Pacific Northwest.
-					I graduated from the University of Washington with a Bachelor of Science
-					in Informatics with a focus in Human-Computer Interaction (HCI). I study UI, UX, HCI, 
-					information architecture, web development, videography, design&mdash;essentially, I 
-					study all sorts of vehicles of information delivery.
-				</p>
-				<p>
-					Thank you for visiting, and enjoy your stay.
-				</p>
-			</div>
-		</div>
-
-		<img class="index-portrait" src="{{site.baseurl}}/img/portrait/index-portrait-2.jpg" width="300" height="300">
-
-</main>
 
 <!------------------------------------------------------------------------------------------------>
 <!-- PROJECT CAROUSEL ---------------------------------------------------------------------------->
 <!------------------------------------------------------------------------------------------------>
-
-<!--
-<main id="project-carousel" onscroll="carouselAppears">
-
-	<h1>
-		<span class="arrow-left" onclick="carouselLeft()">&#9664;&#xFE0E</span> Latest <span id="project-heading">Web Projects</span> <span class="arrow-right" onclick="carouselRight()">&#9654;&#xFE0E</span>
-	</h1>
-
-	<div id="conveyer">
-	
-	</div>
-
-	<a id="more-link" href="{{site.baseurl}}/websites.html">
-		<div class="see-more">
-			<p>
-				More <span id="more-projects">Web Projects</span> (<soan id="project-count">9</soan>)
-			</p>
-		</div>
-	</a>
-</main>
--->
 
 
 <!-- For populating the carousel. -->
@@ -145,24 +129,22 @@ keywords: joel elizaga index home
 </div>
 
 <style>
-	.term-line {
-		color: white;
-		text-shadow: 1px 1px #000;
-		font-family: "Anonymous Pro", monospace;
-		font-weight: normal;
-		font-size: 1.5em;
-		line-height: 0px;
+
+	#index {
+		transition: transform 1s;
 	}
-	.prompt {
-		color: green;
+
+	#index-animation {
+		display: none;
+		height: 100vh
 	}
+
 	#terminal {
 		height: 80vh;
 		background-color: rgba(34, 34, 34, 0.9);
 		overflow: hidden;
 		width: 50%;
-		margin-left: auto;
-		margin-right: auto;
+		margin: auto;
 		margin-top: 10vh;
 		box-shadow: 0px 0px 4px 0px #111111;
 		padding-top: 0.2em;
@@ -172,40 +154,71 @@ keywords: joel elizaga index home
 	}
 
 	.term-line {
+		color: white;
+		text-shadow: 1px 1px #000;
+		font-family: "Anonymous Pro", monospace;
+		font-weight: normal;
+		font-size: 1.5em;
+		line-height: 0px;
+	}
+
+	.prompt {
+		color: green;
 	}
 
 	#first-prompt {
 		display: block;
 	}
 
-	#businessCard {
+	.title-card {
+		transition: transform 0.5s;
+		margin: auto;
 		display: none;
 	}
+
+	.title-card h1 {
+		font-family: "Lato", sans-serif;
+		font-weight: lighter;
+		font-size: 10vw;
+		color: #ffffff;
+		text-shadow: 0px 0px 5px #222;
+		background-color: #222222;
+		padding-left: 1vw;
+		padding-right: 1vw;
+	}
+
+	.title-card h1 .star {
+		font-size: 3vw;
+		padding-left: 1vw;
+		padding-right: 1vw;
+	}
+
 </style>
 
 
 
 <script>
 
-	var speed = 30;
+	var speed = 50;
 
 	function terminalType() {
 		// Type out the first line.
 		setTimeout(terminalTypeAnimation, 800, "#displayCmdTxt", "display --loop bg.mp4", "", 0);
 		// Print the output and next prompt.
-		setTimeout(printLine, 2000, "#doneLine");
-		setTimeout(removeCursor, 2000, "#displayCmdTxt");
-		setTimeout(displayCinemagraph, 2000);
-		setTimeout(printLine, 2000, "#enjoyLine");
+		setTimeout(printLine, 2200, "#doneLine");
+		setTimeout(removeCursor, 2200, "#displayCmdTxt");
+		setTimeout(displayCinemagraph, 2200);
+		setTimeout(printLine, 2200, "#enjoyLine");
 		// Type the "enjoy your day" line.
-		setTimeout(terminalTypeAnimation, 3000, "#enjoyTxt", "Enjoy your day.", "", 0);
-		setTimeout(printLine, 3500, "#notFoundLine");
-		setTimeout(removeCursor, 3500, "#enjoyTxt");
-		setTimeout(printLine, 3500, "#bizCardLine");
-		setTimeout(terminalTypeAnimation, 5000, "#bizCardTxt", "sh bizCard.sh", "", 0)
-		setTimeout(swapTerminalWithCard, 6000);
+		setTimeout(terminalTypeAnimation, 3300, "#enjoyTxt", "Enjoy your day.", "", 0);
+		setTimeout(printLine, 5000, "#notFoundLine");
+		setTimeout(removeCursor, 5000, "#enjoyTxt");
+		setTimeout(printLine, 5000, "#bizCardLine");
+		setTimeout(terminalTypeAnimation, 6000, "#bizCardTxt", "sh bizCard.sh", "", 0)
+		setTimeout(swapTerminalWithCard, 8000);
 	}
 
+	// Displays a terminal line (turns 'display' from 'none' to 'block').
 	function printLine(revealID) {
 		$(revealID).css("display", "block");
 	}
@@ -231,19 +244,70 @@ keywords: joel elizaga index home
 		$(id).html(str);
 	}
 
+	// Randomly selects a cinemagraph to display.
+	// Fades in the transparent cinemagraph.
 	function displayCinemagraph() {
-		var cinemagraphSelection = ["../img/cinemagram/uw-crow.mp4", "../img/cinemagram/uw-west-campus-1.mp4", "img/cinemagram/origami-1.mp4", "img/cinemagram/origami-2.mp4", "img/cinemagram/origami-3.mp4"];
+		$("#cinemagram").animate({
+			opacity: 1
+		}, 300, function() {
+		});
+	}
+
+	// Preloads the random cinemagraph for optimal presentation.
+	function loadCinemagraph() {
+		var cinemagraphSelection = ["../img/cinemagram/uw-crow.mp4", "img/cinemagram/origami-1.mp4", "img/cinemagram/origami-2.mp4", "img/cinemagram/origami-3.mp4"];
 		var cinemagraphCode = Math.floor((Math.random() * cinemagraphSelection.length));
 		var cinemagraph = cinemagraphSelection[cinemagraphCode];
-		$("#cinemagram").attr("src", cinemagraph);
+		$("#cinemagram").attr("src", cinemagraph); 
 	}
 
+	// Closes the terminal. Displays the business card.
 	function swapTerminalWithCard() {
 		$("#terminal").css("display", "none");
-		$("#businessCard").css("display", "block");
+		// Display and fade in the index-head.
+		$("#multimedia-title").css("transform", "translate(0px, 100vh)");
+		$("#hci-title").css("opacity", "0");
+		$("#hci-title").css("display", "block");
+		$("#hci-title").animate({
+			opacity: 1
+		}, 1000, function() {
+		});
+		// Wait a bit, swing HCI title up, remove it.
+		setTimeout(function() {
+			$("#hci-title").css("transform", "translate(0px, -100vh)");
+		}, 4000);
+		setTimeout(function() {
+			$("#hci-title").css("display", "none");
+		}, 4500);
+		// Display multimedia title, swing up, remove it.
+		setTimeout(function() {
+			$("#multimedia-title").css("display", "block");
+		}, 4500);
+		setTimeout(function() {
+			$("#multimedia-title").css("transform", "translate(0px, 0px");
+		}, 5000);
+		setTimeout(function() {
+			$("#multimedia-title").css("transform", "translate(0px, -100vh");
+		}, 9000);
+		setTimeout(function() {
+			$("#multimedia-title").css("display", "none");
+			$("#index-animation").css("display", "none");
+			$("#index").css("display", "block");
+		}, 9500);
+		setTimeout(function() {
+			$("#index").css("transform", "translate(0px)");
+		}, 10000)
 	}
 
+	///////////////////////////////////////////////////////////////////////////////////////////////
+
 	$(document).ready(function() {
+		// Hide index, display index animation.
+		$("#index").css("display", "none");
+		$("#index").css("transform", "translate(-100vw)");
+		$("#index-animation").css("display", "flex");
+		loadCinemagraph();
+		// Check if the visitor has already been here before.
 		if (document.cookie.indexOf("visited") >= 0) {
 			console.log("Welcome back.");
         	//$('.splash').remove(this);
@@ -251,6 +315,8 @@ keywords: joel elizaga index home
         	console.log("This is your first time here, isn't it?");
         	document.cookie = "visited";
     	}
+    	// Cinemagram is transparent. Terminal lines are hidden.
+    	$("#cinemagram").css("opacity", "0");
 		$("#doneLine").css("display", "none");
 		$("#enjoyLine").css("display", "none");
 		$("#notFoundLine").css("display", "none");
