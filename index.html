@@ -128,75 +128,6 @@ keywords: joel elizaga index home
 
 </div>
 
-<style>
-
-	#index {
-		transition: transform 1s;
-	}
-
-	#index-animation {
-		display: none;
-		height: 100vh
-	}
-
-	#terminal {
-		height: 80vh;
-		background-color: rgba(34, 34, 34, 0.9);
-		overflow: hidden;
-		width: 50%;
-		margin: auto;
-		margin-top: 10vh;
-		box-shadow: 0px 0px 4px 0px #111111;
-		padding-top: 0.2em;
-		padding-bottom: 0.2em;
-		padding-left: 1em;
-		padding-right: 1em;
-	}
-
-	.term-line {
-		color: white;
-		text-shadow: 1px 1px #000;
-		font-family: "Anonymous Pro", monospace;
-		font-weight: normal;
-		font-size: 1.5em;
-		line-height: 0px;
-	}
-
-	.prompt {
-		color: green;
-	}
-
-	#first-prompt {
-		display: block;
-	}
-
-	.title-card {
-		transition: transform 0.5s;
-		margin: auto;
-		display: none;
-	}
-
-	.title-card h1 {
-		font-family: "Lato", sans-serif;
-		font-weight: lighter;
-		font-size: 10vw;
-		color: #ffffff;
-		text-shadow: 0px 0px 5px #222;
-		background-color: #222222;
-		padding-left: 1vw;
-		padding-right: 1vw;
-	}
-
-	.title-card h1 .star {
-		font-size: 3vw;
-		padding-left: 1vw;
-		padding-right: 1vw;
-	}
-
-</style>
-
-
-
 <script>
 
 	var speed = 50;
@@ -215,7 +146,7 @@ keywords: joel elizaga index home
 		setTimeout(removeCursor, 5000, "#enjoyTxt");
 		setTimeout(printLine, 5000, "#bizCardLine");
 		setTimeout(terminalTypeAnimation, 6000, "#bizCardTxt", "sh bizCard.sh", "", 0)
-		setTimeout(swapTerminalWithCard, 8000);
+		//setTimeout(swapTerminalWithCard, 8000);
 	}
 
 	// Displays a terminal line (turns 'display' from 'none' to 'block').

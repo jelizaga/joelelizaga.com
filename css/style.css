@@ -291,70 +291,68 @@
 			z-index: -1;
 		}
 
-		.greeting {
-			display: block;
-			padding: 20px;
-			margin: 0px;
+		#index {
+			transition: transform 1s;
 		}
 
-		.greeting p {
-			font-size: 12pt;
-		}
-
-		.column-splitter-intro {
-			margin-left: auto;
-			margin-right: auto;
-			max-width: 680px;
-		}
-
-		.index-intro {
-			display: inline-block;
-			color: #222222;
-			width: 100%;
-			margin-top: 0;
-			margin-bottom: 0;
-			background-color: #FFFFFF;
-		}
-
-		.index-intro .content {
-			padding-top: 30px;
-		}
-
-		.index-intro h1 {
-			font-style: italic;
-			letter-spacing: 1px;
-			font-size: 13pt;
-		}
-
-		.index-intro p {
-			font-size: 10pt;
-			hyphens: auto;
-		}
-
-		.index-intro .first-letter {
-			font-size: 30px;
-			padding-top: 10px;
-			padding-right: 3px;
-			padding-left: 0px;
-			padding-bottom: 4px;
-		}
-
-		.index-portrait {
+		#index-animation {
 			display: none;
+			height: 100vh
 		}
 
-		#index-photo {
-			display: none;
-		}
-
-		#index-photo {
-			border-radius: 20px;
+		#terminal {
+			height: 90vh;
+			background-color: rgba(34, 34, 34, 0.9);
 			overflow: hidden;
-			float: right;
-			height: 300px;
-			width: 580px;
-			box-shadow: 2px 2px 5px 0px;
-			margin-top: 15px;
+			width: 80%;
+			margin: auto;
+			box-shadow: 0px 0px 4px 0px #111111;
+			padding-top: 0.5em;
+			padding-bottom: 0.5em;
+			padding-left: 1em;
+			padding-right: 1em;
+		}
+
+		.term-line {
+			color: white;
+			text-shadow: 1px 1px #000;
+			font-family: "Anonymous Pro", monospace;
+			font-weight: normal;
+			font-size: 1.5em;
+			margin-top: 0px;
+			margin-bottom: 0px;
+			line-height: 1.3em;
+		}
+
+		.prompt {
+			color: green;
+		}
+
+		#first-prompt {
+			display: block;
+		}
+
+		.title-card {
+			transition: transform 0.5s;
+			margin: auto;
+			display: none;
+		}
+
+		.title-card h1 {
+			font-family: "Lato", sans-serif;
+			font-weight: lighter;
+			font-size: 10vw;
+			color: #ffffff;
+			text-shadow: 0px 0px 5px #222;
+			background-color: #222222;
+			padding-left: 1vw;
+			padding-right: 1vw;
+		}
+
+		.title-card h1 .star {
+			font-size: 3vw;
+			padding-left: 1vw;
+			padding-right: 1vw;
 		}
 
 	/* BLOG SMALLEST+ ///////////////////////////////////////////////////////////////////////////*/
@@ -1167,6 +1165,10 @@
 
 		/* INDEX 560+ ///////////////////////////////////////////////////////////////////////////*/
 
+			#terminal {
+				width: 80%;
+			}
+
 
 			/* INDEX INTRO 560+ /////////////////////////////////////////////////////////////////*/
 
@@ -1655,6 +1657,11 @@
 			}
 
 		/* INDEX 740+ ///////////////////////////////////////////////////////////////////////////*/
+
+			#terminal {
+				width: 70%;
+				height: 80vh;
+			}
 
 			.index-intro {
 				display: inline-block;
@@ -2252,6 +2259,10 @@
 
 		/* INDEX 860+ //////////////////////////////////////////////////////////////////////////*/
 
+			#terminal {
+				width: 70%;
+			}
+
 			.column-splitter-intro {
 				margin-left: auto;
 				margin-right: auto;
@@ -2811,6 +2822,10 @@
 			}
 
 		/* INDEX 970+ ///////////////////////////////////////////////////////////////////////////*/
+
+			#terminal {
+				width: 70%;
+			}
 
 			.index-intro {
 				height: 300px;
@@ -3389,31 +3404,8 @@
 
 		/* INDEX 1070+ //////////////////////////////////////////////////////////////////////////*/
 
-			.index-intro {
-				display: inline-block;
-				height: 310px;
-				width: 690px;
-				margin-top: 0;
-				margin-bottom: 0;
-			}
-
-			.index-intro .content {
-				padding-top: 30px;
-			}
-
-			.index-intro h1 {
-				font-style: italic;
-				letter-spacing: 1px;
-				font-size: 28pt;
-			}
-
-			.index-intro p {
-				font-size: 13pt;
-			}
-
-			.index-portrait {
-				width: 310px;
-				height: 310px;
+			#terminal {
+				width: 70%;
 			}
 
 			/* BLOG 1070+ ///////////////////////////////////////////////////////////////////////*/
@@ -3942,42 +3934,8 @@
 
 		/* INDEX 1150+ //////////////////////////////////////////////////////////////////////////*/
 
-			.column-splitter-intro {
-				margin-left: auto;
-				margin-right: auto;
-				max-width: 1080px;
-			}
-
-			.index-intro {
-				display: inline-block;
-				height: 320px;
-				width: 760px;
-				margin-top: 0;
-				margin-bottom: 0;
-			}
-
-			.index-intro .content {
-				padding-top: 30px;
-			}
-
-			.index-intro h1 {
-				font-style: italic;
-				font-size: 2em;
-				letter-spacing: 1px;
-			}
-
-			.index-intro p {
-				font-size: 13pt;
-			}
-
-			.index-intro .first-letter {
-				font-size: 2.5em;
-				padding-top: 14px;
-			}
-
-			.index-portrait {
-				width: 320px;
-				height: 320px;
+			#terminal {
+				width: 50%;
 			}
 
 			/* BLOG 1150+ ///////////////////////////////////////////////////////////////////////*/
