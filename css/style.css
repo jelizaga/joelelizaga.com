@@ -100,6 +100,7 @@
 		h1 {
 			font-family: "Fjallaone", sans-serif;
 			text-align: center;
+			font-weight: normal;
 			margin: 0px;
 			font-size: 13pt;
 		}
@@ -252,12 +253,12 @@
 			font-size: 12pt;
 			letter-spacing: 2px;
 			display: block;
-			margin-bottom: 10px;
-			box-shadow: 0px 0px 4px 0px #777777;
+			margin-bottom: 1em;
+			box-shadow: 2px 2px 4px #111111;
 		}
 
 		.mobile-menu a {
-			color: #222;
+			color: #222222;
 		}
 
 		.mobile-menu img {
@@ -272,8 +273,8 @@
 		.mobile-menu-head {
 			cursor: pointer;
 			text-align: center;
-			background-color: #222;
-			color: #FFF;
+			background-color: #222222;
+			color: #FFFFFF;
 			height: 55px;
 			vertical-align: middle;
 		}
@@ -617,15 +618,15 @@
 		.tile-head h2 {
 			font-family: "Fjallaone", sans-serif;
 			margin: 0;
-			font-weight: bold;
 			font-size: 12pt;
+			font-weight: normal;
 			padding-top: 0;
 			padding-left: 0px;
 		}
 
 		.tile:hover h2 {
 			color: #4EFF1F;
-		}s
+		}
 
 		.tile-head p {
 			font-family: "Anonymous Pro", monospace;
@@ -724,7 +725,6 @@
 		.post-tile-head h2 {
 			font-family: "Fjallaone", sans-serif;
 			margin: 0;
-			font-weight: bold;
 			font-size: 12pt;
 			padding-top: 0;
 			padding-left: 0px;
@@ -1033,9 +1033,7 @@
 			}
 
 			.tile-head h2 {
-				font-family: "Fjallaone", sans-serif;
 				margin: 0;
-				font-weight: bold;
 				font-size: 12pt;
 				padding-top: 0;
 				padding-left: 0px;
@@ -1146,7 +1144,6 @@
 			.post-tile-head h2 {
 				font-family: "Fjallaone", sans-serif;
 				margin: 0;
-				font-weight: bold;
 				font-size: 12pt;
 				padding-top: 0;
 				padding-left: 0px;
@@ -1176,54 +1173,6 @@
 
 			#terminal {
 				width: 80%;
-			}
-
-
-			/* INDEX INTRO 560+ /////////////////////////////////////////////////////////////////*/
-
-			.index-intro {
-				display: inline-block;
-				color: #222;
-				height: 250px;
-				width: 500px;
-				margin-top: 0;
-				margin-bottom: 0;
-				background-image: url("../img/bg/bg1.png");
-				/*background-color: rgba(34, 34, 34, 0.9);*/
-				border-bottom-left-radius: 20px;
-				border-top-left-radius: 20px;
-			}
-
-			.index-intro .content {
-				padding-top: 30px;
-			}
-
-			.index-intro h1 {
-				font-style: italic;
-				letter-spacing: 1px;
-				font-size: 15pt;
-			}
-
-			.index-intro p {
-				font-size: 10pt;
-			}
-
-			.index-intro .first-letter {
-				font-size: 2.5em;
-			}
-
-			.index-portrait {
-				display: inline-block;
-				float: right;
-				width: 250px;
-				height: 250px;
-				margin-top: 0;
-				margin-bottom: 0;
-				display: none;
-			}
-
-			#index-photo {
-				display: none;
 			}
 
 		/* BLOG 560+ ///////////////////////////////////////////////////////////////////////////*/
@@ -1672,33 +1621,6 @@
 				height: 80vh;
 			}
 
-			.index-intro {
-				display: inline-block;
-				height: 250px;
-				width: 680px;
-				margin-top: 0;
-				margin-bottom: 0;
-			}
-
-			.index-intro .content {
-				padding-top: 30px;
-			}
-
-			.index-intro h1 {
-				font-style: italic;
-				letter-spacing: 1px;
-				font-size: 1.5em;
-			}
-
-			.index-intro p {
-				font-size: 11pt;
-			}
-
-			.index-intro .first-letter {
-				font-size: 2.5em;
-				padding-top: 11px;
-			}
-
 			.pdf-button {
 				background-color: #222;
 				box-shadow: 2px 2px 10px 0px #333;
@@ -1720,13 +1642,13 @@
 				transition: background-color 0.5s;
 			}
 
+			/* BLOG 740+ ////////////////////////////////////////////////*/
+
 			.index-blog-item {
 				overflow: hidden;
 				position: relative;
 				height: 250px;
 			}
-
-			/* BLOG 740+ ////////////////////////////////////////////////*/
 
 			.blog-meta {
 				color: white;
@@ -1922,9 +1844,7 @@
 			}
 
 			.tile-head h2 {
-				font-family: "Fjallaone", sans-serif;
 				margin: 0;
-				font-weight: bold;
 				font-size: 20pt;
 				padding-top: 0;
 				padding-left: 0px;
@@ -2035,7 +1955,6 @@
 			.post-tile-head h2 {
 				font-family: "Fjallaone", sans-serif;
 				margin: 0;
-				font-weight: bold;
 				font-size: 20pt;
 				padding-top: 0;
 				padding-left: 0px;
@@ -2272,54 +2191,13 @@
 				width: 70%;
 			}
 
-			.column-splitter-intro {
-				margin-left: auto;
-				margin-right: auto;
-				max-width: 780px;
-			}
-
-			/* INDEX INTRO 860+ /////////////////////////////////////////////////////////////////*/
-
-			.index-intro {
-				height: 270px;
-				width: 510px;
-				border-bottom-left-radius: 20px;
-				border-bottom-right-radius: 0px;
-			}
-
-			.index-intro .content {
-				padding-top: 30px;
-			}
-
-			.index-intro h1 {
-				font-style: italic;
-				letter-spacing: 1px;
-				font-size: 18pt;
-			}
-
-			.index-intro p {
-				font-size: 10pt;
-				margin-top: 11pt;
-				margin-bottom: 11pt;
-			}
-
-			.index-portrait {
-				display: inline-block;
-				float: right;
-				width: 270px;
-				height: 270px;
-				display: block;
-				border-bottom-right-radius: 20px;
-				border-top-right-radius: 20px;
-			}
+			/* INDEX BLOG 860+ //////////////////////////////////////////////////////////////////*/
 
 			.index-blog-item {
 				overflow: hidden;
 				position: relative;
 				height: 250px;
 			}
-
-			/* INDEX BLOG 860+ //////////////////////////////////////////////////////////////////*/
 
 			.blog-meta {
 				color: white;
@@ -2512,9 +2390,7 @@
 			}
 
 			.tile-head h2 {
-				font-family: "Fjallaone", sans-serif;
 				margin: 0;
-				font-weight: bold;
 				font-size: 20pt;
 				padding-top: 0;
 				padding-left: 0px;
@@ -2624,7 +2500,6 @@
 			.post-tile-head h2 {
 				font-family: "Fjallaone", sans-serif;
 				margin: 0;
-				font-weight: bold;
 				font-size: 20pt;
 				padding-top: 0;
 				padding-left: 0px;
@@ -2836,29 +2711,6 @@
 				width: 70%;
 			}
 
-			.index-intro {
-				height: 300px;
-				width: 600px;
-			}
-
-			.index-intro h1 {
-				font-size: 24pt;
-				letter-spacing: 1px;
-			}
-
-			.index-intro p {
-				font-size: 12pt;
-			}
-
-			.index-intro .first-letter {
-				font-size: 2.5em;
-			}
-
-			.index-portrait {
-				width: 300px;
-				height: 300px;
-			}
-
 			/* BLOG 960+ ////////////////////////////////////////////////////////////////////////*/
 
 			.index-blog-item {
@@ -3057,9 +2909,7 @@
 			}
 
 			.tile-head h2 {
-				font-family: "Fjallaone", sans-serif;
 				margin: 0;
-				font-weight: bold;
 				font-size: 20pt;
 				padding-top: 0;
 				padding-left: 0px;
@@ -3169,7 +3019,6 @@
 			.post-tile-head h2 {
 				font-family: "Fjallaone", sans-serif;
 				margin: 0;
-				font-weight: bold;
 				font-size: 20pt;
 				padding-top: 0;
 				padding-left: 0px;
@@ -3621,9 +3470,7 @@
 			}
 
 			.tile-head h2 {
-				font-family: "Fjallaone", sans-serif;
 				margin: 0;
-				font-weight: bold;
 				font-size: 20pt;
 				padding-top: 0;
 				padding-left: 0px;
@@ -3728,7 +3575,6 @@
 			.post-tile-head h2 {
 				font-family: "Fjallaone", sans-serif;
 				margin: 0;
-				font-weight: bold;
 				font-size: 20pt;
 				padding-top: 0;
 				padding-left: 0px;
@@ -4183,9 +4029,7 @@
 			}
 
 			.tile-head h2 {
-				font-family: "Fjallaone", sans-serif;
 				margin: 0;
-				font-weight: bold;
 				font-size: 20pt;
 				padding-top: 0;
 				padding-left: 0px;
@@ -4297,7 +4141,6 @@
 			.post-tile-head h2 {
 				font-family: "Fjallaone", sans-serif;
 				margin: 0;
-				font-weight: bold;
 				font-size: 20pt;
 				padding-top: 0;
 				padding-left: 0px;

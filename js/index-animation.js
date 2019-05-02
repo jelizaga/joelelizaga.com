@@ -103,7 +103,7 @@ function swapTerminalWithCard() {
 $(document).ready(function() {
 	// Hide index, display index animation.
 	$("#index").css("display", "none");
-	$("#index").css("transform", "translate(-100vw)");
+	$("#index").css("transform", "translate(-101vw)");
 	$("#index-animation").css("display", "flex");
 	loadCinemagraph();
 	// Check if the visitor has already been here before.
