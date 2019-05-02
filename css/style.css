@@ -213,21 +213,30 @@
 			text-align: center;
 		}
 
-		#four-o-four {
-			font-size: 30em;
+		.error-box {
+			display: flex;
+			height: 100vh;
+		}
+
+		.error {
+			font-family: "Anonymous Pro", monospace;
+			color: rgba(255, 255, 255, 0.1);
+			overflow: hidden;
+			margin: auto;
+		}
+
+		.error-code {
+			font-size: 40vw;
 			text-align: center;
-			animation-name: four-animation;
 			animation-iteration-count: infinite;
 			animation-duration: 10s;
 			margin: 0;
+			line-height: 0.7em;
 		}
 
-		@keyframes four-animation {
-			0%   {color: #087600;}
-			20%  {color: #333;}
-			40%  {color: #087600;}
-			60% {color: #333;}
-			100% {color: #087600}
+		.error-message {
+			font-size: 3vw;
+			text-align: center;
 		}
 
 	/* NAV SMALLEST+ ////////////////////////////////////////////////////////////////////////////*/
