@@ -11,12 +11,18 @@ description: Joel Elizaga | UX, UI, HCI
 			Projects
 		</h1>
 	</div>
-	<div id="projects-grid">
-
+	<div id="bio">
+		<div class="content">
+			<p>
+				Sup, faggot.
+			</p>
+		</div>
+		<div id="portrait">
+			<img src="{{site.baseurl}}/img/portrait/portrait.jpg" alt="Portrait: Joel Elizaga">
+		</div>
 	</div>
-	<p>
-		Hi.
-	</p>
+	<div id="projects-grid">
+	</div>
 </main>
 
 <!-- ANIMATION ----------------------------------------------------------------------------------->
@@ -128,3 +134,25 @@ description: Joel Elizaga | UX, UI, HCI
 	{% endfor %}
 
 </div>
+
+<style>
+
+	#bio {
+		overflow: hidden;
+	}
+
+	#bio .content {
+		float: left;
+	}
+
+	#bio #portrait {
+		float: right;
+		width: 30%;
+		padding: 0.5em;
+	}
+
+	#bio #portrait img {
+		border-radius: 50%;
+	}
+
+</style>

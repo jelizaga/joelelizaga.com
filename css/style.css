@@ -367,24 +367,20 @@
 
 	/* BLOG SMALLEST+ ///////////////////////////////////////////////////////////////////////////*/
 
-		#blogs {
-			margin-top: 0;
-		}
-
-		.index-blog-item {
+		.blog-item {
 			overflow: hidden;
 			position: relative;
 			height: 200px;
 			background-color: #000000;
 		}
 
-		.index-blog-item-img {
+		.blog-item-img {
 			max-width: 100%;
 			z-index: 1;
 			position: relative;
 		}
 
-		.index-blog-item-sub-img {
+		.blog-item-sub-img {
 			height: 150%;
 			filter: blur(10px);
 			position: absolute;
@@ -415,7 +411,7 @@
 
 		.blog-meta h2 {
 			font-family: "Fjallaone";
-			font-style: italic;
+			font-weight: normal;
 			font-size: 1.5em;
 			transition: color 0.5s;
 			width: 50%;
@@ -424,13 +420,14 @@
 		.post-description {
 			display: none;
 			opacity: 0;
+			font-family: "Nimbus Sans", sans-serif;
 		}
 
 		.blog-meta-bg {
 			background-color: rgba(34, 34, 34, 0.8);
-			transform: skew(-20deg);
+			transform: skew(-40deg);
 			position: absolute;
-			left: -60px;
+			left: -22%;
 			width: 50%;
 			height: 100%;
 			padding: 2em;
@@ -439,7 +436,7 @@
 			z-index: 2;
 		}
 
-		.index-blog-item:hover .post-description {
+		.blog-item:hover .post-description {
 			animation-name: descriptionOpacity;
 			animation-duration: 0.5s;
 			animation-delay: 0.5s;
@@ -451,69 +448,12 @@
 			100% {opacity: 1;}
 		}
 
-		.index-blog-item:hover h2 {
+		.blog-item:hover h2 {
 			color: #4EFF1F;
 		}
 
-		.index-blog-item:hover .blog-meta-bg {
-			width: 100%;
-		}
-
-		#project-carousel {
-			display: none;
-		}
-
-		#project-carousel h1, #blogs h1 {
-			color: white;
-			background-color: #222222;
-			padding: 20px;
-			font-size: 1.5em;
-		}
-
-		#conveyer {
-			height: 166px;
-			background-color: #000000;
-			display: grid;
-			overflow: hidden;
-			grid-template-columns: auto auto auto;
-		}
-
-		.project-carousel-item img {
-			position: absolute;
-			height: 166px;
-			max-width: none;
-		}
-
-		.project-carousel-item {
-			overflow: hidden;
-			height: 166px;
-			position: relative;
-		}
-
-		.project-carousel-item:hover .project-carousel-item-footer {
-			bottom: 0px;
-			opacity: 1;
-		}
-
-		.project-carousel-item-footer {
-			position: absolute;
-			background-color: rgba(34, 34, 34, 0.8);
-			bottom: -50px;
-			transition: bottom 0.5s ease, opacity 0.5s ease;
-			opacity: 0;
-			width: 100%;
-			padding: 0px;
-		}
-
-		.project-carousel-item-footer p {
-			color: white;
-			font-family: "Anonymous Pro";
-			text-align: center;
-			padding-left: 0.5em;
-			padding-right: 0.5em;
-			padding-top: 0.2em;
-			padding-bottom: 0.2em;
-			text-shadow: 1px 2px #000;
+		.blog-item:hover .blog-meta-bg {
+			width: 120%;
 		}
 
 		.see-more {
@@ -532,23 +472,6 @@
 		}
 
 		.see-more:hover {
-			color: #4EFF1F;
-		}
-
-		.arrow-left, .arrow-right {
-			transition: color 0.5s;
-			cursor: pointer;
-		}
-
-		.arrow-left {
-			float: left;
-		}
-
-		.arrow-right {
-			float: right;
-		}
-
-		.arrow-left:hover, .arrow-right:hover {
 			color: #4EFF1F;
 		}
 
@@ -671,82 +594,6 @@
 		}
 
 		.tile-link:hover {
-			color: #000000;
-		}
-
-	/* POST-TILE SMALLEST+ ///////////////////////////////////////////////////////////////////////*/
-
-		.post-tile, .post-tile-img {
-			border-bottom-right-radius: 0px;
-			border-bottom-left-radius: 0px;
-		}
-
-		.post-tile, .post-tile-head {
-			border-top-left-radius: 0px;
-			border-top-right-radius: 0px;
-		}
-
-		.post-tile {
-			background-color: #FFFFFF;
-			padding: 0px;
-			box-shadow: 2px 2px 5px 0px;
-			margin-left: auto;
-			margin-right: auto;
-			max-width: 95%;
-			margin-bottom: 10px;
-			overflow: hidden;
-			position: relative;
-			transition: max-width 0.5s ease;
-		}
-
-		.post-tile h2 {
-			transition: color 0.5s;
-		}
-
-		.post-tile:hover h2 {
-			color: #4EFF1F;
-		}
-
-		.post-tile-img {
-			color: #000;
-			margin-left: auto;
-			margin-right: auto;
-			width: 100%;
-			display: block;
-			background-color: #000;
-		}
-
-		.post-tile-head {
-			color: #FFFFFF;
-			background-color: #222;
-			padding: 20px;
-		}
-
-		.post-tile-head h2 {
-			font-family: "Fjallaone", sans-serif;
-			margin: 0;
-			font-size: 12pt;
-			padding-top: 0;
-			padding-left: 0px;
-			margin-left: 10px;
-		}
-
-		.post-tile-head p {
-			font-family: "Anonymous Pro", monospace;
-			font-size: 10pt;
-			padding-top: 0;
-			padding-bottom: 0px;
-			padding-left: 25px;
-			margin-top: 5px;
-			margin-bottom: 0;
-		}
-
-		.post-tile-link {
-			color: #000000;
-			transition: none;
-		}
-
-		.post-tile-link:hover {
 			color: #000000;
 		}
 
@@ -1181,7 +1028,7 @@
 				margin-top: 15px;
 			}
 
-			.index-blog-item {
+			.blog-item {
 				overflow: hidden;
 				position: relative;
 				height: 200px;
@@ -1200,30 +1047,18 @@
 				margin-top: 0.5em;
 			}
 
-			.blog-meta h2 {
-				font-family: "Fjallaone";
-				font-style: italic;
-				font-size: 1.5em;
-				transition: color 0.5s;
-				width: 50%;
-			}
-
 			.post-description {
 				display: inline;
 				opacity: 0;
 			}
 
 			.blog-meta-bg {
-				position: absolute;
-				left: -60px;
-				width: 50%;
 				height: 100%;
 				padding: 2em;
 				padding-left: 4em;
-				transition: width 0.5s;
 			}
 
-			.index-blog-item:hover .post-description {
+			.blog-item:hover .post-description {
 				animation-name: descriptionOpacity;
 				animation-duration: 0.5s;
 				animation-delay: 0.5s;
@@ -1233,112 +1068,6 @@
 			@keyframes descriptionOpacity {
 				0% {opacity: 0;}
 				100% {opacity: 1;}
-			}
-
-			.index-blog-item:hover h2 {
-				color: #4EFF1F;
-			}
-
-			.index-blog-item:hover .blog-meta-bg {
-				width: 100%;
-			}
-
-			#project-carousel {
-				display: block;
-			}
-
-
-			#project-carousel h1, #blogs h1 {
-				color: white;
-				background-color: #222222;
-				border-top-left-radius: 20px;
-				border-top-right-radius: 20px;
-				padding: 20px;
-				font-size: 1.5em;
-			}
-
-			#conveyer {
-				height: 166px;
-				background-color: #000000;
-				display: grid;
-				overflow: hidden;
-				grid-template-columns: auto auto auto;
-			}
-
-			.project-carousel-item img {
-				position: absolute;
-				height: 166px;
-				max-width: none;
-			}
-
-			.project-carousel-item {
-				overflow: hidden;
-				height: 166px;
-				position: relative;
-			}
-
-			.project-carousel-item:hover .project-carousel-item-footer {
-				bottom: 0px;
-				opacity: 1;
-			}
-
-			.project-carousel-item-footer {
-				position: absolute;
-				background-color: rgba(34, 34, 34, 0.8);
-				bottom: -50px;
-				transition: bottom 0.5s ease, opacity 0.5s ease;
-				opacity: 0;
-				width: 100%;
-				padding: 0px;
-			}
-
-			.project-carousel-item-footer p {
-				color: white;
-				font-family: "Anonymous Pro";
-				text-align: center;
-				padding-left: 0.5em;
-				padding-right: 0.5em;
-				padding-top: 0.2em;
-				padding-bottom: 0.2em;
-				text-shadow: 1px 2px #000;
-			}
-
-			.see-more {
-				background-color: #222222;
-				color: white;
-				text-align: center;
-				font-family: "Anonymous Pro";
-				font-size: 3em;
-				border-bottom-left-radius: 20px;
-				border-bottom-right-radius: 20px;
-				cursor: pointer;
-				transition: color 0.5s;
-				padding: 0.4em;
-			}
-
-			.see-more p {
-				margin: 0px;
-			}
-
-			.see-more:hover {
-				color: #4EFF1F;
-			}
-
-			.arrow-left, .arrow-right {
-				transition: color 0.5s;
-				cursor: pointer;
-			}
-
-			.arrow-left {
-				float: left;
-			}
-
-			.arrow-right {
-				float: right;
-			}
-
-			.arrow-left:hover, .arrow-right:hover {
-				color: #4EFF1F;
 			}
 
 		/* HEADER 560+ //////////////////////////////////////////////////////////////////////////*/
@@ -1644,7 +1373,7 @@
 
 			/* BLOG 740+ ////////////////////////////////////////////////*/
 
-			.index-blog-item {
+			.blog-item {
 				overflow: hidden;
 				position: relative;
 				height: 250px;
@@ -1663,29 +1392,16 @@
 				margin-top: 0.5em;
 			}
 
-			.blog-meta h2 {
-				font-family: "Fjallaone";
-				font-style: italic;
-				font-size: 1.5em;
-				transition: color 0.5s;
-				width: 50%;
-			}
-
 			.post-description {
 				opacity: 0;
 			}
 
 			.blog-meta-bg {
-				position: absolute;
-				left: -60px;
-				width: 50%;
-				height: 100%;
 				padding: 2em;
 				padding-left: 4em;
-				transition: width 0.5s;
 			}
 
-			.index-blog-item:hover .post-description {
+			.blog-item:hover .post-description {
 				animation-name: descriptionOpacity;
 				animation-duration: 0.5s;
 				animation-delay: 0.5s;
@@ -1695,107 +1411,6 @@
 			@keyframes descriptionOpacity {
 				0% {opacity: 0;}
 				100% {opacity: 1;}
-			}
-
-			.index-blog-item:hover h2 {
-				color: #4EFF1F;
-			}
-
-			.index-blog-item:hover .blog-meta-bg {
-				width: 100%;
-			}
-
-			#project-carousel h1, #blogs h1 {
-				color: white;
-				background-color: #222222;
-				border-top-left-radius: 20px;
-				border-top-right-radius: 20px;
-				padding: 20px;
-				font-size: 1.5em;
-			}
-
-			#conveyer {
-				height: 226px;
-				background-color: #000000;
-				display: grid;
-				overflow: hidden;
-				grid-template-columns: auto auto auto;
-			}
-
-			.project-carousel-item img {
-				position: absolute;
-				height: 226px;
-				max-width: none;
-			}
-
-			.project-carousel-item {
-				overflow: hidden;
-				height: 226px;
-				position: relative;
-			}
-
-			.project-carousel-item:hover .project-carousel-item-footer {
-				bottom: 0px;
-				opacity: 1;
-			}
-
-			.project-carousel-item-footer {
-				position: absolute;
-				background-color: rgba(34, 34, 34, 0.8);
-				bottom: -50px;
-				transition: bottom 0.5s ease, opacity 0.5s ease;
-				opacity: 0;
-				width: 100%;
-				padding: 0px;
-			}
-
-			.project-carousel-item-footer p {
-				color: white;
-				font-family: "Anonymous Pro";
-				text-align: center;
-				padding-left: 0.5em;
-				padding-right: 0.5em;
-				padding-top: 0.2em;
-				padding-bottom: 0.2em;
-				text-shadow: 1px 2px #000;
-			}
-
-			.see-more {
-				background-color: #222222;
-				color: white;
-				text-align: center;
-				font-family: "Anonymous Pro";
-				font-size: 3em;
-				border-bottom-left-radius: 20px;
-				border-bottom-right-radius: 20px;
-				cursor: pointer;
-				transition: color 0.5s;
-				padding: 0.4em;
-			}
-
-			.see-more p {
-				margin: 0px;
-			}
-
-			.see-more:hover {
-				color: #4EFF1F;
-			}
-
-			.arrow-left, .arrow-right {
-				transition: color 0.5s;
-				cursor: pointer;
-			}
-
-			.arrow-left {
-				float: left;
-			}
-
-			.arrow-right {
-				float: right;
-			}
-
-			.arrow-left:hover, .arrow-right:hover {
-				color: #4EFF1F;
 			}
 
 		/* TILE 740+ ////////////////////////////////////////////////////////////////////////////*/
@@ -2193,7 +1808,7 @@
 
 			/* INDEX BLOG 860+ //////////////////////////////////////////////////////////////////*/
 
-			.index-blog-item {
+			.blog-item {
 				overflow: hidden;
 				position: relative;
 				height: 250px;
@@ -2212,29 +1827,11 @@
 				margin-top: 0.5em;
 			}
 
-			.blog-meta h2 {
-				font-family: "Fjallaone";
-				font-style: italic;
-				transition: color 0.5s;
-				width: 50%;
-				font-size: 1.5em;
-			}
-
 			.post-description {
 				opacity: 0;
 			}
 
-			.blog-meta-bg {
-				position: absolute;
-				left: -60px;
-				width: 50%;
-				height: 100%;
-				padding: 2em;
-				padding-left: 4em;
-				transition: width 0.5s;
-			}
-
-			.index-blog-item:hover .post-description {
+			.blog-item:hover .post-description {
 				animation-name: descriptionOpacity;
 				animation-duration: 0.5s;
 				animation-delay: 0.5s;
@@ -2244,107 +1841,6 @@
 			@keyframes descriptionOpacity {
 				0% {opacity: 0;}
 				100% {opacity: 1;}
-			}
-
-			.index-blog-item:hover h2 {
-				color: #4EFF1F;
-			}
-
-			.index-blog-item:hover .blog-meta-bg {
-				width: 100%;
-			}
-
-			#project-carousel h1, #blogs h1 {
-				color: white;
-				background-color: #222222;
-				border-top-left-radius: 20px;
-				border-top-right-radius: 20px;
-				padding: 20px;
-				font-size: 1.5em;
-			}
-
-			#conveyer {
-				height: 260px;
-				background-color: #000000;
-				display: grid;
-				overflow: hidden;
-				grid-template-columns: auto auto auto;
-			}
-
-			.project-carousel-item img {
-				position: absolute;
-				height: 260px;
-				max-width: none;
-			}
-
-			.project-carousel-item {
-				overflow: hidden;
-				height: 260px;
-				position: relative;
-			}
-
-			.project-carousel-item:hover .project-carousel-item-footer {
-				bottom: 0px;
-				opacity: 1;
-			}
-
-			.project-carousel-item-footer {
-				position: absolute;
-				background-color: rgba(34, 34, 34, 0.8);
-				bottom: -60px;
-				transition: bottom 0.5s ease, opacity 0.5s ease;
-				opacity: 0;
-				width: 100%;
-				padding: 0px;
-			}
-
-			.project-carousel-item-footer p {
-				color: white;
-				font-family: "Anonymous Pro";
-				text-align: center;
-				padding-left: 0.5em;
-				padding-right: 0.5em;
-				padding-top: 0.2em;
-				padding-bottom: 0.2em;
-				text-shadow: 1px 2px #000;
-			}
-
-			.see-more {
-				background-color: #222222;
-				color: white;
-				text-align: center;
-				font-family: "Anonymous Pro";
-				font-size: 3em;
-				border-bottom-left-radius: 20px;
-				border-bottom-right-radius: 20px;
-				cursor: pointer;
-				transition: color 0.5s;
-				padding: 0.4em;
-			}
-
-			.see-more p {
-				margin: 0px;
-			}
-
-			.see-more:hover {
-				color: #4EFF1F;
-			}
-
-			.arrow-left, .arrow-right {
-				transition: color 0.5s;
-				cursor: pointer;
-			}
-
-			.arrow-left {
-				float: left;
-			}
-
-			.arrow-right {
-				float: right;
-			}
-
-			.arrow-left:hover, .arrow-right:hover {
-				color: #4EFF1F;
 			}
 
 		/* TILE 860+ ////////////////////////////////////////////////////////////////////////////*/
@@ -2713,7 +2209,7 @@
 
 			/* BLOG 960+ ////////////////////////////////////////////////////////////////////////*/
 
-			.index-blog-item {
+			.blog-item {
 				overflow: hidden;
 				position: relative;
 				height: 250px;
@@ -2732,28 +2228,11 @@
 				margin-top: 0.5em;
 			}
 
-			.blog-meta h2 {
-				font-family: "Fjallaone";
-				font-style: italic;
-				transition: color 0.5s;
-				width: 50%;
-			}
-
 			.post-description {
 				opacity: 0;
 			}
 
-			.blog-meta-bg {
-				position: absolute;
-				left: -60px;
-				width: 50%;
-				height: 100%;
-				padding: 2em;
-				padding-left: 4em;
-				transition: width 0.5s;
-			}
-
-			.index-blog-item:hover .post-description {
+			.blog-item:hover .post-description {
 				animation-name: descriptionOpacity;
 				animation-duration: 0.5s;
 				animation-delay: 0.5s;
@@ -2763,106 +2242,6 @@
 			@keyframes descriptionOpacity {
 				0% {opacity: 0;}
 				100% {opacity: 1;}
-			}
-
-			.index-blog-item:hover h2 {
-				color: #4EFF1F;
-			}
-
-			.index-blog-item:hover .blog-meta-bg {
-				width: 100%;
-			}
-
-			#project-carousel h1, #blogs h1 {
-				color: white;
-				background-color: #222222;
-				border-top-left-radius: 20px;
-				border-top-right-radius: 20px;
-				padding: 20px;
-			}
-
-			#conveyer {
-				height: 300px;
-				background-color: #000000;
-				display: grid;
-				overflow: hidden;
-				grid-template-columns: auto auto auto;
-			}
-
-			.project-carousel-item img {
-				position: absolute;
-				height: 300px;
-				max-width: none;
-			}
-
-			.project-carousel-item {
-				overflow: hidden;
-				height: 300px;
-				position: relative;
-			}
-
-			.project-carousel-item:hover .project-carousel-item-footer {
-				bottom: 0px;
-				opacity: 1;
-			}
-
-			.project-carousel-item-footer {
-				position: absolute;
-				background-color: rgba(34, 34, 34, 0.8);
-				bottom: -50px;
-				transition: bottom 0.5s ease, opacity 0.5s ease;
-				opacity: 0;
-				width: 100%;
-				padding: 0px;
-			}
-
-			.project-carousel-item-footer p {
-				color: white;
-				font-family: "Anonymous Pro";
-				text-align: center;
-				padding-left: 0.5em;
-				padding-right: 0.5em;
-				padding-top: 0.2em;
-				padding-bottom: 0.2em;
-				text-shadow: 1px 2px #000;
-			}
-
-			.see-more {
-				background-color: #222222;
-				color: white;
-				text-align: center;
-				font-family: "Anonymous Pro";
-				font-size: 3em;
-				border-bottom-left-radius: 20px;
-				border-bottom-right-radius: 20px;
-				cursor: pointer;
-				transition: color 0.5s;
-				padding: 0.4em;
-			}
-
-			.see-more p {
-				margin: 0px;
-			}
-
-			.see-more:hover {
-				color: #4EFF1F;
-			}
-
-			.arrow-left, .arrow-right {
-				transition: color 0.5s;
-				cursor: pointer;
-			}
-
-			.arrow-left {
-				float: left;
-			}
-
-			.arrow-right {
-				float: right;
-			}
-
-			.arrow-left:hover, .arrow-right:hover {
-				color: #4EFF1F;
 			}
 
 		/* TILE 970+ ////////////////////////////////////////////////////////////////////////////*/
@@ -3268,16 +2647,13 @@
 
 			/* BLOG 1070+ ///////////////////////////////////////////////////////////////////////*/
 			
-			.index-blog-item {
+			.blog-item {
 				overflow: hidden;
 				position: relative;
 				height: 250px;
 			}
 
 			.blog-meta {
-				color: white;
-				font-family: "Anonymous Pro";
-				position: absolute;
 				left: 1.5em;
 				top: 1em;
 				text-shadow: 1px 2px #000;
@@ -3287,28 +2663,11 @@
 				margin-top: 0.5em;
 			}
 
-			.blog-meta h2 {
-				font-family: "Fjallaone";
-				font-style: italic;
-				transition: color 0.5s;
-				width: 50%;
-			}
-
 			.post-description {
 				opacity: 0;
 			}
 
-			.blog-meta-bg {
-				position: absolute;
-				left: -60px;
-				width: 50%;
-				height: 100%;
-				padding: 2em;
-				padding-left: 4em;
-				transition: width 0.5s;
-			}
-
-			.index-blog-item:hover .post-description {
+			.blog-item:hover .post-description {
 				animation-name: descriptionOpacity;
 				animation-duration: 0.5s;
 				animation-delay: 0.5s;
@@ -3318,107 +2677,6 @@
 			@keyframes descriptionOpacity {
 				0% {opacity: 0;}
 				100% {opacity: 1;}
-			}
-
-			.index-blog-item:hover h2 {
-				color: #4EFF1F;
-			}
-
-			.index-blog-item:hover .blog-meta-bg {
-				width: 100%;
-			}
-
-			#project-carousel h1, #blogs h1 {
-				color: white;
-				background-color: #222222;
-				border-top-left-radius: 20px;
-				border-top-right-radius: 20px;
-				padding: 20px;
-				font-size: 2em;
-			}
-
-			#conveyer {
-				height: 334px;
-				background-color: #000000;
-				display: grid;
-				overflow: hidden;
-				grid-template-columns: auto auto auto;
-			}
-
-			.project-carousel-item img {
-				position: absolute;
-				height: 334px;
-				max-width: none;
-			}
-
-			.project-carousel-item {
-				overflow: hidden;
-				height: 334px;
-				position: relative;
-			}
-
-			.project-carousel-item:hover .project-carousel-item-footer {
-				bottom: 0px;
-				opacity: 1;
-			}
-
-			.project-carousel-item-footer {
-				position: absolute;
-				background-color: rgba(34, 34, 34, 0.8);
-				bottom: -50px;
-				transition: bottom 0.5s ease, opacity 0.5s ease;
-				opacity: 0;
-				width: 100%;
-				padding: 0px;
-			}
-
-			.project-carousel-item-footer p {
-				color: white;
-				font-family: "Anonymous Pro";
-				text-align: center;
-				padding-left: 0.5em;
-				padding-right: 0.5em;
-				padding-top: 0.2em;
-				padding-bottom: 0.2em;
-				text-shadow: 1px 2px #000;
-			}
-
-			.see-more {
-				background-color: #222222;
-				color: white;
-				text-align: center;
-				font-family: "Anonymous Pro";
-				font-size: 3em;
-				border-bottom-left-radius: 20px;
-				border-bottom-right-radius: 20px;
-				cursor: pointer;
-				transition: color 0.5s;
-				padding: 0.4em;
-			}
-
-			.see-more p {
-				margin: 0px;
-			}
-
-			.see-more:hover {
-				color: #4EFF1F;
-			}
-
-			.arrow-left, .arrow-right {
-				transition: color 0.5s;
-				cursor: pointer;
-			}
-
-			.arrow-left {
-				float: left;
-			}
-
-			.arrow-right {
-				float: right;
-			}
-
-			.arrow-left:hover, .arrow-right:hover {
-				color: #4EFF1F;
 			}
 
 		/* TILE 1070+ ///////////////////////////////////////////////////////////////////////////*/
@@ -3795,15 +3053,13 @@
 
 			/* BLOG 1150+ ///////////////////////////////////////////////////////////////////////*/
 
-			.index-blog-item {
+			.blog-item {
 				overflow: hidden;
 				position: relative;
 				height: 250px;
 			}
 
 			.blog-meta {
-				color: white;
-				font-family: "Anonymous Pro";
 				position: absolute;
 				left: 1.5em;
 				top: 1em;
@@ -3814,28 +3070,11 @@
 				margin-top: 0.5em;
 			}
 
-			.blog-meta h2 {
-				font-family: "Fjallaone";
-				font-style: italic;
-				transition: color 0.5s;
-				width: 50%;
-			}
-
 			.post-description {
 				opacity: 0;
 			}
 
-			.blog-meta-bg {
-				position: absolute;
-				left: -60px;
-				width: 50%;
-				height: 100%;
-				padding: 2em;
-				padding-left: 4em;
-				transition: width 0.5s;
-			}
-
-			.index-blog-item:hover .post-description {
+			.blog-item:hover .post-description {
 				animation-name: descriptionOpacity;
 				animation-duration: 0.5s;
 				animation-delay: 0.5s;
@@ -3845,107 +3084,6 @@
 			@keyframes descriptionOpacity {
 				0% {opacity: 0;}
 				100% {opacity: 1;}
-			}
-
-			.index-blog-item:hover h2 {
-				color: #4EFF1F;
-			}
-
-			.index-blog-item:hover .blog-meta-bg {
-				width: 100%;
-			}
-
-			#project-carousel h1, #blogs h1 {
-				color: white;
-				background-color: #222222;
-				border-top-left-radius: 20px;
-				border-top-right-radius: 20px;
-				padding: 20px;
-				font-size: 2em;
-			}
-
-			#conveyer {
-				height: 360px;
-				background-color: #000000;
-				display: grid;
-				overflow: hidden;
-				grid-template-columns: auto auto auto;
-			}
-
-			.project-carousel-item img {
-				position: absolute;
-				height: 360px;
-				max-width: none;
-			}
-
-			.project-carousel-item {
-				overflow: hidden;
-				height: 360px;
-				position: relative;
-			}
-
-			.project-carousel-item:hover .project-carousel-item-footer {
-				bottom: 0px;
-				opacity: 1;
-			}
-
-			.project-carousel-item-footer {
-				position: absolute;
-				background-color: rgba(34, 34, 34, 0.8);
-				bottom: -50px;
-				transition: bottom 0.5s ease, opacity 0.5s ease;
-				opacity: 0;
-				width: 100%;
-				padding: 0px;
-			}
-
-			.project-carousel-item-footer p {
-				color: white;
-				font-family: "Anonymous Pro";
-				text-align: center;
-				padding-left: 0.5em;
-				padding-right: 0.5em;
-				padding-top: 0.2em;
-				padding-bottom: 0.2em;
-				text-shadow: 1px 2px #000;
-			}
-
-			.see-more {
-				background-color: #222222;
-				color: white;
-				text-align: center;
-				font-family: "Anonymous Pro";
-				font-size: 3em;
-				border-bottom-left-radius: 20px;
-				border-bottom-right-radius: 20px;
-				cursor: pointer;
-				transition: color 0.5s;
-				padding: 0.4em;
-			}
-
-			.see-more p {
-				margin: 0px;
-			}
-
-			.see-more:hover {
-				color: #4EFF1F;
-			}
-
-			.arrow-left, .arrow-right {
-				transition: color 0.5s;
-				cursor: pointer;
-			}
-
-			.arrow-left {
-				float: left;
-			}
-
-			.arrow-right {
-				float: right;
-			}
-
-			.arrow-left:hover, .arrow-right:hover {
-				color: #4EFF1F;
 			}
 
 		/* TILE 1150+ ///////////////////////////////////////////////////////////////////////////*/

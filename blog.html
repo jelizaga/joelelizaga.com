@@ -1,19 +1,21 @@
 ---
 layout: page
 title: Blog
-description: Just another obscure blog about tech stuff.
-keywords: joel elizaga blog
+description: Another obscure HCI blog.
+keywords: joel elizaga blog hci ux ui seattle tacoma
 ---
 
 <main id="blogs">
 
-	<h1>
-		Blog
-	</h1>
+	<div class="title">
+		<h1>
+			Blog
+		</h1>
+	</div>
 
 	{% for post in site.posts limit: 5 %}
 
-	<div class="index-blog-item">
+	<div class="blog-item">
 		<a href="{{post.url}}">
 			<div class="blog-meta">
 				<h2>
@@ -28,8 +30,8 @@ keywords: joel elizaga blog
 			</div>
 			<div class="blog-meta-bg">
 			</div>
-			<img class="index-blog-item-img" src="{{site.baseurl}}/img/posts/{{post.published-hyp}}/head.jpg">
-			<img class="index-blog-item-sub-img" src="{{site.baseurl}}/img/posts/{{post.published-hyp}}/head.jpg">
+			<img class="blog-item-img" src="{{site.baseurl}}/img/posts/{{post.published-hyp}}/head.jpg">
+			<img class="blog-item-sub-img" src="{{site.baseurl}}/img/posts/{{post.published-hyp}}/head.jpg">
 		</a>
 	</div>
 

@@ -1,4 +1,5 @@
-var speed = 50;
+// Speed of typing into the terminal.
+var typingSpeed = 50;
 
 function terminalType() {
 	// Type out the first line.
@@ -32,7 +33,7 @@ function terminalTypeAnimation(id, txt, str, c) {
 		str = str + txt.charAt(c);
 		$(id).html(str + "&block;");
 		c++;
-		setTimeout(terminalTypeAnimation, speed, id, txt, str, c);
+		setTimeout(terminalTypeAnimation, typingSpeed, id, txt, str, c);
 	}
 }
 
@@ -43,8 +44,7 @@ function removeCursor(id) {
 	$(id).html(str);
 }
 
-// Randomly selects a cinemagraph to display.
-// Fades in the transparent cinemagraph.
+// Animates the cinemagraph fade-in.
 function displayCinemagraph() {
 	$("#cinemagram").animate({
 		opacity: 1
@@ -105,11 +105,13 @@ $(document).ready(function() {
 	$("#index").css("display", "none");
 	$("#index").css("transform", "translate(-101vw)");
 	$("#index-animation").css("display", "flex");
+	// Load the random cinemagraph.
 	loadCinemagraph();
-	// Check if the visitor has already been here before.
+	// Check if the visitor has already been here before. If they have, display the index
+	// immediately.
 	if (document.cookie.indexOf("visited") >= 0) {
 		console.log("Welcome back.");
-    	//$('.splash').remove(this);
+	// If not, run the index animation and dump the 'visited' cookie in their cache.
 	} else {
     	console.log("This is your first time here, isn't it?");
     	document.cookie = "visited";
