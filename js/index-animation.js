@@ -1,4 +1,8 @@
-// Speed of typing into the terminal.
+// index-animation.js /////////////////////////////////////////////////////////////////////////////
+// A terribly un-DRY script that performs the index intro animation.
+// I'll refactor this in the future.
+
+// Delay between characters typed into the terminal.
 var typingSpeed = 50;
 
 function terminalType() {
@@ -14,7 +18,7 @@ function terminalType() {
 	setTimeout(printLine, 5000, "#notFoundLine");
 	setTimeout(removeCursor, 5000, "#enjoyTxt");
 	setTimeout(printLine, 5000, "#bizCardLine");
-	setTimeout(terminalTypeAnimation, 6000, "#bizCardTxt", "./intro.sh", "", 0)
+	setTimeout(terminalTypeAnimation, 6000, "#bizCardTxt", "./intro.sh", "", 0);
 	setTimeout(swapTerminalWithCard, 8000);
 }
 

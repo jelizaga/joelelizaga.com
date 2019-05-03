@@ -513,11 +513,12 @@
 		.tile {
 			background-color: #FFFFFF;
 			padding: 0px;
-			box-shadow: 2px 2px 5px 0px;
+			box-shadow: 0px 0px 4px 0px #111111;
 			margin-left: auto;
 			margin-right: auto;
 			max-width: 95%;
-			margin-bottom: 10px;
+			margin-top: 1.2em;
+			margin-bottom: 1.2em;
 			overflow: hidden;
 			position: relative;
 			transition: max-width 0.5s ease;
@@ -611,7 +612,7 @@
 		main {
 			background-color: #FFFFFF;
 			padding: 0;
-			box-shadow: 2px 2px 5px 0px;
+			box-shadow: 0px 0px 4px 0px #111111;
 			margin-left: auto;
 			margin-right: auto;
 			max-width: 100%;
@@ -849,12 +850,13 @@
 			}
 
 			.tile {
-				box-shadow: 0px 0px 4px 0px #777777;
+				box-shadow: 0px 0px 4px 0px #111111;
 				margin-left: auto;
 				margin-right: auto;
 				max-width: 500px;
 				overflow: hidden;
-				margin-top: 15px;
+				margin-top: 1.5em;
+				margin-bottom: 1.5em;
 				position: relative;
 				transition: max-width 0.5s ease;
 			}
@@ -1311,7 +1313,7 @@
 				display: block;
 				width: 100%;
 				margin: 0;
-				box-shadow: 2px 2px 4px #111111;
+				box-shadow: 0px 0px 4px 0px #111111;
 			}
 
 			nav ul {
@@ -1428,12 +1430,9 @@
 			.tile {
 				background-color: #FFFFFF;
 				padding: 0px;
-				box-shadow: 0px 0px 4px 0px #777777;
 				margin-left: auto;
 				margin-right: auto;
 				position: relative;
-				max-width: 680px;
-				margin-top: 20px;
 				overflow: hidden;
 				transition: max-width 0.5s ease;
 			}
@@ -1861,7 +1860,6 @@
 				max-width: 780px;
 				position: relative;
 				overflow: hidden;
-				margin-top: 20px;
 				transition: max-width 0.5s ease;
 			}
 
@@ -2261,9 +2259,7 @@
 				margin-right: auto;
 				position: relative;
 				max-width: 900px;
-				margin-top: 15px;
 				overflow: hidden;
-				margin-bottom: 30px;
 				transition: max-width 0.5s ease;
 			}
 
@@ -2695,8 +2691,6 @@
 				margin-left: auto;
 				margin-right: auto;
 				max-width: 1000px;
-				margin-top: 15px;
-				margin-bottom: 40px;
 				position: relative;
 				overflow: hidden;
 				transition: max-width 0.5s ease;
@@ -3088,22 +3082,8 @@
 
 		/* TILE 1150+ ///////////////////////////////////////////////////////////////////////////*/
 
-			.tile, .tile-img {
-				border-bottom-right-radius: 20px;
-				border-bottom-left-radius: 20px;
-			}
-
-			.tile, .tile-head {
-				border-top-left-radius: 20px;
-				border-top-right-radius: 20px;
-			}
-
 			.tile {
-				margin-left: auto;
-				margin-right: auto;
 				max-width: 1080px;
-				margin-top: 20px;
-				margin-bottom: 40px;
 				transition: max-width 0.5s ease;
 				position: relative;
 				overflow: hidden;
