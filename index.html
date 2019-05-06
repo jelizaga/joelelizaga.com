@@ -108,57 +108,57 @@ description: Joel Elizaga | UX, UI, HCI
 
 	{% assign websites = site.websites | sort: 'order' | reverse %}
 	{% for website in websites %}
-		<div class="web-project">
+		<div class="web-project project">
 			<a href="{{website.url}}">
 				<img src="{{site.baseurl}}/img/web/{{website.mini}}-sq.jpg" alt="{{website.url}}">
+				<div class="project-footer">
+					<p>
+						{{website.title}}
+					</p>
+				</div>
 			</a>
-			<div class="project-footer">
-				<p>
-					{{website.title}}
-				</p>
-			</div>
 		</div>
 	{% endfor %}
 
 	{% assign apps = site.mobile | sort: 'order' | reverse %}
 	{% for app in apps %}
-		<div class="mobile-project">
+		<div class="mobile-project project">
 			<a href="{{app.url}}">
 				<img src="{{site.baseurl}}/img/mobile/{{app.mini}}/{{app.mini}}-sq.jpg" alt="{{app.url}}">
+				<div class="project-footer">
+					<p>
+						{{app.title}}
+					</p>
+				</div>
 			</a>
-			<div class="project-footer">
-				<p>
-					{{app.title}}
-				</p>
-			</div>
 		</div>
 	{% endfor %}
 
 	{% assign videos = site.videography | sort: 'order' | reverse %}
 	{% for video in videos %}
-		<div class="video-project">
+		<div class="video-project project">
 			<a href="{{video.url}}">
 				<img src="{{site.baseurl}}/img/vid/{{video.mini}}/{{video.mini}}-sq.jpg" alt="{{video.url}}">
+				<div class="project-footer">
+					<p>
+						{{video.title}}
+					</p>
+				</div>
 			</a>
-			<div class="project-footer">
-				<p>
-					{{video.title}}
-				</p>
-			</div>
 		</div>
 	{% endfor %}
 
 	{% assign others = site.miscellaneous | sort: 'order' | reverse %}
 	{% for other in others %}
-		<div class="design-project">
+		<div class="design-project project">
 			<a href="{{other.url}}">
 				<img src="{{site.baseurl}}/img/other/{{other.mini}}/{{other.mini}}-sq.jpg" alt="{{video.url}}">
+				<div class="project-footer">
+					<p>
+						{{other.title}}
+					</p>
+				</div>
 			</a>
-			<div class="project-footer">
-				<p>
-					{{other.title}}
-				</p>
-			</div>
 		</div>
 	{% endfor %}
 
@@ -190,7 +190,8 @@ description: Joel Elizaga | UX, UI, HCI
 	}
 
 	#projects-grid .projects-row {
-		height: 14vw;
+		height: 15vw;
+		background-image: linear-gradient(black, yellow);
 	}
 
 	#projects-grid h2 {
@@ -217,7 +218,7 @@ description: Joel Elizaga | UX, UI, HCI
 		font-size: 0.7em;
 	}
 
-	.projects-row .projects div {
+	.projects-row .projects .project {
 		display: inline-block;
 		height: 15vw;
 		width: 15vw;
@@ -232,14 +233,32 @@ description: Joel Elizaga | UX, UI, HCI
 
 	}
 
-	.projects-row div .project-footer {
+	.projects-row .project .project-footer {
 		background-color: red;
-		height: 25%;
+		white-space: normal;
+		text-align: center;
+		width: 100%;
 		position: absolute;
 		z-index: 1;
 		left: 0;
-		bottom: 0;
+		bottom: -61px;
+		opacity: 0;
 		color: #FFFFFF;
+		text-shadow: 1px 2px #000;
+		background-color: rgba(34, 34, 34, 0.8);
+		transition: bottom 0.3s ease, opacity 0.3s ease;
+	}
+
+	.projects-row .project .project-footer p {
+		padding-left: 0.5em;
+		padding-right: 0.5em;
+		padding-top: 0.3em;
+		padding-right: 0.3em;
+	}
+
+	.projects-row .project:hover .project-footer {
+		bottom: 0;
+		opacity: 1;
 	}
 
 </style>
