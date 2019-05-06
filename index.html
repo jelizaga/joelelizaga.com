@@ -16,31 +16,47 @@ description: Joel Elizaga | UX, UI, HCI
 
 		<div id="projects-grid">
 			<div class="projects-row" id="web-projects">
-				<h2>
-					web
-				</h2>
+				<a href="{{site.baseurl}}/websites.html">
+					<h2>
+						web
+					</h2>
+				</a>
 				<div class="projects">
 				</div>
+				<div class="projects-swap">
+				</div>
 			</div>
-			<div class="projects-row" id="mobile-projects">
-				<h2>
-					mobile
-				</h2>
+			<div class="projects-row hidden" id="mobile-projects">
+				<a href="{{site.baseurl}}/mobile.html">
+					<h2>
+						mobile
+					</h2>
+				</a>
 				<div class="projects">
+				</div>
+				<div class="projects-swap">
 				</div>
 			</div>
 			<div class="projects-row" id="design-projects">
-				<h2>
-					design
-				</h2>
+				<a href="{{site.baseurl}}/miscellaneous.html">
+					<h2>
+						design
+					</h2>
+				</a>
 				<div class="projects">
+				</div>
+				<div class="projects-swap">
 				</div>
 			</div>
 			<div class="projects-row" id="video-projects">
-				<h2>
-					video
-				</h2>
+				<a href="{{site.baseurl}}/videography.html">
+					<h2>
+						video
+					</h2>
+				</a>
 				<div class="projects">
+				</div>
+				<div class="projects-swap">
 				</div>
 			</div>
 		</div>
@@ -103,12 +119,26 @@ description: Joel Elizaga | UX, UI, HCI
 
 <!-- PROJECT CAROUSEL ---------------------------------------------------------------------------->
 
-<!-- For populating the carousel. -->
+<!-- For populating the carousel. I'm literally doing this twice per
+project topic to avoid having to deep-clone arrays in JavaScript. -->
 <div class="hidden">
 
 	{% assign websites = site.websites | sort: 'order' | reverse %}
 	{% for website in websites %}
 		<div class="web-project project">
+			<a href="{{website.url}}">
+				<img src="{{site.baseurl}}/img/web/{{website.mini}}-sq.jpg" alt="{{website.url}}">
+				<div class="project-footer">
+					<p>
+						{{website.title}}
+					</p>
+				</div>
+			</a>
+		</div>
+	{% endfor %}
+	{% assign websites = site.websites | sort: 'order' | reverse %}
+	{% for website in websites %}
+		<div class="web-project-swap project swap">
 			<a href="{{website.url}}">
 				<img src="{{site.baseurl}}/img/web/{{website.mini}}-sq.jpg" alt="{{website.url}}">
 				<div class="project-footer">
@@ -147,10 +177,36 @@ description: Joel Elizaga | UX, UI, HCI
 			</a>
 		</div>
 	{% endfor %}
+	{% assign videos = site.videography | sort: 'order' | reverse %}
+	{% for video in videos %}
+		<div class="video-project-swap project swap">
+			<a href="{{video.url}}">
+				<img src="{{site.baseurl}}/img/vid/{{video.mini}}/{{video.mini}}-sq.jpg" alt="{{video.url}}">
+				<div class="project-footer">
+					<p>
+						{{video.title}}
+					</p>
+				</div>
+			</a>
+		</div>
+	{% endfor %}
 
 	{% assign others = site.miscellaneous | sort: 'order' | reverse %}
 	{% for other in others %}
 		<div class="design-project project">
+			<a href="{{other.url}}">
+				<img src="{{site.baseurl}}/img/other/{{other.mini}}/{{other.mini}}-sq.jpg" alt="{{video.url}}">
+				<div class="project-footer">
+					<p>
+						{{other.title}}
+					</p>
+				</div>
+			</a>
+		</div>
+	{% endfor %}
+	{% assign others = site.miscellaneous | sort: 'order' | reverse %}
+	{% for other in others %}
+		<div class="design-project-swap project swap">
 			<a href="{{other.url}}">
 				<img src="{{site.baseurl}}/img/other/{{other.mini}}/{{other.mini}}-sq.jpg" alt="{{video.url}}">
 				<div class="project-footer">
@@ -191,7 +247,7 @@ description: Joel Elizaga | UX, UI, HCI
 
 	#projects-grid .projects-row {
 		height: 15vw;
-		background-image: linear-gradient(black, yellow);
+		background-image: linear-gradient(#222, #000);
 	}
 
 	#projects-grid h2 {
@@ -212,25 +268,29 @@ description: Joel Elizaga | UX, UI, HCI
 		padding-left: 0.4em;
 		padding-right: 0.4em;
 		margin: 0;
+		transition: color 0.2s ease;
+	}
+
+	#projects-grid h2:hover {
+		color: #4EFF1F;
 	}
 
 	#projects-grid h2 .symbol {
 		font-size: 0.7em;
 	}
 
-	.projects-row .projects .project {
+	.projects-row .project {
 		display: inline-block;
-		height: 15vw;
+		height: 100%;
 		width: 15vw;
 		overflow: hidden;
 		position: relative;
 	}
 
-	.projects {
-		overflow: hidden;
+	.projects, .project-swap {
 		white-space: nowrap;
 		height: 15vw;
-
+		transition: transform 1s;
 	}
 
 	.projects-row .project .project-footer {
@@ -262,29 +322,3 @@ description: Joel Elizaga | UX, UI, HCI
 	}
 
 </style>
-
-<script>
-
-	// Dump all projects into corresponding arrays.
-	var webProjects = $(".web-project");
-	var mobProjects = $(".mobile-project");
-	var desProjects = $(".design-project");
-	var vidProjects = $(".video-project");
-
-	for (var project = 0; project < webProjects.length; project++) {
-		$("#web-projects > .projects").append(webProjects[project]);
-	}
-
-	for (var project = 0; project < mobProjects.length; project++) {
-		$("#mobile-projects > .projects").append(mobProjects[project]);
-	}
-
-	for (var project = 0; project < desProjects.length; project++) {
-		$("#design-projects > .projects").append(desProjects[project]);
-	}
-
-	for (var project = 0; project < vidProjects.length; project++) {
-		$("#video-projects > .projects").append(vidProjects[project]);
-	}
-
-</script>
