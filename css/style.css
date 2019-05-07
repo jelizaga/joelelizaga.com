@@ -454,6 +454,11 @@
 
 	/* BLOG SMALLEST+ ///////////////////////////////////////////////////////////////////////////*/
 
+		#blogs {
+			margin-top: 1.2em;
+			margin-bottom: 1.2em;
+		}
+
 		.blog-item {
 			overflow: hidden;
 			position: relative;
@@ -1043,7 +1048,8 @@
 		/* BLOG 560+ ///////////////////////////////////////////////////////////////////////////*/
 
 			#blogs {
-				margin-top: 15px;
+				margin-top: 1.5em;
+				margin-bottom: 1.5em;
 			}
 
 			.blog-item {
