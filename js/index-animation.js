@@ -114,7 +114,6 @@ $(document).ready(function() {
 	// If not, run the index animation and dump the 'visited' cookie in their cache.
 	} else {
     	console.log("This is your first time here, isn't it?");
-    	document.cookie = "visited";
     	$("#index").css("display", "none");
 		$("#index").css("transform", "translate(-101vw)");
 		$("#index-animation").css("display", "flex");
@@ -124,5 +123,6 @@ $(document).ready(function() {
 		$("#notFoundLine").css("display", "none");
 		$("#bizCardLine").css("display", "none");
 		terminalType();
+		document.cookie = "visited";
 	}
 });
