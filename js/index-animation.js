@@ -105,10 +105,6 @@ function swapTerminalWithCard() {
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
 $(document).ready(function() {
-	// Hide index, display index animation.
-	$("#index").css("display", "none");
-	$("#index").css("transform", "translate(-101vw)");
-	$("#index-animation").css("display", "flex");
 	// Load the random cinemagraph.
 	loadCinemagraph();
 	// Check if the visitor has already been here before. If they have, display the index
@@ -119,12 +115,14 @@ $(document).ready(function() {
 	} else {
     	console.log("This is your first time here, isn't it?");
     	document.cookie = "visited";
+    	$("#index").css("display", "none");
+		$("#index").css("transform", "translate(-101vw)");
+		$("#index-animation").css("display", "flex");
+    	$("#cinemagram").css("opacity", "0");
+		$("#doneLine").css("display", "none");
+		$("#enjoyLine").css("display", "none");
+		$("#notFoundLine").css("display", "none");
+		$("#bizCardLine").css("display", "none");
+		terminalType();
 	}
-	// Cinemagram is transparent. Terminal lines are hidden.
-	$("#cinemagram").css("opacity", "0");
-	$("#doneLine").css("display", "none");
-	$("#enjoyLine").css("display", "none");
-	$("#notFoundLine").css("display", "none");
-	$("#bizCardLine").css("display", "none");
-	terminalType();
 });
