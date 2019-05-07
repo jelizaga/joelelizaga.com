@@ -689,7 +689,7 @@
 	/* MAIN SMALLEST+ ///////////////////////////////////////////////////////////////////////////*/
 
 		main {
-			background-color: #FFFFFF;
+			background-color: #222;
 			padding: 0;
 			box-shadow: 0px 0px 4px 0px #111111;
 			margin-left: auto;
@@ -711,6 +711,7 @@
 		}
 
 		.content {
+			background-color: #FFFFFF;
 			padding-left: 20px;
 			padding-right: 20px;
 			padding-bottom: 5px;
@@ -1099,7 +1100,6 @@
 		/* MAIN 560+ ////////////////////////////////////////////////////////////////////////////*/
 
 			main {
-				background-color: #FFFFFF;
 				padding: 0;
 				box-shadow: 0px 0px 4px 0px #111111;
 				margin-left: auto;
