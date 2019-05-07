@@ -11,6 +11,9 @@ keywords: joel elizaga resume linkedin cv work experience
 		<h1>
 			Resume
 		</h1>
+		<p id="resume-selection">
+			<a id="ux-resume-btn" onclick="displayResume('ux-resume')">UX | UI | HCI</a> <small>&#8857;</small> <a id="multimedia-resume-btn" onclick="displayResume('multimedia-resume')">Multimedia</a> <small>&#8857;</small> <a id="plain-resume-btn" onclick="displayResume('plain-resume')">Plain</a>
+		</p>
 	</div>
 
 	<div id="resumes">
@@ -33,36 +36,6 @@ keywords: joel elizaga resume linkedin cv work experience
 
 	<div id="resume-bottom">
 
-		<button id="ux-resume-button" onclick="present('ux-resume')" class="resume-button resume-selected">
-			UX | UI | HCI
-		</button>
-	
-		<button id="multimedia-resume-button" onclick="present('multimedia-resume')" class="resume-button">
-			Multimedia
-		</button>
-	
-		<button id="plain-resume-button" onclick="present('plain-resume')" class="resume-button">
-			Basic
-		</button>
-
-		<noscript>
-			<a href="{{site.baseurl}}/file/resume/ux-resume.pdf"
-				><button class="resume-button resume-selected">
-					UX | UI | HCI
-				</button>
-			</a>
-			<a href="{{site.baseurl}}/file/resume/ux-resume.pdf"
-				><button class="resume-button">
-					Multimedia
-				</button>
-			</a>
-			<a href="{{site.baseurl}}/file/resume/ux-resume.pdf"
-				><button class="resume-button">
-					Plain
-				</button>
-			</a>
-		</noscript>
-
 	</div>
 
 </main>
@@ -77,31 +50,18 @@ keywords: joel elizaga resume linkedin cv work experience
 		display: none;
 	}
 
-	.resume-button {
-		border: none;
-		color: white;
-		background-color: #333;
-		font-weight: bold;
-		margin-left: 1em;
-		margin-right: 1em;
-		transition: background-color, 0.5s !important;
-		outline-style: none;
+	#resume-selection a {
+		color: #FFF;
+		border-bottom: dotted 1px;
+	}
+
+	#resume-selection a:hover {
 		cursor: pointer;
-		padding: 8px;
-		border-radius: 20px;
+		color: #4EFF1F;
 	}
 
-	.resume-button .resume-selected {
-		background-color: #087600;
-	}
-
-	.resume-button:hover {
-		background-color: #40c81b !important;
-	}
-
-
-	#resume-main {
-		background-color: #222;
+	#resume-selection #ux-resume-btn {
+		color: #4EFF1F;
 	}
 
 	@media screen and (min-width: 560px) {
@@ -117,16 +77,26 @@ keywords: joel elizaga resume linkedin cv work experience
 <script>
 
 	$(document).ready(function() {
-		$("#ux-resume-button").css("background-color", "#087600");
+		$("#ux-resume-button").css("color", "#087600");
 	});
 
-	function present(resume) {
-		console.log("Switching resumes");
-		$(".pdf-container").hide();
-		$("#" + resume).show();
-		$(".resume-button").css("background-color", "#333");
-		$("#" + resume + "-button").css("background-color", "#087600");
-		window.scrollTo({ top: 0, behavior: "smooth" });
+
+	function displayResume(resume) {
+		console.log("YOLO");
+		$(".pdf-container").animate({
+			opacity: 0
+		}, 200, function() {
+			$(".pdf-container").hide();
+			$("#" + resume).show();
+		});
+		$(".pdf-container").animate({
+			opacity: 1
+		}, 200, function() {
+		});
+		$("#ux-resume-btn").css("color", "#FFFFFF");
+		$("#multimedia-resume-btn").css("color", "#FFFFFF");
+		$("#plain-resume-btn").css("color", "#FFFFFF");
+		$("#" + resume + "-btn").css("color", "#4EFF1F");
 	}
 
 </script>
