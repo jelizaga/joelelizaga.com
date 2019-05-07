@@ -305,6 +305,10 @@
 			transition: transform 1s;
 		}
 
+		#index-portfolio {
+			display: none;
+		}
+
 		#index-animation {
 			display: none;
 			height: 100vh
@@ -363,6 +367,89 @@
 			font-size: 3vw;
 			padding-left: 1vw;
 			padding-right: 1vw;
+		}
+
+	/* PROJECTS GRID ////////////////////////////////////////////////////////////////////////*/
+
+		#projects-grid {
+			overflow: hidden;
+			position: relative;
+		}
+
+		#projects-grid .projects-row {
+			background-image: linear-gradient(#222, #000);
+		}
+
+		#projects-grid .row-head {
+			position: absolute;
+			width: 3em;
+			display: inline-block;
+			background-color: #222;
+			z-index: 2;
+			float: left;
+			height: 100%;
+		}
+
+		#projects-grid .row-head:hover h2 {
+			color: #4EFF1F;
+		}
+
+		#projects-grid h2 {
+			font-family: "Anonymous Pro";
+			color: #FFFFFF;
+			display: block;
+			word-wrap: break-word;
+			font-weight: normal;
+			text-align: center;
+			line-height: 1em;
+			width: 1em;
+			margin: 0;
+			margin-left: auto;
+			margin-right: auto;
+			transition: color 0.2s ease;
+		}
+
+		.projects-row .project {
+			display: inline-block;
+			height: 100%;
+			width: 25%;
+			overflow: hidden;
+			position: relative;
+		}
+
+		.projects {
+			white-space: nowrap;
+			transition: transform 1s;
+			position: absolute;
+			left: 3em;
+		}
+
+		.projects-row .project .project-footer {
+			background-color: red;
+			white-space: normal;
+			text-align: center;
+			width: 100%;
+			position: absolute;
+			z-index: 1;
+			left: 0;
+			bottom: -61px;
+			opacity: 0;
+			color: #FFFFFF;
+			text-shadow: 1px 2px #000;
+			background-color: rgba(34, 34, 34, 0.8);
+			transition: bottom 0.3s ease, opacity 0.3s ease;
+		}
+
+		.projects-row .project .project-footer p {
+			padding-left: 0.5em;
+			padding-right: 0.5em;
+			padding-top: 0.3em;
+			padding-bottom: 0.3em;
+		}
+
+		.projects-row .project:hover .project-footer {
+			bottom: 0;
+			opacity: 1;
 		}
 
 	/* BLOG SMALLEST+ ///////////////////////////////////////////////////////////////////////////*/
@@ -608,11 +695,15 @@
 			margin-left: auto;
 			margin-right: auto;
 			max-width: 100%;
-			margin-top: 10px;
-			margin-bottom: 0px;
+			margin-top: 1.2em;
+			margin-bottom: 1.2em;
 			border-radius: 0px;
 			transition: transform 1s;
 			overflow: hidden;
+		}
+
+		main .title small {
+			font-size: 0.5em;
 		}
 
 		main img {
@@ -936,6 +1027,18 @@
 				width: 80%;
 			}
 
+			#index-portfolio {
+				display: block;
+			}
+
+			#projects-grid .projects-row {
+				height: 115px;
+			}
+
+			.row-head h2 {
+				font-size: 1.1em;
+			}
+
 		/* BLOG 560+ ///////////////////////////////////////////////////////////////////////////*/
 
 			#blogs {
@@ -1002,8 +1105,8 @@
 				margin-left: auto;
 				margin-right: auto;
 				max-width: 500px;
-				margin-top: 15px;
-				margin-bottom: 0px;
+				margin-top: 1.5em;
+				margin-bottom: 1.5em;
 				border-radius: 20px;
 			}
 
@@ -1264,6 +1367,14 @@
 				height: 80vh;
 			}
 
+			#projects-grid .projects-row {
+				height: 158px;
+			}
+
+			.row-head h2 {
+				font-size: 1.4em;
+			}
+
 			.pdf-button {
 				background-color: #222;
 				box-shadow: 2px 2px 10px 0px #333;
@@ -1518,8 +1629,6 @@
 
 			main {
 				max-width: 680px;
-				margin-top: 15px;
-				margin-bottom: 20px;
 				border-radius: 20px;
 			}
 
@@ -1715,6 +1824,14 @@
 
 			#terminal {
 				width: 70%;
+			}
+
+			#projects-grid .projects-row {
+				height: 182px;
+			}
+
+			.row-head h2 {
+				font-size: 1.4em;
 			}
 
 			/* INDEX BLOG 860+ //////////////////////////////////////////////////////////////////*/
@@ -1943,8 +2060,6 @@
 
 			main {
 				max-width: 780px;
-				margin-top: 15px;
-				margin-bottom: 20px;
 				border-radius: 20px;
 			}
 
@@ -2115,6 +2230,14 @@
 
 			#terminal {
 				width: 70%;
+			}
+
+			#projects-grid .projects-row {
+				height: 212px;
+			}
+
+			.row-head h2 {
+				font-size: 1.5em;
 			}
 
 			/* BLOG 960+ ////////////////////////////////////////////////////////////////////////*/
@@ -2343,8 +2466,6 @@
 
 			main {
 				max-width: 900px;
-				margin-top: 15px;
-				margin-bottom: 0px;
 				border-radius: 20px;
 			}
 
@@ -2553,6 +2674,10 @@
 				width: 70%;
 			}
 
+			#projects-grid .projects-row {
+				height: 237px;
+			}
+
 			/* BLOG 1070+ ///////////////////////////////////////////////////////////////////////*/
 			
 			.blog-item {
@@ -2682,87 +2807,6 @@
 				color: #000000;
 			}
 
-		/* POST-TILE 1070+ //////////////////////////////////////////////////////////////////////*/
-
-			.post-tile, .post-tile-img {
-				border-bottom-right-radius: 20px;
-				border-bottom-left-radius: 20px;
-			}
-
-			.post-tile, .post-tile-head {
-				border-top-left-radius: 20px;
-				border-top-right-radius: 20px;
-			}
-
-			.post-tile {
-				background-color: #FFFFFF;
-				padding: 0px;
-				box-shadow: 2px 2px 5px 0px;
-				margin-left: auto;
-				margin-right: auto;
-				max-width: 1000px;
-				margin-top: 20px;
-				margin-bottom: 40px;
-				transition: max-width 0.5s ease;
-				position: relative;
-				overflow: hidden;
-			}
-
-			.post-tile h2 {
-				transition: color 0.5s;
-			}
-
-			.post-tile:hover {
-				max-width: 1060px;
-				color: #000000;
-			}
-
-			.post-tile:hover h2 {
-				color: #4EFF1F;
-			}
-
-			.post-tile-img {
-				color: #000;
-				margin-left: auto;
-				margin-right: auto;
-				width: 100%;
-				display: block;
-				background-color: #000;
-			}
-
-			.post-tile-head {
-				color: #FFFFFF;
-				background-color: #222;
-				padding: 20px;
-			}
-
-			.post-tile-head h2 {
-				font-family: "Fjallaone", sans-serif;
-				margin: 0;
-				font-size: 20pt;
-				padding-top: 0;
-				padding-left: 0px;
-			}
-
-			.post-tile-head p {
-				font-family: "Anonymous Pro", monospace;
-				font-size: 12pt;
-				padding-top: 0;
-				padding-bottom: 0px;
-				padding-left: 25px;
-				margin-top: 5px;
-				margin-bottom: 0;
-			}
-
-			.post-tile-link {
-				color: #000000;
-				transition: none;
-			}
-
-			.post-tile-link:hover {
-				color: #000000;
-			}
-
 		/* HEADER 1070+ /////////////////////////////////////////////////////////////////////////*/
 
 			header {
@@ -2776,8 +2820,6 @@
 
 			main {
 				max-width: 1000px;
-				margin-top: 15px;
-				margin-bottom: 0px;
 				border-radius: 20px;
 			}
 
@@ -2956,6 +2998,11 @@
 			#terminal {
 				width: 50%;
 			}
+
+			#projects-grid .projects-row {
+				height: 257px;
+			}
+
 
 			/* BLOG 1150+ ///////////////////////////////////////////////////////////////////////*/
 
@@ -3217,8 +3264,6 @@
 
 			main {
 				max-width: 1080px;
-				margin-top: 1em;
-				margin-bottom: 1em;
 				border-radius: 20px;
 			}
 

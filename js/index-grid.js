@@ -1,6 +1,8 @@
 // index-grid.js //////////////////////////////////////////////////////////////////////////////////
 // Handles the index grid and its perpetual scrolling effect.
 
+var gridSpeed = 5000;
+
 // grindRoll
 // Animates the scrolling of .projects <div> for infinity.
 // loopCount - Current count of the animation; begin with 0.
@@ -13,13 +15,13 @@ function gridRoll(loopCount, gridID, gridLength) {
 		$("#" + gridID + " > .projects").css("transform", "translate(0)");
 		setTimeout(function() {
 			gridRoll(0, gridID, gridLength);
-		}, 3000);
+		}, gridSpeed);
 	// Else, translate the row to the left a bit.
 	} else {
 		$("#" + gridID + " > .projects").css("transition-duration", "1s");
-		var movement = loopCount * 15;
+		var movement = loopCount * 25;
 		movement = 0 - movement;
-		$("#" + gridID + " > .projects").css("transform", "translate(" + movement + "vw)");
+		$("#" + gridID + " > .projects").css("transform", "translate(" + movement + "%)");
 		loopCount = loopCount + 1;
 		if (loopCount == 1) {
 			setTimeout(function() {
@@ -28,7 +30,7 @@ function gridRoll(loopCount, gridID, gridLength) {
 		} else {
 			setTimeout(function() {
 				gridRoll(loopCount, gridID, gridLength);
-			}, 3000);
+			}, gridSpeed);
 		}
 	}
 }
@@ -75,8 +77,8 @@ $(document).ready(function() {
 		$("#video-projects > .projects").append(vidProjectsSwap[project]);
 	}
 
-
 	gridRoll(0, "web-projects", webProjects.length);
 	gridRoll(0, "design-projects", desProjects.length);
 	gridRoll(0, "video-projects", vidProjects.length);
+
 })
