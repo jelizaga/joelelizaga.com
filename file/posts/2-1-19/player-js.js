@@ -32,8 +32,13 @@ function playSong(songId) {
 	/* Determine song file location. */
 	songParsed = songId.split("-");
 	songName = songParsed[0];
-	if (songName == 'agua' && songParsed[songParsed.length]) {
-		songParsed = songParsed.pop();
+	if (songName == 'agua' && songParsed[songParsed.length - 1] == 'art') {
+		songParsed.pop();
+		songId = "";
+		for (var i = 0; i < songParsed.length; i++) {
+			songId = songId + songParsed[i] + "-"
+		}
+		songId = songId.slice(0, -1);
 	}
 	var properTime = 0;
 	var songLocation = "../../../file/posts/2-1-19/";
