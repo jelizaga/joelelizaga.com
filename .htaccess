@@ -1,3 +1,7 @@
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
+
 ErrorDocument 400 http://joelelizaga.com/error/400.html
 ErrorDocument 403 http://joelelizaga.com/error/403.html
 ErrorDocument 404 http://joelelizaga.com/error/404.html
