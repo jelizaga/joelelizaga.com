@@ -17,21 +17,28 @@ keywords: joel elizaga resume linkedin cv work experience
 	</div>
 
 	<div id="resumes">
+
 		<div id="ux-resume" class="pdf-container">
+			<img src="{{site.baseurl}}/file/resume/ux-resume.png" class="resume-img">
 			<embed src="{{site.baseurl}}/file/resume/ux-resume.pdf" width="1080" 
-				height="1298" type="application/pdf" class="letter-pdf">
+				height="1298" type="application/pdf" class="letter-pdf resume-pdf">
 			<a href="{{site.baseurl}}/file/resume/ux-resume.pdf"><button class="pdf-button">Expand PDF</button></a>
 		</div>
+
 		<div id="multimedia-resume" class="pdf-container">
+			<img src="{{site.baseurl}}/file/resume/multimedia-resume.png" class="resume-img">
 			<embed src="{{site.baseurl}}/file/resume/multimedia-resume.pdf" width="1080" 
-				height="1298" type="application/pdf" class="letter-pdf">
+				height="1298" type="application/pdf" class="letter-pdf resume-pdf">
 			<a href="{{site.baseurl}}/file/resume/multimedia-resume.pdf"><button class="pdf-button">Expand PDF</button></a>
 		</div>
+
 		<div id="plain-resume" class="pdf-container">
+			<img src="{{site.baseurl}}/file/resume/plain-resume.png" class="resume-img">
 			<embed src="{{site.baseurl}}/file/resume/plain-resume.pdf" width="1080" 
-				height="1298" type="application/pdf" class="letter-pdf">
+				height="1298" type="application/pdf" class="letter-pdf resume-pdf">
 			<a href="{{site.baseurl}}/file/resume/plain-resume.pdf"><button class="pdf-button">Expand PDF</button></a>
 		</div>
+
 	</div>
 
 	<div id="resume-bottom">
@@ -64,6 +71,22 @@ keywords: joel elizaga resume linkedin cv work experience
 		color: #4EFF1F;
 	}
 
+	.resume-pdf {
+		display: none;
+	}
+
+	@media screen and (min-width: 740px) {
+
+		.resume-img {
+			display: none;
+		}
+
+		.resume-pdf {
+			display: block;
+		}
+
+	}
+
 	@media screen and (min-width: 560px) {
 
 		.resume-button {
@@ -80,14 +103,13 @@ keywords: joel elizaga resume linkedin cv work experience
 		$("#ux-resume-button").css("color", "#087600");
 	});
 
-
 	function displayResume(resume) {
-		console.log("YOLO");
 		$(".pdf-container").animate({
 			opacity: 0
 		}, 200, function() {
 			$(".pdf-container").hide();
 			$("#" + resume).show();
+			$("#" + resume + "-img").show();
 		});
 		$(".pdf-container").animate({
 			opacity: 1
