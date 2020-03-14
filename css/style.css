@@ -116,6 +116,11 @@
 			font-size: 11pt;
 		}
 
+		.no-dots {
+			list-style: none;
+			padding-left: 0;
+		}
+
 		.first-letter {
 			float: left;
 			font-family: "Nimbus Sans";
