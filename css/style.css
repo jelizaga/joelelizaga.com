@@ -90,6 +90,10 @@
 			outline: none;
 		}
 
+		.content a {
+			border-bottom: 1px dotted #087600;
+		}
+
 		a:hover {
 			color: #4EFF1F;
 		}
@@ -153,6 +157,14 @@
 
 		.hidden {
 			display: none;
+		}
+
+		h3.subtitled {
+			margin-bottom: 0.2em;
+		}
+
+		p.subtitle {
+			margin-top: 0em;
 		}
 
 		.transparent {
