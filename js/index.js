@@ -19,4 +19,12 @@ $(document).ready(function() {
 		}
 	);
 
+	$("#bio-infosys").hover(
+		function() {
+			$("#portrait > img").attr("src", "/img/portrait/infosys.jpg");
+		}, function() {
+			$("#portrait > img").attr("src", "/img/portrait/portrait.jpg");
+		}
+	);
+
 });
