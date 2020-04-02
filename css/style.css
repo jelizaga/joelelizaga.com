@@ -43,7 +43,7 @@
 	}
 
 	@font-face {
-		font-family: "Lato";
+		font-family: "Lato Light";
 		font-weight: lighter;
 		src: url("../font/lato-light.ttf");
 	}
@@ -823,12 +823,14 @@
 			float: right;
 			max-width: 50%;
 			padding: 1em;
+			padding-right: 0em;
 		}
 
 		.content .left-img {
 			float: left;
 			max-width: 50%;
 			padding: 1em;
+			padding-left: 0em;
 		}
 
 		.right-img p {
@@ -2511,12 +2513,14 @@
 				float: right;
 				max-width: 30%;
 				padding: 1em;
+				padding-right: 0em;
 			}
 
 			.content .left-img {
 				float: left;
 				max-width: 50%;
 				padding: 1em;
+				padding-left: 0em;
 			}
 
 			.right-img p {
