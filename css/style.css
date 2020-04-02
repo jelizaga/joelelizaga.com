@@ -579,19 +579,21 @@
 			width: 95%;
 		}
 
-		.blog-meta p {
-			margin-top: 0.5em;
-		}
-
 		.blog-meta h2 {
 			font-family: "Fjallaone";
 			font-weight: normal;
 			font-size: 1.5em;
 			transition: color 0.5s;
 			width: 47%;
+			margin-bottom: 0em;
 		}
 
-		.post-description {
+		.blog-meta .post-published {
+			margin-top: 0.3em;
+		}
+
+		.blog-meta .post-description {
+			margin-top: 0.5em;
 			display: none;
 			opacity: 0;
 			font-family: "Nimbus Sans", sans-serif;
@@ -1161,11 +1163,7 @@
 				text-shadow: 1px 2px #000;
 			}
 
-			.blog-meta p {
-				margin-top: 0.5em;
-			}
-
-			.post-description {
+			.blog-meta .post-description {
 				display: inline;
 				opacity: 0;
 			}
@@ -1505,10 +1503,6 @@
 				left: 1.5em;
 				top: 1em;
 				text-shadow: 1px 2px #000;
-			}
-
-			.blog-meta p {
-				margin-top: 0.5em;
 			}
 
 			.post-description {
@@ -1944,10 +1938,6 @@
 				text-shadow: 1px 2px #000;
 			}
 
-			.blog-meta p {
-				margin-top: 0.5em;
-			}
-
 			.post-description {
 				opacity: 0;
 			}
@@ -2348,10 +2338,6 @@
 				left: 1.5em;
 				top: 1em;
 				text-shadow: 1px 2px #000;
-			}
-
-			.blog-meta p {
-				margin-top: 0.5em;
 			}
 
 			.post-description {
@@ -2785,10 +2771,6 @@
 				text-shadow: 1px 2px #000;
 			}
 
-			.blog-meta p {
-				margin-top: 0.5em;
-			}
-
 			.post-description {
 				opacity: 0;
 			}
@@ -3110,10 +3092,6 @@
 				left: 1.5em;
 				top: 1em;
 				text-shadow: 1px 2px #000;
-			}
-
-			.blog-meta p {
-				margin-top: 0.5em;
 			}
 
 			.post-description {
