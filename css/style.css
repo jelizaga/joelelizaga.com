@@ -24,6 +24,15 @@
 
 	@font-face {
 		font-family: "Anonymous Pro";
+		font-style: normal;
+		font-weight: normal;
+		src: url("../font/anonymous-pro.ttf");
+	}
+
+	@font-face {
+		font-family: "Anonymous Pro";
+		font-style: normal;
+		font-weight: bold;
 		src: url("../font/anonymous-pro-bold.ttf");
 	}
 
@@ -33,19 +42,38 @@
 	}
 
 	@font-face {
-		font-family: "Gandhi";
-		src: url("../font/gandhi.otf");
+		font-family: "Gandhi Sans";
+		font-style: normal;
+		font-weight: normal;
+		src: url("../font/gandhi-sans-regular.otf");
+	}
+
+	@font-face {
+		font-family: "Gandhi Sans";
+		font-style: normal;
+		font-weight: bold;
+		src: url("../font/gandhi-sans-bold.otf");
+	}
+
+	@font-face {
+		font-family: "Gandhi Serif";
+		font-style: normal;
+		font-weight: normal;
+		src: url("../font/gandhi-serif.otf");
+	}
+
+	@font-face {
+		font-family: "Gandhi Serif";
+		font-style: normal;
+		font-weight: bold;
+		src: url("../font/gandhi-serif-bold.otf");
 	}
 
 	@font-face {
 		font-family: "Lato";
+		font-style: normal;
+		font-weight: normal;
 		src: url("../font/lato-regular.ttf");
-	}
-
-	@font-face {
-		font-family: "Lato Light";
-		font-weight: lighter;
-		src: url("../font/lato-light.ttf");
 	}
 
 	html {
@@ -138,7 +166,7 @@
 		.block {
 			margin-left: 2em;
 			margin-right: 2em;
-			font-family: "Gandhi";
+			font-family: "Gandhi Serif";
 		}
 
 		button {
@@ -1078,11 +1106,9 @@
 			}
 
 			.tile-head p {
-				font-family: "Anonymous Pro", monospace;
 				font-size: 10pt;
 				padding-top: 0;
 				padding-bottom: 0px;
-				padding-left: 25px;
 				margin-top: 5px;
 				margin-bottom: 0;
 			}
@@ -1557,11 +1583,9 @@
 			}
 
 			.tile-head p {
-				font-family: "Anonymous Pro", monospace;
 				font-size: 12pt;
 				padding-top: 0;
 				padding-bottom: 0px;
-				padding-left: 25px;
 				margin-top: 5px;
 				margin-bottom: 0;
 			}
@@ -1963,11 +1987,9 @@
 			}
 
 			.tile-head p {
-				font-family: "Anonymous Pro", monospace;
 				font-size: 12pt;
 				padding-top: 0;
 				padding-bottom: 0px;
-				padding-left: 25px;
 				margin-top: 5px;
 				margin-bottom: 0;
 			}
@@ -2344,11 +2366,9 @@
 			}
 
 			.tile-head p {
-				font-family: "Anonymous Pro", monospace;
 				font-size: 12pt;
 				padding-top: 0;
 				padding-bottom: 0px;
-				padding-left: 25px;
 				margin-top: 5px;
 				margin-bottom: 0;
 			}
@@ -2761,11 +2781,9 @@
 			}
 
 			.tile-head p {
-				font-family: "Anonymous Pro", monospace;
 				font-size: 12pt;
 				padding-top: 0;
 				padding-bottom: 0px;
-				padding-left: 25px;
 				margin-top: 5px;
 				margin-bottom: 0;
 			}
@@ -3083,11 +3101,9 @@
 			}
 
 			.tile-head p {
-				font-family: "Anonymous Pro", monospace;
 				font-size: 12pt;
 				padding-top: 0;
 				padding-bottom: 0px;
-				padding-left: 25px;
 				margin-top: 5px;
 				margin-bottom: 0;
 			}
