@@ -133,7 +133,7 @@
 		}
 
 		h1 {
-			font-family: "Fjallaone", sans-serif;
+			font-family: "Gandhi Sans", sans-serif;
 			text-align: center;
 			font-weight: normal;
 			margin: 0px;
@@ -141,14 +141,21 @@
 		}
 
 		h2 {
+			font-family: "Gandhi Sans", sans-serif;
 			margin-top: 1em;
 			margin-bottom: 1em;
 			font-size: 12pt;
 		}
 
 		h3 {
+			font-family: "Gandhi Sans", sans-serif;
 			font-size: 11pt;
 		}
+
+		h4 {
+			font-family: "Gandhi Sans", sans-serif;
+		}
+
 
 		.no-dots {
 			list-style: none;
