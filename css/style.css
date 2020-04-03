@@ -37,11 +37,6 @@
 	}
 
 	@font-face {
-		font-family: "Fjallaone";
-		src: url("../font/fjallaone.otf");
-	}
-
-	@font-face {
 		font-family: "Gandhi Sans";
 		font-style: normal;
 		font-weight: normal;
@@ -53,6 +48,13 @@
 		font-style: normal;
 		font-weight: bold;
 		src: url("../font/gandhi-sans-bold.otf");
+	}
+
+	@font-face {
+		font-family: "Gandhi Sans";
+		font-style: italic;
+		font-weight: bold;
+		src: url("../font/gandhi-sans-bold-italic.otf");
 	}
 
 	@font-face {
@@ -506,10 +508,10 @@
 
 		#projects-grid h2 {
 			font-family: "Anonymous Pro";
+			font-weight: bold;
 			color: #FFFFFF;
 			display: block;
 			word-wrap: break-word;
-			font-weight: normal;
 			text-align: center;
 			line-height: 1em;
 			width: 1em;
@@ -598,6 +600,7 @@
 		.blog-meta {
 			color: white;
 			font-family: "Anonymous Pro";
+			font-weight: bold;
 			position: absolute;
 			z-index: 3;
 			width: 100%;
@@ -608,11 +611,11 @@
 		}
 
 		.blog-meta h2 {
-			font-family: "Fjallaone";
+			font-family: "Gandhi Sans";
 			font-weight: normal;
 			font-size: 1.5em;
 			transition: color 0.5s;
-			width: 47%;
+			width: 45%;
 			margin-bottom: 0em;
 		}
 
@@ -625,6 +628,7 @@
 			display: none;
 			opacity: 0;
 			font-family: "Nimbus Sans", sans-serif;
+			font-weight: normal;
 		}
 
 		.blog-meta-bg {
@@ -636,7 +640,7 @@
 			height: 100%;
 			padding: 2em;
 			padding-left: 4em;
-			transition: width 0.5s;
+			transition: width 0.5s, background-color 0.5s;
 			z-index: 2;
 		}
 
@@ -658,6 +662,7 @@
 
 		.blog-item:hover .blog-meta-bg {
 			width: 120%;
+			background-color: rgba(34, 34, 34, 0.9);
 		}
 
 		.see-more {
@@ -732,11 +737,14 @@
 		.tile-head {
 			color: #FFFFFF;
 			background-color: #222;
-			padding: 20px;
+			padding-left: 1.5em;
+			padding-right: 1.5em;
+			padding-top: 1.2em;
+			padding-bottom: 1.2em;
 		}
 
 		.tile-head h2 {
-			font-family: "Fjallaone", sans-serif;
+			font-family: "Gandhi Sans", sans-serif;
 			margin: 0;
 			font-size: 12pt;
 			font-weight: normal;
@@ -750,10 +758,11 @@
 
 		.tile-head p {
 			font-family: "Anonymous Pro", monospace;
+			font-weight: bold;
 			font-size: 10pt;
 			padding-top: 0;
 			padding-bottom: 0px;
-			padding-left: 25px;
+			padding-left: 1em;
 			margin-top: 5px;
 			margin-bottom: 0;
 		}
@@ -1001,7 +1010,7 @@
 			}
 
 			h1 {
-				font-family: "Fjallaone", sans-serif;
+				font-family: "Gandhi Sans", sans-serif;
 				text-align: center;
 				margin: 0px;
 				font-size: 20pt;
@@ -1089,12 +1098,6 @@
 				width: 100%;
 				display: block;
 				background-color: #000;
-			}
-
-			.tile-head {
-				color: #FFFFFF;
-				background-color: #222;
-				padding: 10px;
 			}
 
 			.tile-head h2 {
@@ -1185,6 +1188,7 @@
 			.blog-meta {
 				color: white;
 				font-family: "Anonymous Pro";
+				font-weight: bold;
 				position: absolute;
 				left: 1.5em;
 				top: 1em;
@@ -1372,7 +1376,6 @@
 			}
 
 			h1 {
-				font-family: "Fjallaone", sans-serif;
 				text-align: center;
 				margin: 0px;
 				font-size: 23pt;
@@ -1472,7 +1475,7 @@
 				color: #FFFFFF;
 				font-size: 12pt;
 				font-weight: normal;
-				font-family: "Nimbus Sans", sans-serif;
+				font-family: "Gandhi Sans", sans-serif;
 				line-height: 0;
 			}
 
@@ -1566,12 +1569,6 @@
 				width: 100%;
 				display: block;
 				background-color: #000;
-			}
-
-			.tile-head {
-				color: #FFFFFF;
-				background-color: #222;
-				padding: 20px;
 			}
 
 			.tile-head h2 {
@@ -1682,7 +1679,7 @@
 			}
 
 			.post-tile-head h2 {
-				font-family: "Fjallaone", sans-serif;
+				font-family: "Gandhi Sans", sans-serif;
 				margin: 0;
 				font-size: 20pt;
 				padding-top: 0;
@@ -1836,7 +1833,7 @@
 			}
 
 			h1 {
-				font-family: "Fjallaone", sans-serif;
+				font-family: "Gandhi Sans", sans-serif;
 				text-align: center;
 				margin: 0px;
 				font-size: 28pt;
@@ -1973,12 +1970,6 @@
 				background-color: #000;
 			}
 
-			.tile-head {
-				color: #FFFFFF;
-				background-color: #222;
-				padding: 20px;
-			}
-
 			.tile-head h2 {
 				margin: 0;
 				font-size: 20pt;
@@ -2086,7 +2077,7 @@
 			}
 
 			.post-tile-head h2 {
-				font-family: "Fjallaone", sans-serif;
+				font-family: "Gandhi Sans", sans-serif;
 				margin: 0;
 				font-size: 20pt;
 				padding-top: 0;
@@ -2216,7 +2207,7 @@
 			}
 
 			h1 {
-				font-family: "Fjallaone", sans-serif;
+				font-family: "Gandhi Sans", sans-serif;
 				text-align: center;
 				margin: 0px;
 				font-size: 28pt;
@@ -2352,12 +2343,6 @@
 				background-color: #000;
 			}
 
-			.tile-head {
-				color: #FFFFFF;
-				background-color: #222;
-				padding: 20px;
-			}
-
 			.tile-head h2 {
 				margin: 0;
 				font-size: 20pt;
@@ -2465,7 +2450,7 @@
 			}
 
 			.post-tile-head h2 {
-				font-family: "Fjallaone", sans-serif;
+				font-family: "Gandhi Sans", sans-serif;
 				margin: 0;
 				font-size: 20pt;
 				padding-top: 0;
@@ -2633,7 +2618,7 @@
 			}
 
 			h1 {
-				font-family: "Fjallaone", sans-serif;
+				font-family: "Gandhi Sans", sans-serif;
 				text-align: center;
 				margin: 0px;
 				font-size: 28pt;
@@ -2765,12 +2750,6 @@
 				width: 100%;
 				display: block;
 				background-color: #000;
-			}
-
-			.tile-head {
-				color: #FFFFFF;
-				background-color: #222;
-				padding: 20px;
 			}
 
 			.tile-head h2 {
@@ -2921,7 +2900,7 @@
 			}
 
 			h1 {
-				font-family: "Fjallaone", sans-serif;
+				font-family: "Gandhi Sans", sans-serif;
 				text-align: center;
 				margin: 0px;
 				font-size: 28pt;
@@ -3087,12 +3066,6 @@
 				background-color: #000;
 			}
 
-			.tile-head {
-				color: #FFFFFF;
-				background-color: #222;
-				padding: 20px;
-			}
-
 			.tile-head h2 {
 				margin: 0;
 				font-size: 20pt;
@@ -3202,7 +3175,7 @@
 			}
 
 			.post-tile-head h2 {
-				font-family: "Fjallaone", sans-serif;
+				font-family: "Gandhi Sans", sans-serif;
 				margin: 0;
 				font-size: 20pt;
 				padding-top: 0;
