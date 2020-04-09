@@ -957,12 +957,11 @@
 			padding-top: 20px;
 			text-align: center;
 			background-color: #222;
-			font-family: "Anonymous Pro", monospace;
-			color: #FFFFFF;
 		}
 
 		.credits {
 			font-family: "Anonymous Pro", monospace;
+			font-weight: bold;
 			width: 100%;
 			margin-left: auto;
 			margin-right: auto;
@@ -975,7 +974,6 @@
 
 		th {
 			text-align: left;
-			font-weight: normal;
 			text-indent: 13pt;
 		}
 
@@ -1331,13 +1329,9 @@
 			.credits-head {
 				padding-top: 20px;
 				text-align: center;
-				background-color: #222;
-				font-family: "Anonymous Pro", monospace;
-				color: #FFFFFF;
 			}
 
 			.credits {
-				font-family: "Anonymous Pro", monospace;
 				width: 100%;
 				margin-left: auto;
 				margin-right: auto;
@@ -1350,7 +1344,6 @@
 
 			th {
 				text-align: left;
-				font-weight: normal;
 				text-indent: 13pt;
 			}
 
@@ -1758,13 +1751,9 @@
 			.credits-head {
 				padding-top: 20px;
 				text-align: center;
-				background-color: #222;
-				font-family: "Anonymous Pro", monospace;
-				color: #FFFFFF;
 			}
 
 			.credits {
-				font-family: "Anonymous Pro", monospace;
 				width: 100%;
 				margin-left: auto;
 				margin-right: auto;
@@ -1777,7 +1766,6 @@
 
 			th {
 				text-align: left;
-				font-weight: normal;
 				text-indent: 13pt;
 			}
 
@@ -2157,8 +2145,6 @@
 				padding-top: 20px;
 				text-align: center;
 				background-color: #222;
-				font-family: "Anonymous Pro", monospace;
-				color: #FFFFFF;
 			}
 
 			.credits {
@@ -2175,7 +2161,6 @@
 
 			th {
 				text-align: left;
-				font-weight: normal;
 				text-indent: 13pt;
 			}
 
@@ -2579,7 +2564,6 @@
 
 			th {
 				text-align: left;
-				font-weight: normal;
 				text-indent: 13pt;
 			}
 
@@ -2867,7 +2851,6 @@
 
 			th {
 				text-align: left;
-				font-weight: normal;
 				text-indent: 13pt;
 			}
 
@@ -3302,7 +3285,6 @@
 
 			th {
 				text-align: left;
-				font-weight: normal;
 				text-indent: 13pt;
 			}
 
