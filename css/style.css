@@ -892,6 +892,13 @@
 			display: block;
 			margin-left: auto;
 			margin-right: auto;
+			font-size: 0.85em;
+			color: #444444;
+			font-style: italic;
+		}
+
+		.caption em {
+			font-weight: bold;
 		}
 
 		.center-caption {
@@ -1262,14 +1269,6 @@
 
 			.content ul {
 				line-height: 1.5em;
-			}
-
-			.caption, .center-caption {
-				width: 100%;
-				display: block;
-				margin-left: auto;
-				margin-right: auto;
-				font-size: 12pt;
 			}
 
 			.center-caption {
