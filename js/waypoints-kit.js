@@ -59,15 +59,15 @@ function attachWaypoint(selector, inCSS, outCSS, offset) {
 	// Iterate through the array, attach a Waypoint object to each element at the specified
 	// offset.
 	elementArray.forEach(function(element) {
-		element.waypoint(function(direction) {
+		$(element).waypoint(function(direction) {
 			// If the user is scrolling up, and leaves the element at the offset...
 			if (direction === "up") {
-				element.addClass(outCSS);
-				element.removeClass(inCSS);
+				$(element).addClass(outCSS);
+				$(element).removeClass(inCSS);
 			// If the user is scrolling down, and meets the element at the offset...
 			} else if (direction === "down") {
-				element.addClass(inCSS);
-				element.removeClass(outCSS);
+				$(element).addClass(inCSS);
+				$(element).removeClass(outCSS);
 			}
 
 		}, {

@@ -4,8 +4,8 @@
 // Script unique to the page on 'Chummy.'
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-$(document).ready(function(){
+$(document).ready(function() {
 	batchId(".content img", "sweet")
  	initializeOpacity(".content img", 0);
- 	attachWaypoint(".content img", ".fadeIn", ".fadeOut", 87);
+ 	attachWaypoint(".content img", "fadeIn", "fadeOut", 87);
 });
