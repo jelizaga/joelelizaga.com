@@ -8,15 +8,22 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 // batchId()
-// Creates a unique ID of all elements with the received class. IDs are formatted 'class-#'.
-// The # is incremented by 1 per element. Ex: class-1, class-2, ... class-205, etc.
+// Creates a unique ID of all elements with the received class. IDs are formatted 'id-#'.
+// The # is incremented by 1 per element. Ex: id-1, id-2, ... id-205, etc.
 // selector - Selector for the elements to create a unique ID for.
-function batchId(selector) {
-	var elements = $(selector);
-	for (element in elements) {
-		var newId = selector + "-" + i;
+// id - Desired new ID of the elements.
+function batchId(selector, id) {
+	// Capture list of node elements using selector.
+	var elementList = $(selector);
+	// Convert that list into an array.
+	var elementArray = Array.from(elementList);
+	// Iterate through array, set new IDs to each element based on selector beginning at 'id-1'.
+	var i = 1;
+	elementArray.forEach(function(element) {
+		var newId = id + "-" + i;
 		element.id = newId;
-	}
+		i++;
+	});
 }
 
 // initializeOpacity()
@@ -26,12 +33,12 @@ function batchId(selector) {
 // opacity - Opacity you'd like the selected elements to have.
 function initializeOpacity(selector, opacity) {
 	// Capture list of node elements using selector.
-	var elementsList = $(selector);
+	var elementList = $(selector);
 	// Convert that list to an array.
-	let elements = Array.from(elementsList);
+	var elementArray = Array.from(elementList);
 	// Iterate through the array, set opacity.
-	elements.forEach(function(element) {
-		$(element).css("opacity", opacity);
+	elementArray.forEach(function(element) {
+		$(elementArray).css("opacity", opacity);
 	});
 }
 
