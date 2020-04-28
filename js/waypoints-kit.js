@@ -22,26 +22,30 @@ function initializeOpacity(selector, opacity) {
 
 // attachWaypoint()
 // Attachs waypoint object to an element, given custom data.
-// id - ID of the element to attach a waypoint to.
+// selector - Selector of the element(s) to attach a waypoint to.
 // inCSS - CSS class to attach to the element when scrolling downwards and meeting the 
 // element.
 // outCSS - CSS class to attach to the element when scrolling upwards and leaving the
 // element.
 // offset - % of offset from the top of the browser at which to trigger the waypoint.
-function attachWaypoint(id, inCSS, outCSS, offset) {
+function attachWaypoint(selector, inCSS, outCSS, offset) {
+	// Create a list of elements from the selector.
+	var elements = $(selector);
+	for (var i = 0; i < elements.length; i++) {
+		var elementId = element[i].id;
+		$("#" + elementId).waypoint(function(direction) {
+			// If the user is scrolling up, and leaves the element at the offset...
+			if (direction === "up") {
+				$("#" + elementId).addClass(outCSS);
+				$("#" + elementId).removeClass(inCSS);
+			// If the user is scrolling down, and meets the element at the offset...
+			} else if {
+				$("#" + elementId).addClass(inCSS);
+				$("#" + elementId).removeClass(outCSS);
+			}
 
-	$("#" + id).waypoint(function(direction) {
-		// If the user is scrolling up, and leaves the element at the offset...
-		if (direction === "up") {
-			$("#" + id).addClass(outCSS);
-			$("#" + id).removeClass(inCSS);
-		// If the user is scrolling down, and meets the element at the offset...
-		} else if {
-			$("#" + id).addClass(inCSS);
-			$("#" + id).removeClass(outCSS);
-		}
-
-	}, {
-		offset: offset + "%"
-	});
+		}, {
+			offset: offset + "%"
+		});
+	}
 }
