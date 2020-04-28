@@ -26,7 +26,7 @@ function batchId(selector, id) {
 	});
 }
 
-// initializeOpacity()
+// initializeOpacity() ////////////////////////////////////////////////////////////////////////////
 // Initializes the opacity of a group of elements.
 // Useful for initializing elements as invisible, to be revealed by Waypoints later.
 // selector - Selector for elements to initialize.
@@ -42,7 +42,7 @@ function initializeOpacity(selector, opacity) {
 	});
 }
 
-// attachWaypoint()
+// attachWaypoint() ///////////////////////////////////////////////////////////////////////////////
 // Attachs waypoint object to an element, given custom data.
 // selector - Selector of the element(s) to attach a waypoint to.
 // inCSS - CSS class to attach to the element when scrolling downwards and meeting the 
@@ -50,10 +50,15 @@ function initializeOpacity(selector, opacity) {
 // outCSS - CSS class to attach to the element when scrolling upwards and leaving the
 // element.
 // offset - % of offset from the top of the browser at which to trigger the waypoint.
+// DEPENDS ON: /js/jquery.waypoints.min.js
 function attachWaypoint(selector, inCSS, outCSS, offset) {
-	// Create a list of elements from the selector.
-	var elements = $(selector);
-	for (element in elements) {
+	// Create a list of node elements from the selector.
+	var elementList = $(selector);
+	// Convert that list into an array.
+	var elementArray = Array.from(elementList);
+	// Iterate through the array, attach a Waypoint object to each element at the specified
+	// offset.
+	elementArray.forEach(function(element) {
 		element.waypoint(function(direction) {
 			// If the user is scrolling up, and leaves the element at the offset...
 			if (direction === "up") {
@@ -68,5 +73,6 @@ function attachWaypoint(selector, inCSS, outCSS, offset) {
 		}, {
 			offset: offset + "%"
 		});
-	}
+
+	});
 }
