@@ -43,7 +43,7 @@ function attachWaypoint(selector, inCSS, outCSS, offset) {
 	// Create a list of elements from the selector.
 	var elements = $(selector);
 	for (element in elements) {
-		$(element.waypoint(function(direction) {
+		element.waypoint(function(direction) {
 			// If the user is scrolling up, and leaves the element at the offset...
 			if (direction === "up") {
 				element.addClass(outCSS);
