@@ -29,6 +29,7 @@
 .fadeIn {
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
+  animation-duration: 1s;
 }
 
 /* fadeOut //////////////////////////////////////////////////////////////////////////////////////*/
@@ -56,4 +57,5 @@
 .fadeOut {
   -webkit-animation-name: fadeOut;
   animation-name: fadeOut;
+  animation-duration: 0.3s;
 }

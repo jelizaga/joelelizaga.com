@@ -5,7 +5,6 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 $(document).ready(function() {
-	batchId(".content img", "sweet")
- 	initializeOpacity(".content img", 0);
+	batchId(".content img", "sweet");
  	attachWaypoint(".content img", "fadeIn", "fadeOut", 87);
 });
