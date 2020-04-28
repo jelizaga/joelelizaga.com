@@ -7,16 +7,27 @@
 // (https://spin.atomicobject.com/2015/05/31/scroll-anmiation-css-waypoints/).
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
+// batchId
+// Creates a unique ID of all elements with the received class. IDs are formatted 'class-#'.
+// The # is incremented by 1 per element. Ex: class-1, class-2, ... class-205, etc.
+// selector - Selector for the elements to create a unique ID for.
+function batchId(selector) {
+	var elements = $(selector);
+	for (element in elements) {
+		var newId = selector + "-" + i;
+		element.id = newId;
+	}
+}
+
 // initializeOpacity()
 // Initializes the opacity of a group of elements.
 // Useful for initializing elements as invisible, to be revealed by Waypoints later.
 // selector - Selector for elements to initialize.
 // opacity - Opacity you'd like the selected elements to have.
 function initializeOpacity(selector, opacity) {
-	var selected = $(selector);
-	for (var i = 0; i < selector.length; i++) {
-		var elementId = selector[i].id;
-		$("#" + elementId).css("opacity", opacity);
+	var elements = $(selector);
+	for (element in elements) {
+		element.css("opacity", opacity);
 	}
 }
 
@@ -31,17 +42,16 @@ function initializeOpacity(selector, opacity) {
 function attachWaypoint(selector, inCSS, outCSS, offset) {
 	// Create a list of elements from the selector.
 	var elements = $(selector);
-	for (var i = 0; i < elements.length; i++) {
-		var elementId = element[i].id;
-		$("#" + elementId).waypoint(function(direction) {
+	for (element in elements) {
+		$(element.waypoint(function(direction) {
 			// If the user is scrolling up, and leaves the element at the offset...
 			if (direction === "up") {
-				$("#" + elementId).addClass(outCSS);
-				$("#" + elementId).removeClass(inCSS);
+				element.addClass(outCSS);
+				element.removeClass(inCSS);
 			// If the user is scrolling down, and meets the element at the offset...
 			} else if {
-				$("#" + elementId).addClass(inCSS);
-				$("#" + elementId).removeClass(outCSS);
+				element.addClass(inCSS);
+				element.removeClass(outCSS);
 			}
 
 		}, {
