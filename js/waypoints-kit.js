@@ -49,7 +49,7 @@ function attachWaypoint(selector, inCSS, outCSS, offset) {
 				element.addClass(outCSS);
 				element.removeClass(inCSS);
 			// If the user is scrolling down, and meets the element at the offset...
-			} else if {
+			} else if (direction === "down") {
 				element.addClass(inCSS);
 				element.removeClass(outCSS);
 			}
