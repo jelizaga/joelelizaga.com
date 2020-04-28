@@ -38,7 +38,7 @@ function initializeOpacity(selector, opacity) {
 	var elementArray = Array.from(elementList);
 	// Iterate through the array, set opacity.
 	elementArray.forEach(function(element) {
-		$(elementArray).css("opacity", opacity);
+		$(element).css("opacity", opacity);
 	});
 }
 
@@ -59,6 +59,10 @@ function attachWaypoint(selector, inCSS, outCSS, offset) {
 	// Iterate through the array, attach a Waypoint object to each element at the specified
 	// offset.
 	elementArray.forEach(function(element) {
+		// Add the 'animated' class, which will set the animation-fill-mode attribute to
+		// 'both,' allowing both sides of the animation to hold upon execution.
+		$(element).addClass("animated");
+		// Affix the waypoint and configure with the appropriate CSS.
 		$(element).waypoint(function(direction) {
 			// If the user is scrolling up, and leaves the element at the offset...
 			if (direction === "up") {
