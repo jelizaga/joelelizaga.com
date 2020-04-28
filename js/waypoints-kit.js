@@ -7,7 +7,7 @@
 // (https://spin.atomicobject.com/2015/05/31/scroll-anmiation-css-waypoints/).
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-// batchId
+// batchId()
 // Creates a unique ID of all elements with the received class. IDs are formatted 'class-#'.
 // The # is incremented by 1 per element. Ex: class-1, class-2, ... class-205, etc.
 // selector - Selector for the elements to create a unique ID for.
