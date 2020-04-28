@@ -25,10 +25,14 @@ function batchId(selector) {
 // selector - Selector for elements to initialize.
 // opacity - Opacity you'd like the selected elements to have.
 function initializeOpacity(selector, opacity) {
-	var elements = $(selector);
-	for (element in elements) {
-		element.css("opacity", opacity);
-	}
+	// Capture list of node elements using selector.
+	var elementsList = $(selector);
+	// Convert that list to an array.
+	let elements = Array.from(elementsList);
+	// Iterate through the array, set opacity.
+	elements.forEach(function(element) {
+		$(element).css("opacity", opacity);
+	});
 }
 
 // attachWaypoint()
