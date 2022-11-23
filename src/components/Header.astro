@@ -1,0 +1,37 @@
+---
+import Nav from './Nav.astro';
+
+export interface Props {
+}
+---
+
+<header>
+  <div>
+    <a class="logo" href="/">&#10070;</a>
+    <Nav />
+  </div>
+</header>
+
+<style>
+  a {
+    color: var(--lawetlatla_ash_dim);
+  }
+  header {
+    box-shadow: var(--noonoo_ceiling_protrusion_bright);
+    box-sizing: border-box;
+    margin-bottom: 1.4rem;
+  }
+
+  header div {
+    display: flex;
+    justify-content: space-between;
+    width: 1186px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  header .logo {
+    display: inline-block;
+    margin: 0;
+  }
+</style>
