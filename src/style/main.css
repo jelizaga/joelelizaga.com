@@ -78,6 +78,7 @@ a {
   --spectacular_red_dim: #CC0000;
   --spectacular_red_glow: #F60000;
   --spectacular_red_glow_transparent: #F6000021;
+  --spectacular_red_glowing: 0px 0px 10px var(--spectacular_red_glow_transparent);
   --rain_city_emerald_bright: #23D16C;
   --rain_city_emerald_dim: #1EAE5A;
   --rain_city_emerald_glow: #25E074;
