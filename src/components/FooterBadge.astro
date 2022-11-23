@@ -1,0 +1,33 @@
+---
+export interface Props {
+  description: string,
+  icon: string,
+  destination: string
+}
+const { description, icon, destination } = Astro.props as Props;
+---
+
+<a href={destination} target="_blank">
+  <button class="footer-badge tooltip">
+    <i class={icon}></i>
+    <span class="tooltip-bubble">{description}</span>
+  </button>
+</a>
+
+<style>
+  .footer-badge {
+    background-color: var(--noonoo_protrusion_rounded_bright);
+    border: none;
+    border-radius: 100%;
+    box-shadow: var(--noonoo_protrusion_bright);
+    color: var(--lawetlatla_ash_dim);
+    font-size: 1rem;
+    height: 2rem;
+    position: relative;
+    width: 2rem;
+  }
+
+  .footer-badge:hover {
+    cursor: pointer;
+  }
+</style>

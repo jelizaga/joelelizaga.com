@@ -137,3 +137,20 @@ img {
 .noonoo_protrusion_bright {
   box-shadow: var(--noonoo_protrusion_bright);
 }
+
+.tooltip .tooltip-bubble {
+  background-color: var(--tahoma_white_dim);
+  bottom: 100%;
+  box-shadow: var(--noonoo_floating_card_bright);
+  color: var(--lawetlatla_ash_bright);
+  font-size: 24px;
+  line-height: 42px;
+  position: absolute;
+  visibility: hidden;
+  width: 120px;
+}
+
+.tooltip:hover .tooltip-bubble {
+  visibility: visible;
+  z-index: 1;
+}
