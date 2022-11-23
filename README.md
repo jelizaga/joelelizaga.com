@@ -1,7 +1,6 @@
 # joelelizaga.com
 
-*WIP:* Rebuilding my portfolio using [Astro](https://astro.build/) & 
-[Solid](https://www.solidjs.com/).
+* 🚀 [Astro](https://astro.build)
 
 <!-- # Welcome to [Astro](https://astro.build)
 

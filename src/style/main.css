@@ -55,7 +55,21 @@ h4 {
 }
 
 a {
-  text-decoration: none;
+  color: var(--lawetlatla_ash_bright);
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 2px;
+  text-underline-position: from-font;
+  text-underline-offset: 4px;
+}
+
+a:hover {
+  color: var(--spectacular_red_bright);
+  text-shadow: var(--spectacular_red_glowing);
+}
+
+a:visited {
+  color: var(--lawetlatla_ash_bright);
 }
 
 .caption, .subheading {
@@ -142,16 +156,36 @@ img {
 .tooltip .tooltip-bubble {
   background-color: var(--tahoma_white_dim);
   bottom: 100%;
+  border-radius: 2rem;
   box-shadow: var(--noonoo_floating_card_bright);
   color: var(--lawetlatla_ash_bright);
   font-size: 24px;
+  left: 50%;
   line-height: 42px;
+  max-width: 444px;
+  opacity: 0;
+  padding-bottom: 0.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.25rem;
   position: absolute;
-  visibility: hidden;
-  width: 120px;
+  transition: opacity 0.2s;
+  width: max-content;
+}
+
+.tooltip .tooltip-bubble::after {
+  content: " ";
+  border-color: var(--tahoma_white_dim) transparent transparent transparent;
+  border-style: solid;
+  border-width: 8px;
+  left: 50%;
+  margin-left: -8px;
+  position: absolute;
+  top: 100%;
 }
 
 .tooltip:hover .tooltip-bubble {
-  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.2s;
   z-index: 1;
 }

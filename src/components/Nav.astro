@@ -5,17 +5,24 @@ export interface Props {
 
 <nav>
   <ul>
-    <li>
-      Bio
-    </li>
-    <li>
-      Blog
-    </li>
+    <a href="/bio">
+      <li>
+        Bio
+      </li>
+    </a>
+    <a href="/blog">
+      <li>
+        Blog
+      </li>
+    </a>
   </ul>
 </nav>
 
 <style>
   nav ul {
+    display: flex;
+    gap: 1rem;
+    justify-content: start;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -24,5 +31,7 @@ export interface Props {
   nav ul li {
     display: inline-block;
     font-weight: bold;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
   }
 </style>

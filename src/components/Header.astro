@@ -7,22 +7,25 @@ export interface Props {
 
 <header>
   <div>
-    <a class="logo" href="/">&#10070;</a>
+    <a class="logo" href="/">&#10059;</a>
     <Nav />
   </div>
 </header>
 
 <style>
-  a {
+  header a {
     color: var(--lawetlatla_ash_dim);
+  }
+
+  header a:hover {
+    text-shadow: var(--spectacular_red_glowing);
+    color: var(--spectacular_red_bright);
   }
 
   header {
     box-shadow: var(--noonoo_ceiling_protrusion_bright);
     box-sizing: border-box;
     margin-bottom: 1.4rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
   }
 
   header div {
@@ -36,5 +39,10 @@ export interface Props {
   header .logo {
     display: inline-block;
     margin: 0;
+  }
+
+  .logo {
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
   }
 </style>
