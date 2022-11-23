@@ -61,6 +61,7 @@ a {
   text-decoration-thickness: 2px;
   text-underline-position: from-font;
   text-underline-offset: 4px;
+  transition: color 0.1s, text-shadow 0.1s;
 }
 
 a:hover {
@@ -70,6 +71,10 @@ a:hover {
 
 a:visited {
   color: var(--lawetlatla_ash_bright);
+}
+
+a:visited:hover {
+  color: var(--spectacular_red_bright);
 }
 
 .caption, .subheading {

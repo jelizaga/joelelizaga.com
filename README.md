@@ -1,6 +1,10 @@
 # joelelizaga.com
 
+## Technologies
+
 * 🚀 [Astro](https://astro.build)
+* 🧊 [SolidJS](https://www.solidjs.com/)
+* 📓 [MDX](https://mdxjs.com/)
 
 <!-- # Welcome to [Astro](https://astro.build)
 
