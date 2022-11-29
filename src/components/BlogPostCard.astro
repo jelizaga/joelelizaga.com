@@ -1,0 +1,34 @@
+---
+export interface Props {
+	href: string;
+	postTitle: string;
+	postDescription: string;
+	postImg: string;
+	postDate: string;
+	postTags: string;
+}
+
+const { 
+	href, 
+	postTitle,
+	postDescription,
+	postImg,
+	postDate,
+	postTags
+} = Astro.props as Props;
+---
+
+<a href={href}>
+	<li class="blog-post-card">
+		<img src={postImg}>
+		<h4>{postTitle}</h4>
+		<p class="caption">{postDate}</p>
+		<p>{postDescription}</p>
+	</li>
+</a>
+
+<style>
+	.blog-post-card {
+
+	}
+</style>
