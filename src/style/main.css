@@ -39,9 +39,17 @@ h1 {
   line-height: 125px;
 }
 
+h1 i {
+  font-size: 67px;
+}
+
 h2 {
   font-size: 64px;
   line-height: 100px;
+}
+
+h2 i {
+  font-size: 50px;
 }
 
 h3 {
@@ -52,6 +60,10 @@ h3 {
 h4 {
   font-size: 39px;
   line-height: 64px;
+}
+
+h1 i, h2 i, h3 i, h4 i {
+  color: var(--lawetlatla_ash_bright);
 }
 
 a {
