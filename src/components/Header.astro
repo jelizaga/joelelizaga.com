@@ -2,10 +2,14 @@
 import Nav from './Nav.astro';
 
 export interface Props {
+  headerShadow?: boolean;
 }
+const { headerShadow } = Astro.props as Props;
+
+const headerClasses = headerShadow ? "header-shadowed" : "";
 ---
 
-<header>
+<header class={headerClasses}>
   <div>
     <a class="logo" href="/">&#10059;</a>
     <Nav />
@@ -18,11 +22,14 @@ export interface Props {
     text-decoration-line: none;
   }
 
-
   header {
     box-shadow: var(--noonoo_ceiling_protrusion_bright);
     box-sizing: border-box;
     margin-bottom: 1.4rem;
+  }
+
+  .header-shadowed {
+    box-shadow: var(--noonoo_ceiling_protrusion_shadow);
   }
 
   header div {

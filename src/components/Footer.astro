@@ -2,10 +2,14 @@
 import FooterBadge from './FooterBadge.astro';
 
 export interface Props {
+  footerShadow?: boolean;
 }
+const { footerShadow } = Astro.props as Props;
+
+const footerClasses = footerShadow ? "footer-shadowed" : "";
 ---
 
-<footer>
+<footer class={footerClasses}>
   <div>
     <FooterBadge
       description="Contact"
@@ -38,6 +42,10 @@ export interface Props {
     padding-bottom: 0.75rem;
     padding-top: 0.75rem;
     margin-top: 1.4rem;
+  }
+
+  .footer-shadowed {
+    box-shadow: var(--noonoo_floor_protrusion_shadow);
   }
 
   footer div {
