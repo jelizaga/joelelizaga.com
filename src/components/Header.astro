@@ -2,9 +2,10 @@
 import Nav from './Nav.astro';
 
 export interface Props {
+  currentPage?: string;
   headerShadow?: boolean;
 }
-const { headerShadow } = Astro.props as Props;
+const { currentPage, headerShadow } = Astro.props as Props;
 
 const headerClasses = headerShadow ? "header-shadowed" : "";
 ---
@@ -12,7 +13,9 @@ const headerClasses = headerShadow ? "header-shadowed" : "";
 <header class={headerClasses}>
   <div>
     <a class="logo" href="/">&#10059;</a>
-    <Nav />
+    <Nav
+      currentPage={currentPage}
+    />
   </div>
 </header>
 

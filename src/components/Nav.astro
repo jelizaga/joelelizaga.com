@@ -1,18 +1,31 @@
 ---
 export interface Props {
+  currentPage?: string;
+}
+const { currentPage } = Astro.props as Props;
+// Determine classes of `Nav` items:
+let bioClasses = "";
+let blogClasses = "";
+switch(currentPage) {
+  case "bio":
+    bioClasses += "selected";
+    break;
+  case "blog":
+    blogClasses += "selected";
+    break;
 }
 ---
 
 <nav>
   <ul>
-    <a href="/bio">
+    <a href="/bio" class={bioClasses}>
       <li>
-        Bio
+        <span>Bio</span>
       </li>
     </a>
-    <a href="/blog">
+    <a href="/blog" class={blogClasses}>
       <li>
-        Blog
+        <span>Blog</span>
       </li>
     </a>
   </ul>
@@ -21,17 +34,45 @@ export interface Props {
 <style>
   nav ul {
     display: flex;
-    gap: 1rem;
+    gap: 0.25rem;
     justify-content: start;
     list-style: none;
     margin: 0;
     padding: 0;
   }
 
-  nav ul li {
+  nav ul a, nav ul a:visited {
+    color: var(--lawetlatla_ash_dim);
+  }
+
+  nav ul a:hover {
+    color: var(--spectacular_red_bright);
+  }
+
+  nav ul a li {
     display: inline-block;
     font-weight: bold;
     padding-bottom: 0.5rem;
     padding-top: 0.5rem;
+  }
+
+  .selected, .selected:visited {
+    color: var(--lawetlatla_ash_bright);
+  }
+
+  .selected:hover {
+    color: var(--spectacular_red_bright);
+  }
+
+  nav ul li span {
+    border-radius: 44px;
+    padding-bottom: 0.3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.3rem;
+  }
+
+  .selected span {
+    box-shadow: var(--noonoo_depression_bright);
   }
 </style>
