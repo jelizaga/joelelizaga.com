@@ -16,6 +16,7 @@
     "solid-js": "^1.4.8"
   },
   "dependencies": {
+    "hotkeys-js": "^3.10.1",
     "swup": "^2.0.19"
   }
 }
