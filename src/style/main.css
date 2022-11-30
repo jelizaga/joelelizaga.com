@@ -34,6 +34,11 @@
   font-style: italic;
 }
 
+::selection {
+  background: var(--whulge_blue_dim);
+  color: var(--tahoma_white_bright);
+}
+
 h1 {
   font-size: 81px;
   line-height: 125px;
@@ -161,8 +166,81 @@ main {
   width: 1186px;
 }
 
+.icon::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.icon-smile::before {
+  content: "\f118";
+}
+
+.icon-envelope::before {
+  content: "\f0e0";
+}
+
+.icon-building::before {
+  content: "\f1ad";
+}
+
+.icon-solid::before {
+  font: var(--fa-font-solid);
+}
+
+.input-smile {
+  background: "\f118";
+}
+
 img {
   max-width: 100%;
+}
+
+form input[type=text], form input[type=email], form select, form label {
+  display: block;
+}
+
+form label {
+  font-weight: bold;
+}
+
+input[type=text], input[type=email] {
+  background-color: var(--tahoma_white_dim);
+  border: none;
+  border-radius: 44px;
+  box-shadow: var(--noonoo_depression_bright);
+  box-sizing: border-box;
+  font-size: 31px;
+  padding-bottom: 0.3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.3rem;
+}
+
+input[type=text]:focus, input[type=email]:focus {
+  box-shadow: var(--noonoo_depression_bright), var(--spectacular_red_glowing);
+  outline-color: var(--spectacular_red_bright);
+  outline-style: solid;
+  outline-width: 2px;
+}
+
+select {
+  background-color: var(--tahoma_white_dim);
+  border: none;
+  border-radius: 44px;
+  box-shadow: var(--noonoo_protrusion_bright);
+  cursor: pointer;
+  font-size: 31px;
+  padding-bottom: 0.3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.3rem;
+}
+
+option {
+  cursor: pointer;
 }
 
 .noonoo-protruding-card {
@@ -189,10 +267,12 @@ img {
   bottom: 100%;
   border-radius: 2rem;
   box-shadow: var(--noonoo_floating_card_bright);
+  box-sizing: border-box;
   color: var(--lawetlatla_ash_bright);
   font-size: 24px;
   left: 50%;
   line-height: 42px;
+  margin-left: -100px;
   max-width: 444px;
   opacity: 0;
   padding-bottom: 0.25rem;
@@ -201,7 +281,8 @@ img {
   padding-top: 0.25rem;
   position: absolute;
   transition: opacity 0.2s;
-  width: max-content;
+  visibility: hidden;
+  width: 200px;
 }
 
 .tooltip .tooltip-bubble::after {
@@ -217,6 +298,8 @@ img {
 
 .tooltip:hover .tooltip-bubble {
   opacity: 1;
+  text-shadow: none;
   transition: opacity 0.2s;
+  visibility: visible;
   z-index: 1;
 }

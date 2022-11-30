@@ -21,7 +21,32 @@ import Layout from '../layouts/Layout.astro';
 		<div id="contact" class="noonoo-protruding-card">
 			<h2><i class="fa-solid fa-paper-plane"></i> Contact</h2>
 			<form>
-
+				<label for="full-name">Full Name</label>
+				<input
+					type="text"
+					id="full-name"
+					name="full-name"
+					placeholder="John Doe"
+				/>
+				<label for="email">Email</label>
+				<input 
+					type="email" 
+					id="email" 
+					name="email"
+					placeholder="name@example.com"
+				/>
+				<label for="organization">Organization</label>
+				<input 
+					type="text" 
+					id="organization" 
+					name="organization"
+					placeholder="ACME, Inc."
+				/>
+				<label for="project">Project</label>
+				<select id="project" name="project">
+					<option>Web Development</option>
+					<option>UX</option>
+				</select>
 			</form>
 		</div>
 	</main>
