@@ -11,7 +11,6 @@ const blogPosts = await Astro.glob("../blog/*.mdx");
 >
 	<main>
 		<h1><i class="fa-solid fa-atlas"></i> Blog</h1>
-		<p>{blogPosts.length}</p>
 		<ul class="blog">
 			{blogPosts.map(blogPost => (
 				<BlogPostCard
