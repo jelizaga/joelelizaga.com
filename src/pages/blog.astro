@@ -1,6 +1,8 @@
 ---
-import "../style/main.css"
 import Layout from '../layouts/Layout.astro';
+import BlogPostCard from "../components/BlogPostCard.astro";
+
+const blogPosts = await Astro.glob("../blog/*.mdx");
 ---
 
 <Layout
@@ -9,8 +11,26 @@ import Layout from '../layouts/Layout.astro';
 >
 	<main>
 		<h1><i class="fa-solid fa-atlas"></i> Blog</h1>
+		<p>{blogPosts.length}</p>
+		<ul class="blog">
+			{blogPosts.map(blogPost => (
+				<BlogPostCard
+					slug={`/${blogPost.frontmatter.slug}`}
+					title={blogPost.frontmatter.title}
+					description={blogPost.frontmatter.description}
+					img={blogPost.frontmatter.img}
+					date={blogPost.frontmatter.date}
+					tags={blogPost.frontmatter.tags}
+				/>
+			))}
+		</ul>
 	</main>
 </Layout>
 
 <style>
+	.blog {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
 </style>

@@ -1,34 +1,41 @@
 ---
 export interface Props {
-	href: string;
-	postTitle: string;
-	postDescription: string;
-	postImg: string;
-	postDate: string;
-	postTags: string;
+	slug: string;
+	title: string;
+	description: string;
+	img: string;
+	date: string;
+	tags?: string;
 }
 
 const { 
-	href, 
-	postTitle,
-	postDescription,
-	postImg,
-	postDate,
-	postTags
+	slug, 
+	title,
+	description,
+	img,
+	date,
+	tags
 } = Astro.props as Props;
 ---
 
-<a href={href}>
+<a href={slug}>
 	<li class="blog-post-card">
-		<img src={postImg}>
-		<h4>{postTitle}</h4>
-		<p class="caption">{postDate}</p>
-		<p>{postDescription}</p>
+		<img src={img}>
+		<div class="blog-post-card-details">
+			<h4>{title}</h4>
+			<p class="caption">{new Date(date).toLocaleDateString()}</p>
+			<p>{description}</p>
+		</div>
 	</li>
 </a>
 
 <style>
 	.blog-post-card {
-
+		background-color: var(--tahoma_white_dim);
+		border-radius: 44px;
+		box-shadow: var(--noonoo_protrusion_bright);
+		display: flex;
+		flex-direction: row;
+		width: 100%;
 	}
 </style>

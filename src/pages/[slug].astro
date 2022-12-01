@@ -1,0 +1,29 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const blogPosts = await Astro.glob("../blog/*.mdx");
+  return (await blogPosts).map(blogPost => ({
+    params: {
+      slug: blogPost.frontmatter.slug
+    },
+    props: {
+      blogPost
+    }
+  }))
+}
+
+const { Content, frontmatter } = Astro.props.blogPost;
+---
+
+<Layout 
+  title={frontmatter.title}
+  currentPage={"blog"}
+>
+  <main>
+    <div class="noonoo-protruding-card">
+      <h2>{frontmatter.title}</h2>
+      <Content />
+    </div>
+  </main>
+</Layout>
