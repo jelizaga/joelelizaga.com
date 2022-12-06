@@ -39,9 +39,14 @@
   color: var(--tahoma_white_bright);
 }
 
+p {
+  margin: 0;
+}
+
 h1 {
   font-size: 81px;
   line-height: 125px;
+  margin: 0;
 }
 
 h1 i {
@@ -51,6 +56,7 @@ h1 i {
 h2 {
   font-size: 64px;
   line-height: 100px;
+  margin: 0;
 }
 
 h2 i {
@@ -60,11 +66,13 @@ h2 i {
 h3 {
   font-size: 50px;
   line-height: 80px;
+  margin: 0;
 }
 
 h4 {
   font-size: 39px;
   line-height: 64px;
+  margin: 0;
 }
 
 h1 i, h2 i, h3 i, h4 i {
@@ -72,7 +80,11 @@ h1 i, h2 i, h3 i, h4 i {
 }
 
 a {
-  color: var(--lawetlatla_ash_bright);
+  text-decoration: none;
+  transition: color 0.1s, text-shadow 0.1s;
+}
+
+p a {
   text-decoration-line: underline;
   text-decoration-style: dotted;
   text-decoration-thickness: 2px;

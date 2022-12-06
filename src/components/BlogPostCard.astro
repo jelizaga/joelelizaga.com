@@ -20,7 +20,9 @@ const {
 
 <a href={slug}>
 	<li class="blog-post-card">
-		<img src={img}>
+		<div class="blog-post-card-img">
+			<img src={img}>
+		</div>
 		<div class="blog-post-card-details">
 			<h4>{title}</h4>
 			<p class="caption">{new Date(date).toLocaleDateString()}</p>
@@ -30,12 +32,72 @@ const {
 </a>
 
 <style>
+	a .blog-post-card {
+		text-decoration-line: none;
+	}
 	.blog-post-card {
 		background-color: var(--tahoma_white_dim);
 		border-radius: 44px;
 		box-shadow: var(--noonoo_protrusion_bright);
-		display: flex;
-		flex-direction: row;
+		display: grid;
+		grid-template-columns: 38.197% auto;
+		overflow: hidden;
 		width: 100%;
+	}
+
+	.blog-post-card-img img { 
+		height: 100%;
+		object-fit: cover;
+		transition: height 0.2s;
+	}
+
+	.blog-post-card-details h4 {
+		color: var(--lawetlatla_ash_dim);
+	}
+
+	.blog-post-card-details .caption {
+		color: var(--lawetlatla_ash_bright);
+	}
+
+	.blog-post-card-details p {
+		color: var(--lawetlatla_ash_dim);
+	}
+
+	a .blog-post-card-details {
+		text-decoration: none;
+		padding-bottom: 1rem;
+		padding-left: 2rem;
+		padding-right: 2rem;
+		padding-top: 1rem;
+		text-shadow: none;
+	}
+
+	a:visited .blog-post-card-details h4 {
+		color: var(--lawetlatla_ash_dim);
+	}
+
+	a:visited .blog-post-card-details p {
+		color: var(--lawetlatla_ash_dim);
+	}
+
+	a:visited .blog-post-card-details .caption {
+		color: var(--lawetlatla_ash_bright);
+	}
+
+	a:hover .blog-post-card-details h4 {
+		color: var(--spectacular_red_bright);
+	}
+
+	a:hover .blog-post-card-details .caption {
+		color: var(--lawetlatla_ash_bright);
+	}
+
+	a:hover .blog-post-card-details p {
+		color: var(--lawetlatla_ash_dim);
+		text-shadow: none;
+	}
+
+	a:hover .blog-post-card-img img {
+		height: 102%;
 	}
 </style>
