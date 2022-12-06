@@ -8,7 +8,7 @@ const projects = await Astro.glob("../project/*.mdx");
 <ul class="projects">
   {projects.map(project => (
     <ProjectCard
-      slug={`/${project.frontmatter.slug}`}
+      slug={`/project/${project.frontmatter.slug}`}
       title={project.frontmatter.title}
       description={project.frontmatter.description}
       img={project.frontmatter.img}
