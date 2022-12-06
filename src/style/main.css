@@ -80,6 +80,7 @@ h1 i, h2 i, h3 i, h4 i {
 }
 
 a {
+  color: var(--lawetlatla_ash_bright);
   text-decoration: none;
   transition: color 0.1s, text-shadow 0.1s;
 }

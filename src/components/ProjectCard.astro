@@ -1,31 +1,87 @@
 ---
 export interface Props {
-	href: string;
-	projectTitle: string;
-	projectDescription: string;
-	projectImg: string;
-	projectTags: string;
+	slug: string;
+	title: string;
+	description: string;
+	img: string;
+	tags: string;
 }
 
 const { 
-	href, 
-	projectTitle,
-	projectDescription,
-	projectImg,
-	projectTags
+	slug, 
+	title,
+	description,
+	img,
+	tags
 } = Astro.props as Props;
 ---
 
-<a href={href}>
+<a href={slug}>
 	<li class="project-card">
-		<img src={projectImg}>
-		<h4>{projectTitle}</h4>
-		<p class="caption">{projectDescription}</p>
+		<div class="project-card-img">
+			<img src={img}>
+		</div>
+		<div class="project-card-details">
+			<h4>{title}</h4>
+			<p class="caption">{description}</p>
+		</div>
 	</li>
 </a>
 
 <style>
 	.project-card {
+		background-color: var(--tahoma_white_dim);
+		border-radius: 44px;
+		box-shadow: var(--noonoo_protrusion_bright);
+		display: grid;
+		grid-template-rows: auto auto;
+		overflow: hidden;
+		width: 100%;
+	}
 
+	a .project-card {
+		text-decoration-line: none;
+	}
+
+	.project-card-img {
+		overflow: hidden;
+	}
+
+	.project-card-img img {
+		height: 100%;
+		object-fit: cover;
+		transition: height 0.2s;
+	}
+
+	.project-card-details h4 {
+		color: var(--lawetlatla_ash_dim);
+	}
+
+	.project-card-details .caption {
+		color: var(--lawetlatla_ash_bright);
+	}
+
+	a .project-card-details {
+		text-decoration: none;
+		padding-bottom: 1rem;
+		padding-left: 2rem;
+		padding-right: 2rem;
+		padding-top: 1rem;
+	}
+
+	a .project-card-details p {
+		text-shadow: none;
+	}
+
+	a .project-card-details h4 {
+		transition: color 0.1s;
+	}
+
+	a:hover .project-card-details h4 {
+		color: var(--spectacular_red_bright);
+	}
+
+	a:hover .project-card-img img {
+		height: 102%;
 	}
 </style>
