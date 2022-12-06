@@ -6,7 +6,13 @@ import image from "@astrojs/image";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [solidJs(), mdx(), image()],
+  integrations: [
+    solidJs(),
+    mdx(),
+    image({
+      serviceEntryPoint: '@astrojs/image/sharp'
+    })
+  ],
   markdown: {
     syntaxHighlight: 'prism'
   }
