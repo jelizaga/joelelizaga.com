@@ -16,18 +16,20 @@ pre[class*="language-"] {
 	white-space: pre-wrap;
 	word-wrap: normal;
 	font-family: "Comic Code Ligatures", monospace;
-	font-size: 16px;
-	color: var(--spectacular_red_bright);
+	font-size: 0.8rem;
+	color: var(--spectacular_red_glow);
 	text-shadow: none;
 }
 
 pre > code[class*="language-"] {
-	font-size: 1em;
+	font-size: 0.8rem;
+  line-height: 1.3rem;
 }
 
 pre[class*="language-"],
 :not(pre) > code[class*="language-"] {
 	background: var(--lawetlatla_ash_dim);
+  box-shadow: var(--noonoo_depression_dim), var(--noonoo_protrusion_bright);
 }
 
 pre[class*="language-"] {
@@ -60,30 +62,30 @@ pre[class*="language-"] code {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: #6f705e;
+	color: #A39BA8;
 }
 
 .token.operator,
 .token.boolean,
 .token.number {
-	color: #a77afe;
+	color: var(--rain_city_emerald_glow);
 }
 
 .token.attr-name,
 .token.string {
-	color: #e6d06c;
+	color: #F4E04D;
 }
 
 .token.entity,
 .token.url,
 .language-css .token.string,
 .style .token.string {
-	color: #e6d06c;
+	color: #F4E04D;
 }
 
 .token.selector,
 .token.inserted {
-	color: #a6e22d;
+	color: var(--whulge_blue_glow);
 }
 
 .token.atrule,
@@ -91,17 +93,17 @@ pre[class*="language-"] code {
 .token.keyword,
 .token.important,
 .token.deleted {
-	color: #ef3b7d;
+	color: #8B80F9;
 }
 
 .token.regex,
 .token.statement {
-	color: var(--spectacular_red_bright);
+	color: var(--spectacular_red_glow);
 }
 
 .token.placeholder,
 .token.variable {
-	color: #fff;
+	color: var(--tahoma_white_bright);
 }
 
 .token.important,
@@ -127,24 +129,24 @@ code.language-markup {
 }
 
 code.language-markup .token.tag {
-	color: #ef3b7d;
+	color: #8B80F9;
 }
 
 code.language-markup .token.attr-name {
-	color: #a6e22d;
+	color: var(--whulge_blue_glow);
 }
 
 code.language-markup .token.attr-value {
-	color: #e6d06c;
+	color: #F4E04D;
 }
 
 code.language-markup .token.style,
 code.language-markup .token.script {
-	color: var(--spectacular_red_bright);
+	color: var(--spectacular_red_glow);
 }
 
 code.language-markup .token.script .token.keyword {
-	color: var(--spectacular_red_bright);
+	color: var(--spectacular_red_glow);
 }
 
 /* Line highlight plugin */

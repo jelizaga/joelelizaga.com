@@ -20,7 +20,19 @@ tincidunt. Nam libero justo laoreet sit amet cursus sit amet dictum. Rhoncus
 dolor purus non enim praesent elementum `facilisis`. Laoreet suspendisse interdum 
 consectetur libero id faucibus.
 
-<Prism code={`const foo = 'bar';`} lang="js" />
+<Prism code={
+`// Here's a comment.
+const foo = 'bar';
+const bar = 5;
+import { Prism } from '@astrojs/prism';
+if (test) {
+  console.log("swag");
+} else {
+  console.log("uh oh");
+}`
+} 
+lang="js" 
+/>
 
 ### Lorem ipsum dolor sit amet
 

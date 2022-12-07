@@ -97,6 +97,7 @@ p a {
 code {
   font-family: "Comic Code Ligatures", monospace;
   color: var(--lawetlatla_ash_bright);
+  font-size: 0.8rem;
 }
 
 a:hover {
