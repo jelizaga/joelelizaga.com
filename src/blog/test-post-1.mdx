@@ -7,6 +7,8 @@ img: /img/placeholder/placeholder1.jpg
 date: 2022-11-30
 ---
 
+import { Prism } from '@astrojs/prism';
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
 incididunt ut labore et dolore magna aliqua. Curabitur gravida arcu ac tortor 
 dignissim convallis aenean et tortor. Vitae tortor condimentum lacinia quis. 
@@ -15,8 +17,10 @@ Sit amet aliquam id diam maecenas ultricies. Tortor id aliquet lectus proin nibh
 risus quis varius quam quisque id. Faucibus in ornare quam viverra orci sagittis 
 eu. Nisi est sit amet facilisis magna etiam. Duis ultricies lacus sed turpis 
 tincidunt. Nam libero justo laoreet sit amet cursus sit amet dictum. Rhoncus 
-dolor purus non enim praesent elementum facilisis. Laoreet suspendisse interdum 
+dolor purus non enim praesent elementum `facilisis`. Laoreet suspendisse interdum 
 consectetur libero id faucibus.
+
+<Prism code={`const foo = 'bar';`} lang="js" />
 
 ### Lorem ipsum dolor sit amet
 

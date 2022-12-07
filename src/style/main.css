@@ -94,6 +94,11 @@ p a {
   transition: color 0.1s, text-shadow 0.1s;
 }
 
+code {
+  font-family: "Comic Code Ligatures", monospace;
+  color: var(--lawetlatla_ash_bright);
+}
+
 a:hover {
   color: var(--spectacular_red_bright);
   text-shadow: var(--spectacular_red_glowing);
@@ -146,6 +151,7 @@ hr {
   /* Bright */
   --noonoo_protrusion_bright: 5px 5px 10px #DCDADA, -5px -5px 10px var(--tahoma_white_glow);
   --noonoo_depression_bright: inset -5px -5px 10px var(--tahoma_white_glow), inset 5px 5px 10px #DCDADA;
+  --noonoo_depression_dim: inset -5px -5px 10px #3C4746, inset 5px 5px 10px #2C3534;
   --noonoo_ceiling_protrusion_bright: 0px 5px 10px #DCDADA;
   --noonoo_ceiling_protrusion_shadow: 0px 5px 10px #00000021;
   --noonoo_floor_protrusion_bright: 0px -5px 10px #DCDADA;
