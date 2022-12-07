@@ -125,6 +125,16 @@ hr {
   box-shadow: var(--noonoo_protrusion_bright);
   color: var(--tahoma_white_dim);
 }
+
+blockquote {
+  border-radius: 44px;
+  box-shadow: var(--noonoo_depression_bright);
+  padding-bottom: 0.3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.3rem;
+}
+
 :root {
   box-sizing: border-box;
   margin: 0;
