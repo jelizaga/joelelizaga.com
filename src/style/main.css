@@ -113,6 +113,12 @@ a:visited:hover {
   margin: 0;
 }
 
+hr {
+  border: 8px solid;
+  border-radius: 44px;
+  box-shadow: var(--noonoo_protrusion_bright);
+  color: var(--tahoma_white_dim);
+}
 :root {
   box-sizing: border-box;
   margin: 0;

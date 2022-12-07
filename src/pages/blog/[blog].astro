@@ -21,9 +21,9 @@ const { Content, frontmatter } = Astro.props.blogPost;
   currentPage={"blog"}
 >
   <main>
-    <div class="noonoo-protruding-card">
+    <article class="noonoo-protruding-card">
       <h2>{frontmatter.title}</h2>
       <Content />
-    </div>
+    </article>
   </main>
 </Layout>
