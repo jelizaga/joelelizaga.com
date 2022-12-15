@@ -163,6 +163,7 @@ blockquote {
   --noonoo_protrusion_bright: 5px 5px 10px #DCDADA, -5px -5px 10px var(--tahoma_white_glow);
   --noonoo_depression_bright: inset -5px -5px 10px var(--tahoma_white_glow), inset 5px 5px 10px #DCDADA;
   --noonoo_depression_dim: inset -5px -5px 10px #3C4746, inset 5px 5px 10px #2C3534;
+  --noonoo_depression_img: inset -5px -5px 10px #00000022, inset 5px 5px 10px #00000055;
   --noonoo_ceiling_protrusion_bright: 0px 5px 10px #DCDADA;
   --noonoo_ceiling_protrusion_shadow: 0px 5px 10px #00000021;
   --noonoo_floor_protrusion_bright: 0px -5px 10px #DCDADA;

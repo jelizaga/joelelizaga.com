@@ -8,6 +8,7 @@ date: 2022-11-30
 ---
 
 import { Prism } from '@astrojs/prism';
+import NNImage from '../components/NNImage.astro';
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
 incididunt ut labore et dolore magna aliqua. Curabitur gravida arcu ac tortor 
@@ -80,7 +81,11 @@ posuere morbi leo urna molestie at elementum eu facilisis. Elementum eu
 facilisis sed odio morbi quis commodo odio aenean. Venenatis a condimentum 
 vitae sapien pellentesque. Facilisis gravida neque convallis a.
 
-![A placeholder image.](/img/placeholder/placeholder4.jpg)
+<NNImage
+  src="/img/placeholder/placeholder4.jpg"
+  alt="A placeholder image."
+  caption="This is a placeholder image."
+/>
 
 Fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque. 
 Libero nunc consequat interdum varius sit amet. Turpis tincidunt id aliquet 
