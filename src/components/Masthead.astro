@@ -1,0 +1,55 @@
+---
+import Nav from './Nav.astro';
+
+export interface Props {
+  currentPage?: string;
+  headerShadow?: boolean;
+}
+const { currentPage, headerShadow } = Astro.props as Props;
+
+const mastheadClasses = headerShadow ? "masthead header-shadowed" : "masthead";
+---
+
+<header class={mastheadClasses}>
+  <div>
+    <a class="logo" href="/">&#10059;</a>
+    <Nav
+      currentPage={currentPage}
+    />
+  </div>
+</header>
+
+<style>
+  .masthead a, header a:visited {
+    color: var(--lawetlatla_ash_dim);
+    text-decoration-line: none;
+  }
+
+  .masthead {
+    box-shadow: var(--noonoo_ceiling_protrusion_bright);
+    box-sizing: border-box;
+    margin-bottom: 1.4rem;
+  }
+
+  .header-shadowed {
+    box-shadow: var(--noonoo_ceiling_protrusion_shadow);
+  }
+
+  .masthead div {
+    display: flex;
+    justify-content: space-between;
+    width: 1186px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .masthead .logo {
+    display: inline-block;
+    margin: 0;
+  }
+
+  .logo {
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+  }
+</style>

@@ -1,5 +1,5 @@
 ---
-import Header from '../components/Header.astro';
+import Masthead from '../components/Masthead.astro';
 import Footer from '../components/Footer.astro';
 import { Image, Picture } from '@astrojs/image/components';
 import { Prism } from "@astrojs/prism";
@@ -35,7 +35,7 @@ const { title, currentPage, headerShadow, footerShadow } = Astro.props as Props;
 		></script>
 	</head>
 	<body>
-		<Header
+		<Masthead
 			currentPage={currentPage}
 			headerShadow={headerShadow}
 		/>
