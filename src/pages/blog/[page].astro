@@ -1,0 +1,60 @@
+---
+import { Debug } from 'astro/components';
+import Layout from '../../layouts/Layout.astro'; 
+import BlogPostCard from '../../components/BlogPostCard.astro';
+import Pagination from '../../components/Pagination.astro';
+
+export async function getStaticPaths({ paginate }) {
+  const blogPosts = await Astro.glob("../../blog/*.mdx");
+  return paginate(blogPosts, { pageSize: 8 });
+}
+
+const { page } = Astro.props;
+---
+
+<Layout
+  title="Joel Elizaga | Blog"
+  currentPage={"blog"}
+>
+  <main>
+    <h1><i class="fa-solid fa-atlas"></i> Blog</h1>
+    <ul class="blog">
+      {page.data.map(blogPost => (
+        <BlogPostCard
+          slug={`/blog/${blogPost.frontmatter.slug}`}
+          title={blogPost.frontmatter.title}
+          description={blogPost.frontmatter.description}
+          img={blogPost.frontmatter.img}
+          date={blogPost.frontmatter.date}
+          tags={blogPost.frontmatter.tags}
+        />
+      ))}
+    </ul>
+    <Pagination
+      currentPage={page.currentPage}
+      lastPage={page.lastPage}
+      prevPage={page.url.prev}
+      nextPage={page.url.next}
+      totalPosts={page.total}
+      firstItemOnPage={page.start}
+      lastItemOnPage={page.end}
+    />
+  </main>
+</Layout>
+
+<style>
+  .blog {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+</style>

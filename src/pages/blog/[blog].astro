@@ -1,6 +1,11 @@
 ---
+// [blog].astro ////////////////////////////////////////////////////////////////
+// Generates routes & pages for each blog post in `/src/blog`.
 import Layout from "../../layouts/Layout.astro";
 
+// Gets static paths for existing `blogPosts` and `map`s each path to a route
+// in `/blog` with a URL derived from the `slug` contained in each post's
+// `frontmatter`.
 export async function getStaticPaths() {
   const blogPosts = await Astro.glob("../../blog/*.mdx");
   return (await blogPosts).map(blogPost => ({
@@ -16,6 +21,7 @@ export async function getStaticPaths() {
 const { Content, frontmatter } = Astro.props.blogPost;
 ---
 
+<!-- Establishes layout for all `blogPosts`. -->
 <Layout 
   title={frontmatter.title}
   currentPage={"blog"}

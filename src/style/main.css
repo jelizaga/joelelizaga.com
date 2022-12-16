@@ -135,6 +135,10 @@ blockquote {
   padding-top: 0.3rem;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 :root {
   box-sizing: border-box;
   margin: 0;
