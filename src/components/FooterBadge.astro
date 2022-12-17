@@ -23,7 +23,7 @@ const { description, icon, destination, target = "_self" } = Astro.props as Prop
   .footer-badge {
     align-content: center;
     align-items: center;
-    background-color: var(--noonoo_protrusion_rounded_bright);
+    background-image: var(--noonoo_protrusion_rounded_bright);
     border: none;
     border-radius: 100%;
     box-shadow: var(--noonoo_protrusion_bright);
@@ -34,6 +34,7 @@ const { description, icon, destination, target = "_self" } = Astro.props as Prop
     justify-content: center;
     position: relative;
     text-decoration: none;
+    transition: box-shadow ease-in 0.1s;
     width: 2rem;
   }
 
@@ -41,7 +42,6 @@ const { description, icon, destination, target = "_self" } = Astro.props as Prop
     cursor: pointer;
     color: var(--spectacular_red_bright);
     text-shadow: var(--spectacular_red_glowing);
-    transition: box-shadow 5s;
   }
 
   .footer-badge:active {

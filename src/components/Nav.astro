@@ -18,16 +18,16 @@ switch(currentPage) {
 
 <nav>
   <ul>
-    <a href="/bio" class={bioClasses}>
-      <li>
+    <li class={bioClasses}>
+      <a href="/bio">
         <span>Bio</span>
-      </li>
-    </a>
-    <a href="/blog" class={blogClasses}>
-      <li>
+      </a>
+    </li>
+    <li class={blogClasses}>
+      <a href="/blog">
         <span>Blog</span>
-      </li>
-    </a>
+      </a>
+    </li>
   </ul>
 </nav>
 
@@ -49,11 +49,17 @@ switch(currentPage) {
     color: var(--spectacular_red_bright);
   }
 
-  nav ul a li {
+  nav ul li {
     display: inline-block;
     font-weight: bold;
     padding-bottom: 0.5rem;
     padding-top: 0.5rem;
+  }
+
+  nav ul li a {
+    display: inline-block;
+    height: inherit;
+    width: inherit;
   }
 
   .selected, .selected:visited {
@@ -64,12 +70,17 @@ switch(currentPage) {
     color: var(--spectacular_red_bright);
   }
 
+  nav ul li a span:active {
+    box-shadow: var(--noonoo_depression_bright);
+  }
+
   nav ul li span {
     border-radius: 44px;
     padding-bottom: 0.3rem;
     padding-left: 1rem;
     padding-right: 1rem;
     padding-top: 0.3rem;
+    transition: box-shadow ease-in 0.1s;
   }
 
   .selected span {
