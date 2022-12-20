@@ -10,7 +10,7 @@ export interface Props {
 const { src, alt, caption } = Astro.props as Props;
 
 let captionClass = "caption";
-if (caption) {
+if (!caption) {
   captionClass += " hidden";
 }
 ---
