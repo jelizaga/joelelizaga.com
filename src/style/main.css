@@ -149,6 +149,7 @@ blockquote {
   --tahoma_white_glow: #FFFFFF;
   --lawetlatla_ash_bright: #495755;
   --lawetlatla_ash_dim: #343E3d;
+  --lawetlatla_ash_bright_transparent: #49575521;
   --spectacular_red_bright: #E60000;
   --spectacular_red_dim: #CC0000;
   --spectacular_red_glow: #F60000;
@@ -202,6 +203,9 @@ body {
 }
 
 main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   margin-left: auto;
   margin-right: auto;
   width: 1186px;
@@ -245,11 +249,55 @@ form input[type=text], form input[type=email], form select, form label {
 
 form label {
   font-weight: bold;
+  margin-top: 0.6rem;
 }
 
-input[type=text], input[type=email] {
+button {
   background-color: var(--tahoma_white_dim);
+  border-radius: 44px;
   border: none;
+  box-shadow: var(--noonoo_protrusion_bright);
+  color: var(--lawetlatla_ash_dim);
+  font-family: "Atkinson Hyperlegible", sans-serif;
+  font-size: 31px;
+  font-weight: bold;
+  padding-bottom: 0.3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.3rem;
+  transition: 0.1s color, 0.1s box-shadow, 0.1s text-shadow;
+}
+
+button:hover {
+  color: var(--spectacular_red_bright);
+  text-shadow: var(--spectacular_red_glowing);
+}
+
+button.primary {
+  border: 3px var(--lawetlatla_ash_bright_transparent) solid;
+  transition: 0.1s border, 0.1s box-shadow;
+}
+
+button.primary:hover {
+  border: 3px var(--spectacular_red_bright) solid;
+  box-shadow: var(--noonoo_protrusion_bright), var(--spectacular_red_glowing);
+}
+
+button:active, button.primary:active {
+  box-shadow: var(--noonoo_protrusion_bright), var(--noonoo_depression_bright);
+}
+
+button i {
+  font-size: 0.8rem;
+}
+
+form button {
+  margin-top: 0.8rem;
+}
+
+input[type=text], input[type=email], textarea {
+  background-color: var(--tahoma_white_dim);
+  border: 3px #E6000000 solid;
   border-radius: 44px;
   box-shadow: var(--noonoo_depression_bright);
   box-sizing: border-box;
@@ -258,30 +306,88 @@ input[type=text], input[type=email] {
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.3rem;
+  transition: border 0.1s, box-shadow 0.1s;
+  width: 100%;
 }
 
-input[type=text]:focus, input[type=email]:focus {
+input[type=text]:hover, input[type=email]:hover, textarea:hover {
+  border: 3px var(--lawetlatla_ash_bright_transparent) solid;
+}
+
+input[type=text]:focus, input[type=email]:focus, textarea:focus {
   box-shadow: var(--noonoo_depression_bright), var(--spectacular_red_glowing);
-  outline-color: var(--spectacular_red_bright);
-  outline-style: solid;
-  outline-width: 2px;
+  border: 3px var(--spectacular_red_bright) solid;
+  outline: none;
+  /* outline-color: var(--spectacular_red_bright); */
+  /* outline-style: solid; */
+  /* outline-width: 3px; */
+}
+
+textarea {
+  font-family: "Atkinson Hyperlegible", sans-serif;
+  display: block;
+  resize: none;
+  height: 5rem;
+}
+
+.select {
+  margin-top: 0;
+  position: relative;
+}
+
+.select::after {
+  font-family: FontAwesome;
+  content: '\f107';
+  position: absolute;
+  top: 10px;
+  right: 1rem;
+  color: var(--lawetlatla_ash_dim);
+  pointer-events: none;
+  background-image: var(--noonoo_protrusion_rounded_bright);
+  border-radius: 100%;
+  width: 1rem;
+  height: 1rem;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  font-size: 0.8rem;
+  box-shadow: var(--noonoo_protrusion_bright);
+  transition: 0.1s text-shadow, 0.1s color;
+}
+
+.select:hover::after {
+  color: var(--spectacular_red_glow);
+  text-shadow: var(--spectacular_red_glowing);
 }
 
 select {
+  appearance: none;
   background-color: var(--tahoma_white_dim);
   border: none;
   border-radius: 44px;
   box-shadow: var(--noonoo_protrusion_bright);
+  color: var(--lawetlatla_ash_dim);
   cursor: pointer;
   font-size: 31px;
   padding-bottom: 0.3rem;
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.3rem;
+  width: 100%;
+}
+
+select::before {
+  content: "\f078";
 }
 
 option {
   cursor: pointer;
+}
+
+.content, article {
+  padding: 44px;
 }
 
 .noonoo-protruding-card {
@@ -291,7 +397,7 @@ option {
   box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
-  padding: 44px;
+  overflow: hidden;
   width: 100%;
 }
 
@@ -311,6 +417,7 @@ option {
   box-sizing: border-box;
   color: var(--lawetlatla_ash_bright);
   font-size: 24px;
+  font-weight: normal;
   left: 50%;
   line-height: 42px;
   margin-left: -100px;
