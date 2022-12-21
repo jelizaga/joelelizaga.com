@@ -5,9 +5,15 @@ export interface Props {
   src: string
   alt: string
   caption?: string
+  animated?: boolean
 }
 
-const { src, alt, caption } = Astro.props as Props;
+const { 
+  src,
+  alt,
+  caption,
+  animated=false
+} = Astro.props as Props;
 
 let captionClass = "caption";
 if (!caption) {
@@ -18,7 +24,12 @@ if (!caption) {
 <div class="noonoo-image">
   <a href={src}>
     <div class="container">
-      <img src={src} alt={alt} />
+      {!animated &&
+        <img src={src} alt={alt} />
+      }
+      {animated &&
+        <video autoplay loop muted src={src}></video>
+      }
     </div>
   </a>
   <p class={captionClass}>{caption}</p>
@@ -47,11 +58,10 @@ if (!caption) {
     position: absolute;
   }
 
-  .noonoo-image .container img {
+  .noonoo-image .container img, .noonoo-image .container video {
     display: block;
     object-fit: cover;
-    max-width: 100%;
-    height: 100%;
+    width: 100%;
   }
 
   .noonoo-image .caption {
