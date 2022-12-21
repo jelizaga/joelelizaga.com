@@ -82,4 +82,21 @@
     max-width: 100%;
     object-fit: cover;
   }
+
+  .contact-img {
+    border-radius: 0px 44px 44px 0px;
+    overflow: hidden;
+    position: relative;
+    display: block;
+  }
+
+  .contact-img::before {
+    border-radius: 0px 44px 44px 0px;
+    box-shadow: var(--noonoo_depression_img);
+    content: "";
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+  }
 </style>
