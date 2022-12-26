@@ -44,60 +44,53 @@ p {
 }
 
 h1 {
-  font-size: 81px;
-  line-height: 125px;
+  font-size: clamp(54px, 4.21875vw, 4.21875vw);
+  line-height: clamp(83px, 6.510416vw, 66.510416vw);
   margin: 0;
-}
-
-h1 i {
-  font-size: 67px;
 }
 
 h2 {
-  font-size: 64px;
-  line-height: 100px;
+  font-size: clamp(42px, 3.3333vw, 3.3333vw);
+  line-height: clamp(66px, 5.20833vw, 5.20833vw);
   margin: 0;
 }
 
-h2 i {
-  font-size: 50px;
-}
-
 h3 {
-  font-size: 50px;
-  line-height: 80px;
+  font-size: clamp(33px, 2.604166vw, 22.604166vw);
+  line-height: clamp(53px, 4.16666vw, 44.16666vw);
   margin: 0;
 }
 
 h4 {
-  font-size: 39px;
-  line-height: 64px;
+  font-size: clamp(26px, 2.03125vw, 22.03125vw);
+  line-height: clamp(42px, 3.3333vw, 3.3333vw);
+  margin: 0;
+}
+
+.caption, .subheading, .tooltip {
+  font-size: clamp(16px, 1.25vw, 1.25vw);
+  line-height: clamp(28px, 2.1875vw, 2.1875vw);
   margin: 0;
 }
 
 h1 i, h2 i, h3 i, h4 i {
   color: var(--lawetlatla_ash_bright);
+  font-size: 0.8em;
 }
 
 a {
-  color: var(--lawetlatla_ash_bright);
   text-decoration: none;
   transition: color 0.1s, text-shadow 0.1s;
 }
 
 p a {
+  color: var(--lawetlatla_ash_bright);
   text-decoration-line: underline;
   text-decoration-style: dotted;
   text-decoration-thickness: 2px;
   text-underline-position: from-font;
   text-underline-offset: 4px;
   transition: color 0.1s, text-shadow 0.1s;
-}
-
-code {
-  font-family: "Comic Code Ligatures", monospace;
-  color: var(--lawetlatla_ash_bright);
-  font-size: 0.8rem;
 }
 
 a:hover {
@@ -113,22 +106,26 @@ a:visited:hover {
   color: var(--spectacular_red_bright);
 }
 
-.caption, .subheading {
-  font-size: 24px;
-  line-height: 42px;
-  margin: 0;
+code {
+  font-family: "Comic Code Ligatures", monospace;
+  color: var(--lawetlatla_ash_bright);
+  font-size: 0.8rem;
 }
 
 hr {
-  border: 8px solid;
+  border: 0.3rem solid;
   border-radius: 44px;
   box-shadow: var(--noonoo_protrusion_bright);
   color: var(--tahoma_white_dim);
 }
 
 blockquote {
-  border-radius: 44px;
+  border-radius: 1.4rem;
   box-shadow: var(--noonoo_depression_bright);
+  margin-bottom: 0.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 0.5rem;
   padding-bottom: 0.3rem;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -139,6 +136,7 @@ blockquote {
   visibility: hidden;
 }
 
+/* Root //////////////////////////////////////////////////////////////////////*/
 :root {
   box-sizing: border-box;
   margin: 0;
@@ -163,7 +161,7 @@ blockquote {
   --whulge_blue_dim: #009FB7;
   --whulge_blue_glow: #2FBCD2;
   --whulge_blue_glow_transparent: #2FBCD221;
-  /* Noonoo //////////////////////////////////////////////////////////////////*/
+  /* Noonoo Design Language //////////////////////////////////////////////////*/
   /* Bright */
   --noonoo_protrusion_bright: 5px 5px 10px #DCDADA, -5px -5px 10px var(--tahoma_white_glow);
   --noonoo_depression_bright: inset -5px -5px 10px var(--tahoma_white_glow), inset 5px 5px 10px #DCDADA;
@@ -188,10 +186,11 @@ blockquote {
   color: var(--lawetlatla_ash_dim);
   /* Typography //////////////////////////////////////////////////////////////*/
   font-family: "Atkinson Hyperlegible", sans-serif;
-  font-size: 31px;
-  line-height: 52px;
+  font-size: clamp(16px, 1.614583vw, 1.614583vw);
+  line-height: clamp(34px, 2.70833vw, 2.70833vw);
 }
 
+/* Body //////////////////////////////////////////////////////////////////////*/
 html, body {
   height: 100%;
 }
@@ -208,7 +207,18 @@ main {
   gap: 1rem;
   margin-left: auto;
   margin-right: auto;
-  width: 1186px;
+  width: 61.803vw;
+}
+
+.content, article {
+  padding-bottom: 1rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-top: 1rem;
+}
+
+article.noonoo-protruding-card {
+  border-radius: 2.7rem;
 }
 
 .icon::before {
@@ -239,10 +249,38 @@ main {
   background: "\f118";
 }
 
+.noonoo-protruding-card, .noonoo-floating-card {
+  background-color: var(--tahoma_white_dim);
+  border-radius: 1.4rem;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.noonoo-protruding-card {
+  box-shadow: var(--noonoo_protrusion_bright);
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.noonoo-floating-card {
+  box-shadow: var(--noonoo_floating_card_bright);
+}
+
+.noonoo_depression_bright {
+  box-shadow: var(--noonoo_depression_bright);
+}
+
+.noonoo_protrusion_bright {
+  box-shadow: var(--noonoo_protrusion_bright);
+}
+
+/* Images ////////////////////////////////////////////////////////////////////*/
 img {
   max-width: 100%;
 }
 
+/* Forms /////////////////////////////////////////////////////////////////////*/
 form input[type=text], form input[type=email], form select, form label {
   display: block;
 }
@@ -250,16 +288,21 @@ form input[type=text], form input[type=email], form select, form label {
 form label {
   font-weight: bold;
   margin-top: 0.6rem;
+} 
+
+button, input[type=text], input[type=email], select {
+  border-radius: 1.4rem;
 }
 
+/* Buttons ///////////////////////////////////////////////////////////////////*/
 button {
   background-color: var(--tahoma_white_dim);
-  border-radius: 44px;
+  border-radius: 1.4rem;
   border: none;
   box-shadow: var(--noonoo_protrusion_bright);
   color: var(--lawetlatla_ash_dim);
   font-family: "Atkinson Hyperlegible", sans-serif;
-  font-size: 31px;
+  font-size: 1rem;
   font-weight: bold;
   padding-bottom: 0.3rem;
   padding-left: 1rem;
@@ -270,6 +313,7 @@ button {
 
 button:hover {
   color: var(--spectacular_red_bright);
+  cursor: pointer;
   text-shadow: var(--spectacular_red_glowing);
 }
 
@@ -295,13 +339,13 @@ form button {
   margin-top: 0.8rem;
 }
 
+/* Input /////////////////////////////////////////////////////////////////////*/
 input[type=text], input[type=email], textarea {
   background-color: var(--tahoma_white_dim);
   border: 3px #E6000000 solid;
-  border-radius: 44px;
   box-shadow: var(--noonoo_depression_bright);
   box-sizing: border-box;
-  font-size: 31px;
+  font-size: 1rem;
   padding-bottom: 0.3rem;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -324,10 +368,33 @@ input[type=text]:focus, input[type=email]:focus, textarea:focus {
 }
 
 textarea {
-  font-family: "Atkinson Hyperlegible", sans-serif;
+  border-radius: 1.4rem;
   display: block;
+  font-family: "Atkinson Hyperlegible", sans-serif;
+  height: 6rem;
+  overflow: hidden;
   resize: none;
-  height: 5rem;
+}
+
+/* Select / Dropdown /////////////////////////////////////////////////////////*/
+select {
+  appearance: none;
+  background-color: var(--tahoma_white_dim);
+  border: none;
+  border-radius: 1.4rem;
+  box-shadow: var(--noonoo_protrusion_bright);
+  color: var(--lawetlatla_ash_dim);
+  cursor: pointer;
+  font-size: 1rem;
+  padding-bottom: 0.3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.3rem;
+  width: 100%;
+}
+
+select::before {
+  content: "\f078";
 }
 
 .select {
@@ -339,7 +406,7 @@ textarea {
   font-family: FontAwesome;
   content: '\f107';
   position: absolute;
-  top: 10px;
+  top: 0.4rem;
   right: 1rem;
   color: var(--lawetlatla_ash_dim);
   pointer-events: none;
@@ -362,71 +429,27 @@ textarea {
   text-shadow: var(--spectacular_red_glowing);
 }
 
-select {
-  appearance: none;
-  background-color: var(--tahoma_white_dim);
-  border: none;
-  border-radius: 44px;
-  box-shadow: var(--noonoo_protrusion_bright);
-  color: var(--lawetlatla_ash_dim);
-  cursor: pointer;
-  font-size: 31px;
-  padding-bottom: 0.3rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 0.3rem;
-  width: 100%;
-}
-
-select::before {
-  content: "\f078";
-}
-
 option {
   cursor: pointer;
 }
 
-.content, article {
-  padding: 44px;
-}
-
-.noonoo-protruding-card {
-  background-color: var(--tahoma_white_dim);
-  border-radius: 66px;
-  box-shadow: var(--noonoo_protrusion_bright);
-  box-sizing: border-box;
-  margin-left: auto;
-  margin-right: auto;
-  overflow: hidden;
-  width: 100%;
-}
-
-.noonoo_depression_bright {
-  box-shadow: var(--noonoo_depression_bright);
-}
-
-.noonoo_protrusion_bright {
-  box-shadow: var(--noonoo_protrusion_bright);
-}
-
+/* Tooltip ///////////////////////////////////////////////////////////////////*/
 .tooltip .tooltip-bubble {
   background-color: var(--tahoma_white_dim);
   bottom: 100%;
-  border-radius: 2rem;
+  border-radius: 1.4rem;
   box-shadow: var(--noonoo_floating_card_bright);
   box-sizing: border-box;
   color: var(--lawetlatla_ash_bright);
-  font-size: 24px;
   font-weight: normal;
   left: 50%;
-  line-height: 42px;
   margin-left: -100px;
   max-width: 444px;
   opacity: 0;
-  padding-bottom: 0.25rem;
+  padding-bottom: 0.3rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  padding-top: 0.25rem;
+  padding-top: 0.3rem;
   position: absolute;
   transition: opacity 0.2s;
   visibility: hidden;

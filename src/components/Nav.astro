@@ -75,7 +75,7 @@ switch(currentPage) {
   }
 
   nav ul li span {
-    border-radius: 44px;
+    border-radius: 1.4rem;
     padding-bottom: 0.3rem;
     padding-left: 1rem;
     padding-right: 1rem;
@@ -85,5 +85,18 @@ switch(currentPage) {
 
   .selected span {
     box-shadow: var(--noonoo_depression_bright);
+  }
+
+  @media screen and (max-width: 1200px) {
+    nav ul li {
+      font-size: 1.3rem;
+    }
+
+    nav ul li span {
+      padding-bottom: 0.4rem;
+      padding-left: 1.4rem;
+      padding-right: 1.4rem;
+      padding-bottom: 0.4rem;
+    }
   }
 </style>

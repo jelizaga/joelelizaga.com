@@ -71,6 +71,10 @@
 </div>
 
 <style>
+  #contact {
+    border-radius: 2.7rem;
+  }
+
   .contact {
     display: grid;
     grid-template-columns: 61.8% auto;
@@ -83,20 +87,31 @@
     object-fit: cover;
   }
 
-  .contact-img {
-    border-radius: 0px 44px 44px 0px;
+  .contact-img, .contact-img::before {
+    border-radius: 0px 2.7rem 2.7rem 0px;
     overflow: hidden;
+  }
+
+  .contact-img {
     position: relative;
     display: block;
   }
 
   .contact-img::before {
-    border-radius: 0px 44px 44px 0px;
     box-shadow: var(--noonoo_depression_img);
     content: "";
     height: 100%;
     width: 100%;
-    overflow: hidden;
     position: absolute;
+  }
+
+  @media screen and (max-width: 900px) {
+    .contact {
+      grid-template-columns: auto;
+    }
+
+    .contact-img, .contact-img::before {
+      border-radius: 0px;
+    }
   }
 </style>
