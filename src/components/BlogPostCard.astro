@@ -30,26 +30,12 @@ const {
 		</div>
 	</a>
 </li>
-<!-- <a href={slug}> -->
-	<!-- <li class="blog-post-card"> -->
-		<!-- <div class="blog-post-card-img"> -->
-			<!-- <img src={img}> -->
-		<!-- </div> -->
-		<!-- <div class="blog-post-card-details"> -->
-			<!-- <h4>{title}</h4> -->
-			<!-- <p class="caption">{new Date(date).toLocaleDateString()}</p> -->
-			<!-- <p>{description}</p> -->
-		<!-- </div> -->
-	<!-- </li> -->
-<!-- </a> -->
 
 <style>
-	a .blog-post-card {
-		text-decoration-line: none;
-	}
 
 	.blog-post-card {
 		background-color: var(--tahoma_white_dim);
+		border-radius: 1.4rem;
 		box-shadow: var(--noonoo_protrusion_bright);
 		display: block;
 		overflow: hidden;
@@ -58,7 +44,7 @@ const {
 
 	.blog-post-card a {
 		display: grid;
-		border-radius: 44px;
+		border-radius: 1.4rem;
 		grid-template-columns: 38.197% auto;
 		overflow: hidden;
 		height: inherit;
@@ -122,4 +108,13 @@ const {
 	a:hover .blog-post-card-img img {
 		height: 102%;
 	}
+
+	@media screen and (max-width: 750px) {
+
+		.blog-post-card a {
+			grid-template-columns: auto;
+		}
+
+	}
+
 </style>
