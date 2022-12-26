@@ -2,6 +2,7 @@
 // PaginationPage //////////////////////////////////////////////////////////////
 
 export interface Props {
+  path?: string;
   page?: number;
   pageCurrent?: boolean;
   ellipsis?: boolean;
@@ -9,7 +10,7 @@ export interface Props {
   nextPage?: string;
 }
 
-const { page, pageCurrent = false, ellipsis = false, prevPage, nextPage } = Astro.props;
+const { path, page, pageCurrent = false, ellipsis = false, prevPage, nextPage } = Astro.props;
 
 ---
 
@@ -46,7 +47,7 @@ const { page, pageCurrent = false, ellipsis = false, prevPage, nextPage } = Astr
     background-color: var(--noonoo_protrusion_rounded_bright);
     border-radius: 1rem;
     height: 1.5rem;
-    text-align: center;
+    position: relative;
     vertical-align: middle;
     width: 1.5rem;
     transition: box-shadow ease-in 0.1s;
@@ -57,8 +58,12 @@ const { page, pageCurrent = false, ellipsis = false, prevPage, nextPage } = Astr
   }
 
   .page a, .current-page a, .ellipsis a, .previous-page a, .next-page a {
-    display: inline-block;
+    align-content: center;
+    align-items: center;
+    display: flex;
     height: inherit;
+    justify-content: center;
+    text-align: center;
     width: inherit;
   }
 
@@ -91,5 +96,20 @@ const { page, pageCurrent = false, ellipsis = false, prevPage, nextPage } = Astr
     align-items: center;
     display: flex;
     justify-content: center;
+  }
+
+  @media screen and (max-width: 1660px) {
+    .page, .current-page, .previous-page, .next-page, .ellipsis {
+      height: 2rem;
+      width: 2rem;
+    }
+
+    .ellipsis {
+      font-size: 0.9rem;
+    }
+
+    .next-page, .previous-page {
+      font-size: 1rem;
+    }
   }
 </style>

@@ -31,4 +31,12 @@ const projects = await Astro.glob("../project/*.mdx");
     padding: 0;
     row-gap: 1rem;
   }
+
+  @media screen and (max-width: 900px) {
+
+    .projects-grid {
+      grid-template-columns: auto;
+    }
+
+  }
 </style>
