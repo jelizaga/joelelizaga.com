@@ -136,6 +136,10 @@ blockquote {
   visibility: hidden;
 }
 
+.mobile {
+  display: none;
+}
+
 /* Root //////////////////////////////////////////////////////////////////////*/
 :root {
   box-sizing: border-box;
@@ -473,4 +477,16 @@ option {
   transition: opacity 0.2s;
   visibility: visible;
   z-index: 1;
+}
+
+@media screen and (max-width: 600px) {
+  
+  main {
+    width: 95vw;
+  }
+
+  .mobile {
+    display: block;
+  }
+
 }
