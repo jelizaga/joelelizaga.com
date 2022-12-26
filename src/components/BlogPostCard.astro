@@ -18,14 +18,14 @@ const {
 } = Astro.props as Props;
 ---
 
-<li class="blog-post-card">
+<li class="blog-post-card noonoo-protruding-card">
 	<a href={slug}>
 		<div class="blog-post-card-img">
 			<img src={img}>
 		</div>
 		<div class="blog-post-card-details">
 			<h4>{title}</h4>
-			<p class="caption">{new Date(date).toLocaleDateString()}</p>
+			<p class="subheading">{new Date(date).toLocaleDateString()}</p>
 			<p>{description}</p>
 		</div>
 	</a>
@@ -50,7 +50,6 @@ const {
 
 	.blog-post-card {
 		background-color: var(--tahoma_white_dim);
-		border-radius: 44px;
 		box-shadow: var(--noonoo_protrusion_bright);
 		display: block;
 		overflow: hidden;
@@ -77,7 +76,7 @@ const {
 		transition: color 0.1s, text-shadow 0.1s;
 	}
 
-	.blog-post-card-details .caption {
+	.blog-post-card-details .subheading {
 		color: var(--lawetlatla_ash_bright);
 	}
 
@@ -102,7 +101,7 @@ const {
 		color: var(--lawetlatla_ash_dim);
 	}
 
-	a:visited .blog-post-card-details .caption {
+	a:visited .blog-post-card-details .subheading {
 		color: var(--lawetlatla_ash_bright);
 	}
 
@@ -111,7 +110,7 @@ const {
 		text-shadow: var(--spectacular_red_glowing);
 	}
 
-	a:hover .blog-post-card-details .caption {
+	a:hover .blog-post-card-details .subheading {
 		color: var(--lawetlatla_ash_bright);
 	}
 
