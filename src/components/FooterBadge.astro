@@ -1,16 +1,26 @@
 ---
+import Tooltip from './Tooltip.astro';
+
 export interface Props {
   description: string,
   icon: string,
   destination: string,
-  target?: string
+  target?: string,
+  tooltipId: string
 }
-const { description, icon, destination, target = "_self" } = Astro.props as Props;
+const { description, icon, destination, target = "_self", tooltipId } = Astro.props as Props;
 ---
 
-<a class="footer-badge tooltip" href={destination} target={target}>
+<a class="footer-badge tooltip" 
+  href={destination}
+  target={target}
+  aria-labelledby={tooltipId}
+>
   <i class={icon}></i>
-  <span class="tooltip-bubble">{description}</span>
+  <Tooltip
+    id={tooltipId}
+    content={description}
+  />
 </a>
 
 <style>

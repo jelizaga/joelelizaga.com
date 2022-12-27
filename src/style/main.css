@@ -98,7 +98,7 @@ a:hover {
   text-shadow: var(--spectacular_red_glowing);
 }
 
-a:visited {
+p a:visited {
   color: var(--lawetlatla_ash_bright);
 }
 
@@ -294,6 +294,10 @@ form label {
   margin-top: 0.6rem;
 } 
 
+form button {
+  float: right;
+}
+
 button, input[type=text], input[type=email], select {
   border-radius: 1.4rem;
 }
@@ -397,6 +401,14 @@ select {
   width: 100%;
 }
 
+select:focus {
+  outline: none;
+}
+
+select:focus .select::after {
+  color: green;
+}
+
 select::before {
   content: "\f078";
 }
@@ -431,13 +443,13 @@ select::before {
 .select:hover::after {
   color: var(--spectacular_red_glow);
   text-shadow: var(--spectacular_red_glowing);
+  outline: none;
 }
 
 option {
   cursor: pointer;
 }
 
-/* Tooltip ///////////////////////////////////////////////////////////////////*/
 .tooltip .tooltip-bubble {
   background-color: var(--tahoma_white_dim);
   bottom: 100%;
@@ -445,23 +457,24 @@ option {
   box-shadow: var(--noonoo_floating_card_bright);
   box-sizing: border-box;
   color: var(--lawetlatla_ash_bright);
+  content: attr(data-tooltip);
   font-weight: normal;
   left: 50%;
-  margin-left: -100px;
-  max-width: 444px;
+  max-width: 34rem;
   opacity: 0;
   padding-bottom: 0.3rem;
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.3rem;
   position: absolute;
+  transform: translateX(-50%);
   transition: opacity 0.2s;
   visibility: hidden;
-  width: 200px;
+  width: max-content;
 }
 
 .tooltip .tooltip-bubble::after {
-  content: " ";
+  content: "";
   border-color: var(--tahoma_white_dim) transparent transparent transparent;
   border-style: solid;
   border-width: 8px;
@@ -478,7 +491,6 @@ option {
   visibility: visible;
   z-index: 1;
 }
-
 @media screen and (max-width: 600px) {
   
   main {

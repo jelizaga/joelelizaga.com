@@ -1,0 +1,17 @@
+---
+// Tooltip /////////////////////////////////////////////////////////////////////
+export interface Props {
+  id: string;
+  title?: string;
+  content: string;
+  position?: string;
+}
+const { id, title, content, position = "top" } = Astro.props as Props;
+---
+
+<span id={id} class="tooltip-bubble" data-tooltip={content}>
+  {title && <em>{title} - </em>}{content}
+</span>
+
+<style>
+</style>
