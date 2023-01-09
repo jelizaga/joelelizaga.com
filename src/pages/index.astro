@@ -4,6 +4,7 @@ import { Image } from '@astrojs/image/components';
 import Projects from '../components/Projects.astro';
 import Header from '../components/Header.astro';
 import Contact from '../components/Contact.astro';
+import Introduction from '../components/Introduction.astro';
 ---
 
 <Layout 
@@ -11,9 +12,7 @@ import Contact from '../components/Contact.astro';
 	headerShadow={true}
 	currentPage={"home"}
 >
-	<Header
-		heading="Welcome"
-	/>
+	<Introduction />
 	<main>
 		<Projects />
 		<Contact />

@@ -1,0 +1,105 @@
+<header id="introduction">
+  <div class="introduction-container">
+    <div class="introduction-card noonoo-floating-card">
+      <h1><span class="octostar">&#10059;</span> Welcome</h1>
+      <img 
+        class="headshot" 
+        src="/img/placeholder/placeholder3.jpg" 
+        alt="Headshot of Joel Elizaga" 
+      />
+      <p>
+        I'm a <code>UX engineer</code> practicing an HCI-informed fusion of
+        <em>design</em> and <em>development</em>.
+      </p>
+      <p>
+        My aim is to build technologies that are both <strong>usable</strong> 
+        and <strong>useful</strong>.
+      </p>
+    </div>
+  </div>
+  <div class="introduction-bg">
+    <img src="/img/placeholder/placeholder1.jpg" alt="" />
+  </div>
+</header>
+
+<style>
+  #introduction {
+    display: block;
+    height: 80vh;
+    position: relative;
+    width: 100%;
+  }
+
+  .introduction-container {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    position: absolute;
+    justify-content: center;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .introduction-bg {
+    display: block;
+    height: 80vh;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    z-index: 0;
+  }
+
+  .introduction-bg::before {
+    box-shadow: var(--noonoo_depression_img);
+    content: "";
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+  }
+
+  .introduction-bg img {
+    display: block;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  .introduction-card {
+    box-shadow: var(--noonoo_floating_card_shadow);
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 1rem;
+    position: relative;
+    width: 61.803vw;
+  }
+
+  .introduction-card h1 {
+    text-align: center;
+  }
+
+  .introduction-card .octostar {
+    color: var(--spectacular_red_bright);
+    font-size: 0.98;
+  }
+
+  .introduction-card .headshot {
+    border: var(--tahoma_white_dim) solid 3px;
+    border-radius: 100%;
+    box-shadow: var(--noonoo_protrusion_bright);
+    float: right;
+    height: clamp(8rem, 8rem, 275px);
+    margin-left: 1rem;
+    width: clamp(8rem, 8rem, 275px);
+  }
+
+  @media screen and (max-width: 640px) {
+    
+    .introduction-card {
+      width: 95vw;
+    }
+  }
+</style>
