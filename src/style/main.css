@@ -495,6 +495,13 @@ option {
   z-index: 1;
 }
 
+/* Animations ////////////////////////////////////////////////////////////////*/
+
+@keyframes spin {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(359deg);}
+}
+
 @media screen and (max-width: 640px) {
   
   main {

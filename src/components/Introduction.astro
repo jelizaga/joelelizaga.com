@@ -1,7 +1,11 @@
 <header id="introduction">
   <div class="introduction-container">
     <div class="introduction-card noonoo-floating-card">
-      <h1><span class="octostar">&#10059;</span> Welcome</h1>
+      <h1>
+        <span class="octostar"><img src="/img/favicon/favicon.svg" alt="">
+        </span>
+        Welcome
+      </h1>
       <img 
         class="headshot" 
         src="/img/placeholder/placeholder3.jpg" 
@@ -82,8 +86,22 @@
   }
 
   .introduction-card .octostar {
+    align-items: center;
+    animation-name: spin;
+    animation-delay: 0ms;
+    animation-duration: 40s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
     color: var(--spectacular_red_bright);
-    font-size: 0.98;
+    display: inline-flex;
+    height: 0.65em;
+    justify-content: center;
+    width: 0.65em;
+  }
+
+  .introduction-card .octostar img {
+    height: inherit;
+    width: inherit;
   }
 
   .introduction-card .headshot {
