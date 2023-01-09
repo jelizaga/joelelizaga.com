@@ -491,7 +491,8 @@ option {
   visibility: visible;
   z-index: 1;
 }
-@media screen and (max-width: 600px) {
+
+@media screen and (max-width: 640px) {
   
   main {
     width: 95vw;
