@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@astrojs/prism": "^1.0.2",
+    "@astrojs/rss": "^2.0.0",
     "hotkeys-js": "^3.10.1",
     "swup": "^2.0.19"
   }
