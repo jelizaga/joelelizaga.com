@@ -4,7 +4,7 @@ export interface Props {
 	title: string;
 	description: string;
 	img: string;
-	tags: string;
+	tags: string[];
 }
 
 const { 
@@ -24,6 +24,15 @@ const {
 		<div class="project-card-details">
 			<h4>{title}</h4>
 			<p class="caption">{description}</p>
+			{tags &&
+				<ul class="tags">
+					{tags.map((tag) =>
+						<li class="tag">
+							{tag}
+						</li>
+					)}	
+				</ul>	
+			}
 		</div>
 	</li>
 </a>
@@ -60,6 +69,7 @@ const {
 
 	a .project-card-details {
 		text-decoration: none;
+		text-shadow: none;
 		padding-bottom: 1rem;
 		padding-left: 2rem;
 		padding-right: 2rem;

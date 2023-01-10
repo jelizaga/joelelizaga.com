@@ -1,11 +1,13 @@
 ---
+import Tooltip from './Tooltip.astro';
+
 export interface Props {
 	slug: string;
 	title: string;
 	description: string;
 	img: string;
 	date: string;
-	tags?: string;
+	tags?: string[];
 }
 
 const { 
@@ -27,6 +29,15 @@ const {
 			<h4>{title}</h4>
 			<p class="subheading">{new Date(date).toLocaleDateString()}</p>
 			<p>{description}</p>
+			{tags &&
+				<ul class="tags">
+					{tags.map((tag) =>
+						<li class="tag">
+							{tag}
+						</li>
+					)}	
+				</ul>	
+			}
 		</div>
 	</a>
 </li>
@@ -76,11 +87,11 @@ const {
 
 	a .blog-post-card-details {
 		text-decoration: none;
+		text-shadow: none;
 		padding-bottom: 1rem;
 		padding-left: 2rem;
 		padding-right: 2rem;
 		padding-top: 1rem;
-		text-shadow: none;
 	}
 
 	a:visited .blog-post-card-details h4 {

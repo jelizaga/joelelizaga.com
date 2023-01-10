@@ -67,7 +67,7 @@ h4 {
   margin: 0;
 }
 
-.caption, .subheading, .tooltip {
+.caption, .subheading, .tooltip, .tag {
   font-size: clamp(16px, 1.25vw, 1.25vw);
   line-height: clamp(28px, 2.1875vw, 2.1875vw);
   margin: 0;
@@ -464,6 +464,27 @@ option {
   cursor: pointer;
 }
 
+/* Tags //////////////////////////////////////////////////////////////////////*/
+.tags {
+  border-radius: 1.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  list-style: none;
+  margin-top: 0.8rem;
+  padding-left: 0;
+}
+
+.tag {
+  border-radius: 1.4rem;
+  box-shadow: var(--noonoo_protrusion_bright);
+  color: var(--lawetlatla_ash_bright);
+  display: inline-block;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+}
+
+/* Tooltips //////////////////////////////////////////////////////////////////*/
 .tooltip .tooltip-bubble {
   background-color: var(--tahoma_white_dim);
   bottom: 100%;
