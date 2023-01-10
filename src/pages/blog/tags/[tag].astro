@@ -1,0 +1,19 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  return [
+    { params: { tag: "UX" } },
+    { params: { tag: "Web Development" } },
+  ];
+}
+
+const { tag } = Astro.params;
+const title = `Joel Elizaga | Blog | ${tag}`;
+---
+
+<Layout title={title}>
+  <main>
+    <h1><i class="fa-solid fa-atlas"></i> Blog: {tag}</h1>
+  </main>
+</Layout>
