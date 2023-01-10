@@ -6,7 +6,7 @@ export interface Props {
 	title: string;
 	description: string;
 	img: string;
-	date: string;
+	pubDate: string;
 	tags?: string[];
 }
 
@@ -15,7 +15,7 @@ const {
 	title,
 	description,
 	img,
-	date,
+	pubDate,
 	tags
 } = Astro.props as Props;
 ---
@@ -27,13 +27,13 @@ const {
 		</div>
 		<div class="blog-post-card-details">
 			<h4>{title}</h4>
-			<p class="subheading">{new Date(date).toLocaleDateString()}</p>
+			<p class="subheading">{new Date(pubDate).toLocaleDateString()}</p>
 			<p>{description}</p>
 			{tags &&
 				<ul class="tags">
 					{tags.map((tag) =>
 						<li class="tag">
-							{tag}
+							{tag}	
 						</li>
 					)}	
 				</ul>	
@@ -43,7 +43,6 @@ const {
 </li>
 
 <style>
-
 	.blog-post-card {
 		background-color: var(--tahoma_white_dim);
 		border-radius: 1.4rem;
@@ -131,5 +130,4 @@ const {
 		}
 
 	}
-
 </style>

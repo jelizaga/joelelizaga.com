@@ -18,7 +18,7 @@ const blogPosts = await Astro.glob("../blog/*.mdx");
 					title={blogPost.frontmatter.title}
 					description={blogPost.frontmatter.description}
 					img={blogPost.frontmatter.img}
-					date={blogPost.frontmatter.date}
+					pubDate={blogPost.frontmatter.pubDate}
 					tags={blogPost.frontmatter.tags}
 				/>
 			))}
