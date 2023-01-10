@@ -8,17 +8,19 @@ import Pagination from "../../../components/Pagination.astro";
 
 export async function getStaticPaths() {
   const blogPosts = await Astro.glob("../../../blog/*.mdx");
-  return [
-    { params: { tag: "UX" }, props: { blogPosts: blogPosts } },
-    { params: { tag: "Web Development" }, props: { blogPosts: blogPosts } },
-  ];
+  const uniqueTags = [...new Set(blogPosts.map((blogPost) => blogPost.frontmatter.tags).flat())];
+  return uniqueTags.map((tag) => {
+    const tagSpecificPosts = blogPosts.filter((blogPost) => blogPost.frontmatter.tags.includes(tag));
+    return {
+      params: { tag },
+      props: { blogPosts: tagSpecificPosts },
+    };
+  })
 }
-
 const { tag } = Astro.params;
 const { blogPosts } = Astro.props;
-const tagSpecificPosts = blogPosts.filter((blogPost) => 
-  blogPost.frontmatter.tags.includes(tag)
-);
+
+
 const title = `Joel Elizaga | Blog | ${tag}`;
 ---
 
@@ -32,7 +34,7 @@ const title = `Joel Elizaga | Blog | ${tag}`;
       <a href="/blog" class="current-tag">{tag}<i class="fa-solid fa-x"></i></a>
     </h1>
     <ul class="blog">
-      {tagSpecificPosts.map(blogPost => (
+      {blogPosts.map(blogPost => (
         <BlogPostCard
           slug={`blog/${blogPost.frontmatter.slug}`}
           title={blogPost.frontmatter.title}
