@@ -18,8 +18,8 @@
 
 ## Usage
 
-*Run Astro dev server:* `npm run dev`
+*Run Astro dev server* - `npm run dev`
 
-*Build site:* `npm run build`
+*Build site to* `/dist` - `npm run build`
 
-*Run built site on server as preview:* `npm run preview`
+*Serve* `/dist` *site for previewing* - `npm run preview`
