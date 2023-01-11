@@ -1,8 +1,8 @@
 /**
-* xonokai theme for JavaScript, CSS and HTML
-* based on: https://github.com/MoOx/sass-prism-theme-base by Maxime Thirouin ~ MoOx --> http://moox.fr/ , which is Loosely based on Monokai textmate theme by http://www.monokai.nl/
-* license: MIT; http://moox.mit-license.org/
-*/
+Personal theme for Prism components.
+Based on xonokai (https://github.com/PrismJS/prism-themes/blob/master/themes/prism-xonokai.css).
+**/
+
 code[class*="language-"],
 pre[class*="language-"] {
 	-moz-tab-size: 2;
@@ -33,11 +33,11 @@ pre[class*="language-"],
 }
 
 pre[class*="language-"] {
+	margin: 0;
   padding-bottom: 0.3rem;
 	padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.3rem;
-	border-radius: 1.4rem;
 	overflow: auto;
 	position: relative;
 }

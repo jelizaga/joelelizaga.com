@@ -5,24 +5,25 @@ description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
 do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 img: /img/placeholder/placeholder1.jpg
 pubDate: 2022-11-30
-tags: ["UX"]
+tags: ["UX", "Web Development", "Persuasive Design", "HCI"]
 ---
 
 import { Prism } from '@astrojs/prism';
+import Code from '../components/Code.astro';
 import NNImage from '../components/NNImage.astro';
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
 incididunt ut labore et dolore magna aliqua. Curabitur gravida arcu ac tortor 
 dignissim convallis aenean et tortor. Vitae tortor condimentum lacinia quis. 
 Sit amet aliquam id diam maecenas ultricies. Tortor id aliquet lectus proin nibh
- nisl condimentum id venenatis. Nec dui nunc mattis enim ut. Morbi non arcu 
+nisl condimentum id venenatis. Nec dui nunc mattis enim ut. Morbi non arcu 
 risus quis varius quam quisque id. Faucibus in ornare quam viverra orci sagittis 
 eu. Nisi est sit amet facilisis magna etiam. Duis ultricies lacus sed turpis 
 tincidunt. Nam libero justo laoreet sit amet cursus sit amet dictum. Rhoncus 
 dolor purus non enim praesent elementum `facilisis`. Laoreet suspendisse interdum 
 consectetur libero id faucibus.[^1]
 
-<Prism code={
+<Code code={
 `// Here's a comment. <-- --> ===
 const foo = 'bar';
 const bar = 5;
@@ -37,6 +38,22 @@ if (test) {
 lang="js" 
 />
 
+<Code code={
+`// Here's a comment. <-- --> ===
+const foo = 'bar';
+const bar = 5;
+import { Prism } from '@astrojs/prism';
+if (test) {
+  console.log("swag");
+} else {
+  console.log("uh oh");
+  console.log("over there!! ->");
+}`
+} 
+lang="js" 
+filename="filename.js"
+/>
+
 ### Lorem ipsum dolor sit amet
 
 Rhoncus mattis rhoncus urna neque viverra justo nec. Id interdum velit laoreet 
@@ -45,7 +62,7 @@ in. Turpis cursus in hac habitasse platea dictumst quisque sagittis purus. Justo
 eget magna fermentum iaculis eu non diam phasellus. Sollicitudin ac orci 
 phasellus egestas tellus rutrum. Egestas erat imperdiet sed euismod nisi porta. 
 Erat nam at lectus urna duis convallis convallis tellus id. Bibendum at varius 
-vel pharetra vel turpis nunc. Neque viverra justo nec ultrices dui. Quis viverra
+vel pharetra vel turpis nunc. `Neque` viverra justo nec ultrices dui. Quis viverra
 nibh cras pulvinar mattis nunc sed blandit. Odio eu feugiat pretium nibh ipsum.
 Facilisi etiam dignissim diam quis enim. Nunc consequat interdum varius sit amet
 mattis vulputate enim. Ipsum a arcu cursus vitae congue.[^2] Massa tincidunt nunc

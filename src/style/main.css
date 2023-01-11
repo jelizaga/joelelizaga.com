@@ -112,7 +112,7 @@ h4 {
   margin: 0;
 }
 
-.caption, .footnotes, .subheading, .tooltip, .tag {
+.caption, .code .code-title-bar, .footnotes, .subheading, sup a, .tooltip, .tag {
   font-size: clamp(16px, 1.25vw, 1.25vw);
   line-height: clamp(28px, 2.1875vw, 2.1875vw);
   margin: 0;
@@ -145,6 +145,10 @@ p a {
 
 p a:visited {
   color: var(--lawetlatla_ash_bright);
+}
+
+sup, sup a {
+  line-height: 0;
 }
 
 sup a {
