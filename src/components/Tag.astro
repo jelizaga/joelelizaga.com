@@ -1,0 +1,14 @@
+---
+export interface Props {
+  prefix: string
+  tag: string
+}
+const { tag, prefix } = Astro.props as Props;
+const slug = `${prefix}/focus/${tag}`;
+---
+
+<li class="tag">
+  <a href={slug}>
+    {tag}
+  </a>
+</li>

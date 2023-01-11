@@ -1,4 +1,5 @@
 ---
+import Tag from './Tag.astro';
 import Tooltip from './Tooltip.astro';
 
 export interface Props {
@@ -21,25 +22,28 @@ const {
 ---
 
 <li class="blog-post-card noonoo-protruding-card">
-	<a href={slug}>
-		<div class="blog-post-card-img">
+	<div class="blog-post-card-img">
+		<a href={slug}>
 			<img src={img}>
-		</div>
-		<div class="blog-post-card-details">
+		</a>
+	</div>
+	<div class="blog-post-card-details">
+		<a href={slug}>
 			<h4>{title}</h4>
 			<p class="subheading">{new Date(pubDate).toLocaleDateString()}</p>
 			<p>{description}</p>
-			{tags &&
-				<ul class="tags">
-					{tags.map((tag) =>
-						<li class="tag">
-							{tag}	
-						</li>
-					)}	
-				</ul>	
-			}
-		</div>
-	</a>
+		</a>
+		{tags &&
+			<ul class="tags">
+				{tags.map((tag) =>
+					<Tag
+						prefix="blog"
+						tag={tag}
+					/>
+				)}	
+			</ul>	
+		}
+	</div>
 </li>
 
 <style>
@@ -47,18 +51,10 @@ const {
 		background-color: var(--tahoma_white_dim);
 		border-radius: 1.4rem;
 		box-shadow: var(--noonoo_protrusion_bright);
-		display: block;
-		overflow: hidden;
-		width: 100%;
-	}
-
-	.blog-post-card a {
 		display: grid;
-		border-radius: 1.4rem;
 		grid-template-columns: 38.197% auto;
 		overflow: hidden;
-		height: inherit;
-		width: inherit;
+		width: 100%;
 	}
 
 	.blog-post-card-img {
@@ -84,13 +80,22 @@ const {
 		color: var(--lawetlatla_ash_dim);
 	}
 
-	a .blog-post-card-details {
+	.blog-post-card .blog-post-card-details {
 		text-decoration: none;
 		text-shadow: none;
-		padding-bottom: 1rem;
+	}
+
+	.blog-post-card .blog-post-card-details a {
+		display: block;
 		padding-left: 2rem;
 		padding-right: 2rem;
 		padding-top: 1rem;
+	}
+
+	.blog-post-card .blog-post-card-details .tags {
+		padding-bottom: 1rem;
+		padding-left: 2rem;
+		padding-right: 2rem;
 	}
 
 	a:visited .blog-post-card-details h4 {
@@ -105,21 +110,21 @@ const {
 		color: var(--lawetlatla_ash_bright);
 	}
 
-	a:hover .blog-post-card-details h4 {
+	.blog-post-card:hover .blog-post-card-details h4 {
 		color: var(--spectacular_red_bright);
 		text-shadow: var(--spectacular_red_glowing);
 	}
 
-	a:hover .blog-post-card-details .subheading {
+	.blog-post-card:hover .blog-post-card-details .subheading {
 		color: var(--lawetlatla_ash_bright);
 	}
 
-	a:hover .blog-post-card-details p {
+	.blog-post-card:hover .blog-post-card-details p {
 		color: var(--lawetlatla_ash_dim);
 		text-shadow: none;
 	}
 
-	a:hover .blog-post-card-img img {
+	.blog-post-card:hover .blog-post-card-img img {
 		height: 102%;
 	}
 
