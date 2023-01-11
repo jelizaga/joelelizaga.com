@@ -5,6 +5,7 @@
 <!-- vim-markdown-toc GFM -->
 
 * [Technologies](#technologies)
+* [Usage](#usage)
 
 <!-- vim-markdown-toc -->
 
