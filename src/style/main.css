@@ -561,8 +561,18 @@ option {
   box-shadow: var(--noonoo_protrusion_bright);
   color: var(--lawetlatla_ash_bright);
   display: inline-block;
+  transition: box-shadow 0.1s ease-in;
+}
+
+.tag a {
+  color: var(--lawetlatla_ash_bright);
   padding-left: 0.8rem;
   padding-right: 0.8rem;
+  transition: color 0.1s ease-in, text-shadow 0.1s ease-in;
+}
+
+.tag:active {
+  box-shadow: var(--noonoo_depression_bright), var(--noonoo_protrusion_bright);
 }
 
 /* Tooltips //////////////////////////////////////////////////////////////////*/
