@@ -1,22 +1,24 @@
 # joelelizaga.com
 
+My portfolio / homepage.
+
 ## Contents
 
 <!-- vim-markdown-toc GFM -->
 
-* [Technologies](#technologies)
-* [Usage](#usage)
+* [⚙️ Technologies](#-technologies)
+* [📦 Usage](#-usage)
 
 <!-- vim-markdown-toc -->
 
-## Technologies
+## ⚙️ Technologies
 
 * 🚀 [Astro](https://astro.build)
 * 🧊 [SolidJS](https://www.solidjs.com/)
 * 📓 [MDX](https://mdxjs.com/)
 * 🖥️ [Prism](https://prismjs.com/)
 
-## Usage
+## 📦 Usage
 
 *Run Astro dev server* - `npm run dev`
 
