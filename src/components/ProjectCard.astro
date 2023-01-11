@@ -16,26 +16,28 @@ const {
 } = Astro.props as Props;
 ---
 
-<a href={slug}>
-	<li class="project-card noonoo-protruding-card">
-		<div class="project-card-img">
+<li class="project-card noonoo-protruding-card">
+	<div class="project-card-img">
+		<a href={slug}>
 			<img src={img}>
-		</div>
-		<div class="project-card-details">
+		</a>
+	</div>
+	<div class="project-card-details">
+		<a href={slug}>
 			<h4>{title}</h4>
 			<p class="caption">{description}</p>
-			{tags &&
-				<ul class="tags">
-					{tags.map((tag) =>
-						<li class="tag">
-							{tag}
-						</li>
-					)}	
-				</ul>	
-			}
-		</div>
-	</li>
-</a>
+		</a>
+	</div>
+	{tags &&
+		<ul class="tags">
+			{tags.map((tag) =>
+				<li class="tag">
+					{tag}
+				</li>
+			)}	
+		</ul>	
+	}
+</li>
 
 <style>
 	.project-card {
@@ -43,10 +45,6 @@ const {
 		display: grid;
 		grid-template-rows: auto auto;
 		overflow: hidden;
-	}
-
-	a .project-card {
-		text-decoration-line: none;
 	}
 
 	.project-card-img {
@@ -67,28 +65,37 @@ const {
 		color: var(--lawetlatla_ash_bright);
 	}
 
-	a .project-card-details {
+	.project-card-details a {
+		box-sizing: border-box;
+		display: block;
+		height: 100%;
 		text-decoration: none;
 		text-shadow: none;
-		padding-bottom: 1rem;
 		padding-left: 2rem;
 		padding-right: 2rem;
 		padding-top: 1rem;
+		width: 100%;
 	}
 
-	a .project-card-details p {
+	.project-card .tags {
+		padding-bottom: 1rem;
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+
+	.project-card-details a p {
 		text-shadow: none;
 	}
 
-	a .project-card-details h4 {
-		transition: color 0.1s;
+	.project-card-details a h4 {
+		transition: color 0.1s ease-in;
 	}
 
-	a:hover .project-card-details h4 {
+	.project-card:hover .project-card-details a h4 {
 		color: var(--spectacular_red_bright);
 	}
 
-	a:hover .project-card-img img {
+	.project-card:hover img {
 		height: 102%;
 	}
 </style>
