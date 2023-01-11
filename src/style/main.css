@@ -6,32 +6,77 @@
 /* Typography ////////////////////////////////////////////////////////////////*/
 @font-face {
   font-family: "Atkinson Hyperlegible";
-  src: url("/font/Atkinson-Hyperlegible-Regular-102a.woff2") format("woff2"),
-       url("/font/Atkinson-Hyperlegible-Regular-102.woff") format("woff");
+  src: url("/font/Atkinson Hyperlegible/Atkinson-Hyperlegible-Regular-102a.woff2") format("woff2"),
+       url("/font/Atkinson Hyperlegible/Atkinson-Hyperlegible-Regular-102.woff") format("woff");
   font-weight: normal;
 }
 
 @font-face {
   font-family: "Atkinson Hyperlegible";
-  src: url("/font/Atkinson-Hyperlegible-Bold-102a.woff2") format("woff2"),
-       url("/font/Atkinson-Hyperlegible-Bold-102.woff") format("woff");
+  src: url("/font/Atkinson Hyperlegible/Atkinson-Hyperlegible-Bold-102a.woff2") format("woff2"),
+       url("/font/Atkinson Hyperlegible/Atkinson-Hyperlegible-Bold-102.woff") format("woff");
   font-weight: bold;
 }
 
 @font-face {
   font-family: "Atkinson Hyperlegible";
-  src: url("/font/Atkinson-Hyperlegible-Italic-102a.woff2") format("woff2"),
-       url("/font/Atkinson-Hyperlegible-Italic-102.woff") format("woff");
+  src: url("/font/Atkinson Hyperlegible/Atkinson-Hyperlegible-Italic-102a.woff2") format("woff2"),
+       url("/font/Atkinson Hyperlegible/Atkinson-Hyperlegible-Italic-102.woff") format("woff");
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Atkinson Hyperlegible";
-  src: url("/font/Atkinson-Hyperlegible-BoldItalic-102a.woff2") format("woff2"),
-       url("/font/Atkinson-Hyperlegible-BoldItalic-102.woff") format("woff");
+  src: url("/font/Atkinson Hyperlegible/Atkinson-Hyperlegible-BoldItalic-102a.woff2") format("woff2"),
+       url("/font/Atkinson Hyperlegible/Atkinson-Hyperlegible-BoldItalic-102.woff") format("woff");
   font-weight: bold;
   font-style: italic;
+}
+
+@font-face {
+  font-family: "Comic Code Ligatures";
+  src: url("/font/Tabular Type Foundry/Comic Code/Webfonts/ComicCodeLigatures-Regular.woff2") format("woff2"),
+       url("/font/Tabular Type Foundry/Comic Code/Webfonts/ComicCodeLigatures-Regular.woff") format("woff");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Comic Code Ligatures";
+  src: url("/font/Tabular Type Foundry/Comic Code/Webfonts/ComicCodeLigatures-Bold.woff2") format("woff2"),
+       url("/font/Tabular Type Foundry/Comic Code/Webfonts/ComicCodeLigatures-Bold.woff") format("woff");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Comic Code Ligatures";
+  src: url("/font/Tabular Type Foundry/Comic Code/Webfonts/ComicCodeLigatures-Italic.woff2") format("woff2"),
+       url("/font/Tabular Type Foundry/Comic Code/Webfonts/ComicCodeLigatures-Italic.woff") format("woff");
+  font-style: italic;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Comic Code Ligatures";
+  src: url("/font/Tabular Type Foundry/Comic Code/Webfonts/ComicCodeLigatures-BoldItalic_2022-05-24-152855_zmvn.woff2") format("woff2"),
+       url("/font/Tabular Type Foundry/Comic Code/Webfonts/ComicCodeLigatures-BoldItalic_2022-05-24-152855_zmvn.woff") format("woff2");
+  font-style: italic;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Comic Code Ligatures";
+  src: url("/font/Tabular Type Foundry/Comic Code/Webfonts/ComicCodeLigatures-Medium.woff2") format("woff2"),
+       url("/font/Tabular Type Foundry/Comic Code/Webfonts/ComicCodeLigatures-Medium.woff") format("woff");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Comic Code Ligatures";
+  src: url("/font/Tabular Type Foundry/Comic Code/Webfonts/ComicCodeLigatures-MediumItalic.woff2") format("woff2"),
+       url("/font/Tabular Type Foundry/Comic Code/Webfonts/ComicCodeLigatures-MediumItalic.woff") format("woff");
+  font-style: italic;
+  font-weight: 600;
 }
 
 ::selection {
@@ -107,9 +152,10 @@ a:visited:hover {
 }
 
 code {
-  font-family: "Comic Code Ligatures", monospace;
   color: var(--lawetlatla_ash_bright);
+  font-family: "Comic Code Ligatures", monospace;
   font-size: 0.85rem;
+  font-weight: 600;
 }
 
 hr {
