@@ -30,7 +30,7 @@ const title = `Joel Elizaga | Blog | ${tag}`;
 >
   <main>
     <h1>
-      <i class="fa-solid fa-atlas"></i> Blog
+      <i class="fa-solid fa-atlas"></i> Blog / 
       <a href="/blog" class="current-tag">{tag}<i class="fa-solid fa-x"></i></a>
     </h1>
     <ul class="blog">
@@ -66,24 +66,10 @@ const title = `Joel Elizaga | Blog | ${tag}`;
 
   .current-tag {
     align-items: center;
-    border-radius: 2rem;
-    box-shadow: var(--noonoo_protrusion_bright);
     color: var(--lawetlatla_ash_dim);
     display: inline-flex;
     gap: 1rem;
-    float: right;
-    font-size: 0.8em;
-    font-weight: normal;
     justify-content: center;
-    line-height: 0;
-    padding-bottom: 0.8rem;
-    padding-left: 1.4rem;
-    padding-right: 1.4rem;
-    padding-top: 0.8rem;
-  }
-
-  .current-tag:active {
-    box-shadow: var(--noonoo_depression_bright), var(--noonoo_protrusion_bright);
   }
 
   .current-tag i {
@@ -94,15 +80,19 @@ const title = `Joel Elizaga | Blog | ${tag}`;
     box-shadow: var(--noonoo_protrusion_bright);
     color: var(--lawetlatla_ash_dim);
     display: flex;
-    height: 1rem;
+    height: 1em;
     font-size: 0.5em;
     padding: 0.4rem;
     justify-content: center;
     transition: box-shadow ease-in 0.1s, color ease-in 0.1s;
-    width: 1rem;
+    width: 1em;
   }
 
   .current-tag:hover i {
     color: var(--spectacular_red_bright);
+  }
+
+  .current-tag:active i {
+    box-shadow: var(--noonoo_protrusion_bright), var(--noonoo_depression_bright);
   }
 </style>
