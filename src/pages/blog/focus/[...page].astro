@@ -1,18 +1,12 @@
 ---
-////////////////////////////////////////////////////////////////////////////////
-// /src/pages/blog/[...page].astro /////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-// Generates paginated indices for blog all blog posts in `/src/blog`.
-// Pages will be @ `/blog/#`, `#` being the index of the blog.
-
 import { Debug } from 'astro/components';
-import Layout from '../../layouts/Layout.astro'; 
-import BlogPostCard from '../../components/BlogPostCard.astro';
-import Pagination from '../../components/Pagination.astro';
+import Layout from '../../../layouts/Layout.astro'; 
+import BlogPostCard from '../../../components/BlogPostCard.astro';
+import Pagination from '../../../components/Pagination.astro';
 
 export async function getStaticPaths({ paginate }) {
-  const blogPosts = await Astro.glob("../../blog/*.mdx");
-  return paginate(blogPosts, { pageSize: 8 });
+  const blogPosts = await Astro.glob("../../../blog/*.mdx");
+  const uniqueTags = [...new Set(blogPosts.map((blogPost) => blogPost.frontmatter.tags).flat())];
 }
 
 const { page } = Astro.props;

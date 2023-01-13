@@ -1,4 +1,11 @@
 ---
+////////////////////////////////////////////////////////////////////////////////
+// /src/pages/project/[project].astro //////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+// Generates pages for each project in `/src/project`.
+// Pages will be @ path `/project/[slug]`, `[slug]` being the slug specified in
+// the frontmatter of each project article.
+
 import Layout from "../../layouts/Layout.astro";
 
 export async function getStaticPaths() {
