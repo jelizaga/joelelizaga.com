@@ -10,6 +10,7 @@ import Projects from '../components/Projects.astro';
 import Header from '../components/Header.astro';
 import Contact from '../components/Contact.astro';
 import Introduction from '../components/Introduction.astro';
+import ProjectsGrid from '../components/ProjectsGrid.astro';
 ---
 
 <Layout 
@@ -19,7 +20,10 @@ import Introduction from '../components/Introduction.astro';
 >
 	<Introduction />
 	<main>
-		<Projects />
+		<h2>
+			<i class="fa-solid fa-compass-drafting"></i> Projects
+		</h2>
+		<ProjectsGrid />
 		<Contact />
 	</main>
 </Layout>

@@ -579,6 +579,38 @@ option {
   box-shadow: var(--noonoo_depression_bright), var(--noonoo_protrusion_bright);
 }
 
+.current-tag {
+  align-items: center;
+  color: var(--lawetlatla_ash_dim);
+  display: inline-flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.current-tag i {
+  align-items: center;
+  background-image: var(--noonoo_protrusion_rounded_bright);
+  border: none;
+  border-radius: 100%;
+  box-shadow: var(--noonoo_protrusion_bright);
+  color: var(--lawetlatla_ash_dim);
+  display: flex;
+  height: 1em;
+  font-size: 0.5em;
+  padding: 0.4rem;
+  justify-content: center;
+  transition: box-shadow ease-in 0.1s, color ease-in 0.1s;
+  width: 1em;
+}
+
+.current-tag:hover i {
+  color: var(--spectacular_red_bright);
+}
+
+.current-tag:active i {
+  box-shadow: var(--noonoo_protrusion_bright), var(--noonoo_depression_bright);
+}
+
 /* Tooltips //////////////////////////////////////////////////////////////////*/
 .tooltip .tooltip-bubble {
   background-color: var(--tahoma_white_dim);

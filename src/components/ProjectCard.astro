@@ -1,4 +1,6 @@
 ---
+import Tag from './Tag.astro';
+
 export interface Props {
 	slug: string;
 	title: string;
@@ -31,9 +33,10 @@ const {
 	{tags &&
 		<ul class="tags">
 			{tags.map((tag) =>
-				<li class="tag">
-					{tag}
-				</li>
+				<Tag
+					prefix="projects"
+					tag={tag}
+				/>
 			)}	
 		</ul>	
 	}

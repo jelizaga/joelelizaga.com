@@ -1,0 +1,43 @@
+---
+////////////////////////////////////////////////////////////////////////////////
+// /src/pages/projects/focus/[tag].astro ///////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+// Generates pages @ `/blog/projects/[tag]` for every unique project article
+// tag.
+
+import Layout from "../../../layouts/Layout.astro";
+import ProjectCard from "../../../components/ProjectCard.astro";
+import ProjectsGrid from "../../../components/ProjectsGrid.astro";
+
+export async function getStaticPaths() {
+  const projects = await Astro.glob("../../../project/*.mdx");
+  const uniqueTags = [...new Set(projects.map((project) => project.frontmatter.tags).flat())];
+  return uniqueTags.map((tag) => {
+    const tagSpecificProjects = projects.filter((project) => project.frontmatter.tags.includes(tag));
+    return {
+      params: { tag },
+      props: { projects: tagSpecificProjects },
+    };
+  })
+}
+
+const { tag } = Astro.params;
+const { projects } = Astro.props;
+
+const title = `Joel Elizaga | Projects | ${tag}`;
+---
+
+<Layout
+  title={title}
+  currentPage={"projects"}
+>
+  <main>
+    <h1>
+      <i class="fa-solid fa-compass-drafting"></i> Projects / 
+      <a href="/projects" class="current-tag">{tag}<i class="fa-solid fa-x"></i></a>
+    </h1>
+    <ProjectsGrid
+      projects={projects}
+    />
+  </main>
+</Layout>

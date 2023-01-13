@@ -1,0 +1,19 @@
+---
+////////////////////////////////////////////////////////////////////////////////
+// /src/pages/project.astro ////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+// Project portfolio @ `/projects`.
+
+import Layout from "../layouts/Layout.astro";
+import ProjectsGrid from "../components/ProjectsGrid.astro";
+---
+
+<Layout
+  title="Joel Elizaga | Projects"
+  currentPage={"projects"}
+>
+  <main>
+    <h1><i class="fa-solid fa-compass-drafting"></i> Projects</h1>
+    <ProjectsGrid />
+  </main>
+</Layout>

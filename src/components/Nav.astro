@@ -1,15 +1,26 @@
 ---
+////////////////////////////////////////////////////////////////////////////////
+// Nav.astro ///////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+// Site <nav> located in `Masthead`.
+
 export interface Props {
   currentPage?: string;
 }
+
 const { currentPage } = Astro.props as Props;
+
 // Determine classes of `Nav` items:
 let homeClasses = "";
 let bioClasses = "";
 let blogClasses = "";
+let projectsClasses = "";
 switch(currentPage) {
   case "home":
     homeClasses += "selected";
+    break;
+  case "projects":
+    projectsClasses += "selected";
     break;
   case "bio":
     bioClasses += "selected";
@@ -23,6 +34,11 @@ switch(currentPage) {
 
 <nav>
   <ul id="nav">
+    <li class={projectsClasses}>
+      <a href="/projects">
+        <span><i class="fa-solid fa-compass-drafting"></i>Projects</span>
+      </a>
+    </li>
     <li class={bioClasses}>
       <a href="/bio">
         <span><i class="fa-solid fa-face-smile"></i>Bio</span>
@@ -42,6 +58,11 @@ switch(currentPage) {
       <li class={homeClasses}>
         <a href="/">
           <span><i>&#10059;</i>Home</span>
+        </a>
+      </li>
+      <li class={projectsClasses}>
+        <a href="/projects">
+          <span><i class="fa-solid fa-compass-drafting"></i> Projects</span>
         </a>
       </li>
       <li class={bioClasses}>

@@ -1,13 +1,15 @@
 ---
 import ProjectCard from "./ProjectCard.astro";
 
-const projects = await Astro.glob("../project/*.mdx");
+export interface Props {
+  projects?: object[];
+}
+
+const { projects = (await Astro.glob("../project/*.mdx")) } = Astro.props as Props;
+
 ---
 
 <div id="projects" class="projects">
-  <h2>
-    <i class="fa-solid fa-compass-drafting"></i> Projects
-  </h2>
   <ul class="projects-grid">
     {projects.map(project => (
       <ProjectCard
