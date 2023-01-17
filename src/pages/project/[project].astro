@@ -6,6 +6,8 @@
 // Pages will be @ path `/project/[slug]`, `[slug]` being the slug specified in
 // the frontmatter of each project article.
 
+import NNImage from "../../components/NNImage.astro";
+import Tag from "../../components/Tag.astro";
 import Layout from "../../layouts/Layout.astro";
 
 export async function getStaticPaths() {
@@ -28,9 +30,46 @@ const { Content, frontmatter } = Astro.props.project;
   currentPage={"projects"}
 >
   <main>
-    <article class="noonoo-protruding-card">
-      <h2>{frontmatter.title}</h2>
-      <Content />
+    <article class="project-article noonoo-protruding-card">
+      <header>
+        <div class="project-header">
+          <h1>{frontmatter.title}</h1>
+          <p class="description">{frontmatter.description}</p>
+          {frontmatter.tags &&
+            <ul class="tags">
+              {frontmatter.tags.map((tag) =>
+                <Tag
+                  prefix="projects"
+                  tag={tag}
+                />
+              )}
+            </ul>
+          }
+        </div>
+        <NNImage
+          src={frontmatter.img}
+          alt={frontmatter.imgAlt}
+          straightCorners={true}
+          linked={false}
+        />
+      </header>
+      <div class="content">
+        <Content />
+      </div>
     </article>
   </main>
 </Layout>
+
+<style>
+  .project-article header .project-header {
+    padding-bottom: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 1rem;
+  }
+
+  .project-header h1, .project-header .description {
+    text-align: center;
+  }
+
+</style>

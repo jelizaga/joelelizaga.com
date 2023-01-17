@@ -54,10 +54,10 @@ const { Content, frontmatter } = Astro.props.blog;
           }
         </div>
         <NNImage
-          src = {frontmatter.img}
-          alt = {frontmatter.imgAlt}
-          straightCorners = {true}
-          linked = {false}
+          src={frontmatter.img}
+          alt={frontmatter.imgAlt}
+          straightCorners={true}
+          linked={false}
         />
       </header>
       <div class="content">
@@ -72,15 +72,4 @@ const { Content, frontmatter } = Astro.props.blog;
     color: var(--lawetlatla_ash_bright);
   }
 
-  .blog-article header h1 {
-    font-size: clamp(42px, 3.3333vw, 3.3333vw);
-    line-height: clamp(66px, 5.20833vw, 5.20833vw);
-  }
-
-  .blog-article .content {
-    padding-top: 1rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
-    padding-bottom: 1rem;
-  }
 </style>
