@@ -8,12 +8,13 @@ import "../style/code.css";
 
 export interface Props {
 	title: string;
+	description?: string;
 	currentPage?: string;
 	headerShadow?: boolean;
 	footerShadow?: boolean;
 }
 
-const { title, currentPage, headerShadow, footerShadow } = Astro.props as Props;
+const { title, description, currentPage, headerShadow, footerShadow } = Astro.props as Props;
 
 ---
 
@@ -21,8 +22,11 @@ const { title, currentPage, headerShadow, footerShadow } = Astro.props as Props;
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta property="og:title" content={title} />
+		<meta name="twitter:title" content={title} />
 		<meta name="author" content="Joel Elizaga, joel@elizaga.org" />
+		<meta name="description" content={description} />
 		<link rel="icon" href="/img/favicon/favicon.ico" sizes="any" />
 		<link rel="icon" href="/img/favicon/favicon.svg" type="image/svg+xml" />
 		<link rel="apple-touch-icon" href="/img/favicon/favicon-180.png" />

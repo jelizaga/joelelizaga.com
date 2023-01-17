@@ -7,6 +7,7 @@ export interface Props {
 	title: string;
 	description: string;
 	img: string;
+	imgAlt?: string;
 	pubDate: string;
 	tags?: string[];
 }
@@ -16,6 +17,7 @@ const {
 	title,
 	description,
 	img,
+	imgAlt = "Image accenting this blog post",
 	pubDate,
 	tags
 } = Astro.props as Props;
@@ -24,13 +26,13 @@ const {
 <li class="blog-post-card noonoo-protruding-card">
 	<div class="blog-post-card-img">
 		<a href={slug}>
-			<img src={img}>
+			<img src={img} alt={imgAlt}>
 		</a>
 	</div>
 	<div class="blog-post-card-details">
 		<a href={slug}>
 			<h4>{title}</h4>
-			<p class="subheading">{new Date(pubDate).toLocaleDateString()}</p>
+			<p class="subheading date">{new Date(pubDate).toLocaleDateString()}</p>
 			<p>{description}</p>
 		</a>
 		{tags &&
@@ -72,7 +74,7 @@ const {
 		transition: color 0.1s, text-shadow 0.1s;
 	}
 
-	.blog-post-card-details .subheading {
+	.blog-post-card-details .date {
 		color: var(--lawetlatla_ash_bright);
 	}
 
@@ -106,7 +108,7 @@ const {
 		color: var(--lawetlatla_ash_dim);
 	}
 
-	a:visited .blog-post-card-details .subheading {
+	a:visited .blog-post-card-details .date {
 		color: var(--lawetlatla_ash_bright);
 	}
 
@@ -115,7 +117,7 @@ const {
 		text-shadow: var(--spectacular_red_glowing);
 	}
 
-	.blog-post-card:hover .blog-post-card-details .subheading {
+	.blog-post-card:hover .blog-post-card-details .date {
 		color: var(--lawetlatla_ash_bright);
 	}
 

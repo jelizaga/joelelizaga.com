@@ -7,6 +7,8 @@
 // frontmatter of the blog post.
 
 import Layout from "../../layouts/Layout.astro";
+import NNImage from "../../components/NNImage.astro";
+import Tag from "../../components/Tag.astro";
 
 export async function getStaticPaths() {
   const blogPosts = await Astro.glob("../../blog/*.mdx");
@@ -25,12 +27,60 @@ const { Content, frontmatter } = Astro.props.blog;
 
 <Layout 
   title={frontmatter.title}
+  description={frontmatter.description}
   currentPage={"blog"}
 >
   <main>
-    <article class="noonoo-protruding-card">
-      <h2>{frontmatter.title}</h2>
-      <Content />
+    <article class="blog-article noonoo-protruding-card">
+      <header>
+        <div class="content">
+          <a class="rss-button"></a>
+          <p class="date subheading">
+            {new Date(frontmatter.pubDate).toLocaleDateString()}
+          </p>
+          <h1>{frontmatter.title}</h1>
+          <p class="description">
+            {frontmatter.description}
+          </p>
+          {frontmatter.tags &&
+            <ul class="tags">
+              {frontmatter.tags.map((tag) =>
+                <Tag
+                  prefix="blog"
+                  tag={tag}
+                />
+              )}
+            </ul>
+          }
+        </div>
+        <NNImage
+          src = {frontmatter.img}
+          alt = {frontmatter.imgAlt}
+          straightCorners = {true}
+          linked = {false}
+        />
+      </header>
+      <div class="content">
+        <Content />
+      </div>
     </article>
   </main>
 </Layout>
+
+<style>
+  .blog-article header .date {
+    color: var(--lawetlatla_ash_bright);
+  }
+
+  .blog-article header h1 {
+    font-size: clamp(42px, 3.3333vw, 3.3333vw);
+    line-height: clamp(66px, 5.20833vw, 5.20833vw);
+  }
+
+  .blog-article .content {
+    padding-top: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 1rem;
+  }
+</style>
