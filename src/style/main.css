@@ -254,6 +254,7 @@ blockquote {
   /* Bright */
   --noonoo_protrusion_bright: 5px 5px 10px #DCDADA, -5px -5px 10px var(--tahoma_white_glow);
   --noonoo_depression_bright: inset -5px -5px 10px var(--tahoma_white_glow), inset 5px 5px 10px #DCDADA;
+  --noonoo_depression_spectacular_red_bright: inset -5px -5px 10px var(--spectacular_red_glow), inset 5px 5px 10px #C40000;
   --noonoo_depression_dim: inset -5px -5px 10px #3C4746, inset 5px 5px 10px #2C3534;
   --noonoo_depression_img: inset -5px -5px 10px #00000022, inset 5px 5px 10px #00000055;
   --noonoo_ceiling_protrusion_bright: 0px 5px 10px #DCDADA;
@@ -376,6 +377,140 @@ article.noonoo-protruding-card {
 /* Images ////////////////////////////////////////////////////////////////////*/
 img {
   max-width: 100%;
+}
+
+/* Noonoo Images & Noonoo Carousels //////////////////////////////////////////*/
+.noonoo-image, .noonoo-carousel {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.noonoo-image .container, .noonoo-carousel .container {
+  display: block;
+  line-height: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.noonoo-image .container.straight-corners, .noonoo-carousel .container.straight-corners {
+  border-radius: 0;
+}
+
+.noonoo-image .container.round-corners, .noonoo-image .container.round-corners::before, .noonoo-carousel .container.round-corners, .noonoo-carousel .container.round-corners::before {
+  border-radius: 1.4rem;
+}
+
+.noonoo-image .container::before, .noonoo-carousel .container::before {
+  overflow: hidden;
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.noonoo-image .container.depressed::before, .noonoo-carousel .container.depressed::before {
+  box-shadow: var(--noonoo_depression_img);
+}
+
+.noonoo-image .container.protruding, .noonoo-carousel .container.protruding {
+  box-shadow: var(--noonoo_protrusion_bright);
+}
+
+.noonoo-image .container img, .noonoo-image .container video, .noonoo-carousel .container img, .noonoo-carousel .container video {
+  display: block;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.carousel-button {
+  align-items: center;
+  background-image: var(--noonoo_protrusion_rounded_bright);
+  border-radius: 100%;
+  box-shadow: var(--noonoo_floating_card_shadow);
+  display: flex;
+  height: 2rem;
+  margin: 0.5rem;
+  justify-content: center;
+  width: 2rem;
+}
+
+.carousel-left, .carousel-right {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 20%;
+  z-index: 1;
+}
+
+.carousel-left {
+  background-image: linear-gradient(to right, #00000000, #00000000);
+  justify-content: flex-start;
+}
+
+.carousel-left:hover {
+  background-image: linear-gradient(to right, #00000010, #00000000);
+}
+
+.carousel-right {
+  background-image: linear-gradient(to left, #00000000, #00000000);
+  justify-content: flex-end;
+  right: 0;
+}
+
+.carousel-right:hover {
+  background-image: linear-gradient(to left, #00000010, #00000000);
+}
+
+.carousel-left:hover .carousel-button, .carousel-right:hover .carousel-button {
+  color: var(--spectacular_red_bright);
+  text-shadow: var(--spectacular_red_glowing);
+}
+
+.carousel-button:active, .carousel-left:active .carousel-button, .carousel-right:active .carousel-button {
+  box-shadow: var(--noonoo_floating_card_shadow), var(--noonoo_depression_bright);
+}
+
+.carousel-pagination {
+  bottom: 1rem;
+  display: flex;
+  gap: 0.3rem;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+.carousel-pagination button {
+  background-image: var(--noonoo_protrusion_rounded_bright);
+  box-shadow: var(--noonoo_floating_card_shadow);
+  content: "";
+  height: 0.6rem;
+  padding: 0;
+  width: 0.6rem;
+}
+
+.carousel-pagination button.selected {
+  background-image: var(--noonoo_protrusion_rounded_spectacular_red_bright);
+  cursor: default;
+}
+
+.carousel-pagination button:hover {
+  background-image: var(--noonoo_protrusion_rounded_spectacular_red_bright);
+}
+
+.carousel-pagination button:active {
+  background-image: var(--noonoo_protrusion_rounded_spectacular_red_bright);
+  box-shadow: var(--noonoo_depression_spectacular_red_bright);
+}
+
+.noonoo-image .caption, .noonoo-carousel .caption {
+  margin-left: 0.33rem;
+  margin-right: 0.33rem;
+  margin-top: 0.25rem;
 }
 
 /* Forms /////////////////////////////////////////////////////////////////////*/

@@ -11,6 +11,7 @@ tags: ["UX", "Web Development", "Persuasive Design", "HCI", "User-Centered Desig
 import { Prism } from '@astrojs/prism';
 import Code from '../components/Code.astro';
 import NNImage from '../components/NNImage.astro';
+import NNCarousel from '../components/NNCarousel.tsx';
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
 incididunt ut labore et dolore magna aliqua. Curabitur gravida arcu ac tortor 
@@ -22,6 +23,15 @@ eu. Nisi est sit amet facilisis magna etiam. Duis ultricies lacus sed turpis
 tincidunt. Nam libero justo laoreet sit amet cursus sit amet dictum. Rhoncus 
 dolor purus non enim praesent elementum `facilisis`. Laoreet suspendisse interdum 
 consectetur libero id faucibus.[^1]
+
+<NNCarousel 
+  client:load
+  images={[
+    {src: "/img/placeholder/placeholder1.jpg", alt: "swag", caption: "1"},
+    {src: "/img/placeholder/placeholder2.jpg", alt: "swag", caption: "2"},
+    {src: "/img/placeholder/placeholder4.jpg", alt: "swag", caption: "3"}
+  ]}
+/>
 
 <Code code={
 `// Here's a comment. <-- --> ===
@@ -58,7 +68,7 @@ filename="filename.js"
 
 Rhoncus mattis rhoncus urna neque viverra justo nec. Id interdum velit laoreet 
 id donec. Nulla facilisi etiam dignissim diam quis. Etiam sit amet nisl purus 
-in. Turpis cursus in hac habitasse platea dictumst quisque sagittis purus. Justo
+in. Turpis cursus in hac habitasse plsdatea dictumst quisque sagittis purus. Justo
 eget magna fermentum iaculis eu non diam phasellus. Sollicitudin ac orci 
 phasellus egestas tellus rutrum. Egestas erat imperdiet sed euismod nisi porta. 
 Erat nam at lectus urna duis convallis convallis tellus id. Bibendum at varius 

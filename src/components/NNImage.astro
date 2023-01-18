@@ -10,9 +10,9 @@
 import { Image } from '@astrojs/image/components';
 
 export interface Props {
-  src: string
-  alt: string
-  caption?: string
+  src: string,
+  alt: string,
+  caption?: string,
   animated?: boolean,
   straightCorners?: boolean,
   linked?: boolean,
@@ -37,7 +37,7 @@ if (straightCorners) {
 } else {
   imgClasses += " round-corners";
 }
-// Neumorphic object:
+// Neumorphic shape:
 switch(display) {
   case "depressed":
     imgClasses += " depressed";
@@ -70,53 +70,3 @@ if (!caption) {
   </a>
   <p class={captionClass}>{caption}</p>
 </div>
-
-<style>
-  .noonoo-image {
-    margin-bottom: 0.5rem;
-    margin-top: 0.5rem;
-  }
-
-  .noonoo-image .container {
-    overflow: hidden;
-    position: relative;
-    display: block;
-  }
-
-  .noonoo-image .container.round-corners {
-    border-radius: 1.4rem;
-  }
-
-  .noonoo-image .container.straight-corners {
-    border-radius: 0;
-  }
-  
-  .noonoo-image .container::before {
-    overflow: hidden;
-    content: "";
-    height: 100%;
-    width: 100%;
-    position: absolute;
-  }
-
-  .noonoo-image .container.depressed::before {
-    box-shadow: var(--noonoo_depression_img);
-  }
-
-  .noonoo-image .container.protruding {
-    box-shadow: var(--noonoo_protrusion_bright);
-  }
-
-  .noonoo-image .container img, .noonoo-image .container video {
-    display: block;
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-  }
-
-  .noonoo-image .caption {
-    margin-left: 0.33rem;
-    margin-right: 0.33rem;
-    margin-top: 0.25rem;
-  }
-</style>
