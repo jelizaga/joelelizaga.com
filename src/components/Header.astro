@@ -3,36 +3,42 @@ export interface Props {
   heading?: string;
   headingIcon?: string;
   img?: string;
+  slug?: string;
 }
 
-const { heading, headingIcon, img } = Astro.props as Props;
+const { heading, headingIcon, img, slug } = Astro.props as Props;
 ---
 
 <header>
-  <div class="heading">
-    <h1>
-      <span class="icon"><i class={headingIcon}></i></span>
-      <span class="title">{heading}</span>
-    </h1>
-  </div>
-  <div class="container">
-    <img src={img} alt="" />
-  </div>
+  <a href={slug}>
+    <div class="heading">
+      <h1>
+        <span class="icon"><i class={headingIcon}></i></span>
+        <span class="title">{heading}</span>
+      </h1>
+    </div>
+    <div class="header-bg">
+      <img src={img} alt="" />
+    </div>
+  </a>
 </header>
 
 <style>
   header {
     display: block;
-    height: 6rem;
+    height: 7rem;
     position: relative;
+    width: 100%;
   }
 
-  header::before {
-    box-shadow: var(--noonoo_depression_img);
+  header a {
+    height: inherit;
+    width: inherit;
   }
 
-  header .heading {
-    display: block;
+  header a .heading {
+    align-items: center;
+    display: flex;
     height: inherit;
     left: 50%;
     margin-left: auto;
@@ -48,25 +54,29 @@ const { heading, headingIcon, img } = Astro.props as Props;
   }
 
   header h1::after {
-    background-image: linear-gradient(to right, #00000090, #00000000);
-    border-left: 3px var(--spectacular_red_bright) double;
+    background-image: linear-gradient(to right, #00000098, #00000000);
+    /* border-left: 3px var(--spectacular_red_bright) double; */
     content: "";
     display: inline-block;
     height: inherit;
     left: 1.5rem;
     position: absolute;
-    transform: skew(-35deg);
+    transform: skew(-40deg);
     width: 115%;
     z-index: 1;
   }
 
   header h1 {
     align-items: center;
-    color: var(--tahoma_white_bright);
+    background-color: var(--tahoma_white_dim);
+    border-radius: 1.4rem;
+    box-shadow: var(--noonoo_floating_card_shadow);
+    color: var(--lawetlatla_ash_dim);
     display: inline-flex;
     gap: 1rem;
-    height: inherit;
     left: 0px;
+    padding-left: 1rem;
+    padding-right: 1rem;
     position: absolute;
     text-align: left;
     width: max-content;
@@ -78,17 +88,28 @@ const { heading, headingIcon, img } = Astro.props as Props;
 
   header h1 .icon {
     align-items: center;
-    background-color: var(--tahoma_white_bright);
+    background-image: var(--noonoo_protrusion_rounded_bright);
     border-radius: 100%;
+    box-shadow: var(--noonoo_protrusion_bright);
     display: flex;
     font-size: 0.85em;
     height: 1.3em;
     justify-content: center;
+    transition: box-shadow 0.1s ease-in;
     width: 1.3em;
   }
 
-  header h1 .icon i {
-    color: var(--lawetlatla_ash_dim);
+  header a .heading h1 .icon i {
+    color: var(--lawetlatla_ash_bright);
+    transition: 0.1s text-shadow ease-in, 0.1s color ease-in;
+  }
+
+  header a:hover .heading h1 .icon i {
+    color: var(--spectacular_red_bright);
+  }
+
+  header a:active .heading h1 .icon {
+    box-shadow: var(--noonoo_protrusion_bright), var(--noonoo_depression_bright);
   }
 
   header h1 span {
@@ -96,7 +117,7 @@ const { heading, headingIcon, img } = Astro.props as Props;
     z-index: 2;
   }
 
-  header .container {
+  header .header-bg {
     display: block;
     height: inherit;
     line-height: 0;
@@ -104,15 +125,16 @@ const { heading, headingIcon, img } = Astro.props as Props;
     position: relative;
   }
 
-  header .container::before {
+  header .header-bg::before {
+    box-shadow: var(--noonoo_depression_img);
     content: "";
     height: 100%;
     overflow: hidden;
-    width: 100%;
     position: absolute;
+    width: 100%;
   }
 
-  header .container img, header .container video {
+  header .header-bg img, header .header-bg video {
     display: block;
     object-fit: cover;
     height: 100%;
@@ -121,7 +143,7 @@ const { heading, headingIcon, img } = Astro.props as Props;
 
   @media screen and (max-width: 640px) {
 
-    header .heading {
+    header a .heading {
       width: 95vw;
     }
     
