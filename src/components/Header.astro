@@ -53,19 +53,6 @@ const { heading, headingIcon, img, slug } = Astro.props as Props;
     z-index: 0;
   }
 
-  header h1::after {
-    background-image: linear-gradient(to right, #00000098, #00000000);
-    /* border-left: 3px var(--spectacular_red_bright) double; */
-    content: "";
-    display: inline-block;
-    height: inherit;
-    left: 1.5rem;
-    position: absolute;
-    transform: skew(-40deg);
-    width: 115%;
-    z-index: 1;
-  }
-
   header h1 {
     align-items: center;
     background-color: var(--tahoma_white_dim);
@@ -80,10 +67,6 @@ const { heading, headingIcon, img, slug } = Astro.props as Props;
     position: absolute;
     text-align: left;
     width: max-content;
-  }
-
-  header h1 .title {
-    text-shadow: var(--noonoo_floating_card_shadow);
   }
 
   header h1 .icon {
