@@ -6,14 +6,19 @@
 
 import Layout from "../layouts/Layout.astro";
 import ProjectsGrid from "../components/ProjectsGrid.astro";
+import Header from "../components/Header.astro";
 ---
 
 <Layout
   title="Joel Elizaga | Projects"
   currentPage={"projects"}
 >
+  <Header
+    heading="Projects"
+    headingIcon="fa-solid fa-compass-drafting"
+    img="/img/placeholder/placeholder5.jpg"
+  />
   <main>
-    <h1><i class="fa-solid fa-compass-drafting"></i> Projects</h1>
     <ProjectsGrid />
   </main>
 </Layout>

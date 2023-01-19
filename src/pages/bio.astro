@@ -4,6 +4,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 // Bio page @ `/bio`.
 
+import Header from '../components/Header.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
@@ -11,8 +12,12 @@ import Layout from '../layouts/Layout.astro';
 	title="Joel Elizaga | Bio"
 	currentPage={"bio"}
 >
+	<Header
+		heading="Bio"
+		headingIcon="fa-solid fa-face-smile"
+		img="/img/placeholder/placeholder4.jpg"
+	/>
 	<main>
-		<h1><i class="fa-solid fa-face-smile"></i> Bio</h1>
 	</main>
 </Layout>
 
