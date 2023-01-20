@@ -8,6 +8,7 @@
 import Layout from "../../../layouts/Layout.astro";
 import ProjectCard from "../../../components/ProjectCard.astro";
 import ProjectsGrid from "../../../components/ProjectsGrid.astro";
+import Header from "../../../components/Header.astro";
 
 export async function getStaticPaths() {
   const projects = await Astro.glob("../../../project/*.mdx");
@@ -31,11 +32,14 @@ const title = `Joel Elizaga | Projects | ${tag}`;
   title={title}
   currentPage={"projects"}
 >
+  <Header
+    heading="Projects"
+    headingIcon="fa-solid fa-compass-drafting"
+    focus={tag}
+    img="/img/placeholder/placeholder5.jpg"
+    slug="/projects"
+  />
   <main>
-    <h1>
-      <i class="fa-solid fa-compass-drafting"></i> Projects / 
-      <a href="/projects" class="current-tag">{tag}<i class="fa-solid fa-x"></i></a>
-    </h1>
     <ProjectsGrid
       projects={projects}
     />
