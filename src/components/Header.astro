@@ -71,12 +71,12 @@ if (focus) {
     display: inline-flex;
     gap: 1rem;
     left: 0px;
+    max-width: 100%;
     overflow: hidden;
     padding-left: 1rem;
     padding-right: 1rem;
     position: absolute;
     text-align: left;
-    width: max-content;
   }
 
   header h1.focus {
@@ -148,6 +148,24 @@ if (focus) {
     object-fit: cover;
     height: 100%;
     width: 100%;
+  }
+
+  @media screen and (max-width: 1100px) {
+
+    header h1.focus {
+      font-size: clamp(33px, 2.604166vw, 2.604166vw);
+      line-height: clamp(53px, 4.16666vw, 4.16666vw);
+    }
+
+  }
+
+  @media screen and (max-width: 880px) {
+
+    header h1.focus {
+      font-size: clamp(26px, 2.03125vw, 2.03125vw);
+      line-height: clamp(42px, 3.3333vw, 3.3333vw);
+    }
+
   }
 
   @media screen and (max-width: 640px) {
