@@ -1,13 +1,27 @@
 ---
+////////////////////////////////////////////////////////////////////////////////
+// Header.astro ////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+// `<header>` displayed on primary pages.
+// Accepts an image or an animated video as a background.
+
 export interface Props {
-  heading?: string;
+  heading: string;
   headingIcon?: string;
   focus?: string;
-  img?: string;
-  slug?: string;
+  bgSrc: string;
+  slug: string;
+  animated?: boolean;
 }
 
-const { heading, headingIcon, focus, img, slug } = Astro.props as Props;
+const {
+  heading,
+  headingIcon,
+  focus,
+  bgSrc,
+  slug, 
+  animated = false
+} = Astro.props as Props;
 
 let h1Classes = "";
 if (focus) {
@@ -19,7 +33,9 @@ if (focus) {
   <a href={slug}>
     <div class="heading">
       <h1 class={h1Classes}>
-        <span class="icon"><i class={headingIcon}></i></span>
+        {headingIcon &&
+          <span class="icon"><i class={headingIcon}></i></span>
+        }
         <span class="title">{heading}</span>
         {focus &&
           <span class="focus">{focus}</span>
@@ -27,7 +43,12 @@ if (focus) {
       </h1>
     </div>
     <div class="header-bg">
-      <img src={img} alt="" />
+      {!animated &&
+        <img src={bgSrc} alt="" />
+      }
+      {animated &&
+        <video autoplay loop muted src={bgSrc}></video>
+      }
     </div>
   </a>
 </header>
@@ -65,7 +86,7 @@ if (focus) {
   header h1 {
     align-items: center;
     background-color: var(--tahoma_white_dim);
-    border-radius: 1.4rem;
+    border-radius: 2.7rem;
     box-shadow: var(--noonoo_floating_card_shadow);
     color: var(--lawetlatla_ash_dim);
     display: inline-flex;
@@ -87,6 +108,7 @@ if (focus) {
 
   header h1 .focus {
     box-shadow: var(--noonoo_depression_bright);
+    font-weight: normal;
     padding-left: 1rem;
     padding-right: 1rem;
   }
@@ -175,5 +197,4 @@ if (focus) {
     }
     
   }
-
 </style>
