@@ -76,14 +76,11 @@ const {
 
 	.blog-post-card-details .date {
 		color: var(--lawetlatla_ash_bright);
+		text-shadow: none;
 	}
 
 	.blog-post-card-details p {
 		color: var(--lawetlatla_ash_dim);
-	}
-
-	.blog-post-card .blog-post-card-details {
-		text-decoration: none;
 		text-shadow: none;
 	}
 
@@ -98,6 +95,10 @@ const {
 		padding-bottom: 1rem;
 		padding-left: 2rem;
 		padding-right: 2rem;
+	}
+
+	.blog-post-card .blog-post-card-details a:hover p {
+		text-shadow: none !important;
 	}
 
 	a:visited .blog-post-card-details h4 {
@@ -123,7 +124,7 @@ const {
 
 	.blog-post-card:hover .blog-post-card-details p {
 		color: var(--lawetlatla_ash_dim);
-		text-shadow: none;
+		text-shadow: none !important;
 	}
 
 	.blog-post-card:hover .blog-post-card-img img {
