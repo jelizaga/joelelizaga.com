@@ -9,6 +9,7 @@
 import Layout from "../../layouts/Layout.astro";
 import NNImage from "../../components/NNImage.astro";
 import Tag from "../../components/Tag.astro";
+import Tooltip from "../../components/Tooltip.astro";
 
 export async function getStaticPaths() {
   const blogPosts = await Astro.glob("../../blog/*.mdx");
@@ -34,7 +35,18 @@ const { Content, frontmatter } = Astro.props.blog;
     <article class="blog-article noonoo-protruding-card">
       <header>
         <div class="content">
-          <a class="rss-button"></a>
+          <a 
+            class="rss-button tooltip"
+            aria-labelledby="rss"
+            href="rss.xml"
+            target="_blank"
+          >
+            <i class="fa-solid fa-rss"></i>
+            <Tooltip
+              id="rss"
+              content="RSS Feed"
+            />
+          </a>
           <p class="date subheading">
             {new Date(frontmatter.pubDate).toLocaleDateString()}
           </p>
@@ -72,4 +84,22 @@ const { Content, frontmatter } = Astro.props.blog;
     color: var(--lawetlatla_ash_bright);
   }
 
+  .rss-button {
+    align-items: center;
+    float: right;
+    background-image: var(--noonoo_protrusion_rounded_bright);
+    border-radius: 100%;
+    box-shadow: var(--noonoo_protrusion_bright);
+    color: var(--lawetlatla_ash_dim);
+    display: flex;
+    height: 1.5rem;
+    justify-content: center;
+    position: relative;
+    transition: box-shadow 0.1s ease-in;
+    width: 1.5rem;
+  }
+
+  .rss-button:active {
+    box-shadow: var(--noonoo_protrusion_bright), var(--noonoo_depression_bright);
+  }
 </style>

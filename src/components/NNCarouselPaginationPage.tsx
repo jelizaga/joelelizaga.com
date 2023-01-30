@@ -6,7 +6,7 @@
 import { render } from "solid-js/web";
 import { createEffect, createSignal, For } from "solid-js";
 
-export default function NNCarouselPage(props) {
+export default function NNCarouselPage(props: any) {
   // `paginationIndex` - Index of the `Image` associated with this
   // `NNCarouselPage`.
   const [paginationIndex, setPaginationIndex] = createSignal(props.index);

@@ -352,7 +352,6 @@ article.noonoo-protruding-card {
   background-color: var(--tahoma_white_dim);
   border-radius: 1.4rem;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 .noonoo-protruding-card {

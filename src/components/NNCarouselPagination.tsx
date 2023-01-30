@@ -17,7 +17,7 @@ interface CarouselImages {
   images: Image[];
 }
 
-export default function NNCarouselPagination(props) {
+export default function NNCarouselPagination(props: any) {
   return (
     <div class="carousel-pagination">
       <For each={props.images}>{(image, i) =>
