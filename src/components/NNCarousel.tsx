@@ -2,6 +2,7 @@
 // NNCarousel.tsx //////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 // Interactive image/video carousel.
+
 import { render } from "solid-js/web";
 import { createSignal, createEffect, For } from "solid-js";
 import NNCarouselPagination from "./NNCarouselPagination";
@@ -21,9 +22,6 @@ export default function NNCarousel({images}: CarouselImages, id: string, straigh
   // `focusedImage` - Index of the carousel's currently focused `Image` in
   // `image`. 
   const [focusedImage, setFocusedImage] = createSignal(0);
-  createEffect(() => {
-    console.log(`Focused: ${focusedImage()}`);
-  })
   // Classes ///////////////////////////////////////////////////////////////////
   // Corners:
   let imgClasses = "container";
@@ -50,7 +48,6 @@ export default function NNCarousel({images}: CarouselImages, id: string, straigh
   // Functions /////////////////////////////////////////////////////////////////
   // `carouselLeft` - Focuses image to the left of the current image.
   const carouselLeft = () => {
-    console.log("L");
     if (focusedImage() == 0) {
       setFocusedImage(images.length - 1);
     } else {
@@ -59,7 +56,6 @@ export default function NNCarousel({images}: CarouselImages, id: string, straigh
   }
   // `carouselRight` - Focuses image to the right of the current image.
   const carouselRight = () => {
-    console.log("R");
     if (focusedImage() == images.length - 1) {
       setFocusedImage(0);
     } else {

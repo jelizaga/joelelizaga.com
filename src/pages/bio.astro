@@ -6,6 +6,7 @@
 
 import Header from '../components/Header.astro';
 import Layout from '../layouts/Layout.astro';
+import Marquee from '../components/Marquee.astro';
 ---
 
 <Layout 
@@ -19,8 +20,133 @@ import Layout from '../layouts/Layout.astro';
 		slug="/bio"
 	/>
 	<main>
+		<article id="bio" class="noonoo-protruding-card">
+			<div class="hyperlink-buttons">
+				<a href="/doc/joel_elizaga_resume.pdf">
+					<i class="fa-solid fa-file-pdf"></i>
+				</a>
+				<a href="https://github.com/jelizaga">
+					<i class="fa-brands fa-github"></i>
+				</a>
+				<a href="/doc/joel_elizaga_resume.pdf">
+					<i class="fa-brands fa-linkedin"></i>
+				</a>
+			</div>
+			<div class="content">
+				<h2>
+					Welcome!
+				</h2>
+				<img
+					class="headshot"
+					src="/img/placeholder/placeholder3.jpg"
+					alt="Headshot of Joel Elizaga"
+				/>
+				<p>
+					I practice UX engineering and I study human-computer interaction.
+				</p>
+				<p>
+					I'm currently available for <em>front-end development</em>, 
+					<em>full-stack development</em> and <em>UX engineering</em> roles. Got
+					a role to fill? <a href="/#contact">Contact me!</a>
+				</p>
+				<p>
+					I've worked as a UX designer for numerous corporate clients while
+					employed at Infosys Ltd. I'm a fluent client-side web developer, and
+					lately I've been cultivating my full-stack and computer science
+					abilities so I can build technologies front-to-back. 
+				</p>
+				<p>
+					With that business aside, I like:
+				</p>
+				<Marquee
+					text="guinea pigs, terrariums, hiking, design, technology, ethics in technology, open source, cybernetics, stationary, petrichor, cognitive science, film, photography, gradually replacing all my plastic stuff with glass stuff, daydreaming of unobtainable utopianism, street lamps and Christmas lights under myopia & astigmatism, spaced-repetition learning, growing food, wood, simulations, archivism, writing, exploration, hilariously awful movies, history, artifacts that accomplish something with precision (intentionally or not), shortcuts & hotkeys, instrumental music that transports listeners to far-off fictitious places, dérive, bok choy, mushrooms, tofu, stir fry, humanism, snow-capped mountains towering in the distance, the waves of the Puget Sound crushing against gray beaches and liquifying sand castles, "
+				/>
+			</div>
+		</article>
+
+		<article class="noonoo-protruding-card">
+			<div class="content">
+				<h2>
+					Technology
+				</h2>
+				<p>
+					Let's consider technology from its most atomic unit; the tool.
+				</p>
+				<p>
+					What's your favorite tool? Consider what makes this tool of yours
+					awesome.
+				</p>
+				<p>
+					Is this tool <b>intuitive</b>? Does its mere design silently speak
+					to its use and reveal its functionality?
+				</p>
+				<p>
+					Is this tool <b>portable</b>? Is it always available when you need it,
+					or is it so <b>durable</b> that you can take it with you anywhere?
+				</p>
+				<p>
+					Is this tool <b>performant</b>? Can it do something with ingenious
+					proficiency like no other tool can? Does it give you a competitive
+					edge?
+				</p>
+				<p>
+					Does this favorite tool invite its use with a compelling aesthetic 
+					that <b>resonates</b> with you? Does its design remind you of something
+					meaningful, or speak to you in some way?
+				</p>
+				<p>
+					Is this tool a spectacle to use? Can you play it like an instrument?
+					Does mastery of this tool provoke a <b>joy of proficiency</b>, or a
+					suspension of self-awareness and time?
+				</p>
+				<p>
+					Is this tool <b>ergonomic</b>? Does it protect you from strain, fatigue, and 
+					pain? Does it conform to your personal capacities like nothing else?
+				</p>
+				<p>
+					Has this tool stood the test of time? Does it <b>carry its own 
+					legend</b>? Is the thing practically immortal—a stalwart, ever-sharp
+					ally?
+				</p>
+				<p>
+					We're surrounded by increasingly powerful and miraculous technologies,
+					developed, tested, published, evolved, licensed, purchased, and used
+					every day. These technologies are tools built with tools built with
+					tools. When we develop and design our technologies we can select from
+					a constellation of awesome features our users will appreciate.
+				</p>
+			</div>
+		</article>
 	</main>
 </Layout>
 
 <style>
+	article .content .headshot {
+		border: var(--tahoma_white_dim) solid 3px;
+		border-radius: 100%;
+		box-shadow: var(--noonoo_protrusion_bright);
+		float: right;
+		height: clamp(8rem, 8rem, 275px);
+		margin-left: 1rem;
+		width: clamp(8rem, 8rem, 275px);
+	}
+
+	#bio {
+		overflow: hidden;
+	}
+
+	article .hyperlink-buttons {
+		box-shadow: var(--noonoo_protrusion_bright);
+		padding-left: 3rem;
+		padding-right: 3rem;
+	}
+
+	.interests {
+		border-radius: 1.4rem;
+		box-shadow: var(--noonoo_depression_bright);
+		padding-bottom: 0.3rem;
+		padding-left: 1rem;
+		padding-right: 1rem;
+		padding-top: 0.3rem;
+	}
 </style>

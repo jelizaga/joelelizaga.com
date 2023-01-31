@@ -1,0 +1,59 @@
+---
+export interface Props {
+  text: string;
+  direction?: string;
+}
+
+const {
+  text,
+  direction = "left"
+} = Astro.props as Props;
+
+
+---
+
+<div class="marquee animated">
+  <div class="marquee-content">
+    <span class="marquee-text-a">{text}</span>
+  </div>
+  <div class="marquee-content">
+    <span class="marquee-text-b">{text}</span>
+  </div>
+</div>
+
+<style>
+  .marquee {
+    border-radius: 1.4rem;
+    box-shadow: var(--noonoo_depression_bright);
+    display: flex;
+    gap: 0.3rem;
+    height: calc(1rem + 0.3rem + 0.3rem);
+    overflow: hidden;
+    padding-bottom: 0.3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.3rem;
+    position: relative;
+  }
+
+  .marquee-content {
+    display: flex;
+    flex-shrink: 0;
+    gap: 1rem;
+    justify-content: space-around;
+    min-width: 100%;
+  }
+
+  .animated .marquee-content {
+    animation: marquee-scroll-left 120s linear infinite;
+  }
+
+  @keyframes marquee-scroll-left {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - 1rem));
+    }
+  }
+</style>

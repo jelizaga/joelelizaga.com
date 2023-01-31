@@ -148,6 +148,7 @@ p a:visited {
 }
 
 sup, sup a {
+  font-size: 0.8rem;
   line-height: 0;
 }
 
@@ -195,9 +196,23 @@ blockquote {
   padding-top: 0.5rem;
 }
 
+.content section.footnotes ol li p {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
 .footnotes ol {
   margin-bottom: 0;
   margin-top: 0;
+}
+
+.footnotes h2 {
+  font-size: clamp(16px, 1.614583vw, 1.614583vw);
+  line-height: clamp(34px, 2.70833vw, 2.70833vw);
+  height: auto;
+  margin: 0;
+  position: relative;
+  width: auto;
 }
 
 .data-footnote-backref {
@@ -214,7 +229,7 @@ blockquote {
 }
 
 .data-footnote-backref:active {
-  box-shadow: var(--noonoo_depression_bright);
+  box-shadow: var(--noonoo_depression_bright), var(--noonoo_protrusion_bright);
 }
 
 .hidden {
@@ -304,11 +319,16 @@ main {
   width: 61.803vw;
 }
 
-.blog-article .content, .project-article .content {
+.blog-article .content, .project-article .content, article .content {
   padding-top: 1rem;
   padding-left: 3rem;
   padding-right: 3rem;
   padding-bottom: 1rem;
+}
+
+.blog-article .content p, .project-article .content p, article .content p {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .blog-article header h1 {

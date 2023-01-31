@@ -12,4 +12,5 @@ export const get = () => rss({
   site: "https://joelelizaga.com/blog",
   items: import.meta.glob("../../blog/*.mdx"),
   customData: "<language>en-us</language>",
+  // stylesheet: "../../style/rss.xls",
 });
