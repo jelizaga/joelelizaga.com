@@ -15,12 +15,12 @@
     "@astrojs/solid-js": "^1.0.0",
     "astro": "^1.0.5",
     "sharp": "^0.31.2",
-    "solid-js": "^1.4.8"
+    "solid-js": "^1.4.8",
+    "swup": "^2.0.19"
   },
   "dependencies": {
     "@astrojs/prism": "^1.0.2",
     "@astrojs/rss": "^2.0.0",
-    "hotkeys-js": "^3.10.1",
-    "swup": "^2.0.19"
+    "hotkeys-js": "^3.10.1"
   }
 }
