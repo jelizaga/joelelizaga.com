@@ -7,6 +7,7 @@
 import Header from '../components/Header.astro';
 import Layout from '../layouts/Layout.astro';
 import Marquee from '../components/Marquee.astro';
+import Tooltip from '../components/Tooltip.astro';
 ---
 
 <Layout 
@@ -21,17 +22,6 @@ import Marquee from '../components/Marquee.astro';
 	/>
 	<main>
 		<article id="bio" class="noonoo-protruding-card">
-			<div class="hyperlink-buttons">
-				<a href="/doc/joel_elizaga_resume.pdf">
-					<i class="fa-solid fa-file-pdf"></i>
-				</a>
-				<a href="https://github.com/jelizaga">
-					<i class="fa-brands fa-github"></i>
-				</a>
-				<a href="/doc/joel_elizaga_resume.pdf">
-					<i class="fa-brands fa-linkedin"></i>
-				</a>
-			</div>
 			<div class="content">
 				<h2>
 					Welcome!
@@ -59,8 +49,46 @@ import Marquee from '../components/Marquee.astro';
 					With that business aside, I like:
 				</p>
 				<Marquee
-					text="guinea pigs, terrariums, hiking, design, technology, ethics in technology, open source, cybernetics, stationary, petrichor, cognitive science, film, photography, gradually replacing all my plastic stuff with glass stuff, daydreaming of unobtainable utopianism, street lamps and Christmas lights under myopia & astigmatism, spaced-repetition learning, growing food, wood, simulations, archivism, writing, exploration, hilariously awful movies, history, artifacts that accomplish something with precision (intentionally or not), shortcuts & hotkeys, instrumental music that transports listeners to far-off fictitious places, dérive, bok choy, mushrooms, tofu, stir fry, humanism, snow-capped mountains towering in the distance, the waves of the Puget Sound crushing against gray beaches and liquifying sand castles, "
+					text="guinea pigs, terrariums, hiking, design, technology, ethics in technology, open source, cybernetics, stationary, petrichor, cognitive science, film, photography, gradually replacing all my plastic stuff with glass stuff, daydreaming of unobtainable utopianism, street lamps and Christmas lights under myopia & astigmatism, spaced-repetition learning, growing food, wood, simulations, archivism, writing, exploration, hilariously awful movies, history, artifacts that accomplish something with precision (intentionally or not), shortcuts & hotkeys, instrumental music that transports listeners to far-off fictitious places, dérive, bok choy, mushrooms, tofu, stir fry, humanism, snow-capped mountains towering in the distance, the waves of the Puget Sound crushing against gray beaches and liquifying sand castles, the giant pacific octopodes probably hanging out in the ruins of the Tacoma Narrows Bridge, "
 				/>
+			</div>
+			<div class="hyperlink-buttons">
+				<a
+					class="tooltip"
+					href="/doc/joel_elizaga_resume.pdf"
+					target="_blank"
+					aria-labelledby="bio-resume-tooltip"
+				>
+					<i class="fa-solid fa-file-pdf"></i>
+					<Tooltip
+						id="bio-resume-tooltip"
+						content="Resume"
+					/>
+				</a>
+				<a
+					class="tooltip"
+					href="https://github.com/jelizaga"
+					target="_blank"
+					aria-labelledby="bio-github-tooltip"
+				>
+					<i class="fa-brands fa-github"></i>
+					<Tooltip
+						id="bio-github-tooltip"
+						content="GitHub"
+					/>
+				</a>
+				<a 
+					class="tooltip"
+					href="https://linkedin.com/in/joel-elizaga"
+					target="_blank"
+					aria-labelledby="bio-resume-tooltip"
+				>
+					<i class="fa-brands fa-linkedin"></i>
+					<Tooltip
+						id="bio-resume-tooltip"
+						content="LinkedIn"
+					/>
+				</a>
 			</div>
 		</article>
 
@@ -137,8 +165,39 @@ import Marquee from '../components/Marquee.astro';
 
 	article .hyperlink-buttons {
 		box-shadow: var(--noonoo_protrusion_bright);
+		display: flex;
+		gap: 0.5rem;
+		justify-content: end;
+		padding-bottom: 0.3rem;
 		padding-left: 3rem;
 		padding-right: 3rem;
+		padding-top: 0.3rem;
+	}
+
+	article .hyperlink-buttons a {
+		align-items: center;
+		background-image: var(--noonoo_protrusion_rounded_bright);
+		border-radius: 100%;
+		box-shadow: var(--noonoo_protrusion_bright);
+		display: flex;
+		height: 1.5rem;
+		justify-content: center;
+		position: relative;
+		transition: box-shadow 0.1s ease-in;
+		width: 1.5rem;
+	}
+
+	article .hyperlink-buttons a i {
+		color: var(--lawetlatla_ash_dim);
+		transition: 0.1s ease-in color, 0.1s ease-in text-shadow;
+	}
+
+	article .hyperlink-buttons a:hover i {
+		color: var(--spectactular_red_bright);
+	}
+
+	article .hyperlink-buttons a:active {
+		box-shadow: var(--noonoo_protrusion_bright), var(--noonoo_depression_bright);
 	}
 
 	.interests {
