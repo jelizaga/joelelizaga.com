@@ -721,10 +721,12 @@ option {
 }
 
 .tag {
+  align-items: center;
   border-radius: 1.4rem;
   box-shadow: var(--noonoo_protrusion_bright);
   color: var(--lawetlatla_ash_bright);
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
   transition: box-shadow 0.1s ease-in;
 }
 
