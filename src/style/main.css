@@ -88,17 +88,13 @@ p {
   margin: 0;
 }
 
-.blog-article .content p:first-child, .project-article .content p:first-child {
-  margin-top: 0;
-}
-
 h1 {
   font-size: clamp(54px, 4.21875vw, 4.21875vw);
   line-height: clamp(83px, 6.510416vw, 6.510416vw);
   margin: 0;
 }
 
-h2, .project-article h1, .blog-article h1 {
+h2, .project-article h1, .blog-article h1, .introduction-card h1 {
   font-size: clamp(42px, 3.3333vw, 3.3333vw);
   line-height: clamp(66px, 5.20833vw, 5.20833vw);
   margin: 0;
@@ -196,11 +192,11 @@ blockquote {
   padding-top: 0.3rem;
 }
 
-.blog-article .content blockquote p:first-child, .project-article .content blockquote p:first-child {
+.blog-article .content p:first-of-type, .project-article .content p:first-of-type, .introduction-card .content p:first-of-type {
   margin-top: 0;
 }
 
-.blog-article .content blockquote p:last-child, .project-article .content blockquote p:last-child {
+.blog-article .content blockquote p:last-of-type, .project-article .content blockquote p:last-of-type, .introduction-card .content p:last-of-type {
   margin-bottom: 0;
 }
 
@@ -349,7 +345,7 @@ main {
   padding-bottom: 1rem;
 }
 
-.blog-article .content p, .project-article .content p, article .content p {
+.blog-article .content p, .project-article .content p, article .content p, .introduction-card .content p {
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
 }
@@ -629,7 +625,7 @@ button:active, button.primary:active, a.button:active, a.button-primary:active {
   box-shadow: var(--noonoo_protrusion_bright), var(--noonoo_depression_bright);
 }
 
-button i, a.button i {
+button i, a.button i, a.button-primary i {
   font-size: 0.8rem;
 }
 
@@ -640,7 +636,7 @@ form button {
 .button-set {
   display: flex;
   gap: 0.6rem;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 
 /* Input /////////////////////////////////////////////////////////////////////*/
