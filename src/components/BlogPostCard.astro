@@ -31,7 +31,7 @@ const {
 	</div>
 	<div class="blog-post-card-details">
 		<a href={slug}>
-			<h4>{title}</h4>
+			<h2>{title}</h2>
 			<p class="subheading date">{new Date(pubDate).toLocaleDateString()}</p>
 			<p>{description}</p>
 		</a>
@@ -69,9 +69,11 @@ const {
 		transition: height 0.2s;
 	}
 
-	.blog-post-card-details h4 {
+	.blog-post-card-details h2 {
 		color: var(--lawetlatla_ash_dim);
-		transition: color 0.1s, text-shadow 0.1s;
+		font-size: clamp(26px, 2.03125vw, 2.03125vw);
+		line-height: clamp(42px, 3.3333vw, 3.3333vw);
+		transition: color 0.1s ease-in, text-shadow 0.1s ease-in;
 	}
 
 	.blog-post-card-details .date {
@@ -101,7 +103,7 @@ const {
 		text-shadow: none !important;
 	}
 
-	a:visited .blog-post-card-details h4 {
+	a:visited .blog-post-card-details h2 {
 		color: var(--lawetlatla_ash_dim);
 	}
 
@@ -113,7 +115,7 @@ const {
 		color: var(--lawetlatla_ash_bright);
 	}
 
-	.blog-post-card:hover .blog-post-card-details h4 {
+	.blog-post-card:hover .blog-post-card-details h2 {
 		color: var(--spectacular_red_bright);
 		text-shadow: var(--spectacular_red_glowing);
 	}

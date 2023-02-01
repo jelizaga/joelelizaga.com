@@ -18,7 +18,7 @@ interface CarouselImages {
   images: Image[];
 }
 
-export default function NNCarousel({images}: CarouselImages, id: string, straightCorners?: boolean, display?: string) {
+export default function NNCarousel({images}: CarouselImages, id: string, straightCorners?: boolean, display?: string, aspectRatio?: string) {
   // `focusedImage` - Index of the carousel's currently focused `Image` in
   // `image`. 
   const [focusedImage, setFocusedImage] = createSignal(0);
@@ -44,6 +44,14 @@ export default function NNCarousel({images}: CarouselImages, id: string, straigh
     case "flat":
       imgClasses += "flat";
       break;
+  }
+  // Aspect ratio:
+  if (aspectRatio) {
+    switch(aspectRatio) {
+      case "16 / 9":
+        imgClasses += "16-9";
+        break;
+    }
   }
   // Functions /////////////////////////////////////////////////////////////////
   // `carouselLeft` - Focuses image to the left of the current image.

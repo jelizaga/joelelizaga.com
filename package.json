@@ -21,6 +21,7 @@
   "dependencies": {
     "@astrojs/prism": "^1.0.2",
     "@astrojs/rss": "^2.0.0",
-    "hotkeys-js": "^3.10.1"
+    "hotkeys-js": "^3.10.1",
+    "image-size": "^1.0.2"
   }
 }
