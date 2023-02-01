@@ -1,3 +1,8 @@
+---
+import Tooltip from "./Tooltip.astro";
+
+---
+
 <header id="introduction">
   <div class="introduction-container">
     <div class="introduction-card noonoo-floating-card">
@@ -6,22 +11,62 @@
         </span>
         Joel Elizaga
       </h1>
-      <img 
-        class="headshot" 
-        src="/img/placeholder/placeholder3.jpg" 
-        alt="Headshot of Joel Elizaga" 
-      />
-      <p>
-        I'm a <code>UX engineer</code> practicing an HCI-informed fusion of
-        <em>design</em> and <em>development</em>.
-      </p>
-      <p>
-        My aim is to build technologies that are both <strong>usable</strong> 
-        and <strong>useful</strong>.
-      </p>
-      <div class="button-set">
-        <a href="#projects" class="button">Projects</a>
-        <a href="#contact" class="button-primary"><i class="fa-solid fa-paper-plane"></i> Contact</a>
+      <div class="content">
+        <img 
+          class="headshot" 
+          src="/img/placeholder/placeholder3.jpg" 
+          alt="Headshot of Joel Elizaga" 
+        />
+        <p>
+          I'm a <code>UX engineer</code> practicing an HCI-informed fusion of
+          <em>design</em> and <em>development</em>.
+        </p>
+        <p>
+          My aim is to build technologies that are both <strong>usable</strong> 
+          and <strong>useful</strong>.
+        </p>
+        <div class="button-set">
+          <a href="#projects" class="button">Projects</a>
+          <a href="#contact" class="button-primary"><i class="fa-solid fa-paper-plane"></i> Contact</a>
+        </div>
+      </div>
+      <div class="hyperlink-buttons">
+        <a
+          class="tooltip"
+          href="https://github.com/jelizaga"
+          target="_blank"
+          aria-labelledby="intro-github-tooltip"
+        >
+          <i class="fa-brands fa-github"></i>
+          <Tooltip
+            id="intro-github-tooltip"
+            content="GitHub"
+          />
+        </a>
+        <a
+          class="tooltip"
+          href="https://linkedin.com/in/joel-elizaga"
+          target="_blank"
+          aria-labelledby="intro-linkedin-tooltip"
+        >
+          <i class="fa-brands fa-linkedin"></i>
+          <Tooltip
+            id="intro-linkedin-tooltip"
+            content="LinkedIn"
+          />
+        </a>
+        <a
+          class="tooltip"
+          href="/doc/joel_elizaga_resume.pdf"
+          target="_blank"
+          aria-labelledby="intro-resume-tooltip"
+        >
+          <i class="fa-solid fa-file-pdf"></i>
+          <Tooltip
+            id="intro-resume-tooltip"
+            content="Resume"
+          />
+        </a>
       </div>
     </div>
   </div>
@@ -33,7 +78,7 @@
 <style>
   #introduction {
     display: block;
-    height: 90vh;
+    height: 30rem;
     position: relative;
     width: 100%;
   }
@@ -50,7 +95,7 @@
 
   .introduction-bg {
     display: block;
-    height: 90vh;
+    height: 100%;
     overflow: hidden;
     position: relative;
     width: 100%;
@@ -77,20 +122,24 @@
     box-shadow: var(--noonoo_floating_card_shadow);
     margin-left: auto;
     margin-right: auto;
-    padding-bottom: 1rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
-    padding-top: 1rem;
+    overflow: hidden;
     position: relative;
     width: 61.803vw;
   }
 
-  .introduction-card h1, .introduction-card .pre-heading {
-    text-align: center;
+  .introduction-card .content {
+    padding-bottom: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 1rem;
   }
 
-  .introduction-card .pre-heading {
-    color: var(--lawetlatla_ash_bright);
+  .introduction-card h1 {
+    align-items: center;
+    box-shadow: var(--noonoo_ceiling_protrusion_bright);
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
   }
 
   .introduction-card .octostar {
@@ -103,6 +152,7 @@
     color: var(--spectacular_red_bright);
     display: inline-flex;
     height: 0.65em;
+    margin-bottom: 0.15rem;
     justify-content: center;
     width: 0.65em;
   }
@@ -122,10 +172,56 @@
     width: clamp(8rem, 8rem, 275px);
   }
 
+  .introduction-card .hyperlink-buttons {
+    box-shadow: var(--noonoo_floor_protrusion_bright);
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    padding-bottom: 0.4rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 0.4rem;
+  }
+
+  .introduction-card .hyperlink-buttons a {
+    align-items: center;
+    background-image: var(--noonoo_protrusion_rounded_bright);
+    border-radius: 100%;
+    box-shadow: var(--noonoo_protrusion_bright);
+    display: flex;
+    height: 1.5rem;
+    justify-content: center;
+    position: relative;
+    transition: box-shadow 0.1s ease-in;
+    width: 1.5rem;
+  }
+
+  .introduction-card .hyperlink-buttons a i {
+    color: var(--lawetlatla_ash_dim);
+    transition: 0.1s ease-in color, 0.1s ease-in text-shadow;
+  }
+
+  .introduction-card .hyperlink-buttons a:hover i {
+    color: var(--spectacular_red_bright);
+  }
+
+  .introduction-card .hyperlink-buttons a:active {
+    box-shadow: var(--noonoo_protrusion_bright), var(--noonoo_depression_bright);
+  }
+
   @media screen and (max-width: 640px) {
     
     .introduction-card {
       width: 95vw;
     }
+
+  }
+
+  @media screen and (max-width: 740px) {
+
+    #introduction {
+      height: 80rem;
+    }
+
   }
 </style>
