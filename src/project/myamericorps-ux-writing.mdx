@@ -9,47 +9,47 @@ tags: ["UX Writing", "UX"]
 import NNImage from '../components/NNImage.astro';
 import NNCarousel from '../components/NNCarousel.tsx';
 
-
 <a href="https://americorps.gov/" target="_blank">AmeriCorps</a> is the largest
-grant-maker in the United States, and the organization's projects range from
+grant-maker in the United States. The organization's projects range from
 disaster response to matters of economic opportunity, environmental stewardship,
 and education.
 
-AmeriCorps has an awesome mission, and naturally its mission would be better
+The awesome mission of AmeriCorps would be better
 served with a portal made usable through **accessible**, **clear**, **concise**,
 **conventional**, and **purposeful** UX content that advances the AmeriCorps
 voice and turns ladened
 <a href="https://my.americorps.gov" target="_blank">MyAmeriCorps.gov</a> users
 into *satisfied advocates of the program.*
 
-### Analyzing the user's journey
+### Analyzing the user journey
 
 Corps members, prospective corps members, staff, alumni, and non-profit sponsors
-all cross paths with *MyAmeriCorps.gov*, AmeriCorps' singular web portal.
+all cross paths with *MyAmeriCorps.gov*, the online nexus of AmeriCorps'
+operation.
 
 As an AmeriCorps alum I can attest that my unit regarded MyAmeriCorps.gov with
-puzzled dread in the best of moments and frustration at worst:
+puzzled dread in the best of moments and frustration at worst. Here's a tour:
 
 <NNCarousel
   client:load
   images={[
     {
-      src: "/img/project/my-americorps/myamericorps-login.jpg",
-      alt: "The My AmeriCorps login page.",
+      src: "/img/project/my-americorps/login.jpg",
+      alt: "The My AmeriCorps log in page.",
       caption: "My AmeriCorps log in page: depicted on a 1920x1080 screen. The site is 782px across—always."
     },
     {
-      src: "/img/project/my-americorps/myamericorps-home.jpg",
+      src: "/img/project/my-americorps/home.jpg",
       alt: "The My AmeriCorps landing page for alumni.",
       caption: "Corps member alum landing page."
     },
     {
-      src: "/img/project/my-americorps/myamericorps-payment-req.jpg",
+      src: "/img/project/my-americorps/payment-req-form.jpg",
       alt: "The My AmeriCorps Segal Award payment request page.",
       caption: "Form used by alumni to request Segal Award payments."
     },
     {
-      src: "/img/project/my-americorps/myamericorps-help.jpg",
+      src: "/img/project/my-americorps/help.jpg",
       alt: "The My AmeriCorps help documentation.",
       caption: "Site help documentation."
     }
@@ -59,10 +59,69 @@ puzzled dread in the best of moments and frustration at worst:
 > *As an* AmeriCorps alum *I want to* disburse my Segal education award *so I can*
   pay for educational expenses at a qualified institution.
 
+<NNImage
+  src="/img/project/my-americorps/current-journey.jpg"
+  alt="Map of the current My AmeriCorps journey to Segal Award disbursal."
+  display="protruding"
+  caption="The current journey to Segal Award disbursal as ventured by persona Alum Alan."
+/>
+
 ### Evaluating UX content
 
 #### Usability
 
+I assessed the portal's UX content usability by performing a **heuristic
+evaluation** on each page along Alum Alan's journey.
+
+For every string with an opportunity to improve on my usability criteria, I
+dropped a flag and left a note.
+
+I found quite a few:
+
+<NNImage
+  src="/img/project/my-americorps/login-heuristic-evaluation.jpg"
+  alt="Heuristic evaluation of the My AmeriCorps log in page."
+/>
+
+<NNImage
+  src="/img/project/my-americorps/home-heuristic-evaluation.jpg"
+  alt="Heuristic evaluation of the My AmeriCorps alum landing page."
+/>
+
+<NNImage
+  src="/img/project/my-americorps/payment-request-form-heuristic-evaluation.jpg"
+  alt="Heuristic evaluation of the My AmeriCorps form to request Segal Award disbursal."
+/>
+
+Alan's journey on MyAmeriCorps.gov scored a modest 30.8% usability on my UX
+writing scorecard:
+
+<NNImage
+  src="/img/project/my-americorps/ux-content-usability-scorecard.png"
+  alt="A scorecard evaluating the current usability of My AmeriCorps' UX content."
+  display="protruding"
+/>
+
+As a proof-of-concept, I drafted an improved log in page with writing that
+fulfills the usability criteria and resolves the issues I documented:
+
+<NNImage
+  src="/img/project/my-americorps/login-revised.jpg"
+  alt="My AmeriCorps log in page with revised UX content."
+/>
+
+Enhancing revisions of UX content include:
+
+* Sectioned & labeled *'Apply to Serve' block* to stimulate AmeriCorps
+  applications,
+* Legalese in the form of *optionally clickable tooltips* rather than a heavy
+  chunk of text anchoring the page,
+* *Verb-first* buttons,
+* Buttons with *< 3 words* maximum,
+* *Concision:* Irrelevant strings removed.
+
 #### Voice
 
 ### Amending UX content
+
+### Afterthoughts
