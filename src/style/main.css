@@ -337,6 +337,11 @@ main {
   width: 61.803vw;
 }
 
+.blog-article header .noonoo-image, .project-article header .noonoo-image {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
 .blog-article .content, .project-article .content, article .content {
   padding-top: 1rem;
   padding-left: 3rem;
@@ -559,6 +564,10 @@ img {
   margin-left: 0.33rem;
   margin-right: 0.33rem;
   margin-top: 0.25rem;
+}
+
+.noonoo-image .caption.hidden, .noonoo-carousel .caption.hidden {
+  margin: 0;
 }
 
 /* Forms /////////////////////////////////////////////////////////////////////*/

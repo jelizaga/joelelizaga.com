@@ -82,6 +82,7 @@ const { Content, frontmatter } = Astro.props.blog;
 <style>
   .blog-article header .date {
     color: var(--lawetlatla_ash_bright);
+    margin: 0;
   }
 
   .rss-button {
@@ -101,5 +102,9 @@ const { Content, frontmatter } = Astro.props.blog;
 
   .rss-button:active {
     box-shadow: var(--noonoo_protrusion_bright), var(--noonoo_depression_bright);
+  }
+
+  .blog-article header .description {
+    margin: 0;
   }
 </style>
