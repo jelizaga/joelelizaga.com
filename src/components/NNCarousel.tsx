@@ -71,11 +71,13 @@ export default function NNCarousel({images}: CarouselImages, id: string, straigh
             <button class="carousel-button">
               <i class="fa-solid fa-chevron-left"></i>
             </button>
+            <div class="shadow"></div>
           </div>
           <div class="carousel-right" onClick={carouselRight}>
             <button class="carousel-button">
               <i class="fa-solid fa-chevron-right"></i>
             </button>
+            <div class="shadow"></div>
           </div>
           <NNCarouselPagination
             client:load

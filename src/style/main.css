@@ -452,6 +452,7 @@ img {
   margin: 0.5rem;
   justify-content: center;
   width: 2rem;
+  z-index: 2;
 }
 
 .carousel-left, .carousel-right {
@@ -461,27 +462,38 @@ img {
   height: 100%;
   position: absolute;
   top: 0;
+  transition: color 0.1s ease-in, text-shadow 0.1s ease-in;
   width: 20%;
   z-index: 1;
 }
 
 .carousel-left {
-  background-image: linear-gradient(to right, #00000000, #00000000);
   justify-content: flex-start;
 }
 
-.carousel-left:hover {
+.carousel-left .shadow {
   background-image: linear-gradient(to right, #00000010, #00000000);
 }
 
 .carousel-right {
-  background-image: linear-gradient(to left, #00000000, #00000000);
   justify-content: flex-end;
   right: 0;
 }
 
-.carousel-right:hover {
+.carousel-right .shadow {
   background-image: linear-gradient(to left, #00000010, #00000000);
+}
+
+.carousel-left .shadow, .carousel-right .shadow {
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  transition: opacity 0.2s ease-in;
+  width: 100%;
+}
+
+.carousel-left:hover .shadow, .carousel-right:hover .shadow {
+  opacity: 1;
 }
 
 .carousel-left:hover .carousel-button, .carousel-right:hover .carousel-button {
@@ -512,18 +524,21 @@ img {
   width: 0.6rem;
 }
 
-.carousel-pagination button.selected {
+.carousel-pagination button.selected, .carousel-pagination button:hover {
   background-image: var(--noonoo_protrusion_rounded_spectacular_red_bright);
+}
+
+.carousel-pagination button.selected {
   cursor: default;
 }
 
 .carousel-pagination button:hover {
-  background-image: var(--noonoo_protrusion_rounded_spectacular_red_bright);
+  box-shadow: var(--noonoo_floating_card_shadow), var(--spectacular_red_glowing);
 }
 
 .carousel-pagination button:active {
   background-image: var(--noonoo_protrusion_rounded_spectacular_red_bright);
-  box-shadow: var(--noonoo_depression_spectacular_red_bright);
+  box-shadow: var(--noonoo_depression_spectacular_red_bright), var(--noonoo_floating_card_shadow), var(--spectacular_red_glowing);
 }
 
 .noonoo-image .caption, .noonoo-carousel .caption {
