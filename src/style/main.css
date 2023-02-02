@@ -597,6 +597,7 @@ button, a.button, a.button-primary {
   font-size: 1rem;
   font-weight: bold;
   gap: 0.35rem;
+  height: fit-content;
   justify-content: center;
   padding-bottom: 0.3rem;
   padding-left: 1rem;
