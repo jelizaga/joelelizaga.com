@@ -313,9 +313,6 @@ blockquote {
 /* Body //////////////////////////////////////////////////////////////////////*/
 html {
   height: 100%;
-}
-
-body {
   scroll-behavior: smooth;
 }
 
@@ -763,6 +760,7 @@ option {
   box-shadow: var(--noonoo_protrusion_bright);
   color: var(--lawetlatla_ash_bright);
   display: inline-flex;
+  height: fit-content;
   justify-content: center;
   transition: box-shadow 0.1s ease-in;
 }
