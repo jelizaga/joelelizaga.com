@@ -1,0 +1,67 @@
+---
+////////////////////////////////////////////////////////////////////////////////
+// ProjectsCard.astro //////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+// Card displaying a `ProjectsGrid`.
+
+import ProjectsGrid from "./ProjectsGrid.astro";
+---
+
+<section id="projects" class="projects-card noonoo-protruding-card">
+  <header>
+    <h2>
+      <span class="icon">
+        <i class="fa-solid fa-compass-drafting"></i>
+      </span>
+      <span class="title">
+        Projects
+      </span>
+    </h2>
+  </header>
+  <div class="content">
+    <ProjectsGrid
+      columns={1}
+    />
+  </div>
+</section>
+
+<style>
+  .projects-card {
+    border-radius: 2.7rem;
+    overflow: hidden;
+  }
+
+  .projects-card header {
+    box-shadow: var(--noonoo_ceiling_protrusion_bright);
+    padding-bottom: 0.4rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 0.4rem;
+  }
+
+  .projects-card header h2 {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .projects-card header h2 .icon {
+    align-items: center;
+    background-image: var(--noonoo_protrusion_rounded_bright);
+    border-radius: 100%;
+    box-shadow: var(--noonoo_protrusion_bright);
+    display: flex;
+    font-size: 0.85em;
+    height: 1.3em;
+    justify-content: center;
+    transition: box-shadow 0.1s ease-in;
+    width: 1.3em;
+  }
+
+  .projects-card .content {
+		padding-bottom: 1rem;
+		padding-left: 3rem;
+		padding-right: 3rem;
+		padding-top: 1rem;
+  }
+</style>
