@@ -10,6 +10,7 @@ import Header from '../components/Header.astro';
 import Contact from '../components/Contact.astro';
 import Introduction from '../components/Introduction.astro';
 import ProjectsGrid from '../components/ProjectsGrid.astro';
+import ProjectsCard from '../components/ProjectsCard.astro';
 ---
 
 <Layout 
@@ -20,21 +21,7 @@ import ProjectsGrid from '../components/ProjectsGrid.astro';
 >
 	<Introduction />
 	<main>
-		<div id="projects" class="noonoo-protruding-card">
-			<h2>
-				<i class="fa-solid fa-compass-drafting"></i> Projects
-			</h2>
-			<ProjectsGrid />
-		</div>
+		<ProjectsCard />
 		<Contact />
 	</main>
 </Layout>
-
-<style>
-	#projects {
-		padding-bottom: 1rem;
-		padding-left: 3rem;
-		padding-right: 3rem;
-		padding-top: 1rem;
-	}
-</style>
