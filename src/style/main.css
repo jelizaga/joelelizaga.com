@@ -306,7 +306,7 @@ blockquote {
   color: var(--lawetlatla_ash_dim);
   /* Typography //////////////////////////////////////////////////////////////*/
   font-family: "Atkinson Hyperlegible", sans-serif;
-  font-size: clamp(16px, 1.614583vw, 1.6145832vw);
+  font-size: clamp(20px, 1.614583vw, 1.6145832vw);
   line-height: clamp(34px, 2.70833vw, 2.70833vw);
 }
 
