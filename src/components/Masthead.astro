@@ -6,11 +6,9 @@ export interface Props {
   headerShadow?: boolean;
 }
 const { currentPage, headerShadow } = Astro.props as Props;
-
-const mastheadClasses = headerShadow ? "masthead header-shadowed" : "masthead";
 ---
 
-<header class={mastheadClasses}>
+<header class="masthead">
   <div>
     <a class="logo" href="/">&#10059;</a>
     <Nav
@@ -26,12 +24,9 @@ const mastheadClasses = headerShadow ? "masthead header-shadowed" : "masthead";
   }
 
   .masthead {
-    box-shadow: var(--noonoo_ceiling_protrusion_bright);
-    box-sizing: border-box;
-  }
-
-  .header-shadowed {
+    background-color: var(--tahoma_white_dim);
     box-shadow: var(--noonoo_ceiling_protrusion_shadow);
+    box-sizing: border-box;
   }
 
   .masthead div {
@@ -50,12 +45,21 @@ const mastheadClasses = headerShadow ? "masthead header-shadowed" : "masthead";
   }
 
   @media screen and (max-width: 1200px) {
+    
     .masthead .logo {
       font-size: 1.3rem;
     }
+
   }
 
   @media screen and (max-width: 640px) {
+
+    .masthead {
+      position: sticky;
+      top: 0;
+      z-index: 4;
+    }
+
     .masthead .logo {
       display: none;
     }
@@ -63,5 +67,6 @@ const mastheadClasses = headerShadow ? "masthead header-shadowed" : "masthead";
     .masthead div {
       width: 100%;
     }
+
   }
 </style>
