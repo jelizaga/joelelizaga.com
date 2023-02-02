@@ -78,7 +78,6 @@ import Tooltip from "./Tooltip.astro";
 <style>
   #introduction {
     display: block;
-    height: 30rem;
     position: relative;
     width: 100%;
   }
@@ -86,16 +85,18 @@ import Tooltip from "./Tooltip.astro";
   .introduction-container {
     align-items: center;
     display: flex;
-    height: 100%;
     position: absolute;
     justify-content: center;
     width: 100%;
     z-index: 1;
   }
 
+  #introduction, .introduction-container, .introduction-bg {
+    height: 30rem;
+  }
+
   .introduction-bg {
     display: block;
-    height: 100%;
     overflow: hidden;
     position: relative;
     width: 100%;
@@ -219,9 +220,10 @@ import Tooltip from "./Tooltip.astro";
 
   @media screen and (max-width: 740px) {
 
-    #introduction {
-      height: 80rem;
+    #introduction, .introduction-container, .introduction-bg {
+      height: 40rem;
     }
 
   }
+
 </style>

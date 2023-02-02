@@ -559,7 +559,7 @@ img {
 .noonoo-image .caption, .noonoo-carousel .caption {
   margin-left: 0.33rem;
   margin-right: 0.33rem;
-  margin-top: 0.25rem;
+  margin-top: 0.25rem !important;
 }
 
 .noonoo-image .caption.hidden, .noonoo-carousel .caption.hidden {
