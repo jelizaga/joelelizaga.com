@@ -38,7 +38,7 @@ tour:
     {
       src: "/img/project/my-americorps/login.jpg",
       alt: "The My AmeriCorps log in page.",
-      caption: "My AmeriCorps log in page: depicted on a 1920x1080 screen. The site is 782px across—always."
+      caption: "My AmeriCorps log in page: depicted on a 1920x1080 screen. If you're curious about the mysterious white space on the right: The site is 782px across—always."
     },
     {
       src: "/img/project/my-americorps/home.jpg",
@@ -46,7 +46,7 @@ tour:
       caption: "Corps member alum landing page."
     },
     {
-      src: "/img/project/my-americorps/payment-req-form.jpg",
+      src: "/img/project/my-americorps/payment-request-form.jpg",
       alt: "The My AmeriCorps Segal Award payment request page.",
       caption: "Form used by alumni to request Segal Award payments."
     },
@@ -59,22 +59,29 @@ tour:
   aspectRatio={"16 / 9"}
 />
 
-> *As an* AmeriCorps alum *I want to* disburse my Segal education award *so I can*
-  pay for educational expenses at a qualified institution.
+## User journey: Alum Alan
 
-<NNImage
-  src="/img/project/my-americorps/current-journey.jpg"
-  alt="Map of the current My AmeriCorps journey to Segal Award disbursal."
-  display="protruding"
-  caption="The current journey to Segal Award disbursal as ventured by persona Alum Alan."
-/>
+**Alum Alan** is an AmeriCorps alum who wants to access the Segal Education
+Award granted upon completion of his service to pay for some of his college
+tuition.
 
-## Evaluating UX content
+In user story terms:
 
-### Usability
+> *As an...* AmeriCorps alum 
 
-I assessed the portal's UX content usability by performing a **heuristic
-evaluation** on each page along Alum Alan's journey.
+> *I want to...* disburse my Segal education award 
+
+> *So I can...* pay for educational expenses at a qualified institution.
+
+I examined the My.AmeriCorps.gov experience from the eyes of Alum Alan on his
+journey to education award disbursal.
+
+## Evaluating content usability
+
+### 1. Heuristic evaluation
+
+First I assessed the portal's UX content usability by performing a **heuristic
+evaluation** on each page accessed along Alum Alan's journey.
 
 For every string with an opportunity to improve on my usability criteria, I
 dropped a flag and left a note.
@@ -96,8 +103,8 @@ I found quite a few:
   alt="Heuristic evaluation of the My AmeriCorps form to request Segal Award disbursal."
 />
 
-Alan's journey on MyAmeriCorps.gov scored a modest 30.8% usability on my UX
-writing scorecard:
+Alan's journey on MyAmeriCorps.gov scored a modest 30.8% usability on my **UX
+writing scorecard**:
 
 <NNImage
   src="/img/project/my-americorps/ux-content-usability-scorecard.png"
@@ -105,26 +112,85 @@ writing scorecard:
   display="protruding"
 />
 
+Great! Now we know precisely where there's points for improvement.
+
 As a proof-of-concept, I drafted an improved log in page with writing that
 fulfills the usability criteria and resolves the issues I documented:
 
-<NNImage
-  src="/img/project/my-americorps/login-revised.jpg"
-  alt="My AmeriCorps log in page with revised UX content."
+<NNCarousel
+  client:load
+  images={[
+    {
+      src: "/img/project/my-americorps/login-revised.jpg",
+      alt: "My AmeriCorps log in page with revised UX content.",
+      caption: "Revised log in page."
+    },
+    {
+      src: "/img/project/my-americorps/login-revised-tos-clicked.jpg",
+      alt: "Revised My AmeriCorps log in page when the terms of service is selected.",
+      caption: "Terms of service pop-up."
+    },
+    {
+      src: "/img/project/my-americorps/login-revised-privacy-statement-clicked.jpg",
+      alt: "Revised My AmeriCorps log in page when the privacy statement is selected.",
+      caption: "Privacy statement pop-up."
+    },
+    {
+      src: "/img/project/my-americorps/login.jpg",
+      alt: "The My AmeriCorps log in page.",
+      caption: "Original log in page, pre-revisions."
+    }
+  ]}
 />
 
-Enhancing revisions of UX content include:
+My enhancing revisions of UX content include:
 
 * Sectioned & labeled *'Apply to Serve' block* to stimulate AmeriCorps
   applications,
 * Legalese in the form of *optionally clickable tooltips* rather than a heavy
-  chunk of text anchoring the page,
+  chunk of text anchoring the page and acting as a focal point,
 * *Verb-first* buttons,
-* Buttons with *< 3 words* maximum,
-* *Concision:* Irrelevant strings removed.
+* Buttons with a `<= 3` word maximum,
+* *Concision:* Irrelevant and redundant strings removed.
 
-#### Voice
+### 2. Narrative arc
 
-### Amending UX content
+Next I mapped the **narrative arc** of Alan's experience in order to analyze the
+user journey with greater granularity. This technique of 'narrative arc' is
+similar to the diagrammatic
+[journey mapping](https://www.nngroup.com/articles/journey-mapping-101/) 
+found in UX design, but it's more fitted to evaluating UX content:
 
-### Afterthoughts
+<NNImage
+  src="/img/project/my-americorps/current-journey.jpg"
+  alt="Map of the current My AmeriCorps journey to Segal Award disbursal."
+  display="protruding"
+  caption="The current journey to Segal Award disbursal as ventured by persona Alum Alan."
+/>
+
+Through this practice of mapping I discovered more pain-points across the alum's
+journey, inspiring these improvements to the 'Request Education Award
+Payment' screen:
+
+<NNCarousel
+  client:load
+  images={[
+    {
+      src: "/img/project/my-americorps/payment-request-form-revised.jpg",
+      alt: "My AmeriCorps log in page with revised UX content.",
+      caption: "After refining the UX content: Context-specific tooltips, prioritized concision, purposeful and accessible text, and legal disclaimers displaying only when relevant."
+    },
+    {
+      src: "/img/project/my-americorps/payment-request-form-revised-submit.jpg",
+      alt: "Revised My AmeriCorps log in page when the terms of service is selected.",
+      caption: "Legal disclaimer displayed as a pop-up as a final step when the user finally clicks 'Submit.'"
+    },
+    {
+      src: "/img/project/my-americorps/payment-request-form.jpg",
+      alt: "Original 'Request Education Award Payment' page, pre-revisions.",
+      caption: "Original 'Request Education Award Payment' page, pre-revisions: UI buttons hidden as labels, a lot of legal text, college-level vocabulary, and help buttons hyperlinked to unnavigable and out-of-date documentation."
+    }
+  ]}
+/>
+
+## Evaluating content voice
