@@ -50,7 +50,19 @@ export default function NNCarousel(props: any) {
   if (props.aspectRatio) {
     switch(props.aspectRatio) {
       case "16 / 9":
-        imgClasses += " sixteen-nine";
+        imgClasses += " aspect-ratio-sixteen-nine";
+        break;
+      case "9 / 16":
+        imgClasses += " aspect-ratio-nine-sixteen";
+        break;
+      case "1 / 1":
+        imgClasses += " aspect-ratio-one-one";
+        break;
+      case "3 / 2":
+        imgClasses += " aspect-ratio-three-two";
+        break;
+      case "5 / 4":
+        imgClasses += " aspect-ratio-five-four";
         break;
     }
   }
