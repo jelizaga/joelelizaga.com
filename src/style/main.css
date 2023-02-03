@@ -647,6 +647,13 @@ img {
   width: 100%;
 }
 
+.noonoo-image-popup .popup .container a {
+  height: 100%;
+  left: 15%;
+  position: absolute;
+  width: 70%;
+}
+
 .noonoo-image-popup .popup .container .carousel-left, .noonoo-image-popup .popup .container .carousel-right {
   width: 15%;
 }

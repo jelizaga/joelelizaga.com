@@ -65,6 +65,7 @@ export default function NNImagePopup(props: any) {
             </button>
             <div class="shadow"></div>
           </div>
+          <a href={props.images[props.focusedImage()].src}></a>
           <img
             src={props.images[props.focusedImage()].src}
             alt={props.images[props.focusedImage()].alt}
