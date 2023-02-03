@@ -15,7 +15,7 @@ export interface Props {
   caption?: string,
   animated?: boolean,
   straightCorners?: boolean,
-  linked?: boolean,
+  expandable?: boolean,
   display?: string
 }
 
@@ -25,28 +25,36 @@ const {
   caption,
   animated = false,
   straightCorners = false,
-  linked = true,
+  expandable = true,
   display = "depressed"
 } = Astro.props as Props;
 
 // Determine how image is displayed:
-let imgClasses = "container";
+let imageClasses = "noonoo-image";
+let containerClasses = "container";
 // Corners:
 if (straightCorners) {
-  imgClasses += " straight-corners";
+  containerClasses += " straight-corners";
 } else {
-  imgClasses += " round-corners";
+  imageClasses += " round-corners";
+  containerClasses += " round-corners";
+}
+// Caption:
+if (caption) {
+  imageClasses += " captioned";
+  containerClasses += " captioned";
 }
 // Neumorphic shape:
 switch(display) {
   case "depressed":
-    imgClasses += " depressed";
+    containerClasses += " depressed";
     break;
   case "protruding":
-    imgClasses += " protruding";
+    imageClasses += " protruding";
+    containerClasses += " protruding";
     break;
   case "flat":
-    imgClasses += " flat";
+    containerClasses += " flat";
     break;
 }
 
@@ -57,9 +65,9 @@ if (!caption) {
 }
 ---
 
-<div class="noonoo-image">
-  <a href={linked && src}>
-    <div class={imgClasses}>
+<div class={imageClasses}>
+  <a href={expandable && src}>
+    <div class={containerClasses}>
       {!animated &&
         <img src={src} alt={alt} />
       }

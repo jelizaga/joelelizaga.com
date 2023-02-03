@@ -414,8 +414,13 @@ img {
 
 /* Noonoo Images & Noonoo Carousels //////////////////////////////////////////*/
 .noonoo-image, .noonoo-carousel {
-  margin-bottom: 0.75rem;
-  margin-top: 0.75rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.noonoo-image.captioned, .noonoo-carousel.captioned {
+  box-shadow: var(--noonoo_protrusion_bright);
 }
 
 .noonoo-image .container, .noonoo-carousel .container {
@@ -429,7 +434,12 @@ img {
   border-radius: 0;
 }
 
-.noonoo-image .container.round-corners, .noonoo-image .container.round-corners::before, .noonoo-carousel .container.round-corners, .noonoo-carousel .container.round-corners::before {
+.noonoo-image .container.captioned.round-corners, .noonoo-carousel .container.captioned.round-corners {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.noonoo-image.round-corners, .noonoo-carousel.round-corners, .noonoo-image .container.round-corners, .noonoo-image .container.round-corners::before, .noonoo-carousel .container.round-corners, .noonoo-carousel .container.round-corners::before {
   border-radius: 1.4rem;
 }
 
@@ -454,6 +464,17 @@ img {
   object-fit: cover;
   height: 100%;
   width: 100%;
+}
+
+.noonoo-image .expand-image, .noonoo-carousel .expand-image {
+  cursor: zoom-in;
+  height: 100%;
+  position: absolute;
+}
+
+.noonoo-carousel .expand-image {
+  left: 20%;
+  width: 60%;
 }
 
 .carousel-button {
@@ -577,9 +598,11 @@ img {
 }
 
 .noonoo-image .caption, .noonoo-carousel .caption {
-  margin-left: 0.33rem;
-  margin-right: 0.33rem;
-  margin-top: 0.25rem !important;
+  margin: 0 !important;
+  padding-bottom: 0.3rem;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+  padding-top: 0.3rem;
 }
 
 .noonoo-image .caption.hidden, .noonoo-carousel .caption.hidden {
@@ -878,7 +901,7 @@ option {
   to {transform:rotate(359deg);}
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 750px) {
   
   main {
     width: 95vw;

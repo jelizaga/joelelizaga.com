@@ -24,25 +24,38 @@ export default function NNCarousel(props: any) {
   const [focusedImage, setFocusedImage] = createSignal(0);
   // Classes ///////////////////////////////////////////////////////////////////
   // Corners:
-  let imgClasses = "container";
+  let carouselClasses = "noonoo-carousel";
+  let containerClasses = "container";
   if (props.straightCorners) {
-    imgClasses += " straight-corners";
+    containerClasses += " straight-corners";
   } else {
-    imgClasses += " round-corners";
+    carouselClasses += " round-corners";
+    containerClasses += " round-corners";
+  }
+  // Caption:
+  let captioned = false;
+  props.images.forEach(image => {
+    if (image.caption) {
+      captioned = true;
+    }
+  });
+  if (captioned) {
+    carouselClasses += " captioned";
+    containerClasses += " captioned";
   }
   // Neumorphic shape:
   if (!props.display) {
-    imgClasses += " depressed";
+    containerClasses += " depressed";
   } else {
     switch(props.display) {
       case "depressed":
-        imgClasses += " depressed";
+        containerClasses += " depressed";
         break;
       case "protruding":
-        imgClasses += " protruding";
+        containerClasses += " protruding";
         break;
       case "flat":
-        imgClasses += "flat";
+        containerClasses += "flat";
         break;
     }
   }
@@ -50,19 +63,19 @@ export default function NNCarousel(props: any) {
   if (props.aspectRatio) {
     switch(props.aspectRatio) {
       case "16 / 9":
-        imgClasses += " aspect-ratio-sixteen-nine";
+        containerClasses += " aspect-ratio-sixteen-nine";
         break;
       case "9 / 16":
-        imgClasses += " aspect-ratio-nine-sixteen";
+        containerClasses += " aspect-ratio-nine-sixteen";
         break;
       case "1 / 1":
-        imgClasses += " aspect-ratio-one-one";
+        containerClasses += " aspect-ratio-one-one";
         break;
       case "3 / 2":
-        imgClasses += " aspect-ratio-three-two";
+        containerClasses += " aspect-ratio-three-two";
         break;
       case "5 / 4":
-        imgClasses += " aspect-ratio-five-four";
+        containerClasses += " aspect-ratio-five-four";
         break;
     }
   }
@@ -86,13 +99,16 @@ export default function NNCarousel(props: any) {
   //////////////////////////////////////////////////////////////////////////////
   return (
     <>
-      <div class="noonoo-carousel">
-        <div class={imgClasses}>
+      <div class={carouselClasses}>
+        <div class={containerClasses}>
           <div class="carousel-left" onClick={carouselLeft}>
             <button class="carousel-button">
               <i class="fa-solid fa-chevron-left"></i>
             </button>
             <div class="shadow"></div>
+          </div>
+          <div class="expand-image" onClick={console.log("EXP")}>
+
           </div>
           <div class="carousel-right" onClick={carouselRight}>
             <button class="carousel-button">
@@ -114,8 +130,8 @@ export default function NNCarousel(props: any) {
       </div>
       <noscript>
         <For each={props.images}>{(image, i) =>
-          <div class="noonoo-image">
-            <div class={imgClasses}>
+          <div class="noonoo-image captioned">
+            <div class={containerClasses}>
               {!image.animated &&
                 <img src={image.src} alt={image.alt} />
               }
