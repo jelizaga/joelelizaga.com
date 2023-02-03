@@ -6,6 +6,7 @@
 import { render } from "solid-js/web";
 import { createSignal, createEffect, For } from "solid-js";
 import NNCarouselPagination from "./NNCarouselPagination";
+import NNImagePopup from "./NNImagePopup";
 
 interface Image {
   src: string;
@@ -22,6 +23,7 @@ export default function NNCarousel(props: any) {
   // `focusedImage` - Index of the carousel's currently focused `Image` in
   // `image`. 
   const [focusedImage, setFocusedImage] = createSignal(0);
+  const [popupIsOpen, setPopupIsOpen] = createSignal(false);
   // Classes ///////////////////////////////////////////////////////////////////
   // Corners:
   let carouselClasses = "noonoo-carousel";
@@ -96,9 +98,23 @@ export default function NNCarousel(props: any) {
       setFocusedImage(focusedImage() + 1);
     }
   }
+  // `openPopup` - Opens NNImagePopup.
+  const openPopup = () => {
+    setPopupIsOpen(true);
+  }
   //////////////////////////////////////////////////////////////////////////////
   return (
     <>
+      {popupIsOpen() &&
+        <NNImagePopup
+          client:load
+          images={props.images}
+          focusedImage={focusedImage}
+          setFocusedImage={setFocusedImage}
+          popupIsOpen={popupIsOpen}
+          setPopupIsOpen={setPopupIsOpen}
+        />
+      }
       <div class={carouselClasses}>
         <div class={containerClasses}>
           <div class="carousel-left" onClick={carouselLeft}>
@@ -107,8 +123,7 @@ export default function NNCarousel(props: any) {
             </button>
             <div class="shadow"></div>
           </div>
-          <div class="expand-image" onClick={console.log("EXP")}>
-
+          <div class="expand-image" onClick={openPopup}>
           </div>
           <div class="carousel-right" onClick={carouselRight}>
             <button class="carousel-button">
@@ -125,7 +140,9 @@ export default function NNCarousel(props: any) {
           <img src={`${props.images[focusedImage()].src}`} />
         </div>
         {props.images[focusedImage()].caption &&
-          <p class="caption">{`${props.images[focusedImage()].caption}`}</p>
+          <p class="caption">
+            {`${props.images[focusedImage()].caption}`}
+          </p>
         }
       </div>
       <noscript>
