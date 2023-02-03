@@ -433,26 +433,6 @@ img {
   border-radius: 1.4rem;
 }
 
-.noonoo-carousel .container.aspect-ratio-sixteen-nine {
-  aspect-ratio: 16 / 9;
-}
-
-.noonoo-carousel .container.aspect-ratio-nine-sixteen {
-  aspect-ratio: 9 / 16;
-}
-
-.noonoo-carousel .container.aspect-ratio-one-one {
-  aspect-ratio: 1 / 1;
-}
-
-.noonoo-carousel .container.aspect-ratio-three-two {
-  aspect-ratio: 3 / 2;
-}
-
-.noonoo-carousel .container.aspect-ratio-five-four {
-  aspect-ratio: 5 / 4;
-}
-
 .noonoo-image .container::before, .noonoo-carousel .container::before {
   overflow: hidden;
   content: "";
@@ -574,6 +554,26 @@ img {
 .carousel-pagination button:active {
   background-image: var(--noonoo_protrusion_rounded_spectacular_red_bright);
   box-shadow: var(--noonoo_depression_spectacular_red_bright), var(--noonoo_floating_small_shadow), var(--spectacular_red_glowing);
+}
+
+.noonoo-carousel .container.aspect-ratio-sixteen-nine {
+  aspect-ratio: 16 / 9;
+}
+
+.noonoo-carousel .container.aspect-ratio-nine-sixteen {
+  aspect-ratio: 9 / 16;
+}
+
+.noonoo-carousel .container.aspect-ratio-one-one {
+  aspect-ratio: 1 / 1;
+}
+
+.noonoo-carousel .container.aspect-ratio-three-two {
+  aspect-ratio: 3 / 2;
+}
+
+.noonoo-carousel .container.aspect-ratio-five-four {
+  aspect-ratio: 5 / 4;
 }
 
 .noonoo-image .caption, .noonoo-carousel .caption {
