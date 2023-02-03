@@ -18,38 +18,39 @@ interface CarouselImages {
   images: Image[];
 }
 
-export default function NNCarousel({images}: CarouselImages, id: string, straightCorners?: boolean, display?: string, aspectRatio?: string) {
+export default function NNCarousel(props: any) {
   // `focusedImage` - Index of the carousel's currently focused `Image` in
   // `image`. 
   const [focusedImage, setFocusedImage] = createSignal(0);
   // Classes ///////////////////////////////////////////////////////////////////
   // Corners:
   let imgClasses = "container";
-  if (straightCorners) {
+  if (props.straightCorners) {
     imgClasses += " straight-corners";
   } else {
     imgClasses += " round-corners";
   }
   // Neumorphic shape:
-  if (!display) {
-    display = "depressed";
-  }
-  switch(display) {
-    case "depressed":
-      imgClasses += " depressed";
-      break;
-    case "protruding":
-      imgClasses += " protruding";
-      break;
-    case "flat":
-      imgClasses += "flat";
-      break;
+  if (!props.display) {
+    imgClasses += " depressed";
+  } else {
+    switch(props.display) {
+      case "depressed":
+        imgClasses += " depressed";
+        break;
+      case "protruding":
+        imgClasses += " protruding";
+        break;
+      case "flat":
+        imgClasses += "flat";
+        break;
+    }
   }
   // Aspect ratio:
-  if (aspectRatio) {
-    switch(aspectRatio) {
+  if (props.aspectRatio) {
+    switch(props.aspectRatio) {
       case "16 / 9":
-        imgClasses += "16-9";
+        imgClasses += " sixteen-nine";
         break;
     }
   }
@@ -57,14 +58,14 @@ export default function NNCarousel({images}: CarouselImages, id: string, straigh
   // `carouselLeft` - Focuses image to the left of the current image.
   const carouselLeft = () => {
     if (focusedImage() == 0) {
-      setFocusedImage(images.length - 1);
+      setFocusedImage(props.images.length - 1);
     } else {
       setFocusedImage(focusedImage() - 1);
     }
   }
   // `carouselRight` - Focuses image to the right of the current image.
   const carouselRight = () => {
-    if (focusedImage() == images.length - 1) {
+    if (focusedImage() == props.images.length - 1) {
       setFocusedImage(0);
     } else {
       setFocusedImage(focusedImage() + 1);
@@ -89,18 +90,18 @@ export default function NNCarousel({images}: CarouselImages, id: string, straigh
           </div>
           <NNCarouselPagination
             client:load
-            images={images}
+            images={props.images}
             focusedImage={focusedImage}
             setFocusedImage={setFocusedImage}
           />
-          <img src={`${images[focusedImage()].src}`} />
+          <img src={`${props.images[focusedImage()].src}`} />
         </div>
-        {images[focusedImage()].caption &&
-          <p class="caption">{`${images[focusedImage()].caption}`}</p>
+        {props.images[focusedImage()].caption &&
+          <p class="caption">{`${props.images[focusedImage()].caption}`}</p>
         }
       </div>
       <noscript>
-        <For each={images}>{(image, i) =>
+        <For each={props.images}>{(image, i) =>
           <div class="noonoo-image">
             <div class={imgClasses}>
               {!image.animated &&

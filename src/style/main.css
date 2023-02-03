@@ -433,6 +433,10 @@ img {
   border-radius: 1.4rem;
 }
 
+.noonoo-carousel .container.sixteen-nine {
+  aspect-ratio: 16 / 9;
+}
+
 .noonoo-image .container::before, .noonoo-carousel .container::before {
   overflow: hidden;
   content: "";
