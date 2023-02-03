@@ -18,6 +18,8 @@ interface CarouselImages {
 }
 
 export default function NNImagePopup(props: any) {
+  const [popupIsFullscreen, setPopupIsFullscreen] = createSignal(false);
+  let popup;
   // Functions /////////////////////////////////////////////////////////////////
   // `carouselLeft` - Focused image to the left of the current image.
   // `closePopup` - Closes this popup.
@@ -36,18 +38,53 @@ export default function NNImagePopup(props: any) {
       props.setFocusedImage(props.focusedImage() + 1);
     }
   }
+  // `closePopup` - Closes the popup.
   const closePopup = () => {
     props.setPopupIsOpen(false);
+  }
+  // `fullscreenPopup` - Maximizes the popup to fullscreen.
+  const fullscreenPopup = () => {
+    if (popup.requestFullscreen) {
+      popup.requestFullscreen();
+      setPopupIsFullscreen(true);
+    } else if (popup.webkitRequestFullscreen) {
+      popup.webkitRequestFullscreen();
+      setPopupIsFullscreen(true);
+    } else if (popup.msRequestFullscreen) {
+      popup.msRequestFullscreen();
+      setPopupIsFullscreen(true);
+    }
+  }
+  // `unFullscreenPopup` - Minimizes the popup to non-fullscreen.
+  const unFullscreenPopup = () => {
+    console.log("close");
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+      setPopupIsFullscreen(false);
+    } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
+      setPopupIsFullscreen(false);
+    } else if (document.msRequestFullscreen) {
+      document.msExitFullscreen();
+      setPopupIsFullscreen(false);
+    }
   }
   //////////////////////////////////////////////////////////////////////////////
   return (
     <div class="noonoo-image-popup">
       <div class="popup-background" onClick={closePopup}></div>
-      <div class="popup">
+      <div class="popup" ref={popup}>
         <div class="controls">
-          <button class="expand">
-            <i class="fa-solid fa-expand"></i>
-          </button>
+          {!popupIsFullscreen() &&
+            <button class="fullscreen" onClick={fullscreenPopup}>
+              <i class="fa-solid fa-expand"></i>
+            </button>
+          }
+          {popupIsFullscreen() &&
+            <button class="un-fullscreen" onClick={unFullscreenPopup}>
+              <i class="fa-solid fa-compress"></i>
+            </button>
+          }
           <button class="close" onClick={closePopup}>
             <i class="fa-solid fa-x"></i>
           </button>
