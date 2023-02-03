@@ -999,4 +999,9 @@ option {
     display: block;
   }
 
+  .noonoo-image-popup .popup {
+    max-height: 89vh;
+    top: calc(62px + 1rem);
+  }
+
 }
