@@ -638,8 +638,13 @@ img {
   height: 95vh;
   overflow: hidden;
   position: absolute;
+  transition: border-radius 0.3s ease-in;
   width: 95vw;
   z-index: 5;
+}
+
+.noonoo-image-popup .popup.fullscreen {
+  border-radius: 0;
 }
 
 .noonoo-image-popup .popup .container {

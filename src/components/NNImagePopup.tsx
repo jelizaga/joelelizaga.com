@@ -5,6 +5,7 @@
 
 import { render } from "solid-js/web";
 import { createSignal, createEffect, For } from "solid-js";
+import hotkeys from "hotkeys-js";
 
 interface Image {
   src: string;
@@ -57,7 +58,6 @@ export default function NNImagePopup(props: any) {
   }
   // `unFullscreenPopup` - Minimizes the popup to non-fullscreen.
   const unFullscreenPopup = () => {
-    console.log("close");
     if (document.exitFullscreen) {
       document.exitFullscreen();
       setPopupIsFullscreen(false);
@@ -69,6 +69,27 @@ export default function NNImagePopup(props: any) {
       setPopupIsFullscreen(false);
     }
   }
+  // Hotkeys ///////////////////////////////////////////////////////////////////
+  // `esc` - Close popup if open, minimize popup if fullscreen'd.
+  hotkeys("esc", function(event, handler) {
+    if (popupIsFullscreen()) {
+      setPopupIsFullscreen(false);
+    } else {
+      closePopup();
+    }
+  })
+  // `left` - Focuses image to the left in carousel.
+  hotkeys("left", function(event, handler) {
+    if (props.popupIsOpen()) {
+      carouselLeft();
+    }
+  })
+  // `right` - Focuses image to the right in carousel.
+  hotkeys("right", function(event, handler) {
+    if (props.popupIsOpen()) {
+      carouselRight();
+    }
+  })
   //////////////////////////////////////////////////////////////////////////////
   return (
     <div class="noonoo-image-popup">
