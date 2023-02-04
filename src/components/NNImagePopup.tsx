@@ -73,7 +73,7 @@ export default function NNImagePopup(props: any) {
   return (
     <div class="noonoo-image-popup">
       <div class="popup-background" onClick={closePopup}></div>
-      <div class="popup" ref={popup}>
+      <div class={popupIsFullscreen() ? "popup fullscreen" : "popup"} ref={popup}>
         <div class="controls">
           {!popupIsFullscreen() &&
             <button class="fullscreen" onClick={fullscreenPopup}>
