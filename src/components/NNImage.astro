@@ -29,6 +29,7 @@ const {
   display = "depressed"
 } = Astro.props as Props;
 
+// Classes /////////////////////////////////////////////////////////////////////
 // Determine how image is displayed:
 let imageClasses = "noonoo-image";
 let containerClasses = "container";
@@ -57,7 +58,6 @@ switch(display) {
     containerClasses += " flat";
     break;
 }
-
 // Determine caption visibility:
 let captionClass = "caption";
 if (!caption) {
