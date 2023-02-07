@@ -88,19 +88,26 @@ dropped a flag and left a note.
 
 I found quite a few:
 
-<NNImage
-  src="/img/project/my-americorps/login-heuristic-evaluation.jpg"
-  alt="Heuristic evaluation of the My AmeriCorps log in page."
-/>
-
-<NNImage
-  src="/img/project/my-americorps/home-heuristic-evaluation.jpg"
-  alt="Heuristic evaluation of the My AmeriCorps alum landing page."
-/>
-
-<NNImage
-  src="/img/project/my-americorps/payment-request-form-heuristic-evaluation.jpg"
-  alt="Heuristic evaluation of the My AmeriCorps form to request Segal Award disbursal."
+<NNCarousel
+  client:load
+  images={[
+    {
+      src: "/img/project/my-americorps/login-heuristic-evaluation.jpg",
+      alt: "Heuristic evaluation of the My AmeriCorps log in page.",
+      caption: "Heuristic evaluation of the My AmeriCorps log in page."
+    },
+    {
+      src: "/img/project/my-americorps/home-heuristic-evaluation.jpg",
+      alt: "Heuristic evaluation of the My AmeriCorps alum landing page.",
+      caption: "Heuristic evaluation of the My AmeriCorps alum landing page."
+    },
+    {
+      src: "/img/project/my-americorps/payment-request-form-heuristic-evaluation.jpg",
+      alt: "Heuristic evaluation of the My AmeriCorps form to request Segal Award disbursal.",
+      caption: "Heuristic evaluation of the My AmeriCorps form to requst Segal Award disbursal."
+    }
+  ]}
+  aspectRatio={"16 / 9"}
 />
 
 Alan's journey on MyAmeriCorps.gov scored a modest 30.8% usability on my **UX
