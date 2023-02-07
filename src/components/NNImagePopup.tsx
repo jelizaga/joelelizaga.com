@@ -126,6 +126,7 @@ export default function NNImagePopup(props: any) {
             </button>
             <div class="shadow"></div>
           </div>
+          <a href={props.images[props.focusedImage()].src}></a>
           <NNCarouselPagination
             client:load
             images={props.images}
