@@ -113,6 +113,8 @@ export default function NNCarousel(props: any) {
           setFocusedImage={setFocusedImage}
           popupIsOpen={popupIsOpen}
           setPopupIsOpen={setPopupIsOpen}
+          carouselLeft={carouselLeft}
+          carouselRight={carouselRight}
         />
       }
       <div class={carouselClasses}>

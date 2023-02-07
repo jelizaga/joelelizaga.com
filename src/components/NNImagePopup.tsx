@@ -23,27 +23,6 @@ export default function NNImagePopup(props: any) {
   const [popupIsFullscreen, setPopupIsFullscreen] = createSignal(false);
   let popup;
   // Functions /////////////////////////////////////////////////////////////////
-  // `carouselLeft` - Focused image to the left of the current image.
-  // `closePopup` - Closes this popup.
-  const carouselLeft = () => {
-    if (props.focusedImage() == 0) {
-      props.setFocusedImage(props.images.length - 1);
-    } else {
-      props.setFocusedImage(props.focusedImage() - 1);
-    }
-  }
-  // `carouselRight` - Focuses image to the right of the current image.
-  const carouselRight = () => {
-    if (props.focusedImage() == props.images.length - 1) {
-      props.setFocusedImage(0);
-    } else {
-      props.setFocusedImage(props.focusedImage() + 1);
-    }
-  }
-  // `closePopup` - Closes the popup.
-  const closePopup = () => {
-    props.setPopupIsOpen(false);
-  }
   // `fullscreenPopup` - Maximizes the popup to fullscreen.
   const fullscreenPopup = () => {
     if (!document.fullscreenElement) {
@@ -98,13 +77,13 @@ export default function NNImagePopup(props: any) {
   // `left` - Focuses image to the left in carousel.
   hotkeys("left", function(event, handler) {
     if (props.popupIsOpen()) {
-      carouselLeft();
+      props.carouselLeft();
     }
   })
   // `right` - Focuses image to the right in carousel.
   hotkeys("right", function(event, handler) {
     if (props.popupIsOpen()) {
-      carouselRight();
+      props.carouselRight();
     }
   })
   //////////////////////////////////////////////////////////////////////////////
@@ -131,13 +110,13 @@ export default function NNImagePopup(props: any) {
           </button>
         </div>
         <div class="container">
-          <div class="carousel-left" onClick={carouselLeft}>
+          <div class="carousel-left" onClick={props.carouselLeft}>
             <button class="carousel-button">
               <i class="fa-solid fa-chevron-left"></i>
             </button>
             <div class="shadow"></div>
           </div>
-          <div class="carousel-right" onClick={carouselRight}>
+          <div class="carousel-right" onClick={props.carouselRight}>
             <button class="carousel-button">
               <i class="fa-solid fa-chevron-right"></i>
             </button>
