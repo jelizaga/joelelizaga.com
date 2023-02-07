@@ -4,8 +4,9 @@
 // Image & carousel popup.
 
 import { render } from "solid-js/web";
-import { createSignal, createEffect, For } from "solid-js";
+import { createSignal } from "solid-js";
 import hotkeys from "hotkeys-js";
+import NNCarouselPagination from "./NNCarouselPagination";
 
 interface Image {
   src: string;
@@ -73,7 +74,7 @@ export default function NNImagePopup(props: any) {
   // `esc` - Close popup if open, minimize popup if fullscreen'd.
   hotkeys("esc", function(event, handler) {
     if (popupIsFullscreen()) {
-      setPopupIsFullscreen(false);
+      unFullscreenPopup();
     } else {
       closePopup();
     }
@@ -94,7 +95,10 @@ export default function NNImagePopup(props: any) {
   return (
     <div class="noonoo-image-popup">
       <div class="popup-background" onClick={closePopup}></div>
-      <div class={popupIsFullscreen() ? "popup fullscreen" : "popup"} ref={popup}>
+      <div 
+        class={popupIsFullscreen() ? "popup fullscreen" : "popup"} 
+        ref={popup}
+      >
         <div class="controls">
           {!popupIsFullscreen() &&
             <button class="fullscreen" onClick={fullscreenPopup}>
@@ -123,7 +127,12 @@ export default function NNImagePopup(props: any) {
             </button>
             <div class="shadow"></div>
           </div>
-          <a href={props.images[props.focusedImage()].src}></a>
+          <NNCarouselPagination
+            client:load
+            images={props.images}
+            focusedImage={props.focusedImage}
+            setFocusedImage={props.setFocusedImage}
+          />
           <img
             src={props.images[props.focusedImage()].src}
             alt={props.images[props.focusedImage()].alt}

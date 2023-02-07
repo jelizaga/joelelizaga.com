@@ -541,13 +541,32 @@ img {
 }
 
 .carousel-pagination {
+  background-color: var(--tahoma_white_dim);
   bottom: 1rem;
+  border-radius: 1.4rem;
+  box-shadow: var(--noonoo_floating_card_shadow);
   display: flex;
   gap: 0.3rem;
   justify-content: center;
+  left: 50%;
+  opacity: 0;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
   position: absolute;
-  width: 100%;
+  transform: translateX(-50%);
+  transition: opacity 0.1s ease-in;
+  width: fit-content;
   z-index: 1;
+}
+
+.noonoo-carousel:hover .carousel-pagination {
+  opacity: 1;
+}
+
+.noonoo-image-popup .popup .container:hover .carousel-pagination {
+  opacity: 1;
 }
 
 .carousel-pagination button {
