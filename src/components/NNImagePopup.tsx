@@ -23,6 +23,10 @@ export default function NNImagePopup(props: any) {
   const [popupIsFullscreen, setPopupIsFullscreen] = createSignal(false);
   let popup;
   // Functions /////////////////////////////////////////////////////////////////
+  // `closePopup` - Closes the popup.
+  const closePopup = () => {
+    props.setPopupIsOpen(false);
+  }
   // `fullscreenPopup` - Maximizes the popup to fullscreen.
   const fullscreenPopup = () => {
     if (!document.fullscreenElement) {
