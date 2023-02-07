@@ -46,36 +46,52 @@ export default function NNImagePopup(props: any) {
   }
   // `fullscreenPopup` - Maximizes the popup to fullscreen.
   const fullscreenPopup = () => {
-    if (popup.requestFullscreen) {
-      popup.requestFullscreen();
-      setPopupIsFullscreen(true);
-    } else if (popup.webkitRequestFullscreen) {
-      popup.webkitRequestFullscreen();
-      setPopupIsFullscreen(true);
-    } else if (popup.msRequestFullscreen) {
-      popup.msRequestFullscreen();
-      setPopupIsFullscreen(true);
+    if (!document.fullscreenElement) {
+      if (popup.requestFullscreen) {
+        popup.requestFullscreen();
+        setPopupIsFullscreen(true);
+      } else if (popup.webkitRequestFullscreen) {
+        popup.webkitRequestFullscreen();
+        setPopupIsFullscreen(true);
+      } else if (popup.msRequestFullscreen) {
+        popup.msRequestFullscreen();
+        setPopupIsFullscreen(true);
+      }
+    } else {
+      document.exitFullscreen();
     }
   }
   // `unFullscreenPopup` - Minimizes the popup to non-fullscreen.
   const unFullscreenPopup = () => {
     if (document.exitFullscreen) {
-      document.exitFullscreen();
-      setPopupIsFullscreen(false);
+      document.exitFullscreen().then(() =>
+        setPopupIsFullscreen(false)
+      );
     } else if (document.webkitExitFullscreen) {
-      document.webkitExitFullscreen();
-      setPopupIsFullscreen(false);
+      document.webkitExitFullscreen(() =>
+        setPopupIsFullscreen(false)
+      );
     } else if (document.msRequestFullscreen) {
-      document.msExitFullscreen();
+      document.msExitFullscreen(() =>
+        setPopupIsFullscreen(false)
+      );
+    }
+  }
+  // `escFullscreen` - Resets popupIsFullscreen to `false` when user `esc`s
+  // out of fullscreen mode.
+  const escFullscreen = () => {
+    if (!document.fullscreenElement && !document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement) {
       setPopupIsFullscreen(false);
     }
   }
+  document.addEventListener('fullscreenchange', escFullscreen);
+  document.addEventListener('webkitfullscreenchange', escFullscreen);
+  document.addEventListener('mozfullscreenchange', escFullscreen);
+  document.addEventListener('MSFullscreenChange', escFullscreen);
   // Hotkeys ///////////////////////////////////////////////////////////////////
   // `esc` - Close popup if open, minimize popup if fullscreen'd.
   hotkeys("esc", function(event, handler) {
-    if (popupIsFullscreen()) {
-      unFullscreenPopup();
-    } else {
+    if (!document.fullscreenElement) {
       closePopup();
     }
   })
