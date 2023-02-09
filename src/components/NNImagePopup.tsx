@@ -4,9 +4,12 @@
 // Image & carousel popup.
 
 import { render } from "solid-js/web";
-import { createSignal } from "solid-js";
+import { createSignal, Switch } from "solid-js";
 import hotkeys from "hotkeys-js";
-import NNCarouselPagination from "./NNCarouselPagination";
+import NNImagePopupCarouselContainer from "./NNImagePopupCarouselContainer";
+import NNImagePopupImageContainer from "./NNImagePopupImageContainer";
+import NNImagePopupCaption from "./NNImagePopupCaption";
+import NNImagePopupControls from "./NNImagePopupControls";
 
 interface Image {
   src: string;
@@ -22,6 +25,7 @@ interface CarouselImages {
 export default function NNImagePopup(props: any) {
   const [popupIsFullscreen, setPopupIsFullscreen] = createSignal(false);
   let popup;
+  const popupIsCarousel = (props.images);
   // Functions /////////////////////////////////////////////////////////////////
   // `closePopup` - Closes the popup.
   const closePopup = () => {
@@ -80,14 +84,18 @@ export default function NNImagePopup(props: any) {
   })
   // `left` - Focuses image to the left in carousel.
   hotkeys("left", function(event, handler) {
-    if (props.popupIsOpen()) {
-      props.carouselLeft();
+    if (popupIsCarousel && props.popupIsOpen()) {
+      if (props.popupIsOpen()) {
+        props.carouselLeft();
+      }
     }
   })
   // `right` - Focuses image to the right in carousel.
   hotkeys("right", function(event, handler) {
-    if (props.popupIsOpen()) {
-      props.carouselRight();
+    if (popupIsCarousel && props.popupIsOpen()) {
+      if (props.popupIsOpen()) {
+        props.carouselRight();
+      }
     }
   })
   //////////////////////////////////////////////////////////////////////////////
@@ -98,51 +106,47 @@ export default function NNImagePopup(props: any) {
         class={popupIsFullscreen() ? "popup fullscreen" : "popup"} 
         ref={popup}
       >
-        <div class="controls">
-          {!popupIsFullscreen() &&
-            <button class="fullscreen" onClick={fullscreenPopup}>
-              <i class="fa-solid fa-expand"></i>
-            </button>
-          }
-          {popupIsFullscreen() &&
-            <button class="un-fullscreen" onClick={unFullscreenPopup}>
-              <i class="fa-solid fa-compress"></i>
-            </button>
-          }
-          <button class="close" onClick={closePopup}>
-            <i class="fa-solid fa-x"></i>
-          </button>
-        </div>
-        <div class="container">
-          <div class="carousel-left" onClick={props.carouselLeft}>
-            <button class="carousel-button">
-              <i class="fa-solid fa-chevron-left"></i>
-            </button>
-            <div class="shadow"></div>
-          </div>
-          <div class="carousel-right" onClick={props.carouselRight}>
-            <button class="carousel-button">
-              <i class="fa-solid fa-chevron-right"></i>
-            </button>
-            <div class="shadow"></div>
-          </div>
-          <a href={props.images[props.focusedImage()].src}></a>
-          <NNCarouselPagination
-            client:load
-            images={props.images}
-            focusedImage={props.focusedImage}
-            setFocusedImage={props.setFocusedImage}
-          />
-          <img
-            src={props.images[props.focusedImage()].src}
-            alt={props.images[props.focusedImage()].alt}
-          />
-        </div>
-        {props.images[props.focusedImage()].caption &&
-          <p class="caption">
-            {`${props.images[props.focusedImage()].caption}`}
-          </p>
-        }
+        <NNImagePopupControls
+          popupIsFullscreen={popupIsFullscreen}
+          fullscreenPopup={fullscreenPopup}
+          unFullscreenPopup={unFullscreenPopup}
+          closePopup={closePopup}
+        />
+        <Switch>
+          <Match when={popupIsCarousel}>
+            <NNImagePopupCarouselContainer 
+              client:load
+              carouselLeft={props.carouselLeft}
+              carouselRight={props.carouselRight}
+              images={props.images}
+              focusedImage={props.focusedImage}
+              setFocusedImage={props.setFocusedImage}
+            />
+          </Match>
+          <Match when={!popupIsCarousel}>
+            <NNImagePopupImageContainer
+              client:load
+              src={props.src}
+              alt={props.alt}
+            />
+          </Match>
+        </Switch>
+        <Switch>
+          <Match when={popupIsCarousel}>
+            {props.images[props.focusedImage()].caption &&
+              <NNImagePopupCaption
+                caption={props.images[props.focusedImage()].caption}
+              />
+            }
+          </Match>
+          <Match when={!popupIsCarousel}>
+            {props.caption &&
+              <NNImagePopupCaption
+                caption={props.caption}
+              />
+            }
+          </Match>
+        </Switch>
       </div>
     </div>
   )

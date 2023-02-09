@@ -689,6 +689,10 @@ img {
   width: 70%;
 }
 
+.noonoo-image-popup .popup .container a:first-child {
+  width: 100%;
+}
+
 .noonoo-image-popup .popup .container .carousel-left, .noonoo-image-popup .popup .container .carousel-right {
   width: 15%;
 }

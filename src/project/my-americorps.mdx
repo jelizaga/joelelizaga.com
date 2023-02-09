@@ -6,7 +6,7 @@ img: /img/placeholder/placeholder1.jpg
 tags: ["UX Writing"]
 ---
 
-import NNImage from '../components/NNImage.astro';
+import NNImage from '../components/NNImage.tsx';
 import NNCarousel from '../components/NNCarousel.tsx';
 
 <a href="https://americorps.gov/" target="_blank">AmeriCorps</a> is the largest
@@ -114,6 +114,7 @@ Alan's journey on MyAmeriCorps.gov scored a modest 30.8% usability on my **UX
 writing scorecard**:
 
 <NNImage
+  client:load
   src="/img/project/my-americorps/ux-content-usability-scorecard.png"
   alt="A scorecard evaluating the current usability of My AmeriCorps' UX content."
   display="protruding"
@@ -172,6 +173,7 @@ similar to the diagrammatic
 found in UX design, but it's more fitted to evaluating UX content:
 
 <NNImage
+  client:load
   src="/img/project/my-americorps/current-journey.jpg"
   alt="Map of the current My AmeriCorps journey to Segal Award disbursal."
   display="protruding"
