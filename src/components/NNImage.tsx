@@ -4,7 +4,7 @@
 // Interactive image component.
 
 import { render } from "solid-js/web";
-import { createSignal, createEffect, For } from "solid-js";
+import { createSignal, Switch } from "solid-js";
 import NNImagePopup from "./NNImagePopup";
 
 interface Image {
@@ -14,6 +14,7 @@ interface Image {
   straightCorners?: string;
   animated?: boolean;
   display?: string;
+  popup?: boolean;
 }
 
 export default function NNImage(props: Image) {
@@ -27,6 +28,9 @@ export default function NNImage(props: Image) {
   } else {
     imageClasses += " round-corners";
     containerClasses += " round-corners";
+  }
+  if (!props.popup === false) {
+    containerClasses += " pops-up"
   }
   // Caption:
   if (props.caption) {
@@ -45,10 +49,11 @@ export default function NNImage(props: Image) {
       containerClasses += " flat";
       break;
   }
-  let captionClass = "caption";
-  if (!props.caption) {
-    captionClass += " hidden";
+  // Pops up:
+  if (props.popup === true || props.popup === undefined) {
+    containerClasses += " pops-up";
   }
+  // Functions /////////////////////////////////////////////////////////////////
   const openPopup = () => {
     setPopupIsOpen(true);
   }
@@ -67,15 +72,31 @@ export default function NNImage(props: Image) {
         />
       }
       <div class={imageClasses}>
-        <div class={containerClasses} onClick={openPopup}>
-          {!props.animated &&
-            <img src={props.src} alt={props.alt} />
-          }
-          {props.animated &&
-            <video autoplay loop muted src={props.src}></video>
-          }
-        </div>
-        <p class={captionClass}>{props.caption}</p>
+        <Switch>
+          <Match when={props.popup === false}>
+            <div class={containerClasses}>
+              {!props.animated &&
+                <img src={props.src} alt={props.alt} />
+              }
+              {props.animated &&
+                <video autoplay loop muted src={props.src}></video>
+              }
+            </div>
+          </Match>
+          <Match when={props.popup === undefined || props.popup === true}>
+            <div class={containerClasses} onClick={openPopup}>
+              {!props.animated &&
+                <img src={props.src} alt={props.alt} />
+              }
+              {props.animated &&
+                <video autoplay loop muted src={props.src}></video>
+              }
+            </div>
+          </Match>
+        </Switch>
+        {props.caption &&
+          <p class="caption">{props.caption}</p>
+        }
       </div>
     </>
   )

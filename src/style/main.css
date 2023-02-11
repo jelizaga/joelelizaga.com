@@ -423,6 +423,10 @@ img {
   background-color: var(--lawetlatla_ash_dim);
 }
 
+.noonoo-image .container.pops-up {
+  cursor: zoom-in;
+}
+
 .noonoo-image.captioned, .noonoo-carousel.captioned {
   box-shadow: var(--noonoo_protrusion_bright);
 }
