@@ -37,17 +37,22 @@ export default function NNImage(props: Image) {
     imageClasses += " captioned";
     containerClasses += " captioned";
   }
-  switch(props.display) {
-    case "depressed":
-      containerClasses += " depressed";
-      break;
-    case "protruding":
-      imageClasses += " protruding";
-      containerClasses += " protruding";
-      break;
-    case "flat":
-      containerClasses += " flat";
-      break;
+  // Neumorphic shape:
+  if (!props.display) {
+    containerClasses += " depressed";
+  } else {
+    switch(props.display) {
+      case "depressed":
+        containerClasses += " depressed";
+        break;
+      case "protruding":
+        imageClasses += " protruding";
+        containerClasses += " protruding";
+        break;
+      case "flat":
+        containerClasses += " flat";
+        break;
+    }
   }
   // Pops up:
   if (props.popup === true || props.popup === undefined) {
