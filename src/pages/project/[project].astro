@@ -26,7 +26,7 @@ const { Content, frontmatter } = Astro.props.project;
 ---
 
 <Layout 
-  title={frontmatter.title}
+  title={frontmatter.headTitle ? frontmatter.headTitle : frontmatter.title}
   currentPage={"projects"}
 >
   <main>

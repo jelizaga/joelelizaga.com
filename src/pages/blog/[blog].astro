@@ -27,7 +27,7 @@ const { Content, frontmatter } = Astro.props.blog;
 ---
 
 <Layout 
-  title={frontmatter.title}
+  title={frontmatter.headTitle ? frontmatter.headTitle : frontmatter.title}
   description={frontmatter.description}
   currentPage={"blog"}
 >
