@@ -157,7 +157,7 @@ sup, sup a {
   line-height: 0;
 }
 
-sup a {
+sup a, article .content li sup a, article .content table sup a {
   text-decoration: none;
 }
 
