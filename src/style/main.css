@@ -138,7 +138,7 @@ a:hover {
   text-shadow: var(--spectacular_red_glowing);
 }
 
-p a {
+p a, article .content li a {
   color: var(--lawetlatla_ash_bright);
   text-decoration-line: underline;
   text-decoration-style: dotted;
@@ -148,7 +148,7 @@ p a {
   transition: color 0.1s, text-shadow 0.1s;
 }
 
-p a:visited {
+p a:visited, article .content li a:visited {
   color: var(--lawetlatla_ash_bright);
 }
 
@@ -161,7 +161,7 @@ sup a {
   text-decoration: none;
 }
 
-a:visited:hover {
+a:visited:hover, article .content li a:hover {
   color: var(--spectacular_red_bright);
 }
 
@@ -238,7 +238,7 @@ table tr td, table tr th {
   width: auto;
 }
 
-.data-footnote-backref {
+.footnotes ol li p .data-footnote-backref {
   align-items: center;
   border-radius: 100%;
   box-shadow: var(--noonoo_protrusion_bright);
