@@ -709,6 +709,7 @@ img {
 
 .noonoo-image-popup .popup .container a:first-child {
   width: 100%;
+  left: 0%;
 }
 
 .noonoo-image-popup .popup .container .carousel-left, .noonoo-image-popup .popup .container .carousel-right {
@@ -940,6 +941,10 @@ option {
   padding-left: 0;
 }
 
+header .content .tags .tag a {
+  text-decoration: none;
+}
+
 .tag {
   align-items: center;
   border-radius: 1.4rem;
@@ -955,6 +960,7 @@ option {
   color: var(--lawetlatla_ash_bright);
   padding-left: 0.8rem;
   padding-right: 0.8rem;
+  text-decoration: none;
   transition: color 0.1s ease-in, text-shadow 0.1s ease-in;
 }
 

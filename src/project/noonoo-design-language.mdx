@@ -2,23 +2,49 @@
 slug: noonoo-design-language
 title: "Noonoo Design Language"
 description: "Neumorphic design language"
-img: /img/placeholder/placeholder3.jpg
+img: /img/project/noonoo-design-language/header.svg
 tags: ["UX", "UI"]
 ---
 
-import NNImage from '../components/NNImage.astro';
+import NNImage from '../components/NNImage.tsx';
 import NNCarousel from '../components/NNCarousel.tsx';
+import Code from '../components/Code.astro';
 
-You're looking at Noonoo design language *right now!*
-
-Noonoo is 
+I developed Noonoo Design Language as a distinct 
 
 ## Noonoo: The concept
 
-* *Physicality:*
-* *Simplicity:* 
-* *Usability:*
-* *Spectacle:*
+### Principles 
+
+The guiding principles of Noonoo are ***THUSS***:
+
+* ***T**actility:* Noonoo uses neumorphism's tactile traits to
+    * *Interactive objects* are shaped to suggest tactile interaction. `Ex:
+      Buttons protrude from and depress into the interface like real buttons,
+      and cards float above the interface to evoke layering and depth.`
+    * *Non-interactive objects* are shaped to suggest tactile artifacts. `Ex:
+      Block quotes and certain images are 'pressed' into the interface.`
+* ***H**ospitality:*
+    * *Tactility* is used to simulate a familiar experience interacting with
+      tangible high-tech tools such as clocks, phones, machines, and
+      synthesizers. This is in contrast to designs that more closely
+      mimic print or take advantage of preexisting familiarity with digital
+      experiences.
+    * *Rounded shapes* are used to evoke approachability and friendliness.
+* ***U**sability:*
+    * *Click boxes* are substantial and accessible. This is a lucky
+      side-effect of neumorphic objects being relatively 'large' owing to the
+      shadows required for the tactile effect to work.
+    * *Typography* is minimally sophisticated with clear information
+      architecture to fortify legibility. Individual characters are
+      distinguishable from each other: 0s have slashes and 'l' is clearly not
+      'I.' `Monospaced code` is just as readable and its handwriting-like
+      qualities have a friendly organicism to it.
+* ***S**implicity:* 
+    * *Colors* are relatively neutral so as to better showcase
+      designs with other color schemes and design languages, as well as photos
+      and illustrations.
+* ***S**pectacle:* Noonoo has a distinguishable and memorable identity.
 
 I call it "Noonoo" because:
 
@@ -26,9 +52,119 @@ I call it "Noonoo" because:
    *Teletubbies* is called "Noo-Noo," and man, was that a wonderfully bizarre
    fever dream of a show.
 2. *Noonoo*'s a fun, light-hearted bisyllabic name that fits the 
-   [classic Filipino nickname format](https://www.cbc.ca/news/canada/british-columbia/filipino-names-and-nicknames-1.6074647).
+   [quintessential Filipino nickname format](https://www.cbc.ca/news/canada/british-columbia/filipino-names-and-nicknames-1.6074647).
 3. *Neumorphism* → *Neuneumorphism* → *Neuneu* → *Noonoo*
+
+### Color Palette
+
+#### Tahoma White 
+
+<NNImage
+  client:load
+  src="/img/project/noonoo-design-language/tahoma-white.jpg"
+  alt="Tahoma White color palette."
+/>
+
+*Namesake:* Mt. Rainier / Tahoma
+
+#### Lawetlat'la Ash 
+
+<NNImage
+  client:load
+  src="/img/project/noonoo-design-language/lawetlatla-ash.jpg"
+  alt="Lawetlat'a Ash color palette."
+/>
+
+*Namesake:* Mt. St. Helens / Lawetlet'la
+
+#### Spectacular Red 
+
+<NNImage
+  client:load
+  src="/img/project/noonoo-design-language/spectacular-red.jpg"
+  alt="Spectacular Red color palette."
+/>
+
+*Namesake:* 
+
+#### Rain City Emerald
+
+<NNImage
+  client:load
+  src="/img/project/noonoo-design-language/rain-city-emerald.jpg"
+  alt="Rain City Emerald color palette."
+/>
+
+*Namesake:* City of Seattle
+
+
+
+#### Whulge Blue
    
+<NNImage
+  client:load
+  src="/img/project/noonoo-design-language/whulge-blue.jpg"
+  alt="Whulge Blue color palette."
+/>
+
+*Namesake:* Puget Sound / Whulge
+
+## Noonoo: Examples
+
+### Code
+
+<Code
+  filename="noonoo.js"
+  lang="js"
+  code={
+`// Noonoo Design Language
+setInterval({
+  alert("");
+}, 1000)`}
+/>
+
+### Carousel
+
+<NNCarousel
+  client:load
+  images={[
+    {
+      src: "/img/placeholder/placeholder1.jpg",
+      alt: ""
+    },
+    {
+      src: "/img/placeholder/placeholder2.jpg",
+      alt: ""
+    },
+    {
+      src: "/img/placeholder/placeholder3.jpg",
+      alt: ""
+    },
+    {
+      src: "/img/placeholder/placeholder4.jpg",
+      alt: ""
+    },
+    {
+      src: "/img/placeholder/placeholder5.jpg",
+      alt: ""
+    },
+    {
+      src: "/img/placeholder/placeholder6.jpg",
+      alt: ""
+    },
+    {
+      src: "/img/placeholder/placeholder7.jpg",
+      alt: ""
+    }
+  ]}
+/>
+
+## Stylistic influences
+
+* Neumorphism
+* Skeumorphism
+* Frutiger Aero
+* Aqua
 
 ## Noonoo: What? *Why?*
 
