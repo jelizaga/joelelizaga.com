@@ -10,11 +10,58 @@ import NNImage from '../components/NNImage.tsx';
 import NNCarousel from '../components/NNCarousel.tsx';
 import Code from '../components/Code.astro';
 
-I developed Noonoo Design Language as a distinct 
+I developed Noonoo Design Language for this website and as a brand
+identity.
 
-## Noonoo: The concept
+Let's get right into it!
 
-### Principles 
+## Conceptual influences
+
+Noonoo Design draws from the school of
+[neumorphism](https://www.shutterstock.com/blog/what-is-neumorphism), a design trend from
+around 2020 that acts as a visual midway between pre-2010s
+[skeuomorphism](https://www.interaction-design.org/literature/article/skeuomorphism-is-dead-long-live-skeuomorphism) and minimalist
+flat design. Neumorphism constructs UIs that look more 'tangible' and
+'realistic' while avoiding the visual noise and complexity of skeumorphism.
+Shadows are used to illustrate depth and a 3D-like effect, with elements
+pressed into or protruding from the interface.
+
+As you might imagine by the heavy use of shadows and near-skeumorphic design,
+I drew inspiration from a lot of (personally) nostalgic sources. I wanted to
+create a somewhat modernized 'sequel' to the
+[frutiger aero](https://www.dazeddigital.com/life-culture/article/58103/1/what-is-frutiger-aero-aesthetic-tiktok-msn-messenger-windows-vista-noughties)
+era while eschewing flat design and
+[Corporate Memphis](https://en.wikipedia.org/wiki/Corporate_Memphis);
+not out of lack of appreciation for these styles, but because creating a
+portfolio's a great opportunity to construct a distinctive identity out of 
+personally resonant sources.
+
+Here's the mood board:
+
+<NNImage
+  client:load
+  src="/img/project/noonoo-design-language/mood-board.jpg"
+  alt="Noonoo Design Language mood board."
+  display="protruding"
+/>
+
+It's a seemingly disparate blend of ideas, but there's some key commonalities
+and features that I've borrowed:
+
+* *Rounded, organic shapes with smooth, curved lines* - To gently guide focus
+  along the interface like the carpets of a casino[^1] and to conjure the
+  human affinity for curved shapes originating from our pre-90° angle past.
+* *Symbiosis between nature and artifice* - Intended to balance the 'techy'
+  look & feel of the language and offer some reprieve from the digital
+  claustrophobia of an always-online world.
+* *Wide, plains-like white space* - To create a less busy / cluttered
+  interface, minimizing cognitive load and leveraging the savanna principle.
+* *Utilitarianism* - Artifacts like Wikipedia, monorails,
+  airplanes, OS X, and brutalist architecture all have a tool-like
+  utility at their core that makes for efficient and satisfying experiences.
+* *Red as focus conductor* - Mario, Home
+
+## Design principles 
 
 The guiding principles of Noonoo are ***THUSS***:
 
@@ -31,20 +78,24 @@ The guiding principles of Noonoo are ***THUSS***:
       mimic print or take advantage of preexisting familiarity with digital
       experiences.
     * *Rounded shapes* are used to evoke approachability and friendliness.
+    * *
 * ***U**sability:*
     * *Click boxes* are substantial and accessible. This is a lucky
       side-effect of neumorphic objects being relatively 'large' owing to the
-      shadows required for the tactile effect to work.
+      shadows required for the tactile visual effect to work.
     * *Typography* is minimally sophisticated with clear information
       architecture to fortify legibility. Individual characters are
       distinguishable from each other: 0s have slashes and 'l' is clearly not
       'I.' `Monospaced code` is just as readable and its handwriting-like
-      qualities have a friendly organicism to it.
+      qualities have an affable organicism to it.
 * ***S**implicity:* 
+    * *Components* are minimally complex; their use should be obvious.
     * *Colors* are relatively neutral so as to better showcase
       designs with other color schemes and design languages, as well as photos
       and illustrations.
 * ***S**pectacle:* Noonoo has a distinguishable and memorable identity.
+
+## What's in a name?
 
 I call it "Noonoo" because:
 
@@ -55,6 +106,8 @@ I call it "Noonoo" because:
    [quintessential Filipino nickname format](https://www.cbc.ca/news/canada/british-columbia/filipino-names-and-nicknames-1.6074647).
 3. *Neumorphism* → *Neuneumorphism* → *Neuneu* → *Noonoo*
 
+## Colors
+
 ### Color Palette
 
 #### Tahoma White 
@@ -63,9 +116,17 @@ I call it "Noonoo" because:
   client:load
   src="/img/project/noonoo-design-language/tahoma-white.jpg"
   alt="Tahoma White color palette."
+  caption="Photo by Caleb Riston @ Unsplash."
 />
 
-*Namesake:* Mt. Rainier / Tahoma
+* *Namesake:* Mt. Rainier / Tahoma
+* *Role:* Primary
+
+Tahoma White has a hint of red to it for a couple reasons:
+1. The neumorphic effect doesn't quite work in grayscale; an off-white works
+   better.
+2. Since white is the base color of my interface I decided to lean more towards
+   the warmer spectrum of color to minimize eye strain.
 
 #### Lawetlat'la Ash 
 
@@ -73,9 +134,14 @@ I call it "Noonoo" because:
   client:load
   src="/img/project/noonoo-design-language/lawetlatla-ash.jpg"
   alt="Lawetlat'a Ash color palette."
+  caption="Photo by Brianna Tucker @ Unsplash."
 />
 
-*Namesake:* Mt. St. Helens / Lawetlet'la
+* *Namesake:* Mt. St. Helens / Lawetlet'la
+* *Role:* Primary
+
+*Lawetlet'la Ash* has slightly more green and blue than red, making it a good 
+compliment to Tahoma White.
 
 #### Spectacular Red 
 
@@ -85,7 +151,10 @@ I call it "Noonoo" because:
   alt="Spectacular Red color palette."
 />
 
-*Namesake:* 
+* *Role:* Main accent
+
+*Spectacular Red* is the main accent color of Noonoo Design, chosen for its
+bright, electric hue. 
 
 #### Rain City Emerald
 
@@ -95,7 +164,8 @@ I call it "Noonoo" because:
   alt="Rain City Emerald color palette."
 />
 
-*Namesake:* City of Seattle
+* *Namesake:* City of Seattle
+* *Role:* Secondary accent
 
 
 
@@ -109,18 +179,41 @@ I call it "Noonoo" because:
 
 *Namesake:* Puget Sound / Whulge
 
-## Noonoo: Examples
+### Dark Mode / Light Mode
+
+I'm working on a dark mode color scheme as well:
+
+<NNCarousel
+  client:load
+  images={[
+    {
+      src: "/img/project/noonoo-design-language/dark-mode.jpg",
+      alt: "Noonoo Design Language in dark mode."
+    },
+    {
+      src: "/img/project/noonoo-design-language/light-mode.jpg",
+      alt: "Noonoo Design Language in light mode."
+    }
+  ]}
+/>
+
+The dark / light theme swap is more of a nice-to-have feature; I plan to add it
+to the site in the future.
+
+## Interactive Noonoo examples 
 
 ### Code
 
 <Code
-  filename="noonoo.js"
+  filename="hack_the_gibson.js"
   lang="js"
   code={
-`// Noonoo Design Language
-setInterval({
-  alert("");
-}, 1000)`}
+`// Intermittent reminder to hack the Gibson.
+const randomInterval = () => Math.floor(Math.random() * (5000 - 1000 + 1) 
+  + 1000);
+const message = () => console.log("We gotta hack the Gibson!");
+setInterval(message, randomInterval());
+`}
 />
 
 ### Carousel
@@ -159,16 +252,11 @@ setInterval({
   ]}
 />
 
-## Stylistic influences
+## Logo: The Octostar
 
-* Neumorphism
-* Skeumorphism
-* Frutiger Aero
-* Aqua
 
-## Noonoo: What? *Why?*
 
-Around 2020 
+## Why neumorphism?
 
 I've come across numerous *Medium* thinkpieces and YouTube video essays
 purporting that neumorphism is inherently inaccessible; that the visual style
@@ -201,3 +289,12 @@ awesome.
 In comparison, a flat, minimal design is less risky because the lack of visual
 chrome naturally leads designers to focus on what's remaining—usability and functionality;
 there's less mental overhead. 
+
+Neumorphism's traits don't present much risk to usability in our case since I'll
+be using Noonoo Design for a fairly basic, paper-like interface consisting of
+cards, buttons, forms, images and simple components. If, instead, this were a
+richly interactive mobile app or something as jam-packed with functionality as a
+DAW or NLE, then creating a fitting neumorphic design language could be a whole
+lot more challenging.
+
+[^1]: "When Friedman slightly curved the right angle of an entrance corridor to one property, ... the percentage who entered increased from one-third to nearly two-thirds." Schüll, Natasha Dow, *Addiction By Design,* Princeton University Press, 2012. P. 45.

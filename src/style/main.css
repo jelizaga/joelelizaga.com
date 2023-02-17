@@ -441,6 +441,10 @@ img {
   box-shadow: var(--noonoo_protrusion_bright);
 }
 
+.noonoo-image .container.protruding {
+  background-color: transparent;
+}
+
 .noonoo-image.captioned, .noonoo-carousel.captioned {
   box-shadow: var(--noonoo_protrusion_bright);
 }
@@ -456,7 +460,7 @@ img {
   border-radius: 0;
 }
 
-.noonoo-image .container.captioned.round-corners, .noonoo-carousel .container.captioned.round-corners, .noonoo-carousel .container.captioned.round-corners::before {
+.noonoo-image .container.captioned.round-corners, .noonoo-image .container.captioned.round-corners::before, .noonoo-carousel .container.captioned.round-corners, .noonoo-carousel .container.captioned.round-corners::before {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }

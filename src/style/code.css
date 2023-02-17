@@ -16,14 +16,14 @@ pre[class*="language-"] {
 	white-space: pre-wrap;
 	word-wrap: normal;
 	font-family: "Comic Code Ligatures", monospace;
-	font-size: 0.8rem;
+	font-size: 0.65rem;
 	color: var(--spectacular_red_glow);
 	text-shadow: none;
 }
 
 pre > code[class*="language-"] {
-	font-size: 0.8rem;
-  line-height: 1.3rem;
+	font-size: 0.65rem;
+  line-height: 1.1rem;
 }
 
 pre[class*="language-"],
