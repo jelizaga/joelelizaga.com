@@ -14,7 +14,9 @@ interface Image {
   straightCorners?: string;
   animated?: boolean;
   display?: string;
+  float?: string;
   popup?: boolean;
+  transparentBackground?: boolean;
 }
 
 export default function NNImage(props: Image) {
@@ -53,6 +55,21 @@ export default function NNImage(props: Image) {
         containerClasses += " flat";
         break;
     }
+  }
+  // Float: 
+  if (props.float) {
+    switch(props.float) {
+      case "left":
+        imageClasses += " left";
+        break;
+      case "right":
+        imageClasses += " right";
+        break;
+    }
+  }
+  // Transparent background:
+  if (props.transparentBackground) {
+    containerClasses += " transparent";
   }
   // Pops up:
   if (props.popup === true || props.popup === undefined) {

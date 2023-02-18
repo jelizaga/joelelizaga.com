@@ -251,7 +251,7 @@ table tr td, table tr th {
   width: 1rem;
 }
 
-.data-footnote-backref:active {
+.footnotes ol li p .data-footnote-backref:active {
   box-shadow: var(--noonoo_depression_bright), var(--noonoo_protrusion_bright);
 }
 
@@ -430,43 +430,10 @@ img {
 }
 
 .noonoo-image .container, .noonoo-carousel .container {
-  background-color: var(--lawetlatla_ash_dim);
-}
-
-.noonoo-image .container.pops-up {
-  cursor: zoom-in;
-}
-
-.noonoo-image.protruding, .noonoo-carousel.protruding {
-  box-shadow: var(--noonoo_protrusion_bright);
-}
-
-.noonoo-image .container.protruding {
-  background-color: transparent;
-}
-
-.noonoo-image.captioned, .noonoo-carousel.captioned {
-  box-shadow: var(--noonoo_protrusion_bright);
-}
-
-.noonoo-image .container, .noonoo-carousel .container {
   display: block;
   line-height: 0;
   overflow: hidden;
   position: relative;
-}
-
-.noonoo-image .container.straight-corners, .noonoo-carousel .container.straight-corners {
-  border-radius: 0;
-}
-
-.noonoo-image .container.captioned.round-corners, .noonoo-image .container.captioned.round-corners::before, .noonoo-carousel .container.captioned.round-corners, .noonoo-carousel .container.captioned.round-corners::before {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-.noonoo-image.round-corners, .noonoo-carousel.round-corners, .noonoo-image .container.round-corners, .noonoo-image .container.round-corners::before, .noonoo-carousel .container.round-corners, .noonoo-carousel .container.round-corners::before {
-  border-radius: 1.4rem;
 }
 
 .noonoo-image .container::before, .noonoo-carousel .container::before {
@@ -476,6 +443,64 @@ img {
   width: 100%;
   position: absolute;
 }
+
+.noonoo-image .container.pops-up {
+  cursor: zoom-in;
+}
+
+/* Float: */
+.noonoo-image.left, .noonoo-image.right {
+  width: 38.197%;
+}
+
+.noonoo-image.left {
+  float: left;
+  margin-right: 1rem;
+}
+
+.noonoo-image.right {
+  float: right;
+  margin-left: 1rem;
+}
+
+/* Background color: */
+.noonoo-image .container, .noonoo-carousel .container {
+  background-color: var(--lawetlatla_ash_dim);
+}
+
+.noonoo-image .container.transparent, .noonoo-carousel .container.transparent {
+  background-color: transparent;
+}
+
+/* Neumorphic display: */
+.noonoo-image.protruding, .noonoo-carousel.protruding {
+  box-shadow: var(--noonoo_protrusion_bright);
+}
+
+.noonoo-image .container.protruding {
+  background-color: transparent;
+}
+
+/* Corners: */
+.noonoo-image .container.straight-corners, .noonoo-carousel .container.straight-corners {
+  border-radius: 0;
+}
+
+.noonoo-image.round-corners, .noonoo-carousel.round-corners, .noonoo-image .container.round-corners, .noonoo-image .container.round-corners::before, .noonoo-carousel .container.round-corners, .noonoo-carousel .container.round-corners::before {
+  border-radius: 1.4rem;
+}
+
+.noonoo-image .container.captioned.round-corners, .noonoo-image .container.captioned.round-corners::before, .noonoo-carousel .container.captioned.round-corners, .noonoo-carousel .container.captioned.round-corners::before {
+  /* If captioned but with rounded corners, sharpen bottom corners. */
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* Captioning: */
+.noonoo-image.captioned, .noonoo-carousel.captioned {
+  box-shadow: var(--noonoo_protrusion_bright);
+}
+
 
 .noonoo-image .container.depressed::before, .noonoo-carousel .container.depressed::before {
   box-shadow: var(--noonoo_depression_img);

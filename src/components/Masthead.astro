@@ -9,8 +9,16 @@ const { currentPage, headerShadow } = Astro.props as Props;
 ---
 
 <header class="masthead">
-  <div>
-    <a class="logo" href="/">&#10059;</a>
+  <div class="container">
+    <div class="logo-container">
+      <a class="logo" href="/">
+        <img 
+          alt="Logo - an octostar."
+          src="/img/octostar/octostar-lawetlatla-ash-dim.svg"
+          class="octostar"
+        />
+      </a>
+    </div>
     <Nav
       currentPage={currentPage}
     />
@@ -18,30 +26,35 @@ const { currentPage, headerShadow } = Astro.props as Props;
 </header>
 
 <style>
-  .masthead a, header a:visited {
-    color: var(--lawetlatla_ash_dim);
-    text-decoration-line: none;
-  }
-
   .masthead {
     background-color: var(--tahoma_white_dim);
     box-shadow: var(--noonoo_ceiling_protrusion_shadow);
     box-sizing: border-box;
   }
 
-  .masthead div {
+  .masthead .logo {
+    height: 100%;
+    width: fit-content;
+  }
+
+  .masthead .logo .octostar {
+    height: 0.9rem;
+    width: 0.9rem;
+  }
+  
+  .masthead .logo-container {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+  }
+
+  .masthead .container {
     display: flex;
     justify-content: space-between;
     width: 61.803vw;
     margin-left: auto;
     margin-right: auto;
-  }
-
-  .masthead .logo {
-    display: inline-block;
-    margin: 0;
-    padding-bottom: 0.5rem;
-    padding-top: 0.5rem;
   }
 
   @media screen and (max-width: 1200px) {

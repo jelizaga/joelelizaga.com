@@ -1,7 +1,8 @@
 ---
 slug: noonoo-design-language
 title: "Noonoo Design Language"
-description: "Neumorphic design language"
+headTitle: "Noonoo Design Language | High-tech sculpting with light & shadow"
+description: "High-tech sculpting with light & shadow"
 img: /img/project/noonoo-design-language/header.svg
 tags: ["UX", "UI"]
 ---
@@ -23,7 +24,7 @@ around 2020 that acts as a visual midway between pre-2010s
 [skeuomorphism](https://www.interaction-design.org/literature/article/skeuomorphism-is-dead-long-live-skeuomorphism) and minimalist
 flat design. Neumorphism constructs UIs that look more 'tangible' and
 'realistic' while avoiding the visual noise and complexity of skeumorphism.
-Shadows are used to illustrate depth and a 3D-like effect, with elements
+Light and shadow are used to create depth and a 3D-like effect, with elements
 pressed into or protruding from the interface.
 
 As you might imagine by the heavy use of shadows and near-skeumorphic design,
@@ -59,7 +60,8 @@ and features that I've borrowed:
 * *Utilitarianism* - Artifacts like Wikipedia, monorails,
   airplanes, OS X, and brutalist architecture all have a tool-like
   utility at their core that makes for efficient and satisfying experiences.
-* *Red as focus conductor* - Mario, Home
+* *Red as focus conductor* - The low-frequency cones in our eyes pick up red
+  quite well,
 
 ## Design principles 
 
@@ -78,7 +80,6 @@ The guiding principles of Noonoo are ***THUSS***:
       mimic print or take advantage of preexisting familiarity with digital
       experiences.
     * *Rounded shapes* are used to evoke approachability and friendliness.
-    * *
 * ***U**sability:*
     * *Click boxes* are substantial and accessible. This is a lucky
       side-effect of neumorphic objects being relatively 'large' owing to the
@@ -123,10 +124,12 @@ I call it "Noonoo" because:
 * *Role:* Primary
 
 Tahoma White has a hint of red to it for a couple reasons:
+
 1. The neumorphic effect doesn't quite work in grayscale; an off-white works
-   better.
+   better. This limits us to off-whites with red, green, yellow, or blue hues.
 2. Since white is the base color of my interface I decided to lean more towards
-   the warmer spectrum of color to minimize eye strain.
+   the warmer spectrum of color to minimize eye strain and project a 'warm'
+   experience.
 
 #### Lawetlat'la Ash 
 
@@ -154,7 +157,7 @@ compliment to Tahoma White.
 * *Role:* Main accent
 
 *Spectacular Red* is the main accent color of Noonoo Design, chosen for its
-bright, electric hue. 
+bright, electric hue. It's used to direct attention and indicate interactivity.
 
 #### Rain City Emerald
 
@@ -177,7 +180,8 @@ bright, electric hue.
   alt="Whulge Blue color palette."
 />
 
-*Namesake:* Puget Sound / Whulge
+* *Namesake:* Puget Sound / Whulge
+* *Role:* Secondary accent
 
 ### Dark Mode / Light Mode
 
@@ -200,7 +204,7 @@ I'm working on a dark mode color scheme as well:
 The dark / light theme swap is more of a nice-to-have feature; I plan to add it
 to the site in the future.
 
-## Interactive Noonoo examples 
+## Noonoo examples 
 
 ### Code
 
@@ -211,8 +215,8 @@ to the site in the future.
 `// Intermittent reminder to hack the Gibson.
 const randomInterval = () => Math.floor(Math.random() * (5000 - 1000 + 1) 
   + 1000);
-const message = () => console.log("We gotta hack the Gibson!");
-setInterval(message, randomInterval());
+const reminder = () => console.log("We gotta hack the Gibson!");
+setInterval(reminder, randomInterval());
 `}
 />
 
@@ -254,11 +258,73 @@ setInterval(message, randomInterval());
 
 ## Logo: The Octostar
 
+<NNImage
+  src="/img/octostar/octostar-spectacular-red.svg"
+  alt="The octostar logo."
+  display="flat"
+  float="right"
+  popup={false}
+  transparentBackground={true}
+/>
 
+The Octostar (❋) is an asterisk / star glyph consisting of eight teardrop-like
+spokes. It looks a bit like a propeller.
+
+The Octostar's symbolism, shape, and history make it particularly well-fitted
+for my practice.
+
+### Symbolism
+
+* **Focus** - Asterisks are used in writing to denote edits;
+  tactical diversions of attention and detours to edification. A designer is
+  mindful of the foci of users, stakeholders, and the product itself. The
+  decisions a designer makes and the patterns they apply are informed by
+  knowledge, logic, and qualifications that could be seemingly called out by a
+  traditional asterisk in a text—an unobtrusive option to follow their reasoning
+  if necessary.
+* **Fusion** - Stars are used as
+  [wildcard characters](https://en.wikipedia.org/wiki/Wildcard_character) in
+  software development; to capture 'anything' and 'everything.' Say
+  you'd like to delete everything in your file system; using a wildcard, that's
+  `sudo rm -rf / *`. We draw from diverse sources, experiences, collaborators,
+  skills, inspirations, ideas, and fields to engineer and design quality experiences.
+  This inquisitive interfusion is not unlike the fully-inclusive dragnet of
+  wildcards.
+* **Growth** - Asterisks are used as multiplication operators in
+  math, symbolizing growth through duplication, iteration, and repetition. In UX
+  we use iteration to find our way to optimal designs, features, and concepts.
+  Each iteration of a design is an evolution of a previous iteration. Iteration 
+  can also be understood as a form of practice; a method of 'growing' skill
+  through repetition—something that applies to any labor; motor skills,
+  creativity, social finesse, or knowledge work.
+* **Computing** - This one's straightforward; there's `8` bits to a byte! ☻
+
+### Shape
+
+❋ shares the curved lines used elsewhere in Noonoo Design. Its symmetry, heavy
+weight, and simplicity make it recognizable from a distance and easy to draw on
+paper.
+
+Stars have six spokes in the majority of fonts (＊), but most writers will 
+draw their stars with eight spokes by hand; it's easier to make a symmetrical
+character with eight. An eight-spoked star has a dash of extra humanism because
+of this.
+
+### History
+
+❋ was [added to Unicode](https://www.unicode.org/charts/PDF/U2700.pdf) in 1991
+as part of the
+[ITC Zap Dingbats typeface](https://en.wikipedia.org/wiki/Zapf_Dingbats) along
+with a few dozen other asterisk-like decorations and stars.
+
+There's a noticeable chip in the spoke at the 10:30 o'clock mark that I'd like to
+correct when I modify the glyph to use as a logo.
+
+I think that chip adds a little character, though.
 
 ## Why neumorphism?
 
-I've come across numerous *Medium* thinkpieces and YouTube video essays
+I've come across numerous thinkpieces and YouTube video essays
 purporting that neumorphism is inherently inaccessible; that the visual style
 is sub-optimally usable.
 
@@ -296,5 +362,10 @@ cards, buttons, forms, images and simple components. If, instead, this were a
 richly interactive mobile app or something as jam-packed with functionality as a
 DAW or NLE, then creating a fitting neumorphic design language could be a whole
 lot more challenging.
+
+## Afterthoughts
+
+This page is more of a living document; Noonoo Design isn't really 'done.' As I
+get more practice, visual trends change, and 
 
 [^1]: "When Friedman slightly curved the right angle of an entrance corridor to one property, ... the percentage who entered increased from one-third to nearly two-thirds." Schüll, Natasha Dow, *Addiction By Design,* Princeton University Press, 2012. P. 45.
