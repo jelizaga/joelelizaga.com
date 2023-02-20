@@ -6,17 +6,18 @@ export interface Props {
   headerShadow?: boolean;
 }
 const { currentPage, headerShadow } = Astro.props as Props;
+
+let logoClasses = "logo";
+if (currentPage == "home") {
+  logoClasses += " selected";
+}
 ---
 
 <header class="masthead">
   <div class="container">
     <div class="logo-container">
-      <a class="logo" href="/">
-        <img 
-          alt="Logo - an octostar."
-          src="/img/octostar/octostar-lawetlatla-ash-dim.svg"
-          class="octostar"
-        />
+      <a class={logoClasses} href="/">
+        ❋
       </a>
     </div>
     <Nav
@@ -33,8 +34,24 @@ const { currentPage, headerShadow } = Astro.props as Props;
   }
 
   .masthead .logo {
-    height: 100%;
-    width: fit-content;
+    align-items: center;
+    border-radius: 100%;
+    color: var(--lawetlatla_ash_dim);
+    display: flex;
+    font-size: 1.2rem;
+    height: inherit;
+    justify-content: center;
+    transition: 0.1s color ease-in, 0.1s text-shadow ease-in, 0.1s box-shadow ease-in;
+    width: inherit;
+  }
+
+  .masthead .logo:hover {
+    color: var(--spectacular_red_bright);
+    text-shadow: var(--spectacular_red_glowing);
+  }
+
+  .masthead .logo:active, .masthead .logo.selected {
+    box-shadow: var(--noonoo_depression_bright);
   }
 
   .masthead .logo .octostar {
@@ -45,11 +62,13 @@ const { currentPage, headerShadow } = Astro.props as Props;
   .masthead .logo-container {
     align-items: center;
     display: flex;
-    height: 100%;
+    height: 2rem;
     justify-content: center;
+    width: 2rem;
   }
 
   .masthead .container {
+    align-items: center;
     display: flex;
     justify-content: space-between;
     width: 61.803vw;
@@ -73,11 +92,11 @@ const { currentPage, headerShadow } = Astro.props as Props;
       z-index: 4;
     }
 
-    .masthead .logo {
+    .masthead .logo-container {
       display: none;
     }
 
-    .masthead div {
+    .masthead .container {
       width: 100%;
     }
 

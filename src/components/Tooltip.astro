@@ -7,8 +7,23 @@ export interface Props {
   position?: string;
 }
 const { id, title, content, position = "top" } = Astro.props as Props;
+let tooltipClasses = "tooltip-bubble";
+switch (position) {
+  case "top":
+    tooltipClasses += " top";
+    break;
+  case "bottom":
+    tooltipClasses += " bottom";
+    break;
+  case "left":
+    tooltipClasses += " left";
+    break;
+  case "right":
+    tooltipClasses += " right";
+    break;
+}
 ---
 
-<span id={id} class="tooltip-bubble" data-tooltip={content}>
+<span id={id} class={tooltipClasses} data-tooltip={content}>
   {title && <em>{title} - </em>}{content}
 </span>

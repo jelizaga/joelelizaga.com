@@ -10,6 +10,8 @@ import Layout from "../../layouts/Layout.astro";
 import NNImage from "../../components/NNImage.astro";
 import Tag from "../../components/Tag.astro";
 import Tooltip from "../../components/Tooltip.astro";
+import { updateTSConfigForFramework } from "astro/dist/core/config";
+import BlogProfile from "../../components/BlogProfile.astro";
 
 export async function getStaticPaths() {
   const blogPosts = await Astro.glob("../../blog/*.mdx");
@@ -48,7 +50,12 @@ const { Content, frontmatter } = Astro.props.blog;
             />
           </a>
           <p class="date subheading">
-            {new Date(frontmatter.pubDate).toLocaleDateString()}
+            <span class="tooltip">
+              pub. {new Date(frontmatter.pubDate).toLocaleDateString()}
+            </span>
+            {frontmatter.upDate &&
+              `/ upd. ${new Date(frontmatter.upDate).toLocaleDateString()}`
+            }
           </p>
           <h1>{frontmatter.title}</h1>
           <p class="description">
@@ -75,6 +82,7 @@ const { Content, frontmatter } = Astro.props.blog;
       <div class="content">
         <Content />
       </div>
+      <BlogProfile />
     </article>
   </main>
 </Layout>

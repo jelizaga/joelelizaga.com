@@ -1,0 +1,49 @@
+---
+export interface Props {
+  src: string;
+  alt?: string;
+  float?: string;
+}
+
+const {
+  src,
+  alt = "Headshot of Joel Elizaga.",
+  float
+} = Astro.props as Props;
+
+let headshotClasses = "headshot";
+switch(float) {
+  case "left":
+    headshotClasses += " left";
+    break;
+  case "right":
+    headshotClasses += " right";
+    break;
+}
+---
+
+<img
+  class={headshotClasses}
+  src={src}
+  alt={alt}
+/>
+
+<style>
+  .headshot {
+    border: var(--tahoma_white_dim) solid 3px;
+    border-radius: 100%;
+    box-shadow: var(--noonoo_protrusion_bright);
+    height: clamp(8rem, 8rem, 275px);
+    width: clamp(8rem, 8rem, 275px);
+  }
+
+  .headshot.left {
+    float: left;
+    margin-right: 1rem;
+  }
+
+  .headshot.right {
+    float: right;
+    margin-left: 1rem;
+  }
+</style>

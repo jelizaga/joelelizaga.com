@@ -1,0 +1,74 @@
+---
+import Headshot from "./Headshot.astro";
+import HyperlinkButtons from "./HyperlinkButtons.astro";
+import Tooltip from "./Tooltip.astro";
+---
+
+<div class="blog-profile">
+  <div class="profile">
+    <Headshot
+      src="/img/headshot/headshot1.jpg"
+      float="right"
+    />
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+  </div>
+  <HyperlinkButtons
+    buttons={[
+      {
+        href: "rss.xml",
+        target: "_blank",
+        icon: "fa-solid fa-rss",
+        tooltipContent: "RSS Feed",
+        tooltipId: "blog-profile-rss"
+      },
+      {
+        href: "https://linkedin.com/in/joel-elizaga",
+        target: "_blank",
+        icon: "fa-brands fa-linkedin",
+        tooltipContent: "LinkedIn",
+        tooltipId: "blog-profile-linkedin"
+      },
+      {
+        href: "https://github.com/jelizaga",
+        target: "_blank",
+        icon: "fa-brands fa-github",
+        tooltipContent: "GitHub",
+        tooltipId: "blog-profile-github"
+      },
+    ]}
+    buttonDirection="column"
+    tooltipPosition="left"
+    display="protruding"
+    float="right"
+  />
+</div>
+
+<style>
+  .blog-profile {
+    border-bottom-left-radius: 2.7rem;
+    border-bottom-right-radius: 2.7rem;
+    box-shadow: var(--noonoo_depression_bright);
+    display: flex;
+    overflow: hidden;
+  }
+
+  .blog-profile .profile {
+    padding-bottom: 1rem;
+    padding-left: 3rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+  }
+
+  .blog-profile .hyperlink-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+</style>

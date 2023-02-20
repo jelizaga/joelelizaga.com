@@ -1,0 +1,110 @@
+---
+import HyperlinkButton from './HyperlinkButton.astro';
+
+interface Button {
+  href: string;
+  target: string;
+  icon: string;
+  tooltipContent: string;
+  tooltipId: string;
+}
+
+export interface Props {
+  buttons: Button[];
+  display?: string;
+  buttonDirection?: string;
+  alignButtons?: string;
+  justifyButtons?: string;
+  tooltipPosition?: string;
+}
+
+const {
+  buttons,
+  display,
+  buttonDirection = "row",
+  alignButtons = "center",
+  justifyButtons,
+  tooltipPosition = "top"
+} = Astro.props as Props;
+
+let hyperlinkButtonsClasses = "hyperlink-buttons";
+switch(buttonDirection) {
+  case "column":
+    hyperlinkButtonsClasses += " column";
+    break;
+  case "row":
+    hyperlinkButtonsClasses += " row";
+    break;
+}
+
+switch(justifyButtons) {
+  case "center":
+    hyperlinkButtonsClasses += " center";
+    break;
+  case "start":
+    hyperlinkButtonsClasses += " start";
+    break;
+  case "end":
+    hyperlinkButtonsClasses += " end";
+    break;
+}
+
+switch(display) {
+  case "protruding":
+    hyperlinkButtonsClasses += " protruding";
+    break;
+}
+---
+
+<div class={hyperlinkButtonsClasses}>
+  {buttons.map(button => (
+    <HyperlinkButton
+      href={button.href}
+      target={button.target}
+      icon={button.icon}
+      tooltipContent={button.tooltipContent}
+      tooltipId={button.tooltipId}
+      tooltipPosition={tooltipPosition}
+    />
+  ))}
+</div>
+
+<style>
+  .hyperlink-buttons {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .column {
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 0.8rem;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    padding-top: 0.8rem;
+  }
+
+  .row {
+    flex-direction: row;
+    padding-bottom: 0.4rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 0.4rem;
+  }
+
+  .hyperlink-buttons.protruding {
+    box-shadow: var(--noonoo_protrusion_bright);
+  }
+
+  .hyperlink-buttons.center {
+    justify-content: center;
+  }
+
+  .hyperlink-buttons.start {
+    justify-content: start;
+  }
+
+  .hyperlink-buttons.end {
+    justify-content: end;
+  }
+</style>

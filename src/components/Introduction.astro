@@ -1,4 +1,5 @@
 ---
+import HyperlinkButtons from "./HyperlinkButtons.astro";
 import Tooltip from "./Tooltip.astro";
 
 ---
@@ -30,44 +31,33 @@ import Tooltip from "./Tooltip.astro";
           <a href="#contact" class="button-primary"><i class="fa-solid fa-paper-plane"></i> Contact</a>
         </div>
       </div>
-      <div class="hyperlink-buttons">
-        <a
-          class="tooltip"
-          href="https://github.com/jelizaga"
-          target="_blank"
-          aria-labelledby="intro-github-tooltip"
-        >
-          <i class="fa-brands fa-github"></i>
-          <Tooltip
-            id="intro-github-tooltip"
-            content="GitHub"
-          />
-        </a>
-        <a
-          class="tooltip"
-          href="https://linkedin.com/in/joel-elizaga"
-          target="_blank"
-          aria-labelledby="intro-linkedin-tooltip"
-        >
-          <i class="fa-brands fa-linkedin"></i>
-          <Tooltip
-            id="intro-linkedin-tooltip"
-            content="LinkedIn"
-          />
-        </a>
-        <a
-          class="tooltip"
-          href="/doc/joel_elizaga_resume.pdf"
-          target="_blank"
-          aria-labelledby="intro-resume-tooltip"
-        >
-          <i class="fa-solid fa-file-pdf"></i>
-          <Tooltip
-            id="intro-resume-tooltip"
-            content="Resume"
-          />
-        </a>
-      </div>
+      <HyperlinkButtons
+        buttons={[
+          {
+            href: "https://github.com/jelizaga",
+            target: "_blank",
+            icon: "fa-brands fa-github",
+            tooltipContent: "GitHub",
+            tooltipId: "intro-github-tooltip"
+          },
+          {
+            href: "https://linkedin.com/in/joel-elizaga",
+            target: "_blank",
+            icon: "fa-brands fa-linkedin",
+            tooltipContent: "LinkedIn",
+            tooltipId: "intro-linkedin-tooltip"
+          },
+          {
+            href: "/doc/joel_elizaga_resume.pdf",
+            target: "_blank",
+            icon: "fa-solid fa-file-pdf",
+            tooltipContent: "Resume",
+            tooltipId: "intro-resume-tooltip"
+          }
+        ]}
+        display="protruding"
+        justifyButtons="center"
+      />
     </div>
   </div>
   <div class="introduction-bg">

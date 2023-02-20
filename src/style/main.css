@@ -1032,14 +1032,12 @@ header .content .tags .tag a {
 /* Tooltips //////////////////////////////////////////////////////////////////*/
 .tooltip .tooltip-bubble {
   background-color: var(--tahoma_white_dim);
-  bottom: 100%;
   border-radius: 1.4rem;
-  box-shadow: var(--noonoo_floating_card_bright);
+  box-shadow: var(--noonoo_floating_card_shadow);
   box-sizing: border-box;
   color: var(--lawetlatla_ash_bright);
   content: attr(data-tooltip);
   font-weight: normal;
-  left: 50%;
   max-width: 34rem;
   opacity: 0;
   padding-bottom: 0.3rem;
@@ -1047,7 +1045,6 @@ header .content .tags .tag a {
   padding-right: 1rem;
   padding-top: 0.3rem;
   position: absolute;
-  transform: translateX(-50%);
   transition: opacity 0.2s;
   visibility: hidden;
   width: max-content;
@@ -1055,13 +1052,55 @@ header .content .tags .tag a {
 
 .tooltip .tooltip-bubble::after {
   content: "";
-  border-color: var(--tahoma_white_dim) transparent transparent transparent;
   border-style: solid;
   border-width: 8px;
+  position: absolute;
+}
+
+.tooltip .tooltip-bubble.top, .tooltip .tooltip-bubble.bottom {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tooltip .tooltip-bubble.top {
+  bottom: 100%;
+}
+
+.tooltip .tooltip-bubble.bottom {
+  top: 100%;
+}
+
+.tooltip .tooltip-bubble.left {
+  right: 100%;
+}
+
+.tooltip .tooltip-bubble.right {
+  left: 100%;
+}
+
+.tooltip .tooltip-bubble.top::after, .tooltip .tooltip-bubble.bottom::after {
   left: 50%;
   margin-left: -8px;
-  position: absolute;
+}
+
+.tooltip .tooltip-bubble.top::after {
+  border-color: var(--tahoma_white_dim) transparent transparent transparent;
   top: 100%;
+}
+
+.tooltip .tooltip-bubble.bottom::after {
+  bottom: 100%;
+  border-color: transparent transparent var(--tahoma_white_dim) transparent;
+}
+
+.tooltip .tooltip-bubble.left::after {
+  left: 100%;
+  border-color: transparent transparent transparent var(--tahoma_white_dim);
+}
+
+.tooltip .tooltip-bubble.right::after {
+  right: 100%;
+  border-color: transparent var(--tahoma_white_dim) transparent transparent;
 }
 
 .tooltip:hover .tooltip-bubble {
