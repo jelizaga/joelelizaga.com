@@ -3,13 +3,14 @@
 ////////////////////////////////////////////////////////////////////////////////
 // Contact form popup.
 
-import { createSignal, Switch } from "solid-js";
 import hotkeys from "hotkeys-js";
 import PopupControlBar from "./PopupControlBar";
 import ContactForm from "./ContactForm";
 
 export default function ContactPopup(props: any) {
   let popup;
+  let contactForm;
+  // Effects ///////////////////////////////////////////////////////////////////
   // Functions /////////////////////////////////////////////////////////////////
   // `closePopup` - Closes the popup.
   const closePopup = () => {
@@ -31,10 +32,14 @@ export default function ContactPopup(props: any) {
           title="Contact"
           closePopup={closePopup}
         />
-        <div class="contact-form content">
+        <div 
+          class="contact-form content"
+          ref={contactForm}
+        >
           <ContactForm
             closePopup={closePopup}
           />
+          {/* <div ref={overflowYFog} class="overflow-y-fog"></div> */}
         </div>
       </div>
     </div>

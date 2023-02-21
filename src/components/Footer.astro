@@ -1,5 +1,6 @@
 ---
 import FooterBadge from './FooterBadge.astro';
+import HyperlinkButtons from './HyperlinkButtons.astro';
 
 export interface Props {
   footerShadow?: boolean;
@@ -10,73 +11,35 @@ const footerClasses = footerShadow ? "footer-shadowed" : "";
 ---
 
 <footer class={footerClasses}>
-  <div>
-    <FooterBadge
-      description="Contact"
-      destination="/#contact"
-      icon="fa-solid fa-paper-plane"
-      tooltipId="contact-tooltip"
-    />
-    <FooterBadge
-      description="GitHub"
-      destination="https://github.com/jelizaga"
-      icon="fa-brands fa-github"
-      target="_blank"
-      tooltipId="github-tooltip"
-    />
-    <FooterBadge
-      description="LinkedIn"
-      destination="https://linkedin.com/in/joel-elizaga"
-      icon="fa-brands fa-linkedin"
-      target="_blank"
-      tooltipId="linkedin-tooltip"
-    />
-    <FooterBadge
-      description="Resume"
-      destination="/doc/joel_elizaga_resume.pdf"
-      icon="fa-solid fa-file-pdf"
-      tooltipId="resume-tooltip"
-    />
-  </div>
+  <HyperlinkButtons
+    buttons={[
+      {
+        href: "/#contact",
+        icon: "fa-solid fa-envelope",
+        target: "_self",
+        tooltipContent: "Contact",
+        tooltipId: "footer-contact-tooltip"
+      },
+      {
+        href: "https://github.com/jelizaga",
+        target: "_blank",
+        icon: "fa-brands fa-github",
+        tooltipContent: "GitHub",
+        tooltipId: "footer-github-tooltip"
+      },
+      {
+        href: "https://linkedin.com/in/joel-elizaga",
+        target: "_blank",
+        icon: "fa-brands fa-linkedin",
+        tooltipContent: "LinkedIn",
+        tooltipId: "footer-linkedin-tooltip"
+      },
+      {
+        href: "/doc/joel_elizaga_resume.pdf",
+        icon: "fa-solid fa-file-pdf",
+        tooltipContent: "Resume",
+        tooltipId: "footer-resume-tooltip"
+      }
+    ]}
+  />
 </footer>
-
-<style>
-  a {
-    color: var(--lawetlatla_ash_dim);
-  }
-
-  footer {
-    box-shadow: var(--noonoo_floor_protrusion_bright);
-    box-sizing: border-box;
-    flex-direction: column;
-    flex-grow: 2;
-    justify-content: flex-end;
-    padding-bottom: 0.75rem;
-    padding-top: 0.75rem;
-  }
-
-  .footer-shadowed {
-    box-shadow: var(--noonoo_floor_protrusion_shadow);
-  }
-
-  footer div {
-    display: flex;
-    gap: 0.75rem;
-    justify-content: flex-start;
-    width: 61.803vw;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  @media screen and (max-width: 1200px) {
-    footer div {
-      gap: 1.7rem;
-    }
-  }
-
-  @media screen and (max-width: 750px) {
-    footer div {
-      width: 95vw;
-    }
-  }
-</style>
