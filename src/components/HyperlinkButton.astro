@@ -1,13 +1,16 @@
 ---
+import { PropAliases } from 'solid-js/web';
+import PopupButton from './PopupButton';
 import Tooltip from './Tooltip.astro';
 
 export interface Props {
-  href: string;
-  target: string;
+  href?: string;
+  target?: string;
   icon: string;
   tooltipContent: string;
   tooltipId: string;
   tooltipPosition?: string;
+  popup?: string;
 }
 
 const {
@@ -16,48 +19,46 @@ const {
   icon,
   tooltipContent,
   tooltipId,
-  tooltipPosition = "top"
+  tooltipPosition = "top",
+  popup,
 } = Astro.props as Props;
+
+let triggeredPopup;
+switch(popup) {
+  case "ContactPopup":
+    triggeredPopup = "ContactPopup";
+    break;
+}
 ---
 
-<a
-  class="hyperlink-button tooltip"
-  href={href}
-  target={target}
-  aria-labelledby={tooltipId}
->
-  <i class={icon}></i>
-  <Tooltip
-    content={tooltipContent}
-    id={tooltipId}
-    position={tooltipPosition}
+{href &&
+  <a
+    class="hyperlink-button tooltip"
+    href={href}
+    target={target}
+    aria-labelledby={tooltipId}
+  >
+    <i class={icon}></i>
+    <Tooltip
+      content={tooltipContent}
+      id={tooltipId}
+      position={tooltipPosition}
+    />
+  </a>
+}
+
+{popup &&
+  <PopupButton
+    client:load
+    popup={popup}
+    button={{
+      icon: `${icon}`,
+      tooltip: {
+        id: `${tooltipId}`,
+        content: `${tooltipContent}`,
+        position: `${tooltipPosition}`
+      }
+    }}
+    class="hyperlink-button tooltip"
   />
-</a>
-
-<style>
-  .hyperlink-button {
-    align-items: center;
-    background-image: var(--noonoo_protrusion_rounded_bright);
-    border-radius: 100%;
-    box-shadow: var(--noonoo_protrusion_bright);
-    display: flex;
-    height: 1.5rem;
-    justify-content: center;
-    position: relative;
-    transition: box-shadow 0.1s ease-in;
-    width: 1.5rem;
-  }
-
-  .hyperlink-button i {
-    color: var(--lawetlatla_ash_dim);
-    transition: 0.1s ease-in color, 0.1s ease-in text-shadow;
-  }
-
-  .hyperlink-button:hover i {
-    color: var(--spectacular_red_bright);
-  }
-
-  .hyperlink-button:active {
-    box-shadow: var(--noonoo_protrusion_bright), var(--noonoo_depression_bright);
-  }
-</style>
+}

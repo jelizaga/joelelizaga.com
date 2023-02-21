@@ -2,11 +2,12 @@
 import HyperlinkButton from './HyperlinkButton.astro';
 
 interface Button {
-  href: string;
-  target: string;
+  href?: string;
+  target?: string;
   icon: string;
   tooltipContent: string;
   tooltipId: string;
+  popup?: string;
 }
 
 export interface Props {
@@ -36,7 +37,6 @@ switch(buttonDirection) {
     hyperlinkButtonsClasses += " row";
     break;
 }
-
 switch(justifyButtons) {
   case "center":
     hyperlinkButtonsClasses += " center";
@@ -65,6 +65,7 @@ switch(display) {
       tooltipContent={button.tooltipContent}
       tooltipId={button.tooltipId}
       tooltipPosition={tooltipPosition}
+      popup={button.popup}
     />
   ))}
 </div>

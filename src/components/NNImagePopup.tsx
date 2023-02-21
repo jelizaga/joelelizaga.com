@@ -9,7 +9,7 @@ import hotkeys from "hotkeys-js";
 import NNImagePopupCarouselContainer from "./NNImagePopupCarouselContainer";
 import NNImagePopupImageContainer from "./NNImagePopupImageContainer";
 import NNImagePopupCaption from "./NNImagePopupCaption";
-import NNImagePopupControls from "./NNImagePopupControls";
+import PopupControlBar from "./PopupControlBar";
 
 interface Image {
   src: string;
@@ -100,13 +100,13 @@ export default function NNImagePopup(props: any) {
   })
   //////////////////////////////////////////////////////////////////////////////
   return (
-    <div class="noonoo-image-popup">
+    <div class="noonoo-image-popup popup-container">
       <div class="popup-background" onClick={closePopup}></div>
       <div 
         class={popupIsFullscreen() ? "popup fullscreen" : "popup"} 
         ref={popup}
       >
-        <NNImagePopupControls
+        <PopupControlBar
           popupIsFullscreen={popupIsFullscreen}
           fullscreenPopup={fullscreenPopup}
           unFullscreenPopup={unFullscreenPopup}

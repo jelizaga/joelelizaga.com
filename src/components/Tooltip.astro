@@ -6,6 +6,7 @@ export interface Props {
   content: string;
   position?: string;
 }
+
 const { id, title, content, position = "top" } = Astro.props as Props;
 let tooltipClasses = "tooltip-bubble";
 switch (position) {
