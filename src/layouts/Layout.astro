@@ -48,6 +48,7 @@ const { title, description, currentPage, headerShadow, footerShadow } = Astro.pr
 		/>
 		<slot />
 		<Footer
+		 	currentPage={currentPage}
 			footerShadow={footerShadow}
 		/>
 	</body>
