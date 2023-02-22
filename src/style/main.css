@@ -291,6 +291,7 @@ table tr td, table tr th {
   /* Noonoo Design Language //////////////////////////////////////////////////*/
   /* Bright */
   --noonoo_protrusion_bright: 5px 5px 10px #DCDADA, -5px -5px 10px var(--tahoma_white_glow);
+  --noonoo_protrusion_dim: 5px 5px 10px #3E4A48, -5px -5px 10px #546462;
   --noonoo_depression_bright: inset -5px -5px 10px var(--tahoma_white_glow), inset 5px 5px 10px #DCDADA;
   --noonoo_depression_spectacular_red_bright: inset -5px -5px 10px var(--spectacular_red_glow), inset 5px 5px 10px #C40000;
   --noonoo_depression_dim: inset -5px -5px 10px #3C4746, inset 5px 5px 10px #2C3534;
@@ -339,6 +340,40 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
+}
+
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: 0.3rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #49575595;
+  border-radius: 2rem;
+  opacity: 1;
+  overflow: visible;
+  transition: opacity 1s ease-in-out;
+  -webkit-transition: opacity 1s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:active, ::-webkit-scrollbar-thumb:hover {
+  background-color: var(--lawetlatla_ash_bright);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background-color: #49575550;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
 }
 
 /* Main //////////////////////////////////////////////////////////////////////*/
