@@ -343,12 +343,14 @@ body {
 }
 
 ::-webkit-scrollbar {
-  background-color: transparent;
-  width: 0.3rem;
+  width: 0.4rem;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: transparent;
+  background-color: var(--lawetlatla_ash_dim);
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -webkit-box-shadow: var(--noonoo_depression_bright);
 }
 
 ::-webkit-scrollbar-thumb {
