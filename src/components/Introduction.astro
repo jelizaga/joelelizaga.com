@@ -1,14 +1,18 @@
 ---
 import Bio from "./Bio.astro";
 import HyperlinkButtons from "./HyperlinkButtons.astro";
+import Octostar from "./Octostar.astro";
 ---
 
 <header id="introduction">
   <div class="introduction-container">
     <div class="introduction-card noonoo-floating-card">
       <h1>
-        <span class="octostar"><img src="/img/favicon/favicon.svg" alt="">
-        </span>
+        <!-- <span class="octostar"><img src="/img/favicon/favicon.svg" alt=""> -->
+        <!-- </span> -->
+        <Octostar
+          spin="60"
+        />
         Welcome!
       </h1>
       <div class="content">
@@ -19,7 +23,7 @@ import HyperlinkButtons from "./HyperlinkButtons.astro";
           <a href="#projects" class="button">
             View Projects
           </a>
-          <a href="#contact" class="button primary">
+          <a href="#contact" class="button-primary">
             <i class="fa-solid fa-envelope"></i>
             Contact
           </a>
@@ -51,6 +55,36 @@ import HyperlinkButtons from "./HyperlinkButtons.astro";
         ]}
         display="protruding"
         justifyButtons="end"
+        id="introduction-hyperlinks-row"
+      />
+      <HyperlinkButtons
+        buttons={[
+          {
+            href: "https://github.com/jelizaga",
+            target: "_blank",
+            icon: "fa-brands fa-github",
+            tooltipContent: "GitHub",
+            tooltipId: "intro-github-tooltip"
+          },
+          {
+            href: "https://linkedin.com/in/joel-elizaga",
+            target: "_blank",
+            icon: "fa-brands fa-linkedin",
+            tooltipContent: "LinkedIn",
+            tooltipId: "intro-linkedin-tooltip"
+          },
+          {
+            href: "/doc/joel_elizaga_resume.pdf",
+            target: "_blank",
+            icon: "fa-solid fa-file-pdf",
+            tooltipContent: "Resume",
+            tooltipId: "intro-resume-tooltip"
+          }
+        ]}
+        display="protruding"
+        justifyButtons="end"
+        id="introduction-hyperlinks-column"
+        buttonDirection="column"
       />
     </div>
   </div>
@@ -60,6 +94,7 @@ import HyperlinkButtons from "./HyperlinkButtons.astro";
 </header>
 
 <style>
+  /* Container sizing: */
   #introduction {
     display: block;
     position: relative;
@@ -76,9 +111,10 @@ import HyperlinkButtons from "./HyperlinkButtons.astro";
   }
 
   #introduction, .introduction-container, .introduction-bg {
-    height: 30rem;
+    height: calc(100vh - 1.3rem);
   }
 
+  /* Background: */
   .introduction-bg {
     display: block;
     overflow: hidden;
@@ -103,8 +139,16 @@ import HyperlinkButtons from "./HyperlinkButtons.astro";
     width: 100%;
   }
 
+  /* Introduction card: */
   .introduction-card {
     box-shadow: var(--noonoo_floating_card_shadow);
+    display: grid;
+    grid-template-columns: [line1] auto [line2] auto [line3];
+    grid-template-rows: [line1] auto [line2] auto [line3] auto [line4];
+    grid-template-areas:
+      "heading heading"
+      "main sidebar"
+      "footer footer";
     margin-left: auto;
     margin-right: auto;
     overflow: hidden;
@@ -112,46 +156,16 @@ import HyperlinkButtons from "./HyperlinkButtons.astro";
     width: 61.803vw;
   }
 
-  .introduction-card .content {
-    padding-bottom: 1rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
-    padding-top: 1rem;
-  }
-
-  .introduction-card .content .button-set {
-    margin-top: 1rem;
-  }
-
   .introduction-card h1 {
     align-items: center;
     box-shadow: var(--noonoo_ceiling_protrusion_bright);
     display: flex;
+    grid-area: heading;
     font-style: italic;
     gap: 0.5rem;
     padding-left: 3rem;
     padding-right: 3rem;
     justify-content: start;
-  }
-
-  .introduction-card .octostar {
-    align-items: center;
-    animation-name: spin;
-    animation-delay: 0ms;
-    animation-duration: 40s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    color: var(--spectacular_red_bright);
-    display: inline-flex;
-    height: 0.65em;
-    margin-bottom: 0.15rem;
-    justify-content: center;
-    width: 0.65em;
-  }
-
-  .introduction-card .octostar img {
-    height: inherit;
-    width: inherit;
   }
 
   .introduction-card .headshot {
@@ -164,47 +178,53 @@ import HyperlinkButtons from "./HyperlinkButtons.astro";
     width: clamp(8rem, 8rem, 275px);
   }
 
-  .introduction-card .hyperlink-buttons {
-    box-shadow: var(--noonoo_floor_protrusion_bright);
-    display: flex;
-    gap: 0.5rem;
-    justify-content: center;
-    padding-bottom: 0.4rem;
+  .introduction-card .content {
+    grid-area: main;
+    padding-bottom: 1rem;
     padding-left: 3rem;
     padding-right: 3rem;
-    padding-top: 0.4rem;
+    padding-top: 1rem;
   }
 
-  .introduction-card .hyperlink-buttons a {
-    align-items: center;
-    background-image: var(--noonoo_protrusion_rounded_bright);
-    border-radius: 100%;
-    box-shadow: var(--noonoo_protrusion_bright);
-    display: flex;
-    height: 1.5rem;
-    justify-content: center;
-    position: relative;
-    transition: box-shadow 0.1s ease-in;
-    width: 1.5rem;
+  .introduction-card .content .button-set {
+    margin-top: 1rem;
   }
 
-  .introduction-card .hyperlink-buttons a i {
-    color: var(--lawetlatla_ash_dim);
-    transition: 0.1s ease-in color, 0.1s ease-in text-shadow;
-  }
+  @media screen and (max-width: 465px) {
 
-  .introduction-card .hyperlink-buttons a:hover i {
-    color: var(--spectacular_red_bright);
-  }
+    .introduction-card .content .button-set {
+      justify-content: center;
+    }
 
-  .introduction-card .hyperlink-buttons a:active {
-    box-shadow: var(--noonoo_protrusion_bright), var(--noonoo_depression_bright);
+    .introduction-card .content .button-set a {
+      width: 100%;
+    }
   }
 
   @media screen and (max-width: 750px) {
     
     .introduction-card {
       width: 95vw;
+    }
+
+    .introduction-card h1 {
+      justify-content: center;
+    }
+
+  }
+
+  @media screen and (min-width: 1920px) {
+
+    .introduction-card {
+      max-height: 90%;
+    }
+
+    .introduction-card .content {
+      overflow-y: scroll;
+    }
+
+    #introduction, .introduction-container, .introduction-bg {
+      height: 30rem;
     }
 
   }

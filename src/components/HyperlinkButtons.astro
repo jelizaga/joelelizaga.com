@@ -17,6 +17,7 @@ export interface Props {
   alignButtons?: string;
   justifyButtons?: string;
   tooltipPosition?: string;
+  id?: string;
 }
 
 const {
@@ -25,7 +26,8 @@ const {
   buttonDirection = "row",
   alignButtons = "center",
   justifyButtons,
-  tooltipPosition = "top"
+  tooltipPosition = "top",
+  id,
 } = Astro.props as Props;
 
 let hyperlinkButtonsClasses = "hyperlink-buttons";
@@ -56,7 +58,7 @@ switch(display) {
 }
 ---
 
-<div class={hyperlinkButtonsClasses}>
+<div id={id} class={hyperlinkButtonsClasses}>
   {buttons.map(button => (
     <HyperlinkButton
       href={button.href}

@@ -1017,7 +1017,7 @@ button:hover, a.button:hover, a.button-primary:hover, .hyperlink-buttons button.
 
 button.primary, a.button-primary, .hyperlink-buttons button.popup.primary {
   border: 3px var(--lawetlatla_ash_bright_transparent) solid;
-  transition: 0.1s border, 0.1s box-shadow;
+  transition: 0.1s border, 0.1s box-shadow, 0.1s color, 0.1s text-shadow;
 }
 
 button.primary:hover, a.button-primary:hover, .hyperlink-buttons button.popup.primary:hover {
@@ -1044,6 +1044,7 @@ form button {
 .button-set {
   border: none;
   display: flex;
+  flex-wrap: wrap;
   gap: 0.6rem;
   margin-top: 0.5rem;
   justify-content: end;
@@ -1385,6 +1386,29 @@ header .content .tags .tag a {
   z-index: 1;
 }
 
+/* HyperlinksButtons /////////////////////////////////////////////////////////*/
+
+  .introduction-card #introduction-hyperlinks-row {
+    grid-area: footer;
+  }
+
+  .introduction-card #introduction-hyperlinks-column {
+    display: none;
+  }
+
+  @media screen and (min-width: 1920px) {
+
+    .introduction-card #introduction-hyperlinks-column {
+      display: flex;
+      justify-content: start;
+    }
+
+    .introduction-card #introduction-hyperlinks-row {
+      display: none;
+    }
+
+  }
+
 /* Footer ////////////////////////////////////////////////////////////////////*/
 footer {
   box-shadow: var(--noonoo_floor_protrusion_bright);
@@ -1435,12 +1459,6 @@ footer .hyperlink-buttons a i, footer .hyperlink-buttons button i {
     font-size: 1.4rem;
   }
 
-}
-
-/* Animations ////////////////////////////////////////////////////////////////*/
-@keyframes spin {
-  from {transform:rotate(0deg);}
-  to {transform:rotate(359deg);}
 }
 
 /* Filters ///////////////////////////////////////////////////////////////////*/
