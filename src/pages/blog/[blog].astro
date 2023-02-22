@@ -11,7 +11,7 @@ import NNImage from "../../components/NNImage.astro";
 import Tag from "../../components/Tag.astro";
 import Tooltip from "../../components/Tooltip.astro";
 import { updateTSConfigForFramework } from "astro/dist/core/config";
-import BlogProfile from "../../components/BlogProfile.astro";
+import ArticleProfile from "../../components/ArticleProfile.astro";
 
 export async function getStaticPaths() {
   const blogPosts = await Astro.glob("../../blog/*.mdx");
@@ -46,7 +46,7 @@ const { Content, frontmatter } = Astro.props.blog;
             <i class="fa-solid fa-rss"></i>
             <Tooltip
               id="rss"
-              content="RSS Feed"
+              content="Blog RSS"
             />
           </a>
           <p class="date subheading">
@@ -82,7 +82,9 @@ const { Content, frontmatter } = Astro.props.blog;
       <div class="content">
         <Content />
       </div>
-      <BlogProfile />
+      <ArticleProfile 
+        article="blog"
+      />
     </article>
   </main>
 </Layout>
