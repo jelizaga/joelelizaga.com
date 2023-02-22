@@ -1,18 +1,57 @@
 ---
+////////////////////////////////////////////////////////////////////////////////
+// Marquee.astro ///////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+// Scrolling marquee.
+
+// Props ///////////////////////////////////////////////////////////////////////
 export interface Props {
   text: string;
+  orientation?: string;
+  display?: string;
   direction?: string;
+  straightCorners?: boolean;
 }
-
 const {
   text,
-  direction = "left"
+  direction = "left",
+  display = "depressed",
+  orientation = "row",
+  straightCorners = false
 } = Astro.props as Props;
 
-
+// Classes /////////////////////////////////////////////////////////////////////
+let marqueeClasses = "marquee animated";
+switch (orientation) {
+  case "row":
+    marqueeClasses += " row";
+    break;
+  case "column":
+    marqueeClasses += " column";
+    break;
+}
+switch (display) {
+  case "depressed":
+    marqueeClasses += " depressed";
+    break;
+  case "flat":
+    marqueeClasses += " flat";
+    break;
+}
+switch (direction) {
+  case "left":
+    marqueeClasses += " left";
+    break;
+  case "right":
+    marqueeClasses += " right";
+    break;
+}
+if (straightCorners) {
+  marqueeClasses += " straight-corners";
+}
 ---
 
-<div class="marquee animated">
+<div class={marqueeClasses}>
   <div class="marquee-content">
     <span class="marquee-text-a">{text}</span>
   </div>
@@ -24,7 +63,6 @@ const {
 <style>
   .marquee {
     border-radius: 1.4rem;
-    box-shadow: var(--noonoo_depression_bright);
     display: flex;
     gap: 0.3rem;
     height: calc(1rem + 0.3rem + 0.3rem);
@@ -36,6 +74,23 @@ const {
     position: relative;
   }
 
+  .marquee.row {
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .marquee.depressed {
+    box-shadow: var(--noonoo_depression_bright);
+  }
+
+  .marquee.flat {
+    box-shadow: none;
+  }
+
+  .marquee.straight-corners {
+    border-radius: 0;
+  }
+
   .marquee-content {
     display: flex;
     flex-shrink: 0;
@@ -44,8 +99,12 @@ const {
     min-width: 100%;
   }
 
-  .animated .marquee-content {
+  .animated.left .marquee-content {
     animation: marquee-scroll-left 180s linear infinite;
+  }
+
+  .animated.right .marquee-content {
+    animation: marquee-scroll-right 180s linear infinite;
   }
 
   @keyframes marquee-scroll-left {
@@ -54,6 +113,15 @@ const {
     }
     to {
       transform: translateX(calc(-100% - 1rem));
+    }
+  }
+
+  @keyframes marquee-scroll-right {
+    from {
+      transform: translateX(calc(-100% - 1rem));
+    }
+    to {
+      transform: translateX(0);
     }
   }
 </style>

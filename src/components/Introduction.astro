@@ -1,7 +1,6 @@
 ---
+import Bio from "./Bio.astro";
 import HyperlinkButtons from "./HyperlinkButtons.astro";
-import Tooltip from "./Tooltip.astro";
-
 ---
 
 <header id="introduction">
@@ -10,25 +9,20 @@ import Tooltip from "./Tooltip.astro";
       <h1>
         <span class="octostar"><img src="/img/favicon/favicon.svg" alt="">
         </span>
-        Joel Elizaga
+        Welcome!
       </h1>
       <div class="content">
-        <img 
-          class="headshot" 
-          src="/img/placeholder/placeholder3.jpg" 
-          alt="Headshot of Joel Elizaga" 
+        <Bio
+          marquee={true}
         />
-        <p>
-          I'm a <code>UX engineer</code> practicing an HCI-informed fusion of
-          <em>design</em> and <em>development</em>.
-        </p>
-        <p>
-          My aim is to build technologies that are both <strong>usable</strong> 
-          and <strong>useful</strong>.
-        </p>
         <div class="button-set">
-          <a href="#projects" class="button">Projects</a>
-          <a href="#contact" class="button-primary"><i class="fa-solid fa-paper-plane"></i> Contact</a>
+          <a href="#projects" class="button">
+            View Projects
+          </a>
+          <a href="#contact" class="button primary">
+            <i class="fa-solid fa-envelope"></i>
+            Contact
+          </a>
         </div>
       </div>
       <HyperlinkButtons
@@ -56,7 +50,7 @@ import Tooltip from "./Tooltip.astro";
           }
         ]}
         display="protruding"
-        justifyButtons="center"
+        justifyButtons="end"
       />
     </div>
   </div>
@@ -125,12 +119,19 @@ import Tooltip from "./Tooltip.astro";
     padding-top: 1rem;
   }
 
+  .introduction-card .content .button-set {
+    margin-top: 1rem;
+  }
+
   .introduction-card h1 {
     align-items: center;
     box-shadow: var(--noonoo_ceiling_protrusion_bright);
     display: flex;
+    font-style: italic;
     gap: 0.5rem;
-    justify-content: center;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    justify-content: start;
   }
 
   .introduction-card .octostar {

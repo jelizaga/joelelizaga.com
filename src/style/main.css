@@ -1443,6 +1443,13 @@ footer .hyperlink-buttons a i, footer .hyperlink-buttons button i {
   to {transform:rotate(359deg);}
 }
 
+/* Filters ///////////////////////////////////////////////////////////////////*/
+
+img.pixelated {
+  filter: url("#pixelate");
+  -webkit-filter: url("#pixelate");
+}
+
 /* Breakpoints ///////////////////////////////////////////////////////////////*/
 @media screen and (max-width: 1130px) {
 
