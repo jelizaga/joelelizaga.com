@@ -28,7 +28,7 @@ export default function ContactPopup(props: any) {
       <div class="popup-background" onClick={closePopup}></div>
       <div class="popup" ref={popup}>
         <PopupControlBar
-          icon="fa-solid fa-paper-plane"
+          icon="fa-solid fa-envelope"
           title="Contact"
           closePopup={closePopup}
         />
