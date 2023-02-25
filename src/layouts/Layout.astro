@@ -14,7 +14,13 @@ export interface Props {
 	footerShadow?: boolean;
 }
 
-const { title, description, currentPage, headerShadow, footerShadow } = Astro.props as Props;
+const { 
+	title, 
+	description, 
+	currentPage, 
+	headerShadow, 
+	footerShadow 
+} = Astro.props as Props;
 
 ---
 
@@ -40,6 +46,7 @@ const { title, description, currentPage, headerShadow, footerShadow } = Astro.pr
 		<link href="/font/fontawesome-free-6.2.1-web/css/fontawesome.min.css" rel="stylesheet">
 		<link href="/font/fontawesome-free-6.2.1-web/css/brands.min.css" rel="stylesheet">
 		<link href="/font/fontawesome-free-6.2.1-web/css/solid.min.css" rel="stylesheet">
+		<link href="/font/devicon/devicon.min.css" rel="stylesheet">
 	</head>
 	<body>
 		<Masthead
