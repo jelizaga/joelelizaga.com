@@ -114,11 +114,11 @@ export default function ContactForm(props: any) {
       </fieldset>
       <fieldset class="button-set">
         {props.closePopup &&
-          <button class="popup" onClick={props.closePopup}>
+          <button onClick={props.closePopup}>
             Cancel
           </button>
         }
-        <button class="primary popup" type="submit">
+        <button class="primary" type="submit">
           <i class="fa-solid fa-paper-plane"></i> Submit
         </button>
       </fieldset>

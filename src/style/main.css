@@ -317,6 +317,11 @@ table tr td, table tr th {
   --noonoo_fog_bright_right: linear-gradient(90deg, var(--tahoma_white_dim), #F2F0F000);
   --noonoo_fog_bright_top: linear-gradient(0deg, #F2F0F000, var(--tahoma_white_dim));
   /* Ratios //////////////////////////////////////////////////////////////////*/
+  --vw_golden_ratio_big: 61.803vw;
+  --vw_golden_ratio_small: 38.197vw;
+  --pct_golden_ratio_big: 61.803%;
+  --pct_golden_ratio_small: 38.197%;
+  --almost_full_width: 95vw;
   /* Breakpoints /////////////////////////////////////////////////////////////*/
   --breakpoint_minimum_clamp: 1130px;
   --breakpoint_minimum: 750px;
@@ -382,15 +387,115 @@ body {
 main {
   display: flex;
   flex-direction: column;
-  gap: 1.4rem;
-  margin-bottom: 1.4rem;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1.4rem;
-  width: 61.803vw;
+  /* gap: 1.4rem; */
+  /* margin-bottom: 1.4rem; */
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+  /* margin-top: 1.4rem; */
 }
 
+div.centered, article, section.centered {
+  margin-left: auto;
+  margin-right: auto;
+  width: var(--vw_golden_ratio_big);
+}
+
+article {
+  margin-bottom: 1.4rem;
+  margin-top: 1.4rem;
+}
+
+div.gapped, section.gapped {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+section.gapped, section.centered {
+  margin-bottom: 1.4rem;
+  margin-top: 1.4rem;
+}
+
+@media screen and (max-width: 750px) {
+
+  main div.centered {
+    width: var(--almost_full_width);
+  }
+
+}
+
+/* Cards /////////////////////////////////////////////////////////////////////*/
+
+/* Project Card: */
+
+.project-card {
+  background-color: var(--tahoma_white_dim);
+  box-shadow: var(--noonoo_protrusion_bright);
+  display: grid;
+  grid-template-rows: auto auto;
+  overflow: hidden;
+}
+
+.project-card-img {
+  overflow: hidden;
+}
+
+.project-card-img img {
+  height: 100%;
+  object-fit: cover;
+  transition: height 0.2s;
+}
+
+.project-card-details h4 {
+  color: var(--lawetlatla_ash_dim);
+}
+
+.project-card-details .caption {
+  color: var(--lawetlatla_ash_bright);
+  font-style: italic;
+}
+
+.project-card-details a {
+  box-sizing: border-box;
+  display: block;
+  height: 100%;
+  text-decoration: none;
+  text-shadow: none;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  width: 100%;
+}
+
+.project-card .tags {
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.project-card-details a p {
+  text-shadow: none;
+}
+
+.project-card-details a h4 {
+  transition: color 0.1s ease-in;
+}
+
+.project-card:hover .project-card-details a h4 {
+  color: var(--spectacular_red_bright);
+}
+
+.project-card:hover img {
+  height: 102%;
+}
+
+/* Blog Card: */
+
 /* Articles //////////////////////////////////////////////////////////////////*/
+article.blog-article, article.project-article {
+  box-shadow: var(--noonoo_protrusion_bright);
+}
+
 .blog-article header .noonoo-image, .project-article header .noonoo-image {
   margin-bottom: 0;
   margin-top: 0;
@@ -446,31 +551,14 @@ article.noonoo-protruding-card {
   box-sizing: border-box;
 }
 
-.noonoo-protruding-card {
-  box-shadow: var(--noonoo_protrusion_bright);
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-}
-
-.noonoo-floating-card {
-  box-shadow: var(--noonoo_floating_card_bright);
-}
-
-.noonoo_depression_bright {
-  box-shadow: var(--noonoo_depression_bright);
-}
-
-.noonoo_protrusion_bright {
-  box-shadow: var(--noonoo_protrusion_bright);
-}
-
 /* Images ////////////////////////////////////////////////////////////////////*/
 img {
   max-width: 100%;
 }
 
-/* Noonoo Images & Noonoo Carousels //////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////*/
+/* Images & Carousels ////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////*/
 .noonoo-image, .noonoo-carousel {
   overflow: hidden;
   margin-bottom: 1rem;
@@ -794,7 +882,11 @@ img {
 }
 
 
+/*////////////////////////////////////////////////////////////////////////////*/
 /* Popups ////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////*/
+
+/* Popup container: */
 .popup-container {
   align-items: center;
   display: flex;
@@ -815,7 +907,8 @@ img {
   z-index: 4;
 }
 
-.popup-container .popup {
+/* Popup: */
+.popup {
   border-radius: 1.4rem;
   box-shadow: var(--noonoo_floating_card_shadow);
   max-height: 95vh;
@@ -852,7 +945,7 @@ img {
   gap: 0.8rem;
 }
 
-.noonoo-image-popup .popup .control-bar .controls button {
+.noonoo-image-popup .popup .control-bar .controls button, .hyperlink-buttons .popup .control-bar .controls button {
   background-image: var(--noonoo_protrusion_rounded_bright);
   border-radius: 100%;
   height: 1.5rem;
@@ -861,13 +954,13 @@ img {
   width: 1.5rem;
 }
 
-/* Contact popup: */
+/* Contact popup /////////////////////////////////////////////////////////////*/
 .contact-popup .popup {
   background-color: var(--tahoma_white_dim);
   display: grid;
   gap: 0;
   grid-template-rows: auto 1fr;
-  width: 38.197vw;
+  width: var(--vw_golden_ratio_small);
 }
 
 .contact-popup .popup .contact-form {
@@ -878,10 +971,18 @@ img {
   padding-bottom: 1rem;
 }
 
+@media screen and (max-width: 1130px) {
+
+  .contact-popup .popup {
+    width: var(--vw_golden_ratio_big);
+  }
+
+}
+
 @media screen and (min-width: 1840px) {
 
   .contact-popup .popup {
-    width: 61.803vw;
+    width: var(--vw_golden_ratio_big);
   }
 
   .contact-popup .popup .contact-form form.work-selected {
@@ -987,7 +1088,7 @@ form label:first-child, fieldset:first-child {
 }
 
 /* Buttons ///////////////////////////////////////////////////////////////////*/
-button, a.button, a.button-primary, .hyperlink-buttons button.popup {
+button, a.button, a.button-primary, .hyperlink-buttons .popup button {
   align-items: center;
   background-color: var(--tahoma_white_dim);
   border-radius: 1.4rem;
@@ -1009,27 +1110,27 @@ button, a.button, a.button-primary, .hyperlink-buttons button.popup {
   width: fit-content;
 }
 
-button:hover, a.button:hover, a.button-primary:hover, .hyperlink-buttons button.popup:hover {
+button:hover, a.button:hover, a.button-primary:hover, .hyperlink-buttons .popup button:hover {
   color: var(--spectacular_red_bright);
   cursor: pointer;
   text-shadow: var(--spectacular_red_glowing);
 }
 
-button.primary, a.button-primary, .hyperlink-buttons button.popup.primary {
+button.primary, a.button-primary, .hyperlink-buttons .popup button.primary {
   border: 3px var(--lawetlatla_ash_bright_transparent) solid;
   transition: 0.1s border, 0.1s box-shadow, 0.1s color, 0.1s text-shadow;
 }
 
-button.primary:hover, a.button-primary:hover, .hyperlink-buttons button.popup.primary:hover {
+button.primary:hover, a.button-primary:hover, .hyperlink-buttons .popup button.primary:hover {
   border: 3px var(--spectacular_red_bright) solid;
   box-shadow: var(--noonoo_protrusion_bright), var(--spectacular_red_glowing);
 }
 
-button:active, button.primary:active, a.button:active, a.button-primary:active, .hyperlink-buttons button.popup:active, .hyperlink-buttons button.popup.primary:active {
+button:active, button.primary:active, a.button:active, a.button-primary:active, .hyperlink-buttons .popup button:active, .hyperlink-buttons .popup button.primary:active {
   box-shadow: var(--noonoo_protrusion_bright), var(--noonoo_depression_bright);
 }
 
-button i, a.button i, a.button-primary i, .hyperlink-buttons button.popup i {
+button i, a.button i, a.button-primary i, .hyperlink-buttons .popup button i {
   font-size: 0.8rem;
 }
 
@@ -1037,7 +1138,7 @@ form button {
   margin-top: 0.8rem;
 }
 
-.hyperlink-buttons button.popup {
+.hyperlink-buttons .popup button {
   background-image: none;
 }
 
@@ -1428,7 +1529,7 @@ footer .hyperlink-buttons {
   gap: 0.75rem;
   margin-left: auto;
   margin-right: auto;
-  width: 61.803vw;
+  width: var(--vw_golden_ratio_big);
 }
 
 footer .hyperlink-buttons a, footer .hyperlink-buttons button {
@@ -1469,30 +1570,20 @@ img.pixelated {
 }
 
 /* Breakpoints ///////////////////////////////////////////////////////////////*/
-@media screen and (max-width: 1130px) {
-
-  .contact-popup .popup {
-    width: 61.803vw;
-  }
-
-}
-
 @media screen and (max-width: 750px) {
-  
-  main {
-    width: 95vw;
-  }
 
+  /* Reveal hidden mobile elements: */
   .mobile {
     display: block;
   }
 
+  /* Shift popups downwards so the mobile menu doesn't overlap: */
   .noonoo-image-popup .popup {
     max-height: 89vh;
     top: calc(62px + 1rem);
   }
 
-  .contact-popup .popup {
+  .popup {
     width: 95vw;
   }
 

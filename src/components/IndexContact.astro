@@ -1,11 +1,13 @@
 ---
 import ContactForm from "./ContactForm"
-
 ---
 
-<div id="contact" class="contact noonoo-protruding-card">
+<div id="contact" class="index-contact centered">
   <div class="contact-form">
-    <h2>Contact</h2>
+    <h2>
+      <i class="fa-solid fa-envelope"></i>
+      Contact
+    </h2>
     <ContactForm
       client:load
     />
@@ -28,12 +30,13 @@ import ContactForm from "./ContactForm"
     padding-top: 1rem;
   }
 
-  .contact {
+  .index-contact {
+    box-shadow: var(--noonoo_protrusion_bright);
     display: grid;
     grid-template-columns: 61.8% auto;
   }
 
-  .contact .contact-img img {
+  .index-contact .contact-img img {
     display: block;
     height: 100%;
     max-width: 100%;
@@ -59,7 +62,7 @@ import ContactForm from "./ContactForm"
   }
 
   @media screen and (max-width: 900px) {
-    .contact {
+    .index-contact {
       grid-template-columns: auto;
     }
 

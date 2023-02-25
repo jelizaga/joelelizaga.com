@@ -5,7 +5,7 @@
 // Generates pages @ `/blog/focus/[tag]` for every unique blog post tag.
 
 import Layout from "../../../layouts/Layout.astro";
-import BlogPostCard from "../../../components/BlogPostCard.astro";
+import BlogCard from "../../../components/BlogCard.astro";
 import Pagination from "../../../components/Pagination.astro";
 import Header from "../../../components/Header.astro";
 
@@ -38,10 +38,10 @@ const title = `Joel Elizaga | Blog | ${tag}`;
     bgSrc="/img/placeholder/placeholder2.jpg"
     slug="/blog"
   />
-  <main>
+  <section class="centered">
     <ul class="blog">
       {blogPosts.map(blogPost => (
-        <BlogPostCard
+        <BlogCard
           slug={`/blog/${blogPost.frontmatter.slug}`}
           title={blogPost.frontmatter.title}
           description={blogPost.frontmatter.description}
@@ -51,7 +51,7 @@ const title = `Joel Elizaga | Blog | ${tag}`;
         />
       ))}
     </ul>
-  </main>
+  </section>
 </Layout>
 
 <style>

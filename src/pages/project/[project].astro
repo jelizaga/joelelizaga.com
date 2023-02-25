@@ -30,38 +30,36 @@ const { Content, frontmatter } = Astro.props.project;
   title={frontmatter.headTitle ? frontmatter.headTitle : frontmatter.title}
   currentPage={"projects"}
 >
-  <main>
-    <article class="project-article noonoo-protruding-card">
-      <header>
-        <div class="project-header">
-          <h1>{frontmatter.title}</h1>
-          <p class="description">{frontmatter.description}</p>
-          {frontmatter.tags &&
-            <ul class="tags">
-              {frontmatter.tags.map((tag) =>
-                <Tag
-                  prefix="projects"
-                  tag={tag}
-                />
-              )}
-            </ul>
-          }
-        </div>
-        <NNImage
-          src={frontmatter.img}
-          alt={frontmatter.imgAlt}
-          straightCorners={true}
-          expandable={false}
-        />
-      </header>
-      <div class="content">
-        <Content />
+  <article class="project-article noonoo-protruding-card">
+    <header>
+      <div class="project-header">
+        <h1>{frontmatter.title}</h1>
+        <p class="description">{frontmatter.description}</p>
+        {frontmatter.tags &&
+          <ul class="tags">
+            {frontmatter.tags.map((tag) =>
+              <Tag
+                prefix="projects"
+                tag={tag}
+              />
+            )}
+          </ul>
+        }
       </div>
-      <ArticleProfile
-        article="project"
+      <NNImage
+        src={frontmatter.img}
+        alt={frontmatter.imgAlt}
+        straightCorners={true}
+        expandable={false}
       />
-    </article>
-  </main>
+    </header>
+    <div class="content">
+      <Content />
+    </div>
+    <ArticleProfile
+      article="project"
+    />
+  </article>
 </Layout>
 
 <style>

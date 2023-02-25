@@ -6,11 +6,10 @@
 
 import Layout from '../layouts/Layout.astro';
 import { Image } from '@astrojs/image/components';
-import Header from '../components/Header.astro';
-import Contact from '../components/Contact.astro';
 import Introduction from '../components/Introduction.astro';
 import ProjectsGrid from '../components/ProjectsGrid.astro';
-import ProjectsCard from '../components/ProjectsCard.astro';
+import HeaderBar from '../components/HeaderBar.astro';
+import IndexContact from '../components/IndexContact.astro';
 ---
 
 <Layout 
@@ -21,7 +20,26 @@ import ProjectsCard from '../components/ProjectsCard.astro';
 >
 	<Introduction />
 	<main>
-		<ProjectsCard />
-		<Contact />
+		<HeaderBar
+			heading="Projects"
+			icon="fa-solid fa-drafting-compass"
+			id="projects"
+		/>
+		<section class="centered">
+			<ProjectsGrid />
+		</section>
+		<IndexContact />
 	</main>
 </Layout>
+
+<style>
+	.header-bar {
+		box-shadow: var(--noonoo_protrusion_bright);
+		margin-bottom: 1rem;
+	}
+	.header-bar h2 {
+		margin-left: auto;
+		margin-right: auto;
+		width: var(--vw_golden_ratio_big);
+	}
+</style>

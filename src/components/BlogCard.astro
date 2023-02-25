@@ -23,13 +23,13 @@ const {
 } = Astro.props as Props;
 ---
 
-<li class="blog-post-card noonoo-protruding-card">
-	<div class="blog-post-card-img">
+<li class="blog-card">
+	<div class="blog-card-img">
 		<a href={slug}>
 			<img src={img} alt={imgAlt}>
 		</a>
 	</div>
-	<div class="blog-post-card-details">
+	<div class="blog-card-details">
 		<a href={slug}>
 			<h2>{title}</h2>
 			<p class="subheading date">{new Date(pubDate).toLocaleDateString()}</p>
@@ -49,93 +49,93 @@ const {
 </li>
 
 <style>
-	.blog-post-card {
+	.blog-card {
 		background-color: var(--tahoma_white_dim);
 		border-radius: 1.4rem;
 		box-shadow: var(--noonoo_protrusion_bright);
 		display: grid;
-		grid-template-columns: 38.197% auto;
+		grid-template-columns: var(--pct_golden_ratio_small) auto;
 		overflow: hidden;
 		width: 100%;
 	}
 
-	.blog-post-card-img {
+	.blog-card-img {
 		overflow: hidden;
 	}
 
-	.blog-post-card-img img { 
+	.blog-card-img img { 
 		height: 100%;
 		object-fit: cover;
 		transition: height 0.2s;
 	}
 
-	.blog-post-card-details h2 {
+	.blog-card-details h2 {
 		color: var(--lawetlatla_ash_dim);
 		font-size: clamp(26px, 2.03125vw, 2.03125vw);
 		line-height: clamp(42px, 3.3333vw, 3.3333vw);
 		transition: color 0.1s ease-in, text-shadow 0.1s ease-in;
 	}
 
-	.blog-post-card-details .date {
+	.blog-card-details .date {
 		color: var(--lawetlatla_ash_bright);
 		text-shadow: none;
 	}
 
-	.blog-post-card-details p {
+	.blog-card-details p {
 		color: var(--lawetlatla_ash_dim);
 		text-shadow: none;
 	}
 
-	.blog-post-card .blog-post-card-details a {
+	.blog-card .blog-card-details a {
 		display: block;
 		padding-left: 2rem;
 		padding-right: 2rem;
 		padding-top: 1rem;
 	}
 
-	.blog-post-card .blog-post-card-details .tags {
+	.blog-card .blog-card-details .tags {
 		padding-bottom: 1rem;
 		padding-left: 2rem;
 		padding-right: 2rem;
 	}
 
-	.blog-post-card .blog-post-card-details a:hover p {
+	.blog-card .blog-card-details a:hover p {
 		text-shadow: none !important;
 	}
 
-	a:visited .blog-post-card-details h2 {
+	a:visited .blog-card-details h2 {
 		color: var(--lawetlatla_ash_dim);
 	}
 
-	a:visited .blog-post-card-details p {
+	a:visited .blog-card-details p {
 		color: var(--lawetlatla_ash_dim);
 	}
 
-	a:visited .blog-post-card-details .date {
+	a:visited .blog-card-details .date {
 		color: var(--lawetlatla_ash_bright);
 	}
 
-	.blog-post-card:hover .blog-post-card-details h2 {
+	.blog-card:hover .blog-card-details h2 {
 		color: var(--spectacular_red_bright);
 		text-shadow: var(--spectacular_red_glowing);
 	}
 
-	.blog-post-card:hover .blog-post-card-details .date {
+	.blog-card:hover .blog-card-details .date {
 		color: var(--lawetlatla_ash_bright);
 	}
 
-	.blog-post-card:hover .blog-post-card-details p {
+	.blog-card:hover .blog-card-details p {
 		color: var(--lawetlatla_ash_dim);
 		text-shadow: none !important;
 	}
 
-	.blog-post-card:hover .blog-post-card-img img {
+	.blog-card:hover .blog-card-img img {
 		height: 102%;
 	}
 
 	@media screen and (max-width: 750px) {
 
-		.blog-post-card {
+		.blog-card {
 			grid-template-columns: auto;
 		}
 

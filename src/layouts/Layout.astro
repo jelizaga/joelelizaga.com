@@ -41,12 +41,14 @@ const { title, description, currentPage, headerShadow, footerShadow } = Astro.pr
 		<link href="/font/fontawesome-free-6.2.1-web/css/brands.min.css" rel="stylesheet">
 		<link href="/font/fontawesome-free-6.2.1-web/css/solid.min.css" rel="stylesheet">
 	</head>
-	<body id="swup">
+	<body>
 		<Masthead
 			currentPage={currentPage}
 			headerShadow={headerShadow}
 		/>
-		<slot />
+		<main id="swup">
+			<slot />
+		</main>
 		<Footer
 		 	currentPage={currentPage}
 			footerShadow={footerShadow}

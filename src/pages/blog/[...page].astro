@@ -7,7 +7,7 @@
 
 import { Debug } from 'astro/components';
 import Layout from '../../layouts/Layout.astro'; 
-import BlogPostCard from '../../components/BlogPostCard.astro';
+import BlogCard from '../../components/BlogCard.astro';
 import Pagination from '../../components/Pagination.astro';
 import Header from '../../components/Header.astro';
 
@@ -30,29 +30,30 @@ const { page } = Astro.props;
     slug="/blog"
   />
   <main>
-    <!-- <h1><i class="fa-solid fa-atlas"></i> Blog</h1> -->
-    <ul class="blog">
-      {page.data.map(blogPost => (
-        <BlogPostCard
-          slug={`/blog/${blogPost.frontmatter.slug}`}
-          title={blogPost.frontmatter.title}
-          description={blogPost.frontmatter.description}
-          img={blogPost.frontmatter.img}
-          pubDate={blogPost.frontmatter.pubDate}
-          tags={blogPost.frontmatter.tags}
-        />
-      ))}
-    </ul>
-    <Pagination
-      path={"blog"}
-      currentPage={page.currentPage}
-      lastPage={page.lastPage}
-      prevPage={page.url.prev}
-      nextPage={page.url.next}
-      totalPosts={page.total}
-      firstItemOnPage={page.start}
-      lastItemOnPage={page.end}
-    />
+    <section class="centered">
+      <ul class="blog">
+        {page.data.map(blogPost => (
+          <BlogCard
+            slug={`/blog/${blogPost.frontmatter.slug}`}
+            title={blogPost.frontmatter.title}
+            description={blogPost.frontmatter.description}
+            img={blogPost.frontmatter.img}
+            pubDate={blogPost.frontmatter.pubDate}
+            tags={blogPost.frontmatter.tags}
+          />
+        ))}
+      </ul>
+      <Pagination
+        path={"blog"}
+        currentPage={page.currentPage}
+        lastPage={page.lastPage}
+        prevPage={page.url.prev}
+        nextPage={page.url.next}
+        totalPosts={page.total}
+        firstItemOnPage={page.start}
+        lastItemOnPage={page.end}
+      />
+    </section>
   </main>
 </Layout>
 

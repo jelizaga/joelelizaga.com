@@ -85,6 +85,7 @@ import Octostar from "./Octostar.astro";
         justifyButtons="end"
         id="introduction-hyperlinks-column"
         buttonDirection="column"
+        tooltipPosition="left"
       />
     </div>
   </div>
@@ -149,11 +150,12 @@ import Octostar from "./Octostar.astro";
       "heading heading"
       "main sidebar"
       "footer footer";
+    max-height: 90%;
     margin-left: auto;
     margin-right: auto;
     overflow: hidden;
     position: relative;
-    width: 61.803vw;
+    width: var(--vw_golden_ratio_big);
   }
 
   .introduction-card h1 {
@@ -214,10 +216,6 @@ import Octostar from "./Octostar.astro";
   }
 
   @media screen and (min-width: 1920px) {
-
-    .introduction-card {
-      max-height: 90%;
-    }
 
     .introduction-card .content {
       overflow-y: scroll;
