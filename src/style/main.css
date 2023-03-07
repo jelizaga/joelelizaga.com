@@ -578,6 +578,7 @@ section.gapped, section.centered {
 
 .project-card {
   background-color: var(--tahoma_white_dim);
+  border: 0.25rem solid var(--tahoma_white_dim);
   border-radius: 1.4rem;
   box-shadow: var(--noonoo_protrusion_bright);
   display: grid;
@@ -593,6 +594,7 @@ section.gapped, section.centered {
   height: 100%;
   object-fit: cover;
   transition: height 0.2s;
+  width: 100%;
 }
 
 .project-card-details h4 {
