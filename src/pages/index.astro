@@ -10,6 +10,7 @@ import Introduction from '../components/Introduction.astro';
 import ProjectsGrid from '../components/ProjectsGrid.astro';
 import HeaderBar from '../components/HeaderBar.astro';
 import IndexContact from '../components/IndexContact.astro';
+import IndexProjects from '../components/IndexProjects.astro';
 ---
 
 <Layout 
@@ -19,17 +20,8 @@ import IndexContact from '../components/IndexContact.astro';
 	currentPage={"home"}
 >
 	<Introduction />
-	<main>
-		<HeaderBar
-			heading="Projects"
-			icon="fa-solid fa-drafting-compass"
-			id="projects"
-		/>
-		<section class="centered">
-			<ProjectsGrid />
-		</section>
-		<IndexContact />
-	</main>
+	<IndexProjects />
+	<IndexContact />
 </Layout>
 
 <style>
@@ -37,6 +29,7 @@ import IndexContact from '../components/IndexContact.astro';
 		box-shadow: var(--noonoo_protrusion_bright);
 		margin-bottom: 1rem;
 	}
+
 	.header-bar h2 {
 		margin-left: auto;
 		margin-right: auto;

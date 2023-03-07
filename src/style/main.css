@@ -279,7 +279,8 @@ table tr td, table tr th {
   --spectacular_red_dim: #CC0000;
   --spectacular_red_glow: #F60000;
   --spectacular_red_glow_transparent: #F6000021;
-  --spectacular_red_glowing: 0px 0px 10px var(--spectacular_red_glow_transparent);
+  /* --spectacular_red_glowing: 0px 0px 10px var(--spectacular_red_glow_transparent); */
+  --spectacular_red_glowing: 0px 0px 0.5rem var(--spectacular_red_glow_transparent);
   --rain_city_emerald_bright: #23D16C;
   --rain_city_emerald_dim: #1EAE5A;
   --rain_city_emerald_glow: #25E074;
@@ -290,19 +291,32 @@ table tr td, table tr th {
   --whulge_blue_glow_transparent: #2FBCD221;
   /* Noonoo Design Language //////////////////////////////////////////////////*/
   /* Bright */
-  --noonoo_protrusion_bright: 5px 5px 10px #DCDADA, -5px -5px 10px var(--tahoma_white_glow);
-  --noonoo_protrusion_dim: 5px 5px 10px #3E4A48, -5px -5px 10px #546462;
-  --noonoo_depression_bright: inset -5px -5px 10px var(--tahoma_white_glow), inset 5px 5px 10px #DCDADA;
-  --noonoo_depression_spectacular_red_bright: inset -5px -5px 10px var(--spectacular_red_glow), inset 5px 5px 10px #C40000;
-  --noonoo_depression_dim: inset -5px -5px 10px #3C4746, inset 5px 5px 10px #2C3534;
-  --noonoo_depression_img: inset -5px -5px 10px #00000022, inset 5px 5px 10px #00000055;
-  --noonoo_ceiling_protrusion_bright: 0px 5px 10px #DCDADA;
-  --noonoo_ceiling_protrusion_shadow: 0px 5px 10px #00000021;
-  --noonoo_floor_protrusion_bright: 0px -5px 10px #DCDADA;
-  --noonoo_floor_protrusion_shadow: 0px -5px 10px #00000021;
-  --noonoo_floating_card_bright: 5px 5px 10px #DCDADA;
-  --noonoo_floating_card_shadow: 5px 5px 10px #00000021;
-  --noonoo_floating_small_shadow: 1px 1px 5px #00000021;
+  /* --noonoo_protrusion_bright: 5px 5px 10px #DCDADA, -5px -5px 10px var(--tahoma_white_glow); */
+  --noonoo_protrusion_bright: 0.25rem 0.25rem 0.5rem #DCDADA, -0.25rem -0.25rem 0.5rem var(--tahoma_white_glow);
+  /* --noonoo_protrusion_dim: 5px 5px 10px #3E4A48, -5px -5px 10px #546462; */
+  --noonoo_protrusion_dim: 0.25rem 0.25rem 0.5rem #3E4A48, -0.25rem -0.25rem 0.5rem #546462;
+  /* --noonoo_depression_bright: inset -5px -5px 10px var(--tahoma_white_glow), inset 5px 5px 10px #DCDADA; */
+  --noonoo_depression_bright: inset -0.25rem -0.25rem 0.5rem var(--tahoma_white_glow), inset 0.25rem 0.25rem 0.5rem #DCDADA;
+  /* --noonoo_depression_spectacular_red_bright: inset -5px -5px 10px var(--spectacular_red_glow), inset 5px 5px 10px #C40000; */
+  --noonoo_depression_spectacular_red_bright: inset -0.25rem -0.25rem 0.5rem var(--spectacular_red_glow), inset 0.25rem 0.25rem 0.5rem #C40000;
+  /* --noonoo_depression_dim: inset -5px -5px 10px #3C4746, inset 5px 5px 10px #2C3534; */
+  --noonoo_depression_dim: inset -0.25rem -0.25rem 0.5rem #3C4746, inset 0.25rem 0.25rem 0.5rem #2C3534;
+  /* --noonoo_depression_img: inset -5px -5px 10px #00000022, inset 5px 5px 10px #00000055; */
+  --noonoo_depression_img: inset -0.25rem -0.25rem 0.5rem #00000022, inset 0.25rem 0.25rem 0.5rem #00000055;
+  /* --noonoo_ceiling_protrusion_bright: 0px 5px 10px #DCDADA; */
+  --noonoo_ceiling_protrusion_bright: 0px 0.25rem 0.5rem #DCDADA;
+  /* --noonoo_ceiling_protrusion_shadow: 0px 5px 10px #00000021; */
+  --noonoo_ceiling_protrusion_shadow: 0px 0.25rem 0.5rem #00000021;
+  /* --noonoo_floor_protrusion_bright: 0px -5px 10px #DCDADA; */
+  --noonoo_floor_protrusion_bright: 0px -0.25rem 0.5rem #DCDADA;
+  /* --noonoo_floor_protrusion_shadow: 0px -5px 10px #00000021; */
+  --noonoo_floor_protrusion_shadow: 0px -0.25rem 0.5rem #00000021;
+  /* --noonoo_floating_card_bright: 5px 5px 10px #DCDADA; */
+  --noonoo_floating_card_bright: 0.25rem 0.25rem 0.5rem #DCDADA;
+  /* --noonoo_floating_card_shadow: 5px 5px 10px #00000021; */
+  --noonoo_floating_card_shadow: 0.25rem 0.25rem 0.5rem #00000021;
+  /* --noonoo_floating_small_shadow: 1px 1px 5px #00000021; */
+  --noonoo_floating_small_shadow: 0.2rem 0.2rem 0.25rem #00000021;
   --noonoo_protrusion_rounded_bright: linear-gradient(145deg, var(--tahoma_white_glow), #DAD8D8);
   --noonoo_protrusion_rounded_lawetlatla_ash_bright: linear-gradient(145deg, #4e5d5b, #424e4d);
   --noonoo_protrusion_rounded_lawetlatla_ash_dim: linear-gradient(145deg, #384241, #2f3837);
@@ -428,8 +442,143 @@ section.gapped, section.centered {
 
 /* Project Card: */
 
+.index-project-cards {
+  margin: 0;
+}
+
+.project {
+  height: 30rem;
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+.index-project-cards .project {
+  border: solid 0.15rem var(--tahoma_white_dim);
+  border-left: 0;
+  border-radius: 0;
+}
+
+.index-project-cards .project:first-child {
+  border-top: 0;
+}
+
+.index-project-cards .project:last-child {
+  border-bottom: 0;
+}
+
+.project-bg {
+  height: 30rem;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  z-index: 0;
+}
+
+.project-bg::before {
+  box-shadow: var(--noonoo_depression_img);
+  content: "";
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+}
+
+.project-bg img {
+  display: block;
+  filter: blur(0.25rem) brightness(0.60);
+  object-fit: cover;
+  height: 120%;
+  width: 120%;
+}
+
+.project div.container div.project-card {
+  box-shadow: var(--noonoo_floating_card_shadow);
+  grid-area: project-card;
+  transition: box-shadow 0.2s ease-in;
+}
+
+.project .bottom-a {
+  grid-area: bottom-a;
+  height: 100%;
+  width: 100%;
+}
+
+.project .left-a {
+  grid-area: left-a;
+  height: 100%;
+  width: 100%;
+}
+
+.project .right-a {
+  grid-area: right-a;
+  height: 100%;
+  width: 100%;
+}
+
+.project .top-a {
+  grid-area: top-a;
+  height: 100%;
+  width: 100%;
+}
+
+.project div.container {
+  display: grid;
+  grid-template-columns: 19.0985vw auto 23.607vw 19.0985vw;
+  grid-template-rows: [line1] auto [line2] auto [line3] auto [line4];
+  grid-template-areas: 
+    "top-a top-a top-a top-a"
+    "left-a project-card right-a right-a"
+    "bottom-a bottom-a bottom-a bottom-a";
+  height: 100%;
+  position: absolute;
+  top: 0;
+  transition: top 0.2s ease-in-out, left 0.2s ease-in-out;
+  width: 100%;
+  z-index: 1;
+}
+
+@media screen and (min-width: 750px) {
+
+  .project {
+    height: fit-content;
+  }
+
+  .project:hover div.container {
+    top: -0.4rem;
+  }
+  
+  .project:hover div.container .project-card {
+    box-shadow: 0.5rem 0.75rem 0.5rem #00000021;
+  }
+
+}
+
+@media screen and (max-width: 1030px) {
+
+  .project div.container {
+    grid-template-columns: auto var(--vw_golden_ratio_big) auto;
+    grid-template-rows: 1rem auto 1rem;
+    grid-template-areas:
+      "top-a top-a top-a"
+      "left-a project-card right-a"
+      "bottom-a bottom-a bottom-a";
+  }
+
+}
+
+@media screen and (max-width: 750px) {
+
+  .project div.container {
+    grid-template-columns: auto 95vw auto;
+  }
+
+}
+
 .project-card {
   background-color: var(--tahoma_white_dim);
+  border-radius: 1.4rem;
   box-shadow: var(--noonoo_protrusion_bright);
   display: grid;
   grid-template-rows: auto auto;
@@ -481,11 +630,11 @@ section.gapped, section.centered {
   transition: color 0.1s ease-in;
 }
 
-.project-card:hover .project-card-details a h4 {
+.project-card:hover .project-card-details a h4, .project:hover div.container .project-card .project-card-details a h4 {
   color: var(--spectacular_red_bright);
 }
 
-.project-card:hover img {
+.project-card:hover img, .project:hover div.container .project-card img {
   height: 102%;
 }
 

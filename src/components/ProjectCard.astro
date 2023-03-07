@@ -7,6 +7,7 @@ export interface Props {
 	description: string;
 	img: string;
 	tags: string[];
+	presentation: string;
 }
 
 const { 
@@ -14,30 +15,72 @@ const {
 	title,
 	description,
 	img,
-	tags
+	tags,
+	presentation = "grid"
 } = Astro.props as Props;
 ---
 
-<li class="project-card noonoo-protruding-card">
-	<div class="project-card-img">
-		<a href={slug}>
-			<img src={img}>
-		</a>
-	</div>
-	<div class="project-card-details">
-		<a href={slug}>
-			<h4>{title}</h4>
-			<p class="caption">{description}</p>
-		</a>
-	</div>
-	{tags &&
-		<ul class="tags">
-			{tags.map((tag) =>
-				<Tag
-					prefix="projects"
-					tag={tag}
-				/>
-			)}	
-		</ul>	
-	}
-</li>
+{presentation === "grid" &&
+	<li class="project-card">
+		<div class="project-card-img">
+			<a href={slug}>
+				<img src={img}>
+			</a>
+		</div>
+		<div class="project-card-details">
+			<a href={slug}>
+				<h4>{title}</h4>
+				<p class="caption">{description}</p>
+			</a>
+		</div>
+		{tags &&
+			<ul class="tags">
+				{tags.map((tag) =>
+					<Tag
+						prefix="projects"
+						tag={tag}
+					/>
+				)}	
+			</ul>	
+		}
+	</li>
+}
+
+{presentation === "index" &&
+	<li class="project">
+		<div class="project-bg">
+			<img
+				src={img}
+			/>
+		</div>
+		<div class="container">
+			<a class="bottom-a" href={slug}></a>
+			<a class="left-a" href={slug}></a>
+			<a class="right-a" href={slug}></a>
+			<a class="top-a" href={slug}></a>
+			<div class="project-card">
+				<div class="project-card-img">
+					<a href={slug}>
+						<img src={img}>
+					</a>
+				</div>
+				<div class="project-card-details">
+					<a href={slug}>
+						<h4>{title}</h4>
+						<p class="caption">{description}</p>
+					</a>
+				</div>
+				{tags &&
+					<ul class="tags">
+						{tags.map((tag) =>
+							<Tag
+								prefix="projects"
+								tag={tag}
+							/>
+						)}
+					</ul>
+				}
+			</div>
+		</div>
+	</li>
+}

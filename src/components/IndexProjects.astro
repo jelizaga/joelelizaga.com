@@ -2,9 +2,44 @@
 ////////////////////////////////////////////////////////////////////////////////
 // IndexProjects.astro /////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
+import HeaderBar from "./HeaderBar.astro";
+import ProjectCard from "./ProjectCard.astro";
+
+export interface Props {
+  projects?: object[];
+  limit?: number;
+}
+
+const {
+  projects = (await Astro.glob("../project/*.mdx")),
+  limit,
+} = Astro.props as Props;
 ---
 
-<h2>
-  Projects
-</h2>
+<div id="projects">
+  <HeaderBar
+    heading="Projects"
+    icon="fa-solid fa-drafting-compass"
+    id="projects"
+  />
+  <ul class="index-project-cards">
+    {projects.map(project => (
+      <ProjectCard
+        slug={`/project/${project.frontmatter.slug}`}
+        title={project.frontmatter.title}
+        description={project.frontmatter.description}
+        img={project.frontmatter.img}
+        tags={project.frontmatter.tags}
+        presentation="index"
+      />
+    ))}
+  </ul>
+</div>
+
+<style>
+  .index-project-cards {
+    list-style: none;
+    padding: 0;
+  }
+</style>
 

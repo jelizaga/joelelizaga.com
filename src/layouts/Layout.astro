@@ -5,7 +5,6 @@ import { Image, Picture } from '@astrojs/image/components';
 import { Prism } from "@astrojs/prism";
 import "../style/main.css";
 import "../style/code.css";
-
 export interface Props {
 	title: string;
 	description?: string;
@@ -53,13 +52,13 @@ const {
 			currentPage={currentPage}
 			headerShadow={headerShadow}
 		/>
-		<main id="swup">
+		<main id="swup" class="wrapper">
 			<slot />
 		</main>
 		<Footer
 		 	currentPage={currentPage}
 			footerShadow={footerShadow}
 		/>
-		<script src="/app.js" type="module"></script>
+		<script type="module" src="/app.js"></script>
 	</body>
 </html>
