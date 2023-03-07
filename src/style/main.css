@@ -490,6 +490,7 @@ section.gapped, section.centered {
   filter: blur(0.25rem) brightness(0.60);
   object-fit: cover;
   height: 120%;
+  transition: filter 0.2s ease-in-out;
   width: 120%;
 }
 
@@ -537,6 +538,10 @@ section.gapped, section.centered {
   transition: top 0.2s ease-in-out, left 0.2s ease-in-out;
   width: 100%;
   z-index: 1;
+}
+
+.project:hover .project-bg img {
+  filter: blur(0.25rem) brightness(0.50);
 }
 
 @media screen and (min-width: 750px) {
