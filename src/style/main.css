@@ -487,9 +487,9 @@ section.gapped, section.centered {
 
 .project-bg img {
   display: block;
-  filter: blur(0.25rem) brightness(0.60);
-  object-fit: cover;
+  filter: brightness(0.6);
   height: 120%;
+  object-fit: cover;
   transition: filter 0.2s ease-in-out;
   width: 120%;
 }
@@ -524,6 +524,14 @@ section.gapped, section.centered {
   width: 100%;
 }
 
+.project .project-bg-filter {
+  backdrop-filter: blur(0.25rem);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
 .project div.container {
   display: grid;
   grid-template-columns: 19.0985vw auto 23.607vw 19.0985vw;
@@ -537,11 +545,11 @@ section.gapped, section.centered {
   top: 0;
   transition: top 0.2s ease-in-out, left 0.2s ease-in-out;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
 }
 
 .project:hover .project-bg img {
-  filter: blur(0.25rem) brightness(0.50);
+  filter: brightness(0.50);
 }
 
 @media screen and (min-width: 750px) {
