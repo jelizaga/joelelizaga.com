@@ -1,0 +1,89 @@
+---
+import NNImage from "./NNImage.tsx";
+import Marquee from "./Marquee.astro";
+import HeaderBar from "./HeaderBar.astro";
+---
+
+<div class="value-prop" id="what-can-i-do-for-you">
+  <HeaderBar
+    heading="What can I do for you?"
+    icon="fa-solid fa-hat-wizard"
+  />
+	<Marquee
+		iconMarquee={true}
+		icons={[
+			"devicon-javascript-plain",
+			"devicon-typescript-plain",
+			"devicon-css3-plain",
+			"devicon-html5-plain",
+			"devicon-nodejs-plain",
+			"devicon-react-plain",
+			"devicon-express-original",
+			"devicon-mongodb-plain",
+			"devicon-graphql-plain",
+			"devicon-java-plain",
+			"devicon-nginx-plain",
+			"devicon-git-plain",
+			"devicon-linux-plain",
+			"devicon-bash-plain",
+			"devicon-markdown-plain",
+      "devicon-python-plain",
+      "devicon-vscode-plain",
+      "devicon-vim-plain",
+      "devicon-debian-plain",
+      "devicon-ubuntu-plain",
+      "devicon-jira-plain",
+			"devicon-figma-plain",
+      "devicon-xd-plain",
+      "devicon-premierepro-plain",
+      "devicon-sketch-line"
+		]}
+		direction={"right"}
+		margin={false}
+		straightCorners={true}
+	/>
+  <div class="centered content">
+    <div>
+      <p><em>Awesome question.</em></p>
+      <p>I can:</p>
+      <ul class="custom-bullets">
+        <li class="fa-gear">
+          <b>Develop</b> existing designs with UX-informed front-end panache.
+        </li>
+        <li class="fa-lightbulb">
+          <b>Design</b> components, tools, and experiences.
+        </li>
+        <li class="fa-earth-americas">
+          <b>Collaborate</b> with ease in cross-disciplinary teams (hey—that one rhymed!).
+        </li>
+      </ul>
+    </div>
+    <div class="diagram">
+      <NNImage
+        client:load
+        src={"/img/diagram/practice-diagram.svg"}
+        alt={"Conceptual diagram of Joel's UX engineering practice."}
+        display={"flat"}
+        transparentBackground={true}
+      />
+    </div>
+  </div>
+</div>
+
+<style>
+  .value-prop {
+    /* border-radius: 2.7rem; */
+    /* box-shadow: var(--noonoo_protrusion_bright); */
+  }
+
+  .value-prop .content {
+    grid-template-columns: var(--pct_golden_ratio_big) auto;
+    display: grid;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
+
+  .value-prop .diagram {
+    padding-left: 1rem;
+  }
+</style>

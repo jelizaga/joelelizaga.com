@@ -263,6 +263,33 @@ table tr td, table tr th {
   display: none;
 }
 
+/* Icons /////////////////////////////////////////////////////////////////////*/
+
+ul.custom-bullets {
+  list-style: none;
+}
+
+ul.custom-bullets li::before {
+  display: inline-block;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  margin-right: 0.25rem;
+  text-align: center;
+  width: 1rem;
+}
+
+ul.custom-bullets li.fa-lightbulb::before {
+  content: "\f0eb";
+}
+
+ul.custom-bullets li.fa-gear::before {
+  content: "\f013";
+}
+
+ul.custom-bullets li.fa-earth-americas::before {
+  content: "\f57d";
+}
+
 /* Root //////////////////////////////////////////////////////////////////////*/
 :root {
   box-sizing: border-box;
@@ -652,6 +679,11 @@ section.gapped, section.centered {
 .project-card:hover img, .project:hover div.container .project-card img {
   height: 102%;
 }
+
+/* .project-card a:active img { */
+  /* height: 105%; */
+  /* transition: 50ms ease-in-out; */
+/* } */
 
 /* Blog Card: */
 

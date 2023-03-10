@@ -4,20 +4,29 @@
 ////////////////////////////////////////////////////////////////////////////////
 // Scrolling marquee.
 
+import type { isAstroComponentInstance } from 'astro/dist/runtime/server/render/astro';
+import { toAttributeString } from 'astro/dist/runtime/server/render/util';
+
 // Props ///////////////////////////////////////////////////////////////////////
 export interface Props {
-  text: string;
+  text?: string;
   orientation?: string;
   display?: string;
   direction?: string;
   straightCorners?: boolean;
+  margin?: boolean;
+  iconMarquee?: boolean;
+  icons?: string[];
 }
 const {
   text,
   direction = "left",
   display = "depressed",
   orientation = "row",
-  straightCorners = false
+  straightCorners = false,
+  margin = true,
+  iconMarquee = false,
+  icons,
 } = Astro.props as Props;
 
 // Classes /////////////////////////////////////////////////////////////////////
@@ -46,19 +55,39 @@ switch (direction) {
     marqueeClasses += " right";
     break;
 }
+if (!margin) {
+  marqueeClasses += " no-margin";
+}
 if (straightCorners) {
   marqueeClasses += " straight-corners";
 }
 ---
 
-<div class={marqueeClasses}>
-  <div class="marquee-content">
-    <span class="marquee-text-a">{text}</span>
+{!iconMarquee &&
+  <div class={marqueeClasses}>
+    <div class="marquee-content">
+      <span class="marquee-text-a">{text}</span>
+    </div>
+    <div class="marquee-content">
+      <span class="marquee-text-b">{text}</span>
+    </div>
   </div>
-  <div class="marquee-content">
-    <span class="marquee-text-b">{text}</span>
+}
+
+{iconMarquee &&
+  <div class={marqueeClasses}>
+    <div class="marquee-content icons">
+      {icons?.map((icon) =>
+        <i class={icon}></i>
+      )}
+    </div>
+    <div class="marquee-content icons">
+      {icons?.map((icon) =>
+        <i class={icon}></i>
+      )}
+    </div>
   </div>
-</div>
+}
 
 <style>
   .marquee {
@@ -87,6 +116,10 @@ if (straightCorners) {
     box-shadow: none;
   }
 
+  .marquee.no-margin {
+    margin: 0;
+  }
+
   .marquee.straight-corners {
     border-radius: 0;
   }
@@ -97,6 +130,15 @@ if (straightCorners) {
     gap: 1rem;
     justify-content: space-around;
     min-width: 100%;
+  }
+
+  .marquee-content.icons {
+    gap: 1.2rem;
+    justify-content: start;
+  }
+
+  .marquee-content.icons i {
+    font-size: 1.2rem;
   }
 
   .animated.left .marquee-content {
