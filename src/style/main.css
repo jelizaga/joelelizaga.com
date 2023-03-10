@@ -360,6 +360,8 @@ ul.custom-bullets li.fa-earth-americas::before {
   /* Ratios //////////////////////////////////////////////////////////////////*/
   --vw_golden_ratio_big: 61.803vw;
   --vw_golden_ratio_small: 38.197vw;
+  --vh_golden_ratio_big: 61.803vh;
+  --vh_golden_ratio_small: 38.197vh;
   --pct_golden_ratio_big: 61.803%;
   --pct_golden_ratio_small: 38.197%;
   --almost_full_width: 95vw;
@@ -1167,14 +1169,6 @@ img {
   padding-bottom: 1rem;
 }
 
-@media screen and (max-width: 1130px) {
-
-  .contact-popup .popup {
-    width: var(--vw_golden_ratio_big);
-  }
-
-}
-
 @media screen and (min-width: 1840px) {
 
   .contact-popup .popup {
@@ -1230,6 +1224,22 @@ img {
 
   .contact-popup .popup .contact-form form.work-selected .work-fieldset label:first-of-type {
     margin-top: 0;
+  }
+
+}
+
+@media screen and (max-width: 1130px) {
+
+  .contact-popup .popup {
+    width: var(--vw_golden_ratio_big);
+  }
+
+}
+
+@media screen and (max-width: 750px) {
+
+  .contact-popup .popup {
+    width: var(--almost_full_width);
   }
 
 }
@@ -1742,10 +1752,6 @@ footer .hyperlink-buttons a i, footer .hyperlink-buttons button i {
   footer .hyperlink-buttons {
     width: 95vw;
   }
-
-}
-
-@media screen and (max-width: 1200px) {
 
   footer .hyperlink-buttons a, footer .hyperlink-buttons button {
     height: 2.7rem;

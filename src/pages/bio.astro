@@ -15,187 +15,123 @@ import HyperlinkButtons from '../components/HyperlinkButtons.astro';
 	title="Joel Elizaga | Bio"
 	currentPage={"bio"}
 >
-	<Header
-		heading="Bio"
-		headingIcon="fa-solid fa-face-smile"
-		bgSrc="/img/placeholder/placeholder3.jpg"
-		slug="/bio"
-	/>
-	<main>
-		<article id="bio" class="noonoo-protruding-card">
+	<main class="bio">
+		<section>
 			<div class="content">
-				<h2>
-					Welcome!
-				</h2>
-				<img
-					class="headshot"
-					src="/img/headshot/headshot1.jpg"
-					alt="Headshot of Joel Elizaga"
-				/>
+				<h1>
+					Hey there!
+				</h1>
 				<p>
-					I practice UX engineering and I study human-computer interaction.
+					I'm <b>Joel</b>. I'm a <code>UX engineer</code>: I practice at the noisy intersection of 
+					human-computer interaction and development.
 				</p>
 				<p>
-					I'm currently available for <em>front-end development</em>, 
-					<em>full-stack development</em> and <em>UX engineering</em> roles. Got
-					a role to fill? <a href="/#contact">Contact me!</a>
-				</p>
-				<p>
-					I've worked as a UX designer for numerous corporate clients while
-					employed at Infosys Ltd. I'm a fluent client-side web developer, and
-					lately I've been cultivating my full-stack and computer science
-					abilities so I can build technologies front-to-back. 
-				</p>
-				<p>
-					With that business aside, I like:
-				</p>
-				<Marquee
-					text="guinea pigs, terrariums, hiking, design, technology, ethics in technology, open source, cybernetics, stationary, petrichor, cognitive science, film, photography, gradually replacing all my plastic stuff with glass stuff, daydreaming of unobtainable utopianism, street lamps and Christmas lights under myopia & astigmatism, spaced-repetition learning, growing food, wood, simulations, archivism, writing, exploration, hilariously awful movies, history, artifacts that accomplish something with precision (intentionally or not), shortcuts & hotkeys, instrumental music that transports listeners to far-off fictitious places, dérive, bok choy, mushrooms, tofu, stir fry, humanism, snow-capped mountains towering in the distance, the waves of the Puget Sound crushing against gray beaches and liquifying sand castles, the giant pacific octopodes probably hanging out in the ruins of the Tacoma Narrows Bridge, "
-				/>
-			</div>
-      <HyperlinkButtons
-        buttons={[
-          {
-            href: "/doc/joel_elizaga_resume.pdf",
-            target: "_blank",
-            icon: "fa-solid fa-file-pdf",
-            tooltipContent: "Resume",
-            tooltipId: "intro-resume-tooltip"
-					},
-          {
-            href: "https://github.com/jelizaga",
-            target: "_blank",
-            icon: "fa-brands fa-github",
-            tooltipContent: "GitHub",
-            tooltipId: "intro-github-tooltip"
-          },
-          {
-            href: "https://linkedin.com/in/joel-elizaga",
-            target: "_blank",
-            icon: "fa-brands fa-linkedin",
-            tooltipContent: "LinkedIn",
-            tooltipId: "intro-linkedin-tooltip"
-          },
-        ]}
-        display="protruding"
-        justifyButtons="end"
-      />
-		</article>
-
-		<article class="noonoo-protruding-card">
-			<div class="content">
-				<h2>
-					Technology
-				</h2>
-				<p>
-					Let's consider technology from its most atomic unit; the tool.
-				</p>
-				<p>
-					What's your favorite tool? Consider what makes this tool of yours
-					awesome.
-				</p>
-				<p>
-					Is this tool <b>intuitive</b>? Does its mere design silently speak
-					to its use and reveal its functionality?
-				</p>
-				<p>
-					Is this tool <b>portable</b>? Is it always available when you need it,
-					or is it so <b>durable</b> that you can take it with you anywhere?
-				</p>
-				<p>
-					Is this tool <b>performant</b>? Can it do something with ingenious
-					proficiency like no other tool can? Does it give you a competitive
-					edge?
-				</p>
-				<p>
-					Does this favorite tool invite its use with a compelling aesthetic 
-					that <b>resonates</b> with you? Does its design remind you of something
-					meaningful, or speak to you in some way?
-				</p>
-				<p>
-					Is this tool a spectacle to use? Can you play it like an instrument?
-					Does mastery of this tool provoke a <b>joy of proficiency</b>, or a
-					suspension of self-awareness and time?
-				</p>
-				<p>
-					Is this tool <b>ergonomic</b>? Does it protect you from strain, fatigue, and 
-					pain? Does it conform to your personal capacities like nothing else?
-				</p>
-				<p>
-					Has this tool stood the test of time? Does it <b>carry its own 
-					legend</b>? Is the thing practically immortal—a stalwart, ever-sharp
-					ally?
-				</p>
-				<p>
-					We're surrounded by increasingly powerful and miraculous technologies,
-					developed, tested, published, evolved, licensed, purchased, and used
-					every day. These technologies are tools built with tools built with
-					tools. When we develop and design our technologies we can select from
-					a constellation of awesome features our users will appreciate.
+					I've worked on numerous projects for large corporate clients, including
+					Intel, T-Mobile, PwC, and the (admittedly non-corporate) city of
+					Providence, RI as a <b>UX designer</b> at
+					<a href="https://infosys.com">Infosys Ltd.</a>
 				</p>
 			</div>
-		</article>
+			<div class="illustration"></div>
+		</section>
+		<section>
+			<div class="content">
+				<p>
+					I served a year in 
+					<a href="https://americorps.gov" target="_blank">AmeriCorps NCCC</a>
+					prior to my work as a UX designer.
+				</p>
+				<p>
+					My team worked a bevvy of service projects supporting non-profits
+					across the southwestern United States:
+				</p>
+				<p>
+					I built trails in the Sonoran Desert, did a little deforestation and
+					infrastructure-building for an agritherapy retreat for veterans and gold 
+					star families in Taos, and led volunteer groups on landscaping and
+					hurricane recovery projects for senior citizens of the Third Ward in 
+					Houston.
+				</p>
+			</div>
+			<div class="illustration"></div>
+		</section>
+		<section>
+			<div class="content">
+				<p>
+					I studied 
+					<a 
+						href="https://ischool.uw.edu/programs/informatics"
+						target="_blank"
+					><b>informatics</b></a>
+					with a focus in <em>human-computer interaction</em> (HCI) at the 
+					<a 
+						href="https://en.wikipedia.org/wiki/University_of_Washington"
+						target="_blank"
+					>University of Washington</a>,
+					graduating with my bachelor of science in 2017.
+				</p>
+			</div>
+			<div class="illustration"></div>
+		</section>
+		<section>
+			<div class="content">
+				<p>
+					While studying at UW I interned as a video producer at
+					<a href="https://answerdash.com" target="_blank">AnswerDash</a>, a
+					SaaS startup founded by professors of information
+					<a href="https://faculty.washington.edu/wobbrock/">Jake Wobbrock</a>
+					and <a href="https://faculty.washington.edu/ajko">Amy Ko</a> of the
+					university's informatics department.
+				</p>
+			</div>
+		</section>
+		<section>
+			<div class="content">
+				
+			</div>
+		</section>
 	</main>
 </Layout>
 
 <style>
-	article .content .headshot {
-		border: var(--tahoma_white_dim) solid 3px;
-		border-radius: 100%;
-		box-shadow: var(--noonoo_protrusion_bright);
-		float: right;
-		height: clamp(8rem, 8rem, 275px);
-		margin-left: 1rem;
-		width: clamp(8rem, 8rem, 275px);
+
+	.bio {
+		display: block;
+		height: 100vh;
+		overflow-y: scroll;
+		scroll-snap-type: mandatory;
+		scroll-snap-type: y mandatory;
 	}
 
-	#bio {
-		overflow: hidden;
+	.bio section {
+		display: grid;
+		grid-template-columns: var(--vw_golden_ratio_small) var(--vw_golden_ratio_big);
+		grid-template-areas:
+			"content illustration";
+		min-height: 100vh;
+		scroll-snap-align: start;
 	}
 
-	article .hyperlink-buttons {
-		box-shadow: var(--noonoo_protrusion_bright);
-		display: flex;
-		gap: 0.5rem;
-		justify-content: end;
-		padding-bottom: 0.3rem;
+	.bio section .content {
+		grid-area: content;
+		padding-bottom: 1rem;
 		padding-left: 3rem;
 		padding-right: 3rem;
-		padding-top: 0.3rem;
+		padding-top: 1rem;
 	}
 
-	article .hyperlink-buttons a {
-		align-items: center;
-		background-image: var(--noonoo_protrusion_rounded_bright);
-		border-radius: 100%;
-		box-shadow: var(--noonoo_protrusion_bright);
-		display: flex;
-		height: 1.5rem;
-		justify-content: center;
-		position: relative;
-		transition: box-shadow 0.1s ease-in;
-		width: 1.5rem;
+	.bio section .illustration {
+		grid-area: illustration;
 	}
 
-	article .hyperlink-buttons a i {
-		color: var(--lawetlatla_ash_dim);
-		transition: 0.1s ease-in color, 0.1s ease-in text-shadow;
+	@media screen and (max-width: 1130px) {
+		.bio section {
+			grid-template-columns: auto;
+			grid-template-rows: var(--vh_golden_ratio_big) auto;
+			grid-template-areas: 
+				"illustration"
+				"content";
+		}
 	}
 
-	article .hyperlink-buttons a:hover i {
-		color: var(--spectactular_red_bright);
-	}
-
-	article .hyperlink-buttons a:active {
-		box-shadow: var(--noonoo_protrusion_bright), var(--noonoo_depression_bright);
-	}
-
-	.interests {
-		border-radius: 1.4rem;
-		box-shadow: var(--noonoo_depression_bright);
-		padding-bottom: 0.3rem;
-		padding-left: 1rem;
-		padding-right: 1rem;
-		padding-top: 0.3rem;
-	}
 </style>
