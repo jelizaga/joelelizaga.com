@@ -13,6 +13,7 @@ const {
   limit
 } = Astro.props as Props;
 
+const nonDraftProjects = projects.filter((project) => !project.frontmatter.draft);
 let projectsGridClasses = "projects-grid";
 if (columns == 1) {
   projectsGridClasses += " one-col";
@@ -21,7 +22,7 @@ if (columns == 1) {
 
 <div id="projects" class="projects">
   <ul class={projectsGridClasses}>
-    {projects.map(project => (
+    {nonDraftProjects.map(project => (
       <ProjectCard
         slug={`/project/${project.frontmatter.slug}`}
         title={project.frontmatter.title}

@@ -14,6 +14,9 @@ const {
   projects = (await Astro.glob("../project/*.mdx")),
   limit,
 } = Astro.props as Props;
+
+
+const nonDraftProjects = projects.filter((project) => !project.frontmatter.draft);
 ---
 
 <div id="projects">
@@ -23,7 +26,7 @@ const {
     id="projects"
   />
   <ul class="index-project-cards">
-    {projects.map(project => (
+    {nonDraftProjects.map(project => (
       <ProjectCard
         slug={`/project/${project.frontmatter.slug}`}
         title={project.frontmatter.title}

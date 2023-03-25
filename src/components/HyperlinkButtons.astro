@@ -22,7 +22,7 @@ export interface Props {
 
 const {
   buttons,
-  display,
+  display = "flat",
   buttonDirection = "row",
   alignButtons = "center",
   justifyButtons,
@@ -54,6 +54,9 @@ switch(justifyButtons) {
 switch(display) {
   case "protruding":
     hyperlinkButtonsClasses += " protruding";
+    break;
+  case "flat":
+    hyperlinkButtonsClasses += " flat";
     break;
 }
 ---

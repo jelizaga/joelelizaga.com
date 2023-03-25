@@ -15,7 +15,43 @@ import HyperlinkButtons from '../components/HyperlinkButtons.astro';
 	title="Joel Elizaga | Bio"
 	currentPage={"bio"}
 >
-	<main class="bio">
+	<article class="bio">
+		<div class="hyperlink-sidebar">
+			<HyperlinkButtons
+				buttons={[
+					{
+						href: "/doc/joel_elizaga_resume.pdf",
+						target: "_blank",
+						icon: "fa-solid fa-file-pdf",
+						tooltipContent: "Resume",
+						tooltipId: "bio-resume-tooltip"
+					},
+					{
+						href: "https://linkedin.com/in/joel-elizaga",
+						target: "_blank",
+						icon: "fa-brands fa-linkedin",
+						tooltipContent: "LinkedIn",
+						tooltipId: "bio-linkedin-tooltip"
+					},
+					{
+						href: "https://github.com/jelizaga",
+						target: "_blank",
+						icon: "fa-brands fa-github",
+						tooltipContent: "GitHub",
+						tooltipId: "footer-github-tooltip"
+					},
+					{
+						popup: "ContactPopup",
+						icon: "fa-solid fa-envelope",
+						tooltipContent: "Contact",
+						tooltipId: "footer-contact-tooltip"
+					}
+				]}	
+				buttonDirection={"column"}
+				tooltipPosition={"left"}
+				display={"flat"}
+			/>
+		</div>
 		<section>
 			<div class="content">
 				<h1>
@@ -32,7 +68,11 @@ import HyperlinkButtons from '../components/HyperlinkButtons.astro';
 					<a href="https://infosys.com">Infosys Ltd.</a>
 				</p>
 			</div>
-			<div class="illustration"></div>
+			<div class="illustration">
+				<img
+					src="/img/placeholder/placeholder1.jpg"
+				>
+			</div>
 		</section>
 		<section>
 			<div class="content">
@@ -53,7 +93,11 @@ import HyperlinkButtons from '../components/HyperlinkButtons.astro';
 					Houston.
 				</p>
 			</div>
-			<div class="illustration"></div>
+			<div class="illustration">
+				<img
+					src="/img/placeholder/placeholder2.jpg"
+				/>
+			</div>
 		</section>
 		<section>
 			<div class="content">
@@ -71,36 +115,62 @@ import HyperlinkButtons from '../components/HyperlinkButtons.astro';
 					graduating with my bachelor of science in 2017.
 				</p>
 			</div>
-			<div class="illustration"></div>
+			<div class="illustration">
+				<img
+					src="/img/placeholder/placeholder3.jpg"
+				/>
+			</div>
 		</section>
 		<section>
 			<div class="content">
 				<p>
 					While studying at UW I interned as a video producer at
 					<a href="https://answerdash.com" target="_blank">AnswerDash</a>, a
-					SaaS startup founded by professors of information
-					<a href="https://faculty.washington.edu/wobbrock/">Jake Wobbrock</a>
-					and <a href="https://faculty.washington.edu/ajko">Amy Ko</a> of the
-					university's informatics department.
+					SaaS startup founded by professors of the informatics department.
 				</p>
+			</div>
+			<div class="illustration">
+				<img
+					src="/img/placeholder/placeholder4.jpg"
+				/>	
 			</div>
 		</section>
 		<section>
 			<div class="content">
-				
+
+			</div>
+			<div class="illustration">
+				<img
+					src="/img/placeholder/placeholder5.jpg"
+				/>
 			</div>
 		</section>
-	</main>
+	</article>
 </Layout>
 
 <style>
 
 	.bio {
-		display: block;
 		height: 100vh;
+		margin: 0;
 		overflow-y: scroll;
-		scroll-snap-type: mandatory;
 		scroll-snap-type: y mandatory;
+		width: 100vw;
+	}
+
+	.bio .hyperlink-sidebar {
+		background-color: var(--tahoma_white_dim);
+		display: block;
+		height: 100%;
+		position: absolute;
+		right: 0;
+	}
+
+	.bio .hyperlink-sidebar .hyperlink-buttons {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 	}
 
 	.bio section {
@@ -122,6 +192,13 @@ import HyperlinkButtons from '../components/HyperlinkButtons.astro';
 
 	.bio section .illustration {
 		grid-area: illustration;
+		overflow: hidden;
+	}
+
+	.bio section .illustration img {
+		min-height: 100%;
+		min-width: 100%;
+		object-fit: cover;
 	}
 
 	@media screen and (max-width: 1130px) {
