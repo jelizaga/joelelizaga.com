@@ -1062,7 +1062,7 @@ img {
   width: 15%;
 }
 
-.noonoo-image-popup .popup .container img {
+.noonoo-image-popup .popup .container img, .noonoo-image-popup .popup .container video {
   display: block;
   height: 100%;
   object-fit: contain;

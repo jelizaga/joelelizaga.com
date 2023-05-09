@@ -121,6 +121,7 @@ export default function NNImagePopup(props: any) {
               images={props.images}
               focusedImage={props.focusedImage}
               setFocusedImage={props.setFocusedImage}
+              animated={props.animated}
             />
           </Match>
           <Match when={!popupIsCarousel}>
@@ -128,6 +129,7 @@ export default function NNImagePopup(props: any) {
               client:load
               src={props.src}
               alt={props.alt}
+              animated={props.animated}
             />
           </Match>
         </Switch>
