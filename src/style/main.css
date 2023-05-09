@@ -133,7 +133,7 @@ a {
   transition: color 0.1s, text-shadow 0.1s;
 }
 
-a:hover {
+a:hover, a:hover code {
   color: var(--spectacular_red_bright);
   text-shadow: var(--spectacular_red_glowing);
 }
@@ -170,6 +170,7 @@ code {
   font-family: "Comic Code Ligatures", monospace;
   font-size: 0.85rem;
   font-weight: 600;
+  transition: color 0.1s, text-shadow 0.1s;
 }
 
 hr {
