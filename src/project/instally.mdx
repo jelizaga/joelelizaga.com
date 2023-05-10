@@ -1,0 +1,370 @@
+---
+slug: instally
+title: "instally"
+headtitle: "instally | Conveniently & consistently install packages en masse"
+description: "Conveniently & consistently install packages en masse"
+img: /img/project/instally/instally-packagejson.png
+tags: ["Linux", "Bash"]
+github: "https://github.com/jelizaga/instally"
+license: "GNU General Public License v2.0"
+licenseLink: "https://github.com/jelizaga/instally/blob/main/LICENSE"
+link: "https://github.com/jelizaga/instally"
+draft: false
+---
+
+import NNCarousel from '../components/NNCarousel.tsx';
+import NNImage from '../components/NNImage.tsx';
+import Code from '../components/Code.astro';
+
+[`instally`](https://github.com/jelizaga/instally) is a portable interactive
+CLI script for *conveniently & consistently installing packages en masse on
+Linux,* featuring:
+
+* 🚚 **JSON-driven flexibility:** Specify packages for `instally` to install using
+  JSON, enjoying support for:
+    * organizing packages in groups,
+    * preferring methods of installation on a package-by-package basis,
+    * fallback installation methods,
+    * OS-specific installation methods,
+    * ***9*** different package managers,
+    * and even running your own installation commands!
+* ⛺ **Minimal dependencies:** Owing to `instally`'s simplicity, you can bring
+  `instally` to any Linux distribution capable of running Bash and
+  `jq`.
+* 💼 **Superb portability:** With `instally` and your own custom `package.json`
+  file, you can bring your favorite packages to (almost) any distro and install
+  them right away.
+
+<NNCarousel
+  client:load
+  images={[
+    {
+      src: "/img/project/instally/pop-grouping.png",
+      alt: "",
+      caption: "instally's package.json allows grouping packages—here we're grouping packages by function, but you could group your packages any way you'd like."
+    },
+    {
+      src: "/img/project/instally/fedora-packages.png",
+      alt: "",
+      caption: "Note the multiple installation methods on the right for Vim. instally doesn't care what you're installing on—it'll use whatever package manager's available."
+    },
+    {
+      src: "/img/project/instally/opensuse-installing-graphics.png",
+      alt: "Installing graphics-editing packages on openSUSE.",
+      caption: "instally's simplicity allows it to run on virtually any Linux distribution. Here we've got instally running on openSUSE Tumbleweed."
+    },
+    {
+      src: "/img/project/instally/pop-methods.png",
+      alt: "instally installing packages via multiple methods.",
+      caption: "instally can install packages via custom shell commands, as well as 9 different package managers. Here we're installing software via command, apt, and flatpak."
+    },
+    {
+      src: "/img/project/instally/ubuntu-node-version-manager.png",
+      alt: "instally allowing the user to select a Node.js version manager to install.",
+      caption: "When instally encounters a package installed using npm, instally allows users to select a Node.js version manager with which to install Node (that is—if Node.js isn't installed yet)."
+    },
+    {
+      src: "/img/project/instally/fedora-pip.png",
+      alt: "instally resolving the user's need for pip in order to install a package.",
+      caption: "Similar to how Node.js is handled, instally will install whichever version of pip the user prefers when it encounters a package that would be installed using pip (in this case, VisiData)."
+    },
+    {
+      src: "/img/project/instally/debian-customizing-cursor.png",
+      alt: "Customizing instally's appearance on Debian.",
+      caption: "instally's interface can be easily customized, down to the colors and individual UI elements. Want your cursor to be → instead of ▶? Sure, whatever!"
+    },
+    {
+      src: "/img/project/instally/pop-customized.png",
+      alt: "instally customized to match Pop!_OS's default wallpaper.",
+      caption: "instally customized to match Pop!_OS's default wallpaper."
+    },
+    {
+      src: "/img/project/instally/pop-installyconf.png",
+      alt: "instally along side instally's config file, instally.conf.",
+      caption: "instally comes with a handy config file, instally.conf. Bring your customized settings wherever."
+    },
+    {
+      src: "/img/project/instally/debian-updating-apt.png",
+      alt: "instally updating apt to install kitty",
+      caption: "instally automatically updates package indices whenever necessary, so you don't have to remember to do it yourself."
+    },
+    {
+      src: "/img/project/instally/pop-end.png",
+      alt: "instally printing a report after installing some packages about what packages were installed (and which ones weren't).",
+      caption: "After finishing an installation run, instally wants you to feel accomplished—enjoy the report breaking down which packages were installed (and which ones could not be installed)."
+    }
+  ]}
+/>
+
+Visit [`instally`'s GitHub page](https://github.com/jelizaga/instally) for the full manual.
+
+## User Experience
+
+The UI guidelines we use today for heuristic analysis were coded during the
+1960s and 70s for command-line interface programs: `instally` is a CLI script,
+but I still used the same UX principles a designer would apply to, say, a
+mobile app or a website.
+
+### User & Use-Case
+
+`instally`'s primary use-case is for the developer or Linux user (aficionado?) 
+who is going to open their terminal upon installing their OS. This is 
+because they're about to invoke `apt`, `dnf`, or `zypper` with a laundry list of 
+packages to install.
+
+With that in mind, installing and using `instally` is pretty trivial:
+
+<Code
+  lang="bash"
+  code={
+`# Download instally off GitHub, unarchive, and run instally:
+wget -P ~/Downloads \\
+  https://github.com/jelizaga/instally/archive/refs/tags/v0.23.tar.gz
+tar -xzvf ~/Downloads/v0.23.tar.gz
+cd ~/Downloads/instally-0.23
+./instally
+`}
+/>
+
+Alternatively (and most effectively), `instally` makes a great `git` submodule 
+or script in a [`dotfiles`](https://wiki.archlinux.org/title/Dotfiles) repo. A 
+distro-hopper on a fresh install will:
+
+1. install `git` (if it's missing)
+2. clone their `.dotfiles` repo (to import & symlink their configs)
+
+If `instally` is already included in their `.dotfiles` along with a
+`package.json`, all the user has to do is run `instally` to select their
+packages for installation.
+
+Given that `instally` supports 9 different package managers and OS-specific
+installation methods, this process of installing their package environments is
+made a whole lot easier: Users don't have to remember what packages to install, 
+or even what package IDs to use for which package managers on particular 
+operating systems.
+
+Basically, we're leveraging **recognition** over **recall**.
+
+### Recognition > Recall
+
+For example, on Debian-based distros [Taskwarrior](https://taskwarrior.org/)
+can be installed like so:
+
+<Code
+  lang="bash"
+  code={
+`sudo apt install taskwarrior`
+  }
+/>
+
+But on RHEL-based distros, this same application is installed with a different
+ID (`task` instead of `taskwarrior`):
+
+<Code
+  lang="bash"
+  code={
+`sudo dnf install task`
+  }/>
+
+If the user recently switched from a Debian-based distro to Fedora, they'll be
+running `sudo dnf install taskwarrior`, get a message from `dnf` saying, "No,
+`taskwarrior` doesn't exist," and either try `sudo dnf install task` out of 
+instinct or try searching `dnf` for the package—which is a bit of a waste of
+cognition, especially if they're installing dozens (or hundreds) of packages
+*just like this.* 
+
+This is the inefficiency of **recall**; users drawing package IDs from 
+fallible memory.
+
+Using `instally`, we can avoid this inefficiency entirely:
+
+<Code
+  filename="package.json"
+  lang="json"
+  code={`{
+  "name": "Taskwarrior",
+  "description": "command-line todo list for staying on-task",
+  "apt": {
+    "id": "taskwarrior"
+  },
+  "dnf": {
+    "id": "task"
+  },
+  "zypper": {
+    "id": "taskwarrior"
+  }
+}`}/>
+
+↑ Taskwarrior's the same app, but now we have three different installation
+methods depending on whichever package manager's available.
+
+Now all the user has to do is **recognize** Taskwarrior in `instally` and
+select it for installation:
+
+No memorization; no recall—users know they'll be getting Taskwarrior without
+fussing with package ID discrepencies and package managers.
+
+### IxD Grammar
+
+`instally` has a dense **IxD grammar**:
+
+<table>
+  <tr>
+    <th class="text-align-left">
+      Object
+    </th>
+    <th class="text-align-center">
+      Install
+    </th>
+    <th class="text-align-center">
+      Select
+    </th>
+    <th class="text-align-center">
+      Edit
+    </th>
+  </tr>
+  <tr>
+    <th class="text-align-left">
+      Package
+    </th>
+    <td class="text-align-center">
+      ☑
+    </td>
+    <td class="text-align-center">
+      ☑
+    </td>
+    <td class="text-align-center">
+      ☑
+    </td>
+  </tr>
+  <tr>
+    <th class="text-align-left">
+      Package Manager
+    </th>
+    <td class="text-align-center">
+      ☑
+    </td>
+    <td class="text-align-center">
+      ☑
+    </td>
+    <td class="text-align-center">
+      ☑
+    </td>
+  </tr>
+  <tr>
+    <th class="text-align-left">
+      Installation Method
+    </th>
+    <td class="text-align-center">
+      ☐
+    </td>
+    <td class="text-align-center">
+      ☑
+    </td>
+    <td class="text-align-center">
+      ☑
+    </td>
+  </tr>
+  <tr>
+    <th class="text-align-left">
+      Group
+    </th>
+    <td class="text-align-center">
+      ☐
+    </td>
+    <td class="text-align-center">
+      ☑
+    </td>
+    <td class="text-align-center">
+      ☑
+    </td>
+  </tr>
+  <tr>
+    <th class="text-align-left">
+      package.json
+    </th>
+    <td class="text-align-center">
+      ☐
+    </td>
+    <td class="text-align-center">
+      ☑
+    </td>
+    <td class="text-align-center">
+      ☑
+    </td>
+  </tr>
+  <tr>
+    <th class="text-align-left">
+      instally.conf
+    </th>
+    <td class="text-align-center">
+      ☐
+    </td>
+    <td class="text-align-center">
+      ☑
+    </td>
+    <td class="text-align-center">
+      ☑
+    </td>
+  </tr>
+</table>
+
+The *actions* (install, select, and edit) for `instally`'s *objects* are
+consistent: this consistent vocabulary reduces possible cognitive load and
+ambiguity, training a perceptual pattern with which the user learns to
+navigate their `instally` experience: *`instally` is all about* ***selecting***
+*and* ***installing,*** *and any object of `instally` is conceivably*
+***editable.***
+
+### UX Writing 
+
+The UX content of `instally` draws some from UX writing principles:
+
+## Background
+
+This is going to get a bit in-the-weeds:
+
+I wrote `instally` between 
+[Pop!_OS](https://en.wikipedia.org/wiki/Pop!_OS)
+22.04 and System76's next LTS release, 
+Pop!_OS 24.04, because there was a whole two years between 22.04 and 24.04
+during which I anticipated making a clean reinstall of Pop! due to the projected 
+addition of the new 
+[COSMIC desktop environment](https://blog.system76.com/post/november-at-system76-products-promos--cosmic-de)
+to Pop!_OS 24.04.
+
+I didn't (and still don't—24.04 isn't out yet) know if COSMIC was going to be a 
+polished enough experience to warrant using Pop!_OS 24.04, it being a new 
+desktop environment and all, so `instally`'s my way of bringing my system to
+whatever Linux distribution I ultimately end up using, Pop!_OS or not.
+
+I chose to parse `package.json` with `jq` is because I wanted to learn how to 
+use it and JSON lends itself handily to nesting data; the shape of 
+`package.json` was self-evident from the get-go. I wanted to minimize 
+`instally`'s dependencies, but I also didn't want to wrangle `awk` into being 
+the thing reading the package file, because `awk` looked like it'd take much 
+longer to grok than `jq` and asking ChatGPT to hold my hand through that one 
+would feel like cheating.
+
+## Afterthoughts
+
+I learned a whole lot of Bash I wouldn't have otherwise known while
+writing `instally`, and ultimately came to the conclusion that something much 
+more polished could've been made in Python with a TUI library instead. Of
+course, I'd have to call this hypothetical sequel to `instally` `installyy`.
+
+The fact that it's in Bash really does make `instally` portable, though, and its
+dependencies can all be grabbed as binaries. It's not a very economical script,
+but it's no-fuss.
+
+For all the UX principles used to design `instally`, I haven't user-tested it.
+Like a lot of FOSS TUI stuff, its use-case is niche and I think it serves its 
+purpose effectively enough to not warrant whittling it into something wholly
+refined. If I'm going to do some serious testing, it'd have to be on something
+with a larger user demographic and better incentives beyond sating personal
+curiosity. 
+
+That said, I think `instally` has its place, which is mostly in my `.dotfiles`
+repo where I can set it and forget it while it installs a bunch of
+packages and runs a few scripts whenever I make a clean install or spin a
+virtual machine.

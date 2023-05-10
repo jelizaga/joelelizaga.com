@@ -139,7 +139,17 @@ export default function NNCarousel(props: any) {
             focusedImage={focusedImage}
             setFocusedImage={setFocusedImage}
           />
-          <img src={`${props.images[focusedImage()].src}`} />
+          {! props.images[focusedImage()].animated &&
+            <img src={`${props.images[focusedImage()].src}`} />
+          }
+          {props.images[focusedImage()].animated &&
+            <video
+              autoplay 
+              muted 
+              loop 
+              src={`${props.images[focusedImage()].src}`}
+            />
+          }
         </div>
         {props.images[focusedImage()].caption &&
           <p class="caption">

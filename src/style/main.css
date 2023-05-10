@@ -117,7 +117,7 @@ h4, .project-article h3, .blog-article h3 {
   line-height: clamp(34px, 2.70833vw, 2.70833vw);
 }
 
-.caption, .code .code-title-bar, table, .footnotes, .subheading, sup a, .tooltip, .tag {
+.caption, .code .code-title-bar, .footnotes, .subheading, sup a, .tooltip, .tag {
   font-size: clamp(16px, 1.25vw, 1.25vw);
   line-height: clamp(28px, 2.1875vw, 2.1875vw);
   margin: 0;
@@ -203,11 +203,31 @@ blockquote {
   margin-bottom: 0;
 }
 
+table {
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 100%;
+}
+
+table.text-small {
+  font-size: clamp(16px, 1.25vw, 1.25vw);
+  line-height: clamp(28px, 2.1875vw, 2.1875vw);
+  margin: 0;
+}
+
 table tr td, table tr th {
   padding-bottom: 0.2rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 0.2rem;
+}
+
+.text-align-left {
+  text-align: left;
+}
+
+.text-align-center, table tr td.text-align-center, table tr th.text-align-center {
+  text-align: center;
 }
 
 .footnotes {
@@ -874,12 +894,25 @@ img {
 }
 
 .noonoo-image .caption.hidden, .noonoo-carousel .caption.hidden {
+  display: none;
   margin: 0;
 }
 
 /* Carousel buttons: */
+
+button.round, a.button.round {
+  align-items: center;
+  background-image: var(--noonoo_protrusion_rounded_bright);
+  border-radius: 100%;
+  display: flex;
+  height: 1.5rem;
+  justify-content: center;
+  width: 1.5rem;
+}
+
 .carousel-button {
   align-items: center;
+  justify-content: center;
   background-image: var(--noonoo_protrusion_rounded_bright);
   border-radius: 100%;
   box-shadow: var(--noonoo_floating_card_shadow);

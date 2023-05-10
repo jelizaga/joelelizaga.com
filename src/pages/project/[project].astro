@@ -9,6 +9,7 @@
 import ArticleProfile from "../../components/ArticleProfile.astro";
 import NNImage from "../../components/NNImage.astro";
 import Tag from "../../components/Tag.astro";
+import Tooltip from "../../components/Tooltip.astro";
 import Layout from "../../layouts/Layout.astro";
 
 export async function getStaticPaths() {
@@ -51,7 +52,32 @@ const { Content, frontmatter } = Astro.props.project;
         alt={frontmatter.imgAlt}
         straightCorners={true}
         expandable={false}
+        link={frontmatter.link}
       />
+      <div class="project-tray">
+        {frontmatter.github &&
+          <a 
+            href={frontmatter.github}
+            class="button tooltip round"
+          >
+            <Tooltip 
+              id="project-github-tooltip"
+              content="GitHub repository"
+            />
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a 
+            href={frontmatter.licenseLink}
+            class="tooltip button round"
+          >
+            <Tooltip 
+              id="project-license-tooltip"
+              content={frontmatter.license}
+            />
+            <i class="fa-solid fa-scale-balanced"></i>
+          </a>
+        }
+      </div>
     </header>
     <div class="content">
       <Content />
@@ -76,5 +102,13 @@ const { Content, frontmatter } = Astro.props.project;
 
   .project-header .description {
     font-style: italic;
+  }
+
+  .project-tray {
+    justify-content: center;
+    box-shadow: var(--noonoo_depression_bright);
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem;
   }
 </style>
