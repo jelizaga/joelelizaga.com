@@ -4,7 +4,7 @@ title: "instally"
 headtitle: "instally | Conveniently & consistently install packages en masse"
 description: "Conveniently & consistently install packages en masse"
 img: /img/project/instally/instally-packagejson.png
-tags: ["Linux", "Bash"]
+tags: ["Linux", "Bash", "UX"]
 github: "https://github.com/jelizaga/instally"
 license: "GNU General Public License v2.0"
 licenseLink: "https://github.com/jelizaga/instally/blob/main/LICENSE"
@@ -84,14 +84,14 @@ Linux,* featuring:
       caption: "instally comes with a handy config file, instally.conf. Bring your customized settings wherever."
     },
     {
-      src: "/img/project/instally/debian-updating-apt.png",
+      src: "/img/project/instally/ubuntu-updating-apt.png",
       alt: "instally updating apt to install kitty",
       caption: "instally automatically updates package indices whenever necessary, so you don't have to remember to do it yourself."
     },
     {
       src: "/img/project/instally/pop-end.png",
       alt: "instally printing a report after installing some packages about what packages were installed (and which ones weren't).",
-      caption: "After finishing an installation run, instally wants you to feel accomplished—enjoy the report breaking down which packages were installed (and which ones could not be installed)."
+      caption: "After finishing an installation run, instally wants you to feel accomplished—enjoy the report breaking down which packages were installed (and which ones could not be installed). Great job!"
     }
   ]}
 />
@@ -227,13 +227,13 @@ fussing with package ID discrepencies and package managers.
     <th class="text-align-left">
       Package
     </th>
-    <td class="text-align-center">
+    <td class="green text-align-center">
       ☑
     </td>
-    <td class="text-align-center">
+    <td class="green text-align-center">
       ☑
     </td>
-    <td class="text-align-center">
+    <td class="green text-align-center">
       ☑
     </td>
   </tr>
@@ -241,13 +241,13 @@ fussing with package ID discrepencies and package managers.
     <th class="text-align-left">
       Package Manager
     </th>
-    <td class="text-align-center">
+    <td class="green text-align-center">
       ☑
     </td>
-    <td class="text-align-center">
+    <td class="green text-align-center">
       ☑
     </td>
-    <td class="text-align-center">
+    <td class="green text-align-center">
       ☑
     </td>
   </tr>
@@ -255,13 +255,13 @@ fussing with package ID discrepencies and package managers.
     <th class="text-align-left">
       Installation Method
     </th>
-    <td class="text-align-center">
+    <td class="lighter text-align-center">
       ☐
     </td>
-    <td class="text-align-center">
+    <td class="green text-align-center">
       ☑
     </td>
-    <td class="text-align-center">
+    <td class="green text-align-center">
       ☑
     </td>
   </tr>
@@ -269,41 +269,41 @@ fussing with package ID discrepencies and package managers.
     <th class="text-align-left">
       Group
     </th>
-    <td class="text-align-center">
+    <td class="lighter text-align-center">
       ☐
     </td>
-    <td class="text-align-center">
+    <td class="green text-align-center">
       ☑
     </td>
-    <td class="text-align-center">
+    <td class="green text-align-center">
       ☑
     </td>
   </tr>
   <tr>
     <th class="text-align-left">
-      package.json
+      `package.json`
     </th>
-    <td class="text-align-center">
+    <td class="lighter text-align-center">
       ☐
     </td>
-    <td class="text-align-center">
+    <td class="green text-align-center">
       ☑
     </td>
-    <td class="text-align-center">
+    <td class="green text-align-center">
       ☑
     </td>
   </tr>
   <tr>
     <th class="text-align-left">
-      instally.conf
+      `instally.conf`
     </th>
-    <td class="text-align-center">
+    <td class="lighter text-align-center">
       ☐
     </td>
-    <td class="text-align-center">
+    <td class="green text-align-center">
       ☑
     </td>
-    <td class="text-align-center">
+    <td class="green text-align-center">
       ☑
     </td>
   </tr>
@@ -316,9 +316,85 @@ navigate their `instally` experience: *`instally` is all about* ***selecting***
 *and* ***installing,*** *and any object of `instally` is conceivably*
 ***editable.***
 
-### UX Writing 
+### Information Architecture
 
-The UX content of `instally` draws some from UX writing principles:
+#### Colors
+
+`instally` has three colors, each with their own function:
+
+1. *Active color* - Highlights 'active' menu items and suggested keystrokes the
+   user can perform.
+2. *Accent color* - Partially decorative, but also used to embellish important
+   information, such as the package report at the end of install runs.
+3. *Selected color* - Used to denote menu items and selections made.
+
+<NNImage
+  client:load
+  src="/img/project/instally/centos-colors.jpg"
+  alt="instally's three colors, prominently labeled."
+  caption="The three colors vary from terminal to terminal, since they're set using ANSI codes so as to use the terminal's default color scheme."
+/>
+
+This simplicity and consistency makes `instally` easy to use.
+
+#### Typography
+
+Typography is used to make information scannable. For example, `instally` bolds
+packages being installed, dependencies, and package managers (software) due to
+their importance:
+
+<NNImage
+  client:load
+  src="/img/project/instally/pop-typography-installation.jpg"
+  alt="instally's customization menus."
+/>
+
+↑ Instructions and prompts are consistently italicized, whereas output and
+`instally`'s operations are plain.
+
+`instally`'s 'sections' are separated by a line break and each have a bolded 
+and underlined heading, making it completely unambiguous where the user 'is'
+and what's going on:
+
+<NNImage
+  client:load
+  src="/img/project/instally/ubuntu-sections.jpg"
+  alt="instally's customization menus."
+/>
+
+
+This creates a typographical 'language' that users can easily scan with
+minimal focus.
+
+#### Iconography
+
+While installing packages, consistent, emoji-based iconography is used to 
+further make information effortlessly scannable:
+
+* 🎁 **-** Installed packages,
+* 👍 **-** *Already* installed packages,
+* ❗ **-** Packages that could not be installed,
+* ❌ **-** Missing (but expected) packages,
+* ❓ **-** Ambiguously installed packages (shell commands with non-`0` exit codes),
+* 🌎 **-** Installation in-progress,
+* 👉 **-** Helpful tips (usually on resolving errors),
+* ✨ **-** Updated package indices (`apt update`, for example),
+* ⚠️ **-** Warnings (for user-defined shell commands being executed, for example),
+* 📒 **-** `package.json`,
+* 🐛 **-** Bugs & errors.
+
+With a cursory glance down the left side of the terminal, a user can assess the
+progress of their installation run:
+
+<NNImage
+  client:load
+  src="/img/project/instally/opensuse-icons.jpg"
+  alt="instally's iconography highlighted during an openSUSE installation run."
+/>
+
+If they'd like further detail, they can actually read the messages—not that it's 
+necessary; the whole point of `instally` is to reduce mental investment
+into the installation process.
 
 ## Background
 

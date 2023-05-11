@@ -88,6 +88,19 @@ p {
   margin: 0;
 }
 
+p.green, li.green, td.green {
+  color: var(--rain_city_emerald_dim);
+}
+
+p.lighter, li.lighter, td.lighter {
+  color: var(--lawetlatla_ash_bright);
+}
+
+th code {
+  color: var(--lawetlatla_ash_dim);
+  font-weight: bold;
+}
+
 h1 {
   font-size: clamp(54px, 4.21875vw, 4.21875vw);
   line-height: clamp(83px, 6.510416vw, 6.510416vw);
