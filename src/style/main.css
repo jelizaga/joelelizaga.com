@@ -864,6 +864,20 @@ section.centered {
 article {
   background-color: var(--tahoma_white_dim);
   box-shadow: var(--noonoo_protrusion_bright);
+  width: clamp(var(--vw_golden_ratio_big), var(--vw_golden_ratio_big), 1186px);
+  /* width: clamp(var(--vw_golden_ratio_big), 1186px, 1186px); */
+}
+
+@media screen and (min-width: 1920px) {
+  article {
+    width: 1186px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  article {
+    width: var(--almost_full_width);
+  }
 }
 
 article header .noonoo-image,
@@ -874,9 +888,10 @@ article header .noonoo-image {
 
 article .content {
   padding-top: 1rem;
-  padding-left: 3rem;
-  padding-right: 3rem;
   padding-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
 }
 
 .blog-article .content p,
