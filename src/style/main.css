@@ -157,6 +157,7 @@
   --noonoo_fog_bright_right: linear-gradient(90deg, var(--tahoma_white_dim), #F2F0F000);
   --noonoo_fog_bright_top: linear-gradient(0deg, #F2F0F000, var(--tahoma_white_dim));
   /* Ratios //////////////////////////////////////////////////////////////////*/
+  /* --vw_golden_ratio_big: 61.803vh; */
   --vw_golden_ratio_big: 61.803vw;
   --vw_golden_ratio_small: 38.197vw;
   --vh_golden_ratio_big: 61.803vh;
@@ -172,16 +173,30 @@
   color: var(--lawetlatla_ash_dim);
   /* Typography //////////////////////////////////////////////////////////////*/
   font-family: "Atkinson Hyperlegible", sans-serif;
-  --font_size_0: clamp(16px, 1.25vw, 1.25vw);
-  --line_height_0: clamp(28px, 2.1875vw, 2.1875vw);
-  --font_size_1: clamp(20px, 1.614583vw, 1.6145832vw);
-  --line_height_1: clamp(34px, 2.70833vw, 2.70833vw);
-  --font_size_2: clamp(33px, 2.604166vw, 2.604166vw);
-  --line_height_2: clamp(53px, 4.16666vw, 4.16666vw);
-  --font_size_3: clamp(42px, 3.3333vw, 3.3333vw);
-  --line_height_3: clamp(66px, 5.20833vw, 5.20833vw);
-  --font_size_4: clamp(54px, 4.21875vw, 4.21875vw);
-  --line_height_4: clamp(83px, 6.510416vw, 6.510416vw);
+  /* NEW: */
+  --font_size_0: clamp(16px, 1.145833333vw, 22px);
+  --line_height_0: clamp(28px, 2.03125vw, 39px);
+  --font_size_1: clamp(20px, 1.458333333vw, 28px);
+  --line_height_1: clamp(34px, 2.447916667vw, 47px);
+  --font_size_2: clamp(26px, 1.875vw, 36px);
+  --line_height_2: clamp(43px, 3.072916667vw, 59px);
+  --font_size_3: clamp(33px, 2.34375vw, 45px);
+  --line_height_3: clamp(52px, 3.75vw, 72px);
+  --font_size_4: clamp(42px, 3.020833333vw, 58px);
+  --line_height_4: clamp(66px, 4.739583333vw, 91px);
+  --font_size_5: clamp(53px, 3.802083333vw, 73px);
+  --line_height_5: clamp(82px, 5.885416667vw, 113px);
+  /* OLD: */
+  /* --font_size_0: clamp(16px, 1.25vw, 1.25vw); */
+  /* --line_height_0: clamp(28px, 2.1875vw, 2.1875vw); */
+  /* --font_size_1: clamp(20px, 1.614583vw, 1.6145832vw); */
+  /* --line_height_1: clamp(34px, 2.70833vw, 2.70833vw); */
+  /* --font_size_2: clamp(33px, 2.604166vw, 2.604166vw); */
+  /* --line_height_2: clamp(53px, 4.16666vw, 4.16666vw); */
+  /* --font_size_3: clamp(42px, 3.3333vw, 3.3333vw); */
+  /* --line_height_3: clamp(66px, 5.20833vw, 5.20833vw); */
+  /* --font_size_4: clamp(54px, 4.21875vw, 4.21875vw); */
+  /* --line_height_4: clamp(83px, 6.510416vw, 6.510416vw); */
   font-size: var(--font_size_1);
   line-height: var(--line_height_1);
 }
