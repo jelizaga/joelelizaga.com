@@ -10,7 +10,7 @@
 /* Fonts /////////////////////////////////////////////////////////////////////*/
 /*////////////////////////////////////////////////////////////////////////////*/
 
-/* Primary - Atkinson Hyperlegible ///////////////////////////////////////////*/
+/* Primary font - Atkinson Hyperlegible //////////////////////////////////////*/
 @font-face {
   font-family: "Atkinson Hyperlegible";
   src: url("/font/Atkinson Hyperlegible/Atkinson-Hyperlegible-Regular-102a.woff2") format("woff2"),
@@ -41,7 +41,7 @@
   font-style: italic;
 }
 
-/*   Code - Comic Code Ligatures /////////////////////////////////////////////*/
+/* Code font - Comic Code Ligatures //////////////////////////////////////////*/
 @font-face {
   font-family: "Comic Code Ligatures";
   src: url("/font/Tabular Type Foundry/Comic Code/Webfonts/ComicCodeLigatures-Regular.woff2") format("woff2"),
@@ -289,6 +289,7 @@ h4, .project-article h3, .blog-article h3 {
 
 /* Small text ////////////////////////////////////////////////////////////////*/
 small, 
+.font-size-small,
 .caption,
 .code .code-title-bar, 
 .footnotes, 
@@ -405,8 +406,8 @@ table {
 }
 
 table.text-small {
-  font-size: clamp(16px, 1.25vw, 1.25vw);
-  line-height: clamp(28px, 2.1875vw, 2.1875vw);
+  font-size: var(--font_size_0);
+  line-height: var(--line_height_0);
   margin: 0;
 }
 
@@ -846,6 +847,7 @@ section.centered {
 /*////////////////////////////////////////////////////////////////////////////*/
 
 article {
+  background-color: var(--tahoma_white_dim);
   box-shadow: var(--noonoo_protrusion_bright);
 }
 
@@ -904,13 +906,6 @@ article.bio {
 
 .input-smile {
   background: "\f118";
-}
-
-.noonoo-protruding-card, 
-.noonoo-floating-card {
-  background-color: var(--tahoma_white_dim);
-  border-radius: 1.4rem;
-  box-sizing: border-box;
 }
 
 /*////////////////////////////////////////////////////////////////////////////*/
@@ -1570,8 +1565,13 @@ a.button-primary,
 /* Base button hovered */
 button:hover, 
 a.button:hover, 
-a.button-primary:hover, 
-.hyperlink-buttons .popup button:hover {
+button.primary:hover,
+a.button.primary:hover,
+button.secondary:hover,
+a.button.secondary:hover,
+.hyperlink-buttons .popup button:hover,
+button.round.secondary:hover,
+a.button.round.secondary:hover {
   color: var(--spectacular_red_bright);
   cursor: pointer;
   text-shadow: var(--spectacular_red_glowing);
@@ -1579,21 +1579,30 @@ a.button-primary:hover,
 
 /* Base button activated */
 button:active, 
-button.primary:active, 
 a.button:active, 
-a.button-primary:active, 
+button.primary:active, 
+a.button.primary:active, 
+button.secondary:active,
+a.button.secondary:active,
 .hyperlink-buttons .popup button:active, 
 .hyperlink-buttons .popup button.primary:active { 
   box-shadow: var(--noonoo_protrusion_bright), var(--noonoo_depression_bright);
+  /* color: var(--spectacular_red_bright); */
+  cursor: pointer;
+  /* text-shadow: var(--spectacular_red_glowing); */
 }
 
 /* Base button icons */
-button i, a.button i, a.button-primary i, .hyperlink-buttons .popup button i {
+button i,
+a.button i, 
+a.button-primary i, 
+.hyperlink-buttons .popup button i {
   font-size: 0.8rem;
 }
 
 /* Primary buttons ///////////////////////////////////////////////////////////*/
-button.primary, a.button-primary, 
+button.primary, 
+a.button.primary, 
 .hyperlink-buttons .popup button.primary {
   border: 3px var(--lawetlatla_ash_bright_transparent) solid;
   transition: 0.1s border, 0.1s box-shadow, 0.1s color, 0.1s text-shadow;
@@ -1601,10 +1610,18 @@ button.primary, a.button-primary,
 
 /* Primary button hovered */
 button.primary:hover, 
-a.button-primary:hover, 
+a.button.primary:hover, 
 .hyperlink-buttons .popup button.primary:hover {
   border: 3px var(--spectacular_red_bright) solid;
   box-shadow: var(--noonoo_protrusion_bright), var(--spectacular_red_glowing);
+}
+
+/* Primary button activated */
+button.primary:active, 
+a.button.primary:active, 
+.hyperlink-buttons .popup button.primary:active {
+  border: 3px var(--spectacular_red_bright) solid;
+  box-shadow: var(--noonoo_protrusion_bright), var(--noonoo_depression_bright) var(--spectacular_red_glowing);
 }
 
 /* Button sets ///////////////////////////////////////////////////////////////*/
@@ -1920,7 +1937,9 @@ header .content .tags .tag a {
   box-sizing: border-box;
   color: var(--lawetlatla_ash_bright);
   content: attr(data-tooltip);
+  font-size: var(--font_size_0);
   font-weight: normal;
+  line-height: var(--line_height_0);
   max-width: 34rem;
   opacity: 0;
   padding-bottom: 0.3rem;

@@ -23,15 +23,52 @@ export async function getStaticPaths() {
     }
   }))
 }
-
 const { Content, frontmatter } = Astro.props.project;
+
+// `project-tray` visibility:
+let projectTrayClasses = "project-tray";
+const projectTrayVisibility = (
+  frontmatter.github ||
+  frontmatter.license
+);
+if (!projectTrayVisibility) {
+  projectTrayClasses += "hidden";
+}
 ---
 
 <Layout 
   title={frontmatter.headTitle ? frontmatter.headTitle : frontmatter.title}
   currentPage={"projects"}
 >
-  <article class="project-article noonoo-protruding-card">
+  <article class="project-article">
+      <div class={projectTrayClasses}>
+        {frontmatter.github &&
+          <a 
+            href={frontmatter.licenseLink}
+            target="_blank"
+            class="tooltip button round secondary"
+          >
+            <Tooltip 
+              id="project-license-tooltip"
+              content={frontmatter.license}
+              position="bottom"
+            />
+            <i class="fa-solid fa-scale-balanced"></i>
+          </a>
+          <a 
+            href={frontmatter.github}
+            target="_blank"
+            class="button tooltip round secondary"
+          >
+            <Tooltip 
+              id="project-github-tooltip"
+              content="GitHub repository"
+              position="bottom"
+            />
+            <i class="fa-brands fa-github"></i>
+          </a>
+        }
+      </div>
     <header>
       <div class="project-header">
         <h1>{frontmatter.title}</h1>
@@ -54,30 +91,6 @@ const { Content, frontmatter } = Astro.props.project;
         expandable={false}
         link={frontmatter.link}
       />
-      <div class="project-tray">
-        {frontmatter.github &&
-          <a 
-            href={frontmatter.github}
-            class="button tooltip round"
-          >
-            <Tooltip 
-              id="project-github-tooltip"
-              content="GitHub repository"
-            />
-            <i class="fa-brands fa-github"></i>
-          </a>
-          <a 
-            href={frontmatter.licenseLink}
-            class="tooltip button round"
-          >
-            <Tooltip 
-              id="project-license-tooltip"
-              content={frontmatter.license}
-            />
-            <i class="fa-solid fa-scale-balanced"></i>
-          </a>
-        }
-      </div>
     </header>
     <div class="content">
       <Content />
@@ -105,10 +118,15 @@ const { Content, frontmatter } = Astro.props.project;
   }
 
   .project-tray {
-    justify-content: center;
-    box-shadow: var(--noonoo_depression_bright);
+    border-top-left-radius: 2.7rem;
+    border-top-right-radius: 2.7rem;
+    box-shadow: var(--noonoo_protrusion_bright);
     display: flex;
-    gap: 0.5rem;
-    padding: 0.5rem;
+    gap: 0.8rem;
+    padding-bottom: 0.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.5rem;
+    justify-content: right;
   }
 </style>
