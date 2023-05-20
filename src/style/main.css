@@ -382,6 +382,10 @@ hr {
   margin-top: 1rem;
 }
 
+.bar.protruding {
+  box-shadow: var(--noonoo_ceiling_protrusion_bright);
+}
+
 /* Block quotes //////////////////////////////////////////////////////////////*/
 blockquote {
   border-radius: 1.4rem;
@@ -861,15 +865,19 @@ section.centered {
 /* Articles //////////////////////////////////////////////////////////////////*/
 /*////////////////////////////////////////////////////////////////////////////*/
 
-article {
+article, .introduction-card {
   background-color: var(--tahoma_white_dim);
-  box-shadow: var(--noonoo_protrusion_bright);
+  border-radius: 2.7rem;
   width: clamp(var(--vw_golden_ratio_big), var(--vw_golden_ratio_big), 1186px);
-  /* width: clamp(var(--vw_golden_ratio_big), 1186px, 1186px); */
+}
+
+article {
+  box-shadow: var(--noonoo_protrusion_bright);
 }
 
 @media screen and (min-width: 1920px) {
-  article {
+  article,
+  .introduction-card {
     width: 1186px;
   }
 }
@@ -886,7 +894,8 @@ article header .noonoo-image {
   margin-top: 0;
 }
 
-article .content {
+article .content,
+.introduction-card .content {
   padding-top: 1rem;
   padding-bottom: 1rem;
   margin-left: auto;
@@ -902,9 +911,6 @@ article .content p,
   margin-top: 0.5rem;
 }
 
-article {
-  border-radius: 2.7rem;
-}
 
 article.bio {
   border-radius: 0;

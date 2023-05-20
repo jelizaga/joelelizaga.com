@@ -62,26 +62,28 @@ switch(display) {
 ---
 
 <div id={id} class={hyperlinkButtonsClasses}>
-  {buttons.map(button => (
-    <HyperlinkButton
-      href={button.href}
-      target={button.target}
-      icon={button.icon}
-      tooltipContent={button.tooltipContent}
-      tooltipId={button.tooltipId}
-      tooltipPosition={tooltipPosition}
-      popup={button.popup}
-    />
-  ))}
+  <div class="container">
+    {buttons.map(button => (
+      <HyperlinkButton
+        href={button.href}
+        target={button.target}
+        icon={button.icon}
+        tooltipContent={button.tooltipContent}
+        tooltipId={button.tooltipId}
+        tooltipPosition={tooltipPosition}
+        popup={button.popup}
+      />
+    ))}
+  </div>
 </div>
 
 <style>
-  .hyperlink-buttons {
+  .hyperlink-buttons .container {
     display: flex;
     gap: 0.5rem;
   }
 
-  .column {
+  .hyperlink-buttons.column .container {
     align-items: center;
     flex-direction: column;
     padding-bottom: 0.8rem;
@@ -90,27 +92,32 @@ switch(display) {
     padding-top: 0.8rem;
   }
 
-  .row {
-    flex-direction: row;
+  .hyperlink-buttons.row {
     padding-bottom: 0.4rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
     padding-top: 0.4rem;
+    width: 100%;
+  }
+
+  .hyperlink-buttons.row .container {
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
   }
 
   .hyperlink-buttons.protruding {
     box-shadow: var(--noonoo_protrusion_bright);
   }
 
-  .hyperlink-buttons.center {
+  .hyperlink-buttons.center .container {
     justify-content: center;
   }
 
-  .hyperlink-buttons.start {
+  .hyperlink-buttons.start .container {
     justify-content: start;
   }
 
-  .hyperlink-buttons.end {
+  .hyperlink-buttons.end .container {
     justify-content: end;
   }
 </style>

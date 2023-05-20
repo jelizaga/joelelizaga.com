@@ -7,12 +7,14 @@ import Octostar from "./Octostar.astro";
 <header id="introduction">
   <div class="introduction-container">
     <div class="introduction-card noonoo-floating-card">
-      <h1>
-        <Octostar
-          spin="60"
-        />
-        Welcome!
-      </h1>
+      <div class="bar protruding">
+        <h1>
+          <Octostar
+            spin="60"
+          />
+          Welcome!
+        </h1>
+      </div>
       <div class="content">
         <Bio
           marquee={true}
@@ -155,19 +157,18 @@ import Octostar from "./Octostar.astro";
     margin-right: auto;
     overflow: hidden;
     position: relative;
-    width: var(--vw_golden_ratio_big);
   }
 
   .introduction-card h1 {
     align-items: center;
-    box-shadow: var(--noonoo_ceiling_protrusion_bright);
     display: flex;
     grid-area: heading;
     font-style: italic;
     gap: 0.5rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    margin-left: auto;
+    margin-right: auto;
     justify-content: start;
+    width: 80%;
   }
 
   .introduction-card .headshot {
@@ -183,8 +184,6 @@ import Octostar from "./Octostar.astro";
   .introduction-card .content {
     grid-area: main;
     padding-bottom: 1rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
     padding-top: 1rem;
   }
 
