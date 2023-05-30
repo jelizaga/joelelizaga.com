@@ -168,6 +168,7 @@
   --vh_golden_ratio_small: 38.197vh;
   --pct_golden_ratio_big: 61.803%;
   --pct_golden_ratio_small: 38.197%;
+  --vw_golden_ratio_big_clamped: clamp(61.803vw, 61.803vw, 1186px);
   --almost_full_width: 95vw;
   /* Breakpoints /////////////////////////////////////////////////////////////*/
   --breakpoint_minimum_clamp: 1130px;
@@ -221,6 +222,54 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
+}
+
+body .body .gutter-left,
+body .body .gutter-right {
+  display: none;
+}
+
+@media screen and (min-width: 1920px) {
+
+  body .body {
+    display: grid;
+    grid-template-areas: "gutter-left main gutter-right";
+    grid-template-columns: auto 1920px auto;
+  }
+
+  body .body .gutter-left,
+  body .body .gutter-right {
+    background-color: red;
+    display: block;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  body .body .gutter-left::before,
+  body .body .gutter-right::before {
+    box-shadow: var(--noonoo_depression_img);
+    content: "";
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+  }
+
+  body .body .gutter-left {
+    grid-area: gutter-left;
+  }
+
+  body .body .gutter-right {
+    grid-area: gutter-right;
+  }
+
+  body .body main {
+    grid-area: main;
+    border-left: 0.4rem solid var(--tahoma_white_dim);
+    border-right: 0.4rem solid var(--tahoma_white_dim);
+  }
+
 }
 
 /*////////////////////////////////////////////////////////////////////////////*/
@@ -285,25 +334,33 @@ h1 {
   margin: 0;
 }
 
-h2, .project-article h1, .blog-article h1, .introduction-card h1 {
+h2, 
+.project-article h1, 
+.blog-article h1, 
+.introduction-card h1 {
   font-size: var(--font_size_3);
   line-height: var(--line_height_3);
   margin: 0;
 }
 
-h3, .project-article h2, .blog-article h2 {
+h3, 
+.project-article h2, 
+.blog-article h2 {
   font-size: var(--font_size_2);
   line-height: var(--line_height_2);
   margin: 0;
 }
 
-h4, .project-article h3, .blog-article h3 {
+h4, 
+.project-article h3, 
+.blog-article h3 {
   font-size: var(--font_size_1);
   line-height: var(--line_height_1);
   margin: 0;
 }
 
-.project-article h4, .blog-article h4 {
+.project-article h4, 
+.blog-article h4 {
   font-size: var(--font_size_0);
   line-height: var(--line_height_0);
 }
@@ -674,13 +731,6 @@ main:has(> article.bio) {
   height: calc(100% - (0.3rem + 0.3rem + 1rem + 0.5rem + 0.5rem) - (0.75rem + 0.75rem + 0.4rem + 0.4rem + 2rem));
 }
 
-div.centered, 
-article, 
-section.centered {
-  margin-left: auto;
-  margin-right: auto;
-  width: var(--vw_golden_ratio_big);
-}
 
 article {
   margin-bottom: 1.4rem;
@@ -700,11 +750,38 @@ section.centered {
   margin-top: 1.4rem;
 }
 
+div.centered, 
+header a .heading,
+article, 
+section.centered,
+.introduction-card,
+.value-prop {
+  margin-left: auto;
+  margin-right: auto;
+  width: var(--vw_golden_ratio_big_clamped);
+}
+
+@media screen and (min-width: 1920px) {
+
+  div.centered, 
+  header a .heading,
+  article, 
+  section.centered,
+  .introduction-card,
+  .value-prop {
+    width: 1186px;
+  }
+
+}
+
 @media screen and (max-width: 750px) {
 
-  article,
   div.centered, 
-  section.centered {
+  header a .heading,
+  article, 
+  section.centered,
+  .introduction-card,
+  .value-prop {
     width: var(--almost_full_width);
   }
 
@@ -807,7 +884,7 @@ section.centered {
 
 .project div.container {
   display: grid;
-  grid-template-columns: 19.0985vw auto 23.607vw 19.0985vw;
+  grid-template-columns: 19.0985% auto 23.607% 19.0985%;
   grid-template-rows: [line1] auto [line2] auto [line3] auto [line4];
   grid-template-areas: 
     "top-a top-a top-a top-a"
@@ -932,10 +1009,11 @@ section.centered {
 /* Articles //////////////////////////////////////////////////////////////////*/
 /*////////////////////////////////////////////////////////////////////////////*/
 
-article, .introduction-card {
+article, 
+.introduction-card {
   background-color: var(--tahoma_white_dim);
   border-radius: 2.7rem;
-  width: clamp(var(--vw_golden_ratio_big), var(--vw_golden_ratio_big), 1186px);
+  width: var(--vw_golden_ratio_big_clamped);
 }
 
 article {
@@ -2120,23 +2198,6 @@ header .content .tags .tag a {
 
   .introduction-card #introduction-hyperlinks-row {
     grid-area: footer;
-  }
-
-  .introduction-card #introduction-hyperlinks-column {
-    display: none;
-  }
-
-  @media screen and (min-width: 1920px) {
-
-    .introduction-card #introduction-hyperlinks-column {
-      display: flex;
-      justify-content: start;
-    }
-
-    .introduction-card #introduction-hyperlinks-row {
-      display: none;
-    }
-
   }
 
 /*////////////////////////////////////////////////////////////////////////////*/

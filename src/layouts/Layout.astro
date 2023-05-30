@@ -52,9 +52,13 @@ const {
 			currentPage={currentPage}
 			headerShadow={headerShadow}
 		/>
-		<main id="swup" class="wrapper">
-			<slot />
-		</main>
+		<div class="body">
+			<div class="gutter-left"></div>
+			<main id="swup" class="wrapper">
+				<slot />
+			</main>
+			<div class="gutter-right"></div>
+		</div>
 		<Footer
 		 	currentPage={currentPage}
 			footerShadow={footerShadow}

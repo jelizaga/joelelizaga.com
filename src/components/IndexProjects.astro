@@ -20,11 +20,13 @@ const nonDraftProjects = projects.filter((project) => !project.frontmatter.draft
 ---
 
 <div id="projects">
-  <HeaderBar
-    heading="Projects"
-    icon="fa-solid fa-drafting-compass"
-    id="projects"
-  />
+  <header>
+    <h2>
+      <i class="fa-solid fa-drafting-compass"></i>
+      Projects
+    </h2>
+    <hr />
+  </header>
   <ul class="index-project-cards">
     {nonDraftProjects.map(project => (
       <ProjectCard
@@ -40,9 +42,56 @@ const nonDraftProjects = projects.filter((project) => !project.frontmatter.draft
 </div>
 
 <style>
+  #projects {
+    border-bottom: 0.4rem solid var(--tahoma_white_dim);
+    position: relative;
+  }
+
+  #projects header h2 {
+    background-color: var(--tahoma_white_dim);
+    border-top-left-radius: 2.7rem;
+    border-top-right-radius: 2.7rem;
+    box-shadow: var(--noonoo_floating_card_shadow);
+    display: inline-block;
+    margin-left: 19.0985%;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    width: fit-content;
+  }
+
+  #projects header {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    top: -2.8rem;
+    width: 100%;
+    z-index: 2;
+  }
+
+  #projects header hr {
+    background-color: var(--tahoma_white_dim);
+    border-radius: 0;
+    box-shadow: none;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+    border: 0.2rem solid var(--tahoma_white_dim);
+    width: 100%;
+  }
+
   .index-project-cards {
     list-style: none;
     padding: 0;
+  }
+
+  @media screen and (max-width: 750px) {
+
+    #projects header h2 {
+      margin-left: 1rem;
+    }
+
   }
 </style>
 
