@@ -15,11 +15,17 @@ if (currentPage == "home") {
 
 <header class="masthead">
   <div class="container">
-    <div class="logo-container">
-      <a class={logoClasses} href="/">
-        ❋
-      </a>
-    </div>
+    <a 
+      class="title"
+      href="/"
+    >
+      <div class="logo-container">
+        <span class={logoClasses} href="/">
+          ❋
+        </span>
+      </div>
+      <span class="my-name">Joel Elizaga</span>
+    </a>
     <Nav
       currentPage={currentPage}
     />
@@ -31,12 +37,32 @@ if (currentPage == "home") {
     background-color: var(--tahoma_white_dim);
     box-shadow: var(--noonoo_ceiling_protrusion_shadow);
     box-sizing: border-box;
+    z-index: 1;
+  }
+
+  .masthead .title {
+    align-items: center;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .masthead .logo, .masthead .my-name {
+    color: var(--lawetlatla_ash_dim);
+  }
+
+  .masthead .title .my-name {
+    font-weight: bold;
+    transition: 0.1s color ease-in, 0.1s text-shadow ease-in;
+  }
+
+  .masthead .title:active .logo {
+    box-shadow: var(--noonoo_depression_bright);
   }
 
   .masthead .logo {
     align-items: center;
+    background-color: var(--tahoma_white_dim);
     border-radius: 100%;
-    color: var(--lawetlatla_ash_dim);
     display: flex;
     font-size: 1.2rem;
     height: inherit;
@@ -45,7 +71,7 @@ if (currentPage == "home") {
     width: inherit;
   }
 
-  .masthead .logo:hover {
+  .masthead .title:hover .my-name, .masthead .title:hover .logo {
     color: var(--spectacular_red_bright);
     text-shadow: var(--spectacular_red_glowing);
   }
@@ -92,7 +118,7 @@ if (currentPage == "home") {
       z-index: 4;
     }
 
-    .masthead .logo-container {
+    .masthead .title {
       display: none;
     }
 
