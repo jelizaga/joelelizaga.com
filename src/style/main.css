@@ -2318,6 +2318,21 @@ footer .hyperlink-buttons a, footer .hyperlink-buttons button {
   }
 }
 
+@media screen and (max-width: 831px) {
+
+    .introduction-card h1 {
+      justify-content: center;
+    }
+
+    .introduction-card h1 .work {
+      display: none;
+    }
+    
+    .introduction-card h1 .divider {
+      display: none;
+    }
+}
+
 @media screen and (max-width: 750px) {
   .introduction-card-container .octostar {
     height: 9rem;
@@ -2327,6 +2342,27 @@ footer .hyperlink-buttons a, footer .hyperlink-buttons button {
     top: -4.5rem;
     width: 9rem;
   }
+
+  .introduction-card h1 .work {
+    display: inline;
+  }
+  
+  .introduction-card h1 .divider {
+    display: inline;
+  }
+
+}
+
+@media screen and (max-width: 540px) {
+
+  .introduction-card h1 .work {
+    display: none;
+  }
+  
+  .introduction-card h1 .divider {
+    display: none;
+  }
+
 }
 
 /*////////////////////////////////////////////////////////////////////////////*/
