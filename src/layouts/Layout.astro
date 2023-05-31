@@ -53,11 +53,15 @@ const {
 			headerShadow={headerShadow}
 		/>
 		<div class="body">
-			<div class="gutter-left"></div>
+			<div class="gutter-left">
+				<div></div>
+			</div>
 			<main id="swup" class="wrapper">
 				<slot />
 			</main>
-			<div class="gutter-right"></div>
+			<div class="gutter-right">
+				<div></div>
+			</div>
 		</div>
 		<Footer
 		 	currentPage={currentPage}

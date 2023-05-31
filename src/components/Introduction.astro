@@ -6,57 +6,67 @@ import Octostar from "./Octostar.astro";
 
 <header id="introduction">
   <div class="introduction-container">
-    <div class="introduction-card noonoo-floating-card">
-      <div class="bar protruding">
-        <h1>
-          <Octostar
-            spin="60"
-          />
-          Welcome!
-        </h1>
-      </div>
-      <div class="content">
-        <Bio
-          marquee={true}
-        />
-        <div class="button-set">
-          <a href="#projects" class="button">
-            View Projects
-          </a>
-          <a href="#contact" class="button primary">
-            <i class="fa-solid fa-envelope"></i>
-            Contact
-          </a>
-        </div>
-      </div>
-      <HyperlinkButtons
-        buttons={[
-          {
-            href: "https://github.com/jelizaga",
-            target: "_blank",
-            icon: "fa-brands fa-github",
-            tooltipContent: "GitHub",
-            tooltipId: "intro-github-tooltip"
-          },
-          {
-            href: "https://linkedin.com/in/joel-elizaga",
-            target: "_blank",
-            icon: "fa-brands fa-linkedin",
-            tooltipContent: "LinkedIn",
-            tooltipId: "intro-linkedin-tooltip"
-          },
-          {
-            href: "/doc/joel_elizaga_resume.pdf",
-            target: "_blank",
-            icon: "fa-solid fa-file-pdf",
-            tooltipContent: "Resume",
-            tooltipId: "intro-resume-tooltip"
-          }
-        ]}
-        display="protruding"
-        justifyButtons="end"
-        id="introduction-hyperlinks-row"
+    <div class="introduction-card-container">
+      <Octostar
+        spin="60"
       />
+      <div class="introduction-card">
+        <div class="bar protruding">
+          <h1>
+            <span class="me">
+              Joel Elizaga
+            </span>
+            <span class="divider">
+              ·
+            </span>
+            <span class="work">
+              UX Engineer
+            </span>
+          </h1>
+        </div>
+        <div class="content">
+          <Bio
+            marquee={true}
+          />
+          <div class="button-set">
+            <a href="#projects" class="button">
+              View Projects
+            </a>
+            <a href="#contact" class="button primary">
+              <i class="fa-solid fa-envelope"></i>
+              Contact
+            </a>
+          </div>
+        </div>
+        <HyperlinkButtons
+          buttons={[
+            {
+              href: "https://github.com/jelizaga",
+              target: "_blank",
+              icon: "fa-brands fa-github",
+              tooltipContent: "GitHub",
+              tooltipId: "intro-github-tooltip"
+            },
+            {
+              href: "https://linkedin.com/in/joel-elizaga",
+              target: "_blank",
+              icon: "fa-brands fa-linkedin",
+              tooltipContent: "LinkedIn",
+              tooltipId: "intro-linkedin-tooltip"
+            },
+            {
+              href: "/doc/joel_elizaga_resume.pdf",
+              target: "_blank",
+              icon: "fa-solid fa-file-pdf",
+              tooltipContent: "Resume",
+              tooltipId: "intro-resume-tooltip"
+            }
+          ]}
+          display="protruding"
+          justifyButtons="end"
+          id="introduction-hyperlinks-row"
+        />
+      </div>
     </div>
   </div>
   <div class="introduction-bg">
@@ -83,6 +93,11 @@ import Octostar from "./Octostar.astro";
 
   #introduction, .introduction-container, .introduction-bg {
     height: calc(100vh - 1.3rem);
+    min-height: 34rem;
+  }
+
+  .introduction-card .hyperlinks {
+    grid-area: footer;
   }
 
   /* Background: */
@@ -129,11 +144,16 @@ import Octostar from "./Octostar.astro";
     position: relative;
   }
 
+  .introduction-card .bar.protruding {
+    border-top-left-radius: 2.7rem;
+    border-top-right-radius: 2.7rem;
+  }
+
   .introduction-card h1 {
     align-items: center;
+    cursor: default;
     display: flex;
     grid-area: heading;
-    font-style: italic;
     gap: 0.5rem;
     margin-left: auto;
     margin-right: auto;
@@ -185,10 +205,6 @@ import Octostar from "./Octostar.astro";
   }
 
   @media screen and (min-width: 1920px) {
-
-    .introduction-card .content {
-      overflow-y: scroll;
-    }
 
     #introduction, .introduction-container, .introduction-bg {
       height: 30rem;
