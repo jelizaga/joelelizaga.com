@@ -98,8 +98,8 @@ if (focus) {
   }
 
   header h1.focus {
-    font-size: clamp(42px, 3.3333vw, 3.3333vw);
-    line-height: clamp(66px, 5.20833vw, 5.20833vw);
+    font-size: var(--font_size_3);
+    line-height: var(--line_height_3);
     padding-right: 0;
   }
 
@@ -169,20 +169,11 @@ if (focus) {
     width: 100%;
   }
 
-  @media screen and (max-width: 1100px) {
-
-    header h1.focus {
-      font-size: clamp(33px, 2.604166vw, 2.604166vw);
-      line-height: clamp(53px, 4.16666vw, 4.16666vw);
-    }
-
-  }
-
   @media screen and (max-width: 880px) {
 
     header h1.focus {
-      font-size: clamp(26px, 2.03125vw, 2.03125vw);
-      line-height: clamp(42px, 3.3333vw, 3.3333vw);
+      font-size: var(--font_size_2);
+      line-height: var(--line_height_2);
     }
 
   }
