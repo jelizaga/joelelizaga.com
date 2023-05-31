@@ -2310,6 +2310,25 @@ footer .hyperlink-buttons a, footer .hyperlink-buttons button {
   color: var(--spectacular_red_dim);
 }
 
+@media screen and (max-width: 1280px) {
+  .introduction-card-container .octostar {
+    left: -2.6rem;
+    top: -2.6rem;
+    z-index: 0;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .introduction-card-container .octostar {
+    height: 9rem;
+    left: 0;
+    margin: auto;
+    right: 0;
+    top: -4.5rem;
+    width: 9rem;
+  }
+}
+
 /*////////////////////////////////////////////////////////////////////////////*/
 /* Breakpoints ///////////////////////////////////////////////////////////////*/
 /*////////////////////////////////////////////////////////////////////////////*/
