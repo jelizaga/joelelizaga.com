@@ -704,6 +704,10 @@ ul.custom-bullets li.fa-basketball::before {
   content: "\f434";
 }
 
+ul.custom-bullets li.fa-bicycle::before {
+  content: "\f206";
+}
+
 ul.custom-bullets li.bullseye::before {
   content: "\f140";
 }
@@ -732,8 +736,16 @@ ul.custom-bullets li.fa-gear::before {
   content: "\f013";
 }
 
+ul.custom-bullets li.fa-leaf::before {
+  content: "\f06c";
+}
+
 ul.custom-bullets li.fa-lightbulb::before {
   content: "\f0eb";
+}
+
+ul.custom-bullets li.fa-tractor::before {
+  content: "\f722";
 }
 
 ul.custom-bullets li.fa-tree::before {
