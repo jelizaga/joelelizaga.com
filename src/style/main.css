@@ -1104,9 +1104,22 @@ article {
 }
 
 @media screen and (max-width: 750px) {
+
   article {
     width: var(--almost_full_width);
   }
+
+  article .content,
+  .introduction-card .content,
+  .value-prop .content,
+  .contact-form .popup .content
+  {
+    padding-bottom: 1rem;
+    padding-left: 2.1rem;
+    padding-right: 2.1rem;
+    padding-top: 1rem;
+  }
+  
 }
 
 article header .noonoo-image,
@@ -1116,11 +1129,14 @@ article header .noonoo-image {
 }
 
 article .content,
-.introduction-card .content {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+.introduction-card .content,
+.value-prop .content,
+.contact-form .popup .content
+{
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
   width: 80%;
 }
 
@@ -1492,7 +1508,6 @@ a.button.round.secondary {
   display: grid;
   gap: 0;
   grid-template-rows: auto 1fr auto;
-  height: 95vh;
   overflow: hidden;
   transition: border-radius 0.3s ease-in;
   width: 95vw;
@@ -1587,14 +1602,18 @@ a.button.round.secondary {
 /* Popup responsive styling */
 @media screen and (max-width: 750px) {
 
-  /* Shift popups downwards so the mobile menu doesn't overlap: */
-  .noonoo-image-popup .popup {
-    max-height: 89vh;
-    top: calc(62px + 1rem);
-  }
-
   .popup {
     width: 95vw;
+  }
+
+  .noonoo-image-popup .popup,
+  .contact-popup .popup {
+    max-height: calc(100vh - 48px - 2rem);
+    top: calc(48px + 1rem);
+  }
+
+  .noonoo-image-popup .popup {
+    height: calc(100vh - 48px - 2rem);
   }
 
 }
@@ -2426,20 +2445,6 @@ footer .hyperlink-buttons a, footer .hyperlink-buttons button {
 /*////////////////////////////////////////////////////////////////////////////*/
 /* Breakpoints ///////////////////////////////////////////////////////////////*/
 /*////////////////////////////////////////////////////////////////////////////*/
-
-@media screen and (max-width: 750px) {
-
-  /* Shift popups downwards so the mobile menu doesn't overlap: */
-  .noonoo-image-popup .popup {
-    max-height: 89vh;
-    top: calc(62px + 1rem);
-  }
-
-  .popup {
-    width: 95vw;
-  }
-
-}
 
 .bio .hyperlink-sidebar .hyperlink-buttons.column .container {
   padding-left: 1rem;
