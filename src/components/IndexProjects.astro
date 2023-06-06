@@ -25,7 +25,6 @@ const nonDraftProjects = projects.filter((project) => !project.frontmatter.draft
       <i class="fa-solid fa-drafting-compass"></i>
       Projects
     </h2>
-    <hr />
   </header>
   <ul class="index-project-cards">
     {nonDraftProjects.map(project => (
@@ -52,6 +51,7 @@ const nonDraftProjects = projects.filter((project) => !project.frontmatter.draft
     border-top-left-radius: 2.7rem;
     border-top-right-radius: 2.7rem;
     box-shadow: var(--noonoo_floating_card_shadow);
+    cursor: default;
     display: inline-block;
     margin-left: 19.0985%;
     padding-left: 3rem;
@@ -64,24 +64,13 @@ const nonDraftProjects = projects.filter((project) => !project.frontmatter.draft
     flex-direction: column;
     gap: 0;
     position: absolute;
-    top: -2.8rem;
+    top: -2.5rem;
     width: 100%;
     z-index: 2;
   }
 
-  #projects header hr {
-    background-color: var(--tahoma_white_dim);
-    border-radius: 0;
-    box-shadow: none;
-    margin-bottom: 0;
-    margin-top: 0;
-    padding-bottom: 0;
-    padding-top: 0;
-    border: 0.2rem solid var(--tahoma_white_dim);
-    width: 100%;
-  }
-
   .index-project-cards {
+    border-top: 0.4rem solid var(--tahoma_white_dim);
     list-style: none;
     padding: 0;
   }
