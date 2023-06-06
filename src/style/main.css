@@ -2177,6 +2177,7 @@ header .content .tags .tag a {
 
 /* Tooltip visibility ////////////////////////////////////////////////////////*/
 .tooltip:hover .tooltip-bubble {
+  display: block;
   opacity: 1;
   text-shadow: none;
   transition: opacity 0.2s;
@@ -2192,6 +2193,7 @@ header .content .tags .tag a {
   box-sizing: border-box;
   color: var(--lawetlatla_ash_bright);
   content: attr(data-tooltip);
+  display: none;
   font-size: var(--font_size_0);
   font-weight: normal;
   line-height: var(--line_height_0);
