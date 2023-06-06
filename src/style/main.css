@@ -530,6 +530,8 @@ table {
   margin-left: auto;
   margin-right: auto;
   min-width: 100%;
+  overflow-x: scroll;
+  overflow-y: scroll;
 }
 
 table.text-small {
