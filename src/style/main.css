@@ -691,6 +691,25 @@ h4 i {
   font-size: 0.8em;
 }
 
+/* Custom icons */
+i.americorps {
+  background-image: url("/img/icon/americorps.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  height: 1em;
+  width: 1em; 
+}
+
+i.ischool {
+  background-image: url("/img/icon/ischool.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  height: 1em;
+  width: 1em; 
+}
+
 /* Custom bullets */
 ul.no-indent, ol.no-indent {
   padding-left: 0;
