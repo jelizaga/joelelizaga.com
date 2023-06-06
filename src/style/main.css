@@ -298,8 +298,8 @@ body .body .gutter-right {
 
   body .body main {
     grid-area: main;
-    border-left: 0.4rem solid var(--tahoma_white_dim);
-    border-right: 0.4rem solid var(--tahoma_white_dim);
+    border-left: 0.8rem solid var(--tahoma_white_dim);
+    border-right: 0.8rem solid var(--tahoma_white_dim);
   }
 
 }
