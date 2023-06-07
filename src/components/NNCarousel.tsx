@@ -103,13 +103,6 @@ export default function NNCarousel(props: any) {
     setPopupIsOpen(true);
   }
 
-  createEffect(() => {
-    // Trigger a re-render when focusedImage changes to ensure the caption is rendered correctly.
-    const currentImage = props.images[focusedImage()];
-    if (currentImage.caption && currentImage.caption !== "") {
-      // Noop function to force the effect to run.
-    }
-  });
   //////////////////////////////////////////////////////////////////////////////
   return (
     <>
