@@ -36,7 +36,7 @@ export default function ContactForm(props: any) {
           type="text"
           id="full-name"
           name="full-name"
-          placeholder="John Doe"
+          placeholder="J. Doe"
           ref={fullName}
           minlength="4"
           required
