@@ -2174,6 +2174,11 @@ header .content .tags .tag a {
   text-decoration: none;
 }
 
+.tag:hover a {
+  color: var(--spectacular_red_bright);
+  text-shadow: var(--spectacular_red_glowing);
+}
+
 .tag:active {
   box-shadow: var(--noonoo_depression_bright), var(--noonoo_protrusion_bright);
 }
