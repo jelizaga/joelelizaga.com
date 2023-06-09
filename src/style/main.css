@@ -1023,7 +1023,7 @@ section.centered,
   border-radius: 1.4rem;
   box-shadow: var(--noonoo_protrusion_bright);
   display: grid;
-  grid-template-rows: auto auto;
+  grid-template-rows: 1fr auto;
   overflow: hidden;
 }
 
