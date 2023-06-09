@@ -25,6 +25,8 @@ const nonDraftProjects = projects.filter((project) => !project.frontmatter.draft
       <i class="fa-solid fa-drafting-compass"></i>
       Projects
     </h2>
+    <hr />
+    <!-- <div class="hr"></div> -->
   </header>
   <ul class="index-project-cards">
     {nonDraftProjects.map(project => (
@@ -69,8 +71,18 @@ const nonDraftProjects = projects.filter((project) => !project.frontmatter.draft
     z-index: 2;
   }
 
+  #projects header hr {
+    bottom: -0.4rem;
+    border: none;
+    border-top: 0.4rem solid;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+  }
+
   .index-project-cards {
-    border-top: 0.4rem solid var(--tahoma_white_dim);
     list-style: none;
     padding: 0;
   }
