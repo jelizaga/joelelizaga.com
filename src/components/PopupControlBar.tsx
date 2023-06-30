@@ -21,18 +21,18 @@ export default function PopupControlBar(props: any) {
         <Switch>
           <Match when={props.fullscreenPopup && props.unFullscreenPopup && props.popupIsFullscreen}>
             {!props.popupIsFullscreen() &&
-              <button class="fullscreen" onClick={props.fullscreenPopup}>
+              <button class="rounded" onClick={props.fullscreenPopup}>
                 <i class="fa-solid fa-expand"></i>
               </button>
             }
             {props.popupIsFullscreen() &&
-              <button class="un-fullscreen" onClick={props.unFullscreenPopup}>
+              <button class="rounded" onClick={props.unFullscreenPopup}>
                 <i class="fa-solid fa-compress"></i>
               </button>
             }
           </Match>
         </Switch>
-        <button class="close" onClick={props.closePopup}>
+        <button class="rounded primary" onClick={props.closePopup}>
           <i class="fa-solid fa-x"></i>
         </button>
       </div>

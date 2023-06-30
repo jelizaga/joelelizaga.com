@@ -8,6 +8,7 @@ interface Button {
   tooltipContent: string;
   tooltipId: string;
   popup?: string;
+  type?: string;
 }
 
 export interface Props {
@@ -72,6 +73,7 @@ switch(display) {
         tooltipId={button.tooltipId}
         tooltipPosition={tooltipPosition}
         popup={button.popup}
+        type={button.type}
       />
     ))}
   </div>

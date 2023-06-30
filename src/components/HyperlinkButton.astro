@@ -11,6 +11,7 @@ export interface Props {
   tooltipId: string;
   tooltipPosition?: string;
   popup?: string;
+  type?: string;
 }
 
 const {
@@ -21,6 +22,7 @@ const {
   tooltipId,
   tooltipPosition = "top",
   popup,
+  type,
 } = Astro.props as Props;
 
 let triggeredPopup;
@@ -29,11 +31,27 @@ switch(popup) {
     triggeredPopup = "ContactPopup";
     break;
 }
+
+let buttonClasses = "hyperlink-button button rounded tooltip";
+switch(type) {
+  case "primary":
+    buttonClasses += " primary";
+    break;
+  case "red":
+    buttonClasses += " red";
+    break;
+  case "green":
+    buttonClasses += " green";
+    break;
+  case "blue":
+    buttonClasses += " blue";
+    break;
+}
 ---
 
 {href &&
   <a
-    class="hyperlink-button button rounded tooltip"
+    class={buttonClasses}
     href={href}
     target={target}
     aria-labelledby={tooltipId}
