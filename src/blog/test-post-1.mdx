@@ -10,91 +10,426 @@ tags: ["AI"]
 
 import { Prism } from '@astrojs/prism';
 import Code from '../components/Code.astro';
-import NNImage from '../components/NNImage.astro';
+import NNImage from '../components/NNImage.tsx';
 import NNCarousel from '../components/NNCarousel.tsx';
 
-From November'ish of 2023 onwards any intangible form of creativity may very
-well be the product of an artificial intelligence distributed throughout
-dozens of steel cabinets humming with warm silicon in a data center far away,
-or at least, partially created in collaboration *with* an AI.
-
-And there's just something awfully funny about starting a blog in this 
-ever-growing shade of AI's rise; a charming anachronism that smells like motor
-oil and looks as brassy and antique as the massive steam-powered cars in Jay 
-Leno's garage. Writing a blog in 2023 next to the incredible proficiency of
+Writing a blog in 2023 next to the incredible proficiency of
 contemporary AI is like hunting a sea lion while sitting in a wobbly
 skin-on-frame kayak with a wooden harpoon while a gas-powered waterborne factory
 plaughs a trawl net through the sea floor, scooping up countless fish, sea flora
 and junk with mechanical zeal.
 
-You know—it's spectacular.
+<NNCarousel
+  client:only="solid-js"
+  images={[
+    {
+      src: "/img/blog/ai-trawler.jpeg",
+      alt: "A massive trawler, the compound of centuries of human ingenuity, scraping the sea floor for fish, symbolizing the mechanical efficiency of AI.",
+      caption: "A behemoth trawler, the compound of centuries of human ingenuity, extracts countless tasty resources from the sea with miraculous mechanical efficiency—as effective as generative AI."
+    },
+    {
+      src: "/img/blog/human-kayak.jpeg",
+      alt: "A (poorly illustrated) kayaker staring down the lone sea lion he'd like to transform into dinner",
+      caption: "A (poorly illustrated) kayaker staring down the lone sea lion that he'd like to transform into a couples weeks worth of dinner—about as efficient as I am writing this blog."
+    }
+  ]}
+/>
 
-Watch the rapidity of ChatGPT as it carves through a dissertation on the
-lives and social positioning of Chinese-Filipinos under Spanish colonial rule:
-
-To achieve this same *exact* feat and at this *exact* speed, a
-person would...:
-
-* have to massage that information into their brains with enough study 
-  for it to pass from cognitive recall and into recognition—becoming as 
-  effortlessly retrievable and recitable as *tying their shoelaces,*
-* require superhuman recall in the first place,
-* and need incredible verbal skill to render their writing both accessible,
-  enjoyable, and rich in content with such ease.
-
-And this person would have to never sleep, eat, rest, or be burdened
-by other biological realities like sickness, senescence, discontentment, and
-the limitation of being in a single location at any given time that might impede 
-their ability to deliver these responses every single day, every moment, and 
-everywhere with connection to the internet.
-
-Now—remember that twenty years from now, this screencap of ChatGPT that I've 
-embedded above will look as ancient to us as the *cutting-edge* technological
-artifacts of 2003:
-
-
-And remember that these AI models feed and grow through the infinite rivers
-of yotabytes that human civilization produces:
+The AI models of today that have captured our imaginations
+grow in capability through the infinite rivers of yotabytes that human 
+civilization produces:
 
 That's almost every sound, every song, every image, every video, every 
 conversation, every artifice, every known and studied organism, every design, 
-every book, every blog, every stream—available on the web and ripe for parsing.
+every book, every blog, every review, every stream—available on the web and 
+ripe for parsing into a data set.
 
-Artificial intelligence is the gestalt of our noisy interactions on the web, 
-distilled into a superhuman signal. That figurative trawler next to my 
-wobbly blog-kayak is fueled by the data we feed it with our every action, sold 
-to or scraped by artificial intelligence.
+*The gestalt of our noisy behavior as documented on the web, distilled into a 
+superhuman signal,* a well-trained model is the sleepless
+collaboration of billions of human beings, alive and dead, and our collected, 
+purchased, and scraped atomic actions.
 
-And, for now, this process of AI maturation is only impeded by 
-the cost of electricity, the rapidly rising ceiling of investment into these
-technologies, the number of transistors we can cram on a chip, and 
-facile legalities of intellectual property that can be 
-circumvented by tacitly scraping the web with `curl` scripts and concealing
+---
+
+That figurative AI-trawler next to my 
+wobbly blog-kayak is fueled by the data we feed it with our every action; the 
+more data we produce and the more processing power dedicated to parsing it, the
+greater its capability.
+
+And, for now, this process of AI maturation is only impeded by:
+
+<NNImage
+  client:only="solid-js"
+  src="/img/blog/data-kaiju.png"
+  alt="YES"
+  float="right"
+  caption="Another analogy; AI is a cyber-kaiju that devours data to grow."
+/>
+
+* the cost of electricity[^1] [^2] and availability of silicon,[^3] 
+* the (rapidly rising[^4] [^5] [^6]) ceiling of investment into AI technologies, 
+* the number of transistors we can cram on a chip, 
+* the gradual progress of human ingenuity and entrepreneurship as we figure out 
+potential applications for AI,
+* and facile legalities of intellectual property[^7] [^8] [^9] [^10] [^11] [^12]
+that can be circumvented by surreptitiously scraping the web with `curl` scripts and burying
 the exact sources of data within the incoherent noise of countless other
-sources.
+sources used to train AI models.
+
+[^1]: Knight, Will.
+["AI Can Do Great Things—if It Doesn't Burn the Planet,"](https://www.wired.com/story/ai-great-things-burn-planet/)
+WIRED,
+January 21, 2020.
+[^2]: Saul, Josh, & Bass, Dina.
+["Artificial Intelligence Is Booming—So Is Its Carbon Footprint,"](https://www.bloomberg.com/news/articles/2023-03-09/how-much-energy-do-ai-and-chatgpt-use-no-one-knows-for-sure#xj4y7vzkg)
+Bloomberg,
+March 9, 2023.
+[^3]: Magubane, Nathi.
+["The hidden costs of AI: Impending energy and resource strain,"](https://penntoday.upenn.edu/news/hidden-costs-ai-impending-energy-and-resource-strain)
+Penn Today,
+March 8, 2023.
+[^4]: Sor, Jennifer.
+["AI could power the US economy as investment in the sector is poised to hit $200 billion by 2025, a Goldman Sachs says,"](https://www.businessinsider.com/ai-artificial-intelligence-stocks-investing-us-economy-outlook-goldman-sachs-2023-8?op=1)
+Business Insider,
+August 2, 2023.
+[^5]: Loucks, Jeff, et al.
+["Future in the balance? How countries are pursuing an AI advantage,"](https://www2.deloitte.com/us/en/insights/focus/cognitive-technologies/ai-investment-by-country.html)
+Deloitte Insights,
+May 1, 2019.
+[^6]: Hodges, Will.
+["PwC US makes $1 billion investment to expand and scale AI capabilities,"](https://www.pwc.com/us/en/about-us/newsroom/press-releases/pwc-us-makes-billion-investment-in-ai-capabilities.html)
+PwC US Newsroom,
+April 26, 2023.
+[^7]: Butterick, Matthew.
+[*GitHub Copilot Litigation,*](https://githubcopilotlitigation.com/)
+November 3, 2022.
+[^8]: Butterick, Matthew.
+["Stable Diffusion Litigation,"](https://stablediffusionlitigation.com/)
+January 13, 2023.
+[^9]: Brittain, Blake.
+["Getty Images lawsuit says Stability AI misused photos to train AI,"](https://www.reuters.com/legal/getty-images-lawsuit-says-stability-ai-misused-photos-train-ai-2023-02-06/)
+Reuters,
+February 6, 2023.
+[^10]: Setty, Riddhi.
+["AI-Assisted ‘Zarya of the Dawn’ Comic Gets Partial Copyright Win,"](https://news.bloomberglaw.com/ip-law/ai-assisted-zarya-of-the-dawn-comic-gets-partial-copyright-win)
+Bloomberg Law,
+February 22, 2023.
+[^11]: George, Alexandra, & Walsh, Toby.
+["Artificial intelligence is breaking patent law,"](https://www.nature.com/articles/d41586-022-01391-x)
+*Nature,*
+May 24, 2022.
+[^12]: Appel, Gil, et al.
+["Generative AI Has an Intellectual Property Problem"](https://hbr.org/2023/04/generative-ai-has-an-intellectual-property-problem),
+Harvard Business Review,
+April 7, 2023.
 
 When every interaction online can be the product of a digital homunculi, when 
 every voice (audio and textual) can be deconstructed and repurposed to enact
 the fantasies of humans and computers like shiny pieces of Lego, every face can 
 be stitched onto a virtual marionette or subsumed into the construction of a
-wholly nonexistant human—to some theorists, the internet as we knew it, as a 
-forum where humans convene and make things—is 'dead.'
+wholly nonexistant human character who enthusiastically reviews cheap products
+on Amazon for ¢s apiece—to some theorists, the internet as we knew it, as a 
+forum where humans convene to connect and make things together—is 'dead'[^13]
+and relatively devoid of organic life.
 
-So, why am I writing a blog? 
+[^13]: Tiffany, Kaitlyn.
+["Maybe You Missed It, but the Internet 'Died' Five Years Ago,"](https://www.theatlantic.com/technology/archive/2021/08/dead-internet-theory-wrong-but-feels-true/619937/)
+The Atlantic,
+accessed August 31, 2021.
 
-Should we even be in the water? 
+All of this begs the question:
 
-Why hunt with a harpoon in a kayak when you can feed cities with a trawler or 
-two?
+> *Why am I writing a blog in 2023?*
 
-You can't be in a *Godzilla*
-movie without running into the streets and pointing at Godzilla at some point,
-right? You really need that scene where you, the scientists, the top brass of
-the military, the single parent and his/her kid and the extraterrestrials all 
-get together and contend with the existential dread of Godzilla. It's just not 
-*Finding Nemo* if Nemo isn't drawn by the spectacle of the dentist's boat to 
-touch the hull to impress his friends and ends up in a fish tank in Sydney. 
-Alright:
+## Where's the connection—the authenticity?
 
-1.
-2. **Humanist concern? -** I'm 
+<NNImage
+  client:only="solid-js"
+  src="/img/blog/clay-fingerprint.png"
+  alt="YES"
+  float="right"
+/>
+
+The artifacts we create, blog posts included, can be ways of connecting with 
+others; fractional and curated insights into the minds of other human beings.
+From these insights, we can learn about the experiences, perspectives, 
+knowledge, and values of others.
+
+This authenticity is like the *fingerprints* of a sculptor 
+preserved on a clay pot; an expression of their wholly unique condition. There's 
+something intimate about a fingerprint, a strand of DNA, and somebody's 
+creations; they're compressed glimpses into an individual's experience of life.
+There's a personal-truthfulness to them; an 'authenticity.'
+
+But if you're looking for that kind of connection here, much as with the cover 
+letters, resumes, university applications, marketing copy, graduate theses, and 
+content of today, anything written in my blog could've been wholly or partially 
+scribed by a machine: 
+
+> Are these thoughts even my own? 
+
+> Are the mispellings and syntax errors just contrived to create an illusion of 
+authenticity? 
+
+> Did I even write this?
+
+You'd have to talk to me in person, or 
+scrutinize the journals I've written by hand, to figure out some pattern of 
+thought and see if my posts here echo the shape of that voice.
+
+And even then—I'm sure these articles could be entirely written by generative 
+AI, having scraped whatever Markdown notes and `.odf`s I have scattered on my 
+desktop. 
+
+Where does that leave us? 
+
+I think this is a great moment to be authentic about how I'm approaching this 
+`joelelizaga.com/blog` challenge:
+
+### 1 · This blog is an experiment in informatic self-determination.
+
+By publishing anything on the web, we're inevitably training numerous models 
+with our verbal, behavioral, and creative fingerprints.
+
+I don't think there's any way to completely sanitize the dozens of data lakes 
+out there of my fingerprints, and much of that data is going to
+fuel AI models anyhow (quietly bought or silently scraped), so I decided to 
+actively participate in this process in an attempt at informatic 
+self-determination.
+
+*This blog is an experiment in consciously contributing the fingerprints I'd like 
+to leave behind to the machine learning models.*
+
+<NNImage
+  client:only="solid-js"
+  src="/img/blog/kaiju-computer.png"
+  alt="A kaiju looking over the shoulder of a very calm computer user."
+  float="right"
+  caption="Stable Diffusion gets the idea!"
+/>
+
+Just as a
+developer committing their code to GitHub understands that their work will be
+used to train GitHub Copilot, I'm posting here aware that whatever I write will 
+be hoovered up by Googlebot or a `wget` (or something) from OpenAI (or whoever)
+to train something that could be much more performant than I am, and mixed 
+together with the behavioral exhaust and knowledge of who-knows-how-many-other 
+folks online.
+
+This blog is an experiment because I've got little clue of what the results of 
+maintaining it could be:
+
+Is blogging a waste of time? 
+
+Is it a good thing? 
+
+A bad thing? 
+
+Is it of any consequence 
+at all? 
+
+Do I stand to gain anything? 
+
+Would anybody read this despite the unbelievable overabundance of competing 
+content available for consumption in the attention economy?
+
+*Who knows!* Let's find out.
+
+### 2 · This blog is an exercise in human expression.
+
+I think there's a risk of generative AI deterring creative expression with its 
+incredible convenience:
+
+> Why try to manually carve my way through words to express myself when there's 
+tools available that will choose my vocabulary for me? 
+
+An overreliance on AI for creative output and expression and the resulting
+lack of creative exercise could atrophy one's ability to create and adapt.
+
+Take the 
+[*generation effect,*](https://en.wikipedia.org/wiki/Generation_effect)
+for example: We recall information better if we *generate* it
+ourselves (through searching for it in our semantic memory) than if we've
+simply read or heard or have been 'given' it through some form of *consumption.*
+
+A seemingly 
+infallible and highly performant AI can give us answers to our questions and 
+generate awesome 
+artifacts at speeds far greater than our own, but this comes at the cost of 
+us not having to *generate* this information ourselves; all we have to do is
+request it with a prompt and consume the output. 
+
+This lack of cognitive
+challenge can atrophy our ability to 'get good' at something and build 
+expertise; our recall isn't being strengthened through the generation effect.
+
+<NNImage
+  client:only="solid-js"
+  src="/img/blog/cyborg.png"
+  alt="A cyborg."
+  float="right"
+/>
+
+
+If we can't express and process our thoughts, experiences, and values 
+well because we've become overreliant on the assistance of generative AI, we're 
+vulnerable whenever our technological augmentations fail to perform, placing us 
+in the uncomfortable situation of using our atrophied abilities. This is the 
+same sort of atrophy of knowledge, skill, and memory Nicholas Carr centered in
+*The Glass Cage*: As our technology becomes more capable, we risk becoming less
+capable ourselves when we come to use it as a crutch.
+
+So *I'm using my blog is an exercise in expression:* It's a way for me to keep 
+exercising the cognitive 'muscles' of self-expression, sensemaking, and 
+creativity. 
+
+My identity's been wrapped up in these skills—I don't want to let 
+'em go, so I feel compelled to keep them sharp.
+
+### 3 · This blog is intended to contribute variety and diversity.
+
+<NNImage
+  client:only="solid-js"
+  src="/img/blog/earth-consumed.png"
+  alt="Earth, consumed by technology."
+  float="right"
+/>
+
+If, say, `80%` of content on
+the web is authored by generative AI, we risk training our AI models on the 
+work of AI. 
+
+This could result in an awesome singularity-like renaissance that
+deprecates our mortal species, or a feedback loop of creative decay that 
+underrepresents the rich diversity of human thought and experience,
+perpetuating static monocultures enforced by machines flooding cyberspace with
+homogenous content, unleashed for fractions of a ¢ per kilobyte and never 
+sleeping.
+
+And that would be a somewhat *idyllic* scenario, where we aren't even 
+accounting for the reality that these feedback loops will be used to
+exacerbate hatred, inequity, confusion, inaction, unhappiness, and division 
+through unceasing firehoses of content, *on top of* limiting the
+variety and diversity of human expression.
+
+So why not keep posting? 
+
+Inevitably, how I feel and what I think will be shaped by AI-generated content
+in the future. There's that quote from John M. Culkin:
+
+> *We shape our tools, and thereafter our tools shape us.*
+
+There's no all-or-nothing; AI will be used to persuade and architect
+experiences—there's no avoiding it. We'll cross paths with it, and our 
+interactions will shape us, and thereby shape society.
+
+We may as well continue to study and express our singular human experience;
+inject some divergence into life by simply existing. We're building machines
+that can, maybe, generate as many imaginative permutations of an image or an 
+idea as there are miraculously divergent permutations of *us*—
+
+---
+
+We've been living in an exciting and interesting time:
+
+The latest headlines in tech space are abound with
+AI managers,
+AI advisors,
+dubious data scraping by vendors to feed AI models,
+unemployment and AI outperforming knowledge workers,
+bungled rebrandings,
+AI misinformation,
+AI reading the minds of humans and mice,
+AI companionship,
+AI-driven suicide,
+AI-powered scams,
+AI-enabled revenge porn,
+AI content moderators suffering PTSD,
+the warnings of modern AI's progenitors—
+
+And all of this sounds profoundly negative; maybe paralytic—but *I don't think 
+any of it should deter anyone from active participation in and awareness of 
+technological progress:*
+
+1. Negativity stimulates our evolved propensity for identifying threats. It's 
+the psychological engine behind maximizing user engagement and clicks—so let's 
+take a deep breath and make sure we're not catastrophizing for the profit of 
+somebody.
+2. Our technologies are becoming more powerful, affordable, and ubiquitous. If
+we understand these technologies, we can make wise decisions about the roles
+and applications they play in our lives.
+
+I'm too much of a computer nerd to be a neo-Luddite. 
+
+In the past we've harnessed the memetic legacy of the machines used to aim ICBMs 
+to do neat stuff like connect us with folks from across the planet with the 
+Internet. There's gradiations; a spectrum
+between 
+
+So despite the somewhat doubtful value of dumping more creative flotsam into the 
+Internet at the dawn of generative AI, I'll be writing about human-computer 
+interaction here, at `joelelizaga.com/blog`. 
+
+We'll explore our relationships 
+with our information technologies and the kaleidoscope of complexity within, and 
+I'll try to keep it as cool and interesting as possible.
+
+I hope 
+
+Whether you're a computer, a computer-user, or something in-between, I
+appreciate your hearing me out for my first blog post. There'll be no comments
+section below, but you can always contact me.
+
+
+
+twitter
+[]: Counts, Aisha & Levine, Jesse. 
+["By Turning Twitter Into X, Elon Musk Risks Killing Billions in Brand Value,"](https://time.com/6297303/twitter-x-rebrand-cost/)
+Time,
+July 24, 2023.
+
+misinfgormation
+[]: Saenko, Kate.
+["'Godfather of AI' Geoffrey Hinton quits Google and warns over dangers of misinformation"](https://www.theguardian.com/technology/2023/may/02/geoffrey-hinton-godfather-of-ai-quits-google-warns-dangers-of-machine-learning)
+The Guardian,
+December 14, 2020.
+
+progenitors
+[]: O'brien, Matt.
+["Sam Altman pleads with Congress to regulate 'increasingly powerful' A.I. systems like his ChatGPT,"](https://fortune.com/2023/05/16/sam-altman-artificial-intelligence-regulation-congress-testimony-chatgpt-ibm/)
+Fortune,
+May 16, 2023.
+
+unemployment
+[]: Diaz, Maria.
+["AI threatens 7,800 jobs as IBM pauses hiring,"](https://www.zdnet.com/article/ai-threatens-7800-jobs-as-ibm-pauses-hiring/)
+ZDNet,
+May 3, 2023.
+
+knowledge workers
+[]: Singhal, Karan, et al.
+["Towards Expert-Level Medical Question Answering with Large Language Models,"](https://arxiv.org/pdf/2305.09617.pdf)
+May 16, 2023.
+
+[]: Ayers, John W., et al.
+["Comparing Physician and Artificial Intelligence Chatbot Responses to Patient Questions Posted to a Public Social Media Forum"](https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/2804309).
+April 28, 2023.
+
+
+read minds: mice
+[]: Schneider, Steffan, et al.
+["Learnable latent embeddings for joint behavioural and neural analysis"](https://cebra.ai/).
+
+
+read minds: human
+[]: Tang, Jerry, et al.
+["Semantic reconstruction of continuous language from non-invasive brain recordings"](https://www.nature.com/articles/s41593-023-01304-9)
+May 1, 2023.
+[]: Takagi, Yu, & Nishimoto, Shinji.
+["High-resolution image reconstruction with latent diffusion models from human brain activity"](https://www.biorxiv.org/content/10.1101/2022.11.18.517004v2.full.pdf).
+December 1, 2022.
+
+suicide
+[]: Xiang, Chloe.
+["'He Would Still Be Here': Man Dies by Suicide After Talking with AI Chatbot, Widow Says,"](https://www.vice.com/en/article/pkadgm/man-dies-by-suicide-after-talking-with-ai-chatbot-widow-says)
+March 30, 2023.

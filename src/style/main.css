@@ -841,6 +841,11 @@ article {
   margin-top: 1.4rem;
 }
 
+/* .blog-article .content p:first-child:first-letter { */
+  /* initial-letter: 2; */
+  /* padding-right: 0.5rem; */
+/* } */
+
 div.gapped, 
 section.gapped {
   display: flex;
