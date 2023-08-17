@@ -27,6 +27,7 @@
     "hotkeys-js": "^3.10.1",
     "image-size": "^1.0.2",
     "solid-particles": "^2.9.3",
+    "swiper": "^10.2.0",
     "tsparticles": "^2.9.3",
     "tsparticles-engine": "^2.9.3"
   }
