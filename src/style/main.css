@@ -1943,22 +1943,27 @@ button.rounded.primary:hover,
 a.button.rounded.primary:hover,
 .popup .control-bar button.rounded.primary:hover,
 .popup .control-bar a.button.rounded.primary:hover {
-  background-image: var(--noonoo_protrusion_rounded_lawetlatla_ash_glow);
+  /* background-image: var(--noonoo_protrusion_rounded_lawetlatla_ash_glow); */
+  background-image: var(--noonoo_protrusion_rounded_spectacular_red_glow);
   border: none;
   box-shadow:
     var(--noonoo_protrusion_bright),
-    var(--lawetlatla_ash_glowing); 
+    var(--spectacular_red_glowing);
+    /* var(--lawetlatla_ash_glowing);  */
 }
 
 button.rounded.primary:active,
 a.button.rounded.primary:active,
 .popup .control-bar button.rounded.primary:active,
 .popup .control-bar a.button.rounded.primary:active {
+  background-color: var(--noonoo_protrusion_rounded_spectacular_red_glow);
   border: none;
   box-shadow:
     var(--noonoo_protrusion_bright),
-    var(--lawetlatla_ash_glowing),
-    var(--noonoo_depression_lawetlatla_ash_bright);
+    /* var(--lawetlatla_ash_glowing), */
+    var(--spectacular_red_glowing),
+    var(--noonoo_depression_spectacular_red_bright);
+    /* var(--noonoo_depression_lawetlatla_ash_bright); */
   color: var(--spectacular_red_glow);
   text-shadow: var(--spectacular_red_glowing);
 }
@@ -1967,8 +1972,8 @@ button.rounded.primary:hover i,
 a.button.rounded.primary:hover i,
 .popup .control-bar button.rounded.primary:hover i,
 .popup .control-bar a.button.rounded.primary:hover i {
-  color: var(--spectacular_red_glow);
-  text-shadow: var(--spectacular_red_glowing);
+  color: var(--tahoma_white_glow);
+  text-shadow: var(--tahoma_white_glowing);
 }
 
 button.rounded.red,
