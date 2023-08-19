@@ -1931,6 +1931,34 @@ a.button.rounded:active,
 }
 
 /* Color variants */
+button.rounded.primary i,
+a.button.rounded.primary i,
+button.rounded.red i,
+a.button.rounded.red i,
+button.rounded.green i,
+a.button.rounded.green i,
+button.rounded.blue i,
+a.button.rounded.blue i {
+  color: var(--tahoma_white_dim);
+}
+
+a.button.rounded.primary:hover i,
+button.rounded.red:hover i,
+a.button.rounded.red:hover i,
+button.rounded.green:hover i,
+a.button.rounded.green:hover i,
+button.rounded.blue:hover i,
+a.button.rounded.blue:hover i {
+  color: var(--tahoma_white_bright);
+  text-shadow: var(--tahoma_white_glowing);
+}
+
+button.rounded.primary:hover i,
+a.button.rounded.primary:hover i {
+  color: var(--spectacular_red_glow);
+  text-shadow: var(--spectacular_red_glowing);
+}
+
 button.rounded.primary,
 a.button.rounded.primary,
 .popup .control-bar button.rounded.primary,
@@ -1960,12 +1988,20 @@ a.button.rounded.primary:active,
   border: none;
   box-shadow:
     var(--noonoo_protrusion_bright),
-    /* var(--lawetlatla_ash_glowing), */
     var(--spectacular_red_glowing),
     var(--noonoo_depression_spectacular_red_bright);
-    /* var(--noonoo_depression_lawetlatla_ash_bright); */
-  color: var(--spectacular_red_glow);
-  text-shadow: var(--spectacular_red_glowing);
+  /* color: var(--spectacular_red_glow); */
+  color: var(--tahoma_white_glow);
+  /* text-shadow: var(--spectacular_red_glowing); */
+  text-shadow: var(--tahoma_white_glowing);
+}
+
+button.rounded.primary:active i,
+a.button.rounded.primary:active i,
+.popup .control-bar button.rounded.primary:active i,
+.popup .control-bar a.button.rounded.primary:active i {
+  color: var(--tahoma_white_glow);
+  text-shadow: var(--tahoma_white_glowing);
 }
 
 button.rounded.primary:hover i,
@@ -2027,34 +2063,6 @@ a.button.rounded.blue:active {
   box-shadow:
     var(--noonoo_protrusion_bright),
     var(--noonoo_depression_whulge_blue_bright);
-}
-
-button.rounded.primary i,
-a.button.rounded.primary i,
-button.rounded.red i,
-a.button.rounded.red i,
-button.rounded.green i,
-a.button.rounded.green i,
-button.rounded.blue i,
-a.button.rounded.blue i {
-  color: var(--tahoma_white_dim);
-}
-
-a.button.rounded.primary:hover i,
-button.rounded.red:hover i,
-a.button.rounded.red:hover i,
-button.rounded.green:hover i,
-a.button.rounded.green:hover i,
-button.rounded.blue:hover i,
-a.button.rounded.blue:hover i {
-  color: var(--tahoma_white_bright);
-  text-shadow: var(--tahoma_white_glowing);
-}
-
-button.rounded.primary:hover i,
-a.button.rounded.primary:hover i {
-  color: var(--spectacular_red_glow);
-  text-shadow: var(--spectacular_red_glowing);
 }
 
 /* Primary buttons ///////////////////////////////////////////////////////////*/

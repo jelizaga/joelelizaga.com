@@ -33,60 +33,58 @@ const { Content, frontmatter } = Astro.props.blog;
   description={frontmatter.description}
   currentPage={"blog"}
 >
-  <main>
-    <article class="blog-article noonoo-protruding-card">
-      <header>
-        <div class="content">
-          <a 
-            class="rss-button tooltip"
-            aria-labelledby="rss"
-            href="/blog/rss.xml"
-            target="_blank"
-          >
-            <i class="fa-solid fa-rss"></i>
-            <Tooltip
-              id="rss"
-              content="Blog RSS"
-            />
-          </a>
-          <p class="date subheading">
-            <span class="tooltip">
-              pub. {new Date(frontmatter.pubDate).toLocaleDateString()}
-            </span>
-            {frontmatter.upDate &&
-              `/ upd. ${new Date(frontmatter.upDate).toLocaleDateString()}`
-            }
-          </p>
-          <h1>{frontmatter.title}</h1>
-          <p class="description">
-            {frontmatter.description}
-          </p>
-          {frontmatter.tags &&
-            <ul class="tags">
-              {frontmatter.tags.map((tag) =>
-                <Tag
-                  prefix="blog"
-                  tag={tag}
-                />
-              )}
-            </ul>
-          }
-        </div>
-        <NNImage
-          src={frontmatter.img}
-          alt={frontmatter.imgAlt}
-          straightCorners={true}
-          expandable={false}
-        />
-      </header>
+  <article class="blog-article noonoo-protruding-card">
+    <header>
       <div class="content">
-        <Content />
+        <a 
+          class="rss-button tooltip"
+          aria-labelledby="rss"
+          href="/blog/rss.xml"
+          target="_blank"
+        >
+          <i class="fa-solid fa-rss"></i>
+          <Tooltip
+            id="rss"
+            content="Blog RSS"
+          />
+        </a>
+        <p class="date subheading">
+          <span class="tooltip">
+            pub. {new Date(frontmatter.pubDate).toLocaleDateString()}
+          </span>
+          {frontmatter.upDate &&
+            `/ upd. ${new Date(frontmatter.upDate).toLocaleDateString()}`
+          }
+        </p>
+        <h1>{frontmatter.title}</h1>
+        <p class="description">
+          {frontmatter.description}
+        </p>
+        {frontmatter.tags &&
+          <ul class="tags">
+            {frontmatter.tags.map((tag) =>
+              <Tag
+                prefix="blog"
+                tag={tag}
+              />
+            )}
+          </ul>
+        }
       </div>
-      <ArticleProfile 
-        article="blog"
+      <NNImage
+        src={frontmatter.img}
+        alt={frontmatter.imgAlt}
+        straightCorners={true}
+        expandable={false}
       />
-    </article>
-  </main>
+    </header>
+    <div class="content">
+      <Content />
+    </div>
+    <ArticleProfile 
+      article="blog"
+      />
+  </article>
 </Layout>
 
 <style>
