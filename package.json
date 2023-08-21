@@ -10,7 +10,6 @@
     "astro": "astro"
   },
   "devDependencies": {
-    "@astrojs/image": "^0.11.6",
     "@astrojs/mdx": "^0.11.6",
     "@astrojs/solid-js": "^2.2.0",
     "@swup/a11y-plugin": "^2.1.0",
