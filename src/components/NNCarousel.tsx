@@ -7,6 +7,7 @@ import { render } from "solid-js/web";
 import { createSignal, createEffect, For } from "solid-js";
 import NNCarouselPagination from "./NNCarouselPagination";
 import NNImagePopup from "./NNImagePopup";
+import { SolidMarkdown } from "solid-markdown";
 
 interface Image {
   src: string;
@@ -153,9 +154,10 @@ export default function NNCarousel(props: any) {
           }
         </div>
         {props.images[focusedImage()].caption &&
-          <p class="caption">
-            {`${props.images[focusedImage()].caption}`}
-          </p>
+          <SolidMarkdown
+            class="caption"
+            children={`${props.images[focusedImage()].caption}`}
+          />
         }
       </div>
       <noscript>
@@ -170,7 +172,10 @@ export default function NNCarousel(props: any) {
               }
             </div>
             {image.caption &&
-              <p class="caption">{image.caption}</p>
+              <SolidMarkdown
+                class="caption"
+                children={image.caption}
+              />
             }
           </div>
         }</For>

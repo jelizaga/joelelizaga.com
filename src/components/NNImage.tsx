@@ -6,6 +6,7 @@
 import { render } from "solid-js/web";
 import { createSignal, Switch } from "solid-js";
 import NNImagePopup from "./NNImagePopup";
+import { SolidMarkdown } from "solid-markdown";
 
 interface Image {
   src: string;
@@ -117,7 +118,13 @@ export default function NNImage(props: Image) {
           </Match>
         </Switch>
         {props.caption &&
-          <p class="caption">{props.caption}</p>
+          <p 
+            class="caption"
+          >
+            <SolidMarkdown
+              children={props.caption}
+            />
+          </p>
         }
       </div>
     </>
