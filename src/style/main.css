@@ -1357,6 +1357,11 @@ article.bio {
   padding-top: 0.3rem;
 }
 
+.noonoo-image .caption p:last-child,
+.noonoo-carousel .caption p:last-child {
+  margin-bottom: 0;
+}
+
 .noonoo-image .caption.hidden, 
 .noonoo-carousel .caption.hidden {
   display: none;
@@ -1559,6 +1564,10 @@ a.button.round.secondary {
 
 .noonoo-image-popup .popup .caption {
   background-color: var(--tahoma_white_dim);
+}
+
+.noonoo-image-popup .popup .caption p:last-child {
+  margin-bottom: 0;
 }
 
 .noonoo-image-popup .popup .container a {
