@@ -2,7 +2,7 @@
 slug: 5-charms-travel
 title: "5 Charms Travel"
 headTitle: "5 Charms Travel ❯ UX"
-description: "Design & full-stack development of "
+description: "Design & full-stack development transformation for a premier travel agency"
 img: /img/project/5-charms-travel/home-header.png
 tags: ["UX", "UI", "Web Development"]
 draft: false
@@ -21,5 +21,209 @@ adventures.
 
 ## Design
 
+### Home Page
+
+<NNCarousel
+  client:only="solid-js"
+  aspectRatio="9 / 16"
+  images={[
+    {
+      src: "/img/project/5-charms-travel/home-new.jpg",
+      alt: "Revised home page of 5charmstravel.com.",
+      caption: "**After:** Home Page"
+    },
+    {
+      src: "/img/project/5-charms-travel/home-old.jpg",
+      alt: "Old home page of 5charmstravel.com.",
+      caption: "**Before:** Home Page"
+    }
+  ]}
+/>
+
+***Home page*** *improvements:*
+
+* Prominent and consistent *calls-to-action.*
+* *Distinctive branding and visual design,* improving ease-of-use through
+  consistency, usage through novelty, and evoking the headspace of travel,
+  opportunity, relaxation, optimism, and adventure.
+* *Sorting of content in order of importance and relevance to users,* with 
+  adventures at the very top.
+* *Adventures carousel,* highlighting the suite of customizable adventures 
+  proferred for users to explore and consider.
+* *Testimonials,* showcasing the experiences of happy clients.
+* *Consistent IxD grammar,* reducing cognitive load.
+* *Skeumorphic fun:* Instant-film photographs and dog-eared sticky-notes, 
+  creating a sense of memorable tangibility.
+* *Generally adventure-focused above-the-fold header image,* in order to cater 
+  to a wide demographic (non-Disney-specific).
+
+### Forms 
+
+The purpose of `5charmstravel.com` is to drive conversions and 
+
+<NNCarousel
+  client:only="solid-js"
+  aspectRatio="9 / 16"
+  images={[
+    {
+      src: "/img/project/5-charms-travel/book-old.jpg",
+      alt: "Revised home page of 5charmstravel.com."
+    },
+    {
+      src: "/img/project/5-charms-travel/contact-old.jpg",
+      alt: "Old home page of 5charmstravel.com."
+    }
+  ]}
+/>
+
+<NNCarousel
+  client:only="solid-js"
+  aspectRatio="9 / 16"
+  images={[
+    {
+      src: "/img/project/5-charms-travel/book-new-1.jpg",
+      alt: "Revised home page of 5charmstravel.com."
+    },
+    {
+      src: "/img/project/5-charms-travel/book-new-2-disney.jpg",
+      alt: "Old home page of 5charmstravel.com."
+    },
+    {
+      src: "/img/project/5-charms-travel/book-new-2-generic.jpg",
+    },
+    {
+      src: "/img/project/5-charms-travel/book-new-3-disney.jpg",
+    },
+    {
+      src: "/img/project/5-charms-travel/book-new-4-disney.jpg",
+    },
+    {
+      src: "/img/project/5-charms-travel/book-new-4-generic.jpg"
+    },
+    {
+      src: "/img/project/5-charms-travel/book-new-5.jpg"
+    }
+  ]}
+/>
+
+***Form*** *improvements:*
+
+* *Progressive disclosure:* The UX principle of *progressive disclosure* is used
+  to reduce fatigue and form bounce rates. By dividing the *Book Adventure* form 
+  into five distinct and labeled steps, users are propelled by a sense of
+  accomplishment with each successive 'section' completed.
+* *Conditional logic:* Depending on the adventures selected, the form adjusts to
+  collect relevant details. Say you're going to Disneyland: the new *Book
+  Adventure* form will collect Disneyland-specific
+  preferences with regards to accommodations and activities.
+* *Recognition > recall:* Adventures options are represented with the same
+  images and labels as they are elsewhere on the site, minimizing the effort of
+  identification and selection.
+* *Zero redundancy:* The original site had `3` forms, all with the same purpose;
+  the redesign has `1`, which every call-to-action points towards.
+
+### Blog
+
+<NNCarousel
+  client:only="solid-js"
+  aspectRatio="9 / 16"
+  images={[
+    {
+      src: "/img/project/5-charms-travel/blog-new-index.jpg"
+    },
+    {
+      src: "/img/project/5-charms-travel/blog-new-post.jpg"
+    },
+    {
+      src: "/img/project/5-charms-travel/blog-old.jpg"
+    }
+  ]}
+/>
+
+***Blog*** *improvements:*
+
+* *Blog post → adventure associations:* Allowing users to filter blog posts to 
+  read about the adventures they find most compelling.
+* *Persistent newsletter sign-up call-to-action,* in service of marketing and 
+  maintaining brand visibility.
+* *Related blog posts* posted at the bottom of each post improves low funnel
+  marketing, suggesting further posts for users interested in specific
+  adventures and similar content.
+
+### Adventures
+
+<NNCarousel
+  client:only="solid-js"
+  aspectRatio="9 / 16"
+  images={[
+    {
+      src: "/img/project/5-charms-travel/adventure-new.jpg"
+    },
+    {
+      src: "/img/project/5-charms-travel/adventure-old.jpg"
+    }
+  ]}
+/>
+
+<NNImage
+  client:only="solid-js"
+  src="/img/project/5-charms-travel/adventures-index.jpg"
+/>
+
+***Adventures*** *improvements:*
+
+### About 
+
+<NNImage
+  client:only="solid-js"
+  src="/img/project/5-charms-travel/about-old.jpg"
+/>
+
+<NNImage
+  client:only="solid-js"
+  src="/img/project/5-charms-travel/about-new.jpg"
+/>
+
+***About*** *improvements:*
+
 ## Development
 
+### Backend
+
+The original `5charmstravel.com` was a WordPress site designed by 
+[GoDaddy design services](https://www.godaddy.com/studio) and hosted on 
+`GoDaddy.com`.
+
+I decided to rebuild the site with a headless CMS:
+
+* A good headless CMS is *easy for non-developers to use.* Content can be 
+  effortlessly authored and updated by the client and their employees to fit
+  business needs and the evolution of the market. Rapid changes are possible 
+  without the intervention of a web developer.
+* A headless CMS decouples the content from WordPress' schemas and the plugins
+  required to fit it into reusable components, optimizing *ease-of-maintenance:*
+  There's no plugins to update or keep an eye on for stagnant
+  development.
+* Pulling content from a headless CMS to a static site frontend *reduces
+  vulnerability 'surface area.'*
+* A headless CMS makes establishing relationships between content (say, a
+  *blog post → adventure*, and *testimonial → adventure*) possible via a 
+  relational database.
+
+### Frontend
+
+I built the frontend using [Astro](https://astro.build) and
+[SolidJS](https://solidjs.com).
+
+Both were chosen for close-to-raw-JavaScript speed, since the site is
+graphically 'heavy' with high-res pictures, and the longer it takes a page to 
+load, the greater the bounce rate and the worse the search engine rankings.
+
+Astro is perfect for static sites, as the developer experience is similar to 
+popular reactive frameworks, but it's geared towards building static multi-page 
+applications instead of SPAs. 
+
+A SPA wouldn't be appropriate for
+`5charmstravel.com`, as the site uses blog posts and content to draw traffic,
+and a virtual DOM wouldn't be so awesome for that. Well-structured, plain HTML
+is better for SEO.
