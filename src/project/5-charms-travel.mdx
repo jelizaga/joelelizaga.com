@@ -11,36 +11,39 @@ draft: false
 import NNImage from "../components/NNImage.tsx";
 import NNCarousel from "../components/NNCarousel.tsx";
 
+export const img = "/img/project/5-charms-travel/"
+
 > 🚧 *While the design of 5 Charms Travel is complete, the site is currently
-a* ***work-in-progress***.
+a* ***work-in-progress***. 
 
 ---
 
-**5 Charms Travel** is a travel agency committed to organizing one-of-a-kind
-adventures.
+**[5 Charms Travel](https://5charmstravel.com)** is a travel agency specialized
+in organizing custom, one-of-a-kind adventures.
+
+I was tasked with redesigning and rebuilding the agency's flagship 
+point-of-sales on the web, `5charmstravel.com`, in order to boost conversions, 
+improve accessibility, implement a new sales funnel-based marketing strategy, 
+and develop a novel and fun experience for clients that would carry into their 
+vacations.
 
 ## Design
 
 ### Home Page
 
-<NNCarousel
+<NNImage
   client:only="solid-js"
-  aspectRatio="9 / 16"
-  images={[
-    {
-      src: "/img/project/5-charms-travel/home-new.jpg",
-      alt: "Revised home page of 5charmstravel.com.",
-      caption: "**After:** Home Page"
-    },
-    {
-      src: "/img/project/5-charms-travel/home-old.jpg",
-      alt: "Old home page of 5charmstravel.com.",
-      caption: "**Before:** Home Page"
-    }
-  ]}
+  src={img + "home-new.jpg"}
+  caption="**Newly redesigned** home page."
 />
 
-***Home page*** *improvements:*
+<NNImage
+  client:only="solid-js"
+  src={img + "home-old.jpg"}
+  caption="**Original** home page, pre-redesign."
+/>
+
+***Home page*** *highlights:*
 
 * Prominent and consistent *calls-to-action.*
 * *Distinctive branding and visual design,* improving ease-of-use through
@@ -59,19 +62,20 @@ adventures.
 
 ### Forms 
 
-The purpose of `5charmstravel.com` is to drive conversions and 
-
 <NNCarousel
   client:only="solid-js"
   aspectRatio="9 / 16"
   images={[
     {
       src: "/img/project/5-charms-travel/book-old.jpg",
-      alt: "Revised home page of 5charmstravel.com."
+      alt: "Original Book Your Trip form.",
+      caption: "**Original** *Book Your Trip* form."
+
     },
     {
       src: "/img/project/5-charms-travel/contact-old.jpg",
-      alt: "Old home page of 5charmstravel.com."
+      alt: "Original Contact form.",
+      caption: "**Original** *Contact* form."
     }
   ]}
 />
@@ -82,11 +86,11 @@ The purpose of `5charmstravel.com` is to drive conversions and
   images={[
     {
       src: "/img/project/5-charms-travel/book-new-1.jpg",
-      alt: "Revised home page of 5charmstravel.com."
+      alt: "Newly redesigned Book Adventure form.",
+      caption: "**Newly redesigned** *Book Adventure* form."
     },
     {
       src: "/img/project/5-charms-travel/book-new-2-disney.jpg",
-      alt: "Old home page of 5charmstravel.com."
     },
     {
       src: "/img/project/5-charms-travel/book-new-2-generic.jpg",
@@ -106,7 +110,7 @@ The purpose of `5charmstravel.com` is to drive conversions and
   ]}
 />
 
-***Form*** *improvements:*
+***Form*** *highlights:*
 
 * *Progressive disclosure:* The UX principle of *progressive disclosure* is used
   to reduce fatigue and form bounce rates. By dividing the *Book Adventure* form 
@@ -140,14 +144,14 @@ The purpose of `5charmstravel.com` is to drive conversions and
   ]}
 />
 
-***Blog*** *improvements:*
+***Blog*** *highlights:*
 
 * *Blog post → adventure associations:* Allowing users to filter blog posts to 
   read about the adventures they find most compelling.
 * *Persistent newsletter sign-up call-to-action,* in service of marketing and 
   maintaining brand visibility.
-* *Related blog posts* posted at the bottom of each post improves low funnel
-  marketing, suggesting further posts for users interested in specific
+* *Related blog posts* posted at the bottom of each post, improving low funnel
+  marketing and suggesting further posts for users interested in specific
   adventures and similar content.
 
 ### Adventures
@@ -157,10 +161,12 @@ The purpose of `5charmstravel.com` is to drive conversions and
   aspectRatio="9 / 16"
   images={[
     {
-      src: "/img/project/5-charms-travel/adventure-new.jpg"
+      src: "/img/project/5-charms-travel/adventure-new.jpg",
+      caption: "**Newly redesigned** adventure article."
     },
     {
-      src: "/img/project/5-charms-travel/adventure-old.jpg"
+      src: "/img/project/5-charms-travel/adventure-old.jpg",
+      caption: "**Original** adventure article."
     }
   ]}
 />
@@ -168,23 +174,31 @@ The purpose of `5charmstravel.com` is to drive conversions and
 <NNImage
   client:only="solid-js"
   src="/img/project/5-charms-travel/adventures-index.jpg"
+  caption="*Adventures* index—a new addition to `5charmstravel.com`."
 />
 
-***Adventures*** *improvements:*
+***Adventures*** *highlights:*
+
+* *Visually-rich and modular components* effectively illustrating the 
+  activities, accommodations, amenities, ambience, and opportunities of 
+  adventures.
+* *Adventure-specific testimonials.*
+* *Effective UX writing heuristics,* improving the legibility and scannability
+  of content.
 
 ### About 
 
 <NNImage
   client:only="solid-js"
   src="/img/project/5-charms-travel/about-old.jpg"
+  caption="**Original** *About* page."
 />
 
 <NNImage
   client:only="solid-js"
   src="/img/project/5-charms-travel/about-new.jpg"
+  caption="**Newly redesigned** *About* page."
 />
-
-***About*** *improvements:*
 
 ## Development
 
@@ -208,7 +222,8 @@ I decided to rebuild the site with a headless CMS:
   vulnerability 'surface area.'*
 * A headless CMS makes establishing relationships between content (say, a
   *blog post → adventure*, and *testimonial → adventure*) possible via a 
-  relational database.
+  relational database. This content and its relationality can be leveraged in 
+  the future, if needed, to add more complex features.
 
 ### Frontend
 
