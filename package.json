@@ -16,7 +16,7 @@
     "@swup/head-plugin": "^1.3.0",
     "@swup/slide-theme": "^1.0.5",
     "astro": "^2.10.9",
-    "sharp": "^0.31.2",
+    "sharp": "^0.32.6",
     "solid-js": "^1.4.8",
     "swup": "^3.0.00"
   },
