@@ -1,0 +1,71 @@
+---
+import ProjectHeaderMetaBar from './ProjectHeaderMetaBar.astro';
+
+export interface Props {
+  project: string;
+  headline: string;
+  tags?: string[];
+  license?: string;
+  github?: string;
+  url?: string;
+}
+
+const {
+  project,
+  headline,
+  tags,
+  license,
+  github,
+  url
+} = Astro.props as Props;
+---
+
+<header>
+  {license || github || url &&
+    <ProjectHeaderMetaBar
+      license={license}
+      github={github}
+      url={url}
+    />
+  }
+  <h1>
+    {project}
+  </h1>
+  <p
+    class="headline"
+  >
+    {headline}
+  </p>
+  <div 
+    class="image"
+  >
+    {url &&
+      <a
+        href={url}
+      >
+      </a>
+    }
+  </div>
+</header>
+
+<style>
+  header {
+    border-top-left-radius: 2.5rem;
+    border-top-right-radius: 2.5rem;
+    overflow: hidden;
+  }
+
+  header p.headline {
+    font-style: italic;
+  }
+
+  header h1,
+  header p.headline,
+  header div.tags {
+
+  }
+
+  header div.image {
+    background-color: var(--lawetlatla_ash);
+  }
+</style>

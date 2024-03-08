@@ -1,0 +1,70 @@
+---
+import { Image } from "astro:assets";
+import logo from "../../img/logo/logo.svg";
+
+interface Props {
+  current?: string
+}
+
+const {
+  current
+} = Astro.props as Props;
+---
+
+<a 
+  class:list={[
+    "home",
+    { current: (current == "home") }
+  ]}
+  href="/"
+>
+  <span 
+    class="logo"
+  >
+    <Image
+      src={logo}
+      alt=""
+      height="32"
+      width="32"
+    />
+  </span>
+  <span
+    class="name"
+  >
+    Joel Elizaga
+  </span>
+</a>
+
+<style>
+  a.home {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 0.625rem;
+  }
+
+  a.home .logo {
+    align-items: center;
+    background-color: var(--tahoma_white_dim);
+    border-radius: 100%;
+    display: flex;
+    padding: 0.25rem;
+    justify-content: center;
+  }
+
+  a.home.current .logo {
+    box-shadow: var(--depression_tahoma_white_dim);
+  }
+
+  a.home .name {
+    color: var(--lawetlatla_ash_dim);
+  }
+
+  a.home:hover .name {
+    color: var(--spectacular_red_glow);
+  }
+
+  a.home:hover .logo img {
+    fill: var(--spectacular_red_glow);
+  }
+</style>

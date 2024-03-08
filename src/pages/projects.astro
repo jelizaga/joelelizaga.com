@@ -4,23 +4,31 @@
 ////////////////////////////////////////////////////////////////////////////////
 // Project portfolio @ `/projects`.
 
+import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
-import ProjectsGrid from "../components/ProjectsGrid.astro";
-import Header from "../components/Header.astro";
+import ProjectItemGrid from "../components/Project/ProjectItemGrid.astro";
+import { Debug } from "astro:components";
+
+const projects = await getCollection('projects', ({ data }) => {
+  return data.draft !== true;
+});
 ---
 
 <Layout
   title="Joel Elizaga · Projects"
-  currentPage={"projects"}
+  current={"projects"}
 >
-  <Header
-    heading="Projects"
-    headingIcon="fa-solid fa-compass-drafting"
-    bgSrc="/img/cinemagraph/desktop.mp4"
-    slug="/projects"
-    animated={true}
-  />
-  <section class="centered">
-    <ProjectsGrid />
+  <section>
+    {projects &&
+      <ProjectItemGrid
+        projects={projects}
+        heading="h2"
+      />
+    }
   </section>
 </Layout>
+
+<style>
+  section {
+  }
+</style>

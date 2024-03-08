@@ -1,0 +1,52 @@
+---
+import MastheadHome from './MastheadHome.astro';
+import MastheadNavItem from './MastheadNavItem.astro';
+
+interface Props {
+  current?: string
+}
+
+const {
+  current
+} = Astro.props as Props;
+---
+
+<nav>
+  <MastheadHome
+    current={current}
+  />
+  <ul>
+    <MastheadNavItem
+      name="Projects"
+      url="/projects"
+      current={current}
+    />
+    <MastheadNavItem
+      name="Blog"
+      url="/blog"
+      current={current}
+    />
+    <MastheadNavItem
+      name="About"
+      url="/about"
+      current={current}
+    />
+  </ul>
+</nav>
+
+<style>
+  nav {
+    display: flex;
+    flex-direction: row;
+    gap: 2.5rem;
+  }
+
+  nav ul {
+    align-items: center;
+    display: flex;
+    gap: 0.3125rem;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+  }
+</style>

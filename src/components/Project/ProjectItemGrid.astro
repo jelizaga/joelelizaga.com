@@ -1,0 +1,57 @@
+---
+import ProjectItem from "./ProjectItem.astro";
+
+interface Props {
+  projects: object[];
+  heading: string;
+  display?: string;
+  columns?: number;
+}
+
+const {
+  projects,
+  heading = "h3",
+  display = "protruding",
+  columns = 2
+} = Astro.props as Props;
+---
+
+<section
+  class="grid"
+>
+  <ul 
+    class="projects"
+    class:list={[
+      "projects",
+      {"three-columns": (columns == 3)},
+      {"four-columns": (columns == 4)}
+    ]}
+  >
+    {projects.map(project => (
+
+      <ProjectItem
+        title={project.data.title}
+        description={project.data.description}
+        headerImgSrc={project.data.headerImgSrc}
+        tags={project.data.tags}
+        slug={project.slug}
+        heading={heading}
+        display={display}
+      />
+    ))}
+  </ul>
+</section>
+
+<style>
+  ul.projects {
+    column-gap: var(--grid_gutter);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 1.4rem;
+    margin-left: var(--grid_margin);
+    margin-right: var(--grid_margin);
+    margin-top: 1.4rem;
+    padding: 0;
+    row-gap: var(--grid_gutter);
+  }
+</style>

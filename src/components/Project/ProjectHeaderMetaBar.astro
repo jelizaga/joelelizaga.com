@@ -1,0 +1,44 @@
+---
+export interface Props {
+  license?: string;
+  github?: string;
+  url?: string;
+  urlDescription?: string;
+}
+
+const {
+  license,
+  github,
+  url,
+  urlDescription
+} = Astro.props as Props;
+---
+
+<div 
+  class="meta"
+>
+  {license &&
+    <span 
+      class="button"
+    >
+      <i class="fa-solid fa-scales-balanced" />
+    </span>
+  }
+  {github &&
+    <a 
+      href={github}
+      class="button"
+      target="_blank"
+    >
+      <i class="fa-brands fa-github" />
+    </a>
+  }
+  {url &&
+    <a 
+      href={url}
+      class="button"
+      target="_blank"
+    >
+    </a>
+  }
+</div>

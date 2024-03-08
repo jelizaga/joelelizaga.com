@@ -1,0 +1,170 @@
+---
+import { Image } from 'astro:assets';
+import { Debug } from 'astro:components';
+import Tag from '../Tag.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  slug: string;
+  headerImgSrc?: string;
+  tags?: string[];
+  heading: string;
+  display?: string;
+}
+
+const {
+  title,
+  description,
+  slug,
+  headerImgSrc,
+  tags,
+  heading = "h3",
+  display = "protruding"
+} = Astro.props as Props;
+
+const href = `/project/${slug}`;
+const headingh2 = (heading == "h2");
+const headingh3 = (heading == "h3");
+const headingh4 = (heading == "h4");
+---
+
+<li
+  class="project"
+  class:list={[
+    "project",
+    { floating: (display == "floating" )}
+  ]}
+>
+  <div 
+    class="img"
+  >
+    <a 
+      href={href}
+    >
+      {headerImgSrc &&
+        <Image
+          src={headerImgSrc}
+          alt=""
+        />
+      }
+    </a>
+  </div>
+  <div 
+    class="info"
+  >
+    <a 
+      href={href}
+    >
+      {headingh2 &&
+        <h2
+          class="title"
+        >
+          {title}
+        </h2>
+      }
+      {headingh3 &&
+        <h3
+          class="title"
+        >
+          {title}
+        </h3>
+      }
+      {headingh4 &&
+        <h4
+          class="title"
+        >
+          {title}
+        </h4>
+      }
+      <p 
+        class="description"
+      >
+        {description}
+      </p>
+    </a>
+  </div>
+  <ul
+    class="tags"
+  >
+    {tags.map(tag => (
+      <Tag
+        prefix='projects'
+        tag={tag}
+      />
+    ))}
+  </ul>
+</li>
+
+<style>
+  li.project {
+    border-radius: 2.5rem;
+    border: 0.25rem solid var(--tahoma_white_dim);
+    box-shadow: var(--protrusion_tahoma_white_dim);
+    display: grid;
+    grid-template-rows: 1fr auto auto;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  li.project.floating {
+    box-shadow: 1rem 1rem red;
+  }
+
+  li.project div.img {
+    display: grid;
+    overflow: hidden;
+    width: 100%
+  }
+
+  li.project div.img img {
+    height: 100%;
+    object-fit: cover;
+    transition: height 0.2s;
+    width: 100%;
+  }
+
+  li.project:hover div.img img {
+    height: 102%;
+  }
+
+  li.project div.info {
+    position: relative;
+  }
+
+  li.project div.info a {
+    height: inherit;
+    display: block;
+    padding-bottom: 0rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    width: inherit;
+  }
+
+  li.project div.info a .title {
+    color: var(--lawetlatla_ash_dim);
+    font-size: var(--c5_font_size_2);
+    line-height: var(--c5_line_height_2);
+  }
+
+  li.project:hover div.info a .title {
+    color: var(--spectacular_red_bright);
+    text-shadow: var(--spectacular_red_glowing);
+    transition: color 0.1s ease-in, text-shadow 0.1s ease-in;
+  }
+
+  li.project div.info a .description {
+    color: var(--lawetlatla_ash_bright);
+    font-style: italic;
+    text-shadow: none;
+  }
+
+  li.project ul.tags {
+    display: flex;
+    gap: 0.6rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+</style>

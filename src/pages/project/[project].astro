@@ -6,8 +6,6 @@
 // Pages will be @ path `/project/[slug]`, `[slug]` being the slug specified in
 // the frontmatter of each project article.
 
-import ArticleProfile from "../../components/ArticleProfile.astro";
-import NNImage from "../../components/NNImage.astro";
 import Tag from "../../components/Tag.astro";
 import Tooltip from "../../components/Tooltip.astro";
 import Layout from "../../layouts/Layout.astro";
@@ -84,20 +82,10 @@ if (!projectTrayVisibility) {
           </ul>
         }
       </div>
-      <NNImage
-        src={frontmatter.img}
-        alt={frontmatter.imgAlt}
-        straightCorners={true}
-        expandable={false}
-        link={frontmatter.link}
-      />
     </header>
     <div class="content">
       <Content />
     </div>
-    <ArticleProfile
-      article="project"
-    />
   </article>
 </Layout>
 

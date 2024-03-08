@@ -1,0 +1,467 @@
+---
+slug: my-americorps
+title: "My AmeriCorps"
+headTitle: "My AmeriCorps ❯ A UX writing case study"
+headerImgSrc: "../../img/project/my-americorps/header.jpg"
+description: "Applying UX writing to enhance the usability of an ancient federal portal"
+tags: ["UX Writing"]
+draft: false
+---
+
+import NNImage from '../components/NNImage.tsx';
+import NNCarousel from '../components/NNCarousel.tsx';
+
+<a href="https://americorps.gov/" target="_blank">AmeriCorps</a> is the largest
+grant-maker in the United States: It's an independent agency of the U.S.
+government with the stated purpose of improving lives, strengthening
+communities, and fostering civic engagement through service and volunteering.
+The organization's projects range from disaster response to matters of economic
+opportunity, environmental stewardship,
+and education.
+
+This awesome mission of AmeriCorps would be better
+served with an updated web portal made usable through **accessible**, **clear**, **concise**,
+**conventional**, and **purposeful** UX content that advances the AmeriCorps
+voice and turns ladened
+<a href="https://my.americorps.gov" target="_blank">`My.AmeriCorps.gov`</a> users
+into *satisfied advocates of the program.*
+
+## First: What is My AmeriCorps?
+
+`My.AmeriCorps.gov` (My AmeriCorps) is the online nexus of the AmeriCorps 
+operation.
+
+Corps members, prospective corps members, team & unit leaders, staff, alumni, 
+and non-profit sponsors all cross paths with the portal.
+
+As an AmeriCorps alum I can attest that my unit regarded `My.AmeriCorps.gov` with
+puzzled dread in the best of moments and frustration at worst. Here's a quick
+tour:
+
+<NNCarousel
+  client:only="solid-js"
+  images={[
+    {
+      src: "/img/project/my-americorps/login.jpg",
+      alt: "The My AmeriCorps log in page.",
+      caption: "***Pre-rewrite:*** My AmeriCorps log in page: depicted on a 1920x1080 screen. If you're curious about the mysterious white space on the right: The site is 782px across—always."
+    },
+    {
+      src: "/img/project/my-americorps/home.jpg",
+      alt: "The My AmeriCorps landing page for alumni.",
+      caption: "***Pre-rewrite:*** Corps member alum landing page."
+    },
+    {
+      src: "/img/project/my-americorps/payment-request-form.jpg",
+      alt: "The My AmeriCorps Segal Award payment request page.",
+      caption: "***Pre-rewrite:*** Form used by alumni to request Segal Award payments."
+    },
+    {
+      src: "/img/project/my-americorps/help.jpg",
+      alt: "The My AmeriCorps help documentation.",
+      caption: "***Pre-rewrite:*** Site help documentation."
+    }
+  ]}
+  aspectRatio={"16 / 9"}
+/>
+
+## Defining the user journey: Alum Alan
+
+**Alum Alan** is an AmeriCorps alum who wants to access the Segal Education
+Award granted upon completion of his service to pay for some of his college
+tuition.
+
+In user story terms:
+
+> *As an...* AmeriCorps alum 
+
+> *I want to...* disburse my Segal education award 
+
+> *So I can...* pay for educational expenses at a qualified institution.
+
+I examined the `My.AmeriCorps.gov` experience from the eyes of Alum Alan on his
+journey to education award disbursal.
+
+## Evaluating & improving content usability
+
+### 1. Heuristic evaluation
+
+First I assessed the portal's UX content usability by performing a **heuristic
+evaluation** on each page accessed along Alum Alan's journey.
+
+I dropped a flag and left a note for every string with an opportunity to improve
+on my usability heuristics (accessible, clear, concise, conventional,
+purposeful):
+
+<NNCarousel
+  client:only="solid-js"
+  images={[
+    {
+      src: "/img/project/my-americorps/login-heuristic-evaluation.jpg",
+      alt: "Heuristic evaluation of the My AmeriCorps log in page.",
+      caption: "**Heuristic evaluation** of the My AmeriCorps log in page."
+    },
+    {
+      src: "/img/project/my-americorps/home-heuristic-evaluation.jpg",
+      alt: "Heuristic evaluation of the My AmeriCorps alum landing page.",
+      caption: "**Heuristic evaluation** of the My AmeriCorps alum landing page."
+    },
+    {
+      src: "/img/project/my-americorps/payment-request-form-heuristic-evaluation.jpg",
+      alt: "Heuristic evaluation of the My AmeriCorps form to request Segal Award disbursal.",
+      caption: "**Heuristic evaluation** of the My AmeriCorps form to request Segal Award disbursal."
+    }
+  ]}
+  aspectRatio={"16 / 9"}
+/>
+
+Alan's journey on `MyAmeriCorps.gov` scored a modest 30.8% usability on my **UX
+writing scorecard**:
+
+<NNImage
+  client:only="solid-js"
+  src="/img/project/my-americorps/ux-content-usability-scorecard.png"
+  alt="A scorecard evaluating the current usability of My AmeriCorps' UX content."
+  display="protruding"
+/>
+
+#### Improvements
+
+Awesome! Now we've identified precise points of usability issues and have a
+taxonomy for how, exactly, each point needs improvement.
+
+As a proof-of-concept, I drafted an improved log in page with writing that
+fulfills the usability criteria and resolves the issues I documented:
+
+<NNCarousel
+  client:only="solid-js"
+  images={[
+    {
+      src: "/img/project/my-americorps/login-revised.jpg",
+      alt: "My AmeriCorps log in page with revised UX content.",
+      caption: "***Rewritten:*** Log in page."
+    },
+    {
+      src: "/img/project/my-americorps/login-revised-tos-clicked.jpg",
+      alt: "Revised My AmeriCorps log in page when the terms of service is selected.",
+      caption: "***Rewritten:*** Terms of service pop-up."
+    },
+    {
+      src: "/img/project/my-americorps/login-revised-privacy-statement-clicked.jpg",
+      alt: "Revised My AmeriCorps log in page when the privacy statement is selected.",
+      caption: "***Rewritten:*** Privacy statement pop-up."
+    },
+    {
+      src: "/img/project/my-americorps/login.jpg",
+      alt: "The My AmeriCorps log in page.",
+      caption: "***Pre-rewrite:*** Original log in page, pre-revisions."
+    }
+  ]}
+  aspectRatio="16 / 9"
+/>
+
+I made my edits with minimal changes to the existing UI and UX design, this 
+being a UX writing case study.
+
+My UX content revisions to the log in page have these key enhancements:
+
+* A sectioned & labeled *'Apply to Serve' block* to stimulate AmeriCorps
+  applications,
+* Legalese in the form of *optionally clickable tooltips* rather than a heavy
+  chunk of text anchoring the page and acting as a focal point,
+* *Greater readability* with a 10th grade English maximum as rated by the 
+  Flesch-Kincaid scale,[^1]
+* *Verb-first* buttons,
+* Buttons with a `<= 3` word maximum to reduce cognitive load,
+* *Concision:* Irrelevant and redundant strings removed--again, to reduce
+  cognitive load.
+
+### 2. Narrative arc
+
+Next I mapped the **narrative arc** of Alan's experience in order to analyze the
+user journey with greater granularity. This technique of 'narrative arc' is
+similar to the diagrammatic
+[journey mapping](https://www.nngroup.com/articles/journey-mapping-101/) 
+found in UX design, but it's more fitted to evaluating UX content:
+
+<NNImage
+  client:only="solid-js"
+  src="/img/project/my-americorps/current-journey.jpg"
+  alt="Map of the current My AmeriCorps journey to Segal Award disbursal."
+  display="protruding"
+  caption="The current journey to Segal Award disbursal as ventured by persona Alum Alan."
+/>
+
+#### Improvements
+
+Through this practice of mapping I discovered more pain-points across the alum's
+journey, inspiring these improvements to the 'Request Education Award
+Payment' screen:
+
+<NNCarousel
+  client:only="solid-js"
+  images={[
+    {
+      src: "/img/project/my-americorps/payment-request-form-revised.jpg",
+      alt: "My AmeriCorps log in page with revised UX content.",
+      caption: "***Rewritten:*** Context-specific tooltips, prioritized concision, purposeful and accessible text, and legal disclaimers displaying only when relevant."
+    },
+    {
+      src: "/img/project/my-americorps/payment-request-form-revised-submit.jpg",
+      alt: "Revised My AmeriCorps log in page when the terms of service is selected.",
+      caption: "***Rewritten:*** Legal disclaimer displayed as a pop-up as a final step when the user finally clicks 'Submit.'"
+    },
+    {
+      src: "/img/project/my-americorps/payment-request-form.jpg",
+      alt: "Original 'Request Education Award Payment' page, pre-revisions.",
+      caption: "***Pre-rewrite:*** Original 'Request Education Award Payment' page, pre-revisions: UI buttons hidden as labels, a lot of legal text, college-level vocabulary, an innaccurate diagram, and help buttons hyperlinked to unnavigable and out-of-date documentation."
+    }
+  ]}
+  aspectRatio="16 / 9"
+/>
+
+## Evaluating & improving content voice
+
+The existing voice of `My.AmeriCorps.gov` may be perceived as formidably
+bureaucratic. Users may find it inaccessible and overwhelming:
+
+> *On each page along the left side is a set of links leading to different parts
+  of My AmeriCorps. By clicking on these links, you can navigate through the 
+  system and view the various benefits of the system. From My AmeriCorps, you
+  can do things such as update your contact information, print out tax
+  information and have access to AmeriCorps benefits. These links will vary 
+  depending on the type of AmeriCorps program you are serving and whether or not
+  you are currently serving or have completed your term of service.*
+
+> *To complete your Education Award payment request, please verify that your
+  personal information is correct, enter in the amount of money you are
+  authorizing, choose a payment type, and select your Institution. Upon
+  completing the form, click the "submit" button to forward your request.*
+
+> *Please click submit button ONCE. Do not click back button or refresh your browser.*
+
+Luckily, AmeriCorps has a well-crafted and recognizable brand voice on
+[*AmeriCorps.gov*](https://americorps.gov) that can be referenced for pointers
+on how the agency would like to represent itself:
+
+<NNCarousel
+  client:only="solid-js"
+  images={[
+    {
+      src: "/img/project/my-americorps/americorps-dotgov.png",
+      alt: "Screenshot of the AmeriCorps.gov site, where the brand voice is pretty inviting and action-oriented.",
+      caption: "`AmeriCorps.gov`: Content designed to advocate for the agency's programs and power enlistment and public interest."
+    },
+    {
+      src: "/img/project/my-americorps/payment-request-form.jpg",
+      alt: "Screenshot of the Payment Request Form on the My.AmeriCorps.gov site, with a more formidable and bureaucratic voice.",
+      caption: "`My.AmeriCorps.gov`: Take note of the comparatively institutional voice."
+    }
+  ]}
+  aspectRatio={"9 / 16"}
+/>
+
+The voice of `AmeriCorps.gov`, in comparison to `MyAmeriCorps.gov`, has a quality of
+actionable, mission-oriented neighborliness to it. It's designed to consistently
+showcase the organization's services and values throughout the experience. This
+deliberate consistency aids in creating a memorable impression of the brand, so 
+audiences associate the AmeriCorps imagery with a particular voice and a certain
+mission.
+
+The internal voice we find in `My.AmeriCorps.gov`, on the other hand, is more precise, orderly, and
+professional. It contains a lexicon of acronyms, jargon, and ideas that structures
+the program itself, and approachability isn't as much of a priority as it is for
+the public-facing `AmeriCorps.gov`.
+
+This dichotomy has a function: The regimented language in `My.AmeriCorps.gov` is
+intended to dispell ambiguity and nurtures accountability within AmeriCorps.
+This is to maintain internal order and minimize risk to the organization's 
+funding whenever the matter comes up in Congress.
+
+### Designing a voice chart
+
+With respect to keeping this dichotomy, while reducing the verbosity of
+bureaucratic language in `MyAmeriCorps.gov` and importing the functional,
+mission-focused elements of `AmeriCorps.gov`'s voice, I identified two voices for
+the portal: the **Unified Mission** and **Community Corps** voices.
+
+I drafted a voice chart to codify these voices to make their comprehension and
+implementation easy for content writers:
+
+<table class="font-size-small">
+  <tr>
+    <th>
+    </th>
+    <th>
+      Unified Mission
+    </th>
+    <th>
+      Community Corps
+    </th>
+  </tr>
+  <tr>
+    <th class="text-align-left">
+      Concepts
+    </th>
+    <td>
+      AmeriCorps *celebrates and welcomes serving* our country's diverse
+      communities and needs.
+    </td>
+    <td>
+      AmeriCorps carries the U.S. government's brand of professional *respect,
+      efficacy, precision, orderliness, and cooperation.*
+    </td>
+  </tr>
+  <tr>
+    <th class="text-align-left">
+      Vocabulary
+    </th>
+    <td>
+      Service, communities, opportunities, impact, families, benefits,
+      education, support, provide, assist.
+    </td>
+    <td>
+      Mitigation, response, recovery, stewardship, leadership, training, spike,
+      capacity, + internally-exclusive jargon and acronyms.
+    </td>
+  </tr>
+  <tr>
+    <th class="text-align-left">
+      Verbosity
+    </th>
+    <td>
+      Concise & approachable: *Optimistic.*
+    </td>
+    <td>
+      Precise & professional: *Resilient.*
+    </td>
+  </tr>
+  <tr>
+    <th class="text-align-left">
+      Grammar
+    </th>
+    <td>
+      Directive. Passive, as if from third-person outside assessment, when
+      describing AmeriCorps and the activities of AmeriCorps.
+    </td>
+    <td>
+      Directive.
+    </td>
+  </tr>
+  <tr>
+    <th class="text-align-left">
+      Punctuation
+    </th>
+    <td>
+      Ends sentences & phrases with periods.
+    </td>
+    <td>
+      Ends sentences & phrases with periods.
+    </td>
+  </tr>
+  <tr>
+    <th class="text-align-left">
+      Capitalization
+    </th>
+    <td>
+      Sentence case.
+      Title case buttons & titles.
+    </td>
+    <td>
+      Sentence case.
+      Title case buttons & titles.
+    </td>
+  </tr>
+</table>
+
+These two voices are designed to make writing a stylistically consistent,
+functionally branded experience possible across a team of content writers.
+Following these guidelines would create a coherent and recognizable 'voice' for
+`My.AmeriCorps.gov`. Each of the two voices has a purpose:
+
+#### Community Corps - The internal voice of order
+
+The more interally-focused *Community Corps* voice values precision and
+professionalism. It exists to project order, respect, and efficacy amongst those
+already working within AmeriCorps.
+
+The current content of MyAmeriCorps.gov, while self-serious, currently lacks
+concision, and this lack of concision inadvertently communicates a lack of order
+and efficacy. The dense legal text and sometimes verbose strings risk confusion
+and speaks to users as a lawyer might. 
+
+By imprementing the Community Corps voice
+and conciously adhering to its focus on precision, writers can create concise
+and relevant portal content that doesn't exclude users with advanced vocabulary,
+content irrelevant to tasks being performed, or demand unnecessary focus to
+understand.
+
+#### Unified Mission - United in mission
+
+The *Unified Mission* voice takes cues from `AmeriCorps.gov`'s content and
+AmeriCorps PR material; it can be used on the portal to drive engagement and the
+conversion of non-profit sponsors and potential corps members.
+
+The current voice of `My.AmeriCorps.gov` is distinct from that of `AmeriCorps.gov`;
+this lack of cohesion may be jarring for users. There's a great opportunity to
+advance brand consistency and leverage the approachability, mission focused, and
+values-oriented qualities of the rest of the AmeriCorps image on
+`My.AmeriCorps.gov` by blending in the Unified Mission voice when appropriate.
+Specifically, when users first register accounts and are exploring the
+possibility of joining the program or applying for grants for their non-profits.
+
+## Afterthoughts
+
+The Plain Writing Act of 2010[^2] mandates that US government documents issued to
+the public be written in clear and accessible language—plain writing. I suspect
+that the content of `My.AmeriCorps.gov` is covered by this bill, and AmeriCorps
+issues an occasional report on their adherence to federal plain language
+guidelines.[^3]
+
+Specifically, the content of `My.AmeriCorps.gov` is in electronic form, is issued by 
+a federal agency (Corporation for National and Community Service), and has
+writing that:
+
+1. is necessary for obtaining federal government benefits and services, as well
+   as filing taxes,
+2. provides information about federal government benefits and services,
+3. explains to the public how to comply with requirements that the federal
+   government administers or enforces,
+4. includes letters, forms, publications, notices, and instructions.
+
+`My.AmeriCorps.gov` isn't included in AmeriCorps' April 2012 compliance report,[^4]
+but other CNCS sites with up to 54,000 users are. I could be wrong: Maybe
+`My.AmeriCorps.gov` isn't considered publicly accessible because it requires 
+users to register an account.
+
+In the spirit of the Plain Writing Act, though, the content of `My.AmeriCorps.gov`
+could be realigned to match the accessibility and voice of the rest of the agency's
+publications and web presence. Rustic UI of the experience aside, 
+`My.AmeriCorps.gov`'s content may be opaque enough to be deterring enlistment.
+
+---
+
+There's a good amount of federal and state institutions that could use a UX 
+content touch-up. In my *Foundations of UX Writing* certificate class we used
+[Indiana's BMV](https://mybmv.bmv.in.gov/bmv/mybmv/default.aspx) as a case-study:
+
+<NNImage
+  client:only="solid-js"
+  src="/img/project/my-americorps/in-bmv.png"
+  alt="Indiana's BMV page."
+/>
+
+We interact with these organizations on a semi-regular basis to access the sort
+of basic services governments are formed to provide, and the UX of social media,
+streaming, shopping, and video games in the private sector is comparatively 
+sharp. They're no profit-drivers, but if we took care to make these institutional
+experiences nearly as accessible and intuitive it could drive greater civic
+engagement, strengthen the missions of programs and departments like AmeriCorps,
+facilitate efficient governance, and improve lives.
+
+[^1]: Flesch, Rudolf, 
+["How to Write Plain English,"](https://web.archive.org/web/20160712094308/http://www.mang.canterbury.ac.nz/writing_guide/writing/flesch.shtml)
+University of Cantebury, accessed July 12, 2016.
+[^2]: 111th U.S. Congress, [*Public Law 111-274,*](https://www.govinfo.gov/content/pkg/PLAW-111publ274/pdf/PLAW-111publ274.pdf) October 13, 2010.
+[^3]: ["Plain Writing,"](https://americorps.gov/about/agency-overview/plain-writing) AmeriCorps, accessed February 12, 2023.
+[^4]: ["Plain Writing Act Compliance Report,"](https://americorps.gov/sites/default/files/document/2012_04_10_plain_writing_compliance_report.pdf) AmeriCorps, April 8, 2012.

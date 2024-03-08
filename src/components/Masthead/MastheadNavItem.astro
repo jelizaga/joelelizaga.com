@@ -1,0 +1,50 @@
+---
+interface Props {
+  name: string;
+  url: string;
+  current?: string;
+}
+
+const {
+  name,
+  url,
+  current
+} = Astro.props as Props;
+---
+
+<li>
+  <a 
+    href={url} 
+    class:list={[
+      {current: (current == url.substring(1))}
+    ]}
+  >
+    {name}
+  </a>
+</li>
+
+<style>
+  li {
+    background-color: var(--tahoma_white_dim);
+    display: inline-block;
+    position: relative;
+    list-style: none;
+  }
+
+  li a {
+    border-radius: 1.875rem;
+    color: var(--lawetlatla_ash_dim);
+    padding-bottom: 0.25rem;
+    padding-left: 1.6875rem;
+    padding-right: 1.6875rem;
+    padding-top: 0.25rem;
+  }
+
+  li a.current {
+    box-shadow: var(--depression_tahoma_white_dim);
+  }
+
+  li a:hover {
+    color: var(--spectacular_red_glow);
+  }
+</style>

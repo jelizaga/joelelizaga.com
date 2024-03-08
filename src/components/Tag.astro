@@ -1,15 +1,52 @@
 ---
 import { Debug } from 'astro/components';
+
 export interface Props {
   prefix: string
   tag: string
 }
+
 const { tag, prefix } = Astro.props as Props;
 const slug = `/${prefix}/focus/${tag}`;
 ---
 
-<li class="tag">
-  <a href={slug}>
+<li 
+  class="tag"
+>
+  <a 
+    href={slug}
+  >
     {tag}
   </a>
 </li>
+
+<style>
+  .tag {
+    align-items: center;
+    background-color: var(--tahoma_white_dim);
+    border-radius: 1.4rem;
+    box-shadow: var(--protrusion_tahoma_white_dim);
+    color: var(--lawetlatla_ash_bright);
+    display: inline-flex;
+    height: fit-content;
+    justify-content: center;
+    transition: box-shadow 0.1s ease-in;
+  }
+
+  .tag a {
+    color: var(--lawetlatla_ash_bright);
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    text-decoration: none;
+    transition: color 0.1s ease-in, text-shadow 0.1s ease-in;
+  }
+
+  .tag:hover a {
+    color: var(--spectacular_red_bright);
+    text-shadow: var(--spectacular_red_glowing);
+  }
+
+  .tag:active {
+    box-shadow: var(--noonoo_depression_bright), var(--noonoo_protrusion_bright);
+  }
+</style>

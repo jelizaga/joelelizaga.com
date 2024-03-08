@@ -1,0 +1,40 @@
+---
+import MastheadNav from './MastheadNav.astro';
+
+interface Props {
+  current?: string
+}
+
+const {
+  current
+} = Astro.props as Props;
+---
+
+<header
+  class="masthead"
+>
+  <MastheadNav
+    current={current}
+  />
+  <a 
+    class="button"
+  >
+    Contact
+  </a>
+</header>
+
+<style>
+  header.masthead {
+    background-color: var(--tahoma_white_dim);
+    border-bottom-left-radius: 2.5rem;
+    border-bottom-right-radius: 2.5rem;
+    box-shadow: var(--shadow_ceiling);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 0.75rem;
+    padding-left: var(--grid_margin);
+    padding-right: var(--grid_margin);
+    padding-top: 0.75rem;
+  }
+</style>

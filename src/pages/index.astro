@@ -5,26 +5,13 @@
 // Home page @ `/`.
 
 import Layout from '../layouts/Layout.astro';
-import { Image } from '@astrojs/image/components';
-import Introduction from '../components/Introduction.astro';
-import ProjectsGrid from '../components/ProjectsGrid.astro';
-import HeaderBar from '../components/HeaderBar.astro';
-import IndexContact from '../components/IndexContact.astro';
-import IndexProjects from '../components/IndexProjects.astro';
-import Marquee from '../components/Marquee.astro';
-import IndexValueProp from '../components/IndexValueProp.astro';
 ---
 
 <Layout 
-	title="Joel Elizaga · UX Engineer"
+	title="Joel Elizaga 🞻 UX Engineer"
 	description="Building usable and useful technologies."
-	headerShadow={true}
-	currentPage={"home"}
+	current="home"
 >
-	<Introduction />
-	<IndexProjects />
-	<IndexValueProp />
-	<IndexContact />
 </Layout>
 
 <style>

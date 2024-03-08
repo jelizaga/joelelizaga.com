@@ -1,0 +1,38 @@
+---
+interface Props {
+  text: string;
+  icon?: string;
+  type?: string;
+  shape?: string;
+  href?: string;
+  target?: string;
+}
+
+const {
+  text,
+  icon,
+  type = "primary",
+  shape = "rectangular",
+  href,
+  target = "_self"
+} = Astro.props as Props;
+---
+
+{href &&
+  <a
+    class:list={[
+      {primary: (type == "primary")},
+      {secondary: (type == "secondary")},
+      {tertiary: (type == "tertiary")}
+    ]}
+    href={href}
+    target={target}
+  >
+    {icon &&
+      <i class={icon} />
+    }
+    <span>
+      {text}
+    </span>
+  </a>
+}
