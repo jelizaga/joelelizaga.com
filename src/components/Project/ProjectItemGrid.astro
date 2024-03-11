@@ -46,12 +46,37 @@ const {
   ul.projects {
     column-gap: var(--grid_gutter);
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     margin-bottom: 1.4rem;
     margin-left: var(--grid_margin);
     margin-right: var(--grid_margin);
     margin-top: 1.4rem;
     padding: 0;
     row-gap: var(--grid_gutter);
+  }
+
+  @media screen and (max-width: 950px) {
+
+    ul.projects {
+      grid-template-columns: 1fr 1fr;
+    }
+
+  }
+
+  @media screen and (max-width: 750px) {
+
+    ul.projects {
+      margin-left: var(--grid_margin_min);
+      margin-right: var(--grid_margin_min);
+    }
+
+  }
+
+  @media screen and (max-width: 600px) {
+
+    ul.projects {
+      grid-template-columns: 1fr;
+    }
+
   }
 </style>
