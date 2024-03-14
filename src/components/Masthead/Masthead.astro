@@ -1,5 +1,6 @@
 ---
 import MastheadNav from './MastheadNav.astro';
+import Button from '../Button/Button.astro';
 
 interface Props {
   current?: string
@@ -16,11 +17,11 @@ const {
   <MastheadNav
     current={current}
   />
-  <a 
-    class="button"
-  >
-    Contact
-  </a>
+  <Button
+    href="/#contact"
+    label="Contact"
+    icon="fa-solid fa-envelope"
+  />
 </header>
 
 <style>
@@ -36,5 +37,14 @@ const {
     padding-left: var(--grid_margin);
     padding-right: var(--grid_margin);
     padding-top: 0.75rem;
+  }
+
+  @media screen and (max-width: 750px) {
+
+    header.masthead {
+      padding-left: var(--grid_margin_min);
+      padding-left: var(--grid_margin_min);
+    }
+
   }
 </style>

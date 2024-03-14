@@ -8,6 +8,7 @@ import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import ProjectItemGrid from "../components/Project/ProjectItemGrid.astro";
 import { Debug } from "astro:components";
+import Header from "../components/Header.astro";
 
 const projects = await getCollection('projects', ({ data }) => {
   return data.draft !== true;
@@ -18,14 +19,17 @@ const projects = await getCollection('projects', ({ data }) => {
   title="Joel Elizaga · Projects"
   current={"projects"}
 >
-  <section>
-    {projects &&
-      <ProjectItemGrid
-        projects={projects}
-        heading="h2"
-      />
-    }
-  </section>
+  <Header
+    title="Projects"
+    icon="fa-solid fa-compass-drafting"
+    href="/projects"
+  />
+  {projects &&
+    <ProjectItemGrid
+      projects={projects}
+      heading="h2"
+    />
+  }
 </Layout>
 
 <style>

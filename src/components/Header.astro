@@ -1,0 +1,82 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  href?: string;
+  bgSrc?: string;
+  icon?: string;
+}
+
+const {
+  title,
+  subtitle,
+  href,
+  bgSrc,
+  icon
+} = Astro.props as Props;
+---
+
+<header
+>
+  {href &&
+    <a
+      href={href}
+    />
+  }
+  <h1>
+    {icon &&
+      <i class={icon} />
+    }
+    <span
+      class="title"
+    >
+      {title}
+    </span>
+    {subtitle &&
+      <span 
+        class="subtitle"
+      >
+        {subtitle}
+      </span>
+    }
+  </h1>
+  <div
+    class="background"
+  >
+    {bgSrc &&
+      <img 
+        src={bgSrc}
+        alt=""
+      />
+    }
+  </div>
+</header>
+
+<style>
+  header {
+    display: block;
+    position: relative;
+  }
+
+  header a {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+  }
+
+  header h1 {
+
+  }
+
+  header h1 i {
+
+  }
+
+  header h1 span.title {
+
+  }
+
+  header h1 span.subtitle {
+
+  }
+</style>

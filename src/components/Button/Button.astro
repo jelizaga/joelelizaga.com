@@ -1,17 +1,17 @@
 ---
 interface Props {
-  text: string;
+  label: string;
   icon?: string;
-  type?: string;
+  level?: string;
   shape?: string;
   href?: string;
   target?: string;
 }
 
 const {
-  text,
+  label,
   icon,
-  type = "primary",
+  level = "primary",
   shape = "rectangular",
   href,
   target = "_self"
@@ -21,9 +21,11 @@ const {
 {href &&
   <a
     class:list={[
-      {primary: (type == "primary")},
-      {secondary: (type == "secondary")},
-      {tertiary: (type == "tertiary")}
+      "button",
+      {primary: (level == "primary")},
+      {secondary: (level == "secondary")},
+      {tertiary: (level == "tertiary")},
+      {circular: (shape == "circular")}
     ]}
     href={href}
     target={target}
@@ -32,7 +34,104 @@ const {
       <i class={icon} />
     }
     <span>
-      {text}
+      {label}
     </span>
   </a>
 }
+
+<style>
+  button,
+  a.button {
+    align-items: center;
+    background-color: var(--tahoma_white_dim);
+    border-radius: 1.875rem;
+    border: none;
+    box-shadow: var(--protrusion_tahoma_white_dim);
+    box-sizing: border-box;
+    color: var(--lawetlatla_ash_dim);
+    display: flex;
+    font-family: "Atkinson Hyperlegible", sans-serif;
+    font-size: var(--c5_font_size_1);
+    font-weight: bold;
+    gap: 0.35rem;
+    justify-content: center;
+    line-height: var(--c5_line_height_1);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    position: relative;
+    transition: 0.1s color, 0.1s box-shadow, 0.1s text-shadow;
+    width: fit-content;
+  }
+
+  button:hover,
+  a.button:hover,
+  button:focus,
+  a.button:focus {
+    color: var(--spectacular_red_bright);
+    cursor: pointer;
+    text-shadow: var(--spectacular_red_glowing);
+  }
+
+  button:active,
+  a.button:active {
+    box-shadow: 
+      var(--protrusion_tahoma_white_dim),
+      var(--depression_tahoma_white_dim);
+    cursor: pointer;
+  }
+
+  button i,
+  a.button i {
+    font-size: 0.75em;
+  }
+
+  button.primary,
+  a.button.primary {
+    border: 0.1875rem var(--lawetlatla_ash_bright_transparent) solid;
+    transition: 0.1s border, 0.1s box-shadow, 0.1s color, 0.1s text-shadow;
+  }
+
+  button.primary:hover,
+  a.button.primary:hover,
+  button.primary:focus,
+  a.button.primary:focus {
+    border: 0.1875rem var(--spectacular_red_bright) solid;
+    box-shadow: 
+      var(--noonoo_protrusion_bright), 
+      var(--spectacular_red_glowing);
+  }
+
+  button.primary:active,
+  a.button.primary:active {
+    border: 0.1875rem var(--spectacular_red_bright) solid;
+    box-shadow: 
+      var(--noonoo_protrusion_bright), 
+      var(--noonoo_depression_bright),
+      var(--spectacular_red_glowing);
+  }
+
+  button.circular,
+  a.button.circular {
+    align-items: center;
+    background-image: var(--protrusion_rounded_tahoma_white_dim);
+    border-radius: 100%;
+    box-shadow: var(--protrusion_tahoma_white_dim);
+    height: 1.5rem;
+    justify-content: center;
+    padding: 0;
+    transition: box-shadow 0.1s ease-in;
+    width: 1.5rem;
+  }
+
+  button.circular:active,
+  a.button.circular:active {
+    box-shadow:
+      var(--protrusion_tahoma_white_dim),
+      var(--depression_tahoma_white_dim);
+  }
+
+  button.circular i,
+  a.button.circular i {
+    font-size: 1em;
+  }
+</style>
