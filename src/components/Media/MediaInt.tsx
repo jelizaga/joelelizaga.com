@@ -10,6 +10,7 @@ export default function MediaInt(props:any) {
 
   // Multiple media:
   const arr = props.arr;
+  const isCarousel = (arr != undefined);
 
   // Single media:
   const src = props.src;
@@ -41,7 +42,11 @@ export default function MediaInt(props:any) {
 
   return (
     <div 
-      class={`media ${(caption != undefined) ? "captioned" : ""} ${(arr[index()].caption != undefined) ? "captioned" : ""}`}  
+      class={
+        `media 
+        ${(caption != undefined) ? "captioned" : ""}
+        ${(isCarousel && arr[index()].caption != undefined) ? "captioned" : ""}
+      `}
     >
       {popupIsOpen() &&
         <MediaPopupInt
@@ -55,6 +60,7 @@ export default function MediaInt(props:any) {
           arr={arr}
           index={index}
           setIndex={setIndex}
+          isCarousel={isCarousel}
         />
       }
       <MediaContainerInt
@@ -63,16 +69,19 @@ export default function MediaInt(props:any) {
         alt={alt}
         setPopupIsOpen={setPopupIsOpen}
         popupIsOpen={popupIsOpen}
+        togglePopup={togglePopup}
         withinPopup={withinPopup}
         arr={arr}
         index={index}
         setIndex={setIndex}
+        isCarousel={isCarousel}
       />
       <MediaCaptionInt
         client:load
         caption={caption}
         arr={arr}
         index={index}
+        isCarousel={isCarousel}
       />
     </div>
   )

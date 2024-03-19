@@ -10,22 +10,13 @@ export default function MediaContainerInt(props:any) {
   const arr = props.arr;
   const index = props.index;
   const setIndex = props.setIndex;
-  const isCarousel = (arr != undefined);
+  const isCarousel = props.isCarousel;
 
   // Popup:
   const popupIsOpen = props.popupIsOpen;
   const setPopupIsOpen = props.setPopupIsOpen;
   const withinPopup = props.withinPopup;
-
-  const togglePopup = () => {
-    if (!withinPopup) {
-      if (popupIsOpen()) {
-        setPopupIsOpen(false);
-      } else {
-        setPopupIsOpen(true);
-      }
-    }
-  }
+  const togglePopup = props.togglePopup;
 
   return (
     <div 
@@ -37,7 +28,7 @@ export default function MediaContainerInt(props:any) {
       >
         <img 
           src={src}
-          alt={alt}
+          alt={alt || ""}
         />
       </Show>
       <Show
@@ -45,7 +36,7 @@ export default function MediaContainerInt(props:any) {
       >
         <img 
           src={arr[index()].src}
-          alt=""
+          alt={alt || ""}
         />
       </Show>
     </div>

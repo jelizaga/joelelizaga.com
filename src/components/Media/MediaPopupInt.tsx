@@ -1,4 +1,3 @@
-import css from "./media.module.css";
 import MediaCaptionInt from "./MediaCaptionInt";
 import MediaContainerInt from "./MediaContainerInt";
 import MediaPopupBackgroundInt from "./MediaPopupBackgroundInt";
@@ -19,11 +18,11 @@ export default function MediaPopupInt(props:any) {
   const arr = props.arr;
   const index = props.index;
   const setIndex = props.setIndex;
-  const isCarousel = (arr != undefined);
+  const isCarousel = props.isCarousel;
 
   return (
     <div 
-      class={css.popup}
+      class="popup"
     >
       <MediaPopupBackgroundInt
         togglePopup={togglePopup}
@@ -40,12 +39,14 @@ export default function MediaPopupInt(props:any) {
           index={index}
           setIndex={setIndex}
           withinPopup={true}
+          isCarousel={isCarousel}
         />
         <MediaCaptionInt
           client:load
           caption={caption}
           arr={arr}
           index={index}
+          isCarousel={isCarousel}
         />
       </div>
     </div>

@@ -9,7 +9,10 @@ export default function MediaCaptionInt(props:any) {
   // Multiple media:
   const arr = props.arr;
   const index = props.index;
-  const isCarousel = (arr != undefined);
+  const isCarousel = props.isCarousel;
+
+  // Popup:
+  const withinPopup = props.withinPopup;
 
   return (
     <>
@@ -17,6 +20,7 @@ export default function MediaCaptionInt(props:any) {
         when={(!isCarousel && caption)}
       >
         <SolidMarkdown
+          class="caption"
           children={caption}
         />
       </Show>

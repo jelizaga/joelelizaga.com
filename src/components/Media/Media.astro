@@ -28,49 +28,54 @@ const {
   arr,
 } = Astro.props as Props;
 
-let media;
-if (src != undefined) {
-  media = await getImage({
-    src: src,
-    format: "webp"
-  })
+let singleMedia;
+if ((src != undefined)) {
+  if (!int) {
+    singleMedia = await getImage({
+      src: src,
+      format: "webp"
+    })
+  } else {
+    singleMedia = {
+      src: src
+    };
+  }
 }
 
-const isCarousel = arr != undefined;
+const isCarousel = (arr != undefined);
 ---
 
-  {(!int && media) &&
-    <div 
-      class:list={[
-        "media",
-        {"captioned": (caption)}
-      ]}
-    >
-      <MediaContainer
-        src={media.src}
-        height={media.attributes.height}
-        width={media.attributes.width}
-        alt=""
+{(!int && singleMedia) &&
+  <div 
+    class:list={[
+      "media",
+      {"captioned": (caption)}
+    ]}
+  >
+    <MediaContainer
+      src={singleMedia.src}
+      height={singleMedia.attributes.height}
+      width={singleMedia.attributes.width}
+      alt={alt}
+    />
+    {(caption) &&
+      <MediaCaption
+        caption={caption}
       />
-      {(caption) &&
-        <MediaCaption
-          caption={caption}
-        />
-      }
-    </div>
-  }
-  {(int && media) &&
-    <MediaInt
-      client:only="solid-js"
-      src={media.src}
-      alt=""
-      caption={caption}
-    />
-  }
-  {(isCarousel) &&
-    <MediaInt 
-      client:only="solid-js"
-      arr={arr}
-    />
-  }
-</div>
+    }
+  </div>
+}
+{(int && singleMedia) &&
+  <MediaInt
+    client:only="solid-js"
+    src={singleMedia.src}
+    alt={alt}
+    caption={caption}
+  />
+}
+{(int && isCarousel) &&
+  <MediaInt 
+    client:only="solid-js"
+    arr={arr}
+  />
+}

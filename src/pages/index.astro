@@ -7,7 +7,6 @@
 import Layout from '../layouts/Layout.astro';
 import Media from '../components/Media/Media.astro';
 import ImgPlaceholder from "../img/placeholder/placeholder1.jpg";
-import { Image } from 'astro:assets';
 import { Debug } from 'astro:components';
 import Yolo from "../img/placeholder/placeholder2.jpg";
 ---
@@ -23,8 +22,22 @@ import Yolo from "../img/placeholder/placeholder2.jpg";
 				src: "../img/placeholder/placeholder1.jpg",
 				alt: "",
 				caption: "TEST"
+			},
+			{
+				src: "../img/placeholder/placeholder4.jpg",
+				alt: "",
+				caption: "TEST2"
 			}
 		]}	
+	/>
+	<Media
+		src={Yolo}
+		caption="swag"
+		int={false}
+	/>
+	<Media
+		src="../img/placeholder/placeholder3.jpg"
+		caption="*swaaaag*"
 	/>
 </Layout>
 

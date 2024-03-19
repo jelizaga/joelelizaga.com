@@ -1,6 +1,5 @@
 div.media {
   box-shadow: var(--protrusion_tahoma_white_dim);
-  border-radius: 1.4rem;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -44,9 +43,22 @@ div.media.captioned div.container {
 }
 
 div.media div.caption {
-  padding-left: 2rem;
-  padding-right: 2rem;
+  background-color: var(--tahoma_white_dim);
+  border-bottom-left-radius: 1.4rem;
+  border-bottom-right-radius: 1.4rem;
+  padding-bottom: 0.3rem;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+  padding-top: 0.3rem;
 }
+
+div.media div.caption,
+div.media div.caption p {
+  font-size: var(--c5_font_size_0);
+  line-height: var(--c5_line_height_0);
+}
+
+/* Popup: ////////////////////////////////////////////////////////////////////*/
 
 div.media div.popup {
   bottom: 0;
@@ -57,20 +69,25 @@ div.media div.popup {
 
 div.media div.popup div.card {
   box-shadow: var(--shadow_floating);
-  position: absolute;
-  bottom: 1rem;
-  left: 1rem;
-  right: 1rem;
-  top: 1rem;
+  width: calc(100vw - var(--grid_margin) - var(--grid_margin));
 }
 
-div.popup {
-  position: fixed;
-  z-index: 2;
+@media screen and (max-width: 750px) {
+
+  div.media div.popup div.card {
+    width: calc(100vw - var(--grid_margin_min) - var(--grid_margin_min));
+  }
+
 }
 
-div.popup div.background {
-  background: #343E3D80;
-  height: 100%;
-  width: 100%;
-} 
+div.media div.popup div.card div.container {
+  border-top-left-radius: 1.4rem;
+  border-top-left-radius: 1.4rem;
+  overflow: hidden;
+}
+
+div.media div.popup div.card div.caption,
+div.media div.popup div.card div.caption p {
+  font-size: var(--c5_font_size_1);
+  line-height: var(--c5_line_height_1);
+}

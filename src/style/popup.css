@@ -1,0 +1,21 @@
+div.popup {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  z-index: 7;
+}
+
+div.popup div.background {
+  background: #343E3D80;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+} 
+
+div.popup div.card {
+  background-color: var(--tahoma_white_dim);
+  border-radius: 1.4rem;
+  z-index: 1;
+}
