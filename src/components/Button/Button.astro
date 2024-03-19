@@ -6,6 +6,7 @@ interface Props {
   shape?: string;
   href?: string;
   target?: string;
+  fontSize?: string;
 }
 
 const {
@@ -14,7 +15,8 @@ const {
   level = "primary",
   shape = "rectangular",
   href,
-  target = "_self"
+  target = "_self",
+  fontSize
 } = Astro.props as Props;
 ---
 
@@ -22,10 +24,11 @@ const {
   <a
     class:list={[
       "button",
-      {primary: (level == "primary")},
-      {secondary: (level == "secondary")},
-      {tertiary: (level == "tertiary")},
-      {circular: (shape == "circular")}
+      {"primary": (level == "primary")},
+      {"secondary": (level == "secondary")},
+      {"tertiary": (level == "tertiary")},
+      {"circular": (shape == "circular")},
+      {"c5-2": (fontSize == "c5-2")}
     ]}
     href={href}
     target={target}

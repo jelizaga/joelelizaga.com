@@ -21,6 +21,7 @@ const {
     href="/#contact"
     label="Contact"
     icon="fa-solid fa-envelope"
+    fontSize="c5-2"
   />
 </header>
 
@@ -33,10 +34,14 @@ const {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    left: 0;
     padding-bottom: 0.75rem;
     padding-left: var(--grid_margin);
     padding-right: var(--grid_margin);
     padding-top: 0.75rem;
+    position: absolute;
+    right: 0;
+    z-index: 4;
   }
 
   @media screen and (max-width: 750px) {

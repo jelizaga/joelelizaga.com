@@ -116,6 +116,7 @@
   --lawetlatla_ash_glow_transparent: #54646221;
   --lawetlatla_ash_glowing: 0px 0px 0.5rem var(--lawetlatla_ash_glow_transparent);
   --shadow_ceiling: 0px 0.3125rem 3.125rem #343E3D30;
+  --shadow_floating: 0px 0px 3.125rem #343E3D30;
   --noonoo_protrusion_rounded_lawetlatla_ash_dim: linear-gradient(145deg, #384241, #2f3837);
   --noonoo_protrusion_rounded_lawetlatla_ash_bright: linear-gradient(145deg, #4e5d5b, #424e4d);
   --noonoo_protrusion_rounded_lawetlatla_ash_glow: linear-gradient(145deg, #5a6b69, #4c5a58);

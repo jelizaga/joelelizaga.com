@@ -1,0 +1,76 @@
+---
+import { Debug } from 'astro:components';
+import { ImageMetadata } from 'astro';
+import { getImage } from 'astro:assets';
+import MediaCaption from './MediaCaption.astro';
+import MediaContainer from './MediaContainer.astro';
+import MediaInt from './MediaInt';
+
+interface Media {
+  src: string | ImageMetadata;
+  alt?: string;
+  caption?: string;
+}
+
+interface Props {
+  src?: string | ImageMetadata;
+  alt?: string;
+  caption?: string;
+  int?: boolean;
+  arr?: Media[];
+}
+
+const {
+  src,
+  alt,
+  caption,
+  int = true,
+  arr,
+} = Astro.props as Props;
+
+let media;
+if (src != undefined) {
+  media = await getImage({
+    src: src,
+    format: "webp"
+  })
+}
+
+const isCarousel = arr != undefined;
+---
+
+  {(!int && media) &&
+    <div 
+      class:list={[
+        "media",
+        {"captioned": (caption)}
+      ]}
+    >
+      <MediaContainer
+        src={media.src}
+        height={media.attributes.height}
+        width={media.attributes.width}
+        alt=""
+      />
+      {(caption) &&
+        <MediaCaption
+          caption={caption}
+        />
+      }
+    </div>
+  }
+  {(int && media) &&
+    <MediaInt
+      client:only="solid-js"
+      src={media.src}
+      alt=""
+      caption={caption}
+    />
+  }
+  {(isCarousel) &&
+    <MediaInt 
+      client:only="solid-js"
+      arr={arr}
+    />
+  }
+</div>

@@ -38,50 +38,10 @@ if (!projectTrayVisibility) {
   title={frontmatter.headTitle ? frontmatter.headTitle : frontmatter.title}
   currentPage={"projects"}
 >
-  <article class="project-article">
-      <div class={projectTrayClasses}>
-        {frontmatter.github &&
-          <a 
-            href={frontmatter.licenseLink}
-            target="_blank"
-            class="tooltip button rounded"
-          >
-            <Tooltip 
-              id="project-license-tooltip"
-              content={frontmatter.license}
-              position="bottom"
-            />
-            <i class="fa-solid fa-scale-balanced"></i>
-          </a>
-          <a 
-            href={frontmatter.github}
-            target="_blank"
-            class="button tooltip rounded primary"
-          >
-            <Tooltip 
-              id="project-github-tooltip"
-              content="GitHub repository"
-              position="bottom"
-            />
-            <i class="fa-brands fa-github"></i>
-          </a>
-        }
-      </div>
+  <article 
+    class="project"
+  >
     <header>
-      <div class="project-header">
-        <h1>{frontmatter.title}</h1>
-        <p class="description">{frontmatter.description}</p>
-        {frontmatter.tags &&
-          <ul class="tags">
-            {frontmatter.tags.map((tag) =>
-              <Tag
-                prefix="projects"
-                tag={tag}
-              />
-            )}
-          </ul>
-        }
-      </div>
     </header>
     <div class="content">
       <Content />
@@ -90,31 +50,4 @@ if (!projectTrayVisibility) {
 </Layout>
 
 <style>
-  .project-article header .project-header {
-    padding-bottom: 1rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
-    padding-top: 1rem;
-  }
-
-  .project-header h1, .project-header .description {
-    text-align: center;
-  }
-
-  .project-header .description {
-    font-style: italic;
-  }
-
-  .project-tray {
-    border-top-left-radius: 2.7rem;
-    border-top-right-radius: 2.7rem;
-    box-shadow: var(--noonoo_protrusion_bright);
-    display: flex;
-    gap: 0.8rem;
-    padding-bottom: 0.5rem;
-    padding-left: 2.1rem;
-    padding-right: 2.1rem;
-    padding-top: 0.5rem;
-    justify-content: right;
-  }
 </style>

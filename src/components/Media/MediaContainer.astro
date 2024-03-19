@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets';
+import { Debug } from 'astro:components';
+
+interface Props {
+  src: string;
+  height: number;
+  width: number;
+  alt?: string;
+}
+
+const {
+  src,
+  height,
+  width,
+  alt = "",
+} = Astro.props as Props;
+---
+
+<div
+  class:list={[
+    "container",
+  ]}
+>
+  <Image
+    src={src}
+    alt=""
+    height={height}
+    width={width}
+  />
+</div>

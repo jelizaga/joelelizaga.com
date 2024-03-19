@@ -1,0 +1,53 @@
+import css from "./media.module.css";
+import MediaCaptionInt from "./MediaCaptionInt";
+import MediaContainerInt from "./MediaContainerInt";
+import MediaPopupBackgroundInt from "./MediaPopupBackgroundInt";
+
+export default function MediaPopupInt(props:any) {
+  
+  // Popup:
+  const setPopupIsOpen = props.setPopupIsOpen;
+  const popupIsOpen = props.popupIsOpen;
+  const togglePopup = props.togglePopup;
+  
+  // Single media:
+  const src = props.src; 
+  const alt = props.alt;
+  const caption = props.caption;
+
+  // Multiple media:
+  const arr = props.arr;
+  const index = props.index;
+  const setIndex = props.setIndex;
+  const isCarousel = (arr != undefined);
+
+  return (
+    <div 
+      class={css.popup}
+    >
+      <MediaPopupBackgroundInt
+        togglePopup={togglePopup}
+      />
+      
+      <div 
+        class="card"
+      >
+        <MediaContainerInt
+          client:load
+          src={src}
+          alt={alt}
+          arr={arr}
+          index={index}
+          setIndex={setIndex}
+          withinPopup={true}
+        />
+        <MediaCaptionInt
+          client:load
+          caption={caption}
+          arr={arr}
+          index={index}
+        />
+      </div>
+    </div>
+  )
+}

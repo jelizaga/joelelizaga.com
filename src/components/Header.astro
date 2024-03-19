@@ -1,15 +1,15 @@
 ---
 interface Props {
-  title: string;
-  subtitle?: string;
+  heading: string;
+  subheading?: string;
   href?: string;
   bgSrc?: string;
   icon?: string;
 }
 
 const {
-  title,
-  subtitle,
+  heading,
+  subheading,
   href,
   bgSrc,
   icon
@@ -28,15 +28,15 @@ const {
       <i class={icon} />
     }
     <span
-      class="title"
+      class="heading"
     >
-      {title}
+      {heading}
     </span>
-    {subtitle &&
+    {subheading &&
       <span 
-        class="subtitle"
+        class="subheading"
       >
-        {subtitle}
+        {subheading}
       </span>
     }
   </h1>
@@ -72,11 +72,11 @@ const {
 
   }
 
-  header h1 span.title {
+  header h1 span.heading {
 
   }
 
-  header h1 span.subtitle {
+  header h1 span.subheading {
 
   }
 </style>
