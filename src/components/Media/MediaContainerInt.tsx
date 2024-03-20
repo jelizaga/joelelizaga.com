@@ -22,11 +22,18 @@ export default function MediaContainerInt(props:any) {
 
   return (
     <div 
-      class="container"
+      class={`
+        container
+        ${(isCarousel) ? "carousel" : ""}
+      `}
     >
       <Show 
         when={(!isCarousel && src)}
       >
+        <MediaExpandInt
+          withinPopup={withinPopup}
+          togglePopup={togglePopup}
+        />
         <img 
           src={src}
           alt={alt || ""}

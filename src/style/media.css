@@ -163,10 +163,14 @@ div.navigation button {
   z-index: 3;
 }
 
-div.media div.container div.expand {
+div.media div.container .expand {
   cursor: pointer;
   height: 100%;
-  left: 20%;
   position: absolute;
+  width: 100%;
+}
+
+div.media div.container.carousel .expand {
+  left: 20%;
   width: 60%;
 }

@@ -11,6 +11,7 @@ export default function MediaInt(props:any) {
   // Multiple media:
   const arr = props.arr;
   const isCarousel = (arr != undefined);
+  const aspectRatio = props.aspectRatio;
 
   // Single media:
   const src = props.src;
@@ -46,6 +47,7 @@ export default function MediaInt(props:any) {
         `media 
         ${(caption != undefined) ? "captioned" : ""}
         ${(isCarousel && arr[index()].caption != undefined) ? "captioned" : ""}
+        ${(isCarousel) ? "carousel" : ""}
       `}
     >
       {popupIsOpen() &&
@@ -75,6 +77,7 @@ export default function MediaInt(props:any) {
         index={index}
         setIndex={setIndex}
         isCarousel={isCarousel}
+        aspectRatio={aspectRatio}
       />
       <MediaCaptionInt
         client:load
