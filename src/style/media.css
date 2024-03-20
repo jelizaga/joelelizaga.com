@@ -91,3 +91,82 @@ div.media div.popup div.card div.caption p {
   font-size: var(--c5_font_size_1);
   line-height: var(--c5_line_height_1);
 }
+
+/* Navigation: ///////////////////////////////////////////////////////////////*/
+
+div.navigation {
+  align-items: center;
+  bottom: 0;
+  cursor: pointer;
+  display: flex;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 20%;
+  z-index: 1;
+}
+
+div.navigation.prev {
+  left: 0;
+  justify-content: flex-start;
+}
+
+div.navigation.next {
+  right: 0;
+  justify-content: flex-end;
+}
+
+div.navigation div.background {
+  height: 100%;
+  position: absolute;
+  transition: opacity .2s ease-in;
+  width: 100%;
+  z-index: 2;
+}
+
+div.navigation div.background {
+  background: none;
+  opacity: 0;
+}
+
+div.navigation.prev div.background,
+div.popup div.navigation.prev div.background {
+  background: none;
+  background-image: linear-gradient(to right,#343E3D20,#343E3D00);
+}
+
+div.navigation.next div.background,
+div.popup div.navigation.next div.background {
+  background: none;
+  background-image: linear-gradient(to left,#343E3D20,#343E4D00);
+}
+
+div.navigation:hover div.background {
+  opacity: 1;
+}
+
+div.navigation:hover button i {
+  color: var(--spectacular_red_glow);
+  text-shadow: var(--spectacular_red_glowing);
+}
+
+div.navigation button {
+  align-items: center;
+  background-image: var(--protrusion_rounded_tahoma_white_dim);
+  border: none;
+  box-shadow: var(--shadow_floating);
+  display: flex;
+  height: 2rem;
+  margin: 0.5rem;
+  justify-content: center;
+  width: 2rem;
+  z-index: 3;
+}
+
+div.media div.container div.expand {
+  cursor: pointer;
+  height: 100%;
+  left: 20%;
+  position: absolute;
+  width: 60%;
+}
