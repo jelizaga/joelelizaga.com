@@ -33,7 +33,11 @@ const {
   >
     <h1>
       {icon &&
-        <i class={icon} />
+        <span
+          class="icon"
+        >
+          <i class={icon} />
+        </span>
       }
       <span
         class="title"
@@ -65,11 +69,11 @@ const {
   header {
     display: block;
     position: relative;
-    height: 7rem;
+    height: 11rem;
   }
 
   header.offset {
-    height: calc(4rem + 7rem);
+    height: calc(11rem + 4rem);
   }
 
   header a {
@@ -82,12 +86,16 @@ const {
   header div.heading {
     align-items: center;
     display: flex;
-    height: inherit;
+    height: 11rem;
     left: 50%;
     position: absolute;
     transform: translateX(-50%);
     width: calc(100vw - var(--grid_margin) - var(--grid_margin));
     z-index: 1;
+  }
+
+  header.offset div.heading {
+    top: 4rem;
   }
 
   @media screen and (max-width: 750px) {
@@ -115,15 +123,20 @@ const {
     text-align: left;
   }
 
-  header h1 i {
-
+  header div.heading .icon {
+    align-items: center;
+    background-image: var(--protrusion_rounded_tahoma_white_dim);
+    border-radius: 100%;
+    box-shadow: var(--protrusion_tahoma_white_dim);
+    display: flex;
+    font-size: 0.85em;
+    height: 1.3em;
+    justify-content: center;
+    transition: box-shadow .1s ease-in;
+    width: 1.3em;
   }
 
-  header h1 span.title {
-
-  }
-
-  header h1 span.subtitle {
+  header div.heading {
 
   }
 
