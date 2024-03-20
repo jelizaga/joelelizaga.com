@@ -20,6 +20,16 @@ export default function MediaContainerInt(props:any) {
   const withinPopup = props.withinPopup;
   const togglePopup = props.togglePopup;
 
+  // Loading:
+  const [
+    mediaLoaded,
+    setMediaLoaded
+  ] = createSignal(false);
+
+  const handleMediaLoaded = () => {
+    setMediaLoaded(true);
+  }
+
   return (
     <div 
       class={`
@@ -33,10 +43,12 @@ export default function MediaContainerInt(props:any) {
         <MediaExpandInt
           withinPopup={withinPopup}
           togglePopup={togglePopup}
+          src={src}
         />
         <img 
           src={src}
           alt={alt || ""}
+          onload={handleMediaLoaded}
         />
       </Show>
       <Show
@@ -51,6 +63,9 @@ export default function MediaContainerInt(props:any) {
         <MediaExpandInt
           withinPopup={withinPopup}
           togglePopup={togglePopup}
+          arr={arr}
+          index={index}
+          isCarousel={isCarousel}
         />
         <img 
           src={arr[index()].src}

@@ -7,10 +7,6 @@ div.media {
   width: 100%;
 }
 
-div.media.captioned {
-
-}
-
 div.media div.container {
   border-radius: 1.4rem;
   display: block;
@@ -20,6 +16,8 @@ div.media div.container {
 }
 
 div.media div.container::before {
+  border-radius: 1.4rem;
+  box-shadow: var(--depression_img);
   content: "";
   height: 100%;
   overflow: hidden;
@@ -38,6 +36,11 @@ div.media div.container video {
 }
 
 div.media.captioned div.container {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+div.media.captioned div.container::before {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
@@ -164,7 +167,7 @@ div.navigation button {
 }
 
 div.media div.container .expand {
-  cursor: pointer;
+  cursor: zoom-in;
   height: 100%;
   position: absolute;
   width: 100%;

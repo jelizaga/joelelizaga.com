@@ -32,6 +32,7 @@ export default function MediaInt(props:any) {
   const withinPopup = false;
 
   const togglePopup = () => {
+    console.dir(arr);
     if (!withinPopup) {
       if (popupIsOpen()) {
         setPopupIsOpen(false);

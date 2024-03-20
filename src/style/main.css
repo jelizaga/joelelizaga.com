@@ -95,6 +95,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  --depression_img: inset -0.25rem -0.25rem 0.5rem #00000022, inset 0.25rem 0.25rem 0.5rem #00000055;
   /* Color palette ///////////////////////////////////////////////////////////*/
   /* Tahoma White */
   --tahoma_white_dim: #F2F0F0;
