@@ -31,7 +31,11 @@ const {
   <div 
     class="heading"
   >
-    <h1>
+    <h1
+      class:list={[
+        {"focus": (subheading)}
+      ]}
+    >
       {icon &&
         <span
           class="icon"
@@ -123,6 +127,28 @@ const {
     text-align: left;
   }
 
+  header div.heading h1.focus {
+    padding-right: 0;
+  }
+
+  @media screen and (max-width: 1000px) {
+
+    header div.heading h1.focus {
+      font-size: var(--c5_font_size_4);
+      line-height: var(--c5_line_height_4);
+    }
+
+  }
+
+  @media screen and (max-width: 750px) {
+
+    header div.heading h1.focus {
+      font-size: var(--c5_font_size_3);
+      line-height: var(--c5_line_height_3);
+    }
+
+  }
+
   header div.heading .icon {
     align-items: center;
     background-image: var(--protrusion_rounded_tahoma_white_dim);
@@ -136,8 +162,29 @@ const {
     width: 1.3em;
   }
 
-  header div.heading {
+  header:active div.heading .icon {
+    box-shadow: 
+      var(--depression_tahoma_white_dim),
+      var(--protrusion_tahoma_white_dim);
+  }
 
+  header div.heading .icon i {
+    color: var(--lawetlatla_ash_bright);
+    transition: 0.1s text-shadow ease-in, 0.1s color ease-in;
+  }
+
+  header:hover div.heading .icon i {
+    color: var(--spectacular_red_glow);
+    text-shadow: var(--spectacular_red_glowing);
+  }
+
+  header div.heading .subtitle {
+    /* font-size: var(--c5_font_size_4); */
+    box-shadow: var(--depression_tahoma_white_dim);
+    font-weight: normal;
+    padding-left: 1rem;
+    padding-right: 1rem
+    /* line-height: var(--c5_line_height_4); */
   }
 
   header div.background {
