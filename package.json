@@ -22,7 +22,7 @@
   "dependencies": {
     "@astrojs/prism": "^3.0.0",
     "@astrojs/rss": "^4.0.5",
-    "hotkeys-js": "^3.10.1",
+    "hotkeys-js": "^3.13.7",
     "image-size": "^1.1.1",
     "solid-markdown": "^2.0.0",
     "solid-particles": "^2.9.3",

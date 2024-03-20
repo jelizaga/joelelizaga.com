@@ -89,6 +89,10 @@ div.media div.popup div.card div.container {
   overflow: hidden;
 }
 
+div.media div.popup div.card div.container::before {
+  box-shadow: none;
+}
+
 div.media div.popup div.card div.caption,
 div.media div.popup div.card div.caption p {
   font-size: var(--c5_font_size_1);
@@ -202,6 +206,14 @@ div.media div.container div.pagination {
 }
 
 div.media:hover div.container div.pagination {
+  opacity: 1;
+}
+
+div.media:hover div.popup div.card div.container div.pagination {
+  opacity: 0;
+}
+
+div.media div.popup div.card div.container:hover div.pagination {
   opacity: 1;
 }
 
