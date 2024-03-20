@@ -177,3 +177,55 @@ div.media div.container.carousel .expand {
   left: 20%;
   width: 60%;
 }
+
+/* Pagination: ///////////////////////////////////////////////////////////////*/
+
+div.media div.container div.pagination {
+  background-color: var(--tahoma_white_dim);
+  bottom: 1rem;
+  border-radius: 1.4rem;
+  box-shadow: var(--shadow_floating);
+  display: flex;
+  gap: 0.3rem;
+  justify-content: center;
+  left: 50%;
+  opacity: 0;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  position: absolute;
+  transform: translateX(-50%);
+  transition: opacity 0.1s ease-in;
+  width: fit-content;
+  z-index: 4;
+}
+
+div.media:hover div.container div.pagination {
+  opacity: 1;
+}
+
+div.media div.container div.pagination button.page {
+  background-image: var(--protrusion_rounded_tahoma_white_dim);
+  box-shadow: var(--shadow_floating_small);
+  border: none;
+  border-radius: 100%;
+  content: "";
+  cursor: pointer;
+  height: 0.6rem;
+  padding: 0;
+  transition: box-shadow 0.1s ease-in;
+  width: 0.6rem;
+}
+
+div.media div.container div.pagination button.page.current,
+div.media div.container div.pagination button.page:hover {
+  background-image: var(--protrusion_rounded_spectacular_red_glow);
+  box-shadow:
+    var(--shadow_floating_small),
+    var(--spectacular_red_glowing);
+}
+
+div.media div.container div.pagination button.page.current {
+  cursor: default;
+}

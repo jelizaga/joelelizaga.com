@@ -103,11 +103,9 @@
   --tahoma_white_glow: #FFFFFF;
   --tahoma_white_glow_transparent: #FFFFFF21;
   --tahoma_white_glowing: 0px 0px 0.5rem var(--tahoma_white_glow_transparent);
-  --noonoo_protrusion_dim: 0.25rem 0.25rem 0.5rem #3E4A48, -0.25rem -0.25rem 0.5rem #546462;
   --protrusion_tahoma_white_dim: 0.25rem 0.25rem 0.5rem #DCDADA, -0.25rem -0.25rem 0.5rem var(--tahoma_white_glow);
   --protrusion_rounded_tahoma_white_dim: linear-gradient(145deg, var(--tahoma_white_glow), #DAD8D8);
-  --noonoo_depression_dim: inset -0.25rem -0.25rem 0.5rem #3C4746, inset 0.25rem 0.25rem 0.5rem #2C3534;
-  --noonoo_depression_bright: inset -0.25rem -0.25rem 0.5rem var(--tahoma_white_glow), inset 0.25rem 0.25rem 0.5rem #DCDADA;
+  --depression_lawetlatla_ash_bright: inset -0.25rem -0.25rem 0.5rem #3C4746, inset 0.25rem 0.25rem 0.5rem #2C3534;
   --depression_tahoma_white_dim: inset -0.25rem -0.25rem 0.5rem var(--tahoma_white_glow), inset 0.25rem 0.25rem 0.5rem #DCDADA;
   /* Lawetlat'la Ash */
   --lawetlatla_ash_bright: #495755;
@@ -118,10 +116,12 @@
   --lawetlatla_ash_glowing: 0px 0px 0.5rem var(--lawetlatla_ash_glow_transparent);
   --shadow_ceiling: 0px 0.3125rem 3.125rem #343E3D30;
   --shadow_floating: 0px 0px 3.125rem #343E3D30;
-  --noonoo_protrusion_rounded_lawetlatla_ash_dim: linear-gradient(145deg, #384241, #2f3837);
-  --noonoo_protrusion_rounded_lawetlatla_ash_bright: linear-gradient(145deg, #4e5d5b, #424e4d);
-  --noonoo_protrusion_rounded_lawetlatla_ash_glow: linear-gradient(145deg, #5a6b69, #4c5a58);
-  --noonoo_depression_lawetlatla_ash_bright: inset -0.25rem -0.25rem 0.5rem var(--lawetlatla_ash_glow), inset 0.25rem 0.25rem 0.5rem #3E4A48;
+  --shadow_floating_small: 0.2rem 0.2rem 0.25rem #343E3D21;
+  --protrusion_lawetlatla_ash_dim: 0.25rem 0.25rem 0.5rem #3E4A48, -0.25rem -0.25rem 0.5rem #546462;
+  --protrusion_rounded_lawetlatla_ash_dim: linear-gradient(145deg, #384241, #2f3837);
+  --protrusion_rounded_lawetlatla_ash_bright: linear-gradient(145deg, #4e5d5b, #424e4d);
+  --protrusion_rounded_lawetlatla_ash_glow: linear-gradient(145deg, #5a6b69, #4c5a58);
+  --depression_lawetlatla_ash_bright: inset -0.25rem -0.25rem 0.5rem var(--lawetlatla_ash_glow), inset 0.25rem 0.25rem 0.5rem #3E4A48;
   /* Spectacular Red */
   --spectacular_red_bright: #E60000;
   --spectacular_red_dim: #CC0000;
@@ -130,7 +130,7 @@
   --spectacular_red_glowing: 0px 0px 0.5rem var(--spectacular_red_glow_transparent);
   --noonoo_protrusion_rounded_spectacular_red_dim: linear-gradient(145deg, #da0000, #b80000);
   --noonoo_protrusion_rounded_spectacular_red_bright: linear-gradient(145deg, var(--spectacular_red_glow), #cf0000);
-  --noonoo_protrusion_rounded_spectacular_red_glow: linear-gradient(145deg, #ff0000, #dd0000);
+  --protrusion_rounded_spectacular_red_glow: linear-gradient(145deg, #ff0000, #dd0000);
   --noonoo_depression_spectacular_red_bright: inset -0.25rem -0.25rem 0.5rem var(--spectacular_red_glow), inset 0.25rem 0.25rem 0.5rem #C40000;
   /* Rain City Emerald */
   --rain_city_emerald_bright: #23D16C;

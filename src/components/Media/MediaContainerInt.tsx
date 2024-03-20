@@ -1,6 +1,7 @@
 import { Show, createSignal } from "solid-js";
 import MediaNavigationInt from "./MediaNavigationInt";
 import MediaExpandInt from "./MediaExpandInt";
+import MediaPaginationInt from "./MediaPaginationInt";
 
 export default function MediaContainerInt(props:any) {
 
@@ -60,6 +61,12 @@ export default function MediaContainerInt(props:any) {
           index={index}
           setIndex={setIndex}
         />
+        <MediaNavigationInt
+          dir="next"
+          arr={arr}
+          index={index}
+          setIndex={setIndex}
+        />
         <MediaExpandInt
           withinPopup={withinPopup}
           togglePopup={togglePopup}
@@ -71,8 +78,7 @@ export default function MediaContainerInt(props:any) {
           src={arr[index()].src}
           alt={alt || ""}
         />
-        <MediaNavigationInt
-          dir="next"
+        <MediaPaginationInt
           arr={arr}
           index={index}
           setIndex={setIndex}
