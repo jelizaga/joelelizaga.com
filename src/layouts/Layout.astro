@@ -12,12 +12,14 @@ export interface Props {
 	title: string;
 	description?: string;
 	current?: string;
+	mainOffset?: boolean;
 }
 
 const { 
 	title, 
 	description, 
-	current
+	current,
+	mainOffset = false,
 } = Astro.props as Props;
 
 ---
@@ -50,7 +52,11 @@ const {
 		<Masthead
 			current={current}
 		/>
-		<main>
+		<main
+			class:list={[
+				{"offset": (mainOffset)}
+			]}
+		>
 			<slot />
 		</main>
 	</body>

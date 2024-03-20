@@ -202,7 +202,7 @@ div.media div.container div.pagination {
   transform: translateX(-50%);
   transition: opacity 0.1s ease-in;
   width: fit-content;
-  z-index: 4;
+  z-index: 1;
 }
 
 div.media:hover div.container div.pagination {

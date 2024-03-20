@@ -5,6 +5,7 @@ interface Props {
   href?: string;
   bgSrc?: string;
   icon?: string;
+  mainOffset?: boolean;
 }
 
 const {
@@ -12,34 +13,42 @@ const {
   subheading,
   href,
   bgSrc,
-  icon
+  icon,
+  mainOffset = false,
 } = Astro.props as Props;
 ---
 
 <header
+  class:list={[
+    {"offset": (!mainOffset)}
+  ]}
 >
   {href &&
     <a
       href={href}
     />
   }
-  <h1>
-    {icon &&
-      <i class={icon} />
-    }
-    <span
-      class="heading"
-    >
-      {heading}
-    </span>
-    {subheading &&
-      <span 
-        class="subheading"
+  <div 
+    class="heading"
+  >
+    <h1>
+      {icon &&
+        <i class={icon} />
+      }
+      <span
+        class="title"
       >
-        {subheading}
+        {heading}
       </span>
-    }
-  </h1>
+      {subheading &&
+        <span 
+          class="subtitle"
+        >
+          {subheading}
+        </span>
+      }
+    </h1>
+  </div>
   <div
     class="background"
   >
@@ -56,27 +65,77 @@ const {
   header {
     display: block;
     position: relative;
+    height: 7rem;
+  }
+
+  header.offset {
+    height: calc(4rem + 7rem);
   }
 
   header a {
     height: 100%;
     position: absolute;
     width: 100%;
+    z-index: 2;
   }
 
-  header h1 {
+  header div.heading {
+    align-items: center;
+    display: flex;
+    height: inherit;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    width: calc(100vw - var(--grid_margin) - var(--grid_margin));
+    z-index: 1;
+  }
 
+  @media screen and (max-width: 750px) {
+
+    header div.heading {
+      width: calc(100vw - var(--grid_margin_min) - var(--grid_margin_min));
+    }
+
+  }
+
+  header div.heading h1 {
+    align-items: center;
+    background-color: var(--tahoma_white_dim);
+    border-radius: 2.7rem;
+    box-shadow: var(--shadow_floating);
+    color: var(--lawetlatla_ash_dim);
+    display: inline-flex;
+    gap: 1rem;
+    left: 0;
+    max-width: 100%;
+    overflow: hidden;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    position: absolute;
+    text-align: left;
   }
 
   header h1 i {
 
   }
 
-  header h1 span.heading {
+  header h1 span.title {
 
   }
 
-  header h1 span.subheading {
+  header h1 span.subtitle {
 
+  }
+
+  header div.background {
+    background-color: var(--lawetlatla_ash_dim);
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 0;
   }
 </style>

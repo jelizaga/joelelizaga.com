@@ -5,10 +5,10 @@
 // Home page @ `/`.
 
 import Layout from '../layouts/Layout.astro';
+import HomeHeader from "../components/Home/HomeHeader.astro";
+import Button from '../components/Button/Button.astro';
+import Img from "../img/placeholder/placeholder1.jpg"
 import Media from '../components/Media/Media.astro';
-import ImgPlaceholder from "../img/placeholder/placeholder1.jpg";
-import { Debug } from 'astro:components';
-import Yolo from "../img/placeholder/placeholder2.jpg";
 ---
 
 <Layout 
@@ -16,28 +16,15 @@ import Yolo from "../img/placeholder/placeholder2.jpg";
 	description="Building usable and useful technologies."
 	current="home"
 >
-	<Media
-		arr={[
-			{
-				src: "../img/placeholder/placeholder1.jpg",
-				alt: "",
-				caption: "TEST"
-			},
-			{
-				src: "../img/placeholder/placeholder4.jpg",
-				alt: "",
-				caption: "TEST2"
-			}
-		]}	
+	<HomeHeader
 	/>
 	<Media
-		src={Yolo}
-		caption="swag"
+		src={Img}
 		int={false}
 	/>
-	<Media
-		src="../img/placeholder/placeholder3.jpg"
-		caption="*swaaaag*"
+	<Button
+		label='hello'
+		href="/"
 	/>
 </Layout>
 

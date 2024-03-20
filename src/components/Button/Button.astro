@@ -28,7 +28,8 @@ const {
       {"secondary": (level == "secondary")},
       {"tertiary": (level == "tertiary")},
       {"circular": (shape == "circular")},
-      {"c5-2": (fontSize == "c5-2")}
+      {"c5-2": (fontSize == "c5-2")},
+      {"c7-1": (fontSize == "c7-1")},
     ]}
     href={href}
     target={target}
@@ -64,6 +65,20 @@ const {
     position: relative;
     transition: 0.1s color, 0.1s box-shadow, 0.1s text-shadow;
     width: fit-content;
+  }
+
+  button.c5-2,
+  a.button.c5-2 {
+    font-size: var(--c5_font_size_2);
+    line-height: var(--c5_line_height_2);
+    padding-left: 1.6875rem;
+    padding-right: 1.6875rem;
+  }
+
+  button.c7-1,
+  a.button.c7-1 {
+    font-size: var(--c7_font_size_1);
+    line-height: var(--c7_line_height_1);
   }
 
   button:hover,
