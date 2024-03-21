@@ -7,7 +7,7 @@
 
 import { Debug } from 'astro/components';
 import Layout from '../../layouts/Layout.astro'; 
-import Pagination from '../../components/Pagination.astro';
+import Pagination from '../../components/Pagination/Pagination.astro';
 import Header from '../../components/Header.astro';
 import { getCollection } from 'astro:content';
 import BlogPostIndex from '../../components/Blog/BlogPostIndex.astro';
@@ -37,5 +37,15 @@ const blogPosts = page.data;
   />
   <BlogPostIndex
     blogPosts={blogPosts}
+  />
+  <Pagination
+    path={"blog"}
+    currentPage={page.currentPage}
+    lastPage={page.lastPage}
+    prevPage={page.url.prev}
+    nextPage={page.url.next}
+    totalPosts={page.total}
+    firstItemOnPage={page.start}
+    lastItemOnPage={page.end}
   />
 </Layout>

@@ -1,0 +1,320 @@
+---
+import PaginationPage from "./PaginationPage.astro";
+import { Debug } from "astro:components";
+
+export interface Props {
+  path?: string;
+  currentPage?: number;
+  lastPage: number;
+  prevPage?: string;
+  nextPage?: string;
+  totalPosts: number;
+  firstItemOnPage: number;
+  lastItemOnPage: number;
+}
+
+const {
+  path,
+  currentPage,
+  lastPage,
+  prevPage,
+  nextPage,
+  totalPosts,
+  firstItemOnPage,
+  lastItemOnPage
+} = Astro.props;Astro.props as Props;
+
+//  There's few pages, so no `ellipsis` will be applied anywhere.
+const fewPages = (lastPage < 12);
+// Current page is at a point before two `ellipsis` are applied to indexes 3 & 
+// 11 of `pagination`.
+const currentPageNearBeginning = (currentPage <= 6 || fewPages);
+// Current page is at a point when an `ellipsis` is solely applied to index 3 of
+// `pagination`; at the 'end.'
+const currentPageNearEnd = (currentPage >= lastPage - 6 && !fewPages);
+// Current page is at a point where an `ellipsis` is applied to indexes 3 & 11
+// of `pagination.`
+const currentPageCentered = (!currentPageNearBeginning && !currentPageNearEnd && !fewPages);
+
+const debugPagination = {
+  fewPages: fewPages,
+  currentPageNearBeginning: currentPageNearBeginning,
+  currentPageNearEnd: currentPageNearEnd,
+  currentPageCentered: currentPageCentered
+}
+---
+
+<div 
+  id="pagination" 
+  class="pagination"
+>
+  <ul>
+    <!-- 1 / ← -->
+    <PaginationPage
+      prevPage={prevPage}
+    />
+    <!-- 2 / 1 -->
+    <PaginationPage
+      path={path}
+      page={1}
+      pageCurrent={currentPage == 1}
+    />
+    <!-- 3 / 2 / ... -->
+    {2 <= lastPage &&
+      <PaginationPage
+        path={path}
+        page={currentPageNearBeginning ? 2 : undefined}
+        pageCurrent={currentPage == 2}
+        ellipsis={!currentPageNearBeginning}
+      />
+    }
+    <!-- 4 / 3 / currentPage - 3 / lastPage - 8  -->
+    {currentPageNearBeginning && 3 <= lastPage &&
+      <PaginationPage
+        path={path}
+        page={3}
+        pageCurrent={currentPage == 3}
+      />
+    }
+    {currentPageCentered &&
+      <PaginationPage
+        path={path}
+        page={currentPage - 3}
+      />
+    }
+    {currentPageNearEnd &&
+      <PaginationPage
+        path={path}
+        page={lastPage - 8}
+        pageCurrent={currentPage == lastPage - 8}
+      />
+    }
+    <!-- 5 / 4 / currentPage - 2 / lastPage - 7 -->
+    {currentPageNearBeginning && 4 <= lastPage &&
+      <PaginationPage
+        path={path}
+        page={4}
+        pageCurrent={currentPage == 4}
+      />
+    }
+    {currentPageCentered &&
+      <PaginationPage
+        path={path}
+        page={currentPage - 2}
+      />
+    }
+    {currentPageNearEnd &&
+      <PaginationPage
+        path={path}
+        page={lastPage - 7}
+        pageCurrent={currentPage == lastPage - 7}
+      />
+    }
+    <!-- 6 / 5 / currentPage - 1 / lastPage - 6 -->
+    {currentPageNearBeginning && 5 <= lastPage &&
+      <PaginationPage
+        path={path}
+        page={5}
+        pageCurrent={currentPage == 5}
+      />
+    }
+    {currentPageCentered &&
+      <PaginationPage
+        path={path}
+        page={currentPage - 1}
+      />
+    }
+    {currentPageNearEnd && 
+      <PaginationPage
+        path={path}
+        page={lastPage - 6}
+        pageCurrent={currentPage == lastPage - 6}
+      />
+    }
+    <!-- 7 / currentPage / lastPage - 5 -->
+    {currentPageNearBeginning && 6 <= lastPage &&
+      <PaginationPage
+        path={path}
+        page={6}
+        pageCurrent={currentPage == 6}
+      />
+    }
+    {currentPageCentered &&
+      <PaginationPage
+        path={path}
+        page={currentPage}
+        pageCurrent={true}
+      />
+    }
+    {currentPageNearEnd &&
+      <PaginationPage
+        path={path}
+        page={lastPage - 5}
+        pageCurrent={currentPage == lastPage - 5}
+      />
+    }
+    <!-- 8 / currentPage + 1 / lastPage - 4 -->
+    {currentPageNearBeginning && 7 <= lastPage &&
+      <PaginationPage
+        path={path}
+        page={7}
+        pageCurrent={currentPage == 7}
+      />
+    }
+    {currentPageCentered &&
+      <PaginationPage
+        path={path}
+        page={currentPage + 1}
+      />
+    }
+    {currentPageNearEnd &&
+      <PaginationPage
+        path={path}
+        page={lastPage - 4}
+        pageCurrent={currentPage == lastPage - 4}
+      />
+    }
+    <!-- 9 / currentPage + 2 / lastPage - 3 -->
+    {currentPageNearBeginning && 8 <= lastPage &&
+      <PaginationPage
+        path={path}
+        page={8}
+        pageCurrent={currentPage == 8}
+      />
+    }
+    {currentPageCentered &&
+      <PaginationPage
+        path={path}
+        page={currentPage + 2}
+      />
+    }
+    {currentPageNearEnd &&
+      <PaginationPage
+        path={path}
+        page={lastPage - 3}
+        pageCurrent={currentPage == lastPage - 3}
+      />
+    }
+    <!-- 10 / currentPage + 3 / lastPage - 2 -->
+    {currentPageNearBeginning && 9 <= lastPage &&
+      <PaginationPage
+        path={path}
+        page={9}
+        pageCurrent={currentPage == 9}
+      />
+    }
+    {currentPageCentered &&
+      <PaginationPage
+        path={path}
+        page={currentPage + 3}
+      />
+    }
+    {currentPageNearEnd &&
+      <PaginationPage
+        path={path}
+        page={lastPage - 2}
+        pageCurrent={currentPage == lastPage - 2}
+      />
+    }
+    <!-- 11 / ... / lastPage - 1 -->
+    {currentPageNearBeginning && fewPages && 10 <= lastPage &&
+      <PaginationPage
+        path={path}
+        page={10}
+        pageCurrent={currentPage == 10}
+      />
+    }
+    {(currentPageCentered || (currentPageNearBeginning && !fewPages)) &&
+      <PaginationPage
+        ellipsis={true}
+      />
+    }
+    {currentPageNearEnd &&
+      <PaginationPage
+        path={path}
+        page={lastPage - 1}
+        pageCurrent={currentPage == lastPage - 1}
+      />
+    }
+    <!-- 12 / lastPage -->
+    {fewPages && lastPage == 12 &&
+      <PaginationPage
+        path={path}
+        page={lastPage}
+        pageCurrent={currentPage == lastPage}
+      />
+    }
+    {currentPageNearBeginning && !fewPages &&
+      <PaginationPage
+        path={path}
+        page={lastPage}
+      />
+    }
+    {currentPageCentered && 
+      <PaginationPage
+        path={path}
+        page={lastPage}
+      />
+    }
+    {currentPageNearEnd &&
+      <PaginationPage
+        path={path}
+        page={lastPage}
+        pageCurrent={currentPage == lastPage}
+      />
+    }
+    <!-- 13 / → -->
+    <PaginationPage
+      nextPage={nextPage}
+    />
+  </ul>
+  <p 
+    class="count"
+  >
+    Displaying {firstItemOnPage + 1} - {lastItemOnPage + 1} of {totalPosts} posts
+  </p>
+</div>
+
+<!-- <Debug {debugPagination} /> -->
+
+<style>
+  .pagination {
+    margin-top: 1rem;
+  }
+
+  .pagination ul {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    gap: 0.2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .pagination a {
+    cursor: pointer;
+    height: inherit;
+    width: inherit;
+  }
+
+  .pagination .inactive, .pagination .current-page {
+    cursor: default;
+  }
+
+  .pagination .inactive li, .pagination .current-page li {
+    color: var(--lawetlatla_ash_bright);
+  }
+
+  .pagination .current-page li {
+    box-shadow: var(--noonoo_depression_bright), var(--noonoo_protrusion_bright);
+  }
+
+  .pagination ul + .count {
+    color: var(--lawetlatla_ash_bright);
+    font-size: var(--c5_font_size_0);
+    line-height: var(--c5_line_height_0);
+    text-align: center;
+  }
+</style>

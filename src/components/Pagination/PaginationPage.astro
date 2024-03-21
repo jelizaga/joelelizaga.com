@@ -1,0 +1,129 @@
+---
+////////////////////////////////////////////////////////////////////////////////
+// PaginationPage //////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+// Page buttons used by `Pagination`.
+
+export interface Props {
+  path?: string;
+  page?: number;
+  pageCurrent?: boolean;
+  ellipsis?: boolean;
+  prevPage?: string;
+  nextPage?: string;
+}
+
+const { 
+  path, 
+  page, 
+  pageCurrent = false, 
+  ellipsis = false, 
+  prevPage, 
+  nextPage
+} = Astro.props;
+---
+
+{page &&
+  <li 
+    class:list={[
+      "page",
+      {"current": pageCurrent}
+    ]}
+  >
+    <a 
+      href={!pageCurrent && `${page}`}
+    >
+      {page}
+    </a>
+  </li>
+}
+
+{ellipsis &&
+  <li 
+    class="page ellipsis"
+  >
+    <i class="fa-solid fa-ellipsis" />
+  </li>
+}
+
+{prevPage &&
+  <li 
+    class="page prev"
+  >
+    <a 
+      class={prevPage ? "" : "inactive"} 
+      href={prevPage}
+    >
+      <i class="fa-solid fa-circle-chevron-left" />
+    </a>
+  </li>
+}
+
+{nextPage &&
+  <li 
+    class="page next"
+  >
+    <a 
+      class={nextPage ? "" : "inactive"} 
+      href={nextPage}
+    >
+      <i class="fa-solid fa-circle-chevron-right" />
+    </a>
+  </li>
+}
+
+<style>
+  li.page {
+    background-color: var(--noonoo_protrusion_rounded_bright);
+    border-radius: 100%;
+    height: 2rem;
+    position: relative;
+    vertical-align: middle;
+    width: 2rem;
+    transition: box-shadow ease-in 0.1s;
+  }
+
+  li.page:active {
+    box-shadow: var(--noonoo_depression_bright);
+  }
+
+  li.page a {
+    align-content: center;
+    align-items: center;
+    color: var(--lawetlatla_ash_dim);
+    display: flex;
+    height: inherit;
+    justify-content: center;
+    text-align: center;
+    width: inherit;
+  }
+
+  .page.current {
+    box-shadow: var(--depression_tahoma_white_dim);
+  }
+
+  .page.current,
+  .page.ellipsis {
+    cursor: default;
+  }
+
+  .inactive a:hover, .current-page a:hover {
+    text-shadow: none;
+  }
+
+  .ellipsis {
+    font-size: 0.7rem;
+  }
+
+  .next-page, .previous-page {
+    font-size: 0.8rem;
+  }
+
+  li.page.ellipsis, 
+  li.page.next, 
+  li.page.prev {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+</style>
