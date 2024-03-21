@@ -9,7 +9,7 @@ export interface Props {
   slug: string;
   headerImgSrc?: string;
   tags?: object[];
-  heading: string;
+  heading?: string;
   display?: string;
 }
 
@@ -24,6 +24,7 @@ const {
 } = Astro.props as Props;
 
 const href = `/project/${slug}`;
+
 const headingh2 = (heading == "h2");
 const headingh3 = (heading == "h3");
 const headingh4 = (heading == "h4");

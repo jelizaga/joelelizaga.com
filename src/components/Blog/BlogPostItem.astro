@@ -10,6 +10,7 @@ interface Props {
   headerImgSrc?: string;
   tags?: object[];
   pubDate: string;
+  heading?: string;
 }
 
 const {
@@ -18,10 +19,15 @@ const {
   slug,
   headerImgSrc,
   tags,
-  pubDate
+  pubDate,
+  heading = "h3"
 } = Astro.props as Props;
 
 const href = `/blog/${slug}`;
+
+const headingh2 = (heading == "h2");
+const headingh3 = (heading == "h3");
+const headingh4 = (heading == "h4");
 ---
 
 <li
@@ -47,14 +53,36 @@ const href = `/blog/${slug}`;
     <a
       href={href}
     >
-      <h2>
-        {title}
-      </h2>
-      <time
-        datetime={new Date(pubDate).toISOString()}
+      {headingh2 &&
+        <h2
+          class="title"
+        >
+          {title}
+        </h2>
+      }
+      {headingh3 &&
+        <h3
+          class="title"
+        >
+          {title}
+        </h3>
+      }
+      {headingh4 && 
+        <h4
+          class="title"
+        >
+          {title}
+        </h4>
+      }
+      <div 
+        class="dates"
       >
-        {new Date(pubDate).toLocaleDateString()}
-      </time>
+        <time
+          datetime={new Date(pubDate).toISOString()}
+        >
+          {new Date(pubDate).toLocaleDateString()}
+        </time>
+      </div>
       <p
         class="description"
       >
@@ -79,5 +107,65 @@ const href = `/blog/${slug}`;
 <style>
   li.blog-post {
     background-color: var(--tahoma_white_dim);
+    border-radius: 1.4rem;
+    box-shadow: var(--protrusion_tahoma_white_dim);
+    display: grid;
+    grid-template-columns: var(--pct_golden_ratio_small) auto;
+    list-style: none;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  li.blog-post div.image {
+    overflow: hidden;
+  }
+
+  li.blog-post div.image a img {
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    transition: height 0.2s;
+    width: 100%;
+  }
+
+  li.blog-post:hover div.image a img {
+    height: 102%;
+  }
+
+  li.blog-post div.info a {
+    display: block;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+  }
+
+  li.blog-post div.info a .title {
+    color: var(--lawetlatla_ash_dim);
+    display: block;
+    font-size: var(--c5_font_size_3);
+    line-height: var(--c5_line_height_3);
+    transition: color 0.1s ease-in, text-shadow 0.1s ease-in;
+  }
+
+  li.blog-post:hover div.info a .title {
+    color: var(--spectacular_red_glow);
+    text-shadow: var(--spectacular_red_glowing);
+  }
+
+  li.blog-post div.info .dates time {
+    color: var(--lawetlatla_ash_bright);
+    font-size: var(--c5_font_size_0);
+    line-height: var(--c5_line_height_0);
+  }
+
+  li.blog-post div.info ul.tags {
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.8rem;
+  }
+
+  li.blog-post div.info p.description {
+    color: var(--lawetlatla_ash_dim);
   }
 </style>
