@@ -1,22 +1,29 @@
 ---
 import { Debug } from 'astro/components';
+import { getEntry } from 'astro:content';
 
 export interface Props {
-  prefix: string
-  tag: string
+  prefix: string;
+  tag: object;
 }
 
-const { tag, prefix } = Astro.props as Props;
-const slug = `/${prefix}/focus/${tag}`;
+const { 
+  tag, 
+  prefix 
+} = Astro.props as Props;
+
+const tagData = await getEntry('tags', tag.id);
+
+const href = `${prefix}/${tagData.id}`;
 ---
 
 <li 
   class="tag"
 >
   <a 
-    href={slug}
+    href={href}
   >
-    {tag}
+    {tagData.data.tag}
   </a>
 </li>
 

@@ -180,19 +180,74 @@ declare module 'astro:content' {
   collection: "projects";
   data: InferEntrySchema<"projects">
 } & { render(): Render[".mdx"] };
-"vocab.games.mdx": {
-	id: "vocab.games.mdx";
-  slug: "vocab-games";
-  body: string;
-  collection: "projects";
-  data: InferEntrySchema<"projects">
-} & { render(): Render[".mdx"] };
 };
 
 	};
 
 	type DataEntryMap = {
-		
+		"tags": {
+"ai": {
+	id: "ai";
+  collection: "tags";
+  data: InferEntrySchema<"tags">
+};
+"bash": {
+	id: "bash";
+  collection: "tags";
+  data: InferEntrySchema<"tags">
+};
+"creativity": {
+	id: "creativity";
+  collection: "tags";
+  data: InferEntrySchema<"tags">
+};
+"diversity": {
+	id: "diversity";
+  collection: "tags";
+  data: InferEntrySchema<"tags">
+};
+"dx": {
+	id: "dx";
+  collection: "tags";
+  data: InferEntrySchema<"tags">
+};
+"hci": {
+	id: "hci";
+  collection: "tags";
+  data: InferEntrySchema<"tags">
+};
+"linux": {
+	id: "linux";
+  collection: "tags";
+  data: InferEntrySchema<"tags">
+};
+"ui": {
+	id: "ui";
+  collection: "tags";
+  data: InferEntrySchema<"tags">
+};
+"ux": {
+	id: "ux";
+  collection: "tags";
+  data: InferEntrySchema<"tags">
+};
+"ux-writing": {
+	id: "ux-writing";
+  collection: "tags";
+  data: InferEntrySchema<"tags">
+};
+"web-development": {
+	id: "web-development";
+  collection: "tags";
+  data: InferEntrySchema<"tags">
+};
+"writing": {
+	id: "writing";
+  collection: "tags";
+  data: InferEntrySchema<"tags">
+};
+};
+
 	};
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;

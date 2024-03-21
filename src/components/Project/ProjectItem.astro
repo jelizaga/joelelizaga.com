@@ -8,7 +8,7 @@ export interface Props {
   description: string;
   slug: string;
   headerImgSrc?: string;
-  tags?: string[];
+  tags?: object[];
   heading: string;
   display?: string;
 }
@@ -84,16 +84,18 @@ const headingh4 = (heading == "h4");
       </p>
     </a>
   </div>
-  <ul
-    class="tags"
-  >
-    {tags.map(tag => (
-      <Tag
-        prefix='projects'
-        tag={tag}
-      />
-    ))}
-  </ul>
+  {tags &&
+    <ul
+      class="tags"
+    >
+      {tags.map(tag => (
+        <Tag
+          prefix='/projects/focus'
+          tag={tag}
+        />
+      ))}
+    </ul>
+  }
 </li>
 
 <style>

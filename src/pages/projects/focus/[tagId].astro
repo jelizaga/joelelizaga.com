@@ -8,7 +8,7 @@
 import Layout from "../../../layouts/Layout.astro";
 import ProjectItemGrid from "../../../components/Project/ProjectItemGrid.astro";
 import Header from "../../../components/Header.astro";
-import { getCollection } from "astro:content";
+import { getCollection, getEntry } from "astro:content";
 import { Debug } from "astro:components";
 
 export async function getStaticPaths() {
@@ -19,31 +19,45 @@ export async function getStaticPaths() {
   // `tags` - All unique tags.
   const tags = [...new Set(projects.map((project) => project.data.tags).flat())];
   return tags.map((tag) => {
-    const projectsWithTag = projects.filter((project) => project.data.tags.includes(tag));
+    const tagId = tag?.id;
+    const projectsWithTag = [];
+    projects.forEach(project => {
+      if (project.data.tags) {
+        project.data.tags.forEach(projectTag => {
+          if (projectTag.id == tagId)  {
+            projectsWithTag.push(project);
+          }
+        });
+      }
+    });
     return {
-      params: { tag },
+      params: { tagId },
       props: { projectsWithTag: projectsWithTag },
     };
   })
 }
 
 const { 
-  tag,
+  tagId,
 } = Astro.params;
 
 const {
   projectsWithTag
 } = Astro.props;
+
+const tagData = await getEntry("tags", tagId);
+const tagName = tagData.data.tag;
+const tagDescription = tagData.data.description;
 ---
 
 <Layout
-  title={`Joel Elizaga · Projects / ${tag}`}
+  title={`Joel Elizaga · Projects / `}
   current={"projects"}
 >
   <Header
     heading="Projects"
+    subheading={tagName}
     icon="fa-solid fa-compass-drafting"
-    subheading={tag}
     href="/projects"
   />
   {projectsWithTag &&

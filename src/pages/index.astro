@@ -9,6 +9,15 @@ import HomeHeader from "../components/Home/HomeHeader.astro";
 import Button from '../components/Button/Button.astro';
 import Img from "../img/placeholder/placeholder1.jpg"
 import Media from '../components/Media/Media.astro';
+import { getEntry, getEntries, getCollection} from 'astro:content';
+import { Debug } from 'astro:components';
+
+const projects = await getCollection('projects', ({ data }) => {
+	return data.draft !== true;
+});
+
+const tags = [...new Set(projects.map((project) => project.data.tags).flat())];
+
 ---
 
 <Layout 
@@ -17,6 +26,12 @@ import Media from '../components/Media/Media.astro';
 	current="home"
 >
 	<HomeHeader
+	/>	
+	<Debug
+		{projects}
+	/>
+	<Debug
+		{tags}
 	/>
 	<Button
 		label='hello'
