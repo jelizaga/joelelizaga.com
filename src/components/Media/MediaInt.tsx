@@ -17,6 +17,7 @@ export default function MediaInt(props:any) {
   const src = props.src;
   const alt = props.alt;
   const caption = props.caption;
+  const isVideo = props.isVideo;
 
   // Signals:
   const [
@@ -70,6 +71,7 @@ export default function MediaInt(props:any) {
         client:load
         src={src}
         alt={alt}
+        isVideo={isVideo}
         setPopupIsOpen={setPopupIsOpen}
         popupIsOpen={popupIsOpen}
         togglePopup={togglePopup}

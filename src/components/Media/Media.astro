@@ -31,7 +31,14 @@ const {
 } = Astro.props as Props;
 
 let singleMedia;
-if ((src != undefined)) {
+let isVideo = false;
+
+if (src) {
+  if ((typeof src) == "string") {
+    if (src.toLowerCase().endsWith(".mp4")) {
+      isVideo = true;
+    }
+  }
   if (!int) {
     singleMedia = await getImage({
       src: src,
@@ -73,6 +80,7 @@ const isCarousel = (arr != undefined);
     src={singleMedia.src}
     alt={alt}
     caption={caption}
+    isVideo={isVideo}
   />
 }
 {(int && isCarousel) &&

@@ -1,4 +1,6 @@
 ---
+import Media from './Media/Media.astro';
+
 interface Props {
   heading: string;
   subheading?: string;
@@ -61,9 +63,8 @@ const {
     class="background"
   >
     {bgSrc &&
-      <img 
+      <Media
         src={bgSrc}
-        alt=""
       />
     }
   </div>
@@ -179,12 +180,10 @@ const {
   }
 
   header div.heading .subtitle {
-    /* font-size: var(--c5_font_size_4); */
     box-shadow: var(--depression_tahoma_white_dim);
     font-weight: normal;
     padding-left: 1rem;
-    padding-right: 1rem
-    /* line-height: var(--c5_line_height_4); */
+    padding-right: 1.3rem
   }
 
   header div.background {

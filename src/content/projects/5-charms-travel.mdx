@@ -8,10 +8,8 @@ tags: ["UX", "UI", "Web Development"]
 draft: false
 ---
 
-import NNImage from "../components/NNImage.tsx";
-import NNCarousel from "../components/NNCarousel.tsx";
-
-export const img = "/img/project/5-charms-travel/"
+import Media from "../../components/Media.astro";
+export const img = "../../img/project/5-charms-travel/";
 
 > 🚧 *While the design of 5 Charms Travel is complete, the site is currently
 a* ***work-in-progress***. 
@@ -31,13 +29,13 @@ vacations.
 
 ### Home Page
 
-<NNImage
+<Media
   client:only="solid-js"
   src={img + "home-new.jpg"}
   caption="**Newly redesigned** home page."
 />
 
-<NNImage
+<Media
   client:only="solid-js"
   src={img + "home-old.jpg"}
   caption="**Original** home page, pre-redesign."

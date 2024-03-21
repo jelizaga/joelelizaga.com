@@ -8,6 +8,7 @@ export default function MediaContainerInt(props:any) {
   // Single media:
   const src = props.src;
   const alt = props.alt;
+  const isVideo = props.isVideo;
 
   // Multiple media:
   const arr = props.arr;

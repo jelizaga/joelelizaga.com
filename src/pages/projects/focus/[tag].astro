@@ -6,43 +6,50 @@
 // tag.
 
 import Layout from "../../../layouts/Layout.astro";
-import ProjectCard from "../../../components/ProjectCard.astro";
-import ProjectsGrid from "../../../components/ProjectsGrid.astro";
+import ProjectItemGrid from "../../../components/Project/ProjectItemGrid.astro";
 import Header from "../../../components/Header.astro";
+import { getCollection } from "astro:content";
+import { Debug } from "astro:components";
 
 export async function getStaticPaths() {
-  const projects = await Astro.glob("../../../project/*.mdx");
-  const uniqueTags = [...new Set(projects.map((project) => project.frontmatter.tags).flat())];
-  return uniqueTags.map((tag) => {
-    const tagSpecificProjects = projects.filter((project) => project.frontmatter.tags.includes(tag));
+  // `projects` - All non-draft projects.
+  const projects = await getCollection('projects', ({ data }) => {
+    return data.draft !== true;
+  });
+  // `tags` - All unique tags.
+  const tags = [...new Set(projects.map((project) => project.data.tags).flat())];
+  return tags.map((tag) => {
+    const projectsWithTag = projects.filter((project) => project.data.tags.includes(tag));
     return {
       params: { tag },
-      props: { projects: tagSpecificProjects },
+      props: { projectsWithTag: projectsWithTag },
     };
   })
 }
 
-const { tag } = Astro.params;
-const { projects } = Astro.props;
+const { 
+  tag,
+} = Astro.params;
 
-const title = `Joel Elizaga · Projects / ${tag}`;
+const {
+  projectsWithTag
+} = Astro.props;
 ---
 
 <Layout
-  title={title}
-  currentPage={"projects"}
+  title={`Joel Elizaga · Projects / ${tag}`}
+  current={"projects"}
 >
   <Header
     heading="Projects"
-    headingIcon="fa-solid fa-compass-drafting"
-    focus={tag}
-    bgSrc="/img/cinemagraph/desktop.mp4"
-    slug="/projects"
-    animated={true}
+    icon="fa-solid fa-compass-drafting"
+    subheading={tag}
+    href="/projects"
   />
-  <section class="centered">
-    <ProjectsGrid
-      projects={projects}
+  {projectsWithTag &&
+    <ProjectItemGrid
+      projects={projectsWithTag}
+      heading="h2"
     />
-  </section>
+  }
 </Layout>
