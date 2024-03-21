@@ -10,13 +10,14 @@ const collectionTags = defineCollection({
 
 const collectionBlog = defineCollection({
   type: 'content',
-  schema: z.object({
+  schema: ({ image }) => z.object({
     title: z.string(),
     description: z.string(),
-    img: z.string(),
+    headerImgSrc: image().optional(),
     tags: z.array(reference('tags')).optional(),
     pubDate: z.date(),
     updDate: z.date().optional(),
+    draft: z.boolean().optional(),
   }),
 });
 

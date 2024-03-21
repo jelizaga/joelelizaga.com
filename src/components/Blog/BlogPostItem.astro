@@ -1,0 +1,83 @@
+---
+import { Image } from "astro:assets";
+import { Debug } from "astro:components";
+import Tag from "../Tag.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  slug: string;
+  headerImgSrc?: string;
+  tags?: object[];
+  pubDate: string;
+}
+
+const {
+  title,
+  description,
+  slug,
+  headerImgSrc,
+  tags,
+  pubDate
+} = Astro.props as Props;
+
+const href = `/blog/${slug}`;
+---
+
+<li
+  class:list={[
+    "blog-post",
+  ]}
+>
+  <div 
+    class="image"
+  >
+    <a 
+      href={href}
+    >
+      <Image
+        src={headerImgSrc}
+        alt=""
+      />
+    </a>
+  </div>
+  <div 
+    class="info"
+  >
+    <a
+      href={href}
+    >
+      <h2>
+        {title}
+      </h2>
+      <time
+        datetime={new Date(pubDate).toISOString()}
+      >
+        {new Date(pubDate).toLocaleDateString()}
+      </time>
+      <p
+        class="description"
+      >
+        {description}
+      </p>
+    </a>
+    {tags &&
+      <ul
+        class="tags"
+      >
+        {tags.map(tag => (
+          <Tag
+            prefix='/blog/topic'
+            tag={tag}
+          />
+        ))}
+      </ul>
+    }
+  </div>
+</li>
+
+<style>
+  li.blog-post {
+    background-color: var(--tahoma_white_dim);
+  }
+</style>

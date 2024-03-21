@@ -30,14 +30,13 @@ const headingh4 = (heading == "h4");
 ---
 
 <li
-  class="project"
   class:list={[
     "project",
     { floating: (display == "floating" )}
   ]}
 >
   <div 
-    class="img"
+    class="image"
   >
     <a 
       href={href}
@@ -113,21 +112,21 @@ const headingh4 = (heading == "h4");
     box-shadow: 1rem 1rem red;
   }
 
-  li.project div.img {
+  li.project div.image {
     background-color: var(--lawetlatla_ash_bright);
     display: grid;
     overflow: hidden;
     width: 100%
   }
 
-  li.project div.img img {
+  li.project div.image img {
     height: 100%;
     object-fit: cover;
     transition: height 0.2s;
     width: 100%;
   }
 
-  li.project:hover div.img img {
+  li.project:hover div.image img {
     height: 102%;
   }
 
