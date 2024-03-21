@@ -11,5 +11,11 @@ export default defineConfig({
   ],
   markdown: {
     syntaxHighlight: 'prism',
-  }
+  },
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: "viewport"
+  },
+  redirects: {
+  },
 });
