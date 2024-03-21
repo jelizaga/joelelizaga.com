@@ -1,0 +1,64 @@
+---
+////////////////////////////////////////////////////////////////////////////////
+// /src/pages/blog/focus/[tag].astro ///////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+// Generates pages @ `/blog/focus/[tag]` for every unique blog post tag.
+
+import Layout from "../../../layouts/Layout.astro";
+import Header from "../../../components/Header.astro";
+import BlogPostIndex from "../../../components/Blog/BlogPostIndex.astro";
+import { getCollection, getEntry } from "astro:content";
+
+export async function getStaticPaths() {
+  // `blogPosts` - All non-draft blog posts.
+  const blogPosts = await getCollection('blog', ({ data }) => {
+    return data.draft !== true;
+  });
+  // `tags` - All unique tags.
+  const tags = [...new Set(blogPosts.map((blogPost) => blogPost.data.tags).flat())];
+  return tags.map((tag) => {
+    const tagId = tag?.id;
+    const blogPostsWithTag = [];
+    blogPosts.forEach(blogPost => {
+      if (blogPost.data.tags) {
+        blogPost.data.tags.forEach(blogTag => {
+          if (blogTag.id == tagId)  {
+            blogPostsWithTag.push(blogPost);
+          }
+        });
+      }
+    });
+    return {
+      params: { tagId },
+      props: { blogPostsWithTag: blogPostsWithTag },
+    };
+  })
+}
+const { 
+  tagId 
+} = Astro.params;
+
+const { 
+  blogPostsWithTag 
+} = Astro.props;
+
+const tagData = await getEntry("tags", tagId);
+const tagName = tagData.data.tag;
+const tagDescription = tagData.data.description;
+---
+
+<Layout
+  title={`Joel Elizaga · Blog / ${tagName}`}
+  current={"blog"}
+  description="The non-monetized and noise-free techno-centric musings of a human-computer interaction nerd."
+>
+  <Header
+    heading="Blog"
+    subheading={tagName}
+    icon="fa-solid fa-atlas"
+    href="/blog"
+  />
+  <BlogPostIndex
+    blogPosts={blogPostsWithTag}
+  />
+</Layout>
