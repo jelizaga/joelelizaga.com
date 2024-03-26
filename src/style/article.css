@@ -6,8 +6,82 @@ article.project li {
   line-height: var(--c7_line_height_1);
 }
 
+article.blog-post h1,
+article.project h1 {
+  font-size: var(--c7_font_size_4);
+  line-height: var(--c7_line_height_4);
+}
+
+article.blog-post h2,
+article.project h2 {
+  font-size: var(--c7_font_size_3);
+  line-height: var(--c7_line_height_3);
+}
+
+article.blog-post h3,
+article.project h3 {
+  font-size: var(--c7_font_size_2);
+  line-height: var(--c7_line_height_2);
+}
+
+article.blog-post h4,
+article.project h4 {
+  font-size: var(--c7_font_size_1);
+  line-height: var(--c7_line_height_1);
+}
+
 article.blog-post .content,
 article.project .content {
   padding-left: 5.125rem;
   padding-right: 5.125rem;
+}
+
+article.blog-post .content sup,
+article.blog-post .content sup a,
+article.project .content sup,
+article.project .content sup a {
+  font-size: 0.8em;
+  line-height: 0;
+}
+
+article.blog-post .content section.footnotes,
+article.project .content section.footnotes {
+  border-radius: 1.4rem;
+  box-shadow: var(--depression_tahoma_white_dim);
+  margin-top: 1rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+}
+
+article.blog-post .content section.footnotes h2,
+article.project .content section.footnotes h2 {
+  font-size: var(--c7_font_size_1);
+  line-height: var(--c7_line_height_1);
+}
+
+article.blog-post .content section.footnotes ol,
+article.project .content section.footnotes ol {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+article.blog-post .content section.footnotes ol li,
+article.project .content section.footnotes ol li,
+article.blog-post .content section.footnotes ol li p,
+article.project .content section.footnotes ol li p {
+  font-size: var(--c7_font_size_0);
+  line-height: var(--c7_line_height_0);
+}
+
+article.blog-post .content section.footnotes ol li::marker,
+article.project .content section.footnotes ol li::marker {
+  color: var(--lawetlatla_ash_bright);
+}
+
+
+article.blog-post .content section.footnotes ol li p a.data-footnote-backref
+article.project .content section.footnotes ol li p a.data-footnote-backref {
+  color: red;
 }

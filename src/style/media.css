@@ -2,6 +2,8 @@ div.media {
   border-radius: 1.4rem;
   display: flex;
   flex-direction: column;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -28,6 +30,21 @@ div.media.protrusion {
 
 div.media.depression {
   box-shadow: var(--depression_img);
+}
+
+div.media.float-left {
+  float: left;
+  margin-right: 1rem;
+}
+
+div.media.float-right {
+  float: right;
+  margin-left: 1rem;
+}
+
+div.media.float-left,
+div.media.float-right {
+  width: 38.197%;
 }
 
 div.media div.container::before {

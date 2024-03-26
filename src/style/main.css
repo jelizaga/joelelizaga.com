@@ -474,6 +474,15 @@ h4 {
   margin: 0;
 }
 
+hr {
+  border: 0.3rem solid;
+  border-radius: 44px;
+  box-shadow: var(--protrusion_tahoma_white_dim);
+  color: var(--tahoma_white_dim);
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
 /* Small text ////////////////////////////////////////////////////////////////*/
 small, 
 .font-size-small,
@@ -545,14 +554,6 @@ code {
 }
 
 /* Horizontal rules //////////////////////////////////////////////////////////*/
-hr {
-  border: 0.3rem solid;
-  border-radius: 44px;
-  box-shadow: var(--noonoo_protrusion_bright);
-  color: var(--tahoma_white_dim);
-  margin-bottom: 1rem;
-  margin-top: 1rem;
-}
 
 .bar.protruding {
   box-shadow: var(--noonoo_ceiling_protrusion_bright);
@@ -628,53 +629,6 @@ table tr th.text-align-left{
 table tr td.text-align-center, 
 table tr th.text-align-center {
   text-align: center;
-}
-
-/* Footnotes /////////////////////////////////////////////////////////////////*/
-.footnotes {
-  border-radius: 1.4rem;
-  box-shadow: var(--noonoo_depression_bright);
-  margin-top: 1rem;
-  padding-bottom: 0.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 0.5rem;
-}
-
-.content section.footnotes ol li p {
-  margin-bottom: 0px;
-  margin-top: 0px;
-}
-
-.footnotes ol {
-  margin-bottom: 0;
-  margin-top: 0;
-}
-
-.footnotes h2 {
-  font-size: var(--font_size_1);
-  line-height: var(--line_height_1);
-  height: auto;
-  margin: 0;
-  position: relative;
-  width: auto;
-}
-
-.footnotes ol li p .data-footnote-backref {
-  align-items: center;
-  border-radius: 100%;
-  box-shadow: var(--noonoo_protrusion_bright);
-  display: inline-flex;
-  height: 1rem;
-  justify-content: center;
-  margin-left: 0.25rem;
-  text-decoration: none;
-  transition: box-shadow ease-in 0.1s;
-  width: 1rem;
-}
-
-.footnotes ol li p .data-footnote-backref:active {
-  box-shadow: var(--noonoo_depression_bright), var(--noonoo_protrusion_bright);
 }
 
 /* Colors ////////////////////////////////////////////////////////////////////*/
@@ -1111,10 +1065,6 @@ article {
 .project:hover div.container .project-card img {
   height: 102%;
 }
-
-/*////////////////////////////////////////////////////////////////////////////*/
-/* Articles //////////////////////////////////////////////////////////////////*/
-/*////////////////////////////////////////////////////////////////////////////*/
 
 /*////////////////////////////////////////////////////////////////////////////*/
 /* Forms /////////////////////////////////////////////////////////////////////*/
