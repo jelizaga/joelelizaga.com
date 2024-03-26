@@ -1,11 +1,12 @@
 ---
 import Masthead from '../components/Masthead/Masthead.astro';
 import Footer from '../components/Footer/Footer.astro';
-import { Image, Picture } from '@astrojs/image/components';
 import { Prism } from "@astrojs/prism";
+import ViewTransitions from 'astro/components/ViewTransitions.astro';
 import "../style/main.css";
 import "../style/media.css";
 import "../style/popup.css";
+import "../style/article.css";
 import "../style/code.css";
 
 export interface Props {
@@ -13,6 +14,7 @@ export interface Props {
 	description?: string;
 	current?: string;
 	mainOffset?: boolean;
+	mainGrid?: boolean;
 }
 
 const { 
@@ -20,13 +22,14 @@ const {
 	description, 
 	current,
 	mainOffset = false,
+	mainGrid = false,
 } = Astro.props as Props;
-
 ---
 
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<ViewTransitions />
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta property="og:title" content={title} />
@@ -54,7 +57,8 @@ const {
 		/>
 		<main
 			class:list={[
-				{"offset": (mainOffset)}
+				{"offset": (mainOffset)},
+				{"grid": (mainGrid)},
 			]}
 		>
 			<slot />

@@ -1,0 +1,13 @@
+article.blog-post p,
+article.project p,
+article.blog-post li,
+article.project li {
+  font-size: var(--c7_font_size_1);
+  line-height: var(--c7_line_height_1);
+}
+
+article.blog-post .content,
+article.project .content {
+  padding-left: 5.125rem;
+  padding-right: 5.125rem;
+}

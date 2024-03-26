@@ -1,0 +1,77 @@
+---
+////////////////////////////////////////////////////////////////////////////////
+// /src/pages/blog/[blog].astro ////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+// Generates pages for each blog post in `/src/blog`.
+// Pages will be @ path `/blog/[slug]`, `[slug]` being the slug specified in the
+// frontmatter of the blog post.
+
+import Layout from "../../layouts/Layout.astro";
+import { updateTSConfigForFramework } from "astro/dist/core/config";
+import { getCollection, getEntry } from 'astro:content';
+import { Debug } from "astro:components";
+import BlogPostHeader from "../../components/Blog/BlogPostHeader.astro";
+
+export async function getStaticPaths() {
+  const blogPosts = await getCollection('blog', ({ data }) => {
+    return data.draft !== true;
+  })
+  return (await blogPosts).map(blogPost => ({
+    params: {
+      blogPost: blogPost.slug
+    },
+    props: {
+      blogPost
+    }
+  }))
+}
+
+const { 
+  blogPost
+} = Astro.props;
+
+const {
+  Content
+} = await blogPost.render();
+
+const blogPostTitle = blogPost.data.title;
+const blogPostDescription = blogPost.data.description;
+const blogPostHeaderImgSrc = blogPost.data.headerImgSrc;
+const blogPostTags = blogPost.data.tags;
+const blogPostPubDate = blogPost.data.pubDate;
+---
+
+<Layout 
+  title={blogPostTitle}
+  description={blogPostDescription}
+  mainOffset={true}
+  current={"blog"}
+  mainGrid={true}
+>
+  <article
+    class="blog-post"
+  >
+    <BlogPostHeader 
+      blogPostTitle={blogPostTitle}
+      blogPostDescription={blogPostDescription}
+      blogPostTags={blogPostTags}
+      blogPostPubDate={blogPostPubDate}
+      blogPostHeaderImgSrc={blogPostHeaderImgSrc}
+    />
+    <div 
+      class="content"
+    >
+      <Content />
+    </div>
+  </article>
+</Layout>
+
+<style>
+  article.blog-post {
+    box-shadow: var(--protrusion_tahoma_white_dim);
+    border-radius: 2.5rem;
+    overflow: hidden;
+    grid-column-end: c2e;
+    grid-column-start: c11s;
+  }
+</style>

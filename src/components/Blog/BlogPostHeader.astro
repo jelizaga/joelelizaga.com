@@ -1,0 +1,59 @@
+---
+import { Image } from 'astro:assets';
+import Media from '../Media/Media.astro';
+
+interface Props {
+  blogPostTitle: string;
+  blogPostDescription: string;
+  blogPostTags: object[];
+  blogPostPubDate: string;
+  blogPostHeaderImgSrc: string;
+}
+
+const {
+  blogPostTitle,
+  blogPostDescription,
+  blogPostTags,
+  blogPostPubDate,
+  blogPostHeaderImgSrc
+} = Astro.props;
+---
+<header
+  class="blog-post-header"
+>
+  <div
+    class="content"
+  >
+    <h1>
+      {blogPostTitle}
+    </h1>
+    <p
+      class="description"
+    >
+      {blogPostDescription}
+    </p>
+  </div>
+  <div 
+    class="image"
+  >
+    <Media
+      src={blogPostHeaderImgSrc}
+      int={false}
+      borderRadius={false} 
+    />
+  </div>
+</header>
+
+<style>
+  header.blog-post-header {
+  }
+
+  header.blog-post-header .content h1 {
+    text-align: center;
+  }
+
+  header.blog-post-header .content p.description {
+    font-style: italic;
+    text-align: center;
+  }
+</style>

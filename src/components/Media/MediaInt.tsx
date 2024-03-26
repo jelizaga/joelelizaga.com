@@ -11,13 +11,18 @@ export default function MediaInt(props:any) {
   // Multiple media:
   const arr = props.arr;
   const isCarousel = (arr != undefined);
-  const aspectRatio = props.aspectRatio;
 
   // Single media:
   const src = props.src;
   const alt = props.alt;
   const caption = props.caption;
   const isVideo = props.isVideo;
+
+  // Display:
+  const float = props.float;
+  const borderRadius = props.borderRadius;
+  const aspectRatio = props.aspectRatio;
+  const depth = props.depth;
 
   // Signals:
   const [
@@ -50,6 +55,11 @@ export default function MediaInt(props:any) {
         ${(caption != undefined) ? "captioned" : ""}
         ${(isCarousel && arr[index()].caption != undefined) ? "captioned" : ""}
         ${(isCarousel) ? "carousel" : ""}
+        ${(float == "right") ? "float-right" : ""}
+        ${(float == "left") ? "float-left" : ""}
+        ${(depth == "flat") ? "flat" : ""}
+        ${(depth == "protrusion") ? "protrusion" : ""}
+        ${(borderRadius) ? "" : "straight-edges"}
       `}
     >
       {popupIsOpen() &&

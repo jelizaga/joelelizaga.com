@@ -12,12 +12,9 @@ import Media from '../components/Media/Media.astro';
 import { getEntry, getEntries, getCollection} from 'astro:content';
 import { Debug } from 'astro:components';
 
-const projects = await getCollection('projects', ({ data }) => {
+const blogPosts = await getCollection('blog', ({ data }) => {
 	return data.draft !== true;
-});
-
-const tags = [...new Set(projects.map((project) => project.data.tags).flat())];
-
+})
 ---
 
 <Layout 
@@ -27,27 +24,8 @@ const tags = [...new Set(projects.map((project) => project.data.tags).flat())];
 >
 	<HomeHeader
 	/>	
-	<Debug
-		{projects}
-	/>
-	<Debug
-		{tags}
-	/>
 	<Button
 		label='hello'
 		href="/"
 	/>
 </Layout>
-
-<style>
-	.header-bar {
-		box-shadow: var(--noonoo_protrusion_bright);
-		margin-bottom: 1rem;
-	}
-
-	.header-bar h2 {
-		margin-left: auto;
-		margin-right: auto;
-		width: var(--vw_golden_ratio_big);
-	}
-</style>

@@ -5,6 +5,7 @@ import { getImage } from 'astro:assets';
 import MediaCaption from './MediaCaption.astro';
 import MediaContainer from './MediaContainer.astro';
 import MediaInt from './MediaInt';
+import type { string } from 'astro/zod';
 
 interface Media {
   src: string | ImageMetadata;
@@ -19,6 +20,10 @@ interface Props {
   int?: boolean;
   arr?: Media[];
   aspectRatio?: string;
+  borderRadius?: boolean;
+  float?: string;
+  depth?: string;
+  containerDepth?: string;
 }
 
 const {
@@ -28,6 +33,10 @@ const {
   int = true,
   arr,
   aspectRatio,
+  borderRadius = true,
+  float,
+  depth = "protrusion",
+  containerDepth = "depression",
 } = Astro.props as Props;
 
 let singleMedia;
@@ -58,7 +67,13 @@ const isCarousel = (arr != undefined);
   <div 
     class:list={[
       "media",
-      {"captioned": (caption)}
+      {"captioned": (caption)},
+      {"float-right": (float == "right")},
+      {"float-left": (float == "left")},
+      {"flat": (depth == "flat")},
+      {"protrusion": (depth == "protrusion")},
+      {"depression": (depth == "depression")},
+      {"straight-edges": (!borderRadius)}
     ]}
   >
     <MediaContainer
@@ -66,6 +81,8 @@ const isCarousel = (arr != undefined);
       height={singleMedia.attributes.height}
       width={singleMedia.attributes.width}
       alt={alt}
+      borderRadius={borderRadius}
+      containerDepth={containerDepth}
     />
     {(caption) &&
       <MediaCaption
@@ -81,6 +98,10 @@ const isCarousel = (arr != undefined);
     alt={alt}
     caption={caption}
     isVideo={isVideo}
+    float={float}
+    borderRadius={borderRadius}
+    depth={depth}
+    containerDepth={containerDepth}
   />
 }
 {(int && isCarousel) &&
@@ -88,5 +109,9 @@ const isCarousel = (arr != undefined);
     client:only="solid-js"
     arr={arr}
     aspectRatio={aspectRatio}
+    float={float}
+    borderRadius={borderRadius}
+    depth={depth}
+    containerDepth={containerDepth}
   />
 }

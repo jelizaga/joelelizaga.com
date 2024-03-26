@@ -1,5 +1,5 @@
 div.media {
-  box-shadow: var(--protrusion_tahoma_white_dim);
+  border-radius: 1.4rem;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -8,11 +8,26 @@ div.media {
 }
 
 div.media div.container {
-  border-radius: 1.4rem;
   display: block;
   line-height: 0;
   overflow: hidden;
   position: relative;
+}
+
+div.media.straight-edges {
+  border-radius: 0;
+}
+
+div.media.flat {
+  box-shadow: none;
+}
+
+div.media.protrusion {
+  box-shadow: var(--protrusion_tahoma_white_dim);
+}
+
+div.media.depression {
+  box-shadow: var(--depression_img);
 }
 
 div.media div.container::before {
@@ -23,6 +38,10 @@ div.media div.container::before {
   overflow: hidden;
   position: absolute;
   width: 100%;
+}
+
+div.media div.container.flat::before {
+  box-shadow: none;
 }
 
 div.media div.container img,
@@ -85,7 +104,7 @@ div.media div.popup div.card {
 
 div.media div.popup div.card div.container {
   border-top-left-radius: 1.4rem;
-  border-top-left-radius: 1.4rem;
+  border-top-right-radius: 1.4rem;
   overflow: hidden;
 }
 

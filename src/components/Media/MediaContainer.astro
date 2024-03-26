@@ -7,6 +7,8 @@ interface Props {
   height: number;
   width: number;
   alt?: string;
+  borderRadius?: boolean;
+  containerDepth?: string;
 }
 
 const {
@@ -14,12 +16,18 @@ const {
   height,
   width,
   alt = "",
+  borderRadius = true,
+  containerDepth = "depression"
 } = Astro.props as Props;
 ---
 
 <div
   class:list={[
     "container",
+    {"straight-edges": (!borderRadius)},
+    {"depression": (containerDepth == "depression")},
+    {"protrusion": (containerDepth == "protrusion")},
+    {"flat": (containerDepth == "flat")}
   ]}
 >
   <Image

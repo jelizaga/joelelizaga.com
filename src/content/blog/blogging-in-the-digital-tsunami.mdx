@@ -1,16 +1,13 @@
 ---
-slug: blogging-in-the-digital-tsunami
 title: "Blogging in the Digital Tsunami"
 description: "Why in the 'Hello World' would anyone write a blog in 2023 amidst the spectacle of the attention economy and generative AI?"
 headerImgSrc: "../../img/blog/blogging-in-the-digital-tsunami/cyberspace-tsunami.png"
 pubDate: 2023-08-11
 tags: [ai, hci, creativity, diversity, writing]
 ---
-
-import { Prism } from '@astrojs/prism';
-import Code from '../components/Code.astro';
-import NNImage from '../components/NNImage.tsx';
-import NNCarousel from '../components/NNCarousel.tsx';
+import Image from "astro:assets";
+import Media from "../../components/Media/Media.astro";
+export const mediaPath = "../../img/blog/blogging-in-the-digital-tsunami"
 
 Writing a blog in 2023 next to the incredible proficiency of
 contemporary AI is like hunting a sea lion while sitting in a wobbly
@@ -19,16 +16,15 @@ plaughs a trawl net through the sea floor, scooping up countless fish, sea flora
 and junk with mechanical zeal—outclassing the lone fisherman's performance to 
 the point of relative embarrassment.
 
-<NNCarousel
-  client:only="solid-js"
-  images={[
+<Media
+  arr={[
     {
-      src: "/img/blog/ai-trawler.jpeg",
+      src: `${mediaPath}/ai-trawler.jpeg`,
       alt: "A massive trawler, the compound of centuries of human ingenuity, scraping the sea floor for fish, symbolizing the mechanical efficiency of AI.",
       caption: "A behemoth trawler, the compound of centuries of human ingenuity, extracts countless tasty resources from the sea with miraculous mechanical efficiency—as effective as generative AI."
     },
     {
-      src: "/img/blog/human-kayak.jpeg",
+      src: `${mediaPath}/human-kayak.jpeg`,
       alt: "A (poorly illustrated) kayaker staring down the lone sea lion he'd like to transform into dinner",
       caption: "A (poorly illustrated) kayaker staring down the lone sea lion that he'd like to transform into a couples weeks worth of dinner—about as efficient as I am writing this blog."
     }
@@ -58,12 +54,11 @@ greater its capability.
 
 And, for now, this process of AI maturation is only impeded by:
 
-<NNImage
-  client:only="solid-js"
-  src="/img/blog/data-kaiju.png"
-  alt="YES"
+<Media 
+  src={`${mediaPath}/data-kaiju.png`}
+  alt="A cyber kaiju reminiscent of Godzilla devouring mythical amounts of data."
   float="right"
-  caption="Another analogy; AI is a cyber-kaiju that devours data to grow."
+  caption="Another analogy; AI is a cyber-kaiju that devours data to grow in capability."
 />
 
 * the cost of electricity[^1] [^2] and availability of silicon,[^3] 
@@ -143,9 +138,8 @@ All of this begs the question:
 
 ## Where's the connection—the authenticity?
 
-<NNImage
-  client:only="solid-js"
-  src="/img/blog/clay-fingerprint.png"
+<Media
+  src={`${mediaPath}/clay-fingerprint.png`}
   alt="A clay pot with a human fingerprint pressed into its surface."
   float="right"
 />
@@ -203,9 +197,8 @@ self-determination.
 *This blog is an experiment in consciously contributing the fingerprints I'd like 
 to leave behind to the machine learning models that will eat them up anyhow.*
 
-<NNImage
-  client:only="solid-js"
-  src="/img/blog/kaiju-computer.png"
+<Media
+  src={`${mediaPath}/kaiju-computer.png`}
   alt="A kaiju looking over the shoulder of a very calm computer user."
   float="right"
   caption="Stable Diffusion gets the idea!"
@@ -272,9 +265,8 @@ This lack of cognitive
 challenge can atrophy our ability to 'get good' at something and build 
 expertise; our recall isn't being strengthened through the generation effect.
 
-<NNImage
-  client:only="solid-js"
-  src="/img/blog/cyborg.png"
+<Media
+  src={`${mediaPath}/cyborg.png`}
   alt="A cyborg."
   float="right"
 />
@@ -297,9 +289,8 @@ My identity's been wrapped up in these skills—I don't want to let
 
 ### 3 · This blog is intended to *contribute variety and diversity.*
 
-<NNImage
-  client:only="solid-js"
-  src="/img/blog/earth-consumed.png"
+<Media
+  src={`${mediaPath}/earth-consumed.png`}
   alt="Earth, consumed by technology."
   float="right"
 />
@@ -338,9 +329,8 @@ you know, I doubt it. These microscopic differences add up;
 the reality is that we're each as unique as unique can conceivably get—as unique
 as our fingerprints.
 
-<NNImage
-  client:only="solid-js"
-  src="/img/blog/fingerprint-mosaic.png"
+<Media
+  src={`${mediaPath}/fingerprint-mosaic.png`}
   alt="A mosaic of fingerprints."
   float="right"
 />
@@ -534,9 +524,8 @@ figure out how to respond to them.
 
 ## Conclusion
 
-<NNImage
-  client:only="solid-js"
-  src="/img/blog/cyberspace-earth.png"
+<Media
+  src={`${mediaPath}/cyberspace-earth.png`}
   alt="A clay pot with a human fingerprint pressed into its surface."
   float="right"
 />
