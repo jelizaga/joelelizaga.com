@@ -9,12 +9,7 @@ draft: false
 ---
 
 import Media from "../../components/Media.astro";
-export const img = "../../img/project/5-charms-travel/";
-
-> 🚧 *While the design of 5 Charms Travel is complete, the site is currently
-a* ***work-in-progress***. 
-
----
+export const mediaPath = "/img/project/5-charms-travel";
 
 **[5 Charms Travel](https://5charmstravel.com)** is a travel agency specialized
 in organizing custom, one-of-a-kind adventures.
@@ -30,14 +25,12 @@ vacations.
 ### Home Page
 
 <Media
-  client:only="solid-js"
-  src={img + "home-new.jpg"}
+  src={`${mediaPath}home-new.jpg`}
   caption="**Newly redesigned** home page."
 />
 
 <Media
-  client:only="solid-js"
-  src={img + "home-old.jpg"}
+  src={`${mediaPath}/home-old.jpg`}
   caption="**Original** home page, pre-redesign."
 />
 
@@ -60,50 +53,48 @@ vacations.
 
 ### Forms 
 
-<NNCarousel
-  client:only="solid-js"
+<Media
   aspectRatio="9 / 16"
-  images={[
+  arr={[
     {
-      src: "/img/project/5-charms-travel/book-old.jpg",
+      src: `${mediaPath}/book-old.jpg`,
       alt: "Original Book Your Trip form.",
       caption: "**Original** *Book Your Trip* form."
 
     },
     {
-      src: "/img/project/5-charms-travel/contact-old.jpg",
+      src: `${mediaPath}/contact-old.jpg`,
       alt: "Original Contact form.",
       caption: "**Original** *Contact* form."
     }
   ]}
 />
 
-<NNCarousel
-  client:only="solid-js"
+<Media
   aspectRatio="9 / 16"
-  images={[
+  arr={[
     {
-      src: "/img/project/5-charms-travel/book-new-1.jpg",
+      src: `${mediaPath}/book-new-1.jpg`,
       alt: "Newly redesigned Book Adventure form.",
       caption: "**Newly redesigned** *Book Adventure* form."
     },
     {
-      src: "/img/project/5-charms-travel/book-new-2-disney.jpg",
+      src: `${mediaPath}/book-new-2-disney.jpg`,
     },
     {
-      src: "/img/project/5-charms-travel/book-new-2-generic.jpg",
+      src: `${mediaPath}/book-new-2-generic.jpg`,
     },
     {
-      src: "/img/project/5-charms-travel/book-new-3-disney.jpg",
+      src: `${mediaPath}/book-new-3-disney.jpg`,
     },
     {
-      src: "/img/project/5-charms-travel/book-new-4-disney.jpg",
+      src: `${mediaPath}/book-new-4-disney.jpg`,
     },
     {
-      src: "/img/project/5-charms-travel/book-new-4-generic.jpg"
+      src: `${mediaPath}/book-new-4-generic.jpg`
     },
     {
-      src: "/img/project/5-charms-travel/book-new-5.jpg"
+      src: `${mediaPath}/book-new-5.jpg`
     }
   ]}
 />
@@ -126,18 +117,17 @@ vacations.
 
 ### Blog
 
-<NNCarousel
-  client:only="solid-js"
+<Media
   aspectRatio="9 / 16"
-  images={[
+  arr={[
     {
-      src: "/img/project/5-charms-travel/blog-new-index.jpg"
+      src: `${mediaPath}/blog-new-index.jpg`
     },
     {
-      src: "/img/project/5-charms-travel/blog-new-post.jpg"
+      src: `${mediaPath}/blog-new-post.jpg`
     },
     {
-      src: "/img/project/5-charms-travel/blog-old.jpg"
+      src: `${mediaPath}/blog-old.jpg`
     }
   ]}
 />
@@ -154,24 +144,22 @@ vacations.
 
 ### Adventures
 
-<NNCarousel
-  client:only="solid-js"
+<Media
   aspectRatio="9 / 16"
-  images={[
+  arr={[
     {
-      src: "/img/project/5-charms-travel/adventure-new.jpg",
+      src: `${mediaPath}/adventure-new.jpg`,
       caption: "**Newly redesigned** adventure article."
     },
     {
-      src: "/img/project/5-charms-travel/adventure-old.jpg",
+      src: `${mediaPath}/adventure-old.jpg`,
       caption: "**Original** adventure article."
     }
   ]}
 />
 
-<NNImage
-  client:only="solid-js"
-  src="/img/project/5-charms-travel/adventures-index.jpg"
+<Media
+  src={`${mediaPath}/adventures-index.jpg`}
   caption="*Adventures* index—a new addition to `5charmstravel.com`."
 />
 
@@ -186,15 +174,13 @@ vacations.
 
 ### About 
 
-<NNImage
-  client:only="solid-js"
-  src="/img/project/5-charms-travel/about-old.jpg"
+<Media
+  src={`${mediaPath}/about-old.jpg`}
   caption="**Original** *About* page."
 />
 
-<NNImage
-  client:only="solid-js"
-  src="/img/project/5-charms-travel/about-new.jpg"
+<Media
+  src={`${mediaPath}/about-new.jpg`}
   caption="**Newly redesigned** *About* page."
 />
 
