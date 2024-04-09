@@ -6,44 +6,44 @@
 // Pages will be @ path `/project/[slug]`, `[slug]` being the slug specified in
 // the frontmatter of each project article.
 
+import { getCollection } from "astro:content";
 import Tag from "../../components/Tag.astro";
 import Tooltip from "../../components/Tooltip.astro";
 import Layout from "../../layouts/Layout.astro";
 
 export async function getStaticPaths() {
-  const projects = await Astro.glob("../../project/*.mdx");
+  const projects = await getCollection('projects', ({ data }) => {
+    return data.draft !== true;
+  })
   return (await projects).map(project => ({
     params: {
-      project: project.frontmatter.slug
+      project: project.slug
     },
     props: {
       project
     }
   }))
 }
-const { Content, frontmatter } = Astro.props.project;
 
-// `project-tray` visibility:
-let projectTrayClasses = "project-tray";
-const projectTrayVisibility = (
-  frontmatter.github ||
-  frontmatter.license
-);
-if (!projectTrayVisibility) {
-  projectTrayClasses += "hidden";
-}
+const {
+  project
+} = Astro.props;
+
+const { 
+  Content
+} = await project.render();
 ---
 
 <Layout 
-  title={frontmatter.headTitle ? frontmatter.headTitle : frontmatter.title}
-  currentPage={"projects"}
+  title={"TEST"}
+  current={"projects"}
 >
   <article 
     class="project"
   >
-    <header>
-    </header>
-    <div class="content">
+    <div 
+      class="content"
+    >
       <Content />
     </div>
   </article>

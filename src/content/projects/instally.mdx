@@ -12,6 +12,8 @@ link: "https://github.com/jelizaga/instally"
 draft: false
 ---
 
+import Media from "../../components/Media/Media.astro";
+export const mediaPath = "/img/project/instally";
 import Code from '../components/Code.astro';
 
 [`instally`](https://github.com/jelizaga/instally) is a portable interactive
@@ -33,11 +35,10 @@ Linux,* featuring:
   file, you can bring your favorite packages to (almost) any distro and install
   them right away.
 
-<NNCarousel
-  client:only="solid-js"
-  images={[
+<Media
+  arr={[
     {
-      src: "/img/project/instally/pop-grouping.png",
+      src: `${mediaPath}/pop-grouping.png`,
       alt: "",
       caption: "`instally`'s package.json allows grouping packages—here we're grouping packages by function, but you could group your packages any way you'd like."
     },
@@ -327,8 +328,7 @@ navigate their `instally` experience: *`instally` is all about* ***selecting***
    information, such as the package report at the end of install runs.
 3. *Selected color* - Used to denote menu items and selections made.
 
-<NNImage
-  client:only="solid-js"
+<Media
   src="/img/project/instally/centos-colors.jpg"
   alt="`instally`'s three colors, prominently labeled."
   caption="The three colors vary from terminal to terminal, since they're set using ANSI codes so as to use the terminal's default color scheme."
@@ -342,8 +342,7 @@ Typography is used to make information scannable. For example, `instally` bolds
 packages being installed, dependencies, and package managers (software) due to
 their importance:
 
-<NNImage
-  client:only="solid-js"
+<Media
   src="/img/project/instally/pop-typography-installation.jpg"
   alt="`instally`'s customization menus."
 />
@@ -355,8 +354,7 @@ their importance:
 and underlined heading, making it completely unambiguous where the user 'is'
 and what's going on:
 
-<NNImage
-  client:only="solid-js"
+<Media
   src="/img/project/instally/ubuntu-sections.jpg"
   alt="`instally`'s customization menus."
 />
@@ -385,8 +383,7 @@ further make information effortlessly scannable:
 With a cursory glance down the left side of the terminal, a user can assess the
 progress of their installation run:
 
-<NNImage
-  client:only="solid-js"
+<Media
   src="/img/project/instally/opensuse-icons.jpg"
   alt="`instally`'s iconography highlighted during an openSUSE installation run."
 />
