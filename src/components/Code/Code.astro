@@ -1,0 +1,88 @@
+---
+import { Prism } from "@astrojs/prism";
+
+export interface Props {
+  code: string;
+  lang?: string;
+  file?: string;
+}
+
+const {
+  code,
+  lang,
+  file
+} = Astro.props as Props;
+---
+
+<div 
+  class="code"
+>
+  {file &&
+    <div 
+      class="title-bar"
+    >
+      <p 
+        class="file-name"
+      >
+        {file}
+      </p>
+      <div 
+        class="controls"
+      >
+        <div class="control red" />
+        <div class="control green" />
+        <div class="control blue" />
+      </div>
+    </div>
+  }
+  <Prism
+    code={code}
+    lang={lang}
+  />
+</div>
+
+<style>
+  .code {
+    border-radius: 1.4rem;
+    box-shadow: var(--protrusion_tahoma_white_dim);
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    overflow: hidden;
+  }
+
+  .code .title-bar {
+    color: var(--lawetlatla_ash_bright);
+    display: flex;
+    font-weight: bold;
+    justify-content: space-between;
+    padding-bottom: 0.3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.3rem;
+  }
+
+  .code .controls {
+    align-items: center;
+    display: flex;
+    gap: 0.33rem;
+  }
+
+  .code .controls .control {
+    border-radius: 100%;
+    box-shadow: var(--protrusion_tahoma_white_dim);
+    height: 0.85rem;
+    width: 0.85rem;
+  }
+
+  .code .controls .control.red {
+    background-image: var(--protrusion_round_spectacular_red_bright);
+  }
+
+  .code .controls .control.green {
+    background-image: var(--protrusion_round_rain_city_emerald_bright);
+  }
+
+  .code .controls .control.blue {
+    background-image: var(--protrusion_round_whulge_blue_bright);
+  }
+</style>

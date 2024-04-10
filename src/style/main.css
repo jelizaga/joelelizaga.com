@@ -128,9 +128,9 @@
   --spectacular_red_glow: #F60000;
   --spectacular_red_glow_transparent: #F6000021;
   --spectacular_red_glowing: 0px 0px 0.5rem var(--spectacular_red_glow_transparent);
-  --noonoo_protrusion_rounded_spectacular_red_dim: linear-gradient(145deg, #da0000, #b80000);
-  --noonoo_protrusion_rounded_spectacular_red_bright: linear-gradient(145deg, var(--spectacular_red_glow), #cf0000);
-  --protrusion_rounded_spectacular_red_glow: linear-gradient(145deg, #ff0000, #dd0000);
+  --protrusion_round_spectacular_red_dim: linear-gradient(145deg, #da0000, #b80000);
+  --protrusion_round_spectacular_red_bright: linear-gradient(145deg, var(--spectacular_red_glow), #cf0000);
+  --protrusion_round_spectacular_red_glow: linear-gradient(145deg, #ff0000, #dd0000);
   --noonoo_depression_spectacular_red_bright: inset -0.25rem -0.25rem 0.5rem var(--spectacular_red_glow), inset 0.25rem 0.25rem 0.5rem #C40000;
   /* Rain City Emerald */
   --rain_city_emerald_bright: #23D16C;
@@ -138,9 +138,9 @@
   --rain_city_emerald_glow: #25E074;
   --rain_city_emerald_glow_transparent: #25E07421;
   --rain_city_emerald_glowing: 0px 0px 0.5rem var(--rain_city_emerald_glow_transparent);
-  --noonoo_protrusion_rounded_rain_city_emerald_dim: linear-gradient(145deg, #20ba60, #1b9d51);
-  --noonoo_protrusion_rounded_rain_city_emerald_bright: linear-gradient(145deg, var(--rain_city_emerald_glow), #20bc61);
-  --noonoo_protrusion_rounded_rain_city_emerald_glow: linear-gradient(145deg, #28f07c, #21ca68);
+  --protrusion_round_rain_city_emerald_dim: linear-gradient(145deg, #20ba60, #1b9d51);
+  --protrusion_round_rain_city_emerald_bright: linear-gradient(145deg, var(--rain_city_emerald_glow), #20bc61);
+  --protrusion_round_rain_city_emerald_glow: linear-gradient(145deg, #28f07c, #21ca68);
   --noonoo_depression_rain_city_emerald_bright: inset -0.25rem -0.25rem 0.5rem var(--rain_city_emerald_glow), inset 0.25rem 0.25rem 0.5rem #1EB25C;
   /* Whulge Blue */
   --whulge_blue_bright: #2CB0C4;
@@ -148,9 +148,9 @@
   --whulge_blue_glow: #2FBCD2;
   --whulge_blue_glow_transparent: #2FBCD221;
   --whulge_blue_glowing: 0px 0px 0.5rem var(--whulge_blue_glow_transparent);
-  --noonoo_protrusion_rounded_whulge_blue_dim: linear-gradient(145deg, #00aac4, #008fa5); 
-  --noonoo_protrusion_rounded_whulge_blue_bright: linear-gradient(145deg, var(--whulge_blue_glow), #289eb0);
-  --noonoo_protrusion_rounded_whulge_blue_glow: linear-gradient(145deg, #32c9e1, #2aa9bd);
+  --protrusion_round_whulge_blue_dim: linear-gradient(145deg, #00aac4, #008fa5); 
+  --protrusion_round_whulge_blue_bright: linear-gradient(145deg, var(--whulge_blue_glow), #289eb0);
+  --protrusion_round_whulge_blue_glow: linear-gradient(145deg, #32c9e1, #2aa9bd);
   --noonoo_depression_whulge_blue_bright: inset -0.25rem -0.25rem 0.5rem var(--whulge_blue_glow), inset 0.25rem 0.25rem 0.5rem #2596a7;
   /* Golden Hour Sunburst */
   --golden_hour_sunburst_bright: #FFD200;
