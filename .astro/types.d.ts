@@ -141,7 +141,7 @@ declare module 'astro:content' {
   slug: "blogging-in-the-digital-tsunami";
   body: string;
   collection: "blog";
-  data: InferEntrySchema<"blog">
+  data: any
 } & { render(): Render[".mdx"] };
 };
 "projects": {
@@ -150,35 +150,28 @@ declare module 'astro:content' {
   slug: "5-charms-travel";
   body: string;
   collection: "projects";
-  data: InferEntrySchema<"projects">
-} & { render(): Render[".mdx"] };
-"dotfiles.mdx": {
-	id: "dotfiles.mdx";
-  slug: "dotfiles";
-  body: string;
-  collection: "projects";
-  data: InferEntrySchema<"projects">
+  data: any
 } & { render(): Render[".mdx"] };
 "instally.mdx": {
 	id: "instally.mdx";
   slug: "instally";
   body: string;
   collection: "projects";
-  data: InferEntrySchema<"projects">
+  data: any
 } & { render(): Render[".mdx"] };
 "my-americorps.mdx": {
 	id: "my-americorps.mdx";
   slug: "my-americorps";
   body: string;
   collection: "projects";
-  data: InferEntrySchema<"projects">
+  data: any
 } & { render(): Render[".mdx"] };
 "noonoo-design-language.mdx": {
 	id: "noonoo-design-language.mdx";
   slug: "noonoo-design-language";
   body: string;
   collection: "projects";
-  data: InferEntrySchema<"projects">
+  data: any
 } & { render(): Render[".mdx"] };
 };
 
@@ -189,62 +182,62 @@ declare module 'astro:content' {
 "ai": {
 	id: "ai";
   collection: "tags";
-  data: InferEntrySchema<"tags">
+  data: any
 };
 "bash": {
 	id: "bash";
   collection: "tags";
-  data: InferEntrySchema<"tags">
+  data: any
 };
 "creativity": {
 	id: "creativity";
   collection: "tags";
-  data: InferEntrySchema<"tags">
+  data: any
 };
 "diversity": {
 	id: "diversity";
   collection: "tags";
-  data: InferEntrySchema<"tags">
+  data: any
 };
 "dx": {
 	id: "dx";
   collection: "tags";
-  data: InferEntrySchema<"tags">
+  data: any
 };
 "hci": {
 	id: "hci";
   collection: "tags";
-  data: InferEntrySchema<"tags">
+  data: any
 };
 "linux": {
 	id: "linux";
   collection: "tags";
-  data: InferEntrySchema<"tags">
+  data: any
 };
 "ui": {
 	id: "ui";
   collection: "tags";
-  data: InferEntrySchema<"tags">
+  data: any
 };
 "ux": {
 	id: "ux";
   collection: "tags";
-  data: InferEntrySchema<"tags">
+  data: any
 };
 "ux-writing": {
 	id: "ux-writing";
   collection: "tags";
-  data: InferEntrySchema<"tags">
+  data: any
 };
 "web-development": {
 	id: "web-development";
   collection: "tags";
-  data: InferEntrySchema<"tags">
+  data: any
 };
 "writing": {
 	id: "writing";
   collection: "tags";
-  data: InferEntrySchema<"tags">
+  data: any
 };
 };
 
@@ -252,5 +245,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	export type ContentConfig = typeof import("../src/content/config.js");
+	export type ContentConfig = never;
 }

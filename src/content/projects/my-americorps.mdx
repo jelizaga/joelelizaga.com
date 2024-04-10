@@ -5,11 +5,9 @@ headTitle: "My AmeriCorps ❯ A UX writing case study"
 headerImgSrc: "../../img/project/my-americorps/header.jpg"
 description: "Applying UX writing to enhance the usability of an ancient federal portal"
 tags: [ux-writing]
-draft: false
 ---
-
-import NNImage from '../components/NNImage.tsx';
-import NNCarousel from '../components/NNCarousel.tsx';
+import Media from "../../components/Media/Media.astro";
+export const mediaPath = "/img/project/my-americorps";
 
 <a href="https://americorps.gov/" target="_blank">AmeriCorps</a> is the largest
 grant-maker in the United States: It's an independent agency of the U.S.
@@ -38,26 +36,25 @@ As an AmeriCorps alum I can attest that my unit regarded `My.AmeriCorps.gov` wit
 puzzled dread in the best of moments and frustration at worst. Here's a quick
 tour:
 
-<NNCarousel
-  client:only="solid-js"
-  images={[
+<Media
+  arr={[
     {
-      src: "/img/project/my-americorps/login.jpg",
+      src: `${mediaPath}/login.jpg`,
       alt: "The My AmeriCorps log in page.",
       caption: "***Pre-rewrite:*** My AmeriCorps log in page: depicted on a 1920x1080 screen. If you're curious about the mysterious white space on the right: The site is 782px across—always."
     },
     {
-      src: "/img/project/my-americorps/home.jpg",
+      src: `${mediaPath}/home.jpg`,
       alt: "The My AmeriCorps landing page for alumni.",
       caption: "***Pre-rewrite:*** Corps member alum landing page."
     },
     {
-      src: "/img/project/my-americorps/payment-request-form.jpg",
+      src: `${mediaPath}/payment-request-form.jpg`,
       alt: "The My AmeriCorps Segal Award payment request page.",
       caption: "***Pre-rewrite:*** Form used by alumni to request Segal Award payments."
     },
     {
-      src: "/img/project/my-americorps/help.jpg",
+      src: `${mediaPath}/help.jpg`,
       alt: "The My AmeriCorps help documentation.",
       caption: "***Pre-rewrite:*** Site help documentation."
     }
@@ -93,21 +90,20 @@ I dropped a flag and left a note for every string with an opportunity to improve
 on my usability heuristics (accessible, clear, concise, conventional,
 purposeful):
 
-<NNCarousel
-  client:only="solid-js"
-  images={[
+<Media
+  arr={[
     {
-      src: "/img/project/my-americorps/login-heuristic-evaluation.jpg",
+      src: `${mediaPath}/login-heuristic-evaluation.jpg`,
       alt: "Heuristic evaluation of the My AmeriCorps log in page.",
       caption: "**Heuristic evaluation** of the My AmeriCorps log in page."
     },
     {
-      src: "/img/project/my-americorps/home-heuristic-evaluation.jpg",
+      src: `${mediaPath}/home-heuristic-evaluation.jpg`,
       alt: "Heuristic evaluation of the My AmeriCorps alum landing page.",
       caption: "**Heuristic evaluation** of the My AmeriCorps alum landing page."
     },
     {
-      src: "/img/project/my-americorps/payment-request-form-heuristic-evaluation.jpg",
+      src: `${mediaPath}/payment-request-form-heuristic-evaluation.jpg`,
       alt: "Heuristic evaluation of the My AmeriCorps form to request Segal Award disbursal.",
       caption: "**Heuristic evaluation** of the My AmeriCorps form to request Segal Award disbursal."
     }
@@ -118,9 +114,8 @@ purposeful):
 Alan's journey on `MyAmeriCorps.gov` scored a modest 30.8% usability on my **UX
 writing scorecard**:
 
-<NNImage
-  client:only="solid-js"
-  src="/img/project/my-americorps/ux-content-usability-scorecard.png"
+<Media
+  src={`${mediaPath}/ux-content-usability-scorecard.png`}
   alt="A scorecard evaluating the current usability of My AmeriCorps' UX content."
   display="protruding"
 />
@@ -133,26 +128,25 @@ taxonomy for how, exactly, each point needs improvement.
 As a proof-of-concept, I drafted an improved log in page with writing that
 fulfills the usability criteria and resolves the issues I documented:
 
-<NNCarousel
-  client:only="solid-js"
-  images={[
+<Media
+  arr={[
     {
-      src: "/img/project/my-americorps/login-revised.jpg",
+      src: `${mediaPath}/login-revised.jpg`,
       alt: "My AmeriCorps log in page with revised UX content.",
       caption: "***Rewritten:*** Log in page."
     },
     {
-      src: "/img/project/my-americorps/login-revised-tos-clicked.jpg",
+      src: `${mediaPath}/login-revised-tos-clicked.jpg`,
       alt: "Revised My AmeriCorps log in page when the terms of service is selected.",
       caption: "***Rewritten:*** Terms of service pop-up."
     },
     {
-      src: "/img/project/my-americorps/login-revised-privacy-statement-clicked.jpg",
+      src: `${mediaPath}/login-revised-privacy-statement-clicked.jpg`,
       alt: "Revised My AmeriCorps log in page when the privacy statement is selected.",
       caption: "***Rewritten:*** Privacy statement pop-up."
     },
     {
-      src: "/img/project/my-americorps/login.jpg",
+      src: `${mediaPath}/login.jpg`,
       alt: "The My AmeriCorps log in page.",
       caption: "***Pre-rewrite:*** Original log in page, pre-revisions."
     }
@@ -184,9 +178,8 @@ similar to the diagrammatic
 [journey mapping](https://www.nngroup.com/articles/journey-mapping-101/) 
 found in UX design, but it's more fitted to evaluating UX content:
 
-<NNImage
-  client:only="solid-js"
-  src="/img/project/my-americorps/current-journey.jpg"
+<Media
+  src={`${mediaPath}/current-journey.jpg`}
   alt="Map of the current My AmeriCorps journey to Segal Award disbursal."
   display="protruding"
   caption="The current journey to Segal Award disbursal as ventured by persona Alum Alan."
@@ -198,21 +191,20 @@ Through this practice of mapping I discovered more pain-points across the alum's
 journey, inspiring these improvements to the 'Request Education Award
 Payment' screen:
 
-<NNCarousel
-  client:only="solid-js"
-  images={[
+<Media
+  arr={[
     {
-      src: "/img/project/my-americorps/payment-request-form-revised.jpg",
+      src: `${mediaPath}/payment-request-form-revised.jpg`,
       alt: "My AmeriCorps log in page with revised UX content.",
       caption: "***Rewritten:*** Context-specific tooltips, prioritized concision, purposeful and accessible text, and legal disclaimers displaying only when relevant."
     },
     {
-      src: "/img/project/my-americorps/payment-request-form-revised-submit.jpg",
+      src: `${mediaPath}/payment-request-form-revised-submit.jpg`,
       alt: "Revised My AmeriCorps log in page when the terms of service is selected.",
       caption: "***Rewritten:*** Legal disclaimer displayed as a pop-up as a final step when the user finally clicks 'Submit.'"
     },
     {
-      src: "/img/project/my-americorps/payment-request-form.jpg",
+      src: `${mediaPath}/payment-request-form.jpg`,
       alt: "Original 'Request Education Award Payment' page, pre-revisions.",
       caption: "***Pre-rewrite:*** Original 'Request Education Award Payment' page, pre-revisions: UI buttons hidden as labels, a lot of legal text, college-level vocabulary, an innaccurate diagram, and help buttons hyperlinked to unnavigable and out-of-date documentation."
     }
@@ -244,16 +236,15 @@ Luckily, AmeriCorps has a well-crafted and recognizable brand voice on
 [*AmeriCorps.gov*](https://americorps.gov) that can be referenced for pointers
 on how the agency would like to represent itself:
 
-<NNCarousel
-  client:only="solid-js"
-  images={[
+<Media
+  arr={[
     {
-      src: "/img/project/my-americorps/americorps-dotgov.png",
+      src: `${mediaPath}/americorps-dotgov.png`,
       alt: "Screenshot of the AmeriCorps.gov site, where the brand voice is pretty inviting and action-oriented.",
       caption: "`AmeriCorps.gov`: Content designed to advocate for the agency's programs and power enlistment and public interest."
     },
     {
-      src: "/img/project/my-americorps/payment-request-form.jpg",
+      src: `${mediaPath}/payment-request-form.jpg`,
       alt: "Screenshot of the Payment Request Form on the My.AmeriCorps.gov site, with a more formidable and bureaucratic voice.",
       caption: "`My.AmeriCorps.gov`: Take note of the comparatively institutional voice."
     }
@@ -445,9 +436,8 @@ There's a good amount of federal and state institutions that could use a UX
 content touch-up. In my *Foundations of UX Writing* certificate class we used
 [Indiana's BMV](https://mybmv.bmv.in.gov/bmv/mybmv/default.aspx) as a case-study:
 
-<NNImage
-  client:only="solid-js"
-  src="/img/project/my-americorps/in-bmv.png"
+<Media
+  src={`${mediaPath}/in-bmv.png`}
   alt="Indiana's BMV page."
 />
 
